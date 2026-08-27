@@ -1,0 +1,226 @@
+================================================================================
+NEXT STEPS: PUBLISHING RESULTS ON GITHUB PAGES + AUTOMATIC REFRESH 2x A DAY
+(dla projektu rn-dorking - wersja Plan B / DuckDuckGo gotowa, Google CSE opcjonalne)
+================================================================================
+
+CEL:
+  1. GitHub Actions uruchamia potok automatycznie 2x dziennie.
+  2. Wynik (oferty.json) trafia do repozytorium.
+  3. GitHub Pages serwuje prostą stronę czytającą oferty.json.
+
+OVERVIEW (how it works, in simple terms):
+  GitHub Actions = free task scheduler + free Linux machine. Every day at two
+  set times it: checks out your repo -> runs the Python pipeline -> commits the
+  updated oferty.json back to the repo. GitHub Pages then serves a static web
+  page that reads oferty.json directly from the repo. No server needed.
+
+================================================================================
+KROK 1: PUT THE PROJECT ON GITHUB
+================================================================================
+  1. Create a new EMPTY repository on github.com (e.g. "rn-dorking"),
+     do NOT add README/.gitignore via the wizard (we already have files).
+  2. In the project folder run:
+       git init
+       git add .
+       git commit -m "Initial pipeline"
+       git branch -M main
+       git remote add origin https://github.com/<TWOJ-LOGIN>/rn-dorking.git
+       git push -u origin main
+  3. IMPORTANT - check .gitignore BEFORE pushing:
+       Current .gitignore excludes .env, venv/, run.log, __pycache__/ - keep those.
+       Make sure oferty.json and stan.json are NOT ignored (they must be
+       committed - oferty.json is what the website reads, stan.json carries
+       the deduplication memory between runs).
+       RECOMMENDED: also commit llm_parser.py etc. as-is; NEVER commit .env.
+
+================================================================================
+KROK 2: ADD SECRETS TO THE REPOSITORY
+================================================================================
+  GitHub -> repo -> Settings -> Secrets and variables -> Actions ->
+  "New repository secret". Add these three (values from your local .env):
+
+    Secret name     Value
+    --------------  -------------------------------------------------------
+    LLM_API_KEY     sk-or-v1-...            (OpenRouter key)
+    LLM_BASE_URL    https://openrouter.ai/api/v1
+    LLM_MODEL       z-ai/glm-5.3-flash      (or the current free GLM model)
+
+  (GOOGLE_API_KEY / GOOGLE_CX - add later the same way, when your
+   Programmable Search Engine finally works; the pipeline picks Google
+   up automatically, otherwise it falls back to DuckDuckGo.)
+
+  Secrets are masked in logs and never printed - safe to use in a public repo.
+
+================================================================================
+KROK 3: CREATE THE WORKFLOW FILE (the scheduler)
+================================================================================
+  Create this exact file in the repo:
+
+    .github/workflows/run.yml
+
+  with the content below (watch the indentation - YAML is strict):
+
+--------------------------------------------------------------------------------
+name: rn-dorking pipeline
+
+on:
+  schedule:
+    - cron: "0 5 * * *"     # 05:00 UTC = 07:00 czasu polskiego (letniego)
+    - cron: "0 17 * * *"    # 17:00 UTC = 19:00 czasu polskiego (letniego)
+  workflow_dispatch:        # przycisk "Run workflow" do uruchomienia ręcznego
+
+permissions:
+  contents: write           # pozwala workflow'owi robić commit wyników
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run pipeline
+        env:
+          LLM_API_KEY:   ${{ secrets.LLM_API_KEY }}
+          LLM_BASE_URL:  ${{ secrets.LLM_BASE_URL }}
+          LLM_MODEL:     ${{ secrets.LLM_MODEL }}
+          LLM_MODEL_EXTRACT: ${{ secrets.LLM_MODEL }}
+        run: python main.py
+
+      - name: Copy result to docs
+        run: |
+          mkdir -p docs
+          cp oferty.json docs/oferty.json
+
+      - name: Commit results
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add oferty.json stan.json docs/oferty.json
+          git diff --cached --quiet || git commit -m "update oferty.json [skip ci]"
+          git push
+--------------------------------------------------------------------------------
+
+  NOTES:
+  - "2x a day" = the two cron lines. Change the hours freely; UTC only.
+    (Winter time: 05:00 UTC = 06:00 PL, 17:00 UTC = 18:00 PL.)
+  - GitHub cron can be delayed by a few minutes - that is normal.
+  - "[skip ci]" prevents the result-commit from triggering another run
+    (avoids infinite loops).
+  - We do NOT commit run.log (it's gitignored) - logs are visible in the
+    Actions run output instead.
+
+================================================================================
+KROK 4: PUBLISH THE WEB PAGE (GitHub Pages)
+================================================================================
+  Simplest working option: a static HTML page that fetches oferty.json.
+
+  1. Create a folder "docs/" in the repo.
+  2. Create docs/index.html - minimal example (pobiera dane i buduje tabelę):
+
+--------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <title>Nabory na rady nadzorcze</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: .5rem; text-align: left; }
+    th { background: #eee; }
+  </style>
+</head>
+<body>
+  <h1>Ogłoszenia o naborze kandydatów na rady nadzorcze</h1>
+  <p>Odświeżane automatycznie 2x dziennie.</p>
+  <table id="t">
+    <thead><tr>
+      <th>Podmiot</th><th>Miejscowość</th><th>Termin</th>
+      <th>Stanowisko</th><th>Podsumowanie</th><th>Link</th>
+    </tr></thead>
+    <tbody></tbody>
+  </table>
+  <script>
+    // oferty.json jest posortowane malejąco po terminie przez storage.py
+    fetch('oferty.json')
+      .then(r => r.json())
+      .then(list => {
+        const tb = document.querySelector('#t tbody');
+        for (const o of list) {
+          tb.insertAdjacentHTML('beforeend', `
+            <tr>
+              <td>${o.podmiot}</td>
+              <td>${o.miejscowosc}</td>
+              <td>${o.termin_skladania_ofert || '—'}</td>
+              <td>${o.stanowisko}</td>
+              <td>${o.podsumowanie}</td>
+              <td><a href="${o.url}">źródło</a></td>
+            </tr>`);
+        }
+        if (!list.length) tb.innerHTML =
+          '<tr><td colspan="6">Brak ofert w tym tygodniu.</td></tr>';
+      });
+  </script>
+</body>
+</html>
+--------------------------------------------------------------------------------
+
+  3. The workflow (KROK 3) already copies oferty.json into docs/ - so the
+     page can read it with a relative fetch('oferty.json').
+  4. Enable Pages: repo -> Settings -> Pages ->
+       Source: "Deploy from a branch"
+       Branch: main, Folder: /docs -> Save.
+  5. Your page appears at:
+       https://<TWOJ-LOGIN>.github.io/rn-dorking/
+     (first publish can take a few minutes).
+
+================================================================================
+KROK 5: VERIFY EVERYTHING WORKS
+================================================================================
+  1. Repo -> Actions tab -> "rn-dorking pipeline" -> "Run workflow"
+     (manual trigger) -> wait for the green checkmark (~3-5 min).
+  2. Check that oferty.json / docs/oferty.json changed (new commit by
+     github-actions[bot]).
+  3. Open the Pages URL and confirm the page renders.
+  4. Check the Actions run log: search for "Statystyki runu" - it shows
+     how many results were found / filtered / added.
+  5. Wait for the scheduled time and confirm a second run happened.
+
+================================================================================
+ZNANE PUŁAPKI (read before debugging)
+================================================================================
+  1. DuckDuckGo (Plan B) sometimes returns 0 results for some dorks from
+     GitHub's shared IP ranges. Google CSE does not have this problem -
+     finishing the GOOGLE_CX setup is strongly recommended for production.
+     The pipeline already handles empty dork results safely.
+  2. Free OpenRouter models can rate-limit (429). The pipeline retries
+     3x with backoff (3s/6s/12s) - occasional delay, not a failure.
+  3. Do not commit .env. If the key ever leaks to a public repo:
+     revoke it immediately on OpenRouter and create a new one.
+  4. Scheduled workflows are auto-disabled after 60 days of repo inactivity -
+     any commit (even manual) re-enables them.
+  5. If the page shows stale data: Pages cache - hard refresh (Ctrl+F5).
+  6. stan.json (dedup memory) travels with the repo, so no duplicates even
+     across separate runs on different machines.
+
+================================================================================
+CHECKLISTA KOŃCOWA
+================================================================================
+  [ ] repo wypchnięte na GitHub (bez .env!)
+  [ ] sekrety LLM_API_KEY, LLM_BASE_URL, LLM_MODEL dodane w Settings->Secrets
+  [ ] .github/workflows/run.yml utworzony (cron 2x dziennie)
+  [ ] docs/index.html utworzony (strona czyta docs/oferty.json)
+  [ ] Pages włączone (main /docs)
+  [ ] ręczny przebieg Actions zakończony zielonym
+  [ ] strona GitHub Pages pokazuje dane
+  [ ] drugi (nocny) przebieg wykonał się sam i wykonał commit
+================================================================================

@@ -1,0 +1,11 @@
+2026-08-27 23:14:21,354 INFO __main__: Wyszukiwanie (Google): dork=inurl:bip "nabór na członków rady nadzorczej"
+2026-08-27 23:14:22,007 ERROR __main__: Limit Google CSE: This project does not have the access to Custom Search JSON API.
+tytuł                                                        | nabór | uzasadnienie
+2026-08-27 23:14:22,010 INFO __main__: Tryb dry-run: nie zapisano oferty.json ani stan.json
+2026-08-27 23:14:22,011 INFO __main__: === Statystyki runu ===
+2026-08-27 23:14:22,013 INFO __main__: Zapytania Google (dorki): 0
+2026-08-27 23:14:22,014 INFO __main__: Wyniki surowe: 0
+2026-08-27 23:14:22,015 INFO __main__: Wyniki po deduplikacji (poddane filtrowi): 0
+2026-08-27 23:14:22,016 INFO __main__: Wyniki po filtrowaniu (nabór): 0
+2026-08-27 23:14:22,016 INFO __main__: Nowe oferty dopisane: 0
+2026-08-27 23:14:22,016 INFO __main__: Błędy ekstrakcji: 0

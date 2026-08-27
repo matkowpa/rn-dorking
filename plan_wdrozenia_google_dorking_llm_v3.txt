@@ -1,0 +1,551 @@
+================================================================================
+PLAN WDROŻENIA v3: SYSTEM AUTOMATYCZNEGO POZYSKIWANIA OGŁOSZEŃ DO RAD NADZORCZYCH
+(Google Custom Search API "Dorking" + LLM parser, wykonywany przez GLM-Flash)
+================================================================================
+
+DOKUMENT DLA WYKONAWCY (agenta LLM, np. GLM-Flash):
+Ten dokument jest specyfikacją zadania do samodzielnego zrealizowania. Wykonawca
+ma utworzyć dokładnie te pliki, które wymieniono w etapach, z dokładnie taką
+logiką, jak opisano. Jeśli funkcja biblioteki okaże się niedostępna w danej
+wersji, wykonawca dostosowuje implementację, zachowując ZACHOWANIE opisane w
+kryteriach akceptacji danego etapu. Nie wolno pomijać żadnego etapu ani
+upraszczać logiki deduplikacji, retry i walidacji.
+
+ZMIANY WZGLĘDEM v2 (dla orientacji - NIE trzeba czytać, jeśli implementujesz
+od zera; ten plik jest już kompletną, samodzielną specyfikacją):
+  - naprawiono sprzeczny opis odczekiwania przy błędzie 429 w ETAPIE 1,
+  - filter_is_announcement zwraca teraz (bool, str) - potrzebne do --dry-run,
+  - dodano wymóg UTF-8 dla wszystkich plików i logów (polskie znaki),
+  - naprawiono wykrywanie kodowania stron HTML w ETAPIE 3,
+  - sprecyzowano zachowanie przy przekroczeniu limitu Google w trakcie runu,
+  - sprecyzowano dokładną semantykę --limit,
+  - sprecyzowano wersję i API pydantic (v2),
+  - skorygowano listę pól zwracanych przez search_google (bez displayLink,
+    bo nieużywane nigdzie dalej w potoku - realny dodatkowy wpis zwiększałby
+    zakres bez potrzeby),
+  - dopisano zalecany (opcjonalny) throttling wywołań LLM,
+  - przeprojektowano zestaw 5 dorków w ETAPIE 2 pod kątem celu biznesowego:
+    dodano wariant "konkurs" dla spółek Skarbu Państwa/gov.pl, dodano dorki
+    BEZ ograniczenia do BIP (żeby złapać ogłoszenia spółek/funduszy
+    publikowane na własnych stronach), zastąpiono nieuzasadnione
+    wykluczenie "-gdynia" wykluczeniami "-archiwum -protokół" zgodnymi z
+    kryteriami odrzucenia już zapisanymi w prompcie filtra LLM.
+
+CEL BIZNESOWY:
+Codzienne wykrywanie świeżych ogłoszeń o naborze kandydatów na członków rad
+nadzorczych, publikowanych w polskich systemach BIP i innych źródłach
+publicznych, strukturyzacja ich przez LLM i prezentacja w formacie JSON
+dla frontendu.
+
+ARCHITEKTURA (potok 3-etapowy na uruchomienie):
+  ETAP A: Wyszukiwanie  - Google Custom Search JSON API + zestaw dorków
+          (BEZ wildcardów w operatorze site:), dateRestrict, paginacja.
+  ETAP B: Filtrowanie LLM (tani model flash) - klasyfikacja snippetu:
+          czy_to_nabor true/false + uzasadnienie. Dalej przechodzą tylko
+          trafienia true.
+  ETAP C: Ekstrakcja LLM - pobranie pełnej treści ogłoszenia (HTML albo PDF)
+          i wyciągnięcie pól strukturalnych (podmiot, termin, miejscowość).
+  WYJŚCIE: oferty.json (dane dla frontendu) + stan.json (pamięć deduplikacji).
+
+ZASADY OGÓLNE OBOWIĄZUJĄCE WE WSZYSTKICH ETAPACH:
+  1. Python 3.11+. Wszystkie sekrety i konfiguracja wyłącznie z .env,
+     zero kluczy i nazw modeli zaszytych w kodzie.
+  2. Każde wywołanie HTTP (Google API, pobieranie stron/PDF) z timeout=30
+     oraz obsługą kodów 4xx/5xx z wpisem w logu zawierającym status i URL.
+  3. Logowanie przez moduł logging: INFO na konsolę, DEBUG do pliku run.log.
+  4. Komentarze w kodzie po polsku, nazwy identyfikatorów po angielsku.
+  5. Daty na wyjściu WYŁĄCZNIE w formacie YYYY-MM-DD albo pusty string "".
+  6. LLM zawsze wywoływany z temperature=0.1 i response_format={"type":
+     "json_object"}. Jeśli pierwsze wywołanie z response_format zakończy się
+     JAKIMKOLWIEK błędem innym niż limit zapytań (patrz ETAP 1 dla dokładnego
+     algorytmu retry) - jedna próba ponowna BEZ pola response_format, z
+     dopiskiem w komunikacie użytkownika: "Zwróć WYŁĄCZNIE surowy JSON bez
+     bloków markdown". Przed json.loads: usuń ewentualne znaczniki ```json
+     i ``` oraz zbierz treść między pierwszym { a ostatnim } (strip białych
+     znaków).
+  7. Nazwa modelu i base_url WYŁĄCZNIE z .env (LLM_MODEL, LLM_BASE_URL).
+     Jeśli zmienne nie są ustawione przy starcie - program kończy się błędem
+     z czytelnym komunikatem, zanim wykona jakiekolwiek wywołanie sieciowe.
+  8. WYMÓG UTF-8 (krytyczne na Windows - inaczej polskie znaki ą, ć, ę, ł,
+     ń, ó, ś, ź, ż ulegną zniekształceniu):
+       - każdy open() do zapisu/odczytu pliku tekstowego: encoding="utf-8",
+       - logging.FileHandler dla run.log: encoding="utf-8",
+       - json.dump(..., ensure_ascii=False, indent=2) przy zapisie
+         oferty.json i stan.json (bez ensure_ascii=False znaki diakrytyczne
+         zostałyby zapisane jako escape'y \\uXXXX - technicznie poprawne,
+         ale nieczytelne przy ręcznej weryfikacji z ETAPU 6),
+       - na początku main.py (przed jakimkolwiek print/log) rozważ
+         ustawienie sys.stdout.reconfigure(encoding="utf-8") (Python 3.7+),
+         żeby konsola Windows nie zgłaszała UnicodeEncodeError przy polskich
+         znakach w komunikatach INFO.
+
+================================================================================
+ETAP 0: ŚRODOWISKO I KONFIGURACJA
+================================================================================
+CEL ETAPU: działające venv, zależności, szkielet projektu, plik .env.
+
+Struktura katalogów do utworzenia:
+  rn-dorking/
+    main.py              # orkiestrator potoku
+    llm_parser.py        # klient LLM: filtrowanie (ETAP B) i ekstrakcja (ETAP C)
+    google_search.py     # klient Google CSE (ETAP A)
+    content_fetcher.py   # pobieranie treści HTML/PDF
+    storage.py            # deduplikacja, stan, zapis JSON
+    config.py            # wczytanie i walidacja .env
+    requirements.txt
+    .env.example
+    .gitignore           # musi zawierać: .env, venv/, run.log, __pycache__/
+
+1. Komendy (wykonaj w terminalu):
+     python -m venv venv
+     venv\Scripts\activate
+     pip install -r requirements.txt
+
+2. requirements.txt - dokładnie te pakiety (z podanymi minimalnymi wersjami -
+   są WYMAGANE, bo kod korzysta z API dostępnego tylko od tych wersji):
+     requests>=2.31
+     python-dotenv>=1.0
+     openai>=1.0
+     pydantic>=2.0
+     pdfplumber>=0.10
+
+   UWAGA: openai>=1.0 jest wymagane, bo kod używa składni klienta
+   `client.chat.completions.create(...)` (SDK openai 1.x). Starsza składnia
+   `openai.ChatCompletion.create(...)` (openai 0.x) NIE jest kompatybilna.
+   pydantic>=2.0 jest wymagane, bo kod używa `Model.model_validate(...)` i
+   `instance.model_dump()` (API pydantic 2.x), NIE `.parse_obj()`/`.dict()`
+   z pydantic 1.x.
+
+3. .env.example (szablon skopiowany przez wykonawcę do .env i uzupełniony):
+     GOOGLE_API_KEY=klucz_google_cloud
+     GOOGLE_CX=identyfikator_search_engine
+     LLM_API_KEY=klucz_api_llm
+     LLM_BASE_URL=https://openrouter.ai/api/v1
+     LLM_MODEL=glm-4.5-flash
+     LLM_MODEL_EXTRACT=glm-4.5-flash
+     SEARCH_DAYS_BACK=5
+     RESULTS_PER_DORK=20
+
+UWAGA WYKONAWCY: nazwa modelu w przykładzie (glm-4.5-flash) jest PRZYKŁADOWA.
+Wykonawca przed pierwszym uruchomieniem sprawdza w dokumentacji dostawcy
+(OpenRouter/Zhipu) aktualną, poprawną nazwę darmowego modelu z rodziny GLM
+i wpisuje ją do .env. Kod NIE MOŻE zawierać tej nazwy na sztywno.
+
+4. config.py - moduł, który:
+   - ładuje .env przez python-dotenv,
+   - waliduje obecność GOOGLE_API_KEY, GOOGLE_CX, LLM_API_KEY, LLM_BASE_URL,
+     LLM_MODEL, LLM_MODEL_EXTRACT (brak któregokolwiek = rzucenie ValueError
+     z listą brakujących zmiennych),
+   - parsuje SEARCH_DAYS_BACK: int, domyślnie 5. Jeśli wartość w .env nie da
+     się skonwertować do int (np. tekst, znak specjalny) - zaloguj WARNING
+     "SEARCH_DAYS_BACK niepoprawne, użyto wartości domyślnej 5" i użyj 5,
+   - parsuje RESULTS_PER_DORK: int, domyślnie 20, dopuszczalne wartości
+     TYLKO 10/20/30/40 (wielokrotność strony CSE wynoszącej 10). Jeśli
+     wartość w .env nie jest jedną z tych czterech liczb (albo nie jest
+     liczbą) - zaloguj WARNING "RESULTS_PER_DORK niepoprawne, użyto wartości
+     domyślnej 20" i użyj 20,
+   - eksportuje wszystkie powyższe jako stałe modułu.
+
+KRYTERIA AKCEPTACJI ETAPU 0:
+  a) python main.py --check kończy się kodem 0, gdy .env kompletny, i kodem 1
+     z listą brakujących zmiennych, gdy niekompletny (flaga --check wymaga
+     obsługi w main.py przez argparse; main.py przechwytuje ValueError z
+     config.py, wypisuje jego treść na stderr i wywołuje sys.exit(1)).
+  b) .gitignore istnieje i nie pozwala trafić .env do repozytorium.
+
+================================================================================
+ETAP 1: KLIENT LLM (plik llm_parser.py)
+================================================================================
+CEL ETAPU: jeden moduł z DWOMA funkcjami o różnych promptach i różnych modelach:
+  filter_is_announcement(title, snippet, url) -> tuple[bool, str]   [ETAP B]
+  extract_fields(full_text, url) -> dict | None                     [ETAP C]
+
+Wspólne elementy:
+  - klient OpenAI (SDK openai>=1.0) skonfigurowany z LLM_API_KEY i
+    LLM_BASE_URL: `client = OpenAI(api_key=LLM_API_KEY, base_url=LLM_BASE_URL)`,
+  - funkcja prywatna _call_llm(model, system_prompt, user_content) -> str,
+    implementująca DOKŁADNIE ten algorytm (ważne: poniższa kolejność usuwa
+    niejasność z wcześniejszych wersji planu - trzymaj się jej dosłownie):
+
+      KROK 1: wywołaj chat.completions.create(model=model, temperature=0.1,
+              response_format={"type": "json_object"}, messages=[system,
+              user]).
+      KROK 2: jeśli KROK 1 rzucił wyjątek:
+        a) jeśli to błąd limitu zapytań (rate limit / HTTP 429 - w SDK
+           openai to zwykle openai.RateLimitError): wykonaj do 3 dodatkowych
+           prób TEGO SAMEGO wywołania (z response_format), czekając przed
+           każdą kolejną próbą odpowiednio 3s, 6s, 12s (pierwsza dodatkowa
+           próba po 3s, druga po kolejnych 6s, trzecia po kolejnych 12s).
+           Jeśli po 3 próbach wciąż błąd 429 - rzuć wyjątek dalej (log ERROR
+           z modelem i treścią błędu).
+        b) każdy INNY błąd (np. dostawca nie wspiera response_format,
+           400/422 itp.): wykonaj JEDNĄ próbę ponowną BEZ pola
+           response_format, dopisując do treści user_content zdanie:
+           "Zwróć WYŁĄCZNIE surowy JSON bez bloków markdown". Jeśli ta
+           próba również rzuci błąd limitu zapytań - zastosuj retry z
+           punktu (a) na tej samej (bez response_format) wersji wywołania.
+           Jeśli ta próba rzuci jakikolwiek inny błąd - rzuć wyjątek dalej
+           (log ERROR).
+      KROK 3: z udanej odpowiedzi weź response.choices[0].message.content,
+              usuń ewentualne znaczniki ```json oraz ``` (jeśli obecne),
+              wydobądź podciąg między pierwszym "{" a ostatnim "}" (strip
+              białych znaków na końcach), zwróć jako string.
+      KROK 4 (poza _call_llm, w funkcjach wołających): przy próbie
+              json.loads() tego stringa i błędzie JSONDecodeError - rzuć
+              wyjątek z pełną surową odpowiedzią w komunikacie (do
+              debugowania).
+
+FUNKCJA 1 - filtrowanie (ETAP B):
+  Wejście: title, snippet, url.
+  System prompt (dosłownie, po polsku - w kodzie jako string wielolinijkowy,
+  zwróć uwagę na poprawne cytowanie znaków " w Pythonie, np. przez
+  potrójne apostrofy '''...''' zawierające w treści znaki podwójnego cudzysłowu):
+    "Jesteś filtrem ogłoszeń. Na podstawie TYLKO podanego tytułu i fragmentu
+     wyniku wyszukiwania zdecyduj, czy wynik dotyczy otwartego naboru
+     kandydatów na członka rady nadzorczej (spółki, funduszy, instytucji
+     publicznych). Nie dotyczą naboru: archiwalne ogłoszenia, protokoły
+     z posiedzeń, uchwały o powołaniu już wybranych osób, aktualności,
+     strony główne BIP, wzory dokumentów.
+     Zwróć WYŁĄCZNIE obiekt JSON: {"czy_to_nabor": true lub false,
+     "uzasadnienie": "maks. 15 słów"}"
+  Logika wywołania: model LLM_MODEL. Sparsuj odpowiedź do dict, odczytaj
+  pola "czy_to_nabor" (bool) i "uzasadnienie" (str, domyślnie "" jeśli brak).
+  Funkcja ZWRACA (czy_to_nabor, uzasadnienie) jako tuple.
+  Przy błędzie parsowania lub jakimkolwiek wyjątku (sieciowym, JSON,
+  walidacji): zaloguj WARNING z treścią błędu i zwróć (False, "błąd filtra:
+  <krótki opis>") - bezpieczny fallback: wątpliwe wyniki są odrzucane, ale
+  przyczyna jest widoczna w logu i w kolumnie uzasadnienia przy --dry-run.
+
+FUNKCJA 2 - ekstrakcja (ETAP C):
+  Wejście: pełny tekst ogłoszenia (max pierwsze 12000 znaków - obetnij PRZED
+  wysłaniem do LLM!), url.
+  System prompt wymusza obiekt JSON o polach:
+    {
+      "podmiot": "pełna nazwa spółki/urzędu lub \"\"",
+      "miejscowosc": "nazwa miejscowości lub \"\"",
+      "termin_skladania_ofert": "YYYY-MM-DD lub \"\"",
+      "stanowisko": "członek rady nadzorczej / przewodniczący rady itp.",
+      "wymagania": "skrót wymagań, maks. 300 znaków, lub \"\"",
+      "podsumowanie": "1-2 zdania po polsku"
+    }
+  W promptcie dodaj 3 przykłady normalizacji dat, np.:
+    "do 15 września 2026 r." -> "2026-09-15"
+    "15.09.2026"             -> "2026-09-15"
+    "15 września 2026, godz. 12:00" -> "2026-09-15"
+  Jeśli w tekście nie ma terminu - zwróć "" (NIE wymyślaj daty).
+
+  Walidacja i budowa wyniku (pydantic 2.x - użyj DOKŁADNIE tego wzorca):
+    class Offer(BaseModel):
+        podmiot: str = ""
+        miejscowosc: str = ""
+        termin_skladania_ofert: str = ""
+        stanowisko: str = ""
+        wymagania: str = ""
+        podsumowanie: str = ""
+
+    parsed_dict = json.loads(oczyszczona_odpowiedz)
+    offer_obj = Offer.model_validate(parsed_dict)   # RZUCA ValidationError
+                                                       # gdy typy się nie zgadzają
+    result = offer_obj.model_dump()                   # zwykły dict
+    result["url"] = url
+    result["znaleziono_dnia"] = date.today().isoformat()  # data dzisiejsza
+    return result
+
+  Model użyty do wywołania LLM: LLM_MODEL_EXTRACT (może być inny niż do
+  filtrowania).
+  Przy JAKIMKOLWIEK wyjątku (sieciowym, JSONDecodeError, ValidationError):
+  zaloguj ERROR z URL-em i treścią błędu, zwróć None.
+
+KRYTERIA AKCEPTACJI ETAPU 1:
+  a) python llm_parser.py --self-test (blok pod if __name__ == "__main__")
+     wykonuje test obu funkcji na dwóch wbudowanych przykładach: (1) tytuł
+     "Ogłoszenie o naborze kandydatów na członka rady nadzorczej SPV" ->
+     filter zwraca (True, <jakieś uzasadnienie>), (2) "Protokół z LVII
+     posiedzenia Rady" -> filter zwraca (False, <jakieś uzasadnienie>).
+     Wyniki (cała para) wypisane na konsolę.
+  b) ekstrakcja na przykładowym tekście z datą "15.09.2026" zwraca dict z
+     "termin_skladania_ofert" == "2026-09-15".
+================================================================================
+ETAP 2: WYSZUKIWANIE GOOGLE CSE (plik google_search.py)
+================================================================================
+CEL ETAPU: moduł zwracający listę surowych wyników (title, snippet, link,
+dork) dla zestawu dorków, z paginacją i jawną obsługą limitów.
+
+WAŻNE OGRANICZENIE GOOGLE (wykonawca musi to znać):
+  Operator site: NIE obsługuje wildcardów. Zapisy typu site:bip.*.pl są
+  NIEPOPRAWNE i muszą być zastąpione dorkami z inurl: lub konkretnymi domenami.
+  Limity darmowe: 100 zapytań/dzień (zbyt wiele dorków x strony = wyczerpanie
+  limitu - dlatego liczba dorków jest stała i ograniczona).
+
+ZESTAW DORKÓW (stała DORKS na początku pliku - dokładnie te 5 zapytań):
+  1. 'inurl:bip "nabór na członków rady nadzorczej"'
+  2. 'inurl:bip "postępowanie kwalifikacyjne" "rady nadzorczej" filetype:pdf'
+  3. 'site:gov.pl "konkurs na członka rady nadzorczej"'
+  4. '"zaproszenie do składania ofert" "rady nadzorczej" filetype:pdf'
+  5. '"zgłoszenia kandydatów" "członka rady nadzorczej" -archiwum -protokół'
+
+  UZASADNIENIE DOBORU (dla wykonawcy - nie zmieniaj tej listy samodzielnie,
+  ale rozumiej intencję, żeby nie "poprawiać" jej przypadkowo):
+  - Dorki 1-2 celują w oficjalne ogłoszenia BIP (instytucje publiczne,
+    spółki komunalne) - inurl:bip, dwie różne standardowe formuły tytułowe
+    ("nabór na członków..." i "postępowanie kwalifikacyjne...").
+  - Dork 3 celuje w spółki z udziałem Skarbu Państwa i agencje rządowe
+    publikujące na domenach gov.pl, gdzie częściej używana jest formuła
+    "konkurs" niż "nabór".
+  - Dorki 4-5 są celowo BEZ inurl:bip / site:, bo część spółek (zwłaszcza
+    prywatnych z udziałem samorządu, fundacji, funduszy) publikuje takie
+    ogłoszenia na własnej stronie firmowej, poza systemem BIP - ograniczenie
+    do BIP/gov.pl pominęłoby te przypadki, a plan zakłada pokrycie "spółek,
+    funduszy, instytucji publicznych" (patrz CEL BIZNESOWY), nie tylko
+    sektora administracji.
+  - Wykluczenia "-archiwum -protokół" w dorku 5 (który nie ma żadnego innego
+    filtra domenowego, więc jest najbardziej podatny na szum) usuwają
+    dwie kategorie fałszywych trafień WYMIENIONE JUŻ w prompcie filtra LLM
+    z ETAPU 1 (archiwalne ogłoszenia, protokoły z posiedzeń) - to zmniejsza
+    liczbę kosztownych wywołań LLM na wynikach, które i tak zostałyby
+    odrzucone w ETAPIE B. Zastępują nieuzasadnione wykluczenie "-gdynia"
+    z poprzedniej wersji planu, którego celowość nie była zapisana.
+  - Zestaw pozostaje przy 5 dorkach, żeby nie zwiększać zużycia darmowego
+    limitu Google (100 zapytań/dzień - patrz ograniczenie poniżej).
+
+Funkcja search_google(dork: str, days_back: int, max_results: int) -> list[dict]:
+  - endpoint: https://www.googleapis.com/customsearch/v1
+  - parametry: key, cx, q=dork, dateRestrict=f"d{days_back}", num=10,
+    start=1, 11, 21, ... aż do max_results (strony po 10),
+  - między zapytaniami na kolejne strony: sleep(1) sekunda,
+  - obsługa błędów:
+      * 200 -> zwróć listę słowników {"title", "snippet", "link", "dork"}
+        (pole "dork" to oryginalny dork, przydatne do logów i debugowania;
+        NIE dołączaj displayLink - nie jest używane w żadnym późniejszym
+        etapie potoku),
+      * 403 lub 429 -> rzuć wyjątek QuotaExceededError (zdefiniowany w tym
+        samym pliku, dziedziczący po Exception) z treścią pola
+        "error.message" z odpowiedzi JSON, a jeśli tego pola nie ma - z
+        komunikatem stałym "Limit Google CSE wyczerpany lub brak uprawnień
+        API" (chcemy odróżnić brak wyników od braku limitu!),
+      * inny status -> loguj ERROR (status + URL zapytania, bez klucza API
+        w logu) i przerwij iterację po stronach TEGO dorka (zwróć to, co
+        zebrano do tego momentu).
+  - gdy "items" nie występuje w odpowiedzi (brak wyników) -> zakończ
+    paginację dla tego dorka i zwróć to, co zebrano do tego momentu.
+
+KRYTERIA AKCEPTACJI ETAPU 2:
+  a) python google_search.py --self-test "nabór rada nadzorcza" wykonuje
+     JEDNO zapytanie (1 strona, max_results wymuszony na 10 niezależnie od
+     RESULTS_PER_DORK) i wypisuje liczbę wyników + pierwsze 3 tytuły.
+  b) przekroczenie limitu zwraca wyjątek QuotaExceededError z czytelnym
+     komunikatem zamiast cichego pustego wyniku.
+================================================================================
+ETAP 3: POBIERANIE TREŚCI (plik content_fetcher.py)
+================================================================================
+CEL ETAPU: dla wyników sklasyfikowanych jako "nabór" pobrać pełną treść,
+którą karmimy ekstrakcję LLM. Snippet (150-200 znaków) NIE zawiera terminów
+ani pełnych nazw podmiotów - dlatego ten etap jest obowiązkowy.
+
+Funkcja fetch_content(url: str) -> str:
+  1. requests.get(url, timeout=30, headers={"User-Agent": "Mozilla/5.0
+     (Windows NT 10.0; Win64; x64) rn-dorking/3.0"}).
+  2. Jeśli URL kończy się .pdf LUB Content-Type zawiera application/pdf:
+     - pobierz zawartość do pamięci (BytesIO),
+     - wyekstrahuj tekst pdfplumber.open(...) - połącz tekst wszystkich stron,
+     - limit: parsuj maksymalnie 20 pierwszych stron PDF.
+  3. W przeciwnym razie (HTML):
+     - USTALENIE KODOWANIA (ważne - wiele stron BIP nie deklaruje charset
+       albo używa windows-1250/iso-8859-2, a domyślne zachowanie requests
+       przy braku charset w nagłówku Content-Type to ISO-8859-1, co
+       zniekształca polskie znaki): jeśli nagłówek Content-Type NIE zawiera
+       parametru "charset", ustaw explicite response.encoding =
+       response.apparent_encoding PRZED odczytaniem response.text. Jeśli
+       charset jest podany w nagłówku, zostaw domyślne response.encoding
+       (ustawione automatycznie przez requests z tego nagłówka),
+     - wytnij treść biblioteką standardową: usuń tagi script/style (razem
+       z ich zawartością, regexem lub prostym parserem), potem wszystkie
+       pozostałe tagi regexem r"<[^>]+>", zdekoduj encje HTML (moduł html,
+       funkcja unescape), zredukuj wielokrotne białe znaki do pojedynczych
+       spacji i podziel na akapity po \n\n.
+  4. Zwróć tekst obcięty do 12000 znaków.
+  5. Błędy sieciowe, 404, 403, timeout: loguj WARNING (status/wyjątek + URL)
+     i zwróć "" (pusty string) - wówczas orkiestrator użyje snippetu jako
+     tekstu zapasowego.
+
+KRYTERIA AKCEPTACJI ETAPU 3:
+  a) python content_fetcher.py --self-test <url> wypisuje pierwsze 500 znaków
+     pobranego tekstu (wykonawca testuje na dowolnym ogłoszeniu BIP;
+     zweryfikuj wizualnie, że polskie znaki diakrytyczne wyświetlają się
+     poprawnie, a nie jako "?" lub przypadkowe symbole - to test na
+     poprawność wykrywania kodowania z kroku 3).
+  b) pobranie nieistniejącego URL-a nie powoduje tracebacku - jest WARNING
+     i pusty string.
+================================================================================
+ETAP 4: DEDUPLIKACJA I TRWAŁOŚĆ (plik storage.py)
+================================================================================
+CEL ETAPU: wielokrotne uruchomienia (codzienny cron) NIE mogą duplikować
+ofert ani gubić historii. oferty.json jest ZBIERANY (merge), nie nadpisywany.
+
+Klasa Storage:
+  __init__(offers_path="oferty.json", state_path="stan.json")
+  load_state() -> set
+      - jeśli stan.json istnieje, wczytaj słownik {"seen_urls": [sha1...]}
+        i zwróć set(słownik["seen_urls"]);
+      - jeśli nie istnieje, a oferty.json istnieje (migracja ze starej wersji),
+        zbuduj set z znormalizowanych+zahashowanych URL-i istniejących ofert
+        (pole "url" każdej oferty); w przeciwnym razie zwróć pusty set.
+  is_new(url: str) -> bool
+      - klucz to hashlib.sha1(znormalizowany_url.encode("utf-8")).hexdigest();
+        normalizacja: lowercase host, usunięte parametry zapytania zaczynające
+        się od "utm_", usunięty fragment (#...), usunięty końcowy "/" ze
+        ścieżki,
+      - zwraca True, jeśli hash NIE występuje w seen_urls.
+  add_offer(offer: dict)
+      - dopisuje ofertę do listy w pamięci i hash jej URL-a do seen_urls,
+  save()
+      - ATOMOWO zapisuje oferty.json (zapis do pliku tymczasowego w tym samym
+        katalogu, potem os.replace na docelowy - chroni przed uszkodzeniem
+        przy przerwaniu), z json.dump(..., ensure_ascii=False, indent=2,
+        encoding nie jest argumentem json.dump - użyj open(..., "w",
+        encoding="utf-8") dla pliku),
+      - zapisuje stan.json analogicznie (UTF-8, ensure_ascii=False),
+      - PRZED zapisem sortuje listę ofert malejąco po
+        "termin_skladania_ofert" (zwykłe porównanie stringów działa
+        poprawnie: "" jest zawsze najmniejsze leksykograficznie, więc przy
+        reverse=True automatycznie trafia na koniec listy - NIE trzeba
+        pisać specjalnego przypadku dla "").
+  merge_offers(new_offers: list[dict]) -> int
+      - dla każdej oferty: jeśli is_new(oferta["url"]) -> add_offer(oferta);
+        zwraca liczbę DODANYCH (do statystyki końcowej). Funkcja jest
+        wykorzystywana głównie w testach jednostkowych ETAPU 4 - main.py w
+        ETAPIE 5 woła is_new/add_offer bezpośrednio, bo musi przeplatać je
+        z filtrowaniem i ekstrakcją LLM (patrz ETAP 5).
+
+KRYTERIA AKCEPTACJI ETAPU 4:
+  a) dwukrotne uruchomienie merge_offers z tą samą ofertą (ten sam "url")
+     dodaje ją tylko raz: merge_offers zwraca 1 za pierwszym razem i 0 za
+     drugim.
+  b) oferty.json po save jest poprawnym JSON-em czytelnym json.load, z
+     poprawnie wyświetlonymi polskimi znakami (bez escape'ów \\uXXXX) i
+     posortowanym zgodnie z opisem.
+================================================================================
+ETAP 5: ORKIESTRATOR (plik main.py)
+================================================================================
+CEL ETAPU: spięcie potoku A->B->C z limitem bezpieczeństwa, statystykami
+i argumentami CLI. To jedyny plik wykonywalny "na co dzień".
+
+Argumenty (argparse):
+  --check          tylko walidacja .env (ETAP 0) i wyjście
+  --dry-run        ETAP A + B, BEZ pobierania treści i ekstrakcji LLM;
+                   wypisuje, co zostałoby przeanalizowane (do testu dorków)
+  --limit N        maksymalna liczba wyników NOWYCH (tj. takich, dla których
+                   is_new(link) == True) poddawanych ETAPOWI B na run
+                   (domyślnie 30 - kontrola kosztów zapytań LLM). Wyniki już
+                   widziane (is_new == False) są odrzucane PRZED wejściem do
+                   ETAPU B i NIE zużywają limitu.
+  --days N         nadpisuje SEARCH_DAYS_BACK na to uruchomienie
+
+Przebieg main():
+  1. Skonfiguruj logging (INFO na konsolę + DEBUG do run.log, oba z
+     encoding="utf-8" - patrz ZASADY OGÓLNE pkt 8).
+  2. Wczytaj config (walidacja .env; przy --check: przechwyć ValueError,
+     wypisz listę brakujących zmiennych, sys.exit(1); w przeciwnym razie
+     sys.exit(0)). Zainicjalizuj Storage.
+  3. Dla każdego dorka z DORKS: wywołaj search_google(dork, days_back,
+     RESULTS_PER_DORK). Zbierz łączną listę wyników ze wszystkich dorków.
+     WAŻNE: wyniki z różnych dorków mogą się dublować (ten sam URL) - to
+     naprawi deduplikacja w ETAPIE B (is_new po URL), NIE trzeba deduplikować
+     ręcznie na tym etapie.
+     OBSŁUGA LIMITU GOOGLE: jeśli search_google zgłosi QuotaExceededError dla
+     danego dorka - zaloguj ERROR z treścią wyjątku i PRZERWIJ pętlę po
+     dorkach (kolejne dorki najpewniej też przekroczą limit tego samego dnia).
+     NIE przerywaj całego programu - przejdź do kroku 4 z wynikami zebranymi
+     do tego momentu, żeby nie zgubić już wykonanej pracy.
+  4. ETAP B - iteruj po zebranej liście wyników W KOLEJNOŚCI zbierania;
+     prowadź licznik "przetworzonych nowych" i zatrzymaj pętlę, gdy licznik
+     osiągnie --limit:
+       a) pomiń wynik, jeśli is_new(link) == False (już widzieliśmy) - NIE
+          liczy się do limitu,
+       b) zwiększ licznik "przetworzonych nowych" o 1,
+       c) wywołaj filter_is_announcement(title, snippet, link) -> (czy_nabor,
+          uzasadnienie),
+       d) jeśli --dry-run: zapamiętaj (title, czy_nabor, uzasadnienie) do
+          wypisania w tabeli na końcu, NIC więcej nie rób dla tego wyniku
+          (bez fetch_content, bez extract_fields, bez zapisu do Storage),
+       e) jeśli NIE --dry-run i czy_nabor == True: fetch_content(link) ->
+          pełny tekst (jeśli fetch_content zwróci "" - użyj snippetu jako
+          tekstu zapasowego), potem extract_fields(tekst, link) -> oferta
+          albo None,
+       f) jeśli NIE --dry-run i oferta nie jest None: storage.add_offer
+          (oferta); log INFO z podmiotem i terminem.
+  5. Jeśli --dry-run: wypisz tabelę (tytuł | czy_to_nabor | uzasadnienie) i
+     zakończ z kodem 0 - NIE wołaj storage.save().
+  6. Jeśli NIE --dry-run: storage.save().
+  7. Statystyki końcowe (log INFO), W TEJ KOLEJNOŚCI (odpowiada faktycznej
+     kolejności przetwarzania - najpierw dedup, potem filtr):
+       - liczba zapytań Google wykonanych (suma stron pobranych ze
+         wszystkich dorków),
+       - liczba wyników surowych (przed deduplikacją, suma ze wszystkich
+         dorków),
+       - liczba wyników po deduplikacji (is_new == True, czyli faktycznie
+         poddanych ETAPOWI B, ograniczona przez --limit),
+       - liczba wyników po filtrowaniu (czy_nabor == True),
+       - liczba nowych ofert dopisanych do Storage,
+       - liczba błędów ekstrakcji (extract_fields zwróciło None mimo
+         czy_nabor == True).
+  8. Wyjście kod 0. Każdy nieprzechwycony wyjątek w krokach 1-7 -> log ERROR
+     z pełnym tracebackiem (logger.exception) i sys.exit(1).
+
+Kolejność w potoku ma znaczenie kosztowe: NAJPIERW deduplikacja (darmowa,
+lokalna), POTEM tani filtr LLM na snippecie (kilkaset tokenów), DOPIERO
+POTEM pobieranie strony i droższa ekstrakcja. Nigdy odwrotnie.
+
+ZALECENIE OPCJONALNE (nieobowiązkowe, ale rekomendowane): między kolejnymi
+wywołaniami filter_is_announcement w pętli ETAPU B można wstawić
+time.sleep(0.5), żeby zmniejszyć ryzyko trafienia w rate-limit darmowego
+modelu przy większej liczbie wyników w jednym runie. _call_llm i tak obsłuży
+429, ale ten mały odstęp zmniejsza liczbę potrzebnych retry.
+
+KRYTERIA AKCEPTACJI ETAPU 5:
+  a) python main.py --check działa zgodnie z ETAPem 0a.
+  b) python main.py --dry-run --limit 5 wykonuje potok A+B (maks. 5 nowych
+     wyników trafia do filtra), nie tworzy/modyfikuje oferty.json ani
+     stan.json, wypisuje tabelę: tytuł | czy_to_nabor | uzasadnienie.
+  c) pełne uruchomienie (python main.py) tworzy/aktualizuje oferty.json i
+     stan.json; ponowne pełne uruchomienie w tym samym dniu nie dopisuje
+     duplikatów (statystyka "liczba nowych ofert dopisanych" wynosi 0 przy
+     drugim uruchomieniu, o ile Google nie zwróci nowych wyników).
+
+================================================================================
+ETAP 6: TESTY I URUCHOMIENIE KONTROLNE
+================================================================================
+1. Uruchom kolejno i dopilnuj przejścia wszystkich self-testów z etapów
+   1-3 oraz kryteriów akceptacji etapów 4 i 5.
+2. Uruchom pełny potok raz ręcznie: python main.py
+3. Zweryfikuj oferty.json ręcznie: co najmniej 1 oferta powinna mieć
+   wypełnione "podmiot" i "url"; daty w formacie YYYY-MM-DD; polskie znaki
+   diakrytyczne wyświetlają się poprawnie w edytorze tekstu (nie jako
+   \\uXXXX ani znaki zapytania).
+4. Sprawdź run.log - wszystkie wywołania HTTP i LLM muszą być widoczne, plik
+   otwiera się poprawnie w edytorze bez błędów kodowania.
+
+================================================================================
+ETAP 7: ROZBUDOWA (planowane, NIE implementować w ramach tej specyfikacji)
+================================================================================
+- Harmonogram: GitHub Actions cron codziennie 06:00 UTC (sekrety jako
+  repository secrets: GOOGLE_API_KEY, GOOGLE_CX, LLM_API_KEY, LLM_BASE_URL,
+  LLM_MODEL, LLM_MODEL_EXTRACT; commit wyników oferty.json do repo lub
+  wysyłka jako artifact).
+- Prezentacja: prosty frontend (Next.js/React) czytający oferty.json,
+  z sortowaniem po terminie i filtrowaniem po podmiocie.
+- Skalowanie źródeł: lista BIP-ów konkretnych gmin/spółek jako dodatkowe
+  dorki site:<konkretna-domena> (konkretne domeny, nigdy wildcardy).
+- Baza danych: migracja oferty.json -> PostgreSQL (np. Supabase), storage.py
+  pozostaje jako warstwa abstrakcji.
+
+================================================================================
+CHECKLISTA KOŃCOWA (wykonawca odhacza przed zgłoszeniem ukończenia):
+[ ] wszystkie 6 modułów utworzone zgodnie ze strukturą z ETAPU 0
+[ ] --check, --dry-run, --limit, --days działają (argparse)
+[ ] wszystkie self-testy przechodzą (ETAPy 1, 2, 3)
+[ ] deduplikacja działa między uruchomieniami (ETAP 4, 5c)
+[ ] polskie znaki diakrytyczne poprawne w oferty.json, stan.json i run.log
+[ ] żadnych sekretów w kodzie i w repo (.gitignore zweryfikowany)
+[ ] run.log zawiera ślad pełnego uruchomienia
+================================================================================
