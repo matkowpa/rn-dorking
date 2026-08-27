@@ -1,189 +1,351 @@
 ================================================================================
-PLAN WDROŻENIA: SYSTEM AUTOMATYCZNEGO POZYSKIWANIA OGŁOSZEŃ DO RAD NADZORCZYCH
-(Google Dorking API + LLM Integration in VS Code)
+PLAN WDROŻENIA v2: SYSTEM AUTOMATYCZNEGO POZYSKIWANIA OGŁOSZEŃ DO RAD NADZORCZYCH
+(Google Custom Search API "Dorking" + LLM parser, wykonywany przez GLM-Flash)
 ================================================================================
 
-Opis architektury:
-System wykorzystuje Google Custom Search API (Google Dorking) do wyszukiwania 
-nowych ogłoszeń dotyczących naboru do rad nadzorczych w serwisach BIP. Następnie 
-pobrane wyniki (nagłówki i fragmenty tekstów) przekazywane są do taniego i szybkiego 
-modelu LLM (np. GLM-4-Flash, Gemini Flash, GPT-4o-mini via OpenRouter), który 
-dokonuje strukturyzacji danych i zapisuje wynik w pliku JSON gotowym dla frontendu.
+DOKUMENT DLA WYKONAWCY (agenta LLM, np. GLM-Flash):
+Ten dokument jest specyfikacją zadania do samodzielnego zrealizowania. Wykonawca
+ma utworzyć dokładnie te pliki, które wymieniono w etapach, z dokładnie taką
+logiką, jak opisano. Jeśli funkcja biblioteki okaże się niedostępna w danej
+wersji, wykonawca dostosowuje implementację, zachowując ZACHOWANIE opisane w
+kryteriach akceptacji danego etapu. Nie wolno pomijać żadnego etapu ani
+upraszczać logiki deduplikacji, retry i walidacji.
 
---------------------------------------------------------------------------------
-KROK 1: Przygotowanie środowiska w VS Code
---------------------------------------------------------------------------------
-Otwórz terminal w VS Code i wykonaj poniższe komendy, aby utworzyć wirtualne 
-środowisko Python i zainstalować wymagane pakiety.
+CEL BIZNESOWY:
+Codzienne wykrywanie świeżych ogłoszeń o naborze kandydatów na członków rad
+nadzorczych, publikowanych w polskich systemach BIP i innych źródłach
+publicznych, strukturyzacja ich przez LLM i prezentacja w formacie JSON
+dla frontendu.
 
-Komendy terminala:
-  python -m venv venv
-  # Windows:
-  venv\Scripts\activate
-  # Linux / macOS:
-  source venv/bin/activate
+ARCHITEKTURA (potok 3-etapowy na uruchomienie):
+  ETAP A: Wyszukiwanie  - Google Custom Search JSON API + zestaw dorków
+          (BEZ wildcardów w operatorze site:), dateRestrict, paginacja.
+  ETAP B: Filtrowanie LLM (tani model flash) - klasyfikacja snippetu:
+          czy_to_nabor true/false. Dalej przechodzą tylko trafienia.
+  ETAP C: Ekstrakcja LLM - pobranie pełnej treści ogłoszenia (HTML albo PDF)
+          i wyciągnięcie pól strukturalnych (podmiot, termin, miejscowość).
+  WYJŚCIE: oferty.json (dane dla frontendu) + stan.json (pamięć deduplikacji).
 
-  pip install requests python-dotenv openai pydantic
+ZASADY OGÓLNE OBOWIĄZUJĄCE WE WSZYSTKICH ETAPACH:
+  1. Python 3.11+. Wszystkie sekrety i konfiguracja wyłącznie z .env,
+     zero kluczy i nazw modeli zaszytych w kodzie.
+  2. Każde wywołanie HTTP (Google API, pobieranie stron/PDF) z timeout=30
+     oraz obsługą kodów 4xx/5xx z wpisem w logu zawierającym status i URL.
+  3. Logowanie przez moduł logging: INFO na konsolę, DEBUG do pliku run.log.
+  4. Komentarze w kodzie po polsku, nazwy identyfikatorów po angielsku.
+  5. Daty na wyjściu WYŁĄCZNIE w formacie YYYY-MM-DD albo pusty string "".
+  6. LLM zawsze wywoływany z temperature=0.1 i response_format={"type":
+     "json_object"}. Jeśli API zwróci błąd o braku wsparcia response_format:
+     jedna próba ponowna BEZ tego pola, z dopiskiem w komunikacie użytkownika:
+     "Zwróć WYŁĄCZNIE surowy JSON bez bloków markdown".
+     Przed json.loads: usuń ewentualne znaczniki ```json i ``` oraz zbierz
+     treść między pierwszym { a ostatnim } (strip białych znaków).
+  7. Nazwa modelu i base_url WYŁĄCZNIE z .env (LLM_MODEL, LLM_BASE_URL).
+     Jeśli zmienne nie są ustawione przy starcie - program kończy się błędem
+     z czytelnym komunikatem, zanim wykona jakiekolwiek wywołanie sieciowe.
 
-Plik: requirements.txt
-----------------------
-requests
-python-dotenv
-openai
-pydantic
+================================================================================
+ETAP 0: ŚRODOWISKO I KONFIGURACJA
+================================================================================
+CEL ETAPU: działające venv, zależności, szkielet projektu, plik .env.
 
+Struktura katalogów do utworzenia:
+  rn-dorking/
+    main.py              # orkiestrator potoku
+    llm_parser.py        # klient LLM: filtrowanie (ETAP B) i ekstrakcja (ETAP C)
+    google_search.py     # klient Google CSE (ETAP A)
+    content_fetcher.py   # pobieranie treści HTML/PDF
+    storage.py           # deduplikacja, stan, zapis JSON
+    config.py            # wczytanie i walidacja .env
+    requirements.txt
+    .env.example
+    .gitignore           # musi zawierać: .env, venv/, run.log, __pycache__/
 
---------------------------------------------------------------------------------
-KROK 2: Konfiguracja zmiennych środowiskowych (.env)
---------------------------------------------------------------------------------
-Utwórz plik `.env` w głównym katalogu projektu:
+1. Komendy (wykonaj w terminalu):
+     python -m venv venv
+     venv\Scripts\activate
+     pip install requests python-dotenv openai pydantic pdfplumber
 
-GOOGLE_API_KEY="twój_klucz_google_cloud"
-GOOGLE_CX="twój_search_engine_id"
+2. requirements.txt - dokładnie te pakiety (bez wersji lub z pinem >=):
+     requests
+     python-dotenv
+     openai
+     pydantic
+     pdfplumber
 
-# Konfiguracja LLM (OpenAI-compatible API, np. OpenRouter / GLM / Groq)
-LLM_API_KEY="twój_klucz_api_llm"
-LLM_BASE_URL="https://openrouter.ai/api/v1"
-LLM_MODEL="glm-4-flash"
+3. .env.example (szablon skopiowany przez wykonawcę do .env i uzupełniony):
+     GOOGLE_API_KEY=klucz_google_cloud
+     GOOGLE_CX=identyfikator_search_engine
+     LLM_API_KEY=klucz_api_llm
+     LLM_BASE_URL=https://openrouter.ai/api/v1
+     LLM_MODEL=glm-4.5-flash
+     LLM_MODEL_EXTRACT=glm-4.5-flash
+     SEARCH_DAYS_BACK=5
+     RESULTS_PER_DORK=20
 
+UWAGA WYKONAWCY: nazwa modelu w przykładzie (glm-4.5-flash) jest PRZYKŁADOWA.
+Wykonawca przed pierwszym uruchomieniem sprawdza w dokumentacji dostawcy
+(OpenRouter/Zhipu) aktualną, poprawną nazwę darmowego modelu z rodziny GLM
+i wpisuje ją do .env. Kod NIE MOŻE zawierać tej nazwy na sztywno.
 
---------------------------------------------------------------------------------
-KROK 3: Moduł parsera LLM (parser.py)
---------------------------------------------------------------------------------
-Utwórz plik `parser.py`, który odpowiada za komunikację z modelem LLM i konwersję
-nieustrukturyzowanego tekstu na czytelny format JSON.
+4. config.py - moduł, który:
+   - ładuje .env przez python-dotenv,
+   - waliduje obecność GOOGLE_API_KEY, GOOGLE_CX, LLM_API_KEY, LLM_BASE_URL,
+     LLM_MODEL, LLM_MODEL_EXTRACT (brak któregokolwiek = rzucenie ValueError
+     z listą brakujących zmiennych),
+   - parsuje SEARCH_DAYS_BACK (int, domyślnie 5) i RESULTS_PER_DORK
+     (int, domyślnie 20, dopuszczalne wartości 10/20/30/40 - wielokrotność
+     strony CSE wynoszącej 10),
+   - eksportuje je jako stałe modułu.
 
-Kod `parser.py`:
-----------------
-import os
-import json
-from openai import OpenAI
-from dotenv import load_dotenv
+KRYTERIA AKCEPTACJI ETAPU 0:
+  a) python main.py --check kończy się kodem 0, gdy .env kompletny, i kodem 1
+     z listą brakujących zmiennych, gdy niekompletny (flaga --check wymaga
+     obsługi w main.py przez argparse).
+  b) .gitignore istnieje i nie pozwala trafić .env do repozytorium.
 
-load_dotenv()
+================================================================================
+ETAP 1: KLIENT LLM (plik llm_parser.py)
+================================================================================
+CEL ETAPU: jeden moduł z DWOMA funkcjami o różnych promptach i różnych modelach:
+  filter_is_announcement(title, snippet, url) -> bool        [ETAP B potoku]
+  extract_fields(full_text, url) -> dict                     [ETAP C potoku]
 
-client = OpenAI(
-    api_key=os.getenv("LLM_API_KEY"),
-    base_url=os.getenv("LLM_BASE_URL")
-)
+Wspólne elementy:
+  - klient OpenAI (SDK openai) skonfigurowany z LLM_API_KEY i LLM_BASE_URL,
+  - funkcja prywatna _call_llm(model, system_prompt, user_content) -> str,
+    która:
+      * wywołuje chat.completions.create z temperature=0.1 i
+        response_format={"type": "json_object"},
+      * przy błędzie o braku wsparcia response_format wykonuje JEDEN retry
+        bez tego pola, z dopiskiem o surowym JSON w komunikacie użytkownika,
+      * przy błędzie 429 (rate limit) czeka 5 sekund i ponawia do 3 razy
+        z rosnącym czasem oczekiwania (3s, 6s, 12s),
+      * po udanej odpowiedzi czyści ją z bloków ```json``` i wydobywa treść
+        między pierwszym "{" a ostatnim "}",
+      * przy błędzie JSONDecodeError rzuca wyjątek z pełną surową odpowiedzią
+        w komunikacie (do debugowania).
 
-SYSTEM_PROMPT = """
-Jesteś precyzyjnym analitykiem danych. Twoim zadaniem jest przeanalizować nagłówek i fragment (snippet) ogłoszenia i wyciągnąć strukturyzowane informacje o naborze do Rady Nadzorczej.
+FUNKCJA 1 - filtrowanie (ETAP B):
+  Wejście: title, snippet, url.
+  System prompt (dosłownie, po polsku):
+    "Jesteś filtrem ogłoszeń. Na podstawie TYLKO podanego tytułu i fragmentu
+     wyniku wyszukiwania zdecyduj, czy wynik dotyczy otwartego naboru
+     kandydatów na członka rady nadzorczej (spółki, funduszy, instytucji
+     publicznych). Nie dotyczą naboru: archiwalne ogłoszenia, protokoły
+     z posiedzeń, uchwały o powołaniu już wybranych osób, aktualności,
+     strony główne BIP, wzory dokumentów.
+     Zwróć WYŁĄCZNIE obiekt JSON: {\"czy_to_nabor\": true lub false,
+     \"uzasadnienie\": \"maks. 15 słów\"}"
+  Logika wywołania: model LLM_MODEL. Przy wyniku false funkcja zwraca False.
+  Przy błędzie parsowania lub wyjątku sieciowym: loguj WARNING i zwróć False
+  (bezpieczny fallback - wątpliwe wyniki są odrzucane, ale widoczne w logu).
 
-Zwróć WYŁĄCZNIE poprawny obiekt JSON o strukturze:
-{
-  "czy_to_nabor": true/false,
-  "nazwa_spolki_lub_urzedu": "nazwa lub null",
-  "miejscowosc": "nazwa miasta lub null",
-  "termin_skladania_ofert": "YYYY-MM-DD lub nieznany",
-  "podsumowanie": "krótkie podsumowanie 1-2 zdania"
-}
-"""
-
-def parse_with_llm(title: str, snippet: str, url: str) -> dict:
-    user_content = f"Tytuł: {title}\nFragment: {snippet}\nURL: {url}"
-    
-    try:
-        response = client.chat.completions.create(
-            model=os.getenv("LLM_MODEL", "glm-4-flash"),
-            messages=[
-                {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user", "content": user_content}
-            ],
-            response_format={"type": "json_object"},
-            temperature=0.1
-        )
-        data = json.loads(response.choices[0].message.content)
-        data["url"] = url
-        return data
-    except Exception as e:
-        print(f"Błąd analizy LLM: {e}")
-        return {"czy_to_nabor": False, "url": url}
-
-
---------------------------------------------------------------------------------
-KROK 4: Główny orkiestrator (main.py)
---------------------------------------------------------------------------------
-Utwórz plik `main.py`, który pobiera dane z Google API, przetwarza je przez LLM
-i zapisuje unikalne oferty w pliku `oferty.json`.
-
-Kod `main.py`:
---------------
-import os
-import json
-import requests
-from dotenv import load_dotenv
-from parser import parse_with_llm
-
-load_dotenv()
-
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-GOOGLE_CX = os.getenv("GOOGLE_CX")
-
-DORKS = [
-    'site:bip.*.pl intitle:"nabór" "rada nadzorcza"',
-    'site:*.bip.gov.pl "postępowanie kwalifikacyjne" "członka rady nadzorczej"'
-]
-
-def search_google(dork: str, days_back: int = 3):
-    url = "https://www.googleapis.com/customsearch/v1"
-    params = {
-        'key': GOOGLE_API_KEY,
-        'cx': GOOGLE_CX,
-        'q': dork,
-        'dateRestrict': f'd{days_back}',
-        'num': 10
+FUNKCJA 2 - ekstrakcja (ETAP C):
+  Wejście: pełny tekst ogłoszenia (max pierwsze 12000 znaków - obetnij!),
+  url.
+  System prompt wymusza obiekt JSON o polach:
+    {
+      "podmiot": "pełna nazwa spółki/urzędu lub \"\"",
+      "miejscowosc": "nazwa miejscowości lub \"\"",
+      "termin_skladania_ofert": "YYYY-MM-DD lub \"\"",
+      "stanowisko": "członek rady nadzorczej / przewodniczący rady itp.",
+      "wymagania": "skrót wymagań, maks. 300 znaków, lub \"\"",
+      "podsumowanie": "1-2 zdania po polsku"
     }
-    res = requests.get(url, params=params)
-    if res.status_code == 200:
-        return res.json().get('items', [])
-    return []
+  W promptcie dodaj 3 przykłady normalizacji dat, np.:
+    "do 15 września 2026 r." -> "2026-09-15"
+    "15.09.2026"             -> "2026-09-15"
+    "15 września 2026, godz. 12:00" -> "2026-09-15"
+  Jeśli w tekście nie ma terminu - zwróć "" (NIE wymyślaj daty).
+  Wynik zwaliduj modelem pydantic (klasa Offer z polami powyższymi, wszystkie
+  typu str, domyślnie ""). Po walidacji funkcja DODAJE klucze "url" i
+  "znaleziono_dnia" (data dzisiejsza YYYY-MM-DD) i zwraca dict.
+  Model użyty: LLM_MODEL_EXTRACT (może być inny niż do filtrowania).
+  Przy wyjątku: loguj ERROR z URL i zwróć None.
 
-def main():
-    zapisane_ogloszenia = []
-    
-    for dork in DORKS:
-        print(f"\n[+] Uruchamiam dork: {dork}")
-        items = search_google(dork, days_back=5)
-        
-        for item in items:
-            title = item.get('title', '')
-            snippet = item.get('snippet', '')
-            link = item.get('link', '')
-            
-            print(f" -> Analizuję: {title[:50]}...")
-            parsed = parse_with_llm(title, snippet, link)
-            
-            if parsed.get("czy_to_nabor"):
-                zapisane_ogloszenia.append(parsed)
-                print(f"    [ZNALEZIONO] {parsed.get('nazwa_spolki_lub_urzedu')} - do: {parsed.get('termin_skladania_ofert')}")
+KRYTERIA AKCEPTACJI ETAPU 1:
+  a) python llm_parser.py --self-test (blok pod if __name__ == "__main__")
+     wykonuje test obu funkcji na dwóch wbudowanych przykładach: (1) tytuł
+     "Ogłoszenie o naborze kandydatów na członka rady nadzorczej SPV" ->
+     filter=True, (2) "Protokół z LVII posiedzenia Rady" -> filter=False.
+     Wyniki wypisane na konsolę.
+  b) ekstrakcja na przykładowym tekście z datą "15.09.2026" zwraca
+     "2026-09-15".
+================================================================================
+ETAP 2: WYSZUKIWANIE GOOGLE CSE (plik google_search.py)
+================================================================================
+CEL ETAPU: moduł zwracający listę surowych wyników (title, snippet, link,
+displayLink) dla zestawu dorków, z paginacją i jawną obsługą limitów.
 
-    with open("oferty.json", "w", encoding="utf-8") as f:
-        json.dump(zapisane_ogloszenia, f, ensure_ascii=False, indent=2)
-        
-    print(f"\n[OK] Zakończono! Zapisano {len(zapisane_ogloszenia)} ofert do oferty.json")
+WAŻNE OGRANICZENIE GOOGLE (wykonawca musi to znać):
+  Operator site: NIE obsługuje wildcardów. Zapisy typu site:bip.*.pl są
+  NIEPOPRAWNE i muszą być zastąpione dorkami z inurl: lub konkretnymi domenami.
+  Limity darmowe: 100 zapytań/dzień (zbyt wiele dorków x strony = wyczerpanie
+  limitu - dlatego liczba dorków jest stała i ograniczona).
 
-if __name__ == "__main__":
-    main()
+ZESTAW DORKÓW (stała DORKS na początku pliku - dokładnie te 5 zapytań):
+  1. 'inurl:bip "ogłoszenie o naborze" "rady nadzorczej"'
+  2. 'inurl:bip "nabór kandydatów" "członek rady nadzorczej" filetype:pdf'
+  3. 'site:gov.pl "postępowanie kwalifikacyjne" "członka rady nadzorczej"'
+  4. '"nabór kandydatów" "rada nadzorcza" "do dnia" filetype:pdf'
+  5. '"zaprasza do składania ofert" "członek rady nadzorczej" -gdynia'
 
+Funkcja search_google(dork: str, days_back: int, max_results: int) -> list[dict]:
+  - endpoint: https://www.googleapis.com/customsearch/v1
+  - parametry: key, cx, q=dork, dateRestrict=f"d{days_back}", num=10,
+    start=1, 11, 21, ... aż do max_results (strony po 10),
+  - między zapytaniami na kolejne strony: sleep(1) sekunda,
+  - obsługa błędów:
+      * 200 -> zwróć listę słowników {"title", "snippet", "link", "dork"},
+      * 403 lub 429 -> rzuć wyjątek QuotaExceededError z treścią pola
+        "error.message" z odpowiedzi (chcemy odróżnić brak wyników od braku
+        limitu!),
+      * inny status -> loguj ERROR i przerwij iterację po stronach tego dorka.
+  - gdy "items" nie występuje w odpowiedzi (brak wyników) -> zwróć pustą listę
+    dla dalszych stron i zakończ paginację.
 
---------------------------------------------------------------------------------
-KROK 5: Uruchomienie i weryfikacja
---------------------------------------------------------------------------------
-1. Uruchom skrypt w terminalu:
-   python main.py
+KRYTERIA AKCEPTACJI ETAPU 2:
+  a) python google_search.py --self-test "nabór rada nadzorcza" wykonuje
+     JEDNO zapytanie (1 strona) i wypisuje liczbę wyników + pierwsze 3 tytuły.
+  b) przekroczenie limitu zwraca wyjątek z czytelnym komunikatem
+     "Limit Google CSE wyczerpany lub brak uprawnień API" zamiast cichego
+     pustego wyniku.
+================================================================================
+ETAP 3: POBIERANIE TREŚCI (plik content_fetcher.py)
+================================================================================
+CEL ETAPU: dla wyników sklasyfikowanych jako "nabór" pobrać pełną treść,
+którą karmimy ekstrakcję LLM. Snippet (150-200 znaków) NIE zawiera terminów
+ani pełnych nazw podmiotów - dlatego ten etap jest obowiązkowy.
 
-2. Sprawdź wygenerowany plik `oferty.json`. Powinien zawierać tablicę obiektów
-   z ustrukturyzowanymi danymi o naborach.
+Funkcja fetch_content(url: str) -> str:
+  1. requests.get(url, timeout=30, headers={"User-Agent": "Mozilla/5.0
+     (Windows NT 10.0; Win64; x64) rn-dorking/2.0"}).
+  2. Jeśli URL kończy się .pdf LUB Content-Type zawiera application/pdf:
+     - pobierz zawartość do pamięci (BytesIO),
+     - wyekstrahuj tekst pdfplumber.open(...) - połącz tekst wszystkich stron,
+     - limit: parsuj maksymalnie 20 pierwszych stron PDF.
+  3. W przeciwnym razie (HTML):
+     - spróbuj encoding z nagłówka, fallback na apparent_encoding,
+     - wytnij treść biblioteką standardową: usuń tagi script/style,
+       potem wszystkie tagi regexem r"<[^>]+>", zdekoduj encje HTML
+       (moduł html, funkcja unescape), zredukuj wielokrotne białe znaki
+       do pojedynczych spacji i podziel na akapity po \n\n.
+  4. Zwróć tekst obcięty do 12000 znaków.
+  5. Błędy sieciowe, 404, 403: loguj WARNING i zwróć "" (pusty string) -
+     wówczas orkiestrator użyje snippetu jako tekstu zapasowego.
 
-3. Wynikowy plik `oferty.json` może być bezpośrednio importowany przez aplikację
-   frontendową (np. Next.js, React, Vue) lub ładowany do bazy danych PostgreSQL.
+KRYTERIA AKCEPTACJI ETAPU 3:
+  a) python content_fetcher.py --self-test <url> wypisuje pierwsze 500 znaków
+     pobranego tekstu (wykonawca testuje na dowolnym ogłoszeniu BIP).
+  b) pobranie nieistniejącego URL-a nie powoduje tracebacku - jest WARNING
+     i pusty string.
+================================================================================
+ETAP 4: DEDUPLIKACJA I TRWAŁOŚĆ (plik storage.py)
+================================================================================
+CEL ETAPU: wielokrotne uruchomienia (codzienny cron) NIE mogą duplikować
+ofert ani gubić historii. oferty.json jest ZBIERANY (merge), nie nadpisywany.
 
+Klasa Storage:
+  __init__(offers_path="oferty.json", state_path="stan.json")
+  load_state() -> set
+      - jeśli stan.json istnieje, wczytaj słownik {"seen_urls": [sha1...]};
+      - jeśli nie istnieje, a oferty.json istnieje (migracja ze starej wersji),
+        zbuduj stan z URL-i istniejących ofert; w przeciwnym razie pusty set.
+  is_new(url: str) -> bool
+      - klucz to sha1 z normalizowanego URL-a: lowercase host, usunięte
+        parametry utm_*, usunięty fragment (#...), strip końcowego "/".
+  add_offer(offer: dict)
+      - dopisuje ofertę do listy w pamięci i URL do seen_urls,
+  save()
+      - ATOMOWO zapisuje oferty.json (zapis do pliku tymczasowego, potem
+        os.replace na docelowy - chroni przed uszkodzeniem przy przerwaniu),
+      - zapisuje stan.json,
+      - sortuje oferty malejąco po termin_skladania_ofert ("" na końcu).
+  merge_offers(new_offers: list[dict]) -> int
+      - dla każdej oferty: jeśli is_new(url) -> add_offer; zwraca liczbę
+        DODANYCH (do statystyki końcowej).
 
---------------------------------------------------------------------------------
-KROK 6: Kolejne kroki i rozbudowa
---------------------------------------------------------------------------------
-- Obsługa plików PDF: Dodanie pypdf / pdfplumber do pobierania treści załączników PDF.
-- Baza danych: Zamiana pliku oferty.json na bazę PostgreSQL (np. Supabase).
-- Automatyzacja: Harmonogram Cron / GitHub Actions do codziennego uruchamiania skryptu.
+KRYTERIA AKCEPTACJI ETAPU 4:
+  a) dwukrotne uruchomienie merge_offers z tą samą ofertą dodaje ją tylko raz,
+     a merge_offers zwraca 1 za pierwszym razem i 0 za drugim.
+  b) oferty.json po save jest poprawnym JSON-em czytelnym json.load,
+     posortowanym zgodnie z opisem.
+================================================================================
+ETAP 5: ORKIESTRATOR (plik main.py)
+================================================================================
+CEL ETAPU: spięcie potoku A->B->C z limitem bezpieczeństwa, statystykami
+i argumentami CLI. To jedyny plik wykonywalny "na co dzień".
+
+Argumenty (argparse):
+  --check          tylko walidacja .env (ETAP 0) i wyjście
+  --dry-run        ETAP A + B, BEZ pobierania treści i ekstrakcji LLM;
+                   wypisuje, co zostałoby przeanalizowane (do testu dorków)
+  --limit N        maksymalna liczba wyników poddawanych ETAPOWI B na run
+                   (domyślnie 30 - kontrola kosztów zapytań LLM i Google)
+  --days N         nadpisuje SEARCH_DAYS_BACK na to uruchomienie
+
+Przebieg main():
+  1. Skonfiguruj logging (INFO na konsolę + DEBUG do run.log).
+  2. Wczytaj config (walidacja .env). Zainicjalizuj Storage.
+  3. Dla każdego dorka z DORKS: search_google(dork, days_back, max_results).
+     Zbierz łączną listę wyników. WAŻNE: wyniki z różnych dorków mogą się
+     dublować - to naprawi deduplikacja w ETAPIE B (is_new po URL).
+  4. ETAP B - dla każdego wyniku:
+       a) pomiń, jeśli is_new(link) == False (już widzieliśmy),
+       b) filter_is_announcement(title, snippet, link),
+       c) przy True: fetch_content(link) -> pełny tekst (lub snippet, gdy ""),
+       d) extract_fields(tekst, link) -> oferta lub None,
+       e) przy ofercie: storage.add_offer(); log INFO z podmiotem i terminem.
+  5. Po wszystkich dorkach: storage.save().
+  6. Statystyki końcowe (log INFO):
+       - liczba zapytań Google wykonanych,
+       - liczba wyników surowych, po filtrowaniu True, po deduplikacji,
+       - liczba nowych ofert dopisanych, liczba błędów ekstrakcji.
+  7. Wyjście kod 0. Każdy nieprzechwycony wyjątek -> kod 1 + log ERROR.
+
+Kolejność w potoku ma znaczenie kosztowe: NAJPIERW tani filtr LLM na
+snippecie (kilkaset tokenów), DOPIERO POTEM pobieranie strony i droższa
+ekstrakcja. Nigdy odwrotnie.
+
+KRYTERIA AKCEPTACJI ETAPU 5:
+  a) python main.py --check działa zgodnie z ETAPem 0a.
+  b) python main.py --dry-run --limit 5 wykonuje potok A+B, nie tworzy
+     plików ofert, wypisuje tabelę: tytuł | czy_to_nabor | uzasadnienie.
+  c) pełne uruchomienie tworzy/aktualizuje oferty.json i stan.json;
+     ponowne pełne uruchomienie nie dopisuje duplikatów (statystyka
+     "po deduplikacji" pokazuje te same oferty).
+
+================================================================================
+ETAP 6: TESTY I URUCHOMIENIE KONTROLNE
+================================================================================
+1. Uruchom kolejno i dopilnuj przejścia wszystkich self-testów z etapów
+   1-3 oraz kryteriów akceptacji etapów 4 i 5.
+2. Uruchom pełny potok raz ręcznie: python main.py
+3. Zweryfikuj oferty.json ręcznie: co najmniej 1 oferta powinna mieć
+   wypełnione "podmiot" i "url"; daty w formacie YYYY-MM-DD.
+4. Sprawdź run.log - wszystkie wywołania HTTP i LLM muszą być widoczne.
+
+================================================================================
+ETAP 7: ROZBUDOWA (planowane, NIE implementować w ramach tej specyfikacji)
+================================================================================
+- Harmonogram: GitHub Actions cron codziennie 06:00 UTC (sekrety jako
+  repository secrets: GOOGLE_API_KEY, GOOGLE_CX, LLM_API_KEY, LLM_BASE_URL,
+  LLM_MODEL, LLM_MODEL_EXTRACT; commit wyników oferty.json do repo lub
+  wysyłka jako artifact).
+- Prezentacja: prosty frontend (Next.js/React) czytający oferty.json,
+  z sortowaniem po terminie i filtrowaniem po podmiocie.
+- Skalowanie źródeł: lista BIP-ów konkretnych gmin/spółek jako dodatkowe
+  dorki site:<konkretna-domena> (konkretne domeny, nigdy wildcardy).
+- Baza danych: migracja oferty.json -> PostgreSQL (np. Supabase), storage.py
+  pozostaje jako warstwa abstrakcji.
+
+================================================================================
+CHECKLISTA KOŃCOWA (wykonawca odhacza przed zgłoszeniem ukończenia):
+[ ] wszystkie 6 modułów utworzone zgodnie ze strukturą z ETAPU 0
+[ ] --check, --dry-run, --limit działają (argparse)
+[ ] wszystkie self-testy przechodzą (ETAPy 1, 2, 3)
+[ ] deduplikacja działa między uruchomieniami (ETAP 4, 5c)
+[ ] żadnych sekretów w kodzie i w repo (.gitignore zweryfikowany)
+[ ] run.log zawiera ślad pełnego uruchomienia
 ================================================================================
