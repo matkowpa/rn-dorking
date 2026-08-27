@@ -1,0 +1,189 @@
+================================================================================
+PLAN WDROŻENIA: SYSTEM AUTOMATYCZNEGO POZYSKIWANIA OGŁOSZEŃ DO RAD NADZORCZYCH
+(Google Dorking API + LLM Integration in VS Code)
+================================================================================
+
+Opis architektury:
+System wykorzystuje Google Custom Search API (Google Dorking) do wyszukiwania 
+nowych ogłoszeń dotyczących naboru do rad nadzorczych w serwisach BIP. Następnie 
+pobrane wyniki (nagłówki i fragmenty tekstów) przekazywane są do taniego i szybkiego 
+modelu LLM (np. GLM-4-Flash, Gemini Flash, GPT-4o-mini via OpenRouter), który 
+dokonuje strukturyzacji danych i zapisuje wynik w pliku JSON gotowym dla frontendu.
+
+--------------------------------------------------------------------------------
+KROK 1: Przygotowanie środowiska w VS Code
+--------------------------------------------------------------------------------
+Otwórz terminal w VS Code i wykonaj poniższe komendy, aby utworzyć wirtualne 
+środowisko Python i zainstalować wymagane pakiety.
+
+Komendy terminala:
+  python -m venv venv
+  # Windows:
+  venv\Scripts\activate
+  # Linux / macOS:
+  source venv/bin/activate
+
+  pip install requests python-dotenv openai pydantic
+
+Plik: requirements.txt
+----------------------
+requests
+python-dotenv
+openai
+pydantic
+
+
+--------------------------------------------------------------------------------
+KROK 2: Konfiguracja zmiennych środowiskowych (.env)
+--------------------------------------------------------------------------------
+Utwórz plik `.env` w głównym katalogu projektu:
+
+GOOGLE_API_KEY="twój_klucz_google_cloud"
+GOOGLE_CX="twój_search_engine_id"
+
+# Konfiguracja LLM (OpenAI-compatible API, np. OpenRouter / GLM / Groq)
+LLM_API_KEY="twój_klucz_api_llm"
+LLM_BASE_URL="https://openrouter.ai/api/v1"
+LLM_MODEL="glm-4-flash"
+
+
+--------------------------------------------------------------------------------
+KROK 3: Moduł parsera LLM (parser.py)
+--------------------------------------------------------------------------------
+Utwórz plik `parser.py`, który odpowiada za komunikację z modelem LLM i konwersję
+nieustrukturyzowanego tekstu na czytelny format JSON.
+
+Kod `parser.py`:
+----------------
+import os
+import json
+from openai import OpenAI
+from dotenv import load_dotenv
+
+load_dotenv()
+
+client = OpenAI(
+    api_key=os.getenv("LLM_API_KEY"),
+    base_url=os.getenv("LLM_BASE_URL")
+)
+
+SYSTEM_PROMPT = """
+Jesteś precyzyjnym analitykiem danych. Twoim zadaniem jest przeanalizować nagłówek i fragment (snippet) ogłoszenia i wyciągnąć strukturyzowane informacje o naborze do Rady Nadzorczej.
+
+Zwróć WYŁĄCZNIE poprawny obiekt JSON o strukturze:
+{
+  "czy_to_nabor": true/false,
+  "nazwa_spolki_lub_urzedu": "nazwa lub null",
+  "miejscowosc": "nazwa miasta lub null",
+  "termin_skladania_ofert": "YYYY-MM-DD lub nieznany",
+  "podsumowanie": "krótkie podsumowanie 1-2 zdania"
+}
+"""
+
+def parse_with_llm(title: str, snippet: str, url: str) -> dict:
+    user_content = f"Tytuł: {title}\nFragment: {snippet}\nURL: {url}"
+    
+    try:
+        response = client.chat.completions.create(
+            model=os.getenv("LLM_MODEL", "glm-4-flash"),
+            messages=[
+                {"role": "system", "content": SYSTEM_PROMPT},
+                {"role": "user", "content": user_content}
+            ],
+            response_format={"type": "json_object"},
+            temperature=0.1
+        )
+        data = json.loads(response.choices[0].message.content)
+        data["url"] = url
+        return data
+    except Exception as e:
+        print(f"Błąd analizy LLM: {e}")
+        return {"czy_to_nabor": False, "url": url}
+
+
+--------------------------------------------------------------------------------
+KROK 4: Główny orkiestrator (main.py)
+--------------------------------------------------------------------------------
+Utwórz plik `main.py`, który pobiera dane z Google API, przetwarza je przez LLM
+i zapisuje unikalne oferty w pliku `oferty.json`.
+
+Kod `main.py`:
+--------------
+import os
+import json
+import requests
+from dotenv import load_dotenv
+from parser import parse_with_llm
+
+load_dotenv()
+
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+GOOGLE_CX = os.getenv("GOOGLE_CX")
+
+DORKS = [
+    'site:bip.*.pl intitle:"nabór" "rada nadzorcza"',
+    'site:*.bip.gov.pl "postępowanie kwalifikacyjne" "członka rady nadzorczej"'
+]
+
+def search_google(dork: str, days_back: int = 3):
+    url = "https://www.googleapis.com/customsearch/v1"
+    params = {
+        'key': GOOGLE_API_KEY,
+        'cx': GOOGLE_CX,
+        'q': dork,
+        'dateRestrict': f'd{days_back}',
+        'num': 10
+    }
+    res = requests.get(url, params=params)
+    if res.status_code == 200:
+        return res.json().get('items', [])
+    return []
+
+def main():
+    zapisane_ogloszenia = []
+    
+    for dork in DORKS:
+        print(f"\n[+] Uruchamiam dork: {dork}")
+        items = search_google(dork, days_back=5)
+        
+        for item in items:
+            title = item.get('title', '')
+            snippet = item.get('snippet', '')
+            link = item.get('link', '')
+            
+            print(f" -> Analizuję: {title[:50]}...")
+            parsed = parse_with_llm(title, snippet, link)
+            
+            if parsed.get("czy_to_nabor"):
+                zapisane_ogloszenia.append(parsed)
+                print(f"    [ZNALEZIONO] {parsed.get('nazwa_spolki_lub_urzedu')} - do: {parsed.get('termin_skladania_ofert')}")
+
+    with open("oferty.json", "w", encoding="utf-8") as f:
+        json.dump(zapisane_ogloszenia, f, ensure_ascii=False, indent=2)
+        
+    print(f"\n[OK] Zakończono! Zapisano {len(zapisane_ogloszenia)} ofert do oferty.json")
+
+if __name__ == "__main__":
+    main()
+
+
+--------------------------------------------------------------------------------
+KROK 5: Uruchomienie i weryfikacja
+--------------------------------------------------------------------------------
+1. Uruchom skrypt w terminalu:
+   python main.py
+
+2. Sprawdź wygenerowany plik `oferty.json`. Powinien zawierać tablicę obiektów
+   z ustrukturyzowanymi danymi o naborach.
+
+3. Wynikowy plik `oferty.json` może być bezpośrednio importowany przez aplikację
+   frontendową (np. Next.js, React, Vue) lub ładowany do bazy danych PostgreSQL.
+
+
+--------------------------------------------------------------------------------
+KROK 6: Kolejne kroki i rozbudowa
+--------------------------------------------------------------------------------
+- Obsługa plików PDF: Dodanie pypdf / pdfplumber do pobierania treści załączników PDF.
+- Baza danych: Zamiana pliku oferty.json na bazę PostgreSQL (np. Supabase).
+- Automatyzacja: Harmonogram Cron / GitHub Actions do codziennego uruchamiania skryptu.
+================================================================================
