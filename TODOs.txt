@@ -1,25 +1,2 @@
 Chce zbudować narzędzie którego celem będzied wyszukiwanie i prezentacji wynikow dotyczących szukania ogloszeń dotyczących naboru na człónków rad ndzorczych i do tego celku chce wykorzystać google dorking. Prezglądnij plik 'plan_wdrozenia_google_dorking_llm.txt' i zweryfikuj czy jest to dobry schemat działania, zakładając że będzie wykonywany przez glm-5.3 flash
 
-
-google api key
--> stored in .env as GOOGLE_API_KEY
-
-
-<script async src="https://cse.google.com/cse.js?cx=638fe4542346146a3">
-</script>
-<div class="gcse-search"></div>
-
-638fe4542346146a3
-638fe4542346146a3
-
-open router api key
--> stored in .env as OPENROUTER_API_KEY
-
-https://www.googleapis.com/customsearch/v1?key=$env:GOOGLE_API_KEY&cx=638fe4542346146a3&q=test
-
-
-https://www.googleapis.com/customsearch/v1?key=$env:GOOGLE_API_KEY&cx=638fe4542346146a3&q=test
-
-
-https://www.googleapis.com/customsearch/v1?key=$env:GOOGLE_API_KEY&cx=638fe4542346146a3&q=nabór
-
