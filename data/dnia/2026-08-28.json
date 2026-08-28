@@ -3,9 +3,9 @@
   "stats": {
     "search_requests": 6,
     "raw_results": 27,
-    "after_dedup": 27,
-    "after_filter": 20,
-    "offers_added": 17,
+    "after_dedup": 11,
+    "after_filter": 5,
+    "offers_added": 1,
     "extract_errors": 0
   },
   "offers": [
@@ -177,6 +177,16 @@
       "wymagania": "",
       "podsumowanie": "Ogłoszenie dotyczy konkursu na członka Rady Nadzorczej PKE. Tekst nie zawiera szczegółowych informacji o wymaganiach ani terminie składania ofert.",
       "url": "https://www.cire.pl/artykuly/serwis-informacyjny-cire-24/49102-konkurs-na-czlonka-rady-nadzorczej-pke",
+      "znaleziono_dnia": "2026-08-28"
+    },
+    {
+      "podmiot": "",
+      "miejscowosc": "",
+      "termin_skladania_ofert": "",
+      "stanowisko": "",
+      "wymagania": "",
+      "podsumowanie": "Treść ogłoszenia nie zawiera żadnych danych – tylko nagłówek strony Biuletynu Informacji Publicznej. Nie można wyciągnąć informacji o naborze.",
+      "url": "https://bip.grodzisk.pl/m,525,nabor-kandydatow-na-czlonkow-rady-nadzorczej-komunalnej-wodno-kanalizacyjnej-spolki-z-oo.html",
       "znaleziono_dnia": "2026-08-28"
     }
   ]
