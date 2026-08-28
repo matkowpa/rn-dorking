@@ -21,6 +21,10 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 import requests
+from dotenv import load_dotenv
+
+# Wczytaj .env (notify uruchamiany jest samodzielnie - nie przez config)
+load_dotenv()
 
 logger = logging.getLogger(__name__)
 
