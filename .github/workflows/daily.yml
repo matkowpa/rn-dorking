@@ -35,6 +35,17 @@ jobs:
       - name: Build docs data
         run: python build_docs.py
 
+      - name: Notify (Telegram + e-mail)
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+          SMTP_HOST:          ${{ secrets.SMTP_HOST }}
+          SMTP_PORT:          ${{ secrets.SMTP_PORT }}
+          SMTP_USER:          ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD:      ${{ secrets.SMTP_PASSWORD }}
+          NOTIFY_EMAIL_TO:    ${{ secrets.NOTIFY_EMAIL_TO }}
+        run: python notify.py
+
       - name: Commit results
         run: |
           git config user.name  "github-actions[bot]"

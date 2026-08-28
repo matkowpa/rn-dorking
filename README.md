@@ -29,3 +29,13 @@ python build_docs.py     # odbudowa danych dla strony
 
 ## Sekrety (GitHub Actions)
 `BRAVE_API_KEY`, `LLM_API_KEY`, `LLM_BASE_URL`, `LLM_MODEL` (i `LLM_MODEL_EXTRACT` = `LLM_MODEL`).
+
+### Powiadomienia (opcjonalne)
+Po każdym runie, gdy pojawią się **nowe ogłoszenia** (lub termin naboru ≤7 dni),
+wysyłany jest digest:
+- **Telegram**: sekrety `TELEGRAM_BOT_TOKEN` (od @BotFather) i `TELEGRAM_CHAT_ID`
+  (od @userinfobot)
+- **E-mail (Brevo SMTP)**: sekrety `SMTP_HOST` (smtp-relay.brevo.com), `SMTP_PORT` (587),
+  `SMTP_USER`, `SMTP_PASSWORD`, `NOTIFY_EMAIL_TO`
+Bez skonfigurowanych sekretów kanały są pomijane — workflow działa normalnie.
+
