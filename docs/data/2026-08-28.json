@@ -3,7 +3,7 @@
   "stats": {
     "search_requests": 6,
     "raw_results": 27,
-    "after_dedup": 11,
+    "after_dedup": 10,
     "after_filter": 5,
     "offers_added": 1,
     "extract_errors": 0
@@ -187,6 +187,16 @@
       "wymagania": "",
       "podsumowanie": "Treść ogłoszenia nie zawiera żadnych danych – tylko nagłówek strony Biuletynu Informacji Publicznej. Nie można wyciągnąć informacji o naborze.",
       "url": "https://bip.grodzisk.pl/m,525,nabor-kandydatow-na-czlonkow-rady-nadzorczej-komunalnej-wodno-kanalizacyjnej-spolki-z-oo.html",
+      "znaleziono_dnia": "2026-08-28"
+    },
+    {
+      "podmiot": "TORPOL",
+      "miejscowosc": "Poznań",
+      "termin_skladania_ofert": "2026-09-04",
+      "stanowisko": "prezes zarządu",
+      "wymagania": "Min. 15 lat stażu zawodowego, w tym 10 lat na stanowiskach kierowniczych; min. 5 lat kierowania podmiotem 500+ osób w budowie/utrzymaniu/zarządzaniu infrastrukturą kolejową, tramwajową lub drogową; zarządzanie zespołem 50+ osób; negocjacje; strategia długoterminowa; biegły polski + język obcy. Atut: MBA.",
+      "podsumowanie": "Rada nadzorcza TORPOLU ogłosiła postępowanie kwalifikacyjne na stanowisko prezesa zarządu. Zgłoszenia przyjmowane są w poznańskiej siedzibie spółki przy ul. św. Michała 43 do 4 września 2026 r. do godz. 15:00.",
+      "url": "https://www.sektorkolejowy.pl/torpol-szuka-prezesa-zarzadu/",
       "znaleziono_dnia": "2026-08-28"
     }
   ]
