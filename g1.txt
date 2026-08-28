@@ -1,2 +1,0 @@
-INFO:__main__:Konfiguracja .env kompletna
-CHECK=0 

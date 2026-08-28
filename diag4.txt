@@ -1,7 +1,0 @@
-Traceback (most recent call last):
-  File "C:\Users\alusm\OneDrive\Dokumenty\Tata\projekty\rn-dorking\google_search.py", line 96, in <module>
-    results = search_google(query, days_back=config.SEARCH_DAYS_BACK, max_results=10)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\alusm\OneDrive\Dokumenty\Tata\projekty\rn-dorking\google_search.py", line 71, in search_google
-    raise QuotaExceededError(msg)
-QuotaExceededError: This project does not have the access to Custom Search JSON API.

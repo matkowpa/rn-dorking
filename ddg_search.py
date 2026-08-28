@@ -1,17 +1,27 @@
 # -*- coding: utf-8 -*-
 """Wyszukiwanie zapasowe DuckDuckGo (Plan B, bez kluczy API).
 
-Zwraca dane w TYM SAMYM formacie co search_google z google_search.py,
-żeby reszta potoku (filtr LLM, ekstrakcja) działała bez zmian.
+Zwraca dane w TYM SAMYM formacie co search_brave, żeby reszta potoku
+(filtr LLM, ekstrakcja) działała bez zmian.
 """
 
 import logging
+import sys
 import time
 
 from ddgs import DDGS
 from ddgs.exceptions import DDGSException
 
 logger = logging.getLogger(__name__)
+
+# Zestaw dorków dla DuckDuckGo (obsługuje operatory w ograniczonym zakresie)
+DORKS = [
+    'inurl:bip "nabór na członków rady nadzorczej"',
+    'inurl:bip "postępowanie kwalifikacyjne" "rady nadzorczej" filetype:pdf',
+    'site:gov.pl "konkurs na członka rady nadzorczej"',
+    '"zaproszenie do składania ofert" "rady nadzorczej" filetype:pdf',
+    '"zgłoszenia kandydatów" "członka rady nadzorczej" -archiwum -protokół',
+]
 
 
 def search_ddg(dork: str, days_back: int, max_results: int) -> list[dict]:
@@ -31,20 +41,29 @@ def search_ddg(dork: str, days_back: int, max_results: int) -> list[dict]:
         timelimit = None  # brak filtra dat (cały rok)
 
     results: list[dict] = []
-    try:
-        with DDGS() as ddgs:
-            for r in ddgs.text(dork, region="pl-pl", timelimit=timelimit,
-                               max_results=max_results):
-                results.append({
-                    "title": r.get("title", ""),
-                    "snippet": r.get("body", ""),
-                    "link": r.get("href", ""),
-                    "dork": dork,
-                })
-    except DDGSException as e:
-        # Zapasowe wyszukiwarki potrafią rate-limitować - potraktuj jak brak
-        # wyników dla tego dorka (WARNING), potok przechodzi do kolejnych
-        logger.warning("DDG błąd dla dorka %s: %s", dork, e)
+    delays = [5, 10, 20]  # retry na chwilowe rate-limity backendów DDG
+    for attempt in range(len(delays) + 1):
+        try:
+            with DDGS() as ddgs:
+                for r in ddgs.text(dork, region="pl-pl", timelimit=timelimit,
+                                   max_results=max_results):
+                    results.append({
+                        "title": r.get("title", ""),
+                        "snippet": r.get("body", ""),
+                        "link": r.get("href", ""),
+                        "dork": dork,
+                    })
+            break  # sukces - koniec retry
+        except DDGSException as e:
+            if attempt < len(delays):
+                delay = delays[attempt]
+                logger.warning("DDG błąd dla dorka %s (próba %s), ponawiam za %s s: %s",
+                               dork, attempt + 1, delay, e)
+                time.sleep(delay)
+                continue
+            # Wyczerpane retry - potraktuj jak brak wyników dla tego dorka
+            logger.warning("DDG błąd dla dorka %s po %s próbach: %s",
+                           dork, attempt + 1, e)
     logger.info("DDG: dork=%s, wyników=%s", dork, len(results))
     return results
 

@@ -5,6 +5,7 @@ import argparse
 import logging
 import sys
 import time
+from datetime import date
 
 if hasattr(sys.stdout, "reconfigure"):
     # Konsola Windows: uniknij UnicodeEncodeError przy polskich znakach
@@ -13,22 +14,24 @@ if hasattr(sys.stdout, "reconfigure"):
 
 import config
 from content_fetcher import fetch_content
-from google_search import DORKS, QuotaExceededError, search_google
 from llm_parser import extract_fields, filter_is_announcement
 from storage import Storage
 
 
 def _search(dork: str, days_back: int):
-    """Wyszukiwanie: Google CSE, a gdy brak kluczy - DuckDuckGo (Plan B).
+    """Wyszukiwanie: łańcuch zapasowy Brave -> DuckDuckGo.
 
-    Zwraca (lista_wyników, użyto_google, liczba_zapytań, QuotaExceededError|None).
+    Zwraca (lista_wyników, nazwa_backendu).
     """
-    if config.use_google():
-        results = search_google(dork, days_back, config.RESULTS_PER_DORK)
-        return results, True, 1, None
+    if config.use_brave():
+        from brave_search import search_brave
+        time.sleep(1)  # ostrożny odstęp między zapytaniami do Brave
+        results = search_brave(dork, days_back, config.RESULTS_PER_DORK)
+        return results, "Brave"
     from ddg_search import search_ddg
+    time.sleep(1)  # odstęp między dorkami zmniejsza rate-limit DDG
     results = search_ddg(dork, days_back, config.RESULTS_PER_DORK)
-    return results, False, 1, None
+    return results, "DuckDuckGo"
 
 
 def setup_logging() -> None:
@@ -82,7 +85,7 @@ def main(argv: list[str] | None = None) -> int:
 
     # Statystyki
     stats = {
-        "google_requests": 0,
+        "search_requests": 0,
         "raw_results": 0,
         "after_dedup": 0,
         "after_filter": 0,
@@ -90,25 +93,26 @@ def main(argv: list[str] | None = None) -> int:
         "extract_errors": 0,
     }
 
-    # ETAP A: wyszukiwanie dla wszystkich dorków (Google albo DDG fallback)
-    use_google = config.use_google()
-    if not use_google:
+    # ETAP A: wyszukiwanie dla wszystkich dorków (Brave / DuckDuckGo)
+    backend = "Brave" if config.use_brave() else "DuckDuckGo"
+    if backend == "DuckDuckGo":
         logger.warning(
-            "Brak GOOGLE_API_KEY/GOOGLE_CX w .env - używam DuckDuckGo (Plan B). "
-            "Dla produkcji uzupełnij klucze Google."
+            "Brak BRAVE_API_KEY w .env - używam DuckDuckGo (niższa jakość "
+            "wyników). Dodaj BRAVE_API_KEY dla produkcji."
         )
+    # Brave potrzebuje własnych dorków (bez inurl:/filetype:/site:)
+    if backend == "Brave":
+        from brave_search import BRAVE_DORKS
+        dorks = BRAVE_DORKS
+    else:
+        from ddg_search import DORKS
+        dorks = DORKS
     all_results: list[dict] = []
-    for dork in DORKS:
-        logger.info("Wyszukiwanie (%s): dork=%s",
-                    "Google" if use_google else "DuckDuckGo", dork)
-        try:
-            results, _, _, _ = _search(dork, days_back)
-            stats["google_requests"] += 1
-            all_results.extend(results)
-        except QuotaExceededError as e:
-            # Limit Google wyczerpany - przerwij pętlę po dorkach, nie cały program
-            logger.error("Limit Google CSE: %s", e)
-            break
+    for dork in dorks:
+        logger.info("Wyszukiwanie (%s): dork=%s", backend, dork)
+        results, _ = _search(dork, days_back)
+        stats["search_requests"] += 1
+        all_results.extend(results)
 
     stats["raw_results"] = len(all_results)
 
@@ -141,6 +145,18 @@ def main(argv: list[str] | None = None) -> int:
             if offer is None:
                 stats["extract_errors"] += 1
             else:
+                # Filtr świeżości: znany termin w przeszłości = archiwalne,
+                # pomijamy ("" = termin nieznany - zostaje)
+                termin = offer.get("termin_skladania_ofert", "")
+                if termin:
+                    try:
+                        if date.fromisoformat(termin) < date.today():
+                            logger.info(
+                                "Pomijam archiwalną ofertę (termin %s): %s",
+                                termin, offer.get("podmiot", ""))
+                            continue
+                    except ValueError:
+                        pass  # termin w nietypowym formacie - zostaw
                 storage.add_offer(offer)
                 stats["offers_added"] += 1
                 logger.info("Nowa oferta: podmiot=%s termin=%s",
@@ -155,10 +171,11 @@ def main(argv: list[str] | None = None) -> int:
         logger.info("Tryb dry-run: nie zapisano oferty.json ani stan.json")
     else:
         storage.save()
+        storage.save_daily(stats)
 
     # Statystyki końcowe
     logger.info("=== Statystyki runu ===")
-    logger.info("Zapytania Google (dorki): %s", stats["google_requests"])
+    logger.info("Zapytania wyszukiwarki (dorki): %s", stats["search_requests"])
     logger.info("Wyniki surowe: %s", stats["raw_results"])
     logger.info("Wyniki po deduplikacji (poddane filtrowi): %s", stats["after_dedup"])
     logger.info("Wyniki po filtrowaniu (nabór): %s", stats["after_filter"])

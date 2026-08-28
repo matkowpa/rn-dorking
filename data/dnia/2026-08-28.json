@@ -1,0 +1,183 @@
+{
+  "date": "2026-08-28",
+  "stats": {
+    "search_requests": 6,
+    "raw_results": 27,
+    "after_dedup": 27,
+    "after_filter": 20,
+    "offers_added": 17,
+    "extract_errors": 0
+  },
+  "offers": [
+    {
+      "podmiot": "Barciński Ośrodek Sportu i Rekreacji Sp. z o.o.",
+      "miejscowosc": "Barcin",
+      "termin_skladania_ofert": "",
+      "stanowisko": "członek rady nadzorczej",
+      "wymagania": "",
+      "podsumowanie": "Burmistrz Barcina ogłasza nabór kandydatów na członków Rady Nadzorczej Barcińskiego Ośrodka Sportu i Rekreacji Sp. z o.o. z siedzibą w Barcinie. W ogłoszeniu nie podano terminu składania ofert ani szczegółowych wymagań.",
+      "url": "https://barcin-bip2.alfatv.pl/dokumenty/1694",
+      "znaleziono_dnia": "2026-08-28"
+    },
+    {
+      "podmiot": "spółka Gminy Skoczów",
+      "miejscowosc": "Skoczów",
+      "termin_skladania_ofert": "",
+      "stanowisko": "członek rady nadzorczej",
+      "wymagania": "",
+      "podsumowanie": "Ogłoszenie o naborze kandydata na członka rady nadzorczej spółki Gminy Skoczów opublikowane w BIP Urzędu Miejskiego w Skoczowie. Treść ogłoszenia (wymagania, termin składania ofert) nie jest dostępna w podanym tekście.",
+      "url": "https://bip.skoczow.pl/ogloszenie-o-naborze-kandydata-na-czlonka-rady-nadzorczej-spolki-gminy-skoczow/porownaj/1/4",
+      "znaleziono_dnia": "2026-08-28"
+    },
+    {
+      "podmiot": "Gmina-Miasto Grudziądz (spółki z udziałem gminy oraz ich spółki zależne)",
+      "miejscowosc": "Grudziądz",
+      "termin_skladania_ofert": "",
+      "stanowisko": "członek rady nadzorczej (nabór do bazy danych kandydatów)",
+      "wymagania": "Wykształcenie wyższe (ekonomiczne, prawnicze lub specjalistyczne branżowe); spełnienie wymogów art. 10a ust. 5 ustawy o gospodarce komunalnej; min. 5-letni staż zawodowy w działalności gospodarczej/finansowej, obsłudze prawnej, zarządzaniu lub nadzorze właścicielskim; brak wykluczeń ustawowych.",
+      "podsumowanie": "Prezydent Grudziądza ogłasza nabór do bazy danych kandydatów do rad nadzorczych spółek, w których gmina-miasto Grudziądz posiada udziały/akcje, a także ich spółek zależnych. W ogłoszeniu nie podano terminu składania aplikacji.",
+      "url": "https://bip.grudziadz.pl/artykul/ogloszenie-o-naborze-do-bazy-danych-kandydatow-do-rad-nadzorczych-spolek-w-ktorych-gmina-miasto-2",
+      "znaleziono_dnia": "2026-08-28"
+    },
+    {
+      "podmiot": "Komunalna Wodno-Kanalizacyjna Spółka z o.o.",
+      "miejscowosc": "",
+      "termin_skladania_ofert": "",
+      "stanowisko": "członek rady nadzorczej",
+      "wymagania": "",
+      "podsumowanie": "Treść ogłoszenia nie została pobrana – strona zawiera jedynie elementy nawigacyjne BIP. Na podstawie adresu URL wynika, że nabór dotyczy kandydatów na członka rady nadzorczej Komunalnej Wodno-Kanalizacyjnej Spółki z o.o.",
+      "url": "https://bip.grodzisk.pl/m,525,nabor-kandydatow-na-czlonkow-rady-nadzorczej-komunalnej-wodno-kanalizacyjnej-spolki-z-oo.html?sort=9_",
+      "znaleziono_dnia": "2026-08-28"
+    },
+    {
+      "podmiot": "Spółka Gminy Skoczów (nazwa niewskazana)",
+      "miejscowosc": "Skoczów",
+      "termin_skladania_ofert": "",
+      "stanowisko": "członek rady nadzorczej",
+      "wymagania": "",
+      "podsumowanie": "Urząd Miejski w Skoczowie ogłasza nabór kandydata na członka rady nadzorczej spółki Gminy Skoczów. W dostarczonym tekście brak szczegółowych wymagań oraz terminu składania ofert.",
+      "url": "https://bip.skoczow.pl/ogloszenie-o-naborze-kandydata-na-czlonka-rady-nadzorczej-spolki-gminy-skoczow",
+      "znaleziono_dnia": "2026-08-28"
+    },
+    {
+      "podmiot": "Szpital Powiatu Bytowskiego Sp. z o.o.",
+      "miejscowosc": "Bytów",
+      "termin_skladania_ofert": "",
+      "stanowisko": "członek rady nadzorczej",
+      "wymagania": "",
+      "podsumowanie": "Zarząd Powiatu Bytowskiego ogłasza nabór kandydatów na członków Rady Nadzorczej Szpitala Powiatu Bytowskiego Sp. z o.o. Ogłoszenie opublikowano 14 maja 2020 r.; w tekście nie podano terminu składania ofert ani szczegółowych wymagań.",
+      "url": "https://bip.powiatbytowski.pl/strony/11712.dhtml",
+      "znaleziono_dnia": "2026-08-28"
+    },
+    {
+      "podmiot": "Warszawska Kolej Dojazdowa",
+      "miejscowosc": "Warszawa",
+      "termin_skladania_ofert": "",
+      "stanowisko": "członek rady nadzorczej",
+      "wymagania": "",
+      "podsumowanie": "Urząd Marszałkowski Województwa Mazowieckiego ogłosił nabór kandydatów do Rady Nadzorczej spółki Warszawska Kolej Dojazdowa. Szczegóły naboru (w tym wymagania i termin składania zgłoszeń) znajdują się w załączonym dokumencie DOCX.",
+      "url": "https://mazovia.pl/pl/bip/komunikaty/nabor-kandydatow-do-rady-nadzorczej-spolki-warszawska-kolej-dojazdowa.html?format=pdf&pagespeed=noscript&PageSpeed=noscript",
+      "znaleziono_dnia": "2026-08-28"
+    },
+    {
+      "podmiot": "Zakład Transportu i Usług Sp. z o.o. w Sępólnie Krajeńskim",
+      "miejscowosc": "Sępólno Krajeńskie",
+      "termin_skladania_ofert": "",
+      "stanowisko": "członek rady nadzorczej",
+      "wymagania": "",
+      "podsumowanie": "Burmistrz Sępólna Krajeńskiego ogłasza nabór kandydatów na członków Rady Nadzorczej Zakładu Transportu i Usług Sp. z o.o. w Sępólnie Krajeńskim. Ogłoszenie nie zawiera terminu składania ofert ani szczegółowych wymagań.",
+      "url": "https://bip.gmina-sepolno.pl/8418/nabor-kandydatow-na-czlonkow-rady-nadzorczej-zakladu-transportu-i-uslug-sp-z-oo-w-sepolnie-krajenskim.html",
+      "znaleziono_dnia": "2026-08-28"
+    },
+    {
+      "podmiot": "Mazowiecki Szpital Wojewódzki im. św. Jana Pawła II w Siedlcach Sp. z o.o.",
+      "miejscowosc": "Siedlce",
+      "termin_skladania_ofert": "",
+      "stanowisko": "członek rady nadzorczej",
+      "wymagania": "",
+      "podsumowanie": "Mazowiecki Szpital Wojewódzki im. św. Jana Pawła II w Siedlcach Sp. z o.o. ogłasza nabór kandydatów do Rady Nadzorczej. Szczegóły naboru, w tym termin składania zgłoszeń i wymagania, znajdują się w załączonym ogłoszeniu PDF.",
+      "url": "https://mazovia.pl/pl/bip/komunikaty/nabor-kandydatow-do-rady-nadzorczej-spolki-mazowiecki-szpital-wojewodzki-im-sw-jana-pawla-ii-w-siedlcach.html",
+      "znaleziono_dnia": "2026-08-28"
+    },
+    {
+      "podmiot": "",
+      "miejscowosc": "",
+      "termin_skladania_ofert": "",
+      "stanowisko": "",
+      "wymagania": "",
+      "podsumowanie": "Podany tekst nie zawiera treści ogłoszenia o naborze kandydatów – dostępny jest jedynie link do zdjęcia na Facebooku bez opisu. Nie można wyodrębnić żadnych danych dotyczących podmiotu, stanowiska ani terminu składania ofert.",
+      "url": "https://www.facebook.com/photo.php?fbid=991306079858458&id=100069372242544&set=a.101127105543031",
+      "znaleziono_dnia": "2026-08-28"
+    },
+    {
+      "podmiot": "Warszawska Kolej Dojazdowa",
+      "miejscowosc": "Warszawa",
+      "termin_skladania_ofert": "",
+      "stanowisko": "członek rady nadzorczej",
+      "wymagania": "",
+      "podsumowanie": "Urząd Marszałkowski Województwa Mazowieckiego ogłasza nabór kandydatów do Rady Nadzorczej spółki Warszawska Kolej Dojazdowa. Szczegóły naboru (w tym wymagania i termin składania zgłoszeń) znajdują się w załączonym ogłoszeniu DOCX.",
+      "url": "https://mazovia.pl/pl/bip/komunikaty/nabor-kandydatow-do-rady-nadzorczej-spolki-warszawska-kolej-dojazdowa.html",
+      "znaleziono_dnia": "2026-08-28"
+    },
+    {
+      "podmiot": "Przedsiębiorstwo Komunikacji Samochodowej w Bytowie S.A.",
+      "miejscowosc": "Bytów",
+      "termin_skladania_ofert": "",
+      "stanowisko": "członek rady nadzorczej",
+      "wymagania": "",
+      "podsumowanie": "Zarząd Powiatu Bytowskiego ogłasza nabór kandydatów na członków Rady Nadzorczej PKS w Bytowie S.A. Szczegóły naboru (wymagania, termin składania ofert) znajdują się w załączonych plikach PDF/DOC.",
+      "url": "http://bippksbytow.infocity.pl/?mid=23",
+      "znaleziono_dnia": "2026-08-28"
+    },
+    {
+      "podmiot": "Szpital Powiatu Bytowskiego Sp. z o.o.",
+      "miejscowosc": "Bytów",
+      "termin_skladania_ofert": "",
+      "stanowisko": "członek rady nadzorczej",
+      "wymagania": "",
+      "podsumowanie": "Ogłoszenie dotyczy naboru kandydatów do rady nadzorczej Szpitala Powiatu Bytowskiego Sp. z o.o. w Bytowie. W podanym tekście brak szczegółowych wymagań oraz terminu składania ofert.",
+      "url": "http://www.szpital-bytow.com.pl/index.php/item/98-nabor-kandydatow-do-rady-nadzorczej-szpitala-powiatu-bytowskiego-sp-z-o-o",
+      "znaleziono_dnia": "2026-08-28"
+    },
+    {
+      "podmiot": "PKS sp. z o. o. w Raciborzu",
+      "miejscowosc": "Racibórz",
+      "termin_skladania_ofert": "",
+      "stanowisko": "członek rady nadzorczej",
+      "wymagania": "",
+      "podsumowanie": "Zarząd Powiatu Raciborskiego ogłasza nabór kandydatów do Rady Nadzorczej PKS sp. z o. o. w Raciborzu. Szczegółowe informacje o naborze dostępne są w Biuletynie Informacji Publicznej Powiatu Raciborskiego.",
+      "url": "https://www.powiatraciborski.pl/main/aktualnosci_powiat/Wybor-kandydatow-do-Rady-Nadzorczej-PKS-sp.-z-o.-o.-w-Raciborzu/idn:5250.html",
+      "znaleziono_dnia": "2026-08-28"
+    },
+    {
+      "podmiot": "PKS w Raciborzu",
+      "miejscowosc": "Racibórz",
+      "termin_skladania_ofert": "",
+      "stanowisko": "członek rady nadzorczej",
+      "wymagania": "",
+      "podsumowanie": "Trwa nabór kandydatów do rady nadzorczej PKS w Raciborzu. Tekst ogłoszenia jest skrócony i nie zawiera szczegółowych wymagań ani terminu składania ofert.",
+      "url": "https://www.facebook.com/nowiny/posts/trwa-nab%C3%B3r-kandydat%C3%B3w-do-rady-nadzorczej-pks-w-raciborzu-zobaczcie-jakie-wymagan/1187440173395027/",
+      "znaleziono_dnia": "2026-08-28"
+    },
+    {
+      "podmiot": "Urząd Wojewódzki w Kielcach (Wojewoda Świętokrzyski)",
+      "miejscowosc": "Kielce",
+      "termin_skladania_ofert": "",
+      "stanowisko": "członek rady nadzorczej",
+      "wymagania": "",
+      "podsumowanie": "Ogłoszenie dotyczy naboru kandydatów w ramach konkursu Wojewody Świętokrzyskiego „Czyste Serce” 2026. W tekście brak szczegółowych wymagań oraz terminu składania ofert.",
+      "url": "https://www.pfron.org.pl/?tx_invshare_pi1%5Bprint%5D=aHR0cHM6Ly93d3cucGZyb24ub3JnLnBsL3Bmcm9uL3N6Y3plZ29seS9uZXdzL3Ryd2EtbmFib3ItZG8tcmFkeS1uYWR6b3JjemVqLXBmcm9uLw%3D%3D&tx_invshare_pi1%5Baction%5D=downloadPdf&tx_invshare_pi1%5Bcontroller%5D=CreateFile&cHash=d2037ded324628074f5d4ae383d096da",
+      "znaleziono_dnia": "2026-08-28"
+    },
+    {
+      "podmiot": "PKE",
+      "miejscowosc": "",
+      "termin_skladania_ofert": "",
+      "stanowisko": "członek rady nadzorczej",
+      "wymagania": "",
+      "podsumowanie": "Ogłoszenie dotyczy konkursu na członka Rady Nadzorczej PKE. Tekst nie zawiera szczegółowych informacji o wymaganiach ani terminie składania ofert.",
+      "url": "https://www.cire.pl/artykuly/serwis-informacyjny-cire-24/49102-konkurs-na-czlonka-rady-nadzorczej-pke",
+      "znaleziono_dnia": "2026-08-28"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+# rn-dorking — nabory na rady nadzorcze
+
+Automatyczne codzienne wykrywanie ogłoszeń o naborze kandydatów na członków
+rad nadzorczych (spółki, fundusze, instytucje publiczne) — wyszukiwanie
+w Brave Search, klasyfikacja i ekstrakcja danych przez LLM, publikacja na
+GitHub Pages.
+
+## Jak działa
+1. Codziennie o 07:00 (czas polski) GitHub Actions uruchamia potok:
+   Brave Search (6 dorków frazowych) → deduplikacja → filtr LLM →
+   pobranie treści → ekstrakcja pól (podmiot, termin, miejscowość…).
+2. Wyniki zapisywane są per dzień do `data/dnia/<data>.json` i łączone
+   w pełną historię `oferty.json`.
+3. `build_docs.py` buduje dane dla strony (`docs/data/`), commit i GitHub
+   Pages odświeża stronę.
+
+Strona: `https://<LOGIN>.github.io/rn-dorking/` — strona główna z listą dni,
+każdy dzień pod osobnym linkiem `#/YYYY-MM-DD`.
+
+## Uruchomienie lokalne
+```
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+copy .env.example .env   # i uzupełnij BRAVE_API_KEY, LLM_API_KEY, LLM_BASE_URL, LLM_MODEL
+python main.py           # pełny run
+python build_docs.py     # odbudowa danych dla strony
+```
+
+## Sekrety (GitHub Actions)
+`BRAVE_API_KEY`, `LLM_API_KEY`, `LLM_BASE_URL`, `LLM_MODEL` (i `LLM_MODEL_EXTRACT` = `LLM_MODEL`).

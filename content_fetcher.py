@@ -52,7 +52,7 @@ def _extract_html_text(response: requests.Response) -> str:
 def fetch_content(url: str) -> str:
     """Pobiera pełną treść ogłoszenia (HTML albo PDF), obcina do 12000 znaków.
 
-    Błędy sieciowe / 404 / 403 / timeout: WARNING + zwróć "".
+    Błędy sieciowe / 4xx / 403 / timeout / uszkodzony PDF: WARNING + zwróć "".
     """
     try:
         response = requests.get(
@@ -66,7 +66,13 @@ def fetch_content(url: str) -> str:
 
         content_type = response.headers.get("Content-Type", "").lower()
         if url.lower().endswith(".pdf") or "application/pdf" in content_type:
-            text = _extract_pdf_text(response.content)
+            try:
+                text = _extract_pdf_text(response.content)
+            except Exception as e:
+                # Serwer potrafi zwrócić HTML/stronę błędu pod adresem .pdf -
+                # spróbuj sparsować jako HTML zamiast padać
+                logger.warning("PDF parse błąd dla %s (%s), próba jako HTML", url, e)
+                text = _extract_html_text(response)
         else:
             text = _extract_html_text(response)
 

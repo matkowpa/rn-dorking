@@ -5,6 +5,7 @@ import hashlib
 import json
 import logging
 import os
+from datetime import date
 from urllib.parse import urlsplit, urlunsplit
 
 logger = logging.getLogger(__name__)
@@ -55,16 +56,17 @@ class Storage:
             return None
 
     def _load_state(self) -> set:
-        """Wczytuje seen_urls ze stan.json albo migruje z oferty.json."""
+        """Wczytuje seen_urls ze stan.json oraz oferty z oferty.json."""
         state = self._load_json(self.state_path)
-        if state is not None:
-            self.seen_urls = set(state.get("seen_urls", []))
-            return self.seen_urls
-        # Migracja ze starej wersji: stan.json brak, oferty.json istnieje
+        self.seen_urls = set(state.get("seen_urls", [])) if state is not None else set()
+        # Oferty zawsze wczytuj z oferty.json (jeśli istnieje) - inaczej save()
+        # nadpisałby pełną historię pustą listą
         offers = self._load_json(self.offers_path)
         if offers is not None:
             self.offers = list(offers)
-            self.seen_urls = {_url_hash(o.get("url", "")) for o in self.offers if o.get("url")}
+            # Migracja/uzupełnienie: hashuj URL-e ofert, których nie ma w stanie
+            self.seen_urls |= {_url_hash(o.get("url", ""))
+                               for o in self.offers if o.get("url")}
         return self.seen_urls
 
     def is_new(self, url: str) -> bool:
@@ -82,6 +84,36 @@ class Storage:
         self.offers.sort(key=lambda o: o.get("termin_skladania_ofert", ""), reverse=True)
         self._atomic_write(self.offers_path, self.offers)
         self._atomic_write(self.state_path, {"seen_urls": sorted(self.seen_urls)})
+
+    def save_daily(self, stats: dict, run_date: str | None = None) -> str:
+        """Zapisuje oferty znalezione w dniu run_date do data/dnia/<data>.json.
+
+        Plik dnia zawiera metadane runu (statystyki) - wykorzystywany przez
+        frontend (osobny link na każdy dzień) i build_docs.py.
+        Jeśli plik dnia już istnieje (wcześniejszy run tego samego dnia),
+        oferty są SCALANE po URL-u - niczego nie gubimy.
+        Zwraca ścieżkę zapisanego pliku.
+        """
+        run_date = run_date or date.today().isoformat()
+        folder = os.path.join("data", "dnia")
+        path = os.path.join(folder, f"{run_date}.json")
+
+        # Scal z istniejącym plikiem dnia (wcześniejsze runy tego samego dnia)
+        existing = self._load_json(path) or {}
+        merged: dict[str, dict] = {}
+        for offer in existing.get("offers", []):
+            merged[offer.get("url", "")] = offer
+        today_offers = [o for o in self.offers
+                        if o.get("znaleziono_dnia") == run_date]
+        for offer in today_offers:
+            merged[offer.get("url", "")] = offer
+        daily_offers = list(merged.values())
+
+        payload = {"date": run_date, "stats": stats, "offers": daily_offers}
+        os.makedirs(folder, exist_ok=True)
+        self._atomic_write(path, payload)
+        logger.info("Zapisano plik dnia %s (%s ofert)", path, len(daily_offers))
+        return path
 
     def _atomic_write(self, path: str, data) -> None:
         """Zapis do pliku tymczasowego w tym samym katalogu, potem os.replace."""

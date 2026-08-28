@@ -34,17 +34,14 @@ def _parse_int(name: str, default: int, allowed: list[int] | None = None) -> int
 
 # Walidacja obecności zmiennych
 REQUIRED_VARS = ["LLM_API_KEY", "LLM_BASE_URL", "LLM_MODEL", "LLM_MODEL_EXTRACT"]
-# Zmienne Google są opcjonalne tylko w trybie testowym DuckDuckGo (Plan B);
-# przy normalnym uruchomieniu Google ich brak oznacza awaryjny tryb DDG
-GOOGLE_VARS = ["GOOGLE_API_KEY", "GOOGLE_CX"]
 
 
 def validate() -> None:
     """Sprawdza obecność wymaganych zmiennych .env.
 
     Zmienne LLM są obowiązkowe (bez nich potok nie działa).
-    Zmienne Google są sprawdzane osobno: use_google() mówi, czy potok
-    może użyć Google CSE, czy ma użyć zapasowego DuckDuckGo (Plan B).
+    Backend wyszukiwania wybiera use_brave(): Brave API, a gdy brak klucza -
+    zapasowe DuckDuckGo.
     Rzuca ValueError z listą brakujących zmiennych obowiązkowych.
     """
     missing = [v for v in REQUIRED_VARS if not os.getenv(v)]
@@ -54,14 +51,13 @@ def validate() -> None:
         )
 
 
-def use_google() -> bool:
-    """True, jeśli skonfigurowano Google CSE (obie zmienne Google obecne)."""
-    return all(bool(os.getenv(v)) for v in GOOGLE_VARS)
+def use_brave() -> bool:
+    """True, jeśli skonfigurowano Brave Search API."""
+    return bool(os.getenv("BRAVE_API_KEY"))
 
 
 # Eksportowane stałe modułu
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")
-GOOGLE_CX = os.getenv("GOOGLE_CX", "")
+BRAVE_API_KEY = os.getenv("BRAVE_API_KEY", "")
 LLM_API_KEY = os.getenv("LLM_API_KEY", "")
 LLM_BASE_URL = os.getenv("LLM_BASE_URL", "")
 LLM_MODEL = os.getenv("LLM_MODEL", "")

@@ -1,0 +1,44 @@
+name: rn-dorking daily run
+
+on:
+  schedule:
+    - cron: "0 5 * * *"     # 05:00 UTC = 07:00 czasu polskiego (letniego)
+  workflow_dispatch:        # przycisk "Run workflow" do uruchomienia ręcznego
+
+permissions:
+  contents: write           # pozwala workflow'owi robić commit wyników
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run pipeline
+        env:
+          BRAVE_API_KEY:     ${{ secrets.BRAVE_API_KEY }}
+          LLM_API_KEY:       ${{ secrets.LLM_API_KEY }}
+          LLM_BASE_URL:      ${{ secrets.LLM_BASE_URL }}
+          LLM_MODEL:         ${{ secrets.LLM_MODEL }}
+          LLM_MODEL_EXTRACT: ${{ secrets.LLM_MODEL }}
+        run: python main.py
+
+      - name: Build docs data
+        run: python build_docs.py
+
+      - name: Commit results
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add oferty.json stan.json data/ docs/data/
+          git diff --cached --quiet || git commit -m "daily update [skip ci]"
+          git push
