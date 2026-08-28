@@ -171,9 +171,18 @@ async function viewHome() {
   $view.innerHTML = `
     <div class="hero">
       <h1>Otwarte nabory na członków rad nadzorczych</h1>
-      <p><span class="num">${active.length}</span> aktywnych naborów łącznie ·
-         ostatnia aktualizacja: <b class="num">${index[0] ? fmtDate(index[0].date) : "—"}</b>
+      <p>ostatnia aktualizacja: <b class="num">${index[0] ? fmtDate(index[0].date) : "—"}</b>
          (workflow runuje codziennie o 07:00)</p>
+    </div>
+    <div class="stats-banner">
+      <div class="stat-big">
+        <span class="stat-big-num">${active.length}</span>
+        <span class="stat-big-label">aktywnych naborów<br>na rady nadzorcze</span>
+      </div>
+      <div class="stat-side">
+        <div class="stat-side-item"><b>${index.length}</b> dni monitoring</div>
+        <div class="stat-side-item"><b>${all.length}</b> ofert łącznie w bazie</div>
+      </div>
     </div>
     ${urgent.length ? `<h2 class="section-title">Najbliżej terminu</h2>
       <div class="cards">${urgent.map(cardHTML).join("")}</div>` : ""}
