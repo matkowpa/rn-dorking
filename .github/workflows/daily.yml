@@ -4,6 +4,13 @@ on:
   schedule:
     - cron: "0 5 * * *"     # 05:00 UTC = 07:00 czasu polskiego (letniego)
   workflow_dispatch:        # przycisk "Run workflow" do uruchomienia ręcznego
+  push:
+    paths-ignore:           # nie odpalaj przy commitach wyników bota i docs
+      - "docs/**"
+      - "oferty.json"
+      - "stan.json"
+      - "data/**"
+      - "**.md"
 
 permissions:
   contents: write           # pozwala workflow'owi robić commit wyników
