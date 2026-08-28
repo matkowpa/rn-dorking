@@ -14,8 +14,12 @@ GitHub Pages.
 3. `build_docs.py` buduje dane dla strony (`docs/data/`), commit i GitHub
    Pages odświeża stronę.
 
-Strona: `https://<LOGIN>.github.io/rn-dorking/` — strona główna z listą dni,
-każdy dzień pod osobnym linkiem `#/YYYY-MM-DD`.
+## 🌐 Strona z ogłoszeniami (live)
+
+**👉 https://matkowpa.github.io/rn-dorking/**
+
+Strona główna z listą dni, każdy dzień pod osobnym linkiem `#/YYYY-MM-DD`.
+
 
 ## Uruchomienie lokalne
 ```
