@@ -43,6 +43,16 @@ Uwaga: Brave (backend produkcyjny) nie wspiera operatorów `inurl:`/`filetype:`/
 `site:` — dorki z tymi operatorami zwrócą 0 wyników; używaj fraz z nazwą domeny
 w treści zapytania. `site:` działa przy backendzie DuckDuckGo.
 
+## Testy
+Testy jednostkowe (bez wywołań sieciowych) uruchamiane są w CI przed każdym
+runem potoku, lokalnie:
+```
+python -m pytest tests/ -q
+```
+Obejmują: deduplikację i trwałość (`storage.py`), parsowanie konfiguracji
+(`config.py`), czyszczenie odpowiedzi LLM (`llm_parser.py`), ekstrakcję HTML
+(`content_fetcher.py`) i budowę digestu powiadomień (`notify.py`).
+
 ## Sekrety (GitHub Actions)
 `BRAVE_API_KEY`, `LLM_API_KEY`, `LLM_BASE_URL`, `LLM_MODEL` (i `LLM_MODEL_EXTRACT` = `LLM_MODEL`).
 

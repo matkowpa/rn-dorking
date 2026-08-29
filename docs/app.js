@@ -159,7 +159,7 @@ async function viewHome() {
   try {
     [index, all] = await Promise.all([fetchJSON("data/index.json"), fetchJSON("data/all.json")]);
   } catch {
-    $view.innerHTML = `<div class="empty">Brak danych. Workflow runuje się codziennie o 07:00 —
+    $view.innerHTML = `<div class="empty">Brak danych. Workflow runuje dwa razy dziennie (07:00 i 19:00) —
       wróć później.</div>`;
     return;
   }
@@ -172,7 +172,7 @@ async function viewHome() {
     <div class="hero">
       <h1>Otwarte nabory na członków rad nadzorczych</h1>
       <p>ostatnia aktualizacja: <b class="num">${index[0] ? fmtDate(index[0].date) : "—"}</b>
-         (workflow runuje codziennie o 07:00)</p>
+         (workflow runuje o 07:00 i 19:00)</p>
     </div>
     <div class="stats-banner">
       <div class="stat-big">
