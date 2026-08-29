@@ -1,0 +1,12 @@
+{
+  "date": "2026-08-29",
+  "stats": {
+    "search_requests": 6,
+    "raw_results": 26,
+    "after_dedup": 9,
+    "after_filter": 4,
+    "offers_added": 0,
+    "extract_errors": 0
+  },
+  "offers": []
+}
