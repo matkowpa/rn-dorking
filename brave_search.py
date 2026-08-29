@@ -25,6 +25,9 @@ BRAVE_DORKS = [
     '"konkurs na członka rady nadzorczej"',
     '"zaproszenie do składania ofert" "rady nadzorczej"',
     '"zgłoszenia kandydatów" "członka rady nadzorczej"',
+    # Formuły tytułowe z realnych ogłoszeń (run 2026-08-28)
+    '"ogłoszenie o naborze kandydatów" "rada nadzorcza"',
+    '"kandydatów na członków rad nadzorczych"',
 ]
 
 

@@ -3,6 +3,7 @@ name: rn-dorking daily run
 on:
   schedule:
     - cron: "0 5 * * *"     # 05:00 UTC = 07:00 czasu polskiego (letniego)
+    - cron: "0 17 * * *"    # 17:00 UTC = 19:00 czasu polskiego (letniego)
   workflow_dispatch:        # przycisk "Run workflow" do uruchomienia ręcznego
   push:
     paths-ignore:           # nie odpalaj przy commitach wyników bota i docs
@@ -37,6 +38,7 @@ jobs:
           LLM_BASE_URL:      ${{ secrets.LLM_BASE_URL }}
           LLM_MODEL:         ${{ secrets.LLM_MODEL }}
           LLM_MODEL_EXTRACT: ${{ secrets.LLM_MODEL }}
+          EXTRA_DORKS:       ${{ vars.EXTRA_DORKS }}
         run: python main.py
 
       - name: Build docs data
@@ -60,3 +62,18 @@ jobs:
           git add oferty.json stan.json data/ docs/data/
           git diff --cached --quiet || git commit -m "daily update [skip ci]"
           git push
+
+      - name: Alert on failure (Telegram)
+        if: failure()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
+            echo "Brak sekretów Telegram - pomijam alert"
+            exit 0
+          fi
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d chat_id="${TELEGRAM_CHAT_ID}" \
+            -d parse_mode="HTML" \
+            -d text="❌ &lt;b&gt;rn-dorking&lt;/b&gt;: nieudany run pipeline (&lt;a href=\"https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}\"&gt;log&lt;/a&gt;)"

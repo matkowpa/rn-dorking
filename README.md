@@ -6,9 +6,10 @@ w Brave Search, klasyfikacja i ekstrakcja danych przez LLM, publikacja na
 GitHub Pages.
 
 ## Jak działa
-1. Codziennie o 07:00 (czas polski) GitHub Actions uruchamia potok:
-   Brave Search (6 dorków frazowych) → deduplikacja → filtr LLM →
-   pobranie treści → ekstrakcja pól (podmiot, termin, miejscowość…).
+1. Codziennie o **07:00 i 19:00** (czas polski) GitHub Actions uruchamia potok:
+   Brave Search (dorki frazowe + opcjonalne `EXTRA_DORKS`) → deduplikacja →
+   filtr LLM → pobranie treści → ekstrakcja pól (podmiot, termin, miejscowość…).
+   W razie niepowodzenia runu wysyłany jest alert na Telegram.
 2. Wyniki zapisywane są per dzień do `data/dnia/<data>.json` i łączone
    w pełną historię `oferty.json`.
 3. `build_docs.py` buduje dane dla strony (`docs/data/`), commit i GitHub
@@ -30,6 +31,17 @@ copy .env.example .env   # i uzupełnij BRAVE_API_KEY, LLM_API_KEY, LLM_BASE_URL
 python main.py           # pełny run
 python build_docs.py     # odbudowa danych dla strony
 ```
+
+### Dodatkowe dorki (EXTRA_DORKS)
+W `.env` (lokalnie) lub jako **repository variable** `EXTRA_DORKS` (GitHub →
+Settings → Secrets and variables → Actions → Variables) można dopisać własne
+dorki oddzielone znakiem `|`, np. per konkretny BIP/spółkę:
+```
+EXTRA_DORKS=site:bip.grudziadz.pl "rady nadzorczej"|"ogłoszenie o naborze" "Grudziądz"
+```
+Uwaga: Brave (backend produkcyjny) nie wspiera operatorów `inurl:`/`filetype:`/
+`site:` — dorki z tymi operatorami zwrócą 0 wyników; używaj fraz z nazwą domeny
+w treści zapytania. `site:` działa przy backendzie DuckDuckGo.
 
 ## Sekrety (GitHub Actions)
 `BRAVE_API_KEY`, `LLM_API_KEY`, `LLM_BASE_URL`, `LLM_MODEL` (i `LLM_MODEL_EXTRACT` = `LLM_MODEL`).

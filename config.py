@@ -64,3 +64,5 @@ LLM_MODEL = os.getenv("LLM_MODEL", "")
 LLM_MODEL_EXTRACT = os.getenv("LLM_MODEL_EXTRACT", "")
 SEARCH_DAYS_BACK = _parse_int("SEARCH_DAYS_BACK", 5)
 RESULTS_PER_DORK = _parse_int("RESULTS_PER_DORK", 20, allowed=[10, 20, 30, 40])
+# Dodatkowe dorki z .env, oddzielone znakiem | (pusta wartość = brak)
+EXTRA_DORKS = [d.strip() for d in os.getenv("EXTRA_DORKS", "").split("|") if d.strip()]

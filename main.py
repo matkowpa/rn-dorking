@@ -107,6 +107,11 @@ def main(argv: list[str] | None = None) -> int:
     else:
         from ddg_search import DORKS
         dorks = DORKS
+    # Dodatkowe dorki z .env (EXTRA_DORKS, oddzielone |) - np. per konkretny BIP:
+    # EXTRA_DORKS=site:bip.grudziadz.pl "rady nadzorczej"|site:bip.skoczow.pl nabór
+    if config.EXTRA_DORKS:
+        logger.info("Dopisuję %s dorków z EXTRA_DORKS", len(config.EXTRA_DORKS))
+        dorks = dorks + config.EXTRA_DORKS
     all_results: list[dict] = []
     for dork in dorks:
         logger.info("Wyszukiwanie (%s): dork=%s", backend, dork)
