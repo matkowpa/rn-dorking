@@ -28,6 +28,12 @@ BRAVE_DORKS = [
     # Formuły tytułowe z realnych ogłoszeń (run 2026-08-28)
     '"ogłoszenie o naborze kandydatów" "rada nadzorcza"',
     '"kandydatów na członków rad nadzorczych"',
+    # Frazy z realnych ogłoszeń w produkcji (nabór do bazy, odmiana przez
+    # przypadki, konkurs w liczbie mnogiej)
+    '"nabór do bazy danych kandydatów" "rada nadzorcza"',
+    '"ogłasza nabór" "rady nadzorczej"',
+    '"kandydatów do rady nadzorczej"',
+    '"konkurs na członków rady nadzorczej"',
 ]
 
 

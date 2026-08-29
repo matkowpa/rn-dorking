@@ -22,6 +22,10 @@ DORKS = [
     'site:gov.pl "nabór na członków rady nadzorczej"',
     '"zaproszenie do składania ofert" "rady nadzorczej" filetype:pdf',
     '"zgłoszenia kandydatów" "członka rady nadzorczej" -archiwum -protokół',
+    # Frazy z realnych ogłoszeń w produkcji (konkurs w liczbie mnogiej,
+    # nabór do bazy kandydatów)
+    '"konkurs na członków rady nadzorczej" site:gov.pl',
+    '"nabór do bazy danych kandydatów" "rada nadzorcza"',
 ]
 
 

@@ -91,7 +91,28 @@ def main(argv: list[str] | None = None) -> int:
         "after_filter": 0,
         "offers_added": 0,
         "extract_errors": 0,
+        "offers_updated": 0,
     }
+
+    # Re-ekstrakcja: oferty bez terminu z poprzednich dni - spróbuj ponownie
+    # (treść BIP często pojawia się z opóźnieniem albo w załączniku PDF;
+    # maks. MAX_EXTRACT_ATTEMPTS prób na ofertę, pilnuje storage)
+    if not args.dry_run:
+        candidates = storage.get_reextract_candidates(5)
+        if candidates:
+            logger.info("Re-ekstrakcja: %s ofert bez terminu", len(candidates))
+        for cand in candidates:
+            url = cand.get("url", "")
+            text = fetch_content(url)
+            offer = extract_fields(text, url) if text else None
+            storage.mark_extract_attempt(url)
+            if offer and offer.get("termin_skladania_ofert"):
+                if storage.update_offer(url, offer):
+                    stats["offers_updated"] += 1
+                    logger.info("Re-ekstrakcja: uzupełniono termin %s: %s",
+                                offer.get("termin_skladania_ofert"),
+                                offer.get("podmiot", ""))
+            time.sleep(0.5)
 
     # ETAP A: wyszukiwanie dla wszystkich dorków (Brave / DuckDuckGo)
     backend = "Brave" if config.use_brave() else "DuckDuckGo"
@@ -128,6 +149,9 @@ def main(argv: list[str] | None = None) -> int:
         if new_processed >= args.limit:
             break
         link = result.get("link", "")
+        if not link or storage.is_rejected(link):
+            # Odrzucony wcześniej (w oknie TTL) - nie liczy się do limitu
+            continue
         if not storage.is_new(link):
             # Już widziany - nie liczy się do limitu
             continue
@@ -166,6 +190,11 @@ def main(argv: list[str] | None = None) -> int:
                 stats["offers_added"] += 1
                 logger.info("Nowa oferta: podmiot=%s termin=%s",
                             offer.get("podmiot", ""), offer.get("termin_skladania_ofert", ""))
+        else:
+            # Odrzucone przez filtr - zapamiętaj, żeby nie marnować wywołań
+            # filtra przy kolejnych runach (chyba że to chwilowy błąd LLM)
+            if not uzasadnienie.startswith("błąd filtra"):
+                storage.add_rejected(link)
         # Mały odstęp między wywołaniami LLM (mniejsza szansa na rate limit)
         time.sleep(0.5)
 
@@ -186,6 +215,7 @@ def main(argv: list[str] | None = None) -> int:
     logger.info("Wyniki po filtrowaniu (nabór): %s", stats["after_filter"])
     logger.info("Nowe oferty dopisane: %s", stats["offers_added"])
     logger.info("Błędy ekstrakcji: %s", stats["extract_errors"])
+    logger.info("Uzupełnione terminy (re-ekstrakcja): %s", stats["offers_updated"])
     return 0
 
 

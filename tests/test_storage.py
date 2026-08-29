@@ -2,6 +2,8 @@
 """Testy storage.py: normalizacja URL, deduplikacja, trwałość, plik dnia."""
 import json
 import sys
+from datetime import date, timedelta
+from pathlib import Path
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -92,3 +94,89 @@ def test_save_daily_merges_same_day(storage):
 
 def test_url_hash_stable():
     assert _url_hash("https://a.pl/x") == _url_hash("https://a.pl/x/")
+
+
+# --- Pamięć odrzuconych URL-i (rejected, TTL 30 dni) ---
+
+def test_rejected_url_is_skipped(storage):
+    storage.add_rejected(OFFER["url"])
+    assert storage.is_rejected(OFFER["url"]) is True
+    # Wariant URL (utm_/trailing slash) też rozpoznawany jako odrzucony
+    assert storage.is_rejected("https://przyklad.pl/nabor/") is True
+
+
+def test_rejected_ttl_prunes_old_entries(storage):
+    old_date = (date.today() - timedelta(days=storage_mod.REJECT_TTL_DAYS + 1)).isoformat()
+    storage.rejected[_url_hash("https://old.pl/a")] = old_date
+    storage.rejected[_url_hash("https://fresh.pl/b")] = date.today().isoformat()
+    storage._prune_rejected()
+    assert _url_hash("https://old.pl/a") not in storage.rejected
+    assert _url_hash("https://fresh.pl/b") in storage.rejected
+
+
+def test_rejected_persist_across_reload(tmp_path, monkeypatch):
+    monkeypatch.chdir(tmp_path)
+    s1 = Storage(offers_path="o.json", state_path="s.json")
+    s1.add_rejected("https://example.pl/odrzucony")
+    s1.save()
+    s2 = Storage(offers_path="o.json", state_path="s.json")
+    assert s2.is_rejected("https://example.pl/odrzucony") is True
+
+
+def test_old_state_format_backcompat(tmp_path, monkeypatch):
+    # stan.json sprzed zmiany (tylko seen_urls) musi się wczytać bez błędu
+    monkeypatch.chdir(tmp_path)
+    Path("s.json").write_text(json.dumps({"seen_urls": []}), encoding="utf-8")
+    s = Storage(offers_path="o.json", state_path="s.json")
+    assert s.rejected == {} and s.reextract == {}
+
+
+# --- Re-ekstrakcja ofert bez terminu ---
+
+def test_reextract_candidates_sorted_oldest_first(storage):
+    storage.merge_offers([
+        {**OFFER, "url": "https://a.pl/1", "termin_skladania_ofert": "",
+         "znaleziono_dnia": "2026-08-29"},
+        {**OFFER, "url": "https://a.pl/2", "termin_skladania_ofert": "",
+         "znaleziono_dnia": "2026-08-28"},
+        {**OFFER, "url": "https://a.pl/3", "termin_skladania_ofert": "2026-09-01"},
+    ])
+    cands = storage.get_reextract_candidates(5)
+    assert [c["url"] for c in cands] == ["https://a.pl/2", "https://a.pl/1"]
+
+
+def test_reextract_respects_max_attempts(storage):
+    storage.merge_offers([{**OFFER, "termin_skladania_ofert": ""}])
+    storage.mark_extract_attempt(OFFER["url"])
+    storage.mark_extract_attempt(OFFER["url"])
+    assert storage.get_reextract_candidates(5) == []
+
+
+def test_mark_attempt_persists(tmp_path, monkeypatch):
+    monkeypatch.chdir(tmp_path)
+    s1 = Storage(offers_path="o.json", state_path="s.json")
+    s1.merge_offers([{**OFFER, "termin_skladania_ofert": ""}])
+    s1.mark_extract_attempt(OFFER["url"])
+    s1.save()
+    s2 = Storage(offers_path="o.json", state_path="s.json")
+    assert s2.reextract[_url_hash(OFFER["url"])]["attempts"] == 1
+
+
+def test_update_offer_replaces_fields_keeps_history(storage):
+    storage.merge_offers([{**OFFER, "termin_skladania_ofert": "",
+                           "znaleziono_dnia": "2026-08-28"}])
+    ok = storage.update_offer(OFFER["url"], {
+        "podmiot": "Nowa Nazwa", "termin_skladania_ofert": "2026-09-20",
+        "url": OFFER["url"], "znaleziono_dnia": date.today().isoformat(),
+    })
+    assert ok is True
+    offer = storage.offers[0]
+    assert offer["podmiot"] == "Nowa Nazwa"
+    assert offer["termin_skladania_ofert"] == "2026-09-20"
+    # Historia zachowana: url i znaleziono_dnia z pierwotnego dodania
+    assert offer["url"] == OFFER["url"]
+    assert offer["znaleziono_dnia"] == "2026-08-28"
+
+
+def test_update_offer_unknown_url_returns_false(storage):
+    assert storage.update_offer("https://nietma.pl/x", {"podmiot": "X"}) is False

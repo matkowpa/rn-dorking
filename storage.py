@@ -10,6 +10,17 @@ from urllib.parse import urlsplit, urlunsplit
 
 logger = logging.getLogger(__name__)
 
+REJECT_TTL_DAYS = 30      # po tylu dniach odrzucony URL może wrócić do rozpatrzenia
+MAX_EXTRACT_ATTEMPTS = 2  # maks. liczba prób re-ekstrakcji oferty bez terminu
+
+
+def _parse_iso(value: str):
+    """Bezpieczny date.fromisoformat; None przy błędnym formacie."""
+    try:
+        return date.fromisoformat(value)
+    except (TypeError, ValueError):
+        return None
+
 
 def _normalize_url(url: str) -> str:
     """Normalizuje URL: lowercase host, usuwa parametry utm_, fragment,
@@ -42,6 +53,8 @@ class Storage:
         self.state_path = state_path
         self.offers: list[dict] = []
         self.seen_urls: set[str] = set()
+        self.rejected: dict[str, str] = {}    # hash URL-a -> data odrzucenia
+        self.reextract: dict[str, dict] = {}  # hash URL-a -> {"attempts", "last"}
         self._load_state()
 
     def _load_json(self, path: str):
@@ -67,7 +80,19 @@ class Storage:
             # Migracja/uzupełnienie: hashuj URL-e ofert, których nie ma w stanie
             self.seen_urls |= {_url_hash(o.get("url", ""))
                                for o in self.offers if o.get("url")}
+        # Stare stan.json ma tylko seen_urls - brakujące klucze = puste struktury
+        self.rejected = state.get("rejected", {}) if state is not None else {}
+        self.reextract = state.get("reextract", {}) if state is not None else {}
+        self._prune_rejected()
         return self.seen_urls
+
+    def _prune_rejected(self) -> None:
+        """Usuwa wpisy odrzuconych URL-i starsze niż REJECT_TTL_DAYS."""
+        cutoff = date.today().toordinal() - REJECT_TTL_DAYS
+        stale = [h for h, d in self.rejected.items()
+                 if _parse_iso(d) is None or _parse_iso(d).toordinal() < cutoff]
+        for h in stale:
+            del self.rejected[h]
 
     def is_new(self, url: str) -> bool:
         """True, jeśli hash znormalizowanego URL-a nie występuje w seen_urls."""
@@ -78,12 +103,63 @@ class Storage:
         self.offers.append(offer)
         self.seen_urls.add(_url_hash(offer.get("url", "")))
 
+    def is_rejected(self, url: str) -> bool:
+        """True, jeśli URL był ostatnio odrzucony przez filtr (w oknie TTL)."""
+        return _url_hash(url) in self.rejected
+
+    def add_rejected(self, url: str) -> None:
+        """Zapamiętuje odrzucony URL z dzisiejszą datą (TTL = REJECT_TTL_DAYS)."""
+        self.rejected[_url_hash(url)] = date.today().isoformat()
+
+    def get_reextract_candidates(self, max_n: int) -> list[dict]:
+        """Oferty bez terminu, które warto spróbować zekstrahować ponownie.
+
+        Kolejność: najstarsze znaleziono_dnia najpierw; pomija oferty, które
+        wyczerpały MAX_EXTRACT_ATTEMPTS prób.
+        """
+        candidates = []
+        for offer in self.offers:
+            if offer.get("termin_skladania_ofert"):
+                continue
+            entry = self.reextract.get(_url_hash(offer.get("url", "")), {})
+            if entry.get("attempts", 0) >= MAX_EXTRACT_ATTEMPTS:
+                continue
+            candidates.append(offer)
+        candidates.sort(key=lambda o: o.get("znaleziono_dnia", ""))
+        return candidates[:max_n]
+
+    def mark_extract_attempt(self, url: str) -> None:
+        """Zapisuje kolejną próbę re-ekstrakcji dla URL-a."""
+        entry = self.reextract.setdefault(_url_hash(url), {"attempts": 0, "last": ""})
+        entry["attempts"] += 1
+        entry["last"] = date.today().isoformat()
+
+    def update_offer(self, url: str, new_fields: dict) -> bool:
+        """Podmienia pola istniejącej oferty (po URL-u). True, jeśli znaleziono.
+
+        Zachowuje oryginalne url i znaleziono_dnia (historia pozostaje spójna).
+        """
+        h = _url_hash(url)
+        for i, offer in enumerate(self.offers):
+            if _url_hash(offer.get("url", "")) == h:
+                merged = {**offer, **new_fields}
+                merged["url"] = offer.get("url", url)
+                merged["znaleziono_dnia"] = offer.get("znaleziono_dnia", "")
+                self.offers[i] = merged
+                return True
+        return False
+
     def save(self) -> None:
         """Atomowo zapisuje oferty.json i stan.json (UTF-8, ensure_ascii=False)."""
         # Sortuj oferty malejąco po terminie ("" trafia na koniec przy reverse=True)
         self.offers.sort(key=lambda o: o.get("termin_skladania_ofert", ""), reverse=True)
         self._atomic_write(self.offers_path, self.offers)
-        self._atomic_write(self.state_path, {"seen_urls": sorted(self.seen_urls)})
+        self._prune_rejected()
+        self._atomic_write(self.state_path, {
+            "seen_urls": sorted(self.seen_urls),
+            "rejected": self.rejected,
+            "reextract": self.reextract,
+        })
 
     def save_daily(self, stats: dict, run_date: str | None = None) -> str:
         """Zapisuje oferty znalezione w dniu run_date do data/dnia/<data>.json.
