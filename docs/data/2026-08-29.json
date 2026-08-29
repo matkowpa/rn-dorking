@@ -3,9 +3,9 @@
   "stats": {
     "search_requests": 12,
     "raw_results": 73,
-    "after_dedup": 30,
-    "after_filter": 9,
-    "offers_added": 4,
+    "after_dedup": 14,
+    "after_filter": 10,
+    "offers_added": 3,
     "extract_errors": 0,
     "offers_updated": 0
   },
@@ -118,6 +118,36 @@
       "wymagania": "",
       "podsumowanie": "Podana strona to strona główna Biuletynu Informacji Publicznej PWK Sp. z o.o. w Czarnem i nie zawiera ogłoszenia o naborze kandydatów na członków rady nadzorczej. Brak terminu składania ofert oraz wymagań.",
       "url": "https://pwkczarne.mojbip.pl/75.html?file=300",
+      "znaleziono_dnia": "2026-08-29"
+    },
+    {
+      "podmiot": "Państwowy Fundusz Rehabilitacji Osób Niepełnosprawnych",
+      "miejscowosc": "",
+      "termin_skladania_ofert": "",
+      "stanowisko": "członek rady nadzorczej",
+      "wymagania": "",
+      "podsumowanie": "Zgodnie z adresem URL strona dotyczy ogłoszenia o naborze kandydatów do rady nadzorczej Państwowego Funduszu Rehabilitacji Osób Niepełnosprawnych. Pobrana treść zawiera jednak wyłącznie nawigację i elementy portalu gov.pl, bez szczegółów naboru (brak terminu składania ofert i wymagań).",
+      "url": "https://www.gov.pl/web/rodzina/ogloszenie-o-naborze-kandydatow-do-rady-nadzorczej-panstwowego-funduszu-rehabilitacji-osob-niepelnosprawnych",
+      "znaleziono_dnia": "2026-08-29"
+    },
+    {
+      "podmiot": "Narodowy Fundusz Ochrony Środowiska i Gospodarki Wodnej (NFOŚiGW)",
+      "miejscowosc": "",
+      "termin_skladania_ofert": "",
+      "stanowisko": "członek rady nadzorczej",
+      "wymagania": "",
+      "podsumowanie": "Ogłoszenie dotyczy naboru kandydatów do rady nadzorczej NFOŚiGW (opublikowane przez Radę Działalności Pożytku Publicznego), jednak treść strony Facebook nie była dostępna – widoczne były wyłącznie elementy interfejsu logowania. Dane te ustalono na podstawie adresu URL; terminu składania ofert, miejscowości i wymagań nie udało się wyodrębnić.",
+      "url": "https://www.facebook.com/narodowyinstytutwolnosci/photos/-nab%C3%B3r-kandydat%C3%B3w-do-rady-nadzorczej-nfo%C5%9Bigwrada-dzia%C5%82alno%C5%9Bci-po%C5%BCytku-publiczneg/991306079858458/",
+      "znaleziono_dnia": "2026-08-29"
+    },
+    {
+      "podmiot": "Piastowskie Przedsiębiorstwo Usług Komunalnych spółka z ograniczoną odpowiedzialnością w Piastowie",
+      "miejscowosc": "Piastów",
+      "termin_skladania_ofert": "",
+      "stanowisko": "członek rady nadzorczej",
+      "wymagania": "",
+      "podsumowanie": "Burmistrz Miasta Piastowa ogłasza nabór na członków Rady Nadzorczej Piastowskiego Przedsiębiorstwa Usług Komunalnych sp. z o.o. w Piastowie. W ogłoszeniu nie podano terminu składania ofert ani szczegółowych wymagań.",
+      "url": "https://www.piastow.pl/komunikaty/konkurs-na-czlonkow-rady-nadzorczej-ppuk",
       "znaleziono_dnia": "2026-08-29"
     }
   ]
