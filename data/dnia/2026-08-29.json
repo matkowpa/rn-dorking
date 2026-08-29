@@ -3,9 +3,9 @@
   "stats": {
     "search_requests": 8,
     "raw_results": 46,
-    "after_dedup": 28,
-    "after_filter": 10,
-    "offers_added": 6,
+    "after_dedup": 22,
+    "after_filter": 4,
+    "offers_added": 1,
     "extract_errors": 0
   },
   "offers": [
@@ -67,6 +67,16 @@
       "wymagania": "",
       "podsumowanie": "Gmina Brzeszcze ogłasza nabór do bazy kandydatów na członków rad nadzorczych spółek prawa handlowego. Strona nie zawiera jednak szczegółowych wymagań ani terminu składania aplikacji.",
       "url": "https://brzeszcze.pl/nabor-do-bazy-kandydatow-na-czlonkow-rad-nadzorczych-spolek-prawa-handlowego,7083",
+      "znaleziono_dnia": "2026-08-29"
+    },
+    {
+      "podmiot": "Miasto Nowy Dwór Mazowiecki",
+      "miejscowosc": "Nowy Dwór Mazowiecki",
+      "termin_skladania_ofert": "",
+      "stanowisko": "członek rady nadzorczej",
+      "wymagania": "Wniosek o wpis do Bazy Kandydatów: wskazanie uprawnień z art. 19 ustawy o zasadach zarządzania mieniem państwowym (z kopią dokumentu), okres zatrudnienia w latach, wykształcenie, stopień naukowy, inne uprawnienia zawodowe, uczestnictwo w organach spółek, staż w radach nadzorczych spółek z udziałem JST.",
+      "podsumowanie": "Dokument to kwestionariusz osobowy kandydata na członka rady nadzorczej (załącznik do Zarządzenia nr 124/2025 Burmistrza Miasta Nowy Dwór Mazowiecki), służący wnioskowi o wpis do Bazy Kandydatów w spółkach z udziałem miasta. Ogłoszenie nie zawiera terminu składania ofert.",
+      "url": "https://bip.nowydwormaz.pl/plik,5279,kwestionariusz-osobowy-kandydata-na-czlonka-rady-nadzorczej.pdf",
       "znaleziono_dnia": "2026-08-29"
     }
   ]
