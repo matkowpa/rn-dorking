@@ -89,11 +89,12 @@ body {
 .chip.on { background: var(--violet); border-color: var(--violet); color: #fff; font-weight: 500; }
 
 /* ---------- karty ogłoszeń ---------- */
-.cards { display: grid; gap: 1rem; }
+.cards { display: grid; gap: 1rem; grid-template-columns: minmax(0, 1fr); }
 .card {
   background: var(--card); border: 1px solid var(--border); border-radius: 1rem;
   padding: 1.25rem; transition: border-color .2s;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .35);
+  min-width: 0; max-width: 100%; overflow-wrap: anywhere;
 }
 .card:hover { border-color: var(--border-h); }
 .card h3 { margin: 0 0 .55rem; font-size: 1rem; color: #fff; }
@@ -101,6 +102,7 @@ body {
 .badge {
   font-family: 'Fira Code', ui-monospace, monospace; font-size: .66rem;
   padding: .18rem .55rem; border-radius: 999px; border: 1px solid; white-space: nowrap;
+  max-width: 100%; overflow: hidden; text-overflow: ellipsis;
 }
 .badge.green  { background: rgba(52, 211, 153, .1);  color: var(--emerald); border-color: rgba(52, 211, 153, .2); }
 .badge.red    { background: rgba(251, 113, 133, .1); color: var(--rose);    border-color: rgba(251, 113, 133, .2); }
