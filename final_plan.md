@@ -356,12 +356,17 @@ jako szybka diagnostyka ręczna.
   repository **variable**: `EXTRA_DORKS`.
 - **Alert na błąd**: krok `Alert on failure (Telegram)` z `if: failure()` —
   wysyła link do logu runu; brak sekretów Telegram = pominięty.
-- **Prezentacja** (GitHub Pages, `docs/`): frontend vanilla JS — router hash
-  (`#/` = strona główna, `#/YYYY-MM-DD` = widok dnia), toolbar (wyszukiwanie
-  po podmiocie/miejscowości/podsumowaniu, sortowanie: termin
-  najbliższy/najdalszy/data znalezienia, chip „tylko aktywne"), badge terminu
-  z odliczaniem dni (zielony/żółty/czerwony), banner statystyk aktywnych ofert.
-  URL: **https://matkowpa.github.io/rn-dorking/** (Pages: main /docs).
+- **Prezentacja** (GitHub Pages, `docs/`): SPA zero-build wg koncepcji
+  „Clean Structured Cards" (`front-end.txt`) — Tailwind (CDN), paleta
+  slate-950/900 + violet, fonty Inter + Fira Code. Feed kart z badge statusu
+  wyliczanym na kliencie (Nowe / Pilne ≤3 dni / W toku / Zakończone),
+  **wyszukiwaniem na żywo**, **pills filtrów** (Wszystkie / Nowe / Kończące się /
+  ⭐ Ulubione w localStorage), **drawerem szczegółów** (wymagania jako lista,
+  link do źródła). Warstwa mapowania w `app.js` zamienia dane potoku
+  (`podmiot/termin/...`) na view model (`id` = hash URL-a, itd.); router hash
+  zachowany hybrydowo: `#/` = feed główny + Historia dni, `#/YYYY-MM-DD` =
+  feed dnia z nawigacją ←/→. URL: **https://matkowpa.github.io/rn-dorking/**
+  (Pages: main /docs).
 - **Powiadomienia** (`notify.py`): digest nowych ofert dnia + przypomnienia
   o terminach ≤7 dni (anty-spam: `data/notified.json`, idempotentny zapis stanu
   tylko po udanej wysyłce); kanały: Telegram + e-mail (Brevo SMTP, STARTTLS);

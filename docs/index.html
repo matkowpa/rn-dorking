@@ -1,24 +1,108 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl" class="dark">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nabory na rady nadzorcze</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agregator Ogłoszeń RN</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .font-mono { font-family: 'Fira Code', monospace; }
+  </style>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <header class="topbar">
-    <a class="brand" href="#/">Nabory<span>rad nadzorczych</span></a>
-    <button id="themeToggle" class="theme-toggle" title="Zmień motyw" aria-label="Zmień motyw">◐</button>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col">
+
+  <!-- Nagłówek (sticky) -->
+  <header class="border-b border-slate-800 bg-slate-900/80 sticky top-0 z-30 backdrop-blur-md">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <a href="#/" class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-violet-600 flex items-center justify-center font-bold text-white text-sm">RN</div>
+        <div class="text-left">
+          <h1 class="text-base font-bold text-white leading-tight">Agregator Ogłoszeń RN</h1>
+          <p class="text-xs text-slate-400">Nabory do rad nadzorczych spółek JST i Skarbu Państwa</p>
+        </div>
+      </a>
+      <div class="flex items-center gap-2 text-xs font-mono bg-slate-800 px-3 py-1.5 rounded-full border border-slate-700">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="text-slate-300">Ogłoszenia: <strong id="countBadge" class="text-emerald-400">0</strong></span>
+      </div>
+    </div>
   </header>
 
-  <main id="view"></main>
+  <!-- Pasek wyszukiwania i filtrów -->
+  <section class="max-w-5xl mx-auto w-full px-4 pt-6 pb-2 space-y-4">
+    <div class="flex flex-col md:flex-row gap-3 items-center">
+      <div class="relative flex-1 w-full">
+        <svg class="w-4 h-4 absolute left-3.5 top-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        <input type="text" id="searchInput" placeholder="Szukaj wg nazwy spółki, miasta lub słów kluczowych..."
+               class="w-full bg-slate-900 border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-violet-500 transition">
+      </div>
+      <span id="viewTitle" class="text-xs font-mono text-slate-400" style="display:none"></span>
+    </div>
+    <div class="flex flex-wrap items-center gap-2 pt-1 text-xs">
+      <span class="text-slate-500 font-medium mr-1">Filtry:</span>
+      <button onclick="setFilter('all')" id="btn-all" class="filter-btn px-3 py-1.5 rounded-lg border bg-violet-600 border-violet-500 text-white font-medium transition">Wszystkie</button>
+      <button onclick="setFilter('NEW')" id="btn-NEW" class="filter-btn px-3 py-1.5 rounded-lg border border-slate-800 bg-slate-900 text-slate-400 hover:text-white transition">✨ Nowe</button>
+      <button onclick="setFilter('URGENT')" id="btn-URGENT" class="filter-btn px-3 py-1.5 rounded-lg border border-slate-800 bg-slate-900 text-slate-400 hover:text-white transition">⏳ Kończące się</button>
+      <button onclick="setFilter('saved')" id="btn-saved" class="filter-btn px-3 py-1.5 rounded-lg border border-slate-800 bg-slate-900 text-slate-400 hover:text-white transition">⭐ Ulubione</button>
+    </div>
+  </section>
 
-  <footer class="footer">
-    <p>Dane zbierane automatycznie dwa razy dziennie (07:00 i 19:00) z polskich BIP-ów i stron spółek.
-       Źródła: Brave Search + LLM ekstrakcja. <a href="https://github.com/">GitHub</a></p>
+  <!-- Główny feed -->
+  <main class="max-w-5xl mx-auto w-full px-4 py-6 flex-1">
+    <div id="feedContainer" class="space-y-4"></div>
+    <nav id="daynav" class="justify-between mt-6" style="display:none"></nav>
+    <section id="historySection" class="mt-10" style="display:none">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-slate-400 mb-3">Historia dni</h2>
+      <div id="daysGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3"></div>
+    </section>
+  </main>
+
+  <!-- Drawer szczegółów ogłoszenia -->
+  <div id="drawer" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex justify-end">
+    <div class="w-full max-w-2xl bg-slate-900 h-full border-l border-slate-800 p-6 overflow-y-auto flex flex-col justify-between space-y-6">
+      <div class="space-y-6">
+        <div class="flex justify-between items-start border-b border-slate-800 pb-4">
+          <div>
+            <span id="drawerStatus" class="text-[10px] font-mono uppercase px-2 py-0.5 rounded border"></span>
+            <h2 id="drawerTitle" class="text-xl font-bold text-white mt-2"></h2>
+            <p id="drawerOrg" class="text-xs text-slate-400 mt-1"></p>
+          </div>
+          <button onclick="closeDrawer()" class="p-2 text-slate-400 hover:text-white bg-slate-800 rounded-lg">✕</button>
+        </div>
+        <div class="grid grid-cols-2 gap-4 text-sm bg-slate-950/50 p-4 rounded-xl border border-slate-800">
+          <div>
+            <span class="text-slate-500 block">Termin składania:</span>
+            <strong id="drawerDeadline" class="text-slate-200 font-mono"></strong>
+          </div>
+          <div>
+            <span class="text-slate-500 block">Lokalizacja:</span>
+            <strong id="drawerLocation" class="text-slate-200"></strong>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-400">Podsumowanie</h3>
+          <p id="drawerSummary" class="text-sm text-slate-300 leading-relaxed"></p>
+        </div>
+        <div id="drawerReqSection" class="space-y-2">
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-400">Wymagania i profil kandydata</h3>
+          <ul id="drawerRequirements" class="list-disc list-inside text-sm text-slate-300 space-y-1.5 leading-relaxed"></ul>
+        </div>
+      </div>
+      <div class="border-t border-slate-800 pt-4 flex gap-3">
+        <a id="drawerSourceBtn" href="#" target="_blank" rel="noopener"
+           class="flex-1 bg-violet-600 hover:bg-violet-500 text-white text-center font-semibold py-2.5 rounded-xl text-sm transition">
+          Otwórz źródło ogłoszenia ↗
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="border-t border-slate-800 py-6 text-center text-xs text-slate-500">
+    <p>Dane zbierane automatycznie dwa razy dziennie (07:00 i 19:00) z polskich BIP-ów i stron spółek — Brave Search + LLM.</p>
   </footer>
 
   <script src="app.js"></script>
