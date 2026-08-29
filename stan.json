@@ -58,7 +58,9 @@
     "3f9f26833604b0c427f9c966485bb68a362b99b0": "2026-08-29",
     "fa378ba670588583c92af45e12a2b4b520cd969b": "2026-08-29",
     "3a71e002ac261fbc0131a69c417a9ba9a85857d9": "2026-08-29",
-    "cafb0ab82efa56da95772d304bb3e0d310227ad1": "2026-08-29"
+    "cafb0ab82efa56da95772d304bb3e0d310227ad1": "2026-08-29",
+    "8511968b8bcb940675ba73a1f79df1e6c840df06": "2026-08-29",
+    "e22a81d23b922e04b35375d019434a10cbfb8e5c": "2026-08-29"
   },
   "reextract": {
     "922f1fea6a39a30925042c018495f3cfa1dedfe5": {
@@ -79,6 +81,26 @@
     },
     "61df4038e1a9b18695fac6e72d6a8800ad3ea474": {
       "attempts": 2,
+      "last": "2026-08-29"
+    },
+    "117b392dcab21ee0b39f519d78b235b5e4c8a4d1": {
+      "attempts": 1,
+      "last": "2026-08-29"
+    },
+    "b13011a41265b6f3200d836b64c170d4af687be8": {
+      "attempts": 1,
+      "last": "2026-08-29"
+    },
+    "c8a1a54a71b93150e60cdcc3acf313e08826adba": {
+      "attempts": 1,
+      "last": "2026-08-29"
+    },
+    "47fd8bbdd615f8790f6af8b6d32beedd1aa9fea8": {
+      "attempts": 1,
+      "last": "2026-08-29"
+    },
+    "1129f1856b956cccc30dab03998c704868619fac": {
+      "attempts": 1,
       "last": "2026-08-29"
     }
   }
