@@ -14,7 +14,7 @@ if hasattr(sys.stdout, "reconfigure"):
 
 import config
 from content_fetcher import fetch_content
-from llm_parser import extract_fields, filter_is_announcement
+from llm_parser import extract_fields, filter_is_announcement, rejects_zarzad
 from storage import Storage
 
 
@@ -159,7 +159,12 @@ def main(argv: list[str] | None = None) -> int:
         stats["after_dedup"] += 1
         title = result.get("title", "")
         snippet = result.get("snippet", "")
-        czy_nabor, uzasadnienie = filter_is_announcement(title, snippet, link)
+        # Tani pre-filtr: nabór na stanowiska zarządu (bez wzmianki o radzie
+        # nadzorczej) odrzucamy bez wywołania LLM - oszczędność kosztu i czasu.
+        if rejects_zarzad(title, snippet):
+            czy_nabor, uzasadnienie = False, "nabór na zarząd, nie na radę nadzorczą"
+        else:
+            czy_nabor, uzasadnienie = filter_is_announcement(title, snippet, link)
         stats["after_filter"] += 1 if czy_nabor else 0
 
         if args.dry_run:

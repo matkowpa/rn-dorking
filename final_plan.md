@@ -131,10 +131,16 @@ rn-dorking/
 
 Dwie funkcje o różnych promptach i (potencjalnie) różnych modelach:
 
+- `rejects_zarzad(title, snippet) -> bool` — **deterministyczny pre-filtr**
+  (przed LLM): odrzuca wyniki z frazami stanowisk zarządu (członek/prezes/
+  wiceprezes zarządu), gdy tekst nie wspomina w ogóle o radzie nadzorczej —
+  oszczędza wywołanie LLM. Przypadki mieszane rozstrzyga filtr LLM.
 - `filter_is_announcement(title, snippet, url) -> tuple[bool, str]` — model
-  `LLM_MODEL`; zwraca `(czy_to_nabor, uzasadnienie)`; przy JAKIMKOLWIEK błędzie:
-  WARNING + `(False, "błąd filtra: ...")` — bezpieczny fallback (wątpliwe
-  wyniki odrzucane, przyczyna widoczna w logu i przy `--dry-run`).
+  `LLM_MODEL`; zwraca `(czy_to_nabor, uzasadnienie)`; prompt zawiera regułę:
+  **nabór na stanowiska zarządu (członek/prezes/wiceprezes) NIE jest istotny
+  — nawet gdy postępowanie przeprowadza rada nadzorcza**; przy JAKIMKOLWIEK
+  błędzie: WARNING + `(False, "błąd filtra: ...")` — bezpieczny fallback
+  (wątpliwe wyniki odrzucane, przyczyna widoczna w logu i przy `--dry-run`).
 - `extract_fields(full_text, url) -> dict | None` — model `LLM_MODEL_EXTRACT`;
   tekst obcinany do **12000 znaków PRZED** wysłaniem; pola: `podmiot`,
   `miejscowosc`, `termin_skladania_ofert`, `stanowisko`, `wymagania`,
@@ -320,7 +326,7 @@ Przebieg:
 
 ## 10. ETAP 6 — testy (zamiennik self-testów z v3)
 
-**47 testów pytest**, zero wywołań sieciowych, uruchamiane w CI **przed** potokiem:
+**54 testy pytest**, zero wywołań sieciowych, uruchamiane w CI **przed** potokiem:
 
 ```
 python -m pytest tests/ -q
@@ -330,7 +336,7 @@ python -m pytest tests/ -q
 |---|---|
 | `tests/test_storage.py` (18) | normalizacja URL (utm_/host/trailing slash/fragment), deduplikacja między uruchomieniami, UTF-8 + sortowanie przy zapisie, scalanie pliku dnia, stabilność hasha, pamięć odrzuconych (skip, TTL 30 dni, trwałość, backcompat starego stan.json), re-ekstrakcja (kolejność najstarszych, limit prób, trwałość licznika), `update_offer` (podmiana pól + zachowanie historii, nieznany URL) |
 | `tests/test_config.py` (10) | parsowanie `EXTRA_DORKS` (pełny/pusty/nieustawiony), `SEARCH_DAYS_BACK`/`RESULTS_PER_DORK` (błędne → default + WARNING), `validate()` |
-| `tests/test_llm_parser.py` (5) | `_strip_json`: markdown, otaczający tekst, czysty JSON, białe znaki |
+| `tests/test_llm_parser.py` (12) | `_strip_json`: markdown, otaczający tekst, czysty JSON, białe znaki; pre-filtr zarządu `rejects_zarzad`: członek/prezes/wiceprezes zarządu → odrzucenie, „Biuro Zarządu" i przypadki mieszane (rada nadzorcza w tekście) → przekazane do LLM |
 | `tests/test_content_fetcher.py` (11) | ekstrakcja HTML: script/style, encje, białe znaki, logika charset; poziom 2: `_attachment_links` (PDF/frazy, odrzucanie nieistotnych, limit MAX_ATTACHMENTS, deduplikacja), `fetch_content` z podstroną (poziom 2) i pomijaniem poziomu 2 przy bogatej treści |
 | `tests/test_notify.py` (4) | budowa digestu (tekst+HTML), sekcja przypomnień, „termin: nieznany" |
 
@@ -406,7 +412,7 @@ python notify.py            # wysyłka digestu (opcjonalnie)
 
 - [x] wszystkie moduły zgodne ze strukturą (sekcja 2)
 - [x] `--check`, `--dry-run`, `--limit`, `--days` działają (argparse)
-- [x] 47 testów pytest przechodzą lokalnie i w CI (krok `Run tests`)
+- [x] 54 testy pytest przechodzą lokalnie i w CI (krok `Run tests`)
 - [x] deduplikacja działa między uruchomieniami (potwierdzone produkcją)
 - [x] polskie znaki diakrytyczne poprawne w `oferty.json`, `stan.json`, `run.log`
 - [x] żadnych sekretów w kodzie i w repo (`.gitignore`: `.env`, `venv/`, `run.log`, `__pycache__/`)

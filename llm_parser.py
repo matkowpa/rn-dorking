@@ -104,9 +104,24 @@ def _call_llm(model: str, system_prompt: str, user_content: str) -> str:
     return _strip_json(content)
 
 
-# System prompt filtra (ETAP B) - dosłownie wg specyfikacji
-FILTER_SYSTEM_PROMPT = '''Jesteś filtrem ogłoszeń. Na podstawie TYLKO podanego tytułu i fragmentu wyniku wyszukiwania zdecyduj, czy wynik dotyczy otwartego naboru kandydatów na członka rady nadzorczej (spółki, funduszy, instytucji publicznych). Nie dotyczą naboru: archiwalne ogłoszenia, protokoły z posiedzeń, uchwały o powołaniu już wybranych osób, aktualności, strony główne BIP, wzory dokumentów.
-Zwróć WYŁĄCZNIE obiekt JSON: {"czy_to_nabor": true lub false, "uzasadnienie": "maks. 15 słów"}'''
+# System prompt filtra (ETAP B) - dosłownie wg specyfikacji (+ reguła zarządu)
+FILTER_SYSTEM_PROMPT = '''Jesteś filtrem ogłoszeń. Na podstawie TYLKO podanego tytułu i fragmentu wyniku wyszukiwania zdecyduj, czy wynik dotyczy otwartego naboru kandydatów na członka rady nadzorczej (spółki, funduszy, instytucji publicznych). Nie dotyczą naboru: archiwalne ogłoszenia, protokoły z posiedzeń, uchwały o powołaniu już wybranych osób, aktualności, strony główne BIP, wzory dokumentów. Nabór na stanowiska zarządu (członek zarządu, prezes zarządu, wiceprezes zarządu) NIE jest istotny - nawet gdy postępowanie przeprowadza rada nadzorcza; odrzucaj takie wyniki. Zwróć WYŁĄCZNIE obiekt JSON: {"czy_to_nabor": true lub false, "uzasadnienie": "maks. 15 słów"}'''
+
+# Deterministyczny pre-filtr (przed LLM): frazy stanowisk zarządu. Ogłoszenia
+# o naborze na członka/prezesa zarządu są nieistotne (projekt dotyczy WYŁĄCZNIE
+# rad nadzorczych). Stosowany tylko, gdy tekst nie wspomina o radzie nadzorczej
+# - przypadki mieszane (np. "rada nadzorcza ogłasza nabór na prezesa zarządu")
+# rozstrzyga filtr LLM wg reguły w FILTER_SYSTEM_PROMPT.
+ZARZAD_RE = re.compile(
+    r"członk\w* zarządu|prezes\w* zarządu|wiceprezes\w* zarządu", re.IGNORECASE)
+NADZORCZA_RE = re.compile(r"nadzorcz\w+", re.IGNORECASE)
+
+
+def rejects_zarzad(title: str, snippet: str) -> bool:
+    """True, gdy tytuł+snippet wskazuje nabór na stanowisko zarządu, a treść
+    nie wspomina w ogóle o radzie nadzorczej (oszczędza wywołanie LLM)."""
+    text = f"{title} {snippet}"
+    return bool(ZARZAD_RE.search(text)) and not bool(NADZORCZA_RE.search(text))
 
 
 def filter_is_announcement(title: str, snippet: str, url: str) -> tuple[bool, str]:

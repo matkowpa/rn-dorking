@@ -1,5 +1,54 @@
 # -*- coding: utf-8 -*-
-"""Testy czystych funkcji llm_parser (bez wywołań sieciowych)."""
+"""Testy pre-filtra zarządu (odrzucanie naborów na stanowiska zarządu)."""
+import sys, os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from llm_parser import rejects_zarzad
+
+
+def test_zarzad_członek():
+    assert rejects_zarzad(
+        "Nabór na członka zarządu", "Spółka X ogłasza nabór na członka zarządu.")
+
+
+def test_zarzad_prezes():
+    assert rejects_zarzad(
+        "Postępowanie kwalifikacyjne", "Nabór kandydatów na stanowisko prezesa zarządu spółki.")
+
+
+def test_zarzad_wiceprezes():
+    assert rejects_zarzad(
+        "Ogłoszenie", "nabór kandydatów na wiceprezesa zarządu spółki")
+
+
+def test_zarzad_liczba_mnoga():
+    assert rejects_zarzad(
+        "Nabór", "ogłoszenie naboru kandydatów na członków zarządu spółki")
+
+
+def test_rada_nadzorcza_ok():
+    assert not rejects_zarzad(
+        "Nabór na członka rady nadzorczej",
+        "Ogłoszenie o naborze kandydatów na członka rady nadzorczej. "
+        "Zgłoszenia prosimy składać w Biurze Zarządu.")
+
+
+def test_mieszany_przypadek_przekazany_do_llm():
+    # TORPOL-like: rada nadzorcza przeprowadza nabór na prezesa zarządu -
+    # pre-filtr nie odrzuca (decyzję podejmuje LLM z regułą w prompcie)
+    assert not rejects_zarzad(
+        "TORPOL szuka prezesa zarządu",
+        "Rada nadzorcza TORPOLU ogłosiła postępowanie kwalifikacyjne "
+        "na stanowisko prezesa zarządu.")
+
+
+def test_zarzad_jako_miejsce_skladania():
+    # "Biuro Zarządu" to miejsce składania ofert, nie stanowisko - nie odrzucamy
+    assert not rejects_zarzad(
+        "Nabór kandydatów",
+        "Zapisy w Biurze Zarządu spółki, nabór do bazy kandydatów.")
+
+
 import sys
 
 sys.stdout.reconfigure(encoding="utf-8")
