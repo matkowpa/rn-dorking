@@ -19,6 +19,8 @@ from content_fetcher import fetch_content
 from llm_parser import extract_fields, filter_is_announcement, rejects_zarzad
 from storage import Storage
 
+logger = logging.getLogger(__name__)
+
 
 def _search(dork: str, days_back: int):
     """Wyszukiwanie: łańcuch zapasowy Brave -> DuckDuckGo.
