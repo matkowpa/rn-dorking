@@ -21,7 +21,7 @@ import re
 import time
 from dataclasses import dataclass
 from datetime import datetime
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlparse
 
 import requests
 from bs4 import BeautifulSoup
@@ -41,8 +41,15 @@ HEADERS = {
 
 # Tekst kotwicy musi wskazywać nabór/konkurs i dotyczyć rady nadzorczej.
 RECRUITMENT_LINK_RE = re.compile(
-    r"nab[oó]r|konkurs|rekrutacj|kandydat|ogłoszen|zgłoszen", re.IGNORECASE)
+    r"nab[oó]r|konkurs|rekrutacj|kandydat|kandydatur|ogłoszen|zgłoszen", re.IGNORECASE)
 RAD_NADZORCZA_RE = re.compile(r"nadzorcz", re.IGNORECASE)
+
+# Podstrony-sekcje warte pogłębionego skanu (tylko ta sama domena)
+SECTION_LINK_RE = re.compile(
+    r"aktualnos|aktualnoś|wiadomos|komunikat|konkurs|nab[oó]r"
+    r"|ogłoszen|ogloszen|relacje|karier",
+    re.IGNORECASE)
+MAX_SUBPAGES_PER_SOURCE = 2  # maks. podstron-sekcji skanowanych per źródło
 
 # Adresy "nieustalone" w mapowaniu JST (slug gov.pl = przekierowanie do
 # wewnętrznej wyszukiwarki, brak realnej strony BIP).
@@ -72,11 +79,12 @@ SOURCES: list = [
     Source("mcyrfr",   "Ministerstwo Cyfryzacji",
            "https://www.gov.pl/web/cyfryzacja/aktualnosci", "ministerstwo", False),
     # Największe spółki Skarbu Państwa / z istotnym udziałem SP
-    Source("orlen",    "ORLEN S.A.", "https://www.orlen.pl", "spolka", True),
+    Source("orlen",    "ORLEN S.A.",
+           "https://www.orlen.pl/pl/relacje-inwestorskie", "spolka", True),
     Source("gkpge",    "Grupa PGE", "https://www.gkpge.pl", "spolka", False),
     Source("tauron",   "TAURON Polska Energia", "https://www.tauron.pl", "spolka", True),
-    Source("enea",     "Grupa Enea", "https://grupa-enea.pl", "spolka", False),
-    Source("energa",   "Grupa Energa", "https://www.grupa-energa.pl", "spolka", False),
+    Source("enea",     "Grupa Enea", "https://www.enea.pl", "spolka", False),
+    Source("energa",   "Grupa Energa", "https://www.energa.pl", "spolka", False),
     Source("kghm",     "KGHM Polska Miedź", "https://kghm.com", "spolka", True),
     Source("plk",      "PKP Polskie Linie Kolejowe", "https://www.plk-sa.pl", "spolka", True),
     Source("pkpcargo", "PKP Cargo", "https://pkpcargo.com", "spolka", False),
@@ -202,10 +210,57 @@ def jst_daily_slice(registry: list, window: int = JST_WINDOW_DEFAULT) -> list:
     return registry[start:] + registry[:window - (len(registry) - start)]
 
 
+def _collect_from_page(soup, base_url: str, max_links: int, dork_label: str,
+                       seen: set, results: list) -> int:
+    """Dopisuje kandydatów ze sparsowanej strony do results. Zwraca liczbę
+    dodanych (po deduplikacji i odfiltrowaniu starych roczników)."""
+    added = 0
+    for anchor_text, url in _candidate_links(soup, base_url, max_links):
+        if url in seen:
+            continue
+        seen.add(url)
+        # Kotwica z rocznikiem starszym niż ubiegły = archiwalny nabór
+        if heuristics.has_stale_years(anchor_text):
+            logger.debug("[Faza 0] pomijam (stare): %.60s", anchor_text)
+            continue
+        results.append({
+            "title": anchor_text,
+            "snippet": anchor_text,
+            "link": url,
+            "dork": dork_label,
+            "_direct": True,
+        })
+        added += 1
+    return added
+
+
+def _section_links(soup, base_url: str, max_subpages: int) -> list[str]:
+    """Podstrony-sekcje (aktualności / konkursy / relacje / kariera) na TEJ
+    SAMEJ domenie co źródło - warte pogłębionego skanu."""
+    base_host = urlparse(base_url).netloc.lower()
+    out: list[str] = []
+    for a in soup.find_all("a", href=True):
+        href = urljoin(base_url, a["href"].strip())
+        if not href.startswith("http"):
+            continue
+        if urlparse(href).netloc.lower() != base_host:
+            continue
+        if href.rstrip("/") == base_url.rstrip("/"):
+            continue
+        haystack = f"{href} {a.get_text(' ', strip=True)}".lower()
+        if SECTION_LINK_RE.search(haystack) and href not in out:
+            out.append(href)
+        if len(out) >= max_subpages:
+            break
+    return out
+
+
 def _scan_entries(entries: list, dork_label: str, max_links_per_source: int,
-                  delay: float, seen: set, results: list) -> None:
+                  delay: float, seen: set, results: list,
+                  deep: bool = False) -> None:
     """Skanuje listę źródeł (whitelist lub JST) i dopisuje kandydatów
-    do results (format zgodny z wyszukiwarkami)."""
+    do results (format zgodny z wyszukiwarkami). Gdy deep=True (whitelist),
+    skanuje dodatkowo do MAX_SUBPAGES_PER_SOURCE podstron-sekcji źródła."""
     for src in entries:
         logger.info("[Faza 0:%s] %s → %s", dork_label, src["name"], src["url"])
         html = _fetch_html(src["url"])
@@ -216,21 +271,22 @@ def _scan_entries(entries: list, dork_label: str, max_links_per_source: int,
         except Exception as exc:
             logger.warning("[Faza 0:%s] błąd parsowania: %s", dork_label, exc)
             continue
-        for anchor_text, url in _candidate_links(soup, src["url"], max_links_per_source):
-            if url in seen:
-                continue
-            seen.add(url)
-            # Kotwica z rocznikiem starszym niż ubiegły = archiwalny nabór
-            if heuristics.has_stale_years(anchor_text):
-                logger.debug("[Faza 0] pomijam (stare): %.60s", anchor_text)
-                continue
-            results.append({
-                "title": anchor_text,
-                "snippet": anchor_text,
-                "link": url,
-                "dork": dork_label,
-                "_direct": True,
-            })
+        added = _collect_from_page(soup, src["url"], max_links_per_source,
+                                   dork_label, seen, results)
+        if deep:
+            for sub_url in _section_links(soup, src["url"], MAX_SUBPAGES_PER_SOURCE):
+                time.sleep(delay)
+                sub_html = _fetch_html(sub_url)
+                if not sub_html:
+                    continue
+                try:
+                    sub_soup = BeautifulSoup(sub_html, "html.parser")
+                except Exception:
+                    continue
+                added += _collect_from_page(sub_soup, sub_url,
+                                            max_links_per_source,
+                                            dork_label, seen, results)
+        logger.info("[Faza 0:%s] %s → %s kandydatów", dork_label, src["name"], added)
         time.sleep(delay)
 
 
@@ -242,9 +298,10 @@ def collect(max_links_per_source: int = 3, delay: float = 0.5,
     seen: set = set()
 
     # Faza 0a: whitelist źródeł (ministerstwa / spółki SP / porty / duże miasta)
+    # deep=True: dodatkowy skan podstron-sekcji (aktualności / konkursy / relacje)
     entries = [{"id": s.id, "name": s.name, "url": s.url} for s in SOURCES]
     _scan_entries(entries, "źródło bezpośrednie", max_links_per_source,
-                  delay, seen, results)
+                  delay, seen, results, deep=True)
     logger.info("Faza 0a (whitelist): %s kandydatów", len(results))
 
     # Faza 0b: rotacyjne okno BIP-ów samorządowych

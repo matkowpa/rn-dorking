@@ -11,9 +11,11 @@ GitHub Pages.
    - **Faza 0** — bezpośredni skan źródeł (port z rn-scrapper): whitelist
      ministerstw, spółek SP, portów i dużych miast (`direct_sources.py`)
      oraz **rotacyjne okno BIP-ów samorządowych** (rejestr `data/bip_jst.json`,
-     rozmiar okna `JST_WINDOW`, domyślnie 100 podmiotów/run). Kandydaci są
-     wykrywani po tekście kotwicy linku; dla domen `*.gov.pl` filtr LLM jest
-     pomijany (sam link „ogłoszenie o naborze" na BIP jest wiarygodny).
+     rozmiar okna `JST_WINDOW`, domyślnie 100 podmiotów/run). Dla whitelisty
+     skan jest **pogłębiony** (dodatkowo do 2 podstron-sekcji: aktualności,
+     konkursy, relacje). Kandydaci są wykrywani po tekście kotwicy linku;
+     dla domen `*.gov.pl` filtr LLM jest pomijany (sam link „ogłoszenie
+     o naborze" na BIP jest wiarygodny).
    - **ETAP A** — Brave Search (dorki frazowe + opcjonalne `EXTRA_DORKS`);
      przy błędzie/pustym wyniku automatyczny fallback na DuckDuckGo.
    - **Pre-filtr heurystyczny** (`heuristics.py`, port z rn-scrapper) — bez
