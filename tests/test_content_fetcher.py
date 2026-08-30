@@ -118,9 +118,9 @@ def test_fetch_content_level2_appends_subpage(monkeypatch):
         return FakeHtmlResponse(main_html if url == "https://bip.pl/a" else sub_html)
 
     monkeypatch.setattr(content_fetcher.requests, "get", fake_get)
-    out = fetch_content("https://bip.pl/a")
-    assert "Nabór kandydatów na członka rady nadzorczej" in out
-    assert "do 15.09.2026" in out
+    text, pub_date = fetch_content("https://bip.pl/a")
+    assert "Nabór kandydatów na członka rady nadzorczej" in text
+    assert "do 15.09.2026" in text
 
 
 def test_fetch_content_skips_level2_when_text_rich(monkeypatch):
@@ -133,6 +133,43 @@ def test_fetch_content_skips_level2_when_text_rich(monkeypatch):
         return FakeHtmlResponse(rich_html)
 
     monkeypatch.setattr(content_fetcher.requests, "get", fake_get)
-    out = fetch_content("https://bip.pl/bogata")
-    assert "Nabór kandydatów." in out
+    text, pub_date = fetch_content("https://bip.pl/bogata")
+    assert "Nabór kandydatów." in text
     assert len(calls) == 1  # tylko strona główna, bez podstron
+
+
+# --- Data publikacji (port z rn-scrapper) ---
+
+def test_pub_date_from_metatag():
+    html = ('<html><head><meta property="article:published_time" '
+            'content="2026-08-12T09:30:00+02:00"></head>'
+            '<body><p>Nabór kandydatów, termin do 15.09.2026</p></body></html>')
+    assert content_fetcher._extract_publication_date(html) == "2026-08-12"
+
+
+def test_pub_date_from_time_tag():
+    html = '<html><body><time datetime="2026-08-05">5 sierpnia 2026</time><p>Nabór</p></body></html>'
+    assert content_fetcher._extract_publication_date(html) == "2026-08-05"
+
+
+def test_pub_date_from_label():
+    html = ('<html><body><p>Data publikacji: 12.08.2026</p>'
+            '<p>Termin składania ofert: 15.09.2026</p></body></html>')
+    # Etykieta "Data publikacji" wygrywa z pierwszym lepszym ISO w treści
+    assert content_fetcher._extract_publication_date(html) == "2026-08-12"
+
+
+def test_pub_date_absent():
+    html = '<html><body><p>Nabór kandydatów na członka rady nadzorczej</p></body></html>'
+    assert content_fetcher._extract_publication_date(html) == ""
+
+
+def test_fetch_content_returns_pub_date(monkeypatch):
+    html = ('<html><head><meta name="date" content="2026-08-10"></head><body><p>'
+            + ("Ogłoszenie o naborze kandydatów. " * 40)
+            + '</p></body></html>')
+    monkeypatch.setattr(content_fetcher.requests, "get",
+                        lambda url, timeout=30, headers=None: FakeHtmlResponse(html))
+    text, pub_date = fetch_content("https://bip.pl/z-data")
+    assert pub_date == "2026-08-10"
+    assert "Ogłoszenie o naborze" in text

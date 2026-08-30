@@ -66,3 +66,5 @@ SEARCH_DAYS_BACK = _parse_int("SEARCH_DAYS_BACK", 5)
 RESULTS_PER_DORK = _parse_int("RESULTS_PER_DORK", 20, allowed=[10, 20, 30, 40])
 # Dodatkowe dorki z .env, oddzielone znakiem | (pusta wartość = brak)
 EXTRA_DORKS = [d.strip() for d in os.getenv("EXTRA_DORKS", "").split("|") if d.strip()]
+# Rozmiar dziennego okna skanu BIP-ów samorządowych (FAZA 0b, direct_sources)
+JST_WINDOW = _parse_int("JST_WINDOW", 100)

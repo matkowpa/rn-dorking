@@ -6,10 +6,12 @@ import io
 import logging
 import re
 import sys
+from datetime import date
 from urllib.parse import urljoin
 
 import pdfplumber
 import requests
+from bs4 import BeautifulSoup
 
 logger = logging.getLogger(__name__)
 
@@ -56,6 +58,86 @@ def _extract_html_text(response: requests.Response) -> str:
     return raw
 
 
+# --- Data publikacji ogłoszenia (port z rn-scrapper) ------------------------
+
+_META_DATE_FIELDS = (
+    ("property", "article:published_time"),
+    ("property", "og:published_time"),
+    ("name", "pubdate"),
+    ("name", "date"),
+    ("name", "dc.date"),
+    ("itemprop", "datePublished"),
+)
+
+_LABEL_DATE_RE = re.compile(
+    r"(?:data\s+publikacji|opublikowano|data\s+og[łl]oszenia"
+    r"|data\s+dodania|dodano|utworzono|wytworzono|data\s+wydania"
+    r"|wpisano\s+do\s+bip)",
+    re.IGNORECASE,
+)
+
+_ISO_DATE_RE = re.compile(r"\b(20[0-3]\d)-(\d{2})-(\d{2})")
+_DOTTED_DATE_RE = re.compile(r"\b(\d{1,2})\.(\d{2})\.(\d{4})\b")
+
+
+def _extract_date(raw: str) -> str:
+    """'2026-08-12...' -> '2026-08-12'; '12.08.2026' -> '2026-08-12'; '' gdy brak."""
+    m = _ISO_DATE_RE.search(raw)
+    if m:
+        try:
+            return date(int(m.group(1)), int(m.group(2)), int(m.group(3))).isoformat()
+        except ValueError:
+            pass
+    m = _DOTTED_DATE_RE.search(raw)
+    if m:
+        try:
+            return date(int(m.group(3)), int(m.group(2)), int(m.group(1))).isoformat()
+        except ValueError:
+            pass
+    return ""
+
+
+def _extract_publication_date(page_html: str) -> str:
+    """Wyciąga DATĘ PUBLIKACJI ogłoszenia z HTML (a nie dowolną datę z treści,
+    np. termin składania ofert). Kolejność pewności:
+      1. metatagi (article:published_time, datePublished, pubdate...),
+      2. element <time datetime> lub tekst <time>,
+      3. etykieta przed datą ("Data publikacji: 12.08.2026", "Opublikowano ..."),
+      4. "" -> wywołujący zostawia puste pole.
+    """
+    try:
+        soup = BeautifulSoup(page_html, "html.parser")
+    except Exception:
+        return ""
+
+    # 1) Metatagi
+    for attr, name in _META_DATE_FIELDS:
+        tag = soup.find("meta", attrs={attr: name})
+        if tag:
+            cleaned = _extract_date((tag.get("content") or "").strip())
+            if cleaned:
+                return cleaned
+
+    # 2) <time>
+    time_tag = soup.find("time")
+    if time_tag:
+        candidate = (time_tag.get("datetime") or "").strip() \
+            or time_tag.get_text(" ", strip=True)
+        cleaned = _extract_date(candidate)
+        if cleaned:
+            return cleaned
+
+    # 3) Etykieta bezpośrednio przed datą (na tekście strony)
+    full_text = soup.get_text(" ", strip=True)
+    m = _LABEL_DATE_RE.search(full_text)
+    if m:
+        window = full_text[m.start():m.start() + 60]
+        cleaned = _extract_date(window)
+        if cleaned:
+            return cleaned
+    return ""
+
+
 def _fetch(url: str) -> requests.Response | None:
     """Pojedynczy GET z User-Agentem; None przy błędzie lub status != 200."""
     try:
@@ -99,19 +181,22 @@ def _attachment_links(page_html: str, base_url: str) -> list[str]:
     return found
 
 
-def fetch_content(url: str) -> str:
+def fetch_content(url: str) -> tuple[str, str]:
     """Pobiera pełną treść ogłoszenia (HTML albo PDF), obcina do 12000 znaków.
 
+    Zwraca krotkę (tekst, data_publikacji) - data_publikacji to ISO YYYY-MM-DD
+    wyekstrahowane z HTML (metatagi/<time>/etykieta) albo "" gdy nieznana.
     Poziom 2: gdy strona HTML ma mniej niż MIN_MAIN_TEXT znaków (typowa
     "skorupa" nawigacyjna BIP, treść renderowana JS-em albo w załączniku),
     pobiera dodatkowo do MAX_ATTACHMENTS załączników PDF / podstron z frazami
-    naborowymi i dołącza ich treść.
-    Błędy sieciowe / 4xx / 403 / timeout / uszkodzony PDF: WARNING + zwróć "".
+    naborowymi i dołącza ich treść; data publikacji z podstron uzupełnia brak.
+    Błędy sieciowe / 4xx / 403 / timeout / uszkodzony PDF: WARNING + ("", "").
     """
     response = _fetch(url)
     if response is None:
-        return ""
+        return "", ""
 
+    pub_date = ""
     content_type = response.headers.get("Content-Type", "").lower()
     is_pdf = url.lower().endswith(".pdf") or "application/pdf" in content_type
     if is_pdf:
@@ -124,6 +209,7 @@ def fetch_content(url: str) -> str:
             text = _extract_html_text(response)
     else:
         text = _extract_html_text(response)
+        pub_date = _extract_publication_date(response.text)
         # POZIOM 2: strona-skorupa -> dołącz treść załączników/podstron
         if len(text) < MIN_MAIN_TEXT:
             for link in _attachment_links(response.text, url):
@@ -140,6 +226,8 @@ def fetch_content(url: str) -> str:
                         continue
                 else:
                     sub_text = _extract_html_text(sub)
+                    if not pub_date:
+                        pub_date = _extract_publication_date(sub.text)
                 if sub_text:
                     text = f"{text}\n\n{sub_text[:ATTACHMENT_CHARS]}".strip()
                     logger.info("Poziom 2: dołączono treść z %s (%s znaków)",
@@ -147,7 +235,7 @@ def fetch_content(url: str) -> str:
                 if len(text) >= MAX_CHARS:
                     break
 
-    return text[:MAX_CHARS]
+    return text[:MAX_CHARS], pub_date
 
 
 if __name__ == "__main__":
@@ -157,6 +245,7 @@ if __name__ == "__main__":
         print("Użycie: python content_fetcher.py --self-test <url>", file=sys.stderr)
         sys.exit(1)
     url = sys.argv[-1]
-    text = fetch_content(url)
+    text, pub_date = fetch_content(url)
     print(f"Długość tekstu: {len(text)}")
+    print(f"Data publikacji: {pub_date or '(nieznana)'}")
     print(f"Pierwsze 500 znaków:\n{text[:500]}")

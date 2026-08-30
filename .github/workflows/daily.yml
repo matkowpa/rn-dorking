@@ -2,9 +2,22 @@ name: rn-dorking daily run
 
 on:
   schedule:
-    - cron: "0 5 * * *"     # 05:00 UTC = 07:00 czasu polskiego (letniego)
-    - cron: "0 17 * * *"    # 17:00 UTC = 19:00 czasu polskiego (letniego)
-  workflow_dispatch:        # przycisk "Run workflow" do uruchomienia ręcznego
+    # Cron godzinowy - właściwe godziny runu (07:00 i 19:00 czasu polskiego)
+    # wybiera krok "Decide mode" wg TZ=Europe/Warsaw, więc są poprawne cały
+    # rok niezależnie od zmiany czasu letniego/zimowego.
+    - cron: "0 * * * *"
+  workflow_dispatch:        # przycisk "Run workflow" - uruchamia od razu
+    inputs:
+      regenerate_registry:
+        description: "Odśwież rejestr BIP samorządów (data/bip_jst.json) przed skanem"
+        type: boolean
+        default: false
+        required: false
+      resolve_urls:
+        description: "Uzupełnij mapowanie slug->adres BIP (wolne: DDG per podmiot)"
+        type: boolean
+        default: false
+        required: false
   push:
     paths-ignore:           # nie odpalaj przy commitach wyników bota i docs
       - "docs/**"
@@ -31,10 +44,44 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Regenerate JST registry (optional)
+        if: inputs.regenerate_registry == true
+        run: |
+          python tools/fetch_bip_registry.py
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/bip_jst.json
+          git diff --staged --exit-code --quiet || { git commit -m "Rejestr BIP samorzadow — odswiezenie $(date +'%Y-%m-%d')"; git push; }
+
+      - name: Resolve real BIP URLs (optional)
+        if: inputs.resolve_urls == true
+        run: |
+          python tools/resolve_bip_urls.py
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/bip_jst_urls.json
+          git diff --staged --exit-code --quiet || { git commit -m "Mapowanie slug->realny BIP $(date +'%Y-%m-%d')"; git push; }
+
+      - name: Decide mode (DST-safe, czas PL)
+        id: mode
+        run: |
+          HOUR=$(TZ='Europe/Warsaw' date +'%H')
+          echo "Godzina PL: $HOUR"
+          case "$HOUR" in
+            07|19) MODE=run ;;
+            *) MODE=skip ;;
+          esac
+          # Uruchomienie ręczne i push zawsze odpalają potok od razu
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] \
+             || [ "${{ github.event_name }}" = "push" ]; then MODE=run; fi
+          echo "mode=$MODE" >> "$GITHUB_OUTPUT"
+
       - name: Run tests
+        if: steps.mode.outputs.mode == 'run'
         run: python -m pytest tests/ -q
 
       - name: Run pipeline
+        if: steps.mode.outputs.mode == 'run'
         env:
           BRAVE_API_KEY:     ${{ secrets.BRAVE_API_KEY }}
           LLM_API_KEY:       ${{ secrets.LLM_API_KEY }}
@@ -45,9 +92,11 @@ jobs:
         run: python main.py
 
       - name: Build docs data
+        if: steps.mode.outputs.mode == 'run'
         run: python build_docs.py
 
       - name: Notify (Telegram + e-mail)
+        if: steps.mode.outputs.mode == 'run'
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -59,6 +108,7 @@ jobs:
         run: python notify.py
 
       - name: Commit results
+        if: steps.mode.outputs.mode == 'run'
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

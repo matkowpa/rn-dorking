@@ -6,14 +6,34 @@ w Brave Search, klasyfikacja i ekstrakcja danych przez LLM, publikacja na
 GitHub Pages.
 
 ## Jak działa
-1. Codziennie o **07:00 i 19:00** (czas polski) GitHub Actions uruchamia potok:
-   Brave Search (dorki frazowe + opcjonalne `EXTRA_DORKS`) → deduplikacja →
-   filtr LLM → pobranie treści → ekstrakcja pól (podmiot, termin, miejscowość…).
-   W razie niepowodzenia runu wysyłany jest alert na Telegram.
+1. Codziennie o **07:00 i 19:00** (czas polski, odporny na zmianę DST) GitHub
+   Actions uruchamia potok:
+   - **Faza 0** — bezpośredni skan źródeł (port z rn-scrapper): whitelist
+     ministerstw, spółek SP, portów i dużych miast (`direct_sources.py`)
+     oraz **rotacyjne okno BIP-ów samorządowych** (rejestr `data/bip_jst.json`,
+     rozmiar okna `JST_WINDOW`, domyślnie 100 podmiotów/run). Kandydaci są
+     wykrywani po tekście kotwicy linku; dla domen `*.gov.pl` filtr LLM jest
+     pomijany (sam link „ogłoszenie o naborze" na BIP jest wiarygodny).
+   - **ETAP A** — Brave Search (dorki frazowe + opcjonalne `EXTRA_DORKS`);
+     przy błędzie/pustym wyniku automatyczny fallback na DuckDuckGo.
+   - **Pre-filtr heurystyczny** (`heuristics.py`, port z rn-scrapper) — bez
+     wywołania LLM odrzuca agregatory (jooble, indeed…), artykuły/poradniki,
+     treści edukacyjne, zakończone nabory i archiwalne roczniki.
+   - **ETAP B** — deduplikacja + filtr LLM → **ETAP C** — pobranie treści
+     (HTML/PDF, poziom 2: załączniki) + ekstrakcja pól przez LLM
+     (podmiot, termin, miejscowość… oraz **data publikacji** z metatagów/
+     `<time>`/etykiet). W razie niepowodzenia runu alert na Telegram.
 2. Wyniki zapisywane są per dzień do `data/dnia/<data>.json` i łączone
    w pełną historię `oferty.json`.
 3. `build_docs.py` buduje dane dla strony (`docs/data/`), commit i GitHub
    Pages odświeża stronę.
+
+## Narzędzia rejestru BIP (tools/)
+- `tools/fetch_bip_registry.py` — pobiera pełny rejestr podmiotów BIP
+  z API gov.pl do `data/bip_jst.json` (GitHub Actions: Run workflow →
+  *regenerate_registry*).
+- `tools/resolve_bip_urls.py` — mapuje slugi podmiotów na realne adresy BIP
+  (`data/bip_jst_urls.json`; GitHub Actions: Run workflow → *resolve_urls*).
 
 ## 🌐 Strona z ogłoszeniami (live)
 
@@ -51,7 +71,9 @@ python -m pytest tests/ -q
 ```
 Obejmują: deduplikację i trwałość (`storage.py`), parsowanie konfiguracji
 (`config.py`), czyszczenie odpowiedzi LLM (`llm_parser.py`), ekstrakcję HTML
-(`content_fetcher.py`) i budowę digestu powiadomień (`notify.py`).
+i daty publikacji (`content_fetcher.py`), heurystyki pre-LLM (`heuristics.py`),
+linki-kandydatów i okno JST (`direct_sources.py`) oraz budowę digestu
+powiadomień (`notify.py`).
 
 ## Sekrety (GitHub Actions)
 `BRAVE_API_KEY`, `LLM_API_KEY`, `LLM_BASE_URL`, `LLM_MODEL` (i `LLM_MODEL_EXTRACT` = `LLM_MODEL`).

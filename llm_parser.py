@@ -150,6 +150,9 @@ class Offer(BaseModel):
     stanowisko: str = ""
     wymagania: str = ""
     podsumowanie: str = ""
+    # Data publikacji ogłoszenia (ISO) - wypełniana w main.py z content_fetcher
+    # (metatagi/<time>/etykieta), nie przez LLM
+    data_publikacji: str = ""
 
 
 EXTRACT_SYSTEM_PROMPT = '''Jesteś ekstraktorem danych z ogłoszeń o naborze kandydatów na członków rad nadzorczych. Na podstawie podanego tekstu ogłoszenia wyciągnij dane strukturalne.
