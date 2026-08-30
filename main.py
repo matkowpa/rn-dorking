@@ -213,6 +213,8 @@ def main(argv: list[str] | None = None) -> int:
                 stats["extract_errors"] += 1
             else:
                 offer["data_publikacji"] = pub_date
+                # Pochodzenie oferty (Faza 0 / dork Brave lub DDG) - do widoku
+                offer["zrodlo"] = result.get("dork", "")
                 # Filtr świeżości: znany termin w przeszłości = archiwalne,
                 # pomijamy ("" = termin nieznany - zostaje)
                 termin = offer.get("termin_skladania_ofert", "")

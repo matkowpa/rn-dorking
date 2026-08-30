@@ -51,6 +51,8 @@ function cardHTML(o) {
     <h3>${esc(o.podmiot) || "<i>(nieokreślony podmiot)</i>"}</h3>
     <div class="meta">${badge(o.termin_skladania_ofert)}
       ${o.miejscowosc ? `<span class="badge place">📍 ${esc(o.miejscowosc)}</span>` : ""}
+      ${o.data_publikacji ? `<span class="badge gray">📅 ${fmtDate(o.data_publikacji)}</span>` : ""}
+      ${o.zrodlo ? `<span class="badge gray">${esc(o.zrodlo)}</span>` : ""}
       ${o.stanowisko ? `<span class="badge gray">${esc(o.stanowisko)}</span>` : ""}
     </div>
     ${o.wymagania ? `<p class="req"><b>Wymagania:</b> ${esc(o.wymagania)}</p>` : ""}
@@ -69,7 +71,7 @@ function filtered(offers, q, onlyActive) {
     const d = daysUntil(o.termin_skladania_ofert);
     if (onlyActive && d !== null && d < 0) return false;
     if (!term) return true;
-    return [o.podmiot, o.miejscowosc, o.stanowisko, o.podsumowanie, o.url]
+    return [o.podmiot, o.miejscowosc, o.stanowisko, o.podsumowanie, o.url, o.zrodlo]
       .some(v => String(v ?? "").toLowerCase().includes(term));
   });
 }
@@ -189,7 +191,8 @@ async function viewDay(date, idx) {
   $view.innerHTML = `
     <h2 class="section-title">Wyniki z dnia: ${fmtDate(date)}</h2>
     <p class="stat-side-item" style="margin:0 0 1rem">
-      surowe wyniki: <b>${s.raw_results ?? "—"}</b> · po filtrze: <b>${s.after_filter ?? "—"}</b> ·
+      surowe wyniki: <b>${s.raw_results ?? "—"}</b> · źródła bezpośrednie: <b>${s.direct_results ?? 0}</b> ·
+      po filtrze: <b>${s.after_filter ?? "—"}</b> ·
       dodano ofert: <b>${s.offers_added ?? "—"}</b> · łącznie tego dnia: <b>${offers.length}</b>
     </p>
     <div class="cards">${offers.map(cardHTML).join("") || '<p class="empty">Brak ofert tego dnia.</p>'}</div>
