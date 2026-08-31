@@ -80,7 +80,8 @@
     "ec193efe76a6f2ef21e9a2dd153f7ebf9e1f06fe": "2026-08-30",
     "9033244f23a8d58cee78e66bdfd77241f4c7f338": "2026-08-30",
     "7672cf0d799a5aca6db9b977fa63fcfb3d4a6e94": "2026-08-31",
-    "0bedcffe7bf2ba7a8530d5954158a40e0ad92b1b": "2026-08-31"
+    "0bedcffe7bf2ba7a8530d5954158a40e0ad92b1b": "2026-08-31",
+    "83cd540c1eab2dae6f115dd1639b192f0c69b2ce": "2026-08-31"
   },
   "reextract": {
     "922f1fea6a39a30925042c018495f3cfa1dedfe5": {
@@ -164,6 +165,22 @@
       "last": "2026-08-31"
     },
     "c0a4c186a6c7af229ecf404cd1806e4de101e074": {
+      "attempts": 2,
+      "last": "2026-08-31"
+    },
+    "8e5b40fb6d73b55d0f9d136d20272d819162539f": {
+      "attempts": 1,
+      "last": "2026-08-31"
+    },
+    "82b6ad83d7b580a64c44e0b0aefcaa8e7b13c9cc": {
+      "attempts": 1,
+      "last": "2026-08-31"
+    },
+    "516d99498bfe3b704edeff177589d2ce73e39ba7": {
+      "attempts": 1,
+      "last": "2026-08-31"
+    },
+    "765fcd664ea9605e7b5355e0b929c4d70d3100d2": {
       "attempts": 1,
       "last": "2026-08-31"
     }

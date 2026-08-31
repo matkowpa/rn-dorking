@@ -4,11 +4,13 @@
     "search_requests": 12,
     "raw_results": 84,
     "direct_results": 0,
-    "after_dedup": 6,
+    "after_dedup": 5,
     "after_filter": 4,
     "offers_added": 0,
     "extract_errors": 0,
-    "offers_updated": 0
+    "offers_updated": 0,
+    "offers_with_termin": 0,
+    "content_empty": 0
   },
   "offers": []
 }
