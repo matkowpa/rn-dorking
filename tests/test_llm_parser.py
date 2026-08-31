@@ -78,3 +78,29 @@ def test_strip_json_plain_json_untouched():
 
 def test_strip_json_strips_whitespace():
     assert _strip_json('  {"x": 1}  \n') == '{"x": 1}'
+
+
+# --- Prompt ekstrakcji: terminy względne + dokładna nazwa spółki ---
+
+from llm_parser import EXTRACT_SYSTEM_PROMPT
+
+
+def test_extract_prompt_has_relative_deadline_rule():
+    assert "terminy względne" in EXTRACT_SYSTEM_PROMPT.lower()
+    assert "DATY DZISIEJSZEJ" in EXTRACT_SYSTEM_PROMPT
+    assert "14 dni od publikacji" in EXTRACT_SYSTEM_PROMPT
+
+
+def test_extract_prompt_has_exact_company_name_rule():
+    assert "DOKŁADNĄ pełną nazwę" in EXTRACT_SYSTEM_PROMPT
+    assert "bez skracania" in EXTRACT_SYSTEM_PROMPT
+
+
+def test_extract_fields_user_content_contains_today():
+    # Bez wywołań sieciowych: user_content budowany w extract_fields musi
+    # zawierać dzisiejszą datę (do liczenia terminów względnych przez LLM)
+    import inspect
+    from llm_parser import extract_fields as ef
+    src = inspect.getsource(ef)
+    assert "Dzisiejsza data" in src
+    assert "date.today().isoformat()" in src

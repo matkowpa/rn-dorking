@@ -77,6 +77,27 @@ def test_reload_keeps_seen_urls(tmp_path, monkeypatch):
     assert s2.is_new(OFFER["url"]) is False
 
 
+def test_save_rejected_log_writes_and_merges(storage):
+    entries = [
+        {"url": "https://a.pl/1", "title": "Protokół", "reason": "protokół z posiedzenia"},
+        {"url": "https://a.pl/2", "title": "Artykuł", "reason": "frazy dyskwalifikujące: poradnik"},
+    ]
+    p1 = storage.save_rejected_log(entries, run_date="2026-08-29")
+    day = storage._load_json(p1)
+    assert day["date"] == "2026-08-29"
+    assert len(day["rejected"]) == 2
+    # Drugi run tego samego dnia: nowy wpis + aktualizacja istniejącego po URL-u
+    p2 = storage.save_rejected_log(
+        [{"url": "https://a.pl/1", "title": "Protokół", "reason": "nowy powód"},
+         {"url": "https://a.pl/3", "title": "Strona główna", "reason": "strona główna BIP"}],
+        run_date="2026-08-29")
+    assert p1 == p2
+    day2 = storage._load_json(p2)
+    assert len(day2["rejected"]) == 3
+    by_url = {e["url"]: e for e in day2["rejected"]}
+    assert by_url["https://a.pl/1"]["reason"] == "nowy powód"
+
+
 def test_save_daily_merges_same_day(storage):
     storage.merge_offers([{**OFFER, "znaleziono_dnia": "2026-08-29"}])
     stats = {"raw_results": 1, "offers_added": 1}

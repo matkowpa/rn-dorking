@@ -161,6 +161,30 @@ class Storage:
             "reextract": self.reextract,
         })
 
+    def save_rejected_log(self, rejected: list[dict],
+                          run_date: str | None = None) -> str:
+        """Zapisuje odrzucone wyniki (URL, tytuł, powód) do data/odrzucone-<data>.json.
+
+        Drugi run tego samego dnia SCALA wpisy po URL-u - niczego nie gubimy.
+        Zwraca ścieżkę zapisanego pliku.
+        """
+        run_date = run_date or date.today().isoformat()
+        folder = os.path.join("data", "dnia")
+        path = os.path.join(folder, f"odrzucone-{run_date}.json")
+
+        existing = self._load_json(path) or {}
+        merged: dict[str, dict] = {}
+        for entry in existing.get("rejected", []):
+            merged[entry.get("url", "")] = entry
+        for entry in rejected:
+            merged[entry.get("url", "")] = entry
+        payload = {"date": run_date, "rejected": list(merged.values())}
+        os.makedirs(folder, exist_ok=True)
+        self._atomic_write(path, payload)
+        logger.info("Zapisano log odrzuconych %s (%s wpisów)",
+                    path, len(payload["rejected"]))
+        return path
+
     def save_daily(self, stats: dict, run_date: str | None = None) -> str:
         """Zapisuje oferty znalezione w dniu run_date do data/dnia/<data>.json.
 

@@ -61,8 +61,12 @@ def _fmt_date(iso: str) -> str:
 
 
 def build_digest(new_offers: list[dict], reminders: list[dict],
-                 today: str) -> tuple[str, str]:
-    """Zwraca (treść_text, treść_html) digestu."""
+                 today: str, stats: dict | None = None) -> tuple[str, str]:
+    """Zwraca (treść_text, treść_html) digestu.
+
+    stats (opcjonalnie) - metryki jakości runu (offers_with_termin,
+    content_empty) dopisywane na końcu wiadomości.
+    """
     day = _fmt_date(today)
     lines = [f"🔔 {len(new_offers)} nowe nabory na członków rad nadzorczych ({day})", ""]
     html_items = []
@@ -90,11 +94,26 @@ def build_digest(new_offers: list[dict], reminders: list[dict],
                 f"{_fmt_date(o['termin_skladania_ofert'])} (za {d} dni)</li>")
         lines.append("")
 
+    # Metryki jakości runu (jeśli przekazane przez potok)
+    if stats:
+        added = stats.get("offers_added", 0)
+        with_term = stats.get("offers_with_termin", 0)
+        empty = stats.get("content_empty", 0)
+        lines.append("📊 Metryki runu:")
+        lines.append(f"- oferty z terminem: {with_term}/{added}")
+        lines.append(f"- oferty bez treści (snippet): {empty}")
+        lines.append("")
+
     text = "\n".join(lines)
     html = (
         f"<h2>🔔 {len(new_offers)} nowe nabory na członków rad nadzorczych</h2>"
         f"<p><i>{day}</i></p><ol>{''.join(html_items)}</ol>"
         + (f"<h3>⏰ Przypomnienia</h3><ul>{''.join(html_rem)}</ul>" if reminders else "")
+        + (f"<h3>📊 Metryki runu</h3><ul>"
+           f"<li>oferty z terminem: {stats.get('offers_with_termin', 0)}/"
+           f"{stats.get('offers_added', 0)}</li>"
+           f"<li>oferty bez treści (snippet): {stats.get('content_empty', 0)}</li>"
+           f"</ul>" if stats else "")
     )
     return text, html
 
@@ -197,7 +216,7 @@ def run() -> int:
         logger.info("Notify: brak nowych ofert i przypomnień - nic nie wysyłam")
         return 0
 
-    text, html = build_digest(new_offers, reminders, today)
+    text, html = build_digest(new_offers, reminders, today, daily.get("stats"))
     subject = f"🔔 {len(new_offers)} nowe nabory na rady nadzorcze — {_fmt_date(today)}"
 
     ok_tg = send_telegram(text)

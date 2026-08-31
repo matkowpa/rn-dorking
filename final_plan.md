@@ -18,10 +18,16 @@
 | Zestaw dorków | 5 dorków z operatorami `inurl:`/`site:`/`filetype:` | **12 dorków frazowych** dla Brave; **8 dorków z operatorami** dla DDG | Brave nie obsługuje `inurl:`/`filetype:`/`site:` (zwracają 0 wyników) |
 | Dodatkowe dorki | brak | **`EXTRA_DORKS`** z `.env` lub repository variable | rozszerzanie pokrycia per BIP/spółka bez zmian w kodzie |
 | Harmonogram | codziennie 06:00 UTC | **2× dziennie**: 05:00 i 17:00 UTC (07:00/19:00 PL) | ogłoszenia publikowane też po południu |
+| Harmonogram (aktualizacja) | 2 stałe crony UTC | **cron godzinowy + krok „Decide mode"** (TZ=Europe/Warsaw, run tylko o 07:00/19:00 PL) | poprawne godziny cały rok niezależnie od zmiany czasu |
+| Faza 0 — źródła bezpośrednie | brak | **`direct_sources.py`**: whitelist ~35 źródeł (ministerstwa, spółki SP, porty, BIP-y miast) + rotacyjne okno ~1940 BIP-ów JST (`data/bip_jst.json`, `tools/`) | port z rn-scrapper; bez wywołań wyszukiwarek, kandydaci z *.gov.pl pomijają filtr LLM |
+| Heurystyki pre-LLM | brak | **`heuristics.py`**: blokowane domeny-agregatory, frazy dyskwalifikujące, przeterminowane roczniki | oszczędność wywołań LLM przed filtrem |
+| Testy | self-testy `if __name__ == "__main__"` | **82 testy pytest** + krok `Run tests` w CI przed każdym potokiem | powtarzalna weryfikacja bez wywołań sieciowych |
+| Log odrzuconych | tylko log | **`data/dnia/odrzucone-<data>.json`** (URL, tytuł, powód, źródło) | przegląd fałszywych negatywów filtra |
+| Metryki jakości | brak | **`offers_with_termin`, `content_empty`** w statystykach runu i digescie notify | ocena jakości ekstrakcji |
+| Prompt ekstrakcji | terminy bezwzględne | **terminy względne** („14 dni od publikacji" → policzona data, dzisiejsza data w promptcie) + **dokładna nazwa spółki** | mniej ofert bez terminu, lepsze podmioty |
 | Obsługa błędów runu | brak | **Alert na Telegram** przy `failure()` w workflow | cicha porażka = dzień bez danych |
 | Powiadomienia | brak (poza ETAPem 7) | **Telegram + e-mail (Brevo SMTP)** z digestem i przypomnieniami | wartość biznesowa bez wchodzenia na stronę |
 | Archiwum wyników | tylko `oferty.json` + `stan.json` | dodatkowo **`data/dnia/<data>.json`** (plik dnia ze statystykami) | frontend per-dzień, audyt runów |
-| Testy | self-testy `if __name__ == "__main__"` | **32 testy pytest** + krok `Run tests` w CI przed każdym potokiem | powtarzalna weryfikacja bez wywołań sieciowych |
 | PostgreSQL (ETAP 7) | planowane | **niewdrożone** (JSON wystarcza) | wracamy przy realnych problemach z `oferty.json` |
 | Google CSE jako backend | obowiązkowy | **niewdrożone** (architektura gotowa na dodanie) | Brave/DDG pokrywają potrzeby |
 
@@ -71,13 +77,17 @@ rn-dorking/
   llm_parser.py        # klient LLM: filter_is_announcement + extract_fields
   brave_search.py      # ETAP A primary: Brave Search API (+ BRAVE_DORKS)
   ddg_search.py        # ETAP A fallback: DuckDuckGo (+ DORKS z operatorami)
+  direct_sources.py    # FAZA 0: whitelist źródeł + rotacyjne okno BIP JST
+  heuristics.py        # tanie pre-filtry przed LLM (domeny, frazy, roczniki)
   content_fetcher.py   # ETAP C-1: pobieranie treści HTML/PDF
-  storage.py           # ETAP 4: deduplikacja, stan, oferty.json, plik dnia
-  config.py            # ETAP 0: wczytanie i walidacja .env (+ EXTRA_DORKS)
-  notify.py            # powiadomienia Telegram + e-mail (Brevo SMTP)
+  storage.py           # ETAP 4: deduplikacja, stan, oferty.json, plik dnia, log odrzuconych
+  config.py            # ETAP 0: wczytanie i walidacja .env (+ EXTRA_DORKS, JST_WINDOW)
+  notify.py            # powiadomienia Telegram + e-mail (Brevo SMTP) + metryki jakości
   build_docs.py        # buduje docs/data/ dla frontendu
   conftest.py          # pytest: root dir na sys.path
-  tests/               # 32 testy jednostkowe (bez sieci)
+  tests/               # 82 testy jednostkowe (bez sieci)
+  tools/               # fetch_bip_registry.py, resolve_bip_urls.py (rejestr BIP JST)
+  data/bip_jst.json    # rejestr ~1940 BIP-ów samorządowych (generator: tools/)
   .github/workflows/daily.yml
   docs/                # frontend GitHub Pages (index.html, app.js, style.css)
   requirements.txt, .env.example, .gitignore
@@ -302,31 +312,38 @@ Przebieg:
    (z poziomem 2) i `extract_fields`; przy sukcesie `update_offer` uzupełnia
    termin; każda próba zapisywana przez `mark_extract_attempt` (max 2 na ofertę);
    statystyka `offers_updated`.
-4. **ETAP A**: wybór dorków wg backendu (`BRAVE_DORKS` / `DORKS`) + `EXTRA_DORKS`;
+4. **FAZA 0 — źródła bezpośrednie** (`direct_sources.collect`): whitelist
+   (ministerstwa, spółki SP, porty, BIP-y miast) + rotacyjne okno BIP-ów JST
+   (`JST_WINDOW`, domyślnie 100/dzień); kandydaci z domen *.gov.pl pomijają
+   filtr LLM; wyniki nie zużywają limitu `--limit`.
+5. **ETAP A**: wybór dorków wg backendu (`BRAVE_DORKS` / `DORKS`) + `EXTRA_DORKS`;
    pętla po dorkach z `sleep(1)`; zebranie wyników (dedup naprawi duble między dorkami).
-5. **ETAP B**: iteracja w kolejności zbierania; najpierw `is_rejected(link)`
+6. **ETAP B**: iteracja w kolejności zbierania; najpierw `is_rejected(link)`
    (odrzucone w oknie 30 dni — pomijane BEZ liczenia do limitu), potem
    `is_new(link)` (widziane — pomijane) i licznik nowych vs `--limit`;
-   `filter_is_announcement(title, snippet, link)`;
-   wynik NIE = `storage.add_rejected(link)` (chyba że uzasadnienie zaczyna się
-   od „błąd filtra" — chwilowy błąd LLM nie jest pamiętany);
-   `--dry-run` → tylko zapamiętanie wiersza tabeli.
-6. **ETAP C** (gdy `czy_nabor`): `fetch_content(link)` (pusty → snippet),
-   `extract_fields`, następnie **filtr świeżości**: znany termin w przeszłości =
-   oferta archiwalna → pomijana (log INFO); nowa → `storage.add_offer`.
+   heurystyki pre-LLM (`heuristics.prefilter_reject`), pre-filtr zarządu
+   (`rejects_zarzad`), potem `filter_is_announcement(title, snippet, link)`;
+   wynik NIE = `storage.add_rejected(link)` + wpis do logu odrzuconych
+   (chyba że uzasadnienie zaczyna się od „błąd filtra" — chwilowy błąd LLM
+   nie jest pamiętany); `--dry-run` → tylko zapamiętanie wiersza tabeli.
+7. **ETAP C** (gdy `czy_nabor`): `fetch_content(link)` (pusty → snippet,
+   licznik `content_empty`), `extract_fields`, następnie **filtr świeżości**:
+   znany termin w przeszłości = oferta archiwalna → pomijana (log INFO);
+   nowa → `storage.add_offer` (licznik `offers_with_termin` przy znanym terminie).
    Między wywołaniami LLM: `time.sleep(0.5)`.
-7. `--dry-run` → tabela i koniec bez zapisu; inaczej `storage.save()` +
-   `storage.save_daily(stats)`.
-8. Statystyki końcowe (log INFO): zapytania, wyniki surowe, po deduplikacji,
+8. `--dry-run` → tabela i koniec bez zapisu; inaczej `storage.save()` +
+   `storage.save_daily(stats)` + `storage.save_rejected_log(rejected_log)`
+   (gdy są odrzucone).
+9. Statystyki końcowe (log INFO): zapytania, wyniki surowe, po deduplikacji,
    po filtrowaniu, nowe oferty, błędy ekstrakcji, uzupełnione terminy
-   (re-ekstrakcja).
-9. Wyjście kod 0; nieprzechwycony wyjątek → `logger.exception` + `sys.exit(1)`.
+   (re-ekstrakcja), oferty z terminem, oferty bez treści.
+10. Wyjście kod 0; nieprzechwycony wyjątek → `logger.exception` + `sys.exit(1)`.
 
 ---
 
 ## 10. ETAP 6 — testy (zamiennik self-testów z v3)
 
-**54 testy pytest**, zero wywołań sieciowych, uruchamiane w CI **przed** potokiem:
+**82 testy pytest**, zero wywołań sieciowych, uruchamiane w CI **przed** potokiem:
 
 ```
 python -m pytest tests/ -q
@@ -334,11 +351,12 @@ python -m pytest tests/ -q
 
 | Plik | Pokrycie |
 |---|---|
-| `tests/test_storage.py` (18) | normalizacja URL (utm_/host/trailing slash/fragment), deduplikacja między uruchomieniami, UTF-8 + sortowanie przy zapisie, scalanie pliku dnia, stabilność hasha, pamięć odrzuconych (skip, TTL 30 dni, trwałość, backcompat starego stan.json), re-ekstrakcja (kolejność najstarszych, limit prób, trwałość licznika), `update_offer` (podmiana pól + zachowanie historii, nieznany URL) |
+| `tests/test_storage.py` (19) | normalizacja URL (utm_/host/trailing slash/fragment), deduplikacja między uruchomieniami, UTF-8 + sortowanie przy zapisie, scalanie pliku dnia, **log odrzuconych (zapis + scalanie po URL-u)**, stabilność hasha, pamięć odrzuconych (skip, TTL 30 dni, trwałość, backcompat starego stan.json), re-ekstrakcja (kolejność najstarszych, limit prób, trwałość licznika), `update_offer` (podmiana pól + zachowanie historii, nieznany URL) |
 | `tests/test_config.py` (10) | parsowanie `EXTRA_DORKS` (pełny/pusty/nieustawiony), `SEARCH_DAYS_BACK`/`RESULTS_PER_DORK` (błędne → default + WARNING), `validate()` |
-| `tests/test_llm_parser.py` (12) | `_strip_json`: markdown, otaczający tekst, czysty JSON, białe znaki; pre-filtr zarządu `rejects_zarzad`: członek/prezes/wiceprezes zarządu → odrzucenie, „Biuro Zarządu" i przypadki mieszane (rada nadzorcza w tekście) → przekazane do LLM |
+| `tests/test_llm_parser.py` (15) | `_strip_json`: markdown, otaczający tekst, czysty JSON, białe znaki; pre-filtr zarządu `rejects_zarzad`: członek/prezes/wiceprezes zarządu → odrzucenie, „Biuro Zarządu" i przypadki mieszane (rada nadzorcza w tekście) → przekazane do LLM; **prompt ekstrakcji: reguła terminów względnych, dokładna nazwa spółki, dzisiejsza data w user_content** |
 | `tests/test_content_fetcher.py` (11) | ekstrakcja HTML: script/style, encje, białe znaki, logika charset; poziom 2: `_attachment_links` (PDF/frazy, odrzucanie nieistotnych, limit MAX_ATTACHMENTS, deduplikacja), `fetch_content` z podstroną (poziom 2) i pomijaniem poziomu 2 przy bogatej treści |
-| `tests/test_notify.py` (4) | budowa digestu (tekst+HTML), sekcja przypomnień, „termin: nieznany" |
+| `tests/test_notify.py` (6) | budowa digestu (tekst+HTML), sekcja przypomnień, „termin: nieznany", **sekcja metryk jakości (z i bez stats)** |
+| `tests/test_direct_sources.py` + `tests/test_heuristics.py` | Faza 0 (whitelist, okno JST, kandydaci) i heurystyki pre-LLM (domeny, frazy, roczniki) |
 
 `.github/workflows/daily.yml`: krok `Run tests` między „Install dependencies"
 a „Run pipeline" — padnięty test przerywa run **przed** wywołaniami płatnymi
@@ -351,8 +369,10 @@ jako szybka diagnostyka ręczna.
 
 ### Wdrożone ✅
 
-- **Harmonogram** (`.github/workflows/daily.yml`): cron `0 5 * * *` i
-  `0 17 * * *` (07:00 / 19:00 PL), `workflow_dispatch`, push na pliki kodu
+- **Harmonogram** (`.github/workflows/daily.yml`): cron godzinowy `0 * * * *`
+  + krok „Decide mode" (TZ=Europe/Warsaw) — potok tylko o 07:00/19:00 PL
+  (poprawne cały rok, DST-safe), `workflow_dispatch` (z opcjonalnym
+  odświeżeniem rejestru BIP JST), push na pliki kodu
   (paths-ignore: `docs/**`, `oferty.json`, `stan.json`, `data/**`, `**.md`),
   `permissions: contents: write`.
 - **Sekrety** (repository secrets): `BRAVE_API_KEY`, `LLM_API_KEY`,
@@ -412,7 +432,7 @@ python notify.py            # wysyłka digestu (opcjonalnie)
 
 - [x] wszystkie moduły zgodne ze strukturą (sekcja 2)
 - [x] `--check`, `--dry-run`, `--limit`, `--days` działają (argparse)
-- [x] 54 testy pytest przechodzą lokalnie i w CI (krok `Run tests`)
+- [x] 82 testy pytest przechodzą lokalnie i w CI (krok `Run tests`)
 - [x] deduplikacja działa między uruchomieniami (potwierdzone produkcją)
 - [x] polskie znaki diakrytyczne poprawne w `oferty.json`, `stan.json`, `run.log`
 - [x] żadnych sekretów w kodzie i w repo (`.gitignore`: `.env`, `venv/`, `run.log`, `__pycache__/`)
@@ -451,15 +471,15 @@ Zrealizowane w iteracji 2026-08-29: poziom 2 pobierania treści (załączniki/
 podstrony), re-ekstrakcja ofert bez terminu (max 2 próby), pamięć odrzuconych
 URL-i (TTL 30 dni), rozszerzenie dorków (12 Brave / 8 DDG).
 
-1. **Dorki per konkretny BIP/spółkę** przez repository variable `EXTRA_DORKS`
-   (bez zmian w kodzie) — największy zysk pokrycia przy najniższym koszcie.
+Zrealizowane w iteracji 2026-09-01: log odrzuconych do `data/dnia/odrzucone-<data>.json`,
+metryki jakości (`offers_with_termin`, `content_empty`) w statystykach i digescie
+notify, poprawka promptu ekstrakcji (terminy względne + dokładna nazwa spółki).
+
+1. ~~**Dorki per konkretny BIP/spółkę** przez repository variable `EXTRA_DORKS`~~ ✅
 2. ICS/RSS feed z terminami naborów (frontend już ma posortowane aktywne oferty).
-3. Log odrzuconych wyników z uzasadnieniem do `data/odrzucone-<data>.json`
-   (dziś przyczyny widoczne tylko w logu) — przegląd pod kątem fałszywych
-   negatywów filtra i doprecyzowanie promptu.
-4. Poprawka promptu ekstrakcji: terminy względne („w terminie 14 dni od
-   publikacji" → policzona data) + polecenie kopiowania dokładnej nazwy spółki.
-5. Metryki jakości w statystykach (`offers_with_termin`, `content_empty`) i digescie notify.
+3. ~~**Log odrzuconych wyników z uzasadnieniem** do `data/dnia/odrzucone-<data>.json`~~ ✅
+4. ~~**Poprawka promptu ekstrakcji**: terminy względne + dokładna nazwa spółki~~ ✅
+5. ~~**Metryki jakości** (`offers_with_termin`, `content_empty`) w statystykach i digescie notify~~ ✅
 6. Backend Google CSE jako trzeci ogniwo łańcucha (Brave → DDG → Google).
 7. Migracja do PostgreSQL/Supabase — dopiero gdy `oferty.json`/`stan.json`
    zaczną powodować konflikty merge lub urosnąć.
