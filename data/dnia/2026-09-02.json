@@ -1,0 +1,16 @@
+{
+  "date": "2026-09-02",
+  "stats": {
+    "search_requests": 12,
+    "raw_results": 99,
+    "direct_results": 0,
+    "after_dedup": 30,
+    "after_filter": 4,
+    "offers_added": 0,
+    "extract_errors": 1,
+    "offers_updated": 0,
+    "offers_with_termin": 0,
+    "content_empty": 0
+  },
+  "offers": []
+}
