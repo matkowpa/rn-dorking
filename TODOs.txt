@@ -1,2 +1,5 @@
 Chce zbudować narzędzie którego celem będzied wyszukiwanie i prezentacji wynikow dotyczących szukania ogloszeń dotyczących naboru na człónków rad ndzorczych i do tego celku chce wykorzystać google dorking. Prezglądnij plik 'plan_wdrozenia_google_dorking_llm.txt' i zweryfikuj czy jest to dobry schemat działania, zakładając że będzie wykonywany przez glm-5.3 flash
 
+
+
+BIP scrapowanie poszczególnych źrodeł

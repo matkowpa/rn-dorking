@@ -3,3 +3,4 @@ venv/
 run.log
 __pycache__/
 *.pyc
+TODOs

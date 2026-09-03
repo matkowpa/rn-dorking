@@ -1,0 +1,323 @@
+Oto szczegółowa specyfikacja techniczna i funkcjonalna dla Koncepcji 2: Clean Structured Cards (Feed View), przygotowana pod natychmiastową implementację w projekcie na GitHub Pages.
+
+1. Architektura Techniczna i Stos Technologiczny
+Typ aplikacji: Single Page Application (SPA) bez konieczności kroku kompilacji (Zero-Build).
+
+HTML/CSS: HTML5 + Tailwind CSS (dostarczane z CDN lub skompilowany plik CSS).
+
+JavaScript: Vanilla JS (ES6+) z wykorzystaniem native fetch / lokalnych struktur danych.
+
+Storage: localStorage przeglądarki do obsługi zakładek (Ulubione) oraz oznaczania ogłoszeń jako przeczytane.
+
+Fonty: Inter (proza/nagłówki) oraz Fira Code / JetBrains Mono (daty, sygnatury, tagi).
+
+2. Model Danych Ogłoszenia (JSON Schema)
+Dla każdego ogłoszenia struktura danych wejściowych powtarza następujący schemat:
+
+JSON
+[
+  {
+    "id": "rn-2026-001",
+    "title": "Członek Rady Nadzorczej",
+    "organization": "Przedsiębiorstwo Gospodarki Komunalnej Sp. z o.o.",
+    "location": "Warszawa, mazowieckie",
+    "publishDate": "2026-08-25",
+    "deadlineDate": "2026-09-15",
+    "status": "NEW",
+    "tags": ["Komunalna", "JST", "Zwolnienie z egzaminu"],
+    "summary": "Wymagane wykształcenie wyższe oraz spełnienie wymogów z art. 19 ustawy o zasadach zarządzania mieniem państwowym.",
+    "requirements": [
+      "Wykształcenie wyższe prawnicze, ekonomiczne lub techniczne",
+      "Uprawnienia do zasiadania w radach nadzorczych (zdany egzamin lub zwolnienie ustawowe)",
+      "Brak negatywnych przesłanek z art. 19 ust. 1 ustawy"
+    ],
+    "sourceUrl": "https://bip.example.gov.pl/ogloszenie/123",
+    "contact": "rekrutacja@pgk.example.pl"
+  }
+]
+3. Specyfikacja Interfejsu i Design Tokens
+Paleta Kolorów (Tailwind Slate / Violet)
+Tło aplikacji: bg-slate-950 (#020617)
+
+Karty ogłoszeń: bg-slate-900 z obramowaniem border-slate-800 i hoverem hover:border-slate-700
+
+Akcent główny: violet-500 (#8b5cf6) dla przycisków akcji i zaznaczeń
+
+Wskaźniki statusu (Badges):
+
+NOWE: bg-emerald-500/10 text-emerald-400 border-emerald-500/20
+
+PILNE (mniej niż 3 dni): bg-rose-500/10 text-rose-400 border-rose-500/20
+
+W TOKU: bg-amber-500/10 text-amber-400 border-amber-500/20
+
+4. Wymagania Funkcjonalne
+Wyszukiwanie i Filtrowanie na Żywo:
+
+Wpisanie tekstu w pole wyszukiwania natychmiast filtruje karty po tytule, organizacji, lokalizacji i słowach kluczowych.
+
+Filtry szybkie (Pills): Wszystkie, Nowe, Zapisane (Ulubione), Ostatnie dni.
+
+Karta Ogłoszenia (Feed Item):
+
+Prezentacja instytucji, tytułu, daty publikacji i terminu nieprzekraczalnego.
+
+Przycisk „Dodaj do ulubionych” (gwiazdka/zakładka), zapisujący id w localStorage.
+
+Przycisk „Zobacz więcej” rozwijający podgląd treści w wyjeżdżającym panelu bocznym (Drawer) lub akordeonie.
+
+Panel Szczegółów Ogłoszenia (Drawer):
+
+Wyjeżdża z prawej strony po kliknięciu w kartę.
+
+Zawiera pełne wymagania, kontakt, bezpośredni link do źródła (BIP / Strona spółki).
+
+5. Gotowy Kod Implementacyjny (Single-File index.html)
+HTML
+<!DOCTYPE html>
+<html lang="pl" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agregator Ogłoszeń RN</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .font-mono { font-family: 'Fira Code', monospace; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col">
+
+  <!-- Top Header -->
+  <header class="border-b border-slate-800 bg-slate-900/80 sticky top-0 z-30 backdrop-blur-md">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-violet-600 flex items-center justify-center font-bold text-white text-sm">RN</div>
+        <div>
+          <h1 class="text-base font-bold text-white leading-tight">Agregator Ogłoszeń RN</h1>
+          <p class="text-xs text-slate-400">Naboru do Rad Nadzorczych Spółek JST i Skarbu Państwa</p>
+        </div>
+      </div>
+      
+      <!-- Statistics / Badge -->
+      <div class="flex items-center gap-2 text-xs font-mono bg-slate-800 px-3 py-1.5 rounded-full border border-slate-700">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="text-slate-300">Aktywne ogłoszenia: <strong id="countBadge" class="text-emerald-400">0</strong></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Controls & Filter Bar -->
+  <section class="max-w-5xl mx-auto w-full px-4 pt-6 pb-2 space-y-4">
+    <div class="flex flex-col md:flex-row gap-3">
+      <!-- Search Input -->
+      <div class="relative flex-1">
+        <svg class="w-4 h-4 absolute left-3.5 top-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        <input type="text" id="searchInput" placeholder="Szukaj wg nazwy spółki, miasta lub słów kluczowych..." 
+               class="w-full bg-slate-900 border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-violet-500 transition">
+      </div>
+    </div>
+
+    <!-- Filter Chips -->
+    <div class="flex flex-wrap items-center gap-2 pt-1 text-xs">
+      <span class="text-slate-500 font-medium mr-1">Filtry:</span>
+      <button onclick="setFilter('all')" id="btn-all" class="filter-btn px-3 py-1.5 rounded-lg border bg-violet-600 border-violet-500 text-white font-medium transition">Wszystkie</button>
+      <button onclick="setFilter('NEW')" id="btn-NEW" class="filter-btn px-3 py-1.5 rounded-lg border border-slate-800 bg-slate-900 text-slate-400 hover:text-white transition">✨ Nowe</button>
+      <button onclick="setFilter('URGENT')" id="btn-URGENT" class="filter-btn px-3 py-1.5 rounded-lg border border-slate-800 bg-slate-900 text-slate-400 hover:text-white transition">⏳ Kończące się</button>
+      <button onclick="setFilter('saved')" id="btn-saved" class="filter-btn px-3 py-1.5 rounded-lg border border-slate-800 bg-slate-900 text-slate-400 hover:text-white transition">⭐ Ulubione</button>
+    </div>
+  </section>
+
+  <!-- Main Feed Stream -->
+  <main class="max-w-5xl mx-auto w-full px-4 py-6 flex-1">
+    <div id="feedContainer" class="space-y-4">
+      <!-- Dynamic cards rendered here -->
+    </div>
+  </main>
+
+  <!-- Drawer / Modal Podglądu Szczegółów -->
+  <div id="drawer" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex justify-end">
+    <div class="w-full max-w-2xl bg-slate-900 h-full border-l border-slate-800 p-6 overflow-y-auto flex flex-col justify-between space-y-6">
+      <div class="space-y-6">
+        <div class="flex justify-between items-start border-b border-slate-800 pb-4">
+          <div>
+            <span id="drawerStatus" class="text-[10px] font-mono uppercase px-2 py-0.5 rounded border"></span>
+            <h2 id="drawerTitle" class="text-xl font-bold text-white mt-2"></h2>
+            <p id="drawerOrg" class="text-xs text-slate-400 mt-1"></p>
+          </div>
+          <button onclick="closeDrawer()" class="p-2 text-slate-400 hover:text-white bg-slate-800 rounded-lg">✕</button>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3 text-xs bg-slate-950 p-4 rounded-xl border border-slate-800">
+          <div>
+            <span class="text-slate-500 block">Termin składania:</span>
+            <strong id="drawerDeadline" class="text-slate-200 font-mono"></strong>
+          </div>
+          <div>
+            <span class="text-slate-500 block">Lokalizacja:</span>
+            <strong id="drawerLocation" class="text-slate-200"></strong>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-400">Wymagania i profil kandydata</h3>
+          <ul id="drawerRequirements" class="list-disc list-inside text-sm text-slate-300 space-y-1.5 leading-relaxed"></ul>
+        </div>
+      </div>
+
+      <div class="border-t border-slate-800 pt-4 flex gap-3">
+        <a id="drawerSourceBtn" href="#" target="_blank" class="flex-1 bg-violet-600 hover:bg-violet-500 text-white text-center font-semibold py-2.5 rounded-xl text-sm transition">
+          Otwórz źródło ogłoszenia ↗
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Przykładowa baza ogłoszeń
+    const sampleData = [
+      {
+        id: "rn-101",
+        title: "Członek Rady Nadzorczej",
+        organization: "Park Technologiczny i Innowacji Sp. z o.o.",
+        location: "Warszawa",
+        publishDate: "2026-08-26",
+        deadlineDate: "2026-09-10",
+        status: "NEW",
+        summary: "Nabór na członka RN reprezentującego organ wykonawczy jednostki samorządu terytorialnego.",
+        requirements: [
+          "Wykształcenie wyższe (prawo, ekonomia, finanse, zarządzanie)",
+          "Posiadanie uprawnień ustawowych do zasiadania w radach nadzorczych",
+          "Niepodleganie ograniczeniom wynikającym z ustawy o ograniczeniu prowadzenia działalności gospodarczej"
+        ],
+        sourceUrl: "https://bip.example.com/1"
+      },
+      {
+        id: "rn-102",
+        title: "Konkurs na Członka Rady Nadzorczej",
+        organization: "Miejskie Przedsiębiorstwo Energetyki Cieplnej",
+        location: "Otwock",
+        publishDate: "2026-08-20",
+        deadlineDate: "2026-09-01",
+        status: "URGENT",
+        summary: "Postępowanie kwalifikacyjne na stanowisko członka organu nadzorczego w spółce komunalnej.",
+        requirements: [
+          "Złożenie oświadczenia o braku przeciwwskazań prawnych",
+          "Co najmniej 5-letnie doświadczenie zawodowe",
+          "Zwolnienie z egzaminu państwowego na podstawie uprawnień ustawowych lub zdany egzamin"
+        ],
+        sourceUrl: "https://bip.example.com/2"
+      }
+    ];
+
+    let currentFilter = 'all';
+    let savedIds = JSON.parse(localStorage.getItem('saved_rn_ads') || '[]');
+
+    function renderFeed() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      const container = document.getElementById('feedContainer');
+      container.innerHTML = '';
+
+      const filtered = sampleData.filter(item => {
+        const matchesQuery = item.title.toLowerCase().includes(query) || 
+                             item.organization.toLowerCase().includes(query) ||
+                             item.location.toLowerCase().includes(query);
+        
+        if (!matchesQuery) return false;
+        if (currentFilter === 'NEW') return item.status === 'NEW';
+        if (currentFilter === 'URGENT') return item.status === 'URGENT';
+        if (currentFilter === 'saved') return savedIds.includes(item.id);
+        return true;
+      });
+
+      document.getElementById('countBadge').innerText = filtered.length;
+
+      if (filtered.length === 0) {
+        container.innerHTML = `<div class="text-center py-12 text-slate-500 text-sm">Brak ogłoszeń spełniających kryteria.</div>`;
+        return;
+      }
+
+      filtered.forEach(item => {
+        const isSaved = savedIds.includes(item.id);
+        const card = document.createElement('article');
+        card.className = "bg-slate-900 border border-slate-800 hover:border-slate-700/80 rounded-2xl p-5 transition space-y-4 shadow-lg";
+
+        const badgeClass = item.status === 'NEW' 
+          ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20' 
+          : 'bg-rose-500/10 text-rose-400 border-rose-500/20';
+
+        card.innerHTML = `
+          <div class="flex justify-between items-start gap-4">
+            <div>
+              <div class="flex items-center gap-2 mb-1.5">
+                <span class="text-[10px] font-mono uppercase px-2 py-0.5 rounded border ${badgeClass}">
+                  ${item.status === 'NEW' ? 'Nowe' : 'Pilne'}
+                </span>
+                <span class="text-xs text-slate-500 font-mono">Do: ${item.deadlineDate}</span>
+              </div>
+              <h3 class="text-base font-bold text-white hover:text-violet-400 cursor-pointer transition" onclick="openDrawer('${item.id}')">${item.title}</h3>
+              <p class="text-xs text-slate-400 mt-0.5">${item.organization} • <span class="text-slate-300">${item.location}</span></p>
+            </div>
+            <button onclick="toggleSave('${item.id}')" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 transition">
+              ${isSaved ? '⭐' : '☆'}
+            </button>
+          </div>
+
+          <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">${item.summary}</p>
+
+          <div class="flex justify-between items-center pt-2 border-t border-slate-800/60 text-xs">
+            <span class="text-slate-500 font-mono text-[11px]">Publikacja: ${item.publishDate}</span>
+            <button onclick="openDrawer('${item.id}')" class="bg-slate-800 hover:bg-violet-600 text-slate-200 hover:text-white px-3.5 py-1.5 rounded-lg font-medium transition flex items-center gap-1">
+              Szczegóły ➔
+            </button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function toggleSave(id) {
+      if (savedIds.includes(id)) {
+        savedIds = savedIds.filter(i => i !== id);
+      } else {
+        savedIds.push(id);
+      }
+      localStorage.setItem('saved_rn_ads', JSON.stringify(savedIds));
+      renderFeed();
+    }
+
+    function setFilter(type) {
+      currentFilter = type;
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.className = "filter-btn px-3 py-1.5 rounded-lg border border-slate-800 bg-slate-900 text-slate-400 hover:text-white transition";
+      });
+      document.getElementById(`btn-${type}`).className = "filter-btn px-3 py-1.5 rounded-lg border bg-violet-600 border-violet-500 text-white font-medium transition";
+      renderFeed();
+    }
+
+    function openDrawer(id) {
+      const item = sampleData.find(i => i.id === id);
+      if (!item) return;
+
+      document.getElementById('drawerTitle').innerText = item.title;
+      document.getElementById('drawerOrg').innerText = item.organization;
+      document.getElementById('drawerDeadline').innerText = item.deadlineDate;
+      document.getElementById('drawerLocation').innerText = item.location;
+      document.getElementById('drawerSourceBtn').href = item.sourceUrl;
+
+      const reqList = document.getElementById('drawerRequirements');
+      reqList.innerHTML = item.requirements.map(r => `<li>${r}</li>`).join('');
+
+      document.getElementById('drawer').classList.remove('hidden');
+    }
+
+    function closeDrawer() {
+      document.getElementById('drawer').classList.add('hidden');
+    }
+
+    document.getElementById('searchInput').addEventListener('input', renderFeed);
+    renderFeed();
+  </script>
+</body>
+</html>
