@@ -2,13 +2,13 @@
   "date": "2026-08-30",
   "stats": {
     "search_requests": 12,
-    "raw_results": 81,
+    "raw_results": 90,
     "direct_results": 0,
-    "after_dedup": 6,
+    "after_dedup": 4,
     "after_filter": 4,
     "offers_added": 0,
     "extract_errors": 0,
-    "offers_updated": 0
+    "offers_updated": 1
   },
   "offers": [
     {

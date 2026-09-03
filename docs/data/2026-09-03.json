@@ -1,0 +1,29 @@
+{
+  "date": "2026-09-03",
+  "stats": {
+    "search_requests": 12,
+    "raw_results": 84,
+    "direct_results": 0,
+    "after_dedup": 4,
+    "after_filter": 4,
+    "offers_added": 1,
+    "extract_errors": 0,
+    "offers_updated": 0,
+    "offers_with_termin": 0,
+    "content_empty": 0
+  },
+  "offers": [
+    {
+      "podmiot": "Приватне акціонерне товариство «Укргідроенерго»",
+      "miejscowosc": "Вишгород",
+      "termin_skladania_ofert": "",
+      "stanowisko": "niezależny członek rady nadzorczej (4 wakaty)",
+      "wymagania": "",
+      "podsumowanie": "Ukraińskie Ministerstwo Gospodarki ogłosiło konkurs na cztery stanowiska niezależnych członków rady nadzorczej PrAT «Ukrgidroenergo» – największej spółki hydroenergetycznej Ukrainy, w 100% należącej do państwa. W tekście nie podano terminu składania aplikacji ani szczegółowych wymagań.",
+      "data_publikacji": "",
+      "url": "https://www.me.gov.ua/Documents/Detail/459a7cdd-9016-4ca6-8d4d-cb5a8da1f219?lang=uk-UA&title=OgoloshenniaProKonkursniiVidbirNaPosaduNezalezhnogoChlenaNagliadovoiRadiPrivatnogoAktsionernogoTovaristvaukrgidroenergo",
+      "znaleziono_dnia": "2026-09-03",
+      "zrodlo": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\""
+    }
+  ]
+}

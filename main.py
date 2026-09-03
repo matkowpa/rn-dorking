@@ -101,6 +101,8 @@ def main(argv: list[str] | None = None) -> int:
         "offers_added": 0,
         "extract_errors": 0,
         "offers_updated": 0,
+        "offers_with_termin": 0,
+        "content_empty": 0,
     }
 
     # Re-ekstrakcja: oferty bez terminu z poprzednich dni - spróbuj ponownie
@@ -164,6 +166,7 @@ def main(argv: list[str] | None = None) -> int:
 
     # ETAP B: deduplikacja, filtr LLM (z limitem --limit na nowych wynikach)
     dry_run_rows: list[tuple[str, bool, str]] = []
+    rejected_log: list[dict] = []  # odrzucone wyniki (URL, tytuł, powód) do logu dnia
     new_processed = 0
     for result in all_results:
         is_direct = bool(result.get("_direct"))
@@ -208,6 +211,7 @@ def main(argv: list[str] | None = None) -> int:
             if not text:
                 logger.info("Brak treści (użyto snippetu): %s", link)
                 text = snippet
+                stats["content_empty"] += 1
             offer = extract_fields(text, link)
             if offer is None:
                 stats["extract_errors"] += 1
@@ -229,6 +233,8 @@ def main(argv: list[str] | None = None) -> int:
                         pass  # termin w nietypowym formacie - zostaw
                 storage.add_offer(offer)
                 stats["offers_added"] += 1
+                if offer.get("termin_skladania_ofert"):
+                    stats["offers_with_termin"] += 1
                 logger.info("Nowa oferta: podmiot=%s termin=%s",
                             offer.get("podmiot", ""), offer.get("termin_skladania_ofert", ""))
         else:
@@ -236,6 +242,12 @@ def main(argv: list[str] | None = None) -> int:
             # filtra przy kolejnych runach (chyba że to chwilowy błąd LLM)
             if not uzasadnienie.startswith("błąd filtra"):
                 storage.add_rejected(link)
+                rejected_log.append({
+                    "url": link,
+                    "title": title,
+                    "reason": uzasadnienie,
+                    "source": result.get("dork", ""),
+                })
         # Mały odstęp między wywołaniami LLM (mniejsza szansa na rate limit)
         time.sleep(0.5)
 
@@ -247,6 +259,8 @@ def main(argv: list[str] | None = None) -> int:
     else:
         storage.save()
         storage.save_daily(stats)
+        if rejected_log:
+            storage.save_rejected_log(rejected_log)
 
     # Statystyki końcowe
     logger.info("=== Statystyki runu ===")
@@ -258,6 +272,8 @@ def main(argv: list[str] | None = None) -> int:
     logger.info("Nowe oferty dopisane: %s", stats["offers_added"])
     logger.info("Błędy ekstrakcji: %s", stats["extract_errors"])
     logger.info("Uzupełnione terminy (re-ekstrakcja): %s", stats["offers_updated"])
+    logger.info("Oferty z terminem: %s/%s", stats["offers_with_termin"], stats["offers_added"])
+    logger.info("Oferty bez treści (użyto snippetu): %s", stats["content_empty"])
     return 0
 
 

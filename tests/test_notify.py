@@ -45,3 +45,22 @@ def test_build_digest_unknown_term_placeholder():
         [{"podmiot": "ABC", "termin_skladania_ofert": "", "url": "https://e.pl"}],
         [], "2026-08-29")
     assert "termin: nieznany" in text
+
+
+def test_build_digest_quality_metrics():
+    stats = {"offers_added": 3, "offers_with_termin": 2, "content_empty": 1}
+    text, html = build_digest(
+        [{"podmiot": "ABC", "termin_skladania_ofert": "2026-09-15",
+          "url": "https://e.pl"}],
+        [], "2026-08-29", stats)
+    assert "Metryki runu" in text
+    assert "oferty z terminem: 2/3" in text
+    assert "oferty bez treści (snippet): 1" in text
+    assert "Metryki runu" in html
+    assert "2/3" in html
+
+
+def test_build_digest_without_stats_no_metrics_section():
+    text, html = build_digest([], [], "2026-08-29")
+    assert "Metryki runu" not in text
+    assert "Metryki runu" not in html

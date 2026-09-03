@@ -130,6 +130,7 @@ async function viewHome() {
         <span class="stat-side-item">Ofert łącznie: <b>${all.length}</b></span>
         <span class="stat-side-item">Dni monitoringu: <b>${idx.length}</b></span>
         <span class="stat-side-item">Ostatni run: <b>${idx.length ? fmtDate(idx[0].date) : "—"}</b></span>
+        <span class="stat-side-item"><a class="src" href="nabory.ics" title="Kalendarz aktywnych terminów (iCalendar)">📅 kalendarz (ICS)</a></span>
       </div>
     </section>
     <section id="closest"></section>
@@ -194,6 +195,8 @@ async function viewDay(date, idx) {
       surowe wyniki: <b>${s.raw_results ?? "—"}</b> · źródła bezpośrednie: <b>${s.direct_results ?? 0}</b> ·
       po filtrze: <b>${s.after_filter ?? "—"}</b> ·
       dodano ofert: <b>${s.offers_added ?? "—"}</b> · łącznie tego dnia: <b>${offers.length}</b>
+      ${s.offers_with_termin != null ? ` · z terminem: <b>${s.offers_with_termin}/${s.offers_added ?? 0}</b>` : ""}
+      ${s.content_empty != null ? ` · bez treści: <b>${s.content_empty}</b>` : ""}
     </p>
     <div class="cards">${offers.map(cardHTML).join("") || '<p class="empty">Brak ofert tego dnia.</p>'}</div>
     <nav class="daynav">

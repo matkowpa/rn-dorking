@@ -165,6 +165,9 @@ Zwróć WYŁĄCZNIE obiekt JSON o polach:
   "wymagania": "skrót wymagań, maks. 300 znaków, lub \\"\\"",
   "podsumowanie": "1-2 zdania po polsku"
 }
+Zasady:
+- "podmiot": skopiuj DOKŁADNĄ pełną nazwę spółki/urzędu z tekstu (np. "PKP Polskie Linie Kolejowe S.A."), bez skracania i bez dopisywania formy prawnej, której nie ma w tekście.
+- "termin_skladania_ofert": podaj datę w formacie YYYY-MM-DD. Terminy względne policz od DATY DZISIEJSZEJ podanej w treści zapytania (np. "w terminie 14 dni od publikacji" -> data publikacji + 14 dni). Jeśli nie da się jednoznacznie policzyć - zwróć "" (NIE wymyślaj daty).
 Przykłady normalizacji dat:
 "do 15 września 2026 r." -> "2026-09-15"
 "15.09.2026"             -> "2026-09-15"
@@ -179,7 +182,9 @@ def extract_fields(full_text: str, url: str) -> dict | None:
     """
     # Obetnij tekst PRZED wysłaniem do LLM
     text = full_text[:12000]
-    user_content = f"URL: {url}\n\nTekst ogłoszenia:\n{text}"
+    user_content = (f"URL: {url}\n"
+                    f"Dzisiejsza data: {date.today().isoformat()}\n\n"
+                    f"Tekst ogłoszenia:\n{text}")
     try:
         raw = _call_llm(config.LLM_MODEL_EXTRACT, EXTRACT_SYSTEM_PROMPT, user_content)
         try:
