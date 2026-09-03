@@ -1,0 +1,17 @@
+{
+  "date": "2026-09-03",
+  "rejected": [
+    {
+      "url": "https://terlan.pl/postepowanie-kwalifikacyjne-na-czlonka-zarzadu/",
+      "title": "Postępowanie kwalifikacyjne na Członka Zarządu Terlan S.A.",
+      "reason": "Nabór na członka zarządu, nie rady nadzorczej – odrzucam.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://bip.makowmazowiecki.pl/74,ogloszenia",
+      "title": "OGŁOSZENIA | BIULETYN INFORMACJI PUBLICZNEJ Urzędu ...",
+      "reason": "frazy dyskwalifikujące: kurs",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\""
+    }
+  ]
+}
