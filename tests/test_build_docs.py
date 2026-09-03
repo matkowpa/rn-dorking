@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
-"""Testy build_docs.py: generator kalendarza iCalendar (bez sieci)."""
+"""Testy build_docs.py: generator kalendarza iCalendar + budowa docs/data."""
+import json
 import sys
 
 sys.stdout.reconfigure(encoding="utf-8")
 
-from build_docs import _ics_escape, build_ics
+from build_docs import _ics_escape, build, build_ics
 
 
 def test_ics_escape_special_chars():
@@ -48,3 +49,29 @@ def test_ics_uid_stable_across_builds():
 def test_ics_crlf_line_endings():
     ics = build_ics([], today="2099-01-01")
     assert "\r\n" in ics  # RFC 5545 wymaga CRLF
+
+
+# --- budowa docs/data ---
+
+def test_build_skips_rejected_logs(tmp_path, monkeypatch):
+    """Pliki odrzucone-*.json nie tworzą wpisów dni w index.json (fantomy =
+    podwójne kafelki 'według dni') i nie nadpisują plików dni w docs/data."""
+    monkeypatch.chdir(tmp_path)
+    day_dir = tmp_path / "data" / "dnia"
+    day_dir.mkdir(parents=True)
+    real = {"date": "2026-09-01", "stats": {"raw_results": 5},
+            "offers": [{"podmiot": "Spółka X", "url": "https://a.pl/1",
+                        "termin_skladania_ofert": ""}]}
+    rej = {"date": "2026-09-01", "rejected": [{"url": "https://a.pl/2"}]}
+    (day_dir / "2026-09-01.json").write_text(json.dumps(real), encoding="utf-8")
+    (day_dir / "odrzucone-2026-09-01.json").write_text(json.dumps(rej), encoding="utf-8")
+
+    build()
+
+    index = json.loads(
+        (tmp_path / "docs" / "data" / "index.json").read_text(encoding="utf-8"))
+    assert [d["date"] for d in index] == ["2026-09-01"]  # bez fantomowego duplikatu
+    day = json.loads(
+        (tmp_path / "docs" / "data" / "2026-09-01.json").read_text(encoding="utf-8"))
+    # Plik dnia NIE został nadpisany logiem odrzuconych
+    assert day["offers"][0]["podmiot"] == "Spółka X"

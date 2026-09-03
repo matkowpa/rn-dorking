@@ -84,6 +84,9 @@ def build() -> None:
     all_offers: list[dict] = []
 
     for path in sorted(glob.glob(os.path.join("data", "dnia", "*.json"))):
+        if os.path.basename(path).startswith("odrzucone-"):
+            continue  # log odrzuconych - nie jest plikiem dnia (inaczej: fantomowe
+                      # duplikaty dni w index.json + nadpisanie pliku dnia w docs/)
         payload = _read(path)
         run_date = payload.get("date") or os.path.basename(path)[:-5]
         offers = payload.get("offers", [])

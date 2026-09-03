@@ -1,35 +1,29 @@
 {
   "date": "2026-09-01",
-  "rejected": [
+  "stats": {
+    "search_requests": 12,
+    "raw_results": 75,
+    "direct_results": 0,
+    "after_dedup": 9,
+    "after_filter": 4,
+    "offers_added": 1,
+    "extract_errors": 0,
+    "offers_updated": 1,
+    "offers_with_termin": 1,
+    "content_empty": 0
+  },
+  "offers": [
     {
-      "url": "https://businessinsider.com.pl/praca/kto-pokieruje-pfr-ogloszono-konkursy-na-dwa-kluczowe-stanowiska/gb2xfcj",
-      "title": "PFR szuka prezesa i wiceprezesa. Takie wymagania postawiła rada nadzorcza",
-      "reason": "Nabór na stanowiska zarządu (prezes, wiceprezes), nie rady nadzorczej.",
-      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\""
-    },
-    {
-      "url": "https://www.bankier.pl/wiadomosc/KOMPUTRONIK-S-A-Rezygnacja-Czlonka-Rady-Nadzorczej-Spolki-9189890.html",
-      "title": "KOMPUTRONIK S.A.: Rezygnacja Członka Rady Nadzorczej Spółki - Bankier.pl",
-      "reason": "Informacja o rezygnacji członka rady nadzorczej, nie ogłoszenie naboru.",
-      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\""
-    },
-    {
-      "url": "https://strefabiznesu.pl/alior-bank-szuka-nowego-prezesa-ruszyl-nabor-do-wladz-banku/ar/c3p2-29313535",
-      "title": "Alior Bank szuka nowego prezesa. Ruszył nabór do władz banku | Strefa Biznesu",
-      "reason": "Nabór dotyczy prezesa i członków zarządu, nie rady nadzorczej.",
-      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
-    },
-    {
-      "url": "https://blog-daneosobowe.pl/rekrutacja-zgodna-z-rodo/",
-      "title": "Rekrutacja zgodna z RODO – jak ją przeprowadzić?",
-      "reason": "frazy dyskwalifikujące: poradnik",
-      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
-    },
-    {
-      "url": "https://www.bankier.pl/wiadomosc/PGE-POLSKA-GRUPA-ENERGETYCZNA-S-A-Zgloszenie-kandydatow-na-Czlonkow-Rady-Nadzorczej-przez-akcjonariusza-Skarb-Panstwa-9153077.html",
-      "title": "PGE POLSKA GRUPA ENERGETYCZNA S.A.: Zgłoszenie kandydatów na Członków Rady Nadzorczej przez akcjonariusza - Skarb Państwa - Bankier.pl",
-      "reason": "Raport bieżący o zgłoszeniu kandydatów przez akcjonariusza, nie otwarty nabór.",
-      "source": "\"kandydatów do rady nadzorczej\""
+      "podmiot": "Państwowy Fundusz Rehabilitacji Osób Niepełnosprawnych",
+      "miejscowosc": "Warszawa",
+      "termin_skladania_ofert": "2026-09-11",
+      "stanowisko": "członek rady nadzorczej",
+      "wymagania": "Kandydat musi spełniać wymagania z ustawy z 16 grudnia 2016 r. o zasadach zarządzania mieniem państwowym; zgłaszany jako przedstawiciel organizacji pozarządowej; zgłoszenie zawiera wypełniony kwestionariusz osobowy wraz z dokumentami i oświadczeniami wskazanymi w kwestionariuszu.",
+      "podsumowanie": "Pełnomocnik Rządu do Spraw Osób Niepełnosprawnych ogłasza nabór uzupełniający na członka Rady Nadzorczej PFRON w celu obsadzenia 1 wakatu przedstawiciela organizacji pozarządowej. Zgłoszenia należy składać do 11 września 2026 r. na adres Ministerstwa Rodziny, Pracy i Polityki Społecznej w Warszawie.",
+      "data_publikacji": "2026-08-31",
+      "url": "https://niepelnosprawni.gov.pl/ogloszenie-uzupelniajace-o-naborze-kandydata-do-rady-nadzorczej-panstwowego-funduszu-rehabilitacji-osob-niepelnosprawnych/",
+      "znaleziono_dnia": "2026-09-01",
+      "zrodlo": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\""
     }
   ]
 }

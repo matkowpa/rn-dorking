@@ -22,15 +22,23 @@ def _parse_iso(value: str):
         return None
 
 
+# Parametry renderowania tej samej strony (warianty indeksowane przez
+# wyszukiwarki, np. ?format=pdf&pagespeed=noscript) - nie zmieniają treści,
+# więc nie rozróżniają ofert.
+_JUNK_QUERY_PARAMS = {"format", "pagespeed", "print", "tmpl"}
+
+
 def _normalize_url(url: str) -> str:
-    """Normalizuje URL: lowercase host, usuwa parametry utm_, fragment,
-    końcowy '/' ze ścieżki."""
+    """Normalizuje URL: lowercase host, usuwa parametry utm_ i śmieciowe
+    parametry renderowania, fragment, końcowy '/' ze ścieżki."""
     parts = urlsplit(url)
     scheme = parts.scheme.lower()
     host = parts.netloc.lower()
-    # Usuń parametry zapytania zaczynające się od "utm_"
+    # Usuń parametry zapytania: utm_* oraz parametry renderowania (junk)
     if parts.query:
-        kept = [p for p in parts.query.split("&") if not p.split("=")[0].startswith("utm_")]
+        kept = [p for p in parts.query.split("&")
+                if not (name := p.split("=")[0].lower()).startswith("utm_")
+                and name not in _JUNK_QUERY_PARAMS]
         query = "&".join(kept)
     else:
         query = ""

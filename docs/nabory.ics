@@ -3,4 +3,12 @@ VERSION:2.0
 PRODID:-//rn-dorking//nabory rad nadzorczych//PL
 CALSCALE:GREGORIAN
 X-WR-CALNAME:Nabory - rady nadzorcze
+BEGIN:VEVENT
+UID:850a8fabe5fc2069a21b41af4a30805d48709e39@rn-dorking
+DTSTAMP:20260903T000000Z
+DTSTART;VALUE=DATE:20260911
+DTEND;VALUE=DATE:20260912
+SUMMARY:Państwowy Fundusz Rehabilitacji Osób Niepełnosprawnych
+DESCRIPTION:Pełnomocnik Rządu do Spraw Osób Niepełnosprawnych ogłasza nabór uzupełniający na członka Rady Nadzorczej PFRON w celu obsadzenia 1 wakatu przedstawiciela organizacji pozarządowej. Zgłoszenia należy składać do 11 września 2026 r. na adres Ministerstwa Rodziny\, Pracy i Polityki Społecznej w Warszawie.\nhttps://niepelnosprawni.gov.pl/ogloszenie-uzupelniajace-o-naborze-kandydata-do-rady-nadzorczej-panstwowego-funduszu-rehabilitacji-osob-niepelnosprawnych/
+END:VEVENT
 END:VCALENDAR

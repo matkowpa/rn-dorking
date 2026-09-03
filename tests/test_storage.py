@@ -40,6 +40,26 @@ def test_normalize_url_strips_trailing_slash():
     assert _normalize_url("https://example.pl/a/") == "https://example.pl/a"
 
 
+def test_normalize_url_strips_junk_render_params():
+    # Warianty tej samej strony indeksowane przez wyszukiwarki
+    # (?format=pdf&pagespeed=noscript) muszą się scalać z bazowym URL-em
+    url = "https://mazovia.pl/a.html?format=pdf&pagespeed=noscript&PageSpeed=noscript"
+    assert _normalize_url(url) == "https://mazovia.pl/a.html"
+
+
+def test_normalize_url_keeps_meaningful_query_params():
+    # BIP-y niosą tożsamość strony w query - nie wolno ich usuwać
+    # (trailing slash ścieżki i tak jest usuwany)
+    assert _normalize_url("https://bip.example.pl/public/?id=236459") \
+        == "https://bip.example.pl/public?id=236459"
+
+
+def test_dedup_across_render_param_variants(storage):
+    storage.merge_offers([OFFER])
+    # Ten sam URL z parametrami renderowania -> duplikat
+    assert storage.is_new("https://przyklad.pl/nabor/?format=pdf&PageSpeed=noscript") is False
+
+
 def test_is_new_and_dedup(storage):
     assert storage.is_new(OFFER["url"]) is True
     assert storage.merge_offers([OFFER]) == 1
