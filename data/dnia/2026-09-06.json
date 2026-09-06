@@ -1,0 +1,29 @@
+{
+  "date": "2026-09-06",
+  "stats": {
+    "search_requests": 12,
+    "raw_results": 67,
+    "direct_results": 0,
+    "after_dedup": 3,
+    "after_filter": 2,
+    "offers_added": 1,
+    "extract_errors": 0,
+    "offers_updated": 0,
+    "offers_with_termin": 0,
+    "content_empty": 0
+  },
+  "offers": [
+    {
+      "podmiot": "Mazowiecki Szpital Wojewódzki im. św. Jana Pawła II w Siedlcach Sp. z o.o.",
+      "miejscowosc": "Siedlce",
+      "termin_skladania_ofert": "",
+      "stanowisko": "członek rady nadzorczej",
+      "wymagania": "",
+      "podsumowanie": "Mazowiecki Szpital Wojewódzki im. św. Jana Pawła II w Siedlcach Sp. z o.o. ogłasza nabór kandydatów do Rady Nadzorczej. Szczegółowe informacje, w tym termin składania zgłoszeń i wymagania, znajdują się w załączonym ogłoszeniu PDF.",
+      "data_publikacji": "",
+      "url": "https://bip.mazovia.pl/pl/bip/komunikaty/nabor-kandydatow-do-rady-nadzorczej-spolki-mazowiecki-szpital-wojewodzki-im-sw-jana-pawla-ii-w-siedlcach.html",
+      "znaleziono_dnia": "2026-09-06",
+      "zrodlo": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+    }
+  ]
+}
