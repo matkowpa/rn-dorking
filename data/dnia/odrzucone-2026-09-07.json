@@ -1,0 +1,17 @@
+{
+  "date": "2026-09-07",
+  "rejected": [
+    {
+      "url": "https://www.bip.minsk-maz.pl/index.php?type=4&name=bt223&func=selectsite&value%5B0%5D=mnu21&value%5B1%5D=29",
+      "title": "Nabory - Zarząd/ Rada Nadzorcza",
+      "reason": "Strona menu/listująca BIP bez konkretnej treści naboru; obejmuje też zarząd.",
+      "source": "BIP JST"
+    },
+    {
+      "url": "https://termika.orlen.pl/komunikat-prasowy/postepowanie-kwalifikacyjne-na-stanowisko-czlonkini-zarzadu-czlonka-zarzadu-spolki-orlen-termika-s-a-2/",
+      "title": "Postępowanie kwalifikacyjne na stanowisko Członkini Zarządu/Członka Zarządu spółki ORLEN Termika S.A. - ORLEN Termika",
+      "reason": "nabór na zarząd, nie na radę nadzorczą",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    }
+  ]
+}

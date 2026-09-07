@@ -1,0 +1,29 @@
+{
+  "date": "2026-09-07",
+  "stats": {
+    "search_requests": 12,
+    "raw_results": 59,
+    "direct_results": 1,
+    "after_dedup": 4,
+    "after_filter": 2,
+    "offers_added": 1,
+    "extract_errors": 0,
+    "offers_updated": 0,
+    "offers_with_termin": 0,
+    "content_empty": 0
+  },
+  "offers": [
+    {
+      "podmiot": "Urząd Miejski w Gogolinie",
+      "miejscowosc": "Gogolin",
+      "termin_skladania_ofert": "",
+      "stanowisko": "członek rady nadzorczej (nabór do rejestru kandydatów)",
+      "wymagania": "Wykształcenie wyższe ekonomiczne, prawnicze lub branżowe; wymogi art. 19 ustawy o zasadach zarządzania mieniem państwowym; min. 3-letni staż zawodowy w obszarze gospodarczym, finansowym, prawnym, zarządzania lub nadzoru; brak ograniczeń/zakazów. Dodatkowo: znajomość KSH, doświadczenie w organach spółek.",
+      "podsumowanie": "Burmistrz Gogolina ogłasza nabór do rejestru kandydatów na członków rad nadzorczych spółek prawa handlowego z udziałem Gminy Gogolin. Termin składania dokumentów umożliwiających wpis do rejestru nie jest ograniczony.",
+      "data_publikacji": "",
+      "url": "https://bip.gogolin.pl/18229/ogloszenie-o-naborze-do-rejestru-kandydatow-na-czlonkow-rad-nadzorczych-spolek-prawa-handlowego-z-udzialem-gminy-gogolin.html",
+      "znaleziono_dnia": "2026-09-07",
+      "zrodlo": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+    }
+  ]
+}

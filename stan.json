@@ -6,6 +6,7 @@
     "117b392dcab21ee0b39f519d78b235b5e4c8a4d1",
     "14c66debb7f27279fdd1fa6c14b7b99f82ab6d8e",
     "245c03566088ef13f8fab3fd76412dbb238ed980",
+    "24f13068addec5bc122016b6bb42df30c4cb0cab",
     "2bc5b01d633202b38bc28d393d68aba4c8c69d51",
     "2bf7bc4610cd6291df95bf77ffef8355b333eede",
     "2d4e38e11f9b110d2bc81eea3cd1785dd50d5d19",
@@ -121,7 +122,9 @@
     "202fb5cc1fe9eee6599bfa5e8c6942e27ab78390": "2026-09-03",
     "69a0ab31294f05c247d68baa67fcdba2974cdef3": "2026-09-03",
     "889c08aa53489ce50ad5d7d44b375a691d698e3e": "2026-09-04",
-    "e4402996aeaa9729295b0074b0f9d3b12f3bcb4a": "2026-09-06"
+    "e4402996aeaa9729295b0074b0f9d3b12f3bcb4a": "2026-09-06",
+    "a678bc2d4747540c085a2ad24a3438e2336d8a92": "2026-09-07",
+    "0791b28af317f9ca0dac74172a4f15085019d3bd": "2026-09-07"
   },
   "reextract": {
     "922f1fea6a39a30925042c018495f3cfa1dedfe5": {
@@ -263,6 +266,10 @@
     "b81c98a5144afbc286db8c3f507c8d16d59c5130": {
       "attempts": 1,
       "last": "2026-09-04"
+    },
+    "990fffc77f18222f68f30d12eb43fe79bf4a5670": {
+      "attempts": 1,
+      "last": "2026-09-07"
     }
   }
 }
