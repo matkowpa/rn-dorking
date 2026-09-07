@@ -2,10 +2,15 @@ name: rn-dorking daily run
 
 on:
   schedule:
-    # Cron godzinowy - właściwe godziny runu (07:00 i 19:00 czasu polskiego)
-    # wybiera krok "Decide mode" wg TZ=Europe/Warsaw, więc są poprawne cały
-    # rok niezależnie od zmiany czasu letniego/zimowego.
-    - cron: "0 * * * *"
+    # Cztery cron-y w minutach POZA pełną godziną - GitHub masowo opóźnia
+    # i porzuca runy cronowe "na pełną godzinę" (0 * * * *), co powodowało,
+    # że okna 07:00/19:00 PL w ogóle się nie uruchamiały. Pary lato/zima
+    # (CEST=UTC+2, CET=UTC+1) dają 07:17 i 19:23 czasu PL przez cały rok;
+    # właściwe okno wybiera krok "Decide mode" wg TZ=Europe/Warsaw.
+    - cron: "17 5 * * *"    # 07:17 czasu PL latem (CEST)
+    - cron: "17 6 * * *"    # 07:17 czasu PL zimą (CET)
+    - cron: "23 17 * * *"   # 19:23 czasu PL latem (CEST)
+    - cron: "23 18 * * *"   # 19:23 czasu PL zimą (CET)
   workflow_dispatch:        # przycisk "Run workflow" - uruchamia od razu
     inputs:
       regenerate_registry:
@@ -29,12 +34,22 @@ on:
 permissions:
   contents: write           # pozwala workflow'owi robić commit wyników
 
+# Serializacja runów: spóźniony cron z tego samego okna nie może biec
+# równolegle z innym (konflikt push przy "Commit results"); run z kolejki
+# i tak wykona "Decide mode" już po poprzedniku i zwykle się pominie.
+concurrency:
+  group: daily-run
+
 jobs:
   run-pipeline:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          # Pełna historia - krok "Decide mode" datuje ostatni commit wyników
+          # (git log -- <paths>), co na shallow clone zwracałoby pusto
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -67,14 +82,34 @@ jobs:
         run: |
           HOUR=$(TZ='Europe/Warsaw' date +'%H')
           echo "Godzina PL: $HOUR"
+          # Okno 3-godzinne zamiast dokładnej godziny - absorbuje opóźnienia
+          # kolejki GitHub Actions (runy cronowe bywają spóźnione o >30 min)
           case "$HOUR" in
-            07|19) MODE=run ;;
+            07|08|09|19|20|21) MODE=run ;;
             *) MODE=skip ;;
           esac
           # Uruchomienie ręczne i push zawsze odpalają potok od razu
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] \
              || [ "${{ github.event_name }}" = "push" ]; then MODE=run; fi
+          # Deduplikacja: każde okno pokrywa 2 cron-y (lato/zima), a mocno
+          # spóźniony run może wejść w to samo okno - jeśli wyniki potoku
+          # zostały commitowane < 4 h temu, pomijamy. Wiek > 14 h oznacza,
+          # że poprzednie okno w ogóle się nie wykonało (stale=true -> alert).
+          STALE=false
+          if [ "$MODE" = "run" ] && [ "${{ github.event_name }}" = "schedule" ]; then
+            LAST_COMMIT=$(git log -1 --format=%ct -- stan.json oferty.json docs/data)
+            [ -z "$LAST_COMMIT" ] && LAST_COMMIT=0
+            AGE_H=$(( ($(date +%s) - LAST_COMMIT) / 3600 ))
+            echo "Wyniki potoku commitowane ostatnio: $AGE_H h temu"
+            if [ "$AGE_H" -lt 4 ]; then
+              echo "Pomijam - potok już wykonał się w tym oknie"
+              MODE=skip
+            elif [ "$AGE_H" -gt 14 ]; then
+              STALE=true
+            fi
+          fi
           echo "mode=$MODE" >> "$GITHUB_OUTPUT"
+          echo "stale=$STALE" >> "$GITHUB_OUTPUT"
 
       - name: Run tests
         if: steps.mode.outputs.mode == 'run'
@@ -115,6 +150,21 @@ jobs:
           git add oferty.json stan.json data/ docs/data/
           git diff --cached --quiet || git commit -m "daily update [skip ci]"
           git push
+
+      - name: Alert on stale data (Telegram)
+        if: steps.mode.outputs.mode == 'run' && steps.mode.outputs.stale == 'true'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
+            echo "Brak sekretów Telegram - pomijam alert"
+            exit 0
+          fi
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d chat_id="${TELEGRAM_CHAT_ID}" \
+            -d parse_mode="HTML" \
+            -d text="⚠️ <b>rn-dorking</b>: poprzednie okno uruchomienia nie wykonało się (dane starsze niż 14 h). Potok właśnie uzupełnił dane."
 
       - name: Alert on failure (Telegram)
         if: failure()
