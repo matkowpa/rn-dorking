@@ -37,10 +37,13 @@
     "https://www.pfron.org.pl/",
     "https://www.pfron.org.pl/?tx_invshare_pi1%5Bprint%5D=aHR0cHM6Ly93d3cucGZyb24ub3JnLnBsL3Bmcm9uL3N6Y3plZ29seS9uZXdzL3Ryd2EtbmFib3ItZG8tcmFkeS1uYWR6b3JjemVqLXBmcm9uLw%3D%3D&tx_invshare_pi1%5Baction%5D=downloadPdf&tx_invshare_pi1%5Bcontroller%5D=CreateFile&cHash=d2037ded324628074f5d4ae383d096da",
     "https://www.piastow.pl/komunikaty/konkurs-na-czlonkow-rady-nadzorczej-ppuk",
+    "https://www.pion.pl/aktualnosci/czlonek-rady-nadzorczej-pfron-nabor-uzupelniajacy-potrwa-do-11-wrzesnia/",
     "https://www.powiatraciborski.pl/main/aktualnosci_powiat/Wybor-kandydatow-do-Rady-Nadzorczej-PKS-sp.-z-o.-o.-w-Raciborzu/idn:5250.html",
     "https://www.sektorkolejowy.pl/torpol-szuka-prezesa-zarzadu/",
     "https://www.tarnow.pl/Miasto/Samorzad/Nabor-do-bazy-kandydatow-na-czlonkow-rad-nadzorczych"
   ],
-  "reminders": {},
+  "reminders": {
+    "https://www.pion.pl/aktualnosci/czlonek-rady-nadzorczej-pfron-nabor-uzupelniajacy-potrwa-do-11-wrzesnia/": "2026-09-08"
+  },
   "notified_urls": []
 }
