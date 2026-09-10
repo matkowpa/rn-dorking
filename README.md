@@ -6,7 +6,7 @@ w Brave Search, klasyfikacja i ekstrakcja danych przez LLM, publikacja na
 GitHub Pages.
 
 ## Jak działa
-1. Codziennie o **07:00 i 19:00** (czas polski, odporny na zmianę DST) GitHub
+1. Codziennie o **07:17 i 19:23** (czas polski, odporny na zmianę DST) GitHub
    Actions uruchamia potok:
    - **Faza 0** — bezpośredni skan źródeł (port z rn-scrapper): whitelist
      ministerstw, spółek SP, portów i dużych miast (`direct_sources.py`)
@@ -24,7 +24,9 @@ GitHub Pages.
    - **ETAP B** — deduplikacja + filtr LLM → **ETAP C** — pobranie treści
      (HTML/PDF, poziom 2: załączniki) + ekstrakcja pól przez LLM
      (podmiot, termin, miejscowość… oraz **data publikacji** z metatagów/
-     `<time>`/etykiet). W razie niepowodzenia runu alert na Telegram.
+     `<time>`/etykiet). W razie niepowodzenia runu lub pominiętego okna
+     uruchomienia (nieświeże dane — potok nadrobi zaległości także poza
+     oknem) alert na Telegram.
 2. Wyniki zapisywane są per dzień do `data/dnia/<data>.json` i łączone
    w pełną historię `oferty.json`.
 3. `build_docs.py` buduje dane dla strony (`docs/data/`), commit i GitHub

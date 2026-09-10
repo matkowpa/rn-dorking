@@ -91,25 +91,31 @@ jobs:
           # Uruchomienie ręczne i push zawsze odpalają potok od razu
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] \
              || [ "${{ github.event_name }}" = "push" ]; then MODE=run; fi
-          # Deduplikacja: każde okno pokrywa 2 cron-y (lato/zima), a mocno
-          # spóźniony run może wejść w to samo okno - jeśli wyniki potoku
-          # zostały commitowane < 4 h temu, pomijamy. Wiek > 14 h oznacza,
-          # że poprzednie okno w ogóle się nie wykonało (stale=true -> alert).
+          # Wiek ostatniego commita wyników - liczony dla KAŻDEGO runu
+          # schedule (także poza oknem): GitHub potrafi opóźnić cron o kilka
+          # godzin; taki run ląduje poza oknem i byłby cicho pominięty mimo
+          # nieświeżych danych. Wiek > 14 h = poprzednie okno nie wyprodukowało
+          # danych (stale=true -> alert + run nadrobczy niezależnie od okna).
+          # Wiek < 4 h = deduplikacja: spóźniony drugi cron z tego samego
+          # okna (i runy zaraz po runie nadrobczym) są pomijane.
           STALE=false
-          if [ "$MODE" = "run" ] && [ "${{ github.event_name }}" = "schedule" ]; then
+          AGE_H=0
+          if [ "${{ github.event_name }}" = "schedule" ]; then
             LAST_COMMIT=$(git log -1 --format=%ct -- stan.json oferty.json docs/data)
             [ -z "$LAST_COMMIT" ] && LAST_COMMIT=0
             AGE_H=$(( ($(date +%s) - LAST_COMMIT) / 3600 ))
             echo "Wyniki potoku commitowane ostatnio: $AGE_H h temu"
-            if [ "$AGE_H" -lt 4 ]; then
+            if [ "$AGE_H" -gt 14 ]; then
+              STALE=true
+              MODE=run    # run nadrobczy: poza oknem, ale dane nieświeże
+            elif [ "$AGE_H" -lt 4 ] && [ "$MODE" = "run" ]; then
               echo "Pomijam - potok już wykonał się w tym oknie"
               MODE=skip
-            elif [ "$AGE_H" -gt 14 ]; then
-              STALE=true
             fi
           fi
           echo "mode=$MODE" >> "$GITHUB_OUTPUT"
           echo "stale=$STALE" >> "$GITHUB_OUTPUT"
+          echo "age_h=$AGE_H" >> "$GITHUB_OUTPUT"
 
       - name: Run tests
         if: steps.mode.outputs.mode == 'run'
@@ -147,7 +153,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add oferty.json stan.json data/ docs/data/
+          git add oferty.json stan.json data/ docs/data/ docs/nabory.ics
           git diff --cached --quiet || git commit -m "daily update [skip ci]"
           git push
 
@@ -164,7 +170,7 @@ jobs:
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             -d chat_id="${TELEGRAM_CHAT_ID}" \
             -d parse_mode="HTML" \
-            -d text="⚠️ <b>rn-dorking</b>: poprzednie okno uruchomienia nie wykonało się (dane starsze niż 14 h). Potok właśnie uzupełnił dane."
+            -d text="⚠️ <b>rn-dorking</b>: poprzednie okno uruchomienia nie wykonało się (dane sprzed ${{ steps.mode.outputs.age_h }} h). Potok właśnie uzupełnił dane."
 
       - name: Alert on failure (Telegram)
         if: failure()
