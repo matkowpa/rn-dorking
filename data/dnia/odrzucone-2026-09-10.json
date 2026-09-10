@@ -1,0 +1,71 @@
+{
+  "date": "2026-09-10",
+  "rejected": [
+    {
+      "url": "https://kghm.com/pl/zgloszenie-przez-akcjonariusza-kandydatow-do-rady-nadzorczej-spolki-0",
+      "title": "Zgłoszenie przez akcjonariusza kandydatów do Rady ... - KGHM",
+      "reason": "Raport bieżący o zgłoszeniu kandydatów przez akcjonariusza, nie otwarty nabór.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://www.wagrowiec.eu/pl/aktualnosci/rada-nadzorcza-msok-oglasza-konkurs-na-stanowisko-prezesa-zarzadu",
+      "title": "Rada Nadzorcza MSOK ogłasza konkurs na stanowisko ...",
+      "reason": "frazy dyskwalifikujące: kurs",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://uczelniaeuropejska.pl/oferta/studia-podyplomowe/master-of-business-administration-mba/",
+      "title": "Master of Business Administration (MBA) - EUST Radom",
+      "reason": "Rekrutacja na studia MBA, nie nabór do rady nadzorczej.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://www.zus.pl/o-zus/praca-w-zus/wyniki-naboru-ofert-pracy/-/erecruiter-job-offers-results/1/stanowisko-ds_-informacji-ogolnej-k_m-grudziadz-lista-kandydatow/20452",
+      "title": "Stanowisko ds. informacji ogólnej (K/M) Grudziądz - ZUS",
+      "reason": "Nabór na stanowisko pracy w ZUS, nie na członka rady nadzorczej.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://niepelnosprawni.gov.pl/lista-rekomendowanych-wnioskow-w-ramach-programu-centra-opiekunczo-mieszkalne-ogloszonego-w-2019-r-oraz-w-2021-r",
+      "title": "Lista rekomendowanych wniosków w ramach Programu ...",
+      "reason": "Lista zatwierdzonych wniosków programu, brak naboru do rady nadzorczej.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://leasingteam.pl/blog/dyrektywa-women-on-boards-spolki-gieldowe",
+      "title": "Dyrektywa Women on Boards. Nowe obowiązki dużych spółek ...",
+      "reason": "Artykuł blogowy o dyrektywie Women on Boards, nie ogłoszenie naboru.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://nabory.kprm.gov.pl/mazowieckie/warszawa/starszy-specjalistastarsza-specjalistka,167912,v8",
+      "title": "Starszy specjalista/starsza specjalistka | Warszawa",
+      "reason": "Nabór na stanowisko starszego specjalisty, nie na członka rady nadzorczej.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://www.funduszeunijne.gov.pl/strony/o-funduszach/fundusze-europejskie-bez-barier/dostepnosc/dzialania-na-rzecz-dostepnosci/nabory-konkursy-i-zamowienia/nabory/archiwalne-nabory-i-konkursy/",
+      "title": "Archiwalne nabory i konkursy - Portal Funduszy Europejskich",
+      "reason": "frazy dyskwalifikujące: kurs",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://www.jswsig.pl/aktualnosci/wydarzenie/rekrutacja-4",
+      "title": "Rekrutacja - JSW SA",
+      "reason": "Rekrutacja na stanowisko pracownicze w JSW, nie na członka rady nadzorczej.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://www.rp.pl/nieruchomosci-mieszkaniowe/art45115931-po-pol-roku-boomu-w-sierpniu-spadl-popyt-na-kredyty-mieszkaniowe",
+      "title": "W sierpniu spadł popyt na kredyty mieszkaniowe, ale nie sama ...",
+      "reason": "Artykuł prasowy o popycie na kredyty mieszkaniowe, brak naboru do rady nadzorczej.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://szkoladoktorska.pk.edu.pl/rekrutacja-do-szkoly-doktorskiej-pk/",
+      "title": "Rekrutacja do Szkoły Doktorskiej PK na rok akademicki 2026/27 - Szkoła Doktorska",
+      "reason": "Rekrutacja doktorantów do szkoły doktorskiej, nie nabór do rady nadzorczej.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    }
+  ]
+}
