@@ -2,9 +2,9 @@
   "date": "2026-09-11",
   "stats": {
     "search_requests": 12,
-    "raw_results": 75,
+    "raw_results": 77,
     "direct_results": 0,
-    "after_dedup": 3,
+    "after_dedup": 4,
     "after_filter": 3,
     "offers_added": 0,
     "extract_errors": 0,
