@@ -4,27 +4,11 @@ PRODID:-//rn-dorking//nabory rad nadzorczych//PL
 CALSCALE:GREGORIAN
 X-WR-CALNAME:Nabory - rady nadzorcze
 BEGIN:VEVENT
-UID:850a8fabe5fc2069a21b41af4a30805d48709e39@rn-dorking
-DTSTAMP:20260911T000000Z
-DTSTART;VALUE=DATE:20260911
-DTEND;VALUE=DATE:20260912
-SUMMARY:Państwowy Fundusz Rehabilitacji Osób Niepełnosprawnych
-DESCRIPTION:Pełnomocnik Rządu do Spraw Osób Niepełnosprawnych ogłasza nabór uzupełniający na członka Rady Nadzorczej PFRON w celu obsadzenia 1 wakatu przedstawiciela organizacji pozarządowej. Zgłoszenia należy składać do 11 września 2026 r. na adres Ministerstwa Rodziny\, Pracy i Polityki Społecznej w Warszawie.\nhttps://niepelnosprawni.gov.pl/ogloszenie-uzupelniajace-o-naborze-kandydata-do-rady-nadzorczej-panstwowego-funduszu-rehabilitacji-osob-niepelnosprawnych/
-END:VEVENT
-BEGIN:VEVENT
 UID:451c41f9f1748b9d08aefd87d15f93b6f62d7da2@rn-dorking
-DTSTAMP:20260911T000000Z
+DTSTAMP:20260912T000000Z
 DTSTART;VALUE=DATE:20261005
 DTEND;VALUE=DATE:20261006
 SUMMARY:БО «Благодійний фонд «Стабілізейшен Суппорт Сервісез»
 DESCRIPTION:Fundacja «Stabilization Support Services» ogłasza otwarty nabór kandydatów do nowo tworzonej rady nadzorczej. Praca w radzie ma charakter społeczny (kadencja 5 lat)\, a dokumenty aplikacyjne należy przesłać do 5 października 2026 r. na adres sb@cfsss.org.\nhttps://sss-ua.org/tenders/vidkrytyy-vidbir-do-nahliadovoi-rady-bo-sss/
-END:VEVENT
-BEGIN:VEVENT
-UID:c10b76cb9e2264a872a3ad431864f470273efce3@rn-dorking
-DTSTAMP:20260911T000000Z
-DTSTART;VALUE=DATE:20260911
-DTEND;VALUE=DATE:20260912
-SUMMARY:Państwowy Fundusz Rehabilitacji Osób Niepełnosprawnych
-DESCRIPTION:Pełnomocnik Rządu do Spraw Osób Niepełnosprawnych ogłasza nabór uzupełniający na członka Rady Nadzorczej PFRON w celu obsadzenia 1 wakatu przez przedstawiciela organizacji pozarządowej. Zgłoszenia należy składać do 11 września 2026 r. do Ministerstwa Rodziny\, Pracy i Polityki Społecznej w Warszawie.\nhttps://www.pion.pl/aktualnosci/czlonek-rady-nadzorczej-pfron-nabor-uzupelniajacy-potrwa-do-11-wrzesnia/
 END:VEVENT
 END:VCALENDAR
