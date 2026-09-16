@@ -1,0 +1,17 @@
+{
+  "date": "2026-09-16",
+  "rejected": [
+    {
+      "url": "https://czasopisma.uwr.edu.pl/ppa/article/download/7371/7017/",
+      "title": "ACTA UNIVERSITATIS WRATISLAVIENSIS ———————— No 3644 ————————",
+      "reason": "Artykuł naukowy o postępowaniu kwalifikacyjnym, nie ogłoszenie naboru.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.oblradack.gov.ua/komisiya-opratsyuvala-mayzhe-piv-sotni-zayavok-vid-kandydativ-u-nahlyadovi-rady",
+      "title": "Комісія опрацювала майже пів сотні заявок від кандидатів у наглядові ради | Офіційний сайт Черкаської обласної ради. Новини, події, анонси, інформація про раду та депутатів",
+      "reason": "Aktualność o opublikowaniu wniosków, nie otwarte ogłoszenie o naborze.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    }
+  ]
+}
