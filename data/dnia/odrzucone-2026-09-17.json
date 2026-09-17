@@ -1,0 +1,23 @@
+{
+  "date": "2026-09-17",
+  "rejected": [
+    {
+      "url": "https://bralin.pl/aktualnosci/ogloszenie-wojta-gminy-bralin-o-naborze-kandydatow-na-czlonkow-komitetu-rewitalizacji-gminy-bralin.html",
+      "title": "OGŁOSZENIE WÓJTA GMINY BRALIN o naborze kandydatów na członków Komitetu Rewitalizacji Gminy Bralin - Gmina Bralin",
+      "reason": "Nabór do Komitetu Rewitalizacji, nie rady nadzorczej.",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://tylkoslask.pl/slask-policja-oglosila-nabor-kandydatow-do-sluzby-w-2026-roku/",
+      "title": "Śląsk: Policja ogłosiła nabór kandydatów do służby w 2026 roku - Wiadomości Śląsk • aktualności, felietony, relacje • Tylko Śląsk",
+      "reason": "frazy dyskwalifikujące: analiza",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://gazetakrakowska.pl/zona-burmistrza-brzeska-zasiadla-w-radzie-nadzorczej-huty-czestochowa-wskazal-ja-wicepremier-i-szef-mon-wladyslaw-kosiniak-kamysz/ar/c1p2-29338153",
+      "title": "Żona burmistrza Brzeska zasiadła w radzie nadzorczej Huty Częstochowa. Wskazał ją wicepremier i szef MON Władysław Kosiniak-Kamysz | Gazeta Krakowska",
+      "reason": "Artykuł prasowy o powołaniu osoby, nie ogłoszenie naboru.",
+      "source": "\"kandydatów do rady nadzorczej\""
+    }
+  ]
+}
