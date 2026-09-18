@@ -1,0 +1,71 @@
+{
+  "date": "2026-09-18",
+  "rejected": [
+    {
+      "url": "https://www.bip.minsk-maz.pl/index.php?type=4&name=bt226&func=selectsite&value%5B0%5D=mnu21&value%5B1%5D=29",
+      "title": "Nabory - Zarząd/ Rada Nadzorcza",
+      "reason": "Strona kategorii/menu BIP, nie konkretne ogłoszenie naboru.",
+      "source": "BIP JST"
+    },
+    {
+      "url": "https://kaszuby24.pl/powiat-wejherowski-przyjmuje-zgloszenia-do-rady-seniorow-powiatu-wejherowskiego/",
+      "title": "Powiat Wejherowski przyjmuje zgłoszenia do Rady Seniorów Powiatu Wejherowskiego — Kaszuby24",
+      "reason": "Nabór do Rady Seniorów, organu doradczego, nie rady nadzorczej.",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://www.nasztomaszow.pl/artykul/56686,droga-jak-pole-zalewane-dzialki-i-drgania-w-domach-radny-interweniuje-w-sprawie-wawalu",
+      "title": "Droga jak pole, zalewane działki i drgania w domach. Radny interweniuje w sprawie Wąwału",
+      "reason": "Artykuł o problemach lokalnych i naborze na projekt OZE, nie o radzie nadzorczej.",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://www.nasztomaszow.pl/artykul/56688,senior-sam-na-wsi-czy-gminy-powiatu-tomaszowskiego-nadazaja-z-pomoca",
+      "title": "Senior sam na wsi. Czy gminy powiatu tomaszowskiego nadążają z pomocą?",
+      "reason": "frazy dyskwalifikujące: kurs",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://www.nasztomaszow.pl/artykul/56689,rzad-chce-zmienic-zasady-finansowania-mieszkan-co-z-inwestycjami-ttbs",
+      "title": "Rząd chce zmienić zasady finansowania mieszkań. Co z inwestycjami TTBS?",
+      "reason": "Artykuł o zmianach przepisów finansowania mieszkań, brak ogłoszenia naboru.",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://www.nasztomaszow.pl/artykul/56687,ekspert-weryfikacja-wieku-online-to-iluzja-potrzebne-sa-inne-narzedzia-ochrony-dzieci-wywiad",
+      "title": "Ekspert: weryfikacja wieku online to iluzja, potrzebne są inne narzędzia ochrony dzieci (wywiad)",
+      "reason": "frazy dyskwalifikujące: ekspert",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://www.nasztomaszow.pl/artykul/56691,lubochnia-siega-po-ponad-3-1-mln-zl-na-oze-dokumenty-wskazuja-farme-pv-do-500-kw",
+      "title": "Lubochnia sięga po ponad 3,1 mln zł na OZE. Dokumenty wskazują farmę PV do 500 kW",
+      "reason": "Artykuł o dofinansowaniu projektu OZE gminy, nie o naborze kandydatów do rady nadzorczej.",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://zolo.gov.ua/oholoshennia-pro-formuvannia-konkursnoi-komisii/",
+      "title": "Оголошення про формування конкурсної комісії | Золотоноша – офіційний сайт громади",
+      "reason": "Ogłoszenie o powołaniu komisji konkursowej, nie o naborze kandydatów.",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://kolbaskowo.pl/aktualnosci/rada-nadzorcza-centrum-uslug-komunalnych-w-kolbaskowie-sp-z-oo-z-siedziba-w-rosowku-16-72-001-kolbaskowo-oglasza-konkurs-na-stanowisko-czlonka-zarzadu-spolki-.html",
+      "title": "Rada Nadzorcza Centrum Usług Komunalnych w Kołbaskowie Sp. z o.o. z siedzibą w Rosówku 16, 72-001 Kołbaskowo ogłasza konkurs na stanowisko Członka Zarządu Spółki - Gmina Kołbaskowo",
+      "reason": "frazy dyskwalifikujące: kurs",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://kwilcz.pl/aktualnosci/nabor-do-mlodziezowej-rady-gminy-kwilcz-kadencji-2026-2028.html",
+      "title": "Nabór do Młodzieżowej Rady Gminy Kwilcz kadencji 2026-2028 - Gmina Kwilcz",
+      "reason": "Nabór do Młodzieżowej Rady, nie do rady nadzorczej.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://pro.rp.pl/biznes/art45139891-4-9-proc-akcji-i-realna-kontrola-nad-spolka",
+      "title": "Obowiązki informacyjne akcjonariusza. Liczy się nie tylko udział w akcjach - rp.pl",
+      "reason": "Artykuł prasowy o obowiązkach informacyjnych akcjonariusza, nie ogłoszenie naboru kandydatów.",
+      "source": "\"kandydatów do rady nadzorczej\""
+    }
+  ]
+}
