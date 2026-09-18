@@ -11,4 +11,12 @@ DTEND;VALUE=DATE:20261006
 SUMMARY:БО «Благодійний фонд «Стабілізейшен Суппорт Сервісез»
 DESCRIPTION:Fundacja «Stabilization Support Services» ogłasza otwarty nabór kandydatów do nowo tworzonej rady nadzorczej. Praca w radzie ma charakter społeczny (kadencja 5 lat)\, a dokumenty aplikacyjne należy przesłać do 5 października 2026 r. na adres sb@cfsss.org.\nhttps://sss-ua.org/tenders/vidkrytyy-vidbir-do-nahliadovoi-rady-bo-sss/
 END:VEVENT
+BEGIN:VEVENT
+UID:828abe7f09a075e97429771b38005f2c29a2a46f@rn-dorking
+DTSTAMP:20260918T000000Z
+DTSTART;VALUE=DATE:20261005
+DTEND;VALUE=DATE:20261006
+SUMMARY:Комунальне підприємство «Славутська міська лікарня ім.Ф.М.Михайлова» Славутської міської ради
+DESCRIPTION:Miasto Sławuta ogłasza konkurs na 4 niezależnych członków rady nadzorczej komunalnego przedsiębiorstwa «Sławucki Szpital Miejski im. F. M. Michajłowa». Dokumenty przyjmowane są od 21 września do 5 października 2026 r. włącznie na adres e-mail o.z.bronich@ukr.net.\nhttps://slavuta-mvk.gov.ua/archives/68605
+END:VEVENT
 END:VCALENDAR
