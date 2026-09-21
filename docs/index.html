@@ -25,6 +25,15 @@
     <p>Dane zbierane automatycznie dwa razy dziennie (07:00 i 19:00) z polskich BIP-ów i stron spółek — Brave Search + LLM.</p>
   </footer>
 
+  <!-- Licznik odwiedzin GoatCounter: bez cookies i bez danych osobowych,
+       więc nie wymaga banera zgody. Kod witryny = rn-dorking (GoatCounter ->
+       Settings -> Site code). Przy nieuzupełnionym kodzie (YOURCODE) app.js
+       nie wysyła żadnych zdarzeń (patrz gcCount).
+       Bez async celowo: app.js liczy odsłony sam (no_onload), a router startuje
+       od razu, więc window.goatcounter musi być gotowe już w tym momencie. -->
+  <script data-goatcounter="https://rn-dorking.goatcounter.com/count"
+          data-goatcounter-settings='{"no_onload": true}'
+          src="https://gc.zgo.at/count.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

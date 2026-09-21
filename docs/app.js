@@ -206,14 +206,33 @@ async function viewDay(date, idx) {
     </nav>`;
 }
 
+/* ---------- analityka (GoatCounter, bez cookies) ---------- */
+/* Router jest hashowy, więc odsłony liczymy ręcznie (no_onload w index.html) —
+   inaczej każde wejście zapisałoby się jako "/" i nie byłoby widać widoków dni.
+   Licznik rusza dopiero po wpisaniu własnego kodu witryny w index.html. */
+const gcEndpoint = document.querySelector("script[data-goatcounter]")?.dataset.goatcounter || "";
+const gcOn = !gcEndpoint.includes("YOURCODE");
+
+function gcCount(vars) {
+  if (gcOn && window.goatcounter?.count) window.goatcounter.count(vars);
+}
+
+/* Klik w "źródło →" na karcie oferty = zdarzenie "klik-zrodlo" (tytuł = podmiot). */
+document.addEventListener("click", e => {
+  const a = e.target.closest(".card a.src");
+  if (a) gcCount({ path: "klik-zrodlo", title: a.closest(".card").querySelector("h3").textContent, event: true });
+});
+
 /* ---------- router ---------- */
 async function router() {
   const h = location.hash.replace(/^#\/?/, "");
   if (/^\d{4}-\d{2}-\d{2}$/.test(h)) {
+    gcCount({ path: `/${h}`, title: `Wyniki z dnia ${h}` });
     let idx = [];
     try { idx = await fetchJSON("data/index.json"); } catch (e) { /* nawigacja bez indeksu */ }
     viewDay(h, idx);
   } else {
+    gcCount({ path: "/", title: "Strona główna" });
     viewHome();
   }
 }

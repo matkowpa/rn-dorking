@@ -45,6 +45,16 @@ GitHub Pages.
 
 Strona główna z listą dni, każdy dzień pod osobnym linkiem `#/YYYY-MM-DD`.
 
+### Analityka odwiedzin (GoatCounter)
+Odsłony liczy bezcookiesowy **GoatCounter** (bez danych osobowych, więc bez
+banera zgody). W `docs/index.html` wpisz własny kod witryny (GoatCounter →
+*Settings* → *Site code*) w miejsce `YOURCODE`; dopóki to nie nastąpi, strona
+nie wysyła żadnych żądań. Odsłony liczy sam `docs/app.js` (router jest
+hashowy, więc wbudowany licznik na załadowaniu strony zobaczyłby tylko `/`):
+`/` = strona główna, `/<data>` = widok dnia, plus zdarzenie `klik-zrodlo`
+(klik w „źródło →", tytuł = nazwa podmiotu). Dashboard:
+`https://<kod>.goatcounter.com`. Odsłony z własnej przeglądarki wyłączysz,
+wchodząc raz na `#toggle-goatcounter`.
 
 ## Uruchomienie lokalne
 ```
