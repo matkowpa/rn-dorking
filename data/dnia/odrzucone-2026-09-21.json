@@ -1,0 +1,11 @@
+{
+  "date": "2026-09-21",
+  "rejected": [
+    {
+      "url": "https://wyborcza.pl/7,75399,33034850,wybory-w-rosji-centralna-komisja-wyborcza-oglosila-wygrana.html",
+      "title": "Wybory w Rosji. Centralna Komisja Wyborcza ogłosiła ...",
+      "reason": "Artykuł o wyborach w Rosji, nie dotyczy naboru do rady nadzorczej.",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\""
+    }
+  ]
+}
