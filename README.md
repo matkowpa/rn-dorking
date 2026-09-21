@@ -46,15 +46,36 @@ GitHub Pages.
 Strona główna z listą dni, każdy dzień pod osobnym linkiem `#/YYYY-MM-DD`.
 
 ### Analityka odwiedzin (GoatCounter)
-Odsłony liczy bezcookiesowy **GoatCounter** (bez danych osobowych, więc bez
-banera zgody). W `docs/index.html` wpisz własny kod witryny (GoatCounter →
-*Settings* → *Site code*) w miejsce `YOURCODE`; dopóki to nie nastąpi, strona
-nie wysyła żadnych żądań. Odsłony liczy sam `docs/app.js` (router jest
-hashowy, więc wbudowany licznik na załadowaniu strony zobaczyłby tylko `/`):
-`/` = strona główna, `/<data>` = widok dnia, plus zdarzenie `klik-zrodlo`
-(klik w „źródło →", tytuł = nazwa podmiotu). Dashboard:
-`https://<kod>.goatcounter.com`. Odsłony z własnej przeglądarki wyłączysz,
-wchodząc raz na `#toggle-goatcounter`.
+Odsłony liczy bezcookiesowy **GoatCounter** — bez danych osobowych, więc bez
+banera zgody i bez polityki cookies. Kod witryny jest już wpisany
+(`docs/index.html`, atrybut `data-goatcounter`), dashboard:
+**https://rn-dorking.goatcounter.com**.
+
+Co widać w statystykach:
+- `/` — wejścia na stronę główną, `/<data>` (np. `/2026-09-21`) — widok dnia,
+  czyli które dni ludzie otwierają,
+- zdarzenie `klik-zrodlo` — kliknięcia w „źródło →" (tytuł = nazwa podmiotu),
+- liczba odsłon, przybliżeni unikalni użytkownicy, kraj/miasto, urządzenie.
+
+Odsłony liczy sam `docs/app.js` (router jest hashowy, więc wbudowane liczenie
+na załadowaniu strony zapisywałoby każde wejście jako `/`).
+
+#### Jak wyłączyć liczenie własnych wejść
+1. W swojej przeglądarce wejdź na adres
+   `https://matkowpa.github.io/rn-dorking/#toggle-goatcounter`
+   (wklej link do paska adresu i naciśnij Enter — musi to być wejście na
+   stronę od nowa).
+2. W okienku, które wyskoczy, kliknij **OK** — zobaczysz tekst
+   `GoatCounter tracking is now DISABLED in this browser`. Gotowe.
+3. Aby włączyć z powrotem: ten sam link jeszcze raz (okienko `is now ENABLED`).
+4. Kontrola: `F12` → zakładka Console — przy wyłączonym liczeniu widać
+   `goatcounter: not counting because of: disabled with #toggle-goatcounter`.
+
+Wyłączenie dotyczy **tylko tej przeglądarki na tym urządzeniu** (zapis w
+localStorage tego adresu). Telefon, inna przeglądarka, tryb incognito albo
+wyczyszczenie danych przeglądarki = Twoje wejścia znów są liczone. Po zmianie
+adresu strony (np. własna domena) trzeba to powtórzyć. Zamiast tego można
+zablokować licznik w blokerze reklam filtrem `||gc.zgo.at^`.
 
 ## Uruchomienie lokalne
 ```
