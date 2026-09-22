@@ -1,0 +1,35 @@
+{
+  "date": "2026-09-22",
+  "rejected": [
+    {
+      "url": "https://www.pern.pl/wp-content/uploads/2023/10/NAFTOPORT_01_postepowanie-kwalifikacyjne-na-Czlonka-Zarzadu-Prezesa-Zarzadu_ogloszenie.pdf",
+      "title": "Prezesa Zarządu Spółki Przedsi",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://bip.phnsa.pl/content/og%C5%82oszenie-rady-nadzorczej-phn-sa-o-wszcz%C4%99ciu-post%C4%99powania-kwalifikacyjnego-na-stanowiska-0",
+      "title": "Ogłoszenie Rady Nadzorczej PHN S.A. o wszczęciu postępowania kwalifikacyjnego na stanowiska: Prezesa Zarządu, Wiceprezesa – Członka Zarządu ds. Inwestycji, Członka Zarządu ds. Zarządzania Aktywami Nieruchomościowymi, Członka Zarządu ds. Finansowych | Biuletyn Informacji Publicznej",
+      "reason": "Nabór na stanowiska zarządu (prezes, wiceprezes, członkowie zarządu), nie rady nadzorczej.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.darr.pl/wp-content/uploads/2021/10/Ogloszenie-postepowanie-kwalifikacyjne-Prezes-Zarzadu-DARR-II.pdf",
+      "title": "Prezesa Zarządu Dolnośląskiej Age",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.pzu.pl/_fileserver/item/1568444",
+      "title": "1/6 OGŁOSZENIE O POSTĘPOWANIU KWALIFIKACYJNYM",
+      "reason": "Nabór na Prezesa Zarządu PZU Życie SA, nie na radę nadzorczą.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://legionisci.com/news/106330/michael-gorzynski-nowym-przewodniczacym-rady-nadzorczej-legii",
+      "title": "Michael Gorzynski nowym przewodniczącym rady nadzorczej Legii — Legionisci.com",
+      "reason": "Aktualność o powołaniu już wybranej osoby, nie ogłoszenie naboru.",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\""
+    }
+  ]
+}
