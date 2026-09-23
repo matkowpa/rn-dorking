@@ -1,0 +1,47 @@
+{
+  "date": "2026-09-23",
+  "rejected": [
+    {
+      "url": "https://portpolska.pl/pl/aktualnosci-2/rada-nadzorcza-przedluza-nabor-na-stanowisko-prezesa-zarzadu-centralnego-portu-komunikacyjnego",
+      "title": "Zobacz więcej Rada Nadzorcza przedłuża nabór na stanowisko Prezesa Zarządu Centralnego Portu Komunikacyjnego 23.09.2026 Rada Nadzorcza spółki Centralny Port Komunikacyjny zdecydowała 23 września o przedłużeniu terminu…",
+      "reason": "Nabór na stanowisko prezesa zarządu, nie członka rady nadzorczej.",
+      "source": "źródło bezpośrednie"
+    },
+    {
+      "url": "https://www.sektorkolejowy.pl/cpk-przedluza-nabor-na-funkcje-prezesa-zarzadu/",
+      "title": "CPK przedłuża nabór na funkcję prezesa zarządu - Sektorkolejowy.pl",
+      "reason": "nabór na zarząd, nie na radę nadzorczą",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://kwilcz.pl/aktualnosci/2099-nabor-kandydatow-na-czlonkow-rady-seniorow-gminy-kwilcz.html",
+      "title": "Nabór kandydatów na członków Rady Seniorów Gminy Kwilcz - Gmina Kwilcz",
+      "reason": "Nabór do Rady Seniorów gminy, nie rady nadzorczej.",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://stalmielec.com/komunikat-rady-nadzorczej-fks-stal-mielec-s-a-3/",
+      "title": "Komunikat Rady Nadzorczej FKS Stal Mielec S.A. - FKS Stal Mielec SA",
+      "reason": "frazy dyskwalifikujące: analiza",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://nettg.pl/do-7-pazdziernika-wydluzono-nabor-na-prezesa-waznej-spolki-skarbu-panstwa",
+      "title": "Do 7 października wydłużono nabór na prezesa ważnej spółki… | netTG.pl",
+      "reason": "Nabór na prezesa zarządu, nie na członka rady nadzorczej.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://www.portalsamorzadowy.pl/praca/cpk-poszukuje-nowego-prezesa-wiecej-czasu-dla-kandydatow-na-zgloszenia,677235.html",
+      "title": "CPK poszukuje nowego prezesa. Więcej czasu dla kandydatów na zgłoszenia",
+      "reason": "Nabór na prezesa i członka zarządu, nie na radę nadzorczą.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://szczecinek.pl/aktualnosci/mateusz-ekner-nowym-prezesem-pgk-szczecinek.html",
+      "title": "Mateusz Ekner nowym prezesem PGK Szczecinek",
+      "reason": "Aktualność o powołaniu prezesa zarządu, nie nabór na członka rady nadzorczej.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    }
+  ]
+}
