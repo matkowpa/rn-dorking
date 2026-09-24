@@ -1,0 +1,65 @@
+{
+  "date": "2026-09-24",
+  "rejected": [
+    {
+      "url": "https://www.propertynews.pl/polityka-i-spoleczenstwo/cpk-szuka-prezesa-przedluzono-termin-skladania-zgloszen,201671.html",
+      "title": "CPK szuka prezesa. Przedłużono termin składania zgłoszeń",
+      "reason": "Nabór na prezesa zarządu CPK, nie na członka rady nadzorczej.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.bankier.pl/wiadomosc/Wyniki-Sniezki-w-II-kw-2026-roku-vs-konsensus-PAP-tabela-9201605.html",
+      "title": "Wyniki Śnieżki w II kw. 2026 roku vs. konsensus PAP - Bankier.pl",
+      "reason": "Wyniki spółki; wzmianka o powołaniu członka RN, nie otwarty nabór.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.bankier.pl/wiadomosc/KNF-chce-obnizyc-Erste-Bank-Polska-bufor-innej-instytucji-o-znaczeniu-systemowym-do-1-proc-9201578.html",
+      "title": "KNF chce obniżyć Erste Bank Polska bufor innej instytucji o znaczeniu systemowym do 1 proc. - Bankier.pl",
+      "reason": "Informacja o powołaniu już wybranego członka rady nadzorczej, nie o naborze.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.saos.org.pl/judgments/content/265324.html",
+      "title": "Spółdzielni Mieszkaniowej (...)",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\""
+    },
+    {
+      "url": "https://www.rynek-lotniczy.pl/wiadomosci/rada-nadzorcza-przedluza-nabor-na-prezesa-cpk-29179.html",
+      "title": "Rada Nadzorcza przedłuża nabór na prezesa CPK - Rynek Lotniczy",
+      "reason": "Nabór na prezesa zarządu, nie na członka rady nadzorczej.",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://rzasnia.pl/ogloszenie-o-naborze-przedstawicieli-organizacji-pozarzadowychna-czlonkow-komisji-konkursowej-opiniujacej-oferty-w-ii-otwartym-konkursie-ofert-na-realizacje-zadan-publicznych-w-zakresie-wspierania-i-u/",
+      "title": "Ogłoszenie o naborze przedstawicieli organizacji pozarządowych na członków Komisji opiniującej oferty w II otwartym konkursie na realizację zadań publicznych - Gmina Rząśnia",
+      "reason": "frazy dyskwalifikujące: kurs",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://ibd.pl/article/jak-zostac-czlonkiem-rady-nadzorczej/",
+      "title": "Jak zostać członkiem Rady Nadzorczej? Kompletny poradnik | IBD Business School",
+      "reason": "frazy dyskwalifikujące: poradnik",
+      "source": "\"kandydatów na członków rad nadzorczych\""
+    },
+    {
+      "url": "https://www.pb.pl/port-polska-jeszcze-poczeka-na-prezesa-rada-nadzorcza-przedluzyla-nabor-1267474",
+      "title": "Port Polska jeszcze poczeka na prezesa. Rada nadzorcza przedłużyła nabór - Puls Biznesu - pb.pl",
+      "reason": "Nabór dotyczy prezesa zarządu, nie członka rady nadzorczej.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://strefabiznesu.pl/nowy-szef-pokieruje-wielkimi-inwestycjami-nabor-potrwa-dluzej/ar/c3p2-29377325",
+      "title": "Nowy szef pokieruje wielkimi inwestycjami. Nabór potrwa dłużej | Strefa Biznesu",
+      "reason": "Nabór dotyczy szefa (prezesa zarządu) Port Polska, nie rady nadzorczej.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://www.nakolei.pl/zgloszenia-na-prezesa-cpk-do-7-pazdziernika/",
+      "title": "Zgłoszenia na prezesa CPK do 7 października - Portal Kolejowy NaKolei.pl",
+      "reason": "Nabór na prezesa zarządu CPK, nie na członka rady nadzorczej.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    }
+  ]
+}
