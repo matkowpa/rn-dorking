@@ -1,0 +1,23 @@
+{
+  "date": "2026-09-25",
+  "rejected": [
+    {
+      "url": "https://www.money.pl/mobility/cpk-moze-zepsuc-cv-oto-dlaczego-jest-problem-ze-znalezieniem-prezesa-spolki-7332814023125216a.html",
+      "title": "\"Ewidentnie coś się zacięło\". Mówią o polskim gigalotnisku",
+      "reason": "frazy dyskwalifikujące: upłynął termin",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+    },
+    {
+      "url": "https://zyciestolicy.com.pl/elewarr-kgs-naruszono-neutralnosc-plciowa/",
+      "title": "KGS, Elewarr: Naruszono zasadę neutralności płciowej w konkursach na stanowiska zarządcze Życie Stolicy",
+      "reason": "frazy dyskwalifikujące: kurs",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://businessinsider.com.pl/praca/nie-licz-ze-dzial-hr-spojrzy-na-twoje-cv-mamy-ere-cichej-rekrutacji/p0h15kf",
+      "title": "Nie licz, że dział HR spojrzy na twoje CV. Mamy erę \"cichej rekrutacji\"",
+      "reason": "Artykuł prasowy o trendach rekrutacyjnych, nie ogłoszenie naboru do rady nadzorczej.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    }
+  ]
+}
