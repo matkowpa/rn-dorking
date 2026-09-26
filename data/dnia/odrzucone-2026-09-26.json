@@ -1,0 +1,29 @@
+{
+  "date": "2026-09-26",
+  "rejected": [
+    {
+      "url": "https://www.bankier.pl/wiadomosc/KOMPUTRONIK-S-A-Zgloszenie-Kandydatury-na-Czlonka-Rady-Nadzorczej-Spolki-9201572.html",
+      "title": "KOMPUTRONIK S.A.: Zgłoszenie Kandydatury na Członka Rady Nadzorczej Spółki - Bankier.pl",
+      "reason": "Komunikat o zgłoszeniu kandydatury po podjęciu decyzji, nie otwarty nabór",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://bank.pl/zmiany-w-zarzadzie-pzu-zycie/",
+      "title": "Zmiany w zarządzie PZU ŻYCIE",
+      "reason": "frazy dyskwalifikujące: egzamin",
+      "source": "\"kandydatów na członków rad nadzorczych\""
+    },
+    {
+      "url": "https://mojebankowanie.pl/informacje-prasowe/informacje-prasowe-ubezpieczenia/jacek-krawczykowski-powolany-do-zarzadu-pzu-zycie-s-a",
+      "title": "Jacek Krawczykowski powołany do zarządu PZU Życie S.A. - MojeBankowanie.pl",
+      "reason": "frazy dyskwalifikujące: egzamin",
+      "source": "\"kandydatów na członków rad nadzorczych\""
+    },
+    {
+      "url": "https://www.bankier.pl/wiadomosc/ZREMB-CHOJNICE-S-A-Uzupelnienie-raportu-biezacego-nr-30-2026-z-dnia-23-wrzesnia-2026-r-informacje-dotyczace-dokooptowanych-czlonkow-Rady-Nadzorczej-9202588.html",
+      "title": "ZREMB-CHOJNICE S.A.: Uzupełnienie raportu bieżącego nr 30/2026 z dnia 23 września 2026 r. – informacje dotyczące dokooptowanych członków Rady Nadzorczej - Bankier.pl",
+      "reason": "Raport bieżący o dokooptowanych już członkach rady, nie otwarty nabór.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    }
+  ]
+}
