@@ -1,0 +1,23 @@
+{
+  "date": "2026-09-28",
+  "rejected": [
+    {
+      "url": "https://sanniki.pl/aktualnosci/ogloszenie-o-naborze-na-czlonkow-komitetu-rewitalizacji-miasta-i-gminy-sanniki-.html",
+      "title": "Ogłoszenie o naborze na Członków Komitetu Rewitalizacji Miasta i Gminy Sanniki - Urząd Miasta i Gminy Sanniki",
+      "reason": "Nabór do komitetu rewitalizacji, nie rady nadzorczej.",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://gu.com.pl/iwona-wrobel-ma-zgode-na-kierowanie-pzu-zycie-jacek-krawczykowski-nowym-czlonkiem-zarzadu/",
+      "title": "Iwona Wróbel ma zgodę na kierowanie PZU Życie. Jacek Krawczykowski nowym członkiem zarządu - Gazeta Ubezpieczeniowa – Portal",
+      "reason": "frazy dyskwalifikujące: egzamin",
+      "source": "\"kandydatów na członków rad nadzorczych\""
+    },
+    {
+      "url": "https://kolejowyportal.pl/cpk-nadal-szuka-prezesa-rada-nadzorcza-wydluzyla-termin/",
+      "title": "CPK nadal szuka prezesa. Rada Nadzorcza wydłużyła termin - Kolejowy Portal",
+      "reason": "Nabór na stanowisko prezesa zarządu CPK, nie członka rady nadzorczej.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    }
+  ]
+}
