@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-09-29",
+    "count": 2,
+    "stats": {
+      "raw_results": 80,
+      "after_filter": 4,
+      "offers_added": 2
+    }
+  },
+  {
     "date": "2026-09-28",
     "count": 1,
     "stats": {

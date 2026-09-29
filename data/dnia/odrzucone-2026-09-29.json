@@ -1,0 +1,59 @@
+{
+  "date": "2026-09-29",
+  "rejected": [
+    {
+      "url": "https://kaszuby24.pl/mlodziezowa-rada-gminy-puck-nabor-kandydatow-do-29-wrzesnia/",
+      "title": "Młodzieżowa Rada Gminy Puck. Nabór kandydatów do 29 września",
+      "reason": "Nabór do młodzieżowej rady gminy, nie do rady nadzorczej.",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://trzemeszno.pl/aktualnosci/nabor-na-wolne-stanowisko-urzednicze-podinspektor-ds-drog.html",
+      "title": "NABÓR NA WOLNE STANOWISKO URZĘDNICZE - PODINSPEKTOR DS. DRÓG - Urząd Miejski Trzemeszna",
+      "reason": "Nabór na stanowisko urzędnicze podinspektora, nie na członka rady nadzorczej.",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://www.goldap.info/urzad-miejski-informuje/36792-nabór-na-stanowisko-urzędnicze-ds-obsługi-rady-miejskiej-i-jednostek-pomocniczych",
+      "title": "Nabór na stanowisko urzędnicze ds. obsługi Rady Miejskiej i jednostek pomocniczych",
+      "reason": "Nabór na stanowisko urzędnicze, nie na członka rady nadzorczej.",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://kaszuby24.pl/mlodziezowa-rada-powiatu-puckiego-kandydaci-moga-zglaszac-sie-do-14-pazdziernika/",
+      "title": "Młodzieżowa Rada Powiatu Puckiego: kandydaci mogą zgłaszać się do 14 października",
+      "reason": "Nabór do młodzieżowej rady, nie do rady nadzorczej.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://bip.mpo.torun.pl/art/3508/ogloszenie-rady-nadzorczej.html",
+      "title": "Ogłoszenie Rady Nadzorczej - BIP",
+      "reason": "Nabór dotyczy członków zarządu, nie rady nadzorczej.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://bip.umkrosno.pl/article/nabor-do-bazy-danych-kandydatow-do-rad-nadzorczych-spolek-w-ktorych-gmina-miasto-krosno-posiada-udzialyakcje?m=82&l=2",
+      "title": "Nabór do bazy danych kandydatów do Rad Nadzorczych spółek, w których Gmina Miasto Krosno posiada udziały/akcje.",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://prawodlasamorzadu.pl/2024-02-02-kto-moze-byc-czlonkiem-rady-nadzorczej-w-spolce-gminnej-cz-1/",
+      "title": "Kto może być członkiem rady nadzorczej w spółce gminnej? (cz. 1) - Prawo Dla Samorządu",
+      "reason": "Artykuł informacyjny o kwalifikacjach, nie ogłoszenie naboru kandydatów.",
+      "source": "\"kandydatów do rady nadzorczej\""
+    },
+    {
+      "url": "https://www.smnadodrze.pl/wp-content/uploads/zasady-wyboru-czlonkow-rn-smnadodrze.pdf",
+      "title": "ZASADY WYBORU CZŁONKÓW RADY NADZORCZEJ ...",
+      "reason": "Zasady wewnętrzne wyboru członków, nie otwarty nabór na członka rady nadzorczej.",
+      "source": "\"kandydatów do rady nadzorczej\""
+    },
+    {
+      "url": "https://www.gazetaprawna.pl/wiadomosci/artykuly/1035453,kandydat-do-rady-nadzorczej-spolki-z-udzialem-sp-musi-miec-pozytywna-opinie-rady-ds-spolek-wywiad.html",
+      "title": "Kandydat do rady nadzorczej spółki z udziałem SP musi mieć pozytywną opinię Rady ds. spółek (wywiad) - GazetaPrawna.pl",
+      "reason": "Artykuł wywiadowy o wymaganiach wobec kandydatów, nie jest ogłoszeniem naboru.",
+      "source": "\"kandydatów do rady nadzorczej\""
+    }
+  ]
+}

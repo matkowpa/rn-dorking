@@ -1,0 +1,41 @@
+{
+  "date": "2026-09-29",
+  "stats": {
+    "search_requests": 12,
+    "raw_results": 80,
+    "direct_results": 2,
+    "after_dedup": 13,
+    "after_filter": 4,
+    "offers_added": 2,
+    "extract_errors": 0,
+    "offers_updated": 0,
+    "offers_with_termin": 0,
+    "content_empty": 2
+  },
+  "offers": [
+    {
+      "podmiot": "Piastowskie Przedsiębiorstwo Usług Komunalnych spółka z ograniczoną odpowiedzialnością w Piastowie",
+      "miejscowosc": "Piastów",
+      "termin_skladania_ofert": "",
+      "stanowisko": "członek rady nadzorczej",
+      "wymagania": "",
+      "podsumowanie": "Burmistrz Miasta Piastowa ogłasza nabór na członków Rady Nadzorczej Piastowskiego Przedsiębiorstwa Usług Komunalnych spółka z o.o. w Piastowie. W ogłoszeniu nie podano terminu składania ofert ani szczegółowych wymagań.",
+      "data_publikacji": "",
+      "url": "https://bip.piastow.pl/nabor-na-czlonkow-rady-nadzorczej-ppuk-sp-z-o-o-w-piastowie/porownaj/3/2",
+      "znaleziono_dnia": "2026-09-29",
+      "zrodlo": "\"nabór na członków rady nadzorczej\" BIP"
+    },
+    {
+      "podmiot": "Zakład Gospodarki Komunalnej w Grodzisku Mazowieckim Sp.",
+      "miejscowosc": "Grodzisk Mazowiecki",
+      "termin_skladania_ofert": "",
+      "stanowisko": "członek rady nadzorczej",
+      "wymagania": "",
+      "podsumowanie": "Burmistrz Grodziska Mazowieckiego ogłasza nabór na członków Rady Nadzorczej Zakładu Gospodarki Komunalnej w Grodzisku Mazowieckim. W ogłoszeniu nie podano terminu składania ofert ani szczegółowych wymagań.",
+      "data_publikacji": "",
+      "url": "https://grodzisk.pl/2020/06/nabor-na-czlonkow-rady-nadzorczej/",
+      "znaleziono_dnia": "2026-09-29",
+      "zrodlo": "\"ogłasza nabór\" \"rady nadzorczej\""
+    }
+  ]
+}
