@@ -1,0 +1,53 @@
+{
+  "date": "2026-09-30",
+  "rejected": [
+    {
+      "url": "https://bip.mazovia.pl/pl/bip/komunikaty/nabor-kandydatow-do-rady-nadzorczej-mazowieckiej-agencji-energetycznej.html",
+      "title": "Nabór kandydatów do Rady Nadzorczej Mazowieckiej Agencji Energetycznej - Witryna Mazovia.pl",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+    },
+    {
+      "url": "https://www.bankier.pl/wiadomosc/PKO-BANK-HIPOTECZNY-S-A-Powolanie-czlonka-Rady-Nadzorczej-PKO-Banku-Hipotecznego-S-A-9203866.html",
+      "title": "PKO BANK HIPOTECZNY S.A.: Powołanie członka Rady Nadzorczej PKO Banku Hipotecznego S.A. - Bankier.pl",
+      "reason": "Raport bieżący o powołaniu już wybranego członka rady, nie otwarty nabór.",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://www.bankier.pl/wiadomosc/KOMPUTRONIK-S-A-Powolanie-Czlonka-Rady-Nadzorczej-Spolki-9204477.html",
+      "title": "KOMPUTRONIK S.A.: Powołanie Członka Rady Nadzorczej Spółki - Bankier.pl",
+      "reason": "Raport bieżący o powołaniu już wybranej osoby, nie otwarty nabór.",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://dorzeczy.pl/amp/949993/byla-wiceprezydent-idzie-z-rady-nadzorczej-szpitala-poludniowego-na-nowa-panstwowa-posade.html",
+      "title": "Była wiceprezydent idzie z rady nadzorczej Szpitala Południowego na nową państwową posadę",
+      "reason": "Artykuł informacyjny o odejściu osoby z rady nadzorczej, nie ogłoszenie naboru.",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://www.novinky.cz/clanek/domaci-lidskopravni-organizace-apeluji-na-babise-aby-zrusil-jmenovani-novych-clenu-rady-vlady-pro-lidska-prava-40599883",
+      "title": "Lidskoprávní organizace apelují na Babiše, aby zrušil ...",
+      "reason": "Artykuł o apelu przeciw jawnym już nominacjom, nie ogłoszenie naboru.",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://niepelnosprawni.gov.pl/ogloszenie-o-naborze-kandydatow-do-rady-nadzorczej-panstwowego-funduszu-rehabilitacji-osob-niepelnosprawnych/",
+      "title": "Ogłoszenie o naborze kandydatów do Rady Nadzorczej Państwowego Funduszu Rehabilitacji Osób Niepełnosprawnych - Biuro Pełnomocnika Rządu do Spraw Osób Niepełnosprawnych",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://orka2.sejm.gov.pl/IZ6.nsf/main/17539AF9",
+      "title": "Odpowiedź na interpelację w sprawie naboru do rady nadzorczej spółek handlowych z udziałem Skarbu Państwa",
+      "reason": "Odpowiedź na interpelację informująca o miejscu publikacji naborów, nie jest ogłoszeniem naboru.",
+      "source": "\"kandydatów do rady nadzorczej\""
+    },
+    {
+      "url": "http://stara-kamienica.bipgmina.pl/wiadomosci/479/wiadomosc/135479/konkurs_na_czlonkow_rady_nadzorczej",
+      "title": "Biuletyn Informacji Publicznej - Urząd Gminy Stara Kamienica - Praca - Konkursy na stanowisko - Konkurs na członków Rady Nadzorczej",
+      "reason": "frazy dyskwalifikujące: kurs",
+      "source": "\"konkurs na członków rady nadzorczej\""
+    }
+  ]
+}
