@@ -1,0 +1,113 @@
+{
+  "date": "2026-10-01",
+  "rejected": [
+    {
+      "url": "https://www.rynek-kolejowy.pl/wiadomosci/polregio-ma-nowego-czlonka-zarzadu-ds-technicznych-154671.html",
+      "title": "POLREGIO ma nowego członka zarządu ds. technicznych - Rynek Kolejowy",
+      "reason": "frazy dyskwalifikujące: ekspert",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://kolejowyportal.pl/krzysztof-uberman-nowym-czlonkiem-zarzadu-polregio-ds-technicznych/",
+      "title": "Krzysztof Uberman nowym członkiem zarządu POLREGIO ds. technicznych - Kolejowy Portal",
+      "reason": "nabór na zarząd, nie na radę nadzorczą",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.sektorkolejowy.pl/polregio-krzysztof-uberman-nowym-czlonkiem-zarzadu-ds-technicznych/",
+      "title": "POLREGIO: Krzysztof Uberman nowym członkiem zarządu ds. technicznych - Sektorkolejowy.pl",
+      "reason": "Nabór na członka zarządu, informacja o już wybranej osobie.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://strefabiznesu.pl/zmiana-w-najwiekszej-kolejowej-spolce-pasazerskiej-jest-nowy-czlonek-zarzadu/ar/c3p2-29399027",
+      "title": "Zmiana w największej kolejowej spółce pasażerskiej. Jest nowy członek zarządu | Strefa Biznesu",
+      "reason": "Artykuł o powołaniu członka zarządu, nie nabór na radę nadzorczą.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://pitcertification.pl/zaproszenie-do-skladania-ofert-na-badanie-sprawozdania-finansowego-za-lata-obrotowe-2025-i-2026/",
+      "title": "Zaproszenie do składania ofert na badanie sprawozdania finansowego za lata obrotowe 2025 i 2026 - PIT Certification",
+      "reason": "frazy dyskwalifikujące: badanie",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://rsm.pl/index.php?Itemid=101&catid=34&id=326%3Aw-zwiazku-z-uciazliwosciami-zwiazanymi-z-wyrzucaniem-bioodpadow&lang=pl&option=com_content&view=article",
+      "title": "Zaproszenie do składania ofert na przeprowadzenie sprawozdania finansowego Spółdzielni za rok obrotowy 2024 i 2025",
+      "reason": "Zaproszenie do składania ofert na audyt sprawozdania finansowego, nie nabór kandydatów.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://nadzorcze.edu.pl/f-a-q-html/",
+      "title": "Wszystko o egzaminie dla kandydatów na członków rad nadzorczych - nadzorcze.edu.pl",
+      "reason": "frazy dyskwalifikujące: wszystko o",
+      "source": "\"kandydatów na członków rad nadzorczych\""
+    },
+    {
+      "url": "https://ibd.pl/szkolenie/kurs-dla-kandydatow-na-czlonkow-rad-nadzorczych/",
+      "title": "Kurs dla kandydatów na członków rad nadzorczych | + Baza pytań",
+      "reason": "frazy dyskwalifikujące: kurs",
+      "source": "\"kandydatów na członków rad nadzorczych\""
+    },
+    {
+      "url": "https://bip.umostrow.pl/artykul/142/57/sposob-funkcjonowania-bazy-kandydatow-na-czlonkow-rad-nadzorczych-w-spolkach-z-udzialem-gminy-miasto-ostrow-wielkopolski-oraz-zasady-i-tryb-doboru-czlonkow-rad",
+      "title": "Sposób funkcjonowania bazy kandydatów na członków rad nadzorczych w spółkach z udziałem Gminy Miasto Ostrów Wielkopolski oraz zasady i tryb doboru członków rad - Informacje dla kandydatów na członków rad nadzorczych - Biuletyn Informacji Publicznej Urząd Miejski w Ostrowie Wielkopolskim",
+      "reason": "Opis zasad prowadzenia bazy kandydatów, nie jest konkretnym otwartym naborem.",
+      "source": "\"kandydatów na członków rad nadzorczych\""
+    },
+    {
+      "url": "https://pracodawcypomorza.pl/exnt/ogloszenie/263",
+      "title": "Ogłoszenie: Polski Korpus Korporacyjny - zapraszamy do rejestracji",
+      "reason": "Rejestracja do bazy kandydatów, nie nabór na członka rady nadzorczej.",
+      "source": "\"kandydatów na członków rad nadzorczych\""
+    },
+    {
+      "url": "https://radynadzorcze.pl/zapisy-2/",
+      "title": "zapisy | Kurs dla kandydatów na członków Organów Nadzorczych | Rad Nadzorczych",
+      "reason": "frazy dyskwalifikujące: egzamin",
+      "source": "\"kandydatów na członków rad nadzorczych\""
+    },
+    {
+      "url": "https://businessinsider.com.pl/wiadomosci/rady-nadzorcze-po-nowemu-ministerstwo-aktywow-panstwowych-zmieni-zasady-gry/ygxjzyf",
+      "title": "Rady nadzorcze po nowemu. Ministerstwo Aktywów Państwowych zmieni zasady gry",
+      "reason": "Artykuł prasowy o planowanych zmianach zasad, nie ogłoszenie naboru.",
+      "source": "\"kandydatów na członków rad nadzorczych\""
+    },
+    {
+      "url": "https://eventis.pl/szkolenie/kurs-dla-kandydatow-na-czlonkow-rad-nadzorczych-41626-id14655",
+      "title": "Kurs dla kandydatów na członków rad nadzorczych - Eventis.pl",
+      "reason": "frazy dyskwalifikujące: egzamin",
+      "source": "\"kandydatów na członków rad nadzorczych\""
+    },
+    {
+      "url": "https://szkolenia.gig.eu/wydarzenie/kurs-dla-kandydatow-na-czlonkow-rad-nadzorczych/",
+      "title": "Kurs dla kandydatów na członków rad nadzorczych – Centrum Rozwoju Kompetencji GIG-PIB",
+      "reason": "frazy dyskwalifikujące: egzamin",
+      "source": "\"kandydatów na członków rad nadzorczych\""
+    },
+    {
+      "url": "https://uslugirozwojowe.parp.gov.pl/wyszukiwarka/uslugi/podglad?id=2965179",
+      "title": "Kurs dla kandydatów na członków Rad Nadzorczych - Baza Usług Rozwojowych - PARP",
+      "reason": "frazy dyskwalifikujące: egzamin",
+      "source": "\"kandydatów na członków rad nadzorczych\""
+    },
+    {
+      "url": "https://nadzorcze.edu.pl/",
+      "title": "Kurs do Rady Nadzorczej | Nr 1 w Polsce od 2007 roku",
+      "reason": "frazy dyskwalifikujące: egzamin",
+      "source": "\"kandydatów na członków rad nadzorczych\""
+    },
+    {
+      "url": "https://pl.jooble.org/praca-nab%C3%B3r-do-rady-nadzorczej",
+      "title": "Praca Nabór do rady nadzorczej (Pilne!) - 2026 - Aktualne oferty pracy - JOOBLE.pl",
+      "reason": "domena zablokowana (agregator/reklama)",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.bankier.pl/wiadomosc/SKARBIEC-HOLDING-S-A-Zgloszenie-kandydatow-do-Rady-Nadzorczej-9154663.html",
+      "title": "SKARBIEC HOLDING S.A.: Zgłoszenie kandydatów do Rady Nadzorczej - Bankier.pl",
+      "reason": "Raport bieżący o zgłoszonych kandydatach z dokumentami, nie otwarty nabór",
+      "source": "\"kandydatów do rady nadzorczej\""
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-01",
+  "stats": {
+    "search_requests": 12,
+    "raw_results": 78,
+    "direct_results": 1,
+    "after_dedup": 22,
+    "after_filter": 4,
+    "offers_added": 1,
+    "extract_errors": 0,
+    "offers_updated": 0,
+    "offers_with_termin": 0,
+    "content_empty": 1
+  },
+  "offers": [
+    {
+      "podmiot": "",
+      "miejscowosc": "",
+      "termin_skladania_ofert": "",
+      "stanowisko": "",
+      "wymagania": "",
+      "podsumowanie": "Podany tekst nie zawiera treści ogłoszenia o naborze kandydatów na członków rady nadzorczej — jest to wyłącznie komunikat o polityce cookies strony. Brak danych do ekstrakcji.",
+      "data_publikacji": "",
+      "url": "https://bipum.konin.eu/api/download/file?id=4541",
+      "znaleziono_dnia": "2026-10-01",
+      "zrodlo": "\"kandydatów na członków rad nadzorczych\""
+    }
+  ]
+}
