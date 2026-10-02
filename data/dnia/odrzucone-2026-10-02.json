@@ -1,0 +1,95 @@
+{
+  "date": "2026-10-02",
+  "rejected": [
+    {
+      "url": "https://bip.gogolin.pl/10823/ogloszenie-o-naborze-do-rejestru-kandydatow-na-czlonkow-rad-nadzorczych-spolek-prawa-handlowego-z-udzialem-gminy-gogolin.html",
+      "title": "Ogłoszenie o naborze do rejestru kandydatów na członków rad nadzorczych spółek prawa handlowego z udziałem Gminy Gogolin - Urząd Miejski w Gogolinie",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+    },
+    {
+      "url": "https://agencja.plock.eu/NtKBmqqF/zaproszenie-do-skladania-ofert-na-przeprowadzenie-badania-sprawozdania-finansowego-za-rok-obrotowy-2023",
+      "title": "BIP - Zaproszenie do składania ofert na przeprowadzenie badania sprawozdania finansowego za rok obrotowy 2023",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://pte.bydgoszcz.pl/szkolenia/kursy/rady-nadzorcze-bydgoszcz/",
+      "title": "Kurs dla kandydatów na członków rad nadzorczych spółek - Polskie Towarzystwo Ekonomiczne Oddział w Bydgoszczy Polskie Towarzystwo Ekonomiczne Oddział w Bydgoszczy",
+      "reason": "frazy dyskwalifikujące: egzamin",
+      "source": "\"kandydatów na członków rad nadzorczych\""
+    },
+    {
+      "url": "https://radynadzorcze.pl/cel-kursu/",
+      "title": "cel kursu | Kurs dla kandydatów na członków Organów Nadzorczych | Rad Nadzorczych",
+      "reason": "frazy dyskwalifikujące: kurs",
+      "source": "\"kandydatów na członków rad nadzorczych\""
+    },
+    {
+      "url": "https://www.zus.pl/o-zus/praca-w-zus/wyniki-naboru-ofert-pracy/-/erecruiter-job-offers-results/1/stanowisko-ds_-obslugi-wnioskow-o-udostepnianie-danych-i-obslugi-wnioskow-komornikow-sadowych/20714",
+      "title": "Stanowisko ds. obsługi wniosków o udostępnianie danych i ...",
+      "reason": "Nabór na stanowisko pracownicze ZUS, nie na członka rady nadzorczej.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://www.money.pl/mobility/kluczowa-inwestycja-i-brak-20-mld-zl-trzeba-znalezc-7334165242980576a.html",
+      "title": "Rząd ma problem z kluczową inwestycją w Polsce. Brakuje 20 ...",
+      "reason": "Nabór na prezesa zarządu CPK, nie na członka rady nadzorczej.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://nabory.kprm.gov.pl/slaskie/sosnowiec/ksiegowyksiegowa,168548,v8",
+      "title": "Księgowy/księgowa | Izba Administracji Skarbowej w Katowicach",
+      "reason": "Nabór na stanowisko księgowego, nie na członka rady nadzorczej.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://www.waszaturystyka.pl/kilkaset-nowych-miejsc-pracy-w-enter-air-przewoznik-rozpoczyna-rekrutacje/",
+      "title": "Kilkaset nowych miejsc pracy w Enter Air. Przewoźnik ...",
+      "reason": "frazy dyskwalifikujące: kurs",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://doit.biz.pl/branze/hr-outsourcing/",
+      "title": "RODO i cyberbezpieczeństwo w agencjach pracy i HR - DOIT.BIZ",
+      "reason": "Artykuł o RODO i cyberbezpieczeństwie w HR, brak naboru do rady nadzorczej.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://www.pulshr.pl/prawo-pracy/inspekcja-pracy-zacznie-zagladac-glebiej-w-umowy-padla-konkretna-data,122090.html",
+      "title": "Inspekcja pracy zacznie zaglądać głębiej w umowy. Padła ...",
+      "reason": "Artykuł prasowy o inspekcji pracy i umowach, nie dotyczy naboru.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://tvmalbork.pl/aktualnosci/46971,ogloszenie-wojta-gminy-sztutowo-o-naborze-na-wolne-stanowisko-urzednicze",
+      "title": "Ogłoszenie Wójta Gminy Sztutowo o naborze na wolne ...",
+      "reason": "Nabór na stanowisko urzędnicze, nie na członka rady nadzorczej.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://iz.edu.pl/ogloszenia/ogloszenie-o-wszczeciu-postepowania-kwalifikacyjnegona-stanowisko-czlonka-zarzadu-spolki-pod-firma-zaklad-doswiadczalny-instytutu-zootechniki-pib-odrzechowa-sp-z-o-o-z-siedziba-w-odrzechowej-w-kadenc/",
+      "title": "Ogłoszenie o wszczęciu postępowania kwalifikacyjnego na ...",
+      "reason": "nabór na zarząd, nie na radę nadzorczą",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://wsb.edu.pl/files/pages/659/nauka_biznes_2026.pdf",
+      "title": "[PDF] Global Knowledge Hub Inclusive European University",
+      "reason": "Publikacja naukowa PDF o uniwersytecie, brak treści o naborze do rady nadzorczej.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://www.lendtech.pl/wiadomosci/za-nami-vii-kongres-lendtech/",
+      "title": "Za nami VII Kongres Lendtech",
+      "reason": "Relacja z kongresu branżowego, brak treści o naborze kandydatów.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://www.bankier.pl/wiadomosc/PGE-POLSKA-GRUPA-ENERGETYCZNA-S-A-Zgloszenie-kandydatow-na-Czlonkow-Rady-Nadzorczej-przez-akcjonariusza-Skarb-Panstwa-9153077.html",
+      "title": "PGE POLSKA GRUPA ENERGETYCZNA S.A.: Zgłoszenie kandydatów na Członków Rady Nadzorczej przez akcjonariusza - Skarb Państwa - Bankier.pl",
+      "reason": "Raport bieżący o zgłoszeniu kandydatów przez akcjonariusza, nie otwarty nabór.",
+      "source": "\"kandydatów do rady nadzorczej\""
+    }
+  ]
+}
