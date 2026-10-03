@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-03",
+  "rejected": [
+    {
+      "url": "https://pgkimkrotoszyn.pl/aktualnosci/zaproszenie-do-skladania-ofert-pisemnych-na-przeprowadzenie-badania-sprawozdania-finansowego-spolki.html",
+      "title": "Zaproszenie do składania ofert pisemnych na \"przeprowadzenie badania sprawozdania finansowego Spółki\" - PGKiM Krotoszyn",
+      "reason": "frazy dyskwalifikujące: badanie",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://mazovia.pl/pl/bip/komunikaty/nabor-kandydatow-do-rady-nadzorczej-mazowieckiej-agencji-energetycznej.html",
+      "title": "Nabór kandydatów do Rady Nadzorczej Mazowieckiej Agencji Energetycznej - Witryna Mazovia.pl",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\""
+    },
+    {
+      "url": "https://lww.pl/alerty/2024/powolywanie-czlonkow-rad-nadzorczych-spolek-skarbu-panstwa",
+      "title": "Powoływanie członków rad nadzorczych spółek Skarbu Państwa | LWW Łyszyk Wesołowski i Wspólnicy sp.k.",
+      "reason": "frazy dyskwalifikujące: kurs",
+      "source": "\"kandydatów na członków rad nadzorczych\""
+    }
+  ]
+}
