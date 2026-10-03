@@ -4,7 +4,7 @@
     "search_requests": 12,
     "raw_results": 78,
     "direct_results": 1,
-    "after_dedup": 5,
+    "after_dedup": 3,
     "after_filter": 2,
     "offers_added": 0,
     "extract_errors": 0,
