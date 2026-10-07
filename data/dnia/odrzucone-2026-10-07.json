@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-07",
+  "rejected": [
+    {
+      "url": "https://bip.barcin.pl/dokumenty/1694",
+      "title": "Burmistrz Barcina ogłasza nabór na członków Rady Nadzorczej Barcińskiego Ośrodka Sportu i Rekreacji Sp. z o.o. z siedzibą w Barcinie. | BIP - Gmina Barcin",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)",
+      "source": "\"nabór na członków rady nadzorczej\" BIP"
+    },
+    {
+      "url": "https://bip.piastow.pl/lista/2022-4",
+      "title": "Urząd Miejski w Piastowie - BIP » 2022",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)",
+      "source": "\"nabór na członków rady nadzorczej\" BIP"
+    },
+    {
+      "url": "https://bip.kolonowskie.pl/7718/nabor-na-czlonkow-rady-nadzorczej-kanalizacji-gminy-kolonowskie-kgk-sp-z-oo.html",
+      "title": "NABÓR NA CZŁONKÓW RADY NADZORCZEJ KANALIZACJI GMINY KOLONOWSKIE „KGK” SP. Z O.O. - Urząd Miasta i Gminy Kolonowskie",
+      "reason": "frazy dyskwalifikujące: analiza",
+      "source": "\"nabór na członków rady nadzorczej\" BIP"
+    },
+    {
+      "url": "https://kolonowskie.pl/7719/nabor-na-czlonkow-rady-nadzorczej-kgk-sp-z-oo.html",
+      "title": "Nabór na członków Rady Nadzorczej KGK Sp. z o.o. - Urząd Miasta i Gminy Kolonowskie",
+      "reason": "frazy dyskwalifikujące: analiza",
+      "source": "\"nabór na członków rady nadzorczej\" BIP"
+    },
+    {
+      "url": "https://www.wzso.pl/zaproszenie-do-skladania-ofert-na-przeprowadzenie-badania-sprawozdania-finansowego-warszawskich-zakladow-sprzetu-ortopedycznego-s-a/",
+      "title": "Zaproszenie do składania ofert na przeprowadzenie badania sprawozdania finansowego Warszawskich Zakładów Sprzętu Ortopedycznego S.A - Warszawskie Zakłady Sprzętu Ortopedycznego S.A.",
+      "reason": "Przetarg na audyt sprawozdania finansowego, nie nabór kandydatów do rady nadzorczej.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    }
+  ]
+}
