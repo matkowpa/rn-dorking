@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-08",
+  "rejected": [
+    {
+      "url": "https://ceo.com.pl/czterech-kandydatow-na-prezesa-cpk-nowego-szefa-portu-polska-poznamy-jeszcze-w-pazdzierniku-76643",
+      "title": "Nowy prezes CPK. Czterech kandydatów w finale konkursu",
+      "reason": "frazy dyskwalifikujące: kurs",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://slawomirzawislak.pl/prywatnie/zyciorys",
+      "title": "Życiorys - Sławomir Zawiślak - Poseł Naszej Ziemi",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)",
+      "source": "\"kandydatów na członków rad nadzorczych\""
+    }
+  ]
+}
