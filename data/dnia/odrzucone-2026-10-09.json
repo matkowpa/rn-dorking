@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-09",
+  "rejected": [
+    {
+      "url": "https://bip.prudnik.pl/urzad-miejski/nabor-pracownikow/nabor-kandydatow-na-czlonkow-rad-nadzorczych-spolek-gminnych",
+      "title": "Biuletyn Informacji Publicznej Urząd Miejski w Prudniku - Nabór kandydatów na członków rad nadzorczych spółek gminnych",
+      "reason": "Ogłoszenie o zakończonym naborze - wpłynęła jedna oferta, nabór już zakończony.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+    },
+    {
+      "url": "https://igamingpolska.pl/totalizator-sportowy-szuka-nowego-czlonka-zarzadu-odpowie-za-technologie-i-rozwoj/",
+      "title": "Totalizator Sportowy szuka nowego członka zarządu. Odpowie za technologię i rozwój - iGaming Polska",
+      "reason": "Nabór na członka zarządu, nie rady nadzorczej – odrzucam.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    }
+  ]
+}
