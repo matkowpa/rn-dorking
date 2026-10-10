@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-10",
+  "rejected": [
+    {
+      "url": "https://www.bip.minsk-maz.pl/index.php?type=4&name=bt80&func=selectsite&value%5B0%5D=mnu21&value%5B1%5D=29",
+      "title": "Nabory - Zarząd/ Rada Nadzorcza",
+      "reason": "Ogólna strona kategorii BIP z naborami, brak konkretnego ogłoszenia o naborze.",
+      "source": "BIP JST"
+    },
+    {
+      "url": "https://www.gkskatowice.eu/news/powolanie-wiceprezesa-zarzadu-spolki-1",
+      "title": "Powołanie Wiceprezesa Zarządu Spółki",
+      "reason": "frazy dyskwalifikujące: kurs",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://sportbiznes.info/byl-prezesem-gornika-zaglebia-i-korony-teraz-zostal-wiceprezesem-zarzadu-w-gks-katowice/",
+      "title": "Był prezesem Górnika, Zagłębia i Korony. Teraz został wiceprezesem zarządu w GKS Katowice - SportBiznes.info",
+      "reason": "frazy dyskwalifikujące: kurs",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    }
+  ]
+}
