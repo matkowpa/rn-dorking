@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-13",
+  "rejected": [
+    {
+      "url": "https://www.sektorkolejowy.pl/cpk-polimex-mostostal-i-partnerzy-wycofuja-sie-z-postepowania-na-budowe-terminala-pasazerskiego/",
+      "title": "CPK: Polimex Mostostal i partnerzy wycofują się z postępowania na budowę terminala pasażerskiego - Sektorkolejowy.pl",
+      "reason": "Artykuł o wycofaniu się z postępowania budowlanego, nie o naborze do rady nadzorczej.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.powiatwodzislawski.pl/ogloszenie-o-naborze-kandydatow-na-kadencje-2016-2019-do-rady-nadzorczej-pks-sp-z-o-o-w-raciborzu.html",
+      "title": "Ogłoszenie o naborze kandydatów na kadencję 2016 - 2019 do Rady Nadzorczej PKS sp. z o.o. w Raciborzu - Powiat Wodzisławski",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\""
+    }
+  ]
+}
