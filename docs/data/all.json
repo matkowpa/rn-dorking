@@ -477,12 +477,12 @@
     "zrodlo": "\"kandydatów na członków rad nadzorczych\""
   },
   {
-    "podmiot": "Mazowiecka Agencja Energetyczna Sp. z o.o.",
+    "podmiot": "„Mazowiecka Agencja Energetyczna” Sp. z o.o.",
     "miejscowosc": "Warszawa",
-    "termin_skladania_ofert": "",
+    "termin_skladania_ofert": "2023-03-27",
     "stanowisko": "członek rady nadzorczej",
-    "wymagania": "Wyższe wykształcenie, min 5-letni okres zatrudnienia, tytuł doktorski lub certyfikaty (MBA, CFA, ACCA itp.), brak konfliktu interesów i stosunku pracy ze spółką",
-    "podsumowanie": "Ogłoszenie nr 1/2023 ogłasza nabór kandydatów do Rady Nadzorczej spółki Mazowiecka Agencja Energetyczna Sp. z o.o., realizowanego przez Urząd Marszałkowski Województwa Mazowieckiego. Kandydaci muszą posiadać wyższe wykształcenie, minimum 5-letni staż pracy oraz certyfikaty lub tytuły prawno-finansowe, a zgłoszenia przyjmowane są w formie pisemnej.",
+    "wymagania": "Wykształcenie wyższe, min. 5 lat pracy/działalności gosp. + jeden z wymogów: doktorat nauk ekon./prawnych/techn., radca prawny/adwokat/biegły rewident/doradca (podatk., inwest., restrukt.), MBA, CFA/CIIA/ACCA/CFF, egzamin na członka organu nadzorczego; poza stosunkiem pracy ze spółką.",
+    "podsumowanie": "Województwo Mazowieckie ogłasza nabór jednego członka Rady Nadzorczej spółki Mazowiecka Agencja Energetyczna Sp. z o.o. (ogłoszenie nr 1/2023 z 20.03.2023). Zgłoszenia przyjmowane są do 27 marca 2023 r. w Urzędzie Marszałkowskim Województwa Mazowieckiego w Warszawie.",
     "data_publikacji": "",
     "url": "https://mazovia.pl/pl/bip/komunikaty/nabor-kandydatow-do-rady-nadzorczej-mazowieckiej-agencji-energetycznej.html",
     "znaleziono_dnia": "2026-10-15"
@@ -490,10 +490,10 @@
   {
     "podmiot": "Mazowiecka Agencja Energetyczna Sp. z o.o.",
     "miejscowosc": "Warszawa",
-    "termin_skladania_ofert": "",
+    "termin_skladania_ofert": "2023-03-27",
     "stanowisko": "członek rady nadzorczej",
-    "wymagania": "Wyższe wykształcenie, min 5 lat stażu, tytuł naukowy lub zawodowy, specyficzne certyfikaty lub egzaminy, brak stosunku pracy ze spółką",
-    "podsumowanie": "Ogłoszenie o naborze kandydatów do Rady Nadzorczej Mazowieckiej Agencji Energetycznej Sp. z o.o. z siedzibą w Warszawie. Zgłoszenia przyjmowane do 27 marca br. na podstawie ogłoszenia z 20 marca 2023 roku.",
+    "wymagania": "Wykształcenie wyższe, min. 5-letni okres zatrudnienia oraz jeden z wymogów (m.in. doktorat nauk ekonomicznych, prawnych lub technicznych, radca prawny, adwokat, biegły rewident, MBA, certyfikaty CFA/CIIA/ACCA/CFF, egzamin dla kandydatów na członków organów nadzorczych); brak konfliktu interesów.",
+    "podsumowanie": "Ogłoszenie nr 1/2023 o naborze jednego kandydata do Rady Nadzorczej spółki Mazowiecka Agencja Energetyczna Sp. z o.o. z siedzibą w Warszawie. Zgłoszenia przyjmowano do 27 marca 2023 r. na adres Urzędu Marszałkowskiego Województwa Mazowieckiego.",
     "data_publikacji": "",
     "url": "https://bip.mazovia.pl/pl/bip/komunikaty/nabor-kandydatow-do-rady-nadzorczej-mazowieckiej-agencji-energetycznej.html",
     "znaleziono_dnia": "2026-10-15"
@@ -519,5 +519,17 @@
     "data_publikacji": "",
     "url": "https://kolonowskie.pl/7719/nabor-na-czlonkow-rady-nadzorczej-kgk-sp-z-oo.html",
     "znaleziono_dnia": "2026-10-15"
+  },
+  {
+    "podmiot": "ALIOR BANK SPÓŁKA AKCYJNA",
+    "miejscowosc": "Warszawa",
+    "termin_skladania_ofert": "",
+    "stanowisko": "członek rady nadzorczej",
+    "wymagania": "Spełnienie wymogów art. 22aa Prawa bankowego, wymogów odpowiedniości z Polityki doboru i oceny odpowiedniości członków RN Alior Bank S.A., kryteriów niezależności oraz wymogów §18 ust. 5 Statutu Banku.",
+    "podsumowanie": "Akcjonariusz Powszechny Zakład Ubezpieczeń S.A. zgłosił Marka Głuchowskiego i Edytę Szostak na członków Rady Nadzorczej Alior Bank S.A. w związku z Nadzwyczajnym Walnym Zgromadzeniem zwołanym na 20 października 2026 r. Kandydaci wyrazili zgodę na kandydowanie i według oceny akcjonariusza spełniają wymogi odpowiedniości.",
+    "data_publikacji": "",
+    "url": "https://www.parkiet.com/komunikaty-espi/art45341501-alior-bank-spolka-akcyjna-zgloszenie-kandydatow-do-rady-nadzorczej-alior-bank-s-a",
+    "znaleziono_dnia": "2026-10-15",
+    "zrodlo": "\"kandydatów do rady nadzorczej\""
   }
 ]
