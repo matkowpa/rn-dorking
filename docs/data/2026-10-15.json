@@ -2,10 +2,10 @@
   "date": "2026-10-15",
   "stats": {
     "search_requests": 12,
-    "raw_results": 56,
+    "raw_results": 49,
     "direct_results": 0,
-    "after_dedup": 2,
-    "after_filter": 2,
+    "after_dedup": 3,
+    "after_filter": 1,
     "offers_added": 0,
     "extract_errors": 0,
     "offers_updated": 0,
