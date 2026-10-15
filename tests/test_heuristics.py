@@ -83,3 +83,70 @@ def test_prefilter_rejects_stale():
     )
     assert odrzucony
     assert "przeterminowane" in powod
+
+# ---------- Etap 2: word boundaries + ochrona tytułów-ofert ----------
+
+def test_kurs_ne_lapie_konkursu():
+    """'kurs' po substring łapie 'konkurs' — po word boundary nie może."""
+    odrzucony, powod = prefilter_reject(
+        "Ogłoszenie o konkursie na stanowisko Prezesa Zarządu",
+        "Gmina Ryczywół ogłasza nabór kandydatów", "")
+    assert not odrzucony, f"'konkurs' odrzucone przez 'kurs': {powod}"
+
+
+def test_kursy_w_tresci_realnego_ogloszenia():
+    """Realne ogłoszenie naboru ze słowem 'kursy' w treści przechodzi."""
+    odrzucony, powod = prefilter_reject(
+        "Ogłoszenie o naborze kandydatów na członka rady nadzorczej",
+        "Spółka notowana na GPW, kursy akcji notowane od 2026 r.",
+        "https://bip.example.pl/ogloszenie")
+    assert not odrzucony, f"oferta odrzucona: {powod}"
+
+
+def test_kurs_dla_kandydatow_nadal_odrzucony():
+    """Realny kurs/szkolenie (bez sygnałów oferty) nadal odrzucany."""
+    odrzucony, powod = prefilter_reject(
+        "Kurs dla kandydatów na członków rad nadzorczych | Baza pytań",
+        "Zapisy otwarte", "https://ibd.pl/szkolenie/kurs")
+    assert odrzucony
+    assert "kurs" in powod
+
+
+def test_egzamin_w_realnym_ogloszeniu_nie_odrzuca():
+    """Ogłoszenie o naborze, które wspomina egzamin — przechodzi."""
+    odrzucony, powod = prefilter_reject(
+        "Ogłoszenie o naborze na członka rady nadzorczej spółki",
+        "Wymagany zdany egzamin na członka rad nadzorczych",
+        "https://bip.example.pl/nabor")
+    assert not odrzucony, f"oferta odrzucona przez egzamin: {powod}"
+
+
+def test_ochrona_tytulow_ofert_przed_frazami_edu():
+    """'szkolenie dla' w tytule-oferty (nabór) nie odrzuca."""
+    odrzucony, powod = prefilter_reject(
+        "Ogłoszenie Wójta Gminy o naborze - szkolenie dla kandydatów nie obowiązuje",
+        "Nabór kandydatów na członka rady nadzorczej OZC",
+        "https://gmina.example.pl/bip")
+    assert not odrzucony, f"oferta odrzucona: {powod}"
+
+
+def test_artykuly_nadal_odrzucone():
+    """Frazy artykulowe nadal dzialaja (nie zepsute przez etap 2)."""
+    for t in ("Wyjaśniamy, jak zostać członkiem rady nadzorczej",
+              "Analiza rynku rad nadzorczych",
+              "Stan prawny dotyczący rad nadzorczych"):
+        odrzucony, powod = prefilter_reject(t, "", "")
+        assert odrzucony, f"artykuł przepuszczony: {t[:50]}"
+
+
+def test_zamkniete_nabory_nadal_odrzucone():
+    odrzucony, powod = prefilter_reject(
+        "Nabór zakończony - rada nadzorcza spółki",
+        "Dziękujemy za zgłoszenia", "https://bip.example.pl/")
+    assert odrzucony, f"zakończony przepuszczony: {powod}"
+
+
+def test_domeny_agregatorow_nadal_odrzucone():
+    odrzucony, powod = prefilter_reject(
+        "Nabór na członka rady nadzorczej", "", "https://pl.jooble.org/x")
+    assert odrzucony and "domena" in powod
