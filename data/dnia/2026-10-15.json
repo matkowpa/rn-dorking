@@ -4,13 +4,70 @@
     "search_requests": 12,
     "raw_results": 49,
     "direct_results": 0,
-    "after_dedup": 3,
-    "after_filter": 1,
-    "offers_added": 0,
+    "after_dedup": 2,
+    "after_filter": 2,
+    "offers_added": 1,
     "extract_errors": 0,
-    "offers_updated": 0,
+    "offers_updated": 2,
     "offers_with_termin": 0,
     "content_empty": 0
   },
-  "offers": []
+  "offers": [
+    {
+      "podmiot": "„Mazowiecka Agencja Energetyczna” Sp. z o.o.",
+      "miejscowosc": "Warszawa",
+      "termin_skladania_ofert": "2023-03-27",
+      "stanowisko": "członek rady nadzorczej",
+      "wymagania": "Wykształcenie wyższe, min. 5 lat pracy/działalności gosp. + jeden z wymogów: doktorat nauk ekon./prawnych/techn., radca prawny/adwokat/biegły rewident/doradca (podatk., inwest., restrukt.), MBA, CFA/CIIA/ACCA/CFF, egzamin na członka organu nadzorczego; poza stosunkiem pracy ze spółką.",
+      "podsumowanie": "Województwo Mazowieckie ogłasza nabór jednego członka Rady Nadzorczej spółki Mazowiecka Agencja Energetyczna Sp. z o.o. (ogłoszenie nr 1/2023 z 20.03.2023). Zgłoszenia przyjmowane są do 27 marca 2023 r. w Urzędzie Marszałkowskim Województwa Mazowieckiego w Warszawie.",
+      "data_publikacji": "",
+      "url": "https://mazovia.pl/pl/bip/komunikaty/nabor-kandydatow-do-rady-nadzorczej-mazowieckiej-agencji-energetycznej.html",
+      "znaleziono_dnia": "2026-10-15"
+    },
+    {
+      "podmiot": "Mazowiecka Agencja Energetyczna Sp. z o.o.",
+      "miejscowosc": "Warszawa",
+      "termin_skladania_ofert": "2023-03-27",
+      "stanowisko": "członek rady nadzorczej",
+      "wymagania": "Wykształcenie wyższe, min. 5-letni okres zatrudnienia oraz jeden z wymogów (m.in. doktorat nauk ekonomicznych, prawnych lub technicznych, radca prawny, adwokat, biegły rewident, MBA, certyfikaty CFA/CIIA/ACCA/CFF, egzamin dla kandydatów na członków organów nadzorczych); brak konfliktu interesów.",
+      "podsumowanie": "Ogłoszenie nr 1/2023 o naborze jednego kandydata do Rady Nadzorczej spółki Mazowiecka Agencja Energetyczna Sp. z o.o. z siedzibą w Warszawie. Zgłoszenia przyjmowano do 27 marca 2023 r. na adres Urzędu Marszałkowskiego Województwa Mazowieckiego.",
+      "data_publikacji": "",
+      "url": "https://bip.mazovia.pl/pl/bip/komunikaty/nabor-kandydatow-do-rady-nadzorczej-mazowieckiej-agencji-energetycznej.html",
+      "znaleziono_dnia": "2026-10-15"
+    },
+    {
+      "podmiot": "Kanalizacja Gminy Kolonowskie „KGK” SP. Z O.O.",
+      "miejscowosc": "Kolonowskie",
+      "termin_skladania_ofert": "",
+      "stanowisko": "członek rady nadzorczej",
+      "wymagania": "",
+      "podsumowanie": "Ogłoszenie o naborze na członka Rady Nadzorczej spółki KGK Sp. z o.o., organizowanego przez Urząd Miasta i Gminy Kolonowskie. Celem naboru jest wyselekcjonowanie kandydatów na stanowisko w radzie nadzorczej spółki kanalizacyjnej.",
+      "data_publikacji": "",
+      "url": "https://bip.kolonowskie.pl/7718/nabor-na-czlonkow-rady-nadzorczej-kanalizacji-gminy-kolonowskie-kgk-sp-z-oo.html",
+      "znaleziono_dnia": "2026-10-15"
+    },
+    {
+      "podmiot": "KGK Sp. z o.o.",
+      "miejscowosc": "Kolonowskie",
+      "termin_skladania_ofert": "",
+      "stanowisko": "członek rady nadzorczej",
+      "wymagania": "",
+      "podsumowanie": "Burmistrz Kolonowskiego ogłasza nabór na członków Rady Nadzorczej spółki KGK Sp. z o.o. z siedzibą w Kolonowskiem. Szczegółowe informacje dotyczące naboru dostępne są na stronie gminy.",
+      "data_publikacji": "",
+      "url": "https://kolonowskie.pl/7719/nabor-na-czlonkow-rady-nadzorczej-kgk-sp-z-oo.html",
+      "znaleziono_dnia": "2026-10-15"
+    },
+    {
+      "podmiot": "ALIOR BANK SPÓŁKA AKCYJNA",
+      "miejscowosc": "Warszawa",
+      "termin_skladania_ofert": "",
+      "stanowisko": "członek rady nadzorczej",
+      "wymagania": "Spełnienie wymogów art. 22aa Prawa bankowego, wymogów odpowiedniości z Polityki doboru i oceny odpowiedniości członków RN Alior Bank S.A., kryteriów niezależności oraz wymogów §18 ust. 5 Statutu Banku.",
+      "podsumowanie": "Akcjonariusz Powszechny Zakład Ubezpieczeń S.A. zgłosił Marka Głuchowskiego i Edytę Szostak na członków Rady Nadzorczej Alior Bank S.A. w związku z Nadzwyczajnym Walnym Zgromadzeniem zwołanym na 20 października 2026 r. Kandydaci wyrazili zgodę na kandydowanie i według oceny akcjonariusza spełniają wymogi odpowiedniości.",
+      "data_publikacji": "",
+      "url": "https://www.parkiet.com/komunikaty-espi/art45341501-alior-bank-spolka-akcyjna-zgloszenie-kandydatow-do-rady-nadzorczej-alior-bank-s-a",
+      "znaleziono_dnia": "2026-10-15",
+      "zrodlo": "\"kandydatów do rady nadzorczej\""
+    }
+  ]
 }
