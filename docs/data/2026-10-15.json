@@ -2,13 +2,13 @@
   "date": "2026-10-15",
   "stats": {
     "search_requests": 12,
-    "raw_results": 49,
+    "raw_results": 50,
     "direct_results": 0,
-    "after_dedup": 2,
-    "after_filter": 2,
-    "offers_added": 1,
+    "after_dedup": 1,
+    "after_filter": 1,
+    "offers_added": 0,
     "extract_errors": 0,
-    "offers_updated": 2,
+    "offers_updated": 0,
     "offers_with_termin": 0,
     "content_empty": 0
   },
