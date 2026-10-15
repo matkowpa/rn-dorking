@@ -248,3 +248,15 @@ body {
 }
 .drawer-actions .src.wide:hover { background: var(--violet-h); border-color: var(--violet-h); }
 .drawer-hint { font-size: .72rem; color: var(--dim); margin: .8rem 0 0; }
+
+/* stopka karty: data dodania + akcje */
+.card-foot {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: .8rem; margin-top: .7rem; padding-top: .55rem;
+  border-top: 1px solid var(--border);
+}
+.added {
+  font-size: .7rem; color: var(--dim); white-space: nowrap;
+  font-family: "Fira Code", monospace;
+}
+.card-foot .card-actions { margin-top: 0; }
