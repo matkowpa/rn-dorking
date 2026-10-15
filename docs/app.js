@@ -93,9 +93,12 @@ function cardHTML(o) {
     </div>
     ${o.wymagania ? `<p class="req"><b>Wymagania:</b> ${esc(o.wymagania)}</p>` : ""}
     <p class="sum">${esc(o.podsumowanie)}</p>
-    <div class="card-actions">
-      <button class="more" data-more="${esc(o.url)}">Zobacz więcej ▸</button>
-      <a class="src" href="${esc(o.url)}" target="_blank" rel="noopener">źródło →</a>
+    <div class="card-foot">
+      <span class="added" title="Kiedy potok znalazł i dodał to ogłoszenie">🤖 dodano: ${fmtDate(o.znaleziono_dnia) || "?"}</span>
+      <div class="card-actions">
+        <button class="more" data-more="${esc(o.url)}">Zobacz więcej ▸</button>
+        <a class="src" href="${esc(o.url)}" target="_blank" rel="noopener">źródło →</a>
+      </div>
     </div>
   </article>`;
 }
