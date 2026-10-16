@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-16",
+  "rejected": [
+    {
+      "url": "https://www.pzu.pl/_fileserver/item/1568256",
+      "title": "1/7 OGŁOSZENIE O POSTĘPOWANIU KWALIFIKACYJNYM",
+      "reason": "Nabór na członków Zarządu PZU SA, nie rady nadzorczej.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://jawnylublin.pl/partyjni-fachowcy-nadal-beda-w-miejskich-spolkach-ratusz-odpowiada-na-petycje-o-ich-odpolitycznienie/",
+      "title": "\"Partyjni fachowcy\" nadal będą w miejskich spółkach. Ratusz odpowiada na petycję o ich odpolitycznienie - Jawny Lublin",
+      "reason": "Artykuł publicystyczny o petycji, nie ogłoszenie naboru kandydatów.",
+      "source": "\"kandydatów na członków rad nadzorczych\""
+    },
+    {
+      "url": "https://zgmchojnice.pl/p/nabor-pracownikow",
+      "title": "Zakład Gospodarki Mieszkaniowej Sp. z o.o.",
+      "reason": "Nabór na stanowisko Prezesa Zarządu, nie na członka rady nadzorczej.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\""
+    }
+  ]
+}
