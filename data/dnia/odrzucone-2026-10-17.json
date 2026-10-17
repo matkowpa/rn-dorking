@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-17",
+  "rejected": [
+    {
+      "url": "https://szczecinek.pl/aktualnosci/zawiadomienie-ogloszenie-o-wszczeciu-postepowania-kwalifikacyjnego-na-stanowisko-prezesa-zarzadu-przedsiebiorstwa-gospodarki-komunalnej-w-szczecinku-sp-z-oo.html",
+      "title": "ZAWIADOMIENIE/OGŁOSZENIE o wszczęciu postępowania kwalifikacyjnego na stanowisko Prezesa Zarządu Przedsiębiorstwa Gospodarki Komunalnej w Szczecinku Sp. z o.o.",
+      "reason": "Nabór na Prezesa Zarządu, nie na członka rady nadzorczej.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://biznes.pap.pl/wiadomosci/firmy/quantum-software-sa-102026-informacja-o-transakcjach-w-trybie-art-19",
+      "title": "QUANTUM SOFTWARE SA (10/2026) Informacja o transakcjach w trybie art. 19 Rozporządzenia MAR | Biznes PAP",
+      "reason": "Informacja o transakcjach MAR osób związanych z radą nadzorczą, nie nabór.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    }
+  ]
+}
