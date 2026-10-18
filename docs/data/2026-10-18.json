@@ -2,7 +2,7 @@
   "date": "2026-10-18",
   "stats": {
     "search_requests": 12,
-    "raw_results": 57,
+    "raw_results": 59,
     "direct_results": 0,
     "after_dedup": 2,
     "after_filter": 2,
