@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-20",
+  "rejected": [
+    {
+      "url": "https://ekoprohut.labedy.pl/pl/archiwum-3/209-ogloszenie-o-postepowaniu-kwalifikacyjnym-na-prezesa-zarzadu-ekoprohut-sp-z-o-o-20-03-2026",
+      "title": "EkoProHut Sp. z o.o. - Ogłoszenie o postępowaniu kwalifikacyjnym na Prezesa Zarządu EkoProHut SP. z o.o.",
+      "reason": "Nabór na Prezesa Zarządu, nie na członka rady nadzorczej.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.bankier.pl/wiadomosc/Policja-zatrzymala-zarzad-Aforti-Holding-Grozi-im-25-lat-wiezienia-9214546.html",
+      "title": "Policja zatrzymała zarząd Aforti Holding. Grozi im 25 lat więzienia - Bankier.pl",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    }
+  ]
+}
