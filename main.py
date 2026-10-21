@@ -12,6 +12,7 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
     sys.stderr.reconfigure(encoding="utf-8")
 
+import deadline_parser
 import config
 import direct_sources
 import heuristics
@@ -250,6 +251,14 @@ def main(argv: list[str] | None = None) -> int:
             text, _ = fetch_content(url)
             offer = extract_fields(text, url) if text else None
             storage.mark_extract_attempt(url)
+            if offer is not None and not (offer.get("termin_skladania_ofert") or "").strip() and text:
+                # Ten sam fallback co przy nowych ofertach - LLM bywa tu
+                # bezradny, a termin często jest w treści.
+                found = deadline_parser.extract_deadline(text) \
+                    or deadline_parser.deadline_from_filename(url)
+                if found:
+                    offer["termin_skladania_ofert"] = found
+                    offer["termin_zrodlo"] = "parser"
             if offer and offer.get("termin_skladania_ofert"):
                 if storage.update_offer(url, offer):
                     stats["offers_updated"] += 1
@@ -417,6 +426,21 @@ def main(argv: list[str] | None = None) -> int:
                 stats["extract_errors"] += 1
                 _log_raw(result, "extract_error", "ekstrakcja LLM nie zwróciła pól")
             else:
+                # Fallback deterministyczny: gdy LLM nie wyciągnął terminu,
+                # próbujemy sami (regex na kontekst "składać/przyjmowane do").
+                # 25 z 30 ofert w bazie nie miało terminu mimo obecności daty
+                # w treści - model jej po prostu nie widział.
+                if not (offer.get("termin_skladania_ofert") or "").strip():
+                    found = deadline_parser.extract_deadline(text)
+                    if not found:
+                        found = deadline_parser.deadline_from_filename(link)
+                    if found:
+                        offer["termin_skladania_ofert"] = found
+                        offer["termin_zrodlo"] = "parser"
+                        stats["termin_from_parser"] = \
+                            stats.get("termin_from_parser", 0) + 1
+                        logger.info("Termin z parsera: %s (%s)",
+                                    found, offer.get("podmiot", "")[:40])
                 offer["data_publikacji"] = pub_date
                 # Pochodzenie oferty (Faza 0 / dork Brave lub DDG) - do widoku
                 offer["zrodlo"] = result.get("dork", "")
