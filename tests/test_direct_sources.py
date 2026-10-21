@@ -59,14 +59,22 @@ def test_jst_daily_slice_basic():
 
 
 def test_jst_daily_slice_wrap_around():
-    # Okno przechodzące przez koniec listy (start + window > len)
+    # Okno większe niż rejestr -> cały rejestr
     reg = list(range(5))
-    day = __import__("datetime").datetime.now().timetuple().tm_yday
-    window = 4
-    start = (day * window) % len(reg)
-    expected = reg[start:] + reg[:window - (len(reg) - start)] \
-        if start + window > len(reg) else reg[start:start + window]
-    assert jst_daily_slice(reg, window=window) == expected
+    assert jst_daily_slice(reg, window=10) == reg
+
+
+def test_jst_daily_slice_pokrywa_caly_rejestr_w_cyklu():
+    """Nowy algorytm: każde okno pojawia się raz na cykl, bez pominięć.
+
+    Poprzednia wersja `(day * window) % len` przy 1106 wpisach i oknie 100
+    odwiedzała część wpisów dwa razy, a część pomijała.
+    """
+    reg = list(range(1106))
+    seen = set()
+    for day in range(1, 13):        # ceil(1106/100) = 12 okien
+        seen.update(jst_daily_slice(reg, window=100, day_of_year=day))
+    assert seen == set(range(1106))
 
 
 def test_jst_daily_slice_edge_cases():
@@ -113,3 +121,40 @@ def test_collect_from_page_dedup_and_format():
     assert results[0]["link"] == "https://bip.example.pl/nabor-1"
     assert results[0]["_direct"] is True
     assert results[0]["dork"] == "BIP JST"
+
+# --- Filtr portalu gov.pl i rozbicie statystyk (R1 + R4) ---
+
+import direct_sources as ds
+
+
+def test_is_portal_url_strona_gminy():
+    """Strona gminy na gov.pl nie jest BIP-em - nie warto jej skanować."""
+    assert ds.is_portal_url(
+        "https://www.gov.pl/gmina-banie-mazurskie-warminsko-mazurskie") is True
+
+
+def test_is_portal_url_bip_na_gov_pl_zostaje():
+    """BIP-y hostowane na gov.pl (/web/bip/) mają własną strukturę."""
+    assert ds.is_portal_url(
+        "https://www.gov.pl/web/bip/gmina-aleksandrow-kujawski") is False
+
+
+def test_is_portal_url_wlasna_domena():
+    assert ds.is_portal_url("https://www.bip.bartniczka.pl") is False
+    assert ds.is_portal_url("https://barcin.bip24.pl") is False
+
+
+def test_collect_uzupelnia_rozbicie(monkeypatch, tmp_path):
+    """Faza 0 rozdziela whitelist i JST w statystykach (R4)."""
+    monkeypatch.chdir(tmp_path)
+
+    def fake_scan(entries, label, max_links, delay, seen, results, deep=False):
+        results.append({"title": "Nabór na członka rady nadzorczej X",
+                        "snippet": "", "link": "https://x.pl/1",
+                        "dork": label, "_direct": True})
+
+    monkeypatch.setattr(ds, "_scan_entries", fake_scan)
+    monkeypatch.setattr(ds, "_load_jst_registry", lambda: [])
+    stats = {}
+    ds.collect(jst_window=10, stats=stats)
+    assert stats["direct_whitelist"] == 1

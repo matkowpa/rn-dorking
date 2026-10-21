@@ -223,6 +223,9 @@ def main(argv: list[str] | None = None) -> int:
         "search_requests": 0,
         "raw_results": 0,
         "direct_results": 0,
+        "direct_whitelist": 0,
+        "direct_jst": 0,
+        "jst_skipped_portal": 0,
         "after_dedup": 0,
         "after_filter": 0,
         "offers_added": 0,
@@ -282,11 +285,17 @@ def main(argv: list[str] | None = None) -> int:
     # Kandydaci są pre-filtrowani po tekście kotwicy linku, więc NIE liczą się
     # do limitu --limit; wynikom z domen *.gov.pl pomijamy filtr LLM.
     try:
-        direct = direct_sources.collect(jst_window=config.JST_WINDOW)
+        direct = direct_sources.collect(jst_window=config.JST_WINDOW, stats=stats)
     except Exception as e:
         logger.error("Faza 0 (źródła bezpośrednie) nieudana: %s", e)
         direct = []
     stats["direct_results"] = len(direct)
+    if stats["direct_whitelist"] or stats["direct_jst"]:
+        stats["direct_whitelist"] = stats.get("direct_whitelist", 0)
+        stats["direct_jst"] = stats.get("direct_jst", 0)
+    else:
+        # Faza 0 nie zwróciła rozbicia (wyjątek/brak stats w collect)
+        stats["direct_whitelist"] = len(direct)
     all_results = direct + all_results
 
     stats["raw_results"] = len(all_results)
@@ -449,6 +458,9 @@ def main(argv: list[str] | None = None) -> int:
     # Statystyki końcowe
     logger.info("=== Statystyki runu ===")
     logger.info("Kandydaci ze źródeł bezpośrednich (Faza 0): %s", stats["direct_results"])
+    logger.info("  - whitelist: %s | JST (rotacja): %s | pominięto linki gov.pl: %s",
+                stats["direct_whitelist"], stats["direct_jst"],
+                stats["jst_skipped_portal"])
     logger.info("Zapytania wyszukiwarki (dorki): %s", stats["search_requests"])
     logger.info("Wyniki surowe: %s", stats["raw_results"])
     logger.info("Wyniki po deduplikacji (poddane filtrowi): %s", stats["after_dedup"])

@@ -55,6 +55,24 @@ MAX_SUBPAGES_PER_SOURCE = 2  # maks. podstron-sekcji skanowanych per źródło
 # wewnętrznej wyszukiwarki, brak realnej strony BIP).
 BAD_URLS = {"https://www.gov.pl", "http://www.gov.pl", "https://gov.pl"}
 
+# Domy portalu rządowego. Link do gov.pl/<slug> to strona gminy na portalu,
+# NIE BIP: w 2026-10 było tam 824/1106 wpisów rejestru (75%) i skanowanie ich
+# dawało zero kandydatów - strona gminy nie linkuje ogłoszeń o naborach.
+PORTAL_HOSTS = ("gov.pl", "www.gov.pl")
+
+
+def is_portal_url(url: str) -> bool:
+    """Czy URL prowadzi do portalu gov.pl zamiast do realnej strony BIP.
+
+    Wyjątkiem są ścieżki /web/bip/ - to faktyczne BIP-y hostowane na gov.pl,
+    które mają własną strukturę i warto je skanować.
+    """
+    parsed = urlparse(url)
+    host = parsed.netloc.lower()
+    if host not in PORTAL_HOSTS:
+        return False
+    return not parsed.path.startswith("/web/bip")
+
 
 @dataclass(frozen=True)
 class Source:
@@ -195,19 +213,26 @@ def _load_jst_urls() -> dict:
     return {}
 
 
-def jst_daily_slice(registry: list, window: int = JST_WINDOW_DEFAULT) -> list:
-    """Deterministyczne okno próbkowania: całości ~1940 podmiotów nie da się
-    skanować przy każdym uruchomieniu, więc każdy przebieg bierze inne, ciągłe
-    okno wpisów przesuwane według dnia roku (dzień * window % len)."""
+def jst_daily_slice(registry: list, window: int = JST_WINDOW_DEFAULT,
+                    day_of_year: int | None = None) -> list:
+    """Deterministyczne okno próbkowania rejestru JST.
+
+    Każdy przebieg bierze inne, ciągłe okno wpisów. Okno przesuwa się o swoją
+    długość, ale start liczymy modulo LICZBA OKIEN, nie modulo długość listy
+    (poprzednia wersja: `(day * window) % len(registry)` - gdy okno nie dzieli
+    listy bez reszty, część wpisów była pomijana w cyklu, a inne odwiedzane
+    dwa razy). Teraz kolejne dni przechodzą przez wszystkie okna po kolei,
+    a po wyczerpaniu cyklu wracamy na początek.
+    """
     if not registry or window <= 0:
         return []
     if window >= len(registry):
         return list(registry)
-    day = datetime.now().timetuple().tm_yday
-    start = (day * window) % len(registry)
-    if start + window <= len(registry):
-        return registry[start:start + window]
-    return registry[start:] + registry[:window - (len(registry) - start)]
+    day = day_of_year if day_of_year is not None else datetime.now().timetuple().tm_yday
+    n_windows = -(-len(registry) // window)          # ceil - liczba okien
+    idx = (day - 1) % n_windows
+    start = idx * window
+    return registry[start:start + window]
 
 
 def _collect_from_page(soup, base_url: str, max_links: int, dork_label: str,
@@ -291,9 +316,15 @@ def _scan_entries(entries: list, dork_label: str, max_links_per_source: int,
 
 
 def collect(max_links_per_source: int = 3, delay: float = 0.5,
-            jst_window: int = JST_WINDOW_DEFAULT) -> list[dict]:
+            jst_window: int = JST_WINDOW_DEFAULT,
+            stats: dict | None = None) -> list[dict]:
     """FAZA 0: whitelist + rotacyjne okno JST. Zwraca listę wyników
-    ({"title", "snippet", "link", "dork", "_direct": True})."""
+    ({"title", "snippet", "link", "dork", "_direct": True}).
+
+    Gdy przekazano `stats`, uzupełnia rozbicie: direct_whitelist,
+    direct_jst, jst_skipped_portal - dzięki temu wiadomo, która ścieżka
+    faktycznie daje wyniki (wcześniej direct_results mieszał obie).
+    """
     results: list[dict] = []
     seen: set = set()
 
@@ -302,6 +333,8 @@ def collect(max_links_per_source: int = 3, delay: float = 0.5,
     entries = [{"id": s.id, "name": s.name, "url": s.url} for s in SOURCES]
     _scan_entries(entries, "źródło bezpośrednie", max_links_per_source,
                   delay, seen, results, deep=True)
+    if stats is not None:
+        stats["direct_whitelist"] = len(results)
     logger.info("Faza 0a (whitelist): %s kandydatów", len(results))
 
     # Faza 0b: rotacyjne okno BIP-ów samorządowych
@@ -314,17 +347,24 @@ def collect(max_links_per_source: int = 3, delay: float = 0.5,
                 e["url"] = real
         window = jst_daily_slice(registry, window=jst_window)
         usable = [e for e in window
-                  if e.get("url") and e["url"].rstrip("/") not in BAD_URLS]
+                  if e.get("url") and e["url"].rstrip("/") not in BAD_URLS
+                  and not is_portal_url(e["url"])]
         skipped = len(window) - len(usable)
+        portal = sum(1 for e in window if e.get("url") and is_portal_url(e["url"]))
+        if stats is not None:
+            stats["jst_skipped_portal"] = portal
         if skipped:
-            logger.warning("Faza 0b: pominięto %s/%s wpisów JST bez realnego "
-                           "adresu BIP - uruchom tools/resolve_bip_urls.py.",
-                           skipped, len(window))
+            logger.warning(
+                "Faza 0b: pominięto %s/%s wpisów JST (%s to linki do portalu "
+                "gov.pl, nie BIP) - uruchom tools/resolve_bip_urls.py.",
+                skipped, len(window), portal)
         logger.info("Faza 0b: JST - okno dzienne %s/%s podmiotów (%s do skanu)",
                     len(window), len(registry), len(usable))
         before = len(results)
         _scan_entries(usable, "BIP JST", max_links_per_source=1,
                       delay=delay, seen=seen, results=results)
+        if stats is not None:
+            stats["direct_jst"] = len(results) - before
         logger.info("Faza 0b (JST): %s kandydatów", len(results) - before)
 
     return results
