@@ -94,6 +94,18 @@ class Storage:
         self._prune_rejected()
         return self.seen_urls
 
+    def prune_archival(self, is_archival_fn) -> int:
+        """Usuwa z pamięci oferty uznane za archiwalne. Zwraca liczbę usuniętych.
+
+        Potrzebne, bo filtr świeżości działał kiedyś zbyt łagodnie (przepuszczał
+        oferty z terminem z 2023 r. i oferty bez parsowalnego terminu). Bez tego
+        kroku takie wpisy siedzą w oferty.json na zawsze - nowy filtr odrzuca
+        tylko NOWE oferty, a stare nigdy nie są ponownie oceniane.
+        """
+        before = len(self.offers)
+        self.offers = [o for o in self.offers if not is_archival_fn(o)]
+        return before - len(self.offers)
+
     def _prune_rejected(self) -> None:
         """Usuwa wpisy odrzuconych URL-i starsze niż REJECT_TTL_DAYS."""
         cutoff = date.today().toordinal() - REJECT_TTL_DAYS

@@ -5,7 +5,7 @@ import argparse
 import logging
 import sys
 import time
-from datetime import date
+from datetime import date, timedelta
 
 if hasattr(sys.stdout, "reconfigure"):
     # Konsola Windows: uniknij UnicodeEncodeError przy polskich znakach
@@ -20,6 +20,68 @@ from llm_parser import extract_fields, filter_is_announcement, rejects_zarzad
 from storage import Storage
 
 logger = logging.getLogger(__name__)
+
+# Po ilu dniach oferta uznawana jest za archiwalną. Terminy składania ofert
+# w naborach na RN to zwykle 2-6 tygodni od publikacji, więc zapas 60 dni
+# obejmuje opóźnienia w publikacji treści na BIP-ach.
+ARCHIVE_MAX_AGE_DAYS = 60
+
+
+def is_archival(offer: dict, today: date | None = None,
+                max_age_days: int = ARCHIVE_MAX_AGE_DAYS) -> bool:
+    """Czy oferta jest archiwalna (do pominięcia).
+
+    Sprawdza po kolei: termin składania ofert, data publikacji, data
+    znalezienia. Pierwsza parsowalna data decyduje. Gdy żadnej nie da się
+    sparsować - oferta NIE jest archiwalna (zostaje, by nie gubić danych).
+
+    Nieparsowalny termin nie jest przepuszczany bez sprawdzenia: fallback
+    schodzi na datę publikacji, a potem na datę znalezienia. Poprzednia wersja
+    (except ValueError: pass) wpuszczała do bazy ofertę z terminem "2023-03-27".
+    """
+    today = today or date.today()
+    cutoff = today.toordinal() - max_age_days
+    for key in ("termin_skladania_ofert", "data_publikacji", "znaleziono_dnia"):
+        raw = (offer.get(key) or "").strip()
+        if not raw:
+            continue
+        try:
+            value = date.fromisoformat(raw[:10])
+        except (TypeError, ValueError):
+            continue  # format nietypowy - próbuj następne pole
+        return value.toordinal() < cutoff
+    return False
+
+
+# Sanity check terminu po ekstrakcji LLM: model potrafi "wyliczyć" datę
+# z innego roku. Termin spoza okna [dziś - 2 lata, dziś + 2 lata] traktujemy
+# jako halucynację i czyścimy (oferta zostaje, ale bez terminu).
+TERMIN_PAST_YEARS = 2
+TERMIN_FUTURE_YEARS = 2
+
+
+def sanitize_termin(offer: dict, today: date | None = None) -> bool:
+    """Czyści termin, jeśli jest nierealistyczny. True = termin wyczyszczono."""
+    today = today or date.today()
+    raw = (offer.get("termin_skladania_ofert") or "").strip()
+    if not raw:
+        return False
+    try:
+        value = date.fromisoformat(raw[:10])
+    except (TypeError, ValueError):
+        return False  # nietypowy format - nie ruszamy (is_archival go obsłuży)
+    lo = today.replace(year=today.year - TERMIN_PAST_YEARS)
+    try:
+        hi = today.replace(year=today.year + TERMIN_FUTURE_YEARS)
+    except ValueError:  # 29 lutego
+        hi = today + timedelta(days=365 * TERMIN_FUTURE_YEARS)
+    if value < lo or value > hi:
+        logger.warning(
+            "Termin poza realnym zakresem (%s), czyszczę pole: %s",
+            raw, offer.get("podmiot", ""))
+        offer["termin_skladania_ofert"] = ""
+        return True
+    return False
 
 
 def _search(dork: str, days_back: int):
@@ -43,14 +105,21 @@ def _search(dork: str, days_back: int):
 
 
 def setup_logging() -> None:
-    """INFO na konsolę, DEBUG do run.log (oba UTF-8)."""
+    """INFO na konsolę, DEBUG do run.log (oba UTF-8).
+
+    run.log rotuje przy 5 MB (jeden plik zapasowy run.log.1). Bez rotacji
+    lokalne runy rozdmuchiwały plik bez końca; w CI jest efemeryczny.
+    """
+    from logging.handlers import RotatingFileHandler
+
     logger = logging.getLogger()
     logger.setLevel(logging.DEBUG)
     fmt = logging.Formatter("%(asctime)s %(levelname)s %(name)s: %(message)s")
     console = logging.StreamHandler(stream=sys.stdout)
     console.setLevel(logging.INFO)
     console.setFormatter(fmt)
-    file_handler = logging.FileHandler("run.log", encoding="utf-8")
+    file_handler = RotatingFileHandler("run.log", maxBytes=5 * 1024 * 1024,
+                                       backupCount=1, encoding="utf-8")
     file_handler.setLevel(logging.DEBUG)
     file_handler.setFormatter(fmt)
     logger.addHandler(console)
@@ -90,6 +159,14 @@ def main(argv: list[str] | None = None) -> int:
 
     days_back = args.days if args.days is not None else config.SEARCH_DAYS_BACK
     storage = Storage()
+
+    # Jednorazowe porządki: oferty wczytane z oferty.json też podlegają
+    # filtrowi archiwalnych. Bez tego stare wpisy (termin 2023, brak terminu
+    # przy publikacji z 2025) zostawałyby w bazie na zawsze - filtr w ETAPIE C
+    # ocenia tylko nowe oferty.
+    removed = storage.prune_archival(is_archival)
+    if removed:
+        logger.info("Porządki: usunięto %s archiwalnych ofert z bazy", removed)
 
     # Statystyki
     stats = {
@@ -219,18 +296,22 @@ def main(argv: list[str] | None = None) -> int:
                 offer["data_publikacji"] = pub_date
                 # Pochodzenie oferty (Faza 0 / dork Brave lub DDG) - do widoku
                 offer["zrodlo"] = result.get("dork", "")
-                # Filtr świeżości: znany termin w przeszłości = archiwalne,
-                # pomijamy ("" = termin nieznany - zostaje)
-                termin = offer.get("termin_skladania_ofert", "")
-                if termin:
-                    try:
-                        if date.fromisoformat(termin) < date.today():
-                            logger.info(
-                                "Pomijam archiwalną ofertę (termin %s): %s",
-                                termin, offer.get("podmiot", ""))
-                            continue
-                    except ValueError:
-                        pass  # termin w nietypowym formacie - zostaw
+                # Sanity check: LLM potrafi "wyliczyć" termin z innego roku.
+                # Poza oknem ±2 lata pole jest czyszczone (oferta zostaje).
+                sanitize_termin(offer)
+                # Filtr świeżości: oferta archiwalna, gdy jej termin (albo przy
+                # braku terminu - data publikacji, a potem data znalezienia)
+                # jest starszy niż ARCHIVE_MAX_AGE_DAYS. Nieparsowalny termin
+                # nie jest już przepuszczany bez sprawdzenia (stary bug:
+                # oferta MAE z terminem "2023-03-27" została w bazie).
+                if is_archival(offer):
+                    logger.info(
+                        "Pomijam archiwalną ofertę (termin=%s, publ=%s, znaleziono=%s): %s",
+                        offer.get("termin_skladania_ofert") or "-",
+                        offer.get("data_publikacji") or "-",
+                        offer.get("znaleziono_dnia") or "-",
+                        offer.get("podmiot", ""))
+                    continue
                 storage.add_offer(offer)
                 stats["offers_added"] += 1
                 if offer.get("termin_skladania_ofert"):

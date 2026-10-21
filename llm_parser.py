@@ -197,7 +197,11 @@ def extract_fields(full_text: str, url: str) -> dict | None:
         result["znaleziono_dnia"] = date.today().isoformat()
         return result
     except Exception as e:
-        logger.error("Błąd ekstrakcji LLM dla URL %s: %s", url, e)
+        # Pełny kontekst błędu (typ + treść) - bez niego nie da się odróżnić
+        # timeoutu od rate-limitu i złego JSON-a przy debugowaniu "dlaczego
+        # offers_added = 0". exc_info zostawia stack trace w run.log (DEBUG).
+        logger.error("Błąd ekstrakcji LLM dla URL %s [%s]: %s",
+                     url, type(e).__name__, e, exc_info=True)
         return None
 
 
