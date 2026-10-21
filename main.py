@@ -60,6 +60,50 @@ TERMIN_PAST_YEARS = 2
 TERMIN_FUTURE_YEARS = 2
 
 
+# Strony listujące BIP ("Nabory - Zarząd/ Rada Nadzorcza", "Ogłoszenia o
+# naborach...") mają długi opis, ale zero konkretu. Rozpoznajemy je po tym,
+# że w polach tekstowych nie ma ani terminu (daty), ani wymagań (liczby lat,
+# wykształcenia) - tylko ogólne słowa.
+_MENU_HINTS = ("nabory -", "ogłoszenia o naborach", "wykaz ogłoszeń",
+               "lista naborów", "archiwum naborów")
+
+
+def has_content(offer: dict) -> bool:
+    """Czy oferta zawiera treść ogłoszenia, a nie tylko tytuł strony BIP.
+
+    Strony listujące ("Nabory - Zarząd/Rada Nadzorcza") przechodzą filtr LLM,
+    bo w tytule mają właściwą frazę, ale nie mają ani terminu, ani wymagań.
+    Realne ogłoszenie ma co najmniej jedno z tych pól - także nabór do
+    rejestru kandydatów (termin nieograniczony, ale wymagania podane).
+
+    Próg długości (20 znaków) dotyczy tylko pól tekstowych: termin ISO ma
+    10 znaków i sam w sobie jest wystarczającym dowodem na ogłoszenie.
+    """
+    if (offer.get("termin_skladania_ofert") or "").strip():
+        return True
+    wym = (offer.get("wymagania") or "").strip()
+    if len(wym) >= 20:
+        return True
+    pod = (offer.get("podsumowanie") or "").strip()
+    if not pod:
+        return False
+    low = pod.lower()
+    if any(hint in low for hint in _MENU_HINTS):
+        return False
+    # Ślad ekstrakcji: (a) konkretne dane - liczba (lat, szt., %) albo
+    # wykształcenie; (b) czasownik ogłoszenia ("ogłasza", "przyjmuje
+    # zgłoszenia") - to realne ogłoszenie, nawet jeśli LLM nie wyciągnął daty
+    # (typowo: termin w załączniku PDF). Bez (a) i (b) to opis kategorii.
+    has_number = any(ch.isdigit() for ch in pod)
+    has_edu = any(w in low for w in ("wykształcenie", "wyksztalcenie", "studia",
+                                     "dyplom", "tytuł", "licencjat", "magister"))
+    has_verbs = any(w in low for w in ("ogłasza", "ogloszono", "ogłoszono",
+                                       "przyjmuje zgłoszenia", "przyjmowane są",
+                                       "zaprasza do składania", "wszczyna",
+                                       "postępowanie kwalifikacyjne"))
+    return len(pod) >= 60 and (has_number or has_edu or has_verbs)
+
+
 def sanitize_termin(offer: dict, today: date | None = None) -> bool:
     """Czyści termin, jeśli jest nierealistyczny. True = termin wyczyszczono."""
     today = today or date.today()
@@ -167,6 +211,12 @@ def main(argv: list[str] | None = None) -> int:
     removed = storage.prune_archival(is_archival)
     if removed:
         logger.info("Porządki: usunięto %s archiwalnych ofert z bazy", removed)
+
+    # Analogiczne porządki dla stron listujących BIP, które wcześniej trafiły
+    # do bazy jako "oferty" (miały frazę w tytule, ale zero treści).
+    removed_empty = storage.prune_empty(has_content)
+    if removed_empty:
+        logger.info("Porządki: usunięto %s ofert bez treści z bazy", removed_empty)
 
     # Statystyki
     stats = {
@@ -311,6 +361,18 @@ def main(argv: list[str] | None = None) -> int:
                         offer.get("data_publikacji") or "-",
                         offer.get("znaleziono_dnia") or "-",
                         offer.get("podmiot", ""))
+                    continue
+                # Filtr treści: strona listująca BIP ("Nabory - Zarząd/Rada
+                # Nadzorcza") przechodzi filtr LLM, bo w tytule ma właściwą
+                # frazę, ale nie jest ogłoszeniem: brak terminu ORAZ brak
+                # wymagań. Realne ogłoszenie ma co najmniej jedno z tych pól.
+                # Uwaga: rejestr kandydatów (np. Gogolin) ma termin "brak
+                # ograniczenia", ale wymagania zawsze podaje - dlatego OR,
+                # nie AND.
+                if not has_content(offer):
+                    logger.info(
+                        "Pomijam stronę bez treści ogłoszenia (brak terminu i wymagań): %s",
+                        offer.get("url", ""))
                     continue
                 storage.add_offer(offer)
                 stats["offers_added"] += 1

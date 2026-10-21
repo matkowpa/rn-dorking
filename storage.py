@@ -106,6 +106,16 @@ class Storage:
         self.offers = [o for o in self.offers if not is_archival_fn(o)]
         return before - len(self.offers)
 
+    def prune_empty(self, has_content_fn) -> int:
+        """Usuwa z pamięci oferty bez treści (same tytuły stron BIP).
+
+        Analogicznie do prune_archival: wpisy zapisane przed wprowadzeniem
+        filtra treści nie znikną same, a zaśmiecają listę i widok.
+        """
+        before = len(self.offers)
+        self.offers = [o for o in self.offers if has_content_fn(o)]
+        return before - len(self.offers)
+
     def _prune_rejected(self) -> None:
         """Usuwa wpisy odrzuconych URL-i starsze niż REJECT_TTL_DAYS."""
         cutoff = date.today().toordinal() - REJECT_TTL_DAYS
