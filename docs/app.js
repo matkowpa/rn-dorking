@@ -66,8 +66,11 @@ function toggleFav(url) {
 const seenSet = () => loadSet(SEEN_KEY);
 function markSeen(url) { const s = seenSet(); s.add(url); saveSet(SEEN_KEY, s); }
 
-/* status wg spec §3: NOWE (bez terminu), PILNE (≤3 dni), W TOKU, zakończone */
+/* status wg spec §3: NOWE (bez terminu), PILNE (≤3 dni), W TOKU, zakończone
+   Wpis z linkiem do strony-menu (audyt linków) ma pierwszeństwo: nie da się
+   z niego dojść do ogłoszenia, więc nie może wyglądać na realną ofertę. */
 function statusOf(o) {
+  if (o.nieaktualna) return { key: "stale", label: "NIEAKTUALNA" };
   const d = daysUntil(o.termin_skladania_ofert);
   if (d === null) return { key: "new", label: "NOWE" };
   if (d < 0) return { key: "gone", label: "ZAKOŃCZONE" };
@@ -79,12 +82,15 @@ function cardHTML(o) {
   const st = statusOf(o);
   const isFav = favs().has(o.url);
   const seen = seenSet().has(o.url);
-  return `<article class="card${seen ? " seen" : ""}" data-url="${esc(o.url)}">
+  const stale = o.nieaktualna ? " stale-card" : "";
+  return `<article class="card${seen ? " seen" : ""}${stale}" data-url="${esc(o.url)}">
     <button class="fav${isFav ? " on" : ""}" data-fav="${esc(o.url)}"
             title="${isFav ? "Usuń z ulubionych" : "Dodaj do ulubionych"}"
             aria-label="${isFav ? "Usuń z ulubionych" : "Dodaj do ulubionych"}">★</button>
     <span class="status st-${st.key}">${st.label}</span>
     <h3>${esc(o.podmiot) || "<i>(nieokreślony podmiot)</i>"}</h3>
+    ${o.nieaktualna ? `<p class="stale-note">⚠ ${esc(o.nieaktualna_powod) ||
+      "link nie prowadzi do treści ogłoszenia"} — sprawdź źródło ręcznie.</p>` : ""}
     <div class="meta">${badge(o.termin_skladania_ofert)}
       ${o.miejscowosc ? `<span class="badge place">📍 ${esc(o.miejscowosc)}</span>` : ""}
       ${o.data_publikacji ? `<span class="badge gray">📅 ${fmtDate(o.data_publikacji)}</span>` : ""}
@@ -210,10 +216,18 @@ function filtered(offers, state) {
 function sortOffers(list, mode) {
   const byTerm = (a, b) => (b.termin_skladania_ofert || "").localeCompare(a.termin_skladania_ofert || "");
   const byDays = (a, b) => (daysUntil(a.termin_skladania_ofert) ?? 9e9) - (daysUntil(b.termin_skladania_ofert) ?? 9e9);
-  if (mode === "termin-rosnaco") return [...list].sort(byDays);
-  if (mode === "termin-malejaco") return [...list].sort(byTerm);
-  if (mode === "najnowsze") return [...list].sort((a, b) => (b.znaleziono_dnia || "").localeCompare(a.znaleziono_dnia || ""));
-  return list;
+  /* Wpisy z nieaktualnym linkiem zawsze na koniec - niezależnie od sortowania,
+     bo nie da się z nich dojść do ogłoszenia (audyt linków). */
+  const staleLast = (cmp) => (a, b) => {
+    const sa = a.nieaktualna ? 1 : 0, sb = b.nieaktualna ? 1 : 0;
+    if (sa !== sb) return sa - sb;
+    return cmp(a, b);
+  };
+  if (mode === "termin-rosnaco") return [...list].sort(staleLast(byDays));
+  if (mode === "termin-malejaco") return [...list].sort(staleLast(byTerm));
+  if (mode === "najnowsze") return [...list].sort(staleLast(
+    (a, b) => (b.znaleziono_dnia || "").localeCompare(a.znaleziono_dnia || "")));
+  return [...list].sort(staleLast(() => 0));
 }
 
 /* ---------- toolbar (strona główna) ---------- */
@@ -259,7 +273,27 @@ async function viewHome() {
   }
   _allOffers = all;
 
-  const active = all.filter(o => (daysUntil(o.termin_skladania_ofert) ?? -1) >= 0);
+  /* `oferty.json` jest źródłem prawdy: audyt linków (tools/audit_links.py)
+     oznacza tam nieaktualne wpisy, a archiwum dnia jest snapshotem z chwili
+     runu. Scala po URL, żeby flaga trafiła też do wpisów historycznych. */
+  try {
+    const kanon = await fetchJSON("data/oferty.json");
+    const byUrl = new Map(kanon.map(o => [o.url, o]));
+    _allOffers = all.map(o => {
+      const k = byUrl.get(o.url);
+      return k && k.nieaktualna
+        ? { ...o, nieaktualna: true,
+            nieaktualna_powod: k.nieaktualna_powod || "",
+            nieaktualna_data: k.nieaktualna_data || "" }
+        : o;
+    });
+  } catch (e) {
+    /* brak kanonu - działamy na archiwum; flaga po prostu nie zadziała */
+  }
+  all = _allOffers;
+
+  const active = all.filter(o => !o.nieaktualna &&
+    (daysUntil(o.termin_skladania_ofert) ?? -1) >= 0);
   $count.textContent = active.length;
 
   const favCount = favs().size;

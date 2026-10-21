@@ -161,6 +161,12 @@ body {
 .st-urgent { background: rgba(251, 113, 133, .1); color: var(--rose);    border: 1px solid rgba(251, 113, 133, .2); }
 .st-open   { background: rgba(251, 191, 36, .1);  color: var(--amber);   border: 1px solid rgba(251, 191, 36, .2); }
 .st-gone   { background: rgba(100, 116, 139, .1); color: var(--dim);     border: 1px solid rgba(100, 116, 139, .2); }
+/* Wpis z linkiem do strony-menu: nie da się dojść do ogłoszenia (audyt linków) */
+.st-stale  { background: rgba(251, 113, 133, .06); color: var(--dim);    border: 1px dashed rgba(251, 113, 133, .35); }
+.card.stale-card { opacity: .62; }
+.card.stale-card:hover { opacity: .9; }
+.card.stale-card h3 { text-decoration: line-through; text-decoration-thickness: 1px; }
+.stale-note { margin: 6px 0 0; font-size: .82rem; color: var(--rose); opacity: .85; }
 
 /* ---------- ulubione (spec §4) ---------- */
 .fav {

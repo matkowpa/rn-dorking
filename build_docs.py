@@ -108,6 +108,13 @@ def build() -> None:
     _write(os.path.join(DOCS_DATA, "index.json"), days)
     _write(os.path.join(DOCS_DATA, "all.json"), all_offers)
 
+    # Kanon ofert dla frontendu. all.json to suma archiwów dnia (snapshoty),
+    # więc nie zna późniejszych korekt - a audyt linków (tools/audit_links.py)
+    # oznacza nieaktualne wpisy właśnie w oferty.json. Bez tej kopii strona
+    # nie widzi flagi `nieaktualna` i pokazuje menu jako realne ogłoszenie.
+    if os.path.exists("oferty.json"):
+        _write(os.path.join(DOCS_DATA, "oferty.json"), _read("oferty.json"))
+
     # Kalendarz iCalendar z aktywnych terminów (link na stronie głównej)
     ics_path = os.path.join("docs", "nabory.ics")
     os.makedirs("docs", exist_ok=True)

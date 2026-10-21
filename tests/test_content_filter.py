@@ -112,3 +112,19 @@ def test_brak_duplikatow_pdf():
             '<a href="/a.pdf">Ogłoszenie o naborze 2</a>')
     links = cf._attachment_links(html, "https://bip.x.pl/")
     assert links == ["https://bip.x.pl/a.pdf"]
+
+
+def test_build_docs_eksportuje_kanon(tmp_path, monkeypatch):
+    """docs/data/oferty.json musi istnieć - inaczej frontend nie widzi
+    flagi `nieaktualna` z audytu linków."""
+    import json as _json
+    import build_docs
+    monkeypatch.chdir(tmp_path)
+    (tmp_path / "data" / "dnia").mkdir(parents=True)
+    (tmp_path / "docs").mkdir()
+    (tmp_path / "oferty.json").write_text(_json.dumps(
+        [{"url": "https://x.pl/1", "podmiot": "Test", "nieaktualna": True,
+          "nieaktualna_powod": "menu"}]), encoding="utf-8")
+    build_docs.build()
+    out = _json.loads((tmp_path / "docs" / "data" / "oferty.json").read_text(encoding="utf-8"))
+    assert out[0]["nieaktualna"] is True
