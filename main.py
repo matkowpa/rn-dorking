@@ -175,6 +175,8 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
         description="Potok pozyskiwania ogłoszeń do rad nadzorczych")
     parser.add_argument("--check", action="store_true",
                         help="tylko walidacja .env i wyjście")
+    parser.add_argument("--no-bip-search", action="store_true",
+                        help="pomiń Fazę 0c (wyszukiwarka/dział ogłoszeń BIP)")
     parser.add_argument("--dry-run", action="store_true",
                         help="ETAP A + B bez pobierania treści i ekstrakcji")
     parser.add_argument("--limit", type=int, default=30,
@@ -226,6 +228,7 @@ def main(argv: list[str] | None = None) -> int:
         "direct_whitelist": 0,
         "direct_jst": 0,
         "jst_skipped_portal": 0,
+        "direct_jst_search": 0,
         "after_dedup": 0,
         "after_filter": 0,
         "offers_added": 0,
@@ -296,6 +299,37 @@ def main(argv: list[str] | None = None) -> int:
     else:
         # Faza 0 nie zwróciła rozbicia (wyjątek/brak stats w collect)
         stats["direct_whitelist"] = len(direct)
+
+    # FAZA 0c (R2): wyszukiwarka treści / dział ogłoszeń na BIP-ach.
+    # Skan linków po stronie głównej nie działa, bo ogłoszenia leżą w działach
+    # (BIP24: "Ogłoszenia i komunikaty", bip.net.pl: ?c=230). Ten krok pyta
+    # wprost dział ogłoszeń i wyciąga z niego wpisy. Ograniczony limitem
+    # R2_SITES podmiotów na run, żeby nie rozdmuchać czasu CI.
+    if config.R2_ENABLED and not args.no_bip_search:
+        try:
+            import bip_search
+            registry = direct_sources._load_jst_registry()
+            urls_map = direct_sources._load_jst_urls()
+            for entry in registry:
+                real = urls_map.get(entry.get("slug", ""))
+                if real:
+                    entry["url"] = real
+            window = direct_sources.jst_daily_slice(registry, window=config.JST_WINDOW)
+            candidates = [e["url"] for e in window
+                          if e.get("url")
+                          and e["url"].rstrip("/") not in direct_sources.BAD_URLS
+                          and not direct_sources.is_portal_url(e["url"])]
+            found = bip_search.search_many(candidates,
+                                           limit_sites=config.R2_SITES)
+            stats["direct_jst_search"] = len(found)
+            direct = direct + found
+            stats["direct_results"] = len(direct)
+            logger.info("Faza 0c (wyszukiwarka BIP): %s wpisów z %s podmiotów",
+                        len(found), min(config.R2_SITES or len(candidates),
+                                        len(candidates)))
+        except Exception as e:
+            logger.error("Faza 0c (wyszukiwarka BIP) nieudana: %s", e)
+
     all_results = direct + all_results
 
     stats["raw_results"] = len(all_results)

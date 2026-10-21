@@ -68,3 +68,8 @@ RESULTS_PER_DORK = _parse_int("RESULTS_PER_DORK", 20, allowed=[10, 20, 30, 40])
 EXTRA_DORKS = [d.strip() for d in os.getenv("EXTRA_DORKS", "").split("|") if d.strip()]
 # Rozmiar dziennego okna skanu BIP-ów samorządowych (FAZA 0b, direct_sources)
 JST_WINDOW = _parse_int("JST_WINDOW", 100)
+# FAZA 0c (R2): wyszukiwarka treści / dział ogłoszeń na BIP-ach.
+# R2_ENABLED=0 wyłącza krok, R2_SITES ogranicza liczbę podmiotów na run
+# (0 = bez limitu). Domyślnie 40 podmiotów: ~3 requesty każdy, ~2 min.
+R2_ENABLED = os.getenv("R2_ENABLED", "1").strip().lower() not in ("0", "false", "nie")
+R2_SITES = _parse_int("R2_SITES", 40)
