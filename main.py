@@ -294,18 +294,46 @@ def main(argv: list[str] | None = None) -> int:
     # ETAP B: deduplikacja, filtr LLM (z limitem --limit na nowych wynikach)
     dry_run_rows: list[tuple[str, bool, str]] = []
     rejected_log: list[dict] = []  # odrzucone wyniki (URL, tytuł, powód) do logu dnia
+    # Archiwum pre-filtra: KAŻDY surowy wynik z decyzją, jaką dostał w potoku.
+    # Zapisywane do data/dnia/raw-<data>.json - patrz storage.save_raw().
+    raw_log: list[dict] = []
+
+    def _log_raw(result: dict, decision: str, reason: str = "",
+                 offer: dict | None = None) -> None:
+        """Dopisuje wynik do archiwum pre-filtra (jeden wpis na URL)."""
+        entry = {
+            "url": result.get("link", ""),
+            "title": result.get("title", ""),
+            "snippet": (result.get("snippet", "") or "")[:500],
+            "source": result.get("dork", ""),
+            "direct": bool(result.get("_direct")),
+            "decision": decision,
+            "reason": reason,
+        }
+        if offer is not None:
+            entry["offer"] = offer
+        raw_log.append(entry)
+
     new_processed = 0
     for result in all_results:
         is_direct = bool(result.get("_direct"))
         # Kandydaci ze źródeł bezpośrednich nie zużywają limitu --limit
         if not is_direct and new_processed >= args.limit:
-            break
+            # Reszta wyników nie została w ogóle oceniona - też do archiwum,
+            # inaczej nie wiadomo, ile wyników pominął sam limit.
+            _log_raw(result, "limit", f"limit --limit={args.limit} wyczerpany")
+            continue
         link = result.get("link", "")
-        if not link or storage.is_rejected(link):
+        if not link:
+            _log_raw(result, "no_url", "wynik bez adresu URL")
+            continue
+        if storage.is_rejected(link):
             # Odrzucony wcześniej (w oknie TTL) - nie liczy się do limitu
+            _log_raw(result, "cached", "odrzucony w poprzednim runie (TTL)")
             continue
         if not storage.is_new(link):
             # Już widziany - nie liczy się do limitu
+            _log_raw(result, "duplicate", "URL już widziany")
             continue
         if not is_direct:
             new_processed += 1
@@ -332,6 +360,8 @@ def main(argv: list[str] | None = None) -> int:
 
         if args.dry_run:
             dry_run_rows.append((title, czy_nabor, uzasadnienie))
+            _log_raw(result, "accepted" if czy_nabor else "rejected",
+                     "dry-run: " + uzasadnienie)
         elif czy_nabor:
             # ETAP C: pobranie treści + ekstrakcja
             text, pub_date = fetch_content(link)
@@ -342,6 +372,7 @@ def main(argv: list[str] | None = None) -> int:
             offer = extract_fields(text, link)
             if offer is None:
                 stats["extract_errors"] += 1
+                _log_raw(result, "extract_error", "ekstrakcja LLM nie zwróciła pól")
             else:
                 offer["data_publikacji"] = pub_date
                 # Pochodzenie oferty (Faza 0 / dork Brave lub DDG) - do widoku
@@ -361,6 +392,7 @@ def main(argv: list[str] | None = None) -> int:
                         offer.get("data_publikacji") or "-",
                         offer.get("znaleziono_dnia") or "-",
                         offer.get("podmiot", ""))
+                    _log_raw(result, "archival", "oferta archiwalna", offer)
                     continue
                 # Filtr treści: strona listująca BIP ("Nabory - Zarząd/Rada
                 # Nadzorcza") przechodzi filtr LLM, bo w tytule ma właściwą
@@ -373,9 +405,11 @@ def main(argv: list[str] | None = None) -> int:
                     logger.info(
                         "Pomijam stronę bez treści ogłoszenia (brak terminu i wymagań): %s",
                         offer.get("url", ""))
+                    _log_raw(result, "empty", "strona bez treści ogłoszenia", offer)
                     continue
                 storage.add_offer(offer)
                 stats["offers_added"] += 1
+                _log_raw(result, "accepted", "dodano do bazy", offer)
                 if offer.get("termin_skladania_ofert"):
                     stats["offers_with_termin"] += 1
                 logger.info("Nowa oferta: podmiot=%s termin=%s",
@@ -383,6 +417,7 @@ def main(argv: list[str] | None = None) -> int:
         else:
             # Odrzucone przez filtr - zapamiętaj, żeby nie marnować wywołań
             # filtra przy kolejnych runach (chyba że to chwilowy błąd LLM)
+            _log_raw(result, "rejected", uzasadnienie)
             if not uzasadnienie.startswith("błąd filtra"):
                 storage.add_rejected(link)
                 rejected_log.append({
@@ -399,11 +434,17 @@ def main(argv: list[str] | None = None) -> int:
         for title, czy_nabor, uzasadnienie in dry_run_rows:
             print(f"{title[:60]:<60} | {'TAK' if czy_nabor else 'NIE':<5} | {uzasadnienie}")
         logger.info("Tryb dry-run: nie zapisano oferty.json ani stan.json")
+        # Archiwum surowych wyników zapisujemy TAKŻE w dry-runie - po to jest
+        # ten tryb: obejrzeć, co filtr zrobił z każdym wynikiem.
+        if raw_log:
+            storage.save_raw(raw_log)
     else:
         storage.save()
         storage.save_daily(stats)
         if rejected_log:
             storage.save_rejected_log(rejected_log)
+        if raw_log:
+            storage.save_raw(raw_log)
 
     # Statystyki końcowe
     logger.info("=== Statystyki runu ===")
@@ -417,6 +458,12 @@ def main(argv: list[str] | None = None) -> int:
     logger.info("Uzupełnione terminy (re-ekstrakcja): %s", stats["offers_updated"])
     logger.info("Oferty z terminem: %s/%s", stats["offers_with_termin"], stats["offers_added"])
     logger.info("Oferty bez treści (użyto snippetu): %s", stats["content_empty"])
+    if raw_log:
+        decisions: dict[str, int] = {}
+        for entry in raw_log:
+            decisions[entry["decision"]] = decisions.get(entry["decision"], 0) + 1
+        logger.info("Archiwum pre-filtra: %s wyników, decyzje: %s",
+                    len(raw_log), decisions)
     return 0
 
 

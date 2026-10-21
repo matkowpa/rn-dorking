@@ -215,6 +215,49 @@ class Storage:
                     path, len(payload["rejected"]))
         return path
 
+    def save_raw(self, raw: list[dict],
+                 run_date: str | None = None) -> str:
+        """Zapisuje WSZYSTKIE surowe wyniki runu do data/dnia/raw-<data>.json.
+
+        Archiwum pre-filtra: każdy wynik wyszukiwania (Brave/DDG/źródła
+        bezpośrednie) z decyzją, którą dostał w potoku. Bez tego nie da się
+        odpowiedzieć na pytanie "czy filtr wyrzucił coś ważnego" - plik dnia
+        zawiera tylko oferty, które przeszły wszystko, a log odrzuconych
+        tylko te, które odrzucił LLM.
+
+        Każdy wpis: url, title, snippet, source, decision
+        (accepted|duplicate|rejected|cached|archival|empty|no_content|
+        extract_error|limit), reason, offer (tylko przy accepted).
+
+        Drugi run tego samego dnia SCALA wpisy po URL-u - nowsza decyzja
+        wygrywa, nic nie ginie.
+        """
+        run_date = run_date or date.today().isoformat()
+        folder = os.path.join("data", "dnia")
+        path = os.path.join(folder, f"raw-{run_date}.json")
+
+        existing = self._load_json(path) or {}
+        merged: dict[str, dict] = {}
+        for entry in existing.get("raw", []):
+            merged[entry.get("url", "")] = entry
+        for entry in raw:
+            merged[entry.get("url", "")] = entry
+        entries = list(merged.values())
+
+        # Licznik decyzji - szybki podgląd, ile wyników odpadło na którym etapie
+        counts: dict[str, int] = {}
+        for entry in entries:
+            dec = entry.get("decision", "?")
+            counts[dec] = counts.get(dec, 0) + 1
+
+        payload = {"date": run_date, "count": len(entries),
+                   "decisions": counts, "raw": entries}
+        os.makedirs(folder, exist_ok=True)
+        self._atomic_write(path, payload)
+        logger.info("Zapisano surowe wyniki %s (%s wpisów, %s)",
+                    path, len(entries), counts)
+        return path
+
     def save_daily(self, stats: dict, run_date: str | None = None) -> str:
         """Zapisuje oferty znalezione w dniu run_date do data/dnia/<data>.json.
 
