@@ -1,10 +1,11 @@
 {
   "date": "2026-10-21",
-  "count": 53,
+  "count": 55,
   "decisions": {
     "cached": 30,
-    "duplicate": 22,
-    "no_url": 1
+    "duplicate": 23,
+    "no_url": 1,
+    "rejected": 1
   },
   "raw": [
     {
@@ -483,6 +484,24 @@
       "direct": false,
       "decision": "cached",
       "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.pkopte.pl/api/default/56bce1a4-12cc-4bf8-8644-d67faf03786a.pdf",
+      "title": "Pkopte",
+      "snippet": "1. Rada Nadzorcza może w każdym czasie, bez podania przyczyn, zakończyć <strong>postępowanie kwalifikacyjne</strong> bez · wyłonienia kandydatów lub nie powołać wyłonionego kandydata do Zarządu Spółki. 2. Kandydatom nie przysługuje odwołanie od decyzji Rady Nadzorczej podjętych w związku z ...",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Dokument opisuje zasady postępowania kwalifikacyjnego, a nie ogłasza otwarty nabór."
+    },
+    {
+      "url": "https://grodzisk.pl/2020/06/nabor-na-czlonkow-rady-nadzorczej/",
+      "title": "Nabór na członków Rady Nadzorczej – Grodzisk Mazowiecki",
+      "snippet": "<strong>Burmistrz Grodziska Mazowieckiego</strong> ogłasza nabór na członków Rady Nadzorczej Zakładu Gospodarki Komunalnej w Grodzisku Mazowieckim Sp.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
     }
   ]
 }
