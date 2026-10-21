@@ -7,6 +7,7 @@
     "direct_whitelist": 0,
     "direct_jst": 0,
     "jst_skipped_portal": 58,
+    "direct_jst_search": 0,
     "after_dedup": 0,
     "after_filter": 0,
     "offers_added": 0,
