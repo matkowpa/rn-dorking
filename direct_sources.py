@@ -308,7 +308,9 @@ SLUG_NOTICE_HOSTS = (
 )
 _SLUG_PATH_RE = re.compile(
     r"/(?:aktualnosci|artykul|article|ogloszenie|ogloszenia|nabor|nabor-y|"
-    r"news|komunikaty|strony)/[a-z0-9\-\.]{8,}",
+    r"news|komunikaty|strony)/[a-z0-9\-\.]{8,}"
+    # gov.pl i CMS-y bez prefiksu: sam slug ze słowem "ogloszenie"/"nabor"
+    r"|/[a-z0-9\-\.]{0,40}(?:ogloszenie|nabor)[a-z0-9\-\.]{8,}",
     re.IGNORECASE)
 
 
