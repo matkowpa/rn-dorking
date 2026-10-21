@@ -111,16 +111,28 @@ def test_section_links_caps_and_excludes_base():
 
 
 def test_collect_from_page_dedup_and_format():
-    html = ('<a href="/nabor-1">nabór kandydatów do rady nadzorczej</a>'
-            '<a href="/nabor-1">nabór kandydatów do rady nadzorczej (duplikat)</a>'
-            '<a href="/nabor-2019">nabór do rady nadzorczej 2019</a>')
+    html = ('<a href="/7718/nabor-kandydatow-do-rady-nadzorczej">nabór kandydatów do rady nadzorczej</a>'
+            '<a href="/7718/nabor-kandydatow-do-rady-nadzorczej">nabór kandydatów do rady nadzorczej (duplikat)</a>'
+            '<a href="/7719/nabor-do-rady-nadzorczej-2019">nabór do rady nadzorczej 2019</a>')
     seen, results = set(), []
     added = _collect_from_page(_soup(html), "https://bip.example.pl", 10,
                                "BIP JST", seen, results)
     assert added == 1  # duplikat i stary rocznik odrzucone
-    assert results[0]["link"] == "https://bip.example.pl/nabor-1"
+    assert results[0]["link"] == "https://bip.example.pl/7718/nabor-kandydatow-do-rady-nadzorczej"
     assert results[0]["_direct"] is True
     assert results[0]["dork"] == "BIP JST"
+
+
+def test_collect_from_page_odrzuca_menu():
+    """Link do działu ma identyczną kotwicę jak ogłoszenie - ale nim nie jest."""
+    html = ('<a href="/menu-podmiotowe">Nabór kandydatów do rady nadzorczej - menu</a>'
+            '<a href="/ogloszenia">Nabór na członków rady nadzorczej</a>'
+            '<a href="/aktualnosci">Ogłoszenie o naborze do rady nadzorczej</a>')
+    seen, results = set(), []
+    added = _collect_from_page(_soup(html), "https://bip.example.pl", 10,
+                               "BIP JST", seen, results)
+    assert added == 0
+    assert results == []
 
 # --- Filtr portalu gov.pl i rozbicie statystyk (R1 + R4) ---
 
@@ -158,3 +170,47 @@ def test_collect_uzupelnia_rozbicie(monkeypatch, tmp_path):
     stats = {}
     ds.collect(jst_window=10, stats=stats)
     assert stats["direct_whitelist"] == 1
+
+
+def test_looks_like_notice_url_bip24():
+    assert ds.looks_like_notice_url("https://bip.gogolin.pl/18229/ogloszenie-o-naborze")
+
+
+def test_looks_like_notice_url_bip_net():
+    assert ds.looks_like_notice_url("https://gasawa.bip.net.pl/?a=11018")
+
+
+def test_looks_like_notice_url_menu_odrzucone():
+    assert not ds.looks_like_notice_url("https://bip.x.pl/menu-podmiotowe")
+    assert not ds.looks_like_notice_url("https://bip.x.pl/")
+    assert not ds.looks_like_notice_url("https://bip.x.pl/ogloszenia")
+
+
+def test_looks_like_notice_url_techniczne_odrzucone():
+    """Linki techniczne z audytu: porównywarka, wydruk, załącznik."""
+    assert not ds.looks_like_notice_url(
+        "https://bip.piastow.pl/nabor-na-czlonkow-rady/porownaj/3/2")
+    assert not ds.looks_like_notice_url(
+        "https://www.pfron.org.pl/?tx_invshare_pi1%5BprintD%5D=aHR0")
+    assert not ds.looks_like_notice_url(
+        "https://bip.nowydwormaz.pl/plik,5279,kwestionariusz-osobowy.pdf")
+    assert not ds.looks_like_notice_url("https://bip.x.pl/pliki/ogloszenie.pdf")
+
+
+def test_looks_like_notice_url_pusty():
+    assert not ds.looks_like_notice_url("")
+
+
+def test_slug_cms_bez_numeru():
+    """CMS-y bez ID w adresie - wpis rozpoznawany po slugu na znanej domenie."""
+    assert ds.looks_like_notice_url(
+        "https://niepelnosprawni.gov.pl/ogloszenie-uzupelniajace-o-nabor")
+    assert ds.looks_like_notice_url(
+        "https://bip.powiatbytowski.pl/strony/11712.dhtml")
+    assert ds.looks_like_notice_url(
+        "https://bip.skoczow.pl/ogloszenie-o-naborze-kandydata-na-czlonka")
+
+
+def test_nieznana_domena_bez_id_odrzucona():
+    assert not ds.looks_like_notice_url(
+        "https://jakaslosowa-strona.pl/ogloszenie-o-naborze-do-rady")

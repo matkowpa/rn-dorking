@@ -243,15 +243,92 @@ def jst_daily_slice(registry: list, window: int = JST_WINDOW_DEFAULT,
     return registry[start:start + window]
 
 
+def looks_like_notice_url(url: str) -> bool:
+    """Czy URL prowadzi do KONKRETNEGO wpisu ogłoszenia, a nie do menu.
+
+    Audyt bazy (2026-10-21) pokazał, że 47% wpisów to strony nawigacyjne BIP,
+    a 23% to martwe linki. Powód: _collect_from_page brała każdy link z kotwicą
+    "nabór + nadzorcz", a takie kotwice wiszą w menu, sidebary i działach.
+
+    Wpis ogłoszenia ma w adresie identyfikator:
+      - BIP24:      /12345/slug-ogloszenia
+      - bip.net.pl: ?a=12345
+      - bip.org.pl: /artykul/12345/slug
+    Odrzucamy też adresy techniczne (edycja, porównywanie wersji, wydruk,
+    pobieranie pliku) - to nie ogłoszenia.
+    """
+    if not url:
+        return False
+    lowered = url.lower()
+    if _TECH_URL_RE.search(lowered):
+        return False
+    if _NOTICE_ID_RE.search(url):
+        return True
+    # CMS-y bez numeru w adresie: dla znanych domen wystarcza sam slug wpisu
+    host = urlparse(url).netloc.lower()
+    if any(host.endswith(h) for h in SLUG_NOTICE_HOSTS):
+        return bool(_SLUG_PATH_RE.search(url))
+    return False
+
+
+# Parametry/ścieżki techniczne: podgląd wydruku, porównywanie wersji,
+# pobieranie załącznika, koszyk/edycja CMS.
+_TECH_URL_RE = re.compile(
+    r"(?:[?&](?:print|printd|wydruk|porownaj|diff|version|edit|podglad)=)"
+    r"|/porownaj/"
+    r"|/plik,"
+    r"|/files/download"
+    r"|\.pdf(?:\?|$)"
+    r"|\.docx?(?:\?|$)",
+    re.IGNORECASE)
+
+# Identyfikator wpisu w adresie
+_NOTICE_ID_RE = re.compile(
+    r"/\d{2,6}/[a-z0-9\-]{6,}"           # BIP24: /12345/slug
+    r"|[?&]a=\d{3,6}"                    # bip.net.pl: ?a=12345
+    r"|/artykul/[a-z0-9\-]{6,}"          # bip.org.pl: /artykul/ogloszenie-o-naborze
+    r"|/artykul/\d+"                     # bip.org.pl: /artykul/12345
+    r"|/aktualnosci/\d+"                 # strony gmin: /aktualnosci/12345
+    r"|/news/\d+"
+    r"|/news/content/\d+"                # gminy: /news/content/20202
+    r"|/articles?/[a-z0-9\-]{6,}"        # ogolne CMS: /article/nabor-do-bazy
+    r"|/archives/\d+"                    # wordpress: /archives/68605
+    r"|/tenders?/[a-z0-9\-]{6,}"         # portale przetargowe: /tenders/vidkrytyy-vidbir
+    r"|/documents?/detail",              # me.gov.ua: /Documents/Detail/<uuid>
+    re.IGNORECASE)
+
+
+# Domy, w których artykuł = konkretny wpis (a nie dział "aktualności").
+# Dla tych domen sam segment /aktualnosci/<slug> wystarcza za dowód wpisu,
+# nawet gdy CMS nie wstawia numeru.
+SLUG_NOTICE_HOSTS = (
+    "bip.powiatbytowski.pl", "powiatraciborski.pl", "tarnow.pl",
+    "brzeszcze.pl", "piastow.pl", "skoczow.pl", "goldap.pl",
+    "niepelnosprawni.gov.pl", "pion.pl", "parkiet.com", "mazovia.pl",
+)
+_SLUG_PATH_RE = re.compile(
+    r"/(?:aktualnosci|artykul|article|ogloszenie|ogloszenia|nabor|nabor-y|"
+    r"news|komunikaty|strony)/[a-z0-9\-\.]{8,}",
+    re.IGNORECASE)
+
+
 def _collect_from_page(soup, base_url: str, max_links: int, dork_label: str,
                        seen: set, results: list) -> int:
     """Dopisuje kandydatów ze sparsowanej strony do results. Zwraca liczbę
-    dodanych (po deduplikacji i odfiltrowaniu starych roczników)."""
+    dodanych (po deduplikacji i odfiltrowaniu starych roczników).
+
+    Przyjmuje wyłącznie linki prowadzące do konkretnego wpisu (patrz
+    looks_like_notice_url) - menu i dział nie są ogłoszeniem, choć mają
+    identyczną kotwicę.
+    """
     added = 0
     for anchor_text, url in _candidate_links(soup, base_url, max_links):
         if url in seen:
             continue
         seen.add(url)
+        if not looks_like_notice_url(url):
+            logger.debug("[Faza 0] pomijam (nie wpis, %s): %.60s", dork_label, url)
+            continue
         # Kotwica z rocznikiem starszym niż ubiegły = archiwalny nabór
         if heuristics.has_stale_years(anchor_text):
             logger.debug("[Faza 0] pomijam (stare): %.60s", anchor_text)
