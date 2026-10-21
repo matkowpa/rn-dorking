@@ -1,0 +1,488 @@
+{
+  "date": "2026-10-21",
+  "count": 53,
+  "decisions": {
+    "cached": 30,
+    "duplicate": 22,
+    "no_url": 1
+  },
+  "raw": [
+    {
+      "url": "https://www.bip.minsk-maz.pl/index.php?type=4&name=bt80&func=selectsite&value%5B0%5D=mnu21&value%5B1%5D=29",
+      "title": "Nabory - Zarząd/ Rada Nadzorcza",
+      "snippet": "Nabory - Zarząd/ Rada Nadzorcza",
+      "source": "BIP JST",
+      "direct": true,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://bip.piastow.pl/nabor-na-czlonkow-rady-nadzorczej-ppuk-sp-z-o-o-w-piastowie/porownaj/3/2",
+      "title": "Urząd Miejski w Piastowie - BIP » Porównanie dokumentu: Nabór na członków Rady Nadzorczej PPUK Sp. z o.o. w Piastowie (wersja 3 z 2)",
+      "snippet": "11 Listopada 2 w terminie do dnia 25 października 2022 roku do godziny 15.00 w zamkniętej kopercie z dopiskiem „Postępowanie kwalifikacyjne na stanowisko Członka <strong>Rady Nadzorczej</strong> Piastowskiego Przedsiębiorstwa Usług Komunalnych spółka z ograniczoną odpowiedzialnością w Piastowie”.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://miastoryn.pl/ogloszenie-o-naborze-kandydatow-na-czlonkow-rady-nadzorczej-przedsiebiorstwa-gospodarki/",
+      "title": "Ogłoszenie o naborze kandydatów na członków Rady Nadzorczej Przedsiębiorstwa Gospodarki Komunalnej i Mieszkaniowej w Rynie – Miasto i Gmina Ryn",
+      "snippet": "Ogłoszenie o naborze kandydatów na członków Rady Nadzorczej Przedsiębiorstwa Gospodarki Komunalnej i Mieszkaniowej w Rynie sp. z o.o. <strong>Burmistrz Miasta i Gminy Ryn</strong> ogłasza nabór na członków Rady Nadzorczej Przedsiębiorstwa Gospodarki Komunalnej i Mieszkaniowej w Rynie sp.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://bip.grudziadz.pl/artykul/ogloszenie-o-naborze-do-bazy-danych-kandydatow-do-rad-nadzorczych-spolek-w-ktorych-gmina-miasto-2",
+      "title": "Ogłoszenie o naborze do bazy danych kandydatów do Rad Nadzorczych spółek, w których gmina-miasto Grudziądz posiada udziały/akcje, a także ich spółek zależnych | BIP - Urząd Miejski w Grudziądzu",
+      "snippet": "<strong>Prezydent Grudziądza</strong> ogłasza nabór do bazy danych kandydatów do Rad Nadzorczych spółek, w których gmina-miasto Grudziądz posiada udziały/akcje, a także ich spółek zależnych.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://bip.grodzisk.pl/m,525,nabor-kandydatow-na-czlonkow-rady-nadzorczej-komunalnej-wodno-kanalizacyjnej-spolki-z-oo.html",
+      "title": "Nabór kandydatów na członków rady nadzorczej ...",
+      "snippet": "Urząd Miejski w Grodzisku Mazowieckim ul. T. Kościuszki 12a 05-825 Grodzisk Mazowiecki · 22 755 55 34, 22 755 20 16",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://bip.skoczow.pl/ogloszenie-o-naborze-kandydata-na-czlonka-rady-nadzorczej-spolki-gminy-skoczow/porownaj/1/4",
+      "title": "BIP - Urząd Miejski w Skoczowie » Porównanie dokumentu: Ogłoszenie o naborze kandydata na członka rady nadzorczej spółki Gminy Skoczów (wersja 1 z 4)",
+      "snippet": "Burmistrz Skoczowa informuje, że <strong>do dnia 30.04.20015r</strong> . prowadzony jest nabór kandydatów na członka rady nadzorczej spółki dla której Gmina Skoczów jest współwłaścicielem tj.: Fundusz pożyczkowy „Samorządowa Polska” z siedzibą w Skoczowie przy Rynek 1.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://bip.skoczow.pl/ogloszenie-o-naborze-kandydata-na-czlonka-rady-nadzorczej-spolki-gminy-skoczow",
+      "title": "BIP - Urząd Miejski w Skoczowie » Ogłoszenie o naborze kandydata na członka rady nadzorczej spółki Gminy Skoczów",
+      "snippet": "Burmistrz Skoczowa informuje, że <strong>do dnia 30.05.20015r</strong> . prowadzony jest nabór kandydatów na członka rady nadzorczej spółki dla której Gmina Skoczów jest współwłaścicielem tj.: Fundusz pożyczkowy „Samorządowa Polska” z siedzibą w Skoczowie przy Rynek 1.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://bip.mazovia.pl/pl/bip/komunikaty/nabor-kandydatow-do-rady-nadzorczej-mazowieckiej-agencji-energetycznej.html",
+      "title": "Nabór kandydatów do Rady Nadzorczej Mazowieckiej Agencji Energetycznej - Witryna Mazovia.pl",
+      "snippet": "Ogłoszenie nr 1/2023 o naborze kandydatów do Rady Nadzorczej spółki „Mazowiecka Agencja Energetyczna” Sp.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://bip.powiatbytowski.pl/strony/11712.dhtml",
+      "title": "Zarząd Powiatu Bytowskiego ogłasza nabór kandydatów na członków Rady Nadzorczej Szpitala Powiatu Bytowskiego Sp. z o.o. - BIP Starostwo Powiatowe w Bytowie",
+      "snippet": "Biuletyn Informacji Publicznej Starostwo Powiatowe w Bytowie",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://bip.gogolin.pl/10823/ogloszenie-o-naborze-do-rejestru-kandydatow-na-czlonkow-rad-nadzorczych-spolek-prawa-handlowego-z-udzialem-gminy-gogolin.html",
+      "title": "Ogłoszenie o naborze do rejestru kandydatów na członków rad nadzorczych spółek prawa handlowego z udziałem Gminy Gogolin - Urząd Miejski w Gogolinie",
+      "snippet": "Ogłasza nabór do rejestru kandydatów na członków rad nadzorczych spółek prawa handlowego z udziałem Gminy Gogolin",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://bip.gmina-sepolno.pl/8418/nabor-kandydatow-na-czlonkow-rady-nadzorczej-zakladu-transportu-i-uslug-sp-z-oo-w-sepolnie-krajenskim.html",
+      "title": "Nabór kandydatów na członków Rady Nadzorczej Zakładu Transportu i Usług Sp. z o.o. w Sępólnie Krajeńskim - Urząd Miejski w Sępólnie Krajeńskim",
+      "snippet": "<strong>Burmistrz Sępólna Krajeńskiego</strong> ogłasza Nabór kandydatów na członków Rady Nadzorczej Zakładu Transportu i Usług Sp.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://mazovia.pl/pl/bip/komunikaty/nabor-kandydatow-do-rady-nadzorczej-spolki-mazowiecki-szpital-wojewodzki-im-sw-jana-pawla-ii-w-siedlcach.html",
+      "title": "Nabór kandydatów do Rady Nadzorczej spółki Mazowiecki Szpital Wojewódzki im. św. Jana Pawła II w Siedlcach - Witryna Mazovia.pl",
+      "snippet": "Mazowiecki Szpital Wojewódzki im. św. Jana Pawła II w Siedlcach Sp. z o.o. ogłasza nabór do Rady Nadzorczej.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://mazovia.pl/pl/bip/komunikaty/nabor-kandydatow-do-rady-nadzorczej-spolki-warszawska-kolej-dojazdowa.html",
+      "title": "Nabór kandydatów do Rady Nadzorczej spółki Warszawska Kolej Dojazdowa - Witryna Mazovia.pl",
+      "snippet": "BIP · Komunikaty · Komunikaty · Ogłoszenie o naborze do Radny Nadzorczej WKD · Rozmiar: 19.71 KB, DOCX · Zgłoszenie kandydata · Rozmiar: 24.08 KB, DOCX · Podmiot udostępniający: Urząd Marszałkowski Województwa Mazowieckiego w Warszawie · Wytworzył: Teodor Sikora ·",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://bip.prudnik.pl/urzad-miejski/nabor-pracownikow/nabor-kandydatow-na-czlonkow-rad-nadzorczych-spolek-gminnych",
+      "title": "Biuletyn Informacji Publicznej Urząd Miejski w Prudniku - Nabór kandydatów na członków rad nadzorczych spółek gminnych",
+      "snippet": "<strong>Burmistrz Prudnika</strong> informuje, że w wyniku ogłoszonego naboru na członka Rady Nadzorczej Prudnickie Towarzystwo Budownictwa Społecznego wpłynęła 1 oferta. Nie dokonano wyboru kandydata na członka Rady Nadzorczej Spółki. ... <strong>Burmistrz Prudnika</strong> ogłasza nabór na członka Rady Nadzorczej ...",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.facebook.com/narodowyinstytutwolnosci/photos/-nab%C3%B3r-kandydat%C3%B3w-do-rady-nadzorczej-nfo%C5%9Bigwrada-dzia%C5%82alno%C5%9Bci-po%C5%BCytku-publiczneg/991306079858458/",
+      "title": "Narodowy - 🔊 Nabór kandydatów do Rady Nadzorczej ...",
+      "snippet": "Narodowy Instytut Wolności - Centrum Rozwoju Społeczeństwa Obywatelskiego, Warszawa. 24,715 likes · 778 talking about this · 268 were here. NIW-CRSO to agencja wykonawcza, która wspiera rozwój...",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "http://bippksbytow.infocity.pl/?mid=23",
+      "title": "Nabór kandydatów do Rady Nadzorczej 2019",
+      "snippet": "Zarząd Powiatu Bytowskiego ogłasza nabór kandydatów · na członków Rady Nadzorczej",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://www.facebook.com/narodowyinstytutwolnosci/posts/-nab%C3%B3r-kandydat%C3%B3w-do-rady-nadzorczej-nfo%C5%9Bigwrada-dzia%C5%82alno%C5%9Bci-po%C5%BCytku-publiczneg/991306109858455/",
+      "title": "🔊 Nabór kandydatów do Rady Nadzorczej NFOŚiGW ...",
+      "snippet": "Narodowy Instytut Wolności - Centrum Rozwoju Społeczeństwa Obywatelskiego, Warszawa. 22,165 likes · 638 talking about this · 268 were here. NIW-CRSO to agencja wykonawcza, która wspiera rozwój...",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://www.powiatraciborski.pl/main/aktualnosci_powiat/Wybor-kandydatow-do-Rady-Nadzorczej-PKS-sp.-z-o.-o.-w-Raciborzu/idn:5250.html",
+      "title": "Wybór kandydatów do Rady Nadzorczej PKS sp. z o. o. w Raciborzu! - Starostwo Powiatowe w Raciborzu - powiat raciborski",
+      "snippet": "2025-05-07, Środa <strong>Zarząd Powiatu Raciborskiego</strong> ogłasza nabór kandydatów na kadencję 2025-2028 Rady Nadzorczej Przedsiębiorstwa Komunikacji Samochodowej w Raciborzu sp. z o. o. Szczegółowe informacje dotyczące naboru są dostępne w ...",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://www.gov.pl/web/rodzina/ogloszenie-o-naborze-kandydatow-do-rady-nadzorczej-panstwowego-funduszu-rehabilitacji-osob-niepelnosprawnych",
+      "title": "Ogłoszenie o naborze kandydatów do Rady Nadzorczej Państwowego Funduszu Rehabilitacji Osób Niepełnosprawnych - Ministerstwo Rodziny, Pracy i Polityki Społecznej - Portal Gov.pl",
+      "snippet": "1 rozporządzenia Ministra Pracy ... Rady (Dz. U. z 2023 r. poz. 525), <strong>ogłasza nabór kandydatów na członków Rady Nadzorczej Państwowego Funduszu Rehabilitacji Osób Niepełnosprawnych</strong>....",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://www.facebook.com/nowiny/posts/trwa-nab%C3%B3r-kandydat%C3%B3w-do-rady-nadzorczej-pks-w-raciborzu-zobaczcie-jakie-wymagan/1187440173395027/",
+      "title": "Trwa nabór kandydatów do rady nadzorczej PKS w ...",
+      "snippet": "nowiny.pl. 57,842 followers · 5,956 talking about this. Regionalny Portal Informacyjny Nowiny.pl ukazuje się w subregionie zachodnim woj. śląskiego: Racibórz",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://pfrventures.pl/document/2289",
+      "title": "RADA NADZORCZA PFR VENTURES SP. Z O.O. OGŁASZA",
+      "snippet": "Rada Nadzorcza Spółki może w ... całe postępowanie kwalifikacyjne bez wyłonienia · najlepszego kandydata na Członka Zarządu Spółki. Spółka nie ponosi kosztów związanych z uczestnictwem kandydata w ... Kandydatom nie przysługuje odwołanie od decyzji Rady Nadzorczej oraz decyzji ...",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.pwpw.pl/Aktualnosci/2026/03/postepowanie-kwalifikacyjne-na-stanowisko-czlonkow-zarzadu-aktualizacja.html",
+      "title": "Postępowanie kwalifikacyjne na stanowisko Członków Zarządu - aktualizacja",
+      "snippet": "z dnia 16 marca 2026 r., zmienioną uchwałą Nr 54/XI/26 <strong>Rady Nadzorczej PWPW S.A. z dnia 28 marca 2026 r., niniejszym ogłasza wszczęcie postępowania kwalifikacyjnego na stanowiska Członków Zarządu Spółki XI kadencji</strong>.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.pern.pl/wp-content/uploads/2023/10/NAFTOPORT_01_postepowanie-kwalifikacyjne-na-Czlonka-Zarzadu-Prezesa-Zarzadu_ogloszenie.pdf",
+      "title": "Prezesa Zarządu Spółki Przedsi",
+      "snippet": "23. Rada Nadzorcza zastrzega sobie prawo do zakończenia postępowania kwalifikacyjnego",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.gov.pl/attachment/9349f199-d742-4517-b650-4e1cfc8432ac",
+      "title": "Załącznik nr 2 do Uchwały Rady Nadzorczej spółki Polski Holding Nieruchomości SA Nr 33/05/2026 z dnia 27 maja",
+      "snippet": "Ogłoszenie Rady Nadzorczej Spółki Polski Holding Nieruchomości Spółka Akcyjna · z siedzibą w Warszawie · o wszczęciu postępowania kwalifikacyjnego na stanowiska: 1) Członka Zarządu ds. Zarządzania Aktywami Nieruchomościowymi · spółki Polski Holding Nieruchomości Spółka Akcyjna ·",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.pwpw.pl/Aktualnosci/2025/07/ogloszenie-rady-nadzorczej-spolki-polska-wytwornia-papierow-wartosciowych-sa-o-wszczeciu-postepowania-kwalifikacyjnego-na-stanowisko-czlonka-zarzadu-pwpw-sa.html",
+      "title": "Postępowanie kwalifikacyjne na stanowisko Członka Zarządu",
+      "snippet": "Spośród kandydatów spełniających wymogi określone w ogłoszeniu, do drugiego etapu postępowania kwalifikacyjnego zostaną zakwalifikowani kandydaci, którzy w ocenie Rady Nadzorczej Spółki spełniają w najszerszym zakresie wymagania do wykonywania funkcji Członka Zarządu PWPW S.A.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://ruj.uj.edu.pl/entities/publication/2ab87de9-24b2-4965-8bab-dffa00f3bfcb",
+      "title": "Postępowanie kwalifikacyjne przy wyborze członków zarządu w spółkach kapitałowych",
+      "snippet": "W dwóch ostatnich rozdziałach pracy pochylono się nad problemami interpretacyjnymi, które powstają na gruncie aktualnie ob obowiązujących przepisów związanych z postępowaniem kwalifikacyjnym, zarówno w k.s.h. jak i u.z.m.p., ze szczególnym uwzględnieniem wątpliwości związanych z rolą rady nadzorczej oraz zrównaniem umowy spółki z uchwałami organów właścicielskich, co powodować może spory w strukturach organizacyjnych spółki.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.pwpw.pl/Aktualnosci/2026/06/postepowanie-kwalifikacyjne-na-stanowisko-wiceprezesa-zarzadu-ds-finansowych.html",
+      "title": "Postępowanie kwalifikacyjne na stanowisko Wiceprezesa Zarządu PWPW S.A. ds. finansowych",
+      "snippet": "Spośród kandydatów spełniających wymogi określone w ogłoszeniu, do drugiego etapu postępowania kwalifikacyjnego zostaną zakwalifikowani kandydaci, którzy w ocenie Rady Nadzorczej Spółki spełniają w najszerszym zakresie wymagania do wykonywania funkcji Wiceprezesa Zarządu PWPW S.A.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://fabrykabroni.pl/aktualnosci/postepowanie-kwalifikacyjne-2-dwoch-czlonkow-zarzadu",
+      "title": "POSTĘPOWANIE KWALIFIKACYJNE – 2 (DWÓCH) CZŁONKÓW ZARZĄDU",
+      "snippet": "14. <strong>Wstępna weryfikacja zgłoszeń od Kandydatów oraz rozmowy kwalifikacyjne mogą się odbyć na tym samym posiedzeniu Rady Nadzorczej</strong>.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.plk-sa.pl/o-spolce/biuro-prasowe/informacje-prasowe/szczegoly/postepowanie-kwalifikacyjne-na-stanowisko-w-zarzadzie-spolki-2-3177",
+      "title": "Postępowanie kwalifikacyjne na stanowisko w Zarządzie Spółki - PKP Polskie Linie Kolejowe S.A.",
+      "snippet": "Rada Nadzorcza spółki PKP Polskie Linie Kolejowe S.A. z siedzibą w Warszawieogłasza o wszczęciu postępowania kwalifikacyjnego na stanowisko Członka Zarządu – dyrektora ds. finansowych i ekonomicznych",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.jsw.pl/biuro-prasowe/aktualnosci/artykul/postepowanie-kwalifikacyjne-na-stanowiska-czlonkow-zarzadu-jsw",
+      "title": "Postępowanie kwalifikacyjne na stanowiska członków Zarządu JSW - JSW SA",
+      "snippet": "Rada Nadzorcza może w każdym czasie bez podania przyczyn zakończyć <strong>postępowanie kwalifikacyjne</strong> zarówno w stosunku do wszystkich stanowisk jak i do poszczególnego stanowiska bez wyłonienia kandydatów.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://iz.edu.pl/wp-content/uploads/2021/11/Regulamin-postepowania-kwalifikacyjnego.pdf",
+      "title": "1 Załącznik nr 1 do Uchwały Komisji kwalifikacyjnej",
+      "snippet": "1. Komisja Kwalifikacyjna przeprowadza <strong>postępowanie kwalifikacyjne</strong> mające na celu wybór · kandydata na członka Zarządu Spółki na podstawie uchwały Rady Nadzorczej o wszczęciu · postępowania kwalifikacyjnego w przypadku zaistnienia okoliczności uzasadniających jego ·",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.pzu.pl/_fileserver/item/1568256",
+      "title": "1/7 OGŁOSZENIE O POSTĘPOWANIU KWALIFIKACYJNYM",
+      "snippet": "kwalifikacyjnego na członkinie/członków Zarządu PZU SA przyjętych uchwałą Rady Nadzorczej PZU SA nr · URN/15/2026 z dnia 12 marca 2026 roku ogłasza <strong>postępowanie kwalifikacyjne</strong> na Członkinie/Członków",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://siarkopol.pl/przetargi/postepowanie-kwalifikacyjne-na-stanowisko-prezesa-zarzadu-spolki-zaklad-mechaniczny-siarkopol/",
+      "title": "Postępowanie kwalifikacyjne na stanowisko Prezesa Zarządu Spółki Zakład Mechaniczny „Siarkopol” - Siarkopol Tarnobrzeg sp. z o.o.",
+      "snippet": "Rada Nadzorcza Spółki Zakład Mechaniczny „Siarkopol” Sp. z o.o. z siedzibą w Tarnobrzegu ogłasza wszczęcie postępowania kwalifikacyjnego na stanowisko Prezesa Zarządu Spółki Zakład Mechaniczny „Siarkopol” spółka z ograniczoną odpowiedzialnością z siedzibą w Tarnobrzegu (dalej: „Spółka”)",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://iz.edu.pl/ogloszenia/postepowanie-kwalifikacyjne-na-stanowisko-prezesa-zarzadu-zd-iz-pib-rudawa-sp-z-o-o-2/",
+      "title": "Postępowanie kwalifikacyjne na stanowisko Prezesa Zarządu ZD IZ PIB Rudawa Sp. z o.o. – Instytut Zootechniki – Państwowy Instytut Badawczy",
+      "snippet": "UCHWAŁA nr 10/2021 Rady Nadzorczej Zakładu Doświadczalnego Instytutu Zootechniki PIB Rudawa Sp. z o.o. z dnia 09 sierpnia 2021 roku w sprawie wszczęcia postępowania kwalifikacyjnego <strong>celem sprawdzenia i oceny kwalifikacji kandydatów oraz wyłonienia najlepszego kandydata na Prezesa Zarządu</strong> ...",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.inforlex.pl/dok/tresc,FOB0000000000002750604,Uchwala-wspolnikow-spolki-z-o-o-w-sprawie-postepowania-kwalifikacyjnego-na-stanowisko-czlonka-zarzadu.html",
+      "title": "Uchwała wspólników spółki z o.o. w sprawie postępowania kwalifikacyjnego na stanowisko członka zarządu - INFORLEX Freemium",
+      "snippet": "Wcześniej taką opcję mogła przewidywać umowa spółki. Obecnie może zostać również określona uchwałą wspólników. Co więcej, po przeprowadzeniu takiego postępowania kwalifikacyjnego członek zarządu jest powoływany przez radę nadzorczą spółki.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://ekoprohut.labedy.pl/pl/archiwum-3/209-ogloszenie-o-postepowaniu-kwalifikacyjnym-na-prezesa-zarzadu-ekoprohut-sp-z-o-o-20-03-2026",
+      "title": "EkoProHut Sp. z o.o. - Ogłoszenie o postępowaniu kwalifikacyjnym na Prezesa Zarządu EkoProHut SP. z o.o.",
+      "snippet": "<strong>Postępowanie kwalifikacyjne</strong> odbywa się w oparciu o Uchwałę nr 16/X/2026 Rady Nadzorczej EkoProHut Sp. z o.o. (dalej również jako „Spółka” o ile kontekst nie wymaga inaczej) z dnia 20.03.2026 r. w sprawie: przeprowadzenia postępowania kwalifikacyjnego na stanowisko Prezesa Zarządu ...",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.cire.pl/artykuly/serwis-informacyjny-cire-24/49102-konkurs-na-czlonka-rady-nadzorczej-pke",
+      "title": "Konkurs na członka Rady Nadzorczej PKE - SERWIS INFORMACYJNY CIRE 24",
+      "snippet": "Konkurs na członka Rady Nadzorczej PKE",
+      "source": "\"konkurs na członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://biznes.pap.pl/wiadomosci/firmy/quantum-software-sa-102026-informacja-o-transakcjach-w-trybie-art-19",
+      "title": "QUANTUM SOFTWARE SA (10/2026) Informacja o transakcjach w trybie art. 19 Rozporządzenia MAR | Biznes PAP",
+      "snippet": "19 Rozporządzenia MAR przez spółkę Quantum Assets sp. z o.o., jako osobę blisko związaną z osobą pełniącą obowiązki zarządcze - Przewodniczącym Rady Nadzorczej Emitenta p. Tomaszem Polończykiem oraz Wiceprzewodniczącym Rady Nadzorczej Emitenta p. Henrykiem Gaertnerem. Treść otrzymanego powiadomienia Spółka przekazuje w załączeniu do niniejszego raportu bieżącego. ... Quantum Assets zaktualizował zaproszenie do składania ofert sprzedaży akcji Quantum Software, zmniejszając liczbę akcji objętych z",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.bankier.pl/wiadomosc/Policja-zatrzymala-zarzad-Aforti-Holding-Grozi-im-25-lat-wiezienia-9214546.html",
+      "title": "Policja zatrzymała zarząd Aforti Holding. Grozi im 25 lat więzienia - Bankier.pl",
+      "snippet": "Sprzedawano także akcje brytyjskiej spółki Aforti PLC pod obietnicę jej debiutu w Londynie, do którego nie doszło. Działalność uwiarygadniano obecnością na giełdzie, sponsoringiem Lecha Poznań (średnio 5,5 mln zł za sezon) oraz Startu Gniezno. W radzie nadzorczej holdingu do lutego 2024 roku zasiadał były prezes GPW Ludwik Sobolewski.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://mazovia.pl/pl/bip/komunikaty/nabor-kandydatow-do-rady-nadzorczej-mazowieckiej-agencji-energetycznej.html",
+      "title": "Nabór kandydatów do Rady Nadzorczej Mazowieckiej Agencji Energetycznej - Witryna Mazovia.pl",
+      "snippet": "Zgłoszenia kandydatów, odrzucone lub pozostawione bez rozpoznania, zostaną komisyjnie zniszczone po upływie trzech miesięcy od dnia zakończenia postępowania kwalifikacyjnego.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "",
+      "title": "",
+      "snippet": "",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\"",
+      "direct": false,
+      "decision": "no_url",
+      "reason": "wynik bez adresu URL"
+    },
+    {
+      "url": "https://slawomirzawislak.pl/prywatnie/zyciorys",
+      "title": "Życiorys - Sławomir Zawiślak - Poseł Naszej Ziemi",
+      "snippet": "Lubelska Szkoła Biznesu – kurs dla kandydatów na członków Rad Nadzorczych",
+      "source": "\"kandydatów na członków rad nadzorczych\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://pl.wikipedia.org/wiki/Jacek_Kitli%C5%84ski",
+      "title": "Jacek Kitliński – Wikipedia, wolna encyklopedia",
+      "snippet": "Ukończył również studia podyplomowe ... wolności człowieka organizowane przez Helsińską Fundację Praw Człowieka. Zdał egzamin dla <strong>kandydatów</strong> <strong>na</strong> <strong>członków</strong> <strong>rad</strong> <strong>nadzorczych</strong> w Spółkach Skarbu Państwa....",
+      "source": "\"kandydatów na członków rad nadzorczych\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://pl.jooble.org/praca-nab%C3%B3r-do-rady-nadzorczej",
+      "title": "Praca Nabór do rady nadzorczej (Pilne!) - 2026 - Aktualne oferty pracy - JOOBLE.pl",
+      "snippet": "Rada Nadzorcza S. M. Karłowice we Wrocławiu ogłasza rekrutację na stanowisko Prezesa Zarządu S.M. Karłowice. Firma: Spółdzielnia Mieszkaniowa Karłowice we Wrocławiu, z siedzibą przy ul.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://niepelnosprawni.gov.pl/ogloszenie-uzupelniajace-o-naborze-kandydata-do-rady-nadzorczej-panstwowego-funduszu-rehabilitacji-osob-niepelnosprawnych/",
+      "title": "Ogłoszenie uzupełniające o naborze kandydata do Rady Nadzorczej PFRON - Biuro Pełnomocnika Rządu do Spraw Osób Niepełnosprawnych",
+      "snippet": "1 rozporządzenia Ministra Pracy i Polityki Socjalnej z dnia 26 marca 1998 r. w sprawie szczegółowych zasad i trybu powoływania oraz odwoływania członków <strong>Rady Nadzorczej</strong> Państwowego Funduszu Rehabilitacji Osób Niepełnosprawnych, a także ...",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://www.barciany.pl/asp/nabor-na-czlonka-rady-nadzorczej,84,artykul,1,3425",
+      "title": "Nabór na członka Rady Nadzorczej - Aktualności - Barciany - Gminny Portal Internetowy",
+      "snippet": "<strong>Wójt Gminy Barciany</strong> ogłasza nabór na członka Rady Nadzorczej Zakładu Gospodarki Komunalnej w Barcianach Sp.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://bip.mpo.torun.pl/art/3508/ogloszenie-rady-nadzorczej.html",
+      "title": "Ogłoszenie Rady Nadzorczej - BIP",
+      "snippet": "Rada Nadzorcza Spółki Miejskie Przedsiębiorstwo Oczyszczania Sp. z o.o. w Toruniu z siedzibą przy ul. Grudziądzkiej 159 w Toruniu ogłasza nabór ofert na wyłonienie kandydatów na dwóch członków Zarządu Miejskiego Przedsiębiorstwa Oczyszczania Sp.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://bip.umkrosno.pl/article/nabor-do-bazy-danych-kandydatow-do-rad-nadzorczych-spolek-w-ktorych-gmina-miasto-krosno-posiada-udzialyakcje-10?m=587",
+      "title": "Nabór do bazy danych kandydatów do Rad Nadzorczych spółek, w których Gmina Miasto Krosno posiada udziały/akcje.",
+      "snippet": "Wybory Prezydenta RP - 18 maja 2025 r. ... Wybory Prezydenta RP - 10 maja 2020 r. Wybory Prezydenta RP - 28 czerwca 2020 r. ... <strong>Prezydent Miasta Krosna</strong> ogłasza nabór do bazy danych kandydatów do Rad Nadzorczych spółek, w których Gminy Miasto Krosno posiada udziały/akcje.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://www.pion.pl/aktualnosci/czlonek-rady-nadzorczej-pfron-nabor-uzupelniajacy-potrwa-do-11-wrzesnia/",
+      "title": "Członek Rady Nadzorczej PFRON – nabór uzupełniający potrwa do 11 września – Wielkopolski Portal Informacyjny Osób Niepełnosprawnych",
+      "snippet": "<strong>Pełnomocnik Rządu do Spraw Osób Niepełnosprawnych</strong> ogłasza nabór uzupełniający na członka Rady Nadzorczej Państwowego Funduszu Rehabilitacji Osób Niepełnosprawnych.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://www.powiatwodzislawski.pl/ogloszenie-o-naborze-kandydatow-na-kadencje-2016-2019-do-rady-nadzorczej-pks-sp-z-o-o-w-raciborzu.html",
+      "title": "Ogłoszenie o naborze kandydatów na kadencję 2016 - 2019 do Rady Nadzorczej PKS sp. z o.o. w Raciborzu - Powiat Wodzisławski",
+      "snippet": "<strong>Zarząd Powiatu Raciborskiego</strong> ogłasza nabór kandydatów na członków rady nadzorczej spółki PKS w Raciborzu SP. z o.o. Liczba członków przewidywana do powołania: 3.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.bankier.pl/wiadomosc/ALIOR-BANK-S-A-Zgloszenie-kandydatow-do-Rady-Nadzorczej-Alior-Bank-S-A-9213324.html",
+      "title": "ALIOR BANK S.A.: Zgłoszenie kandydatów do Rady Nadzorczej Alior Bank S.A. - Bankier.pl",
+      "snippet": "GiełdaALIOR BANK S.A.: Zgłoszenie kandydatów do Rady Nadzorczej Alior Bank S.A.",
+      "source": "\"kandydatów do rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.parkiet.com/komunikaty-espi/art45341501-alior-bank-spolka-akcyjna-zgloszenie-kandydatow-do-rady-nadzorczej-alior-bank-s-a",
+      "title": "ALIOR BANK SPÓŁKA AKCYJNA - Zgłoszenie kandydatów do Rady Nadzorczej Alior Bank S.A. - parkiet.com",
+      "snippet": "Aktualizacja: 15.10.2026 17:59 Publikacja: 15.10.2026 17:59 · Submission of candidates to the Supervisory Board of Alior Bank S.A",
+      "source": "\"kandydatów do rady nadzorczej\"",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "http://stara-kamienica.bipgmina.pl/wiadomosci/479/wiadomosc/135479/konkurs_na_czlonkow_rady_nadzorczej",
+      "title": "Biuletyn Informacji Publicznej - Urząd Gminy Stara Kamienica - Praca - Konkursy na stanowisko - Konkurs na członków Rady Nadzorczej",
+      "snippet": "Każdy kandydat zobowiązany jest do złożenia: zgłoszenia, CV, oświadczeń dot. informacji zawartych w pkt. 8, zaświadczenia (kopia) o uprawnieniach <strong>członka rady nadzorczej</strong>, oświadczenie o niekaralności. 3. Zgłoszenia i oświadczenia należy złożyć w formie pisemnej, w zamkniętej ...",
+      "source": "\"konkurs na członków rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    }
+  ]
+}
