@@ -78,3 +78,27 @@ class TestFilename:
 
     def test_pusty_url(self):
         assert dp.deadline_from_filename("") == ""
+
+
+class TestRelatedBlockAndPubDate:
+    def test_daty_z_powiazanych_informacji_odrzucone(self):
+        """BIP-y listują na dole inne artykuły z datami - to nie termin."""
+        text = ("Oferty składać do dnia 11 września 2026 r. O zachowaniu terminu "
+                "decyduje data wpływu. " + "x " * 80 +
+                " Wszystkie aktualności Podziel się Powiązane informacje "
+                "16 października 2026 Centrum Komunikacji 13 października 2026")
+        assert dp.extract_deadline(text, TODAY) == "2026-09-11"
+
+    def test_termin_przed_publikacja_odrzucony(self):
+        text = ("Ogłoszenie z 15 listopada 2026. Oferty składać do "
+                "10 listopada 2026.")
+        assert dp.extract_deadline(text, TODAY, pub_date="2026-11-15") == ""
+
+    def test_termin_po_publikacji_zachowany(self):
+        text = ("Ogłoszenie z 1 listopada 2026. Oferty składać do "
+                "20 listopada 2026.")
+        assert dp.extract_deadline(text, TODAY, pub_date="2026-11-01") == "2026-11-20"
+
+    def test_slowo_terminie_wystarcza(self):
+        text = "w terminie do 11 września 2026 r. Oferty należy przesłać."
+        assert dp.extract_deadline(text, TODAY) == "2026-09-11"
