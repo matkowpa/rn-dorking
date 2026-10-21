@@ -2,8 +2,11 @@
   "date": "2026-10-21",
   "stats": {
     "search_requests": 12,
-    "raw_results": 62,
-    "direct_results": 1,
+    "raw_results": 59,
+    "direct_results": 0,
+    "direct_whitelist": 0,
+    "direct_jst": 0,
+    "jst_skipped_portal": 58,
     "after_dedup": 0,
     "after_filter": 0,
     "offers_added": 0,
