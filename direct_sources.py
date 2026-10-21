@@ -51,6 +51,14 @@ SECTION_LINK_RE = re.compile(
     re.IGNORECASE)
 MAX_SUBPAGES_PER_SOURCE = 2  # maks. podstron-sekcji skanowanych per źródło
 
+# BIP-y samorządowe: strona główna to zwykle "Dane podstawowe" z menu
+# podmiotowym - ogłoszenia o naborach leżą w sekcjach (aktualności, konkursy).
+# Bez pogłębionego skanu rotacja JST dawała 0 kandydatów.
+JST_DEEP_SCAN = True
+JST_MAX_LINKS = 2          # dziennie wystarczą 1-2 ogłoszenia na podmiot
+JST_SECTION_HINTS = ("menu-przedmiotowe", "ogloszen", "ogłoszen", "konkurs",
+                     "nabor", "nabór", "aktualnosci", "aktualności")
+
 # Adresy "nieustalone" w mapowaniu JST (slug gov.pl = przekierowanie do
 # wewnętrznej wyszukiwarki, brak realnej strony BIP).
 BAD_URLS = {"https://www.gov.pl", "http://www.gov.pl", "https://gov.pl"}
@@ -260,10 +268,20 @@ def _collect_from_page(soup, base_url: str, max_links: int, dork_label: str,
 
 
 def _section_links(soup, base_url: str, max_subpages: int) -> list[str]:
-    """Podstrony-sekcje (aktualności / konkursy / relacje / kariera) na TEJ
-    SAMEJ domenie co źródło - warte pogłębionego skanu."""
+    """Podstrony-sekcje warte pogłębionego skanu (NA TEJ SAMEJ domenie).
+
+    Szuka dwóch rzeczy:
+    - sekcji o nazwie sugerującej ogłoszenia (aktualności, konkursy, relacje,
+      kariera) - wspólne dla wszystkich systemów BIP;
+    - menu podmiotowego/przedmiotowego systemu BIP24, które jest jedynym
+      wejściem do działu "Ogłoszenia o naborach" na tych stronach.
+
+    Sekcje z ogłoszeniami mają priorytet nad menu - inaczej limit podstron
+    zjadałby samo menu.
+    """
     base_host = urlparse(base_url).netloc.lower()
-    out: list[str] = []
+    priority: list[str] = []   # linki z frazą "ogłoszen/nabór/konkurs"
+    fallback: list[str] = []   # menu podmiotowe / przedmiotowe
     for a in soup.find_all("a", href=True):
         href = urljoin(base_url, a["href"].strip())
         if not href.startswith("http"):
@@ -273,19 +291,33 @@ def _section_links(soup, base_url: str, max_subpages: int) -> list[str]:
         if href.rstrip("/") == base_url.rstrip("/"):
             continue
         haystack = f"{href} {a.get_text(' ', strip=True)}".lower()
-        if SECTION_LINK_RE.search(haystack) and href not in out:
-            out.append(href)
-        if len(out) >= max_subpages:
-            break
+        if not SECTION_LINK_RE.search(haystack):
+            if any(h in haystack for h in ("menu-podmiotowe", "menu-przedmiotowe")):
+                if href not in fallback:
+                    fallback.append(href)
+            continue
+        if href not in priority:
+            priority.append(href)
+    out = priority[:max_subpages]
+    if len(out) < max_subpages:
+        out += [u for u in fallback if u not in out][:max_subpages - len(out)]
     return out
 
 
 def _scan_entries(entries: list, dork_label: str, max_links_per_source: int,
                   delay: float, seen: set, results: list,
-                  deep: bool = False) -> None:
+                  deep: bool = False, max_subpages: int = 0) -> None:
     """Skanuje listę źródeł (whitelist lub JST) i dopisuje kandydatów
-    do results (format zgodny z wyszukiwarkami). Gdy deep=True (whitelist),
-    skanuje dodatkowo do MAX_SUBPAGES_PER_SOURCE podstron-sekcji źródła."""
+    do results (format zgodny z wyszukiwarkami). Gdy deep=True, skanuje
+    dodatkowo podstrony-sekcje źródła (max_subpages, domyślnie
+    MAX_SUBPAGES_PER_SOURCE).
+
+    Dla JST deep=True jest kluczowe: strona główna BIP to "Dane podstawowe"
+    z menu podmiotowym, a ogłoszenia leżą w sekcjach - bez tego skan dawał
+    zero kandydatów (analiza 2026-10-21).
+    """
+    if max_subpages <= 0:
+        max_subpages = MAX_SUBPAGES_PER_SOURCE
     for src in entries:
         logger.info("[Faza 0:%s] %s → %s", dork_label, src["name"], src["url"])
         html = _fetch_html(src["url"])
@@ -299,7 +331,8 @@ def _scan_entries(entries: list, dork_label: str, max_links_per_source: int,
         added = _collect_from_page(soup, src["url"], max_links_per_source,
                                    dork_label, seen, results)
         if deep:
-            for sub_url in _section_links(soup, src["url"], MAX_SUBPAGES_PER_SOURCE):
+            subpages = _section_links(soup, src["url"], max_subpages)
+            for sub_url in subpages:
                 time.sleep(delay)
                 sub_html = _fetch_html(sub_url)
                 if not sub_html:
@@ -361,8 +394,9 @@ def collect(max_links_per_source: int = 3, delay: float = 0.5,
         logger.info("Faza 0b: JST - okno dzienne %s/%s podmiotów (%s do skanu)",
                     len(window), len(registry), len(usable))
         before = len(results)
-        _scan_entries(usable, "BIP JST", max_links_per_source=1,
-                      delay=delay, seen=seen, results=results)
+        _scan_entries(usable, "BIP JST", max_links_per_source=JST_MAX_LINKS,
+                      delay=delay, seen=seen, results=results,
+                      deep=JST_DEEP_SCAN, max_subpages=MAX_SUBPAGES_PER_SOURCE)
         if stats is not None:
             stats["direct_jst"] = len(results) - before
         logger.info("Faza 0b (JST): %s kandydatów", len(results) - before)
