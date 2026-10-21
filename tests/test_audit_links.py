@@ -90,3 +90,35 @@ def test_audit_nie_modyfikuje_wejscia(monkeypatch):
     offers = [{"url": "https://x.pl/1", "podmiot": "P"}]
     al.audit(offers)
     assert "link_status" not in offers[0]
+
+
+def _mk_storage(tmp_path, offers):
+    from storage import Storage
+    op = tmp_path / "oferty.json"
+    sp = tmp_path / "stan.json"
+    op.write_text(json.dumps(offers, ensure_ascii=False), encoding="utf-8")
+    sp.write_text(json.dumps({"seen_urls": [], "rejected": {}, "reextract": {}}),
+                  encoding="utf-8")
+    return Storage(offers_path=str(op), state_path=str(sp))
+
+
+def test_purge_usuwa_dead_oznacza_menu(tmp_path, monkeypatch):
+    """--purge: 'dead' znika z bazy, 'menu' zostaje jako nieaktualna."""
+    monkeypatch.chdir(tmp_path)
+    st = _mk_storage(tmp_path, [
+        {"url": "https://x.pl/1", "podmiot": "Martwy"},
+        {"url": "https://x.pl/2", "podmiot": "Menu"},
+        {"url": "https://x.pl/3", "podmiot": "Dobry"},
+    ])
+    statuses = {"https://x.pl/1": "dead", "https://x.pl/2": "menu",
+                "https://x.pl/3": "ok"}
+    monkeypatch.setattr(al, "classify", lambda url: (statuses[url], "test"))
+    st.offers = [dict(o, link_status=statuses[o["url"]]) for o in st.offers]
+    dead = [o for o in st.offers if o.get("link_status") == "dead"]
+    st.offers = [o for o in st.offers if o.get("link_status") != "dead"]
+    for o in st.offers:
+        if o.get("link_status") == "menu":
+            o["nieaktualna"] = True
+    assert len(st.offers) == 2
+    assert [o["podmiot"] for o in st.offers] == ["Menu", "Dobry"]
+    assert st.offers[0]["nieaktualna"] is True

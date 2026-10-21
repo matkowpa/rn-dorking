@@ -100,6 +100,11 @@ def main() -> int:
     parser.add_argument("--limit", type=int, default=0,
                         help="zbadaj tylko N ofert (0 = wszystkie)")
     parser.add_argument("--json", help="zapisz raport do pliku JSON")
+    parser.add_argument("--purge", action="store_true",
+                        help="usuń oferty 'dead', a 'menu' oznacz jako nieaktualne "
+                             "(wymaga --mark albo --purge; bez --dry-run zapisuje)")
+    parser.add_argument("--dry-run", action="store_true",
+                        help="z --purge: tylko pokaż, co zostałoby usunięte")
     args = parser.parse_args()
 
     logging.basicConfig(level=logging.INFO, format="%(message)s", stream=sys.stdout)
@@ -107,10 +112,10 @@ def main() -> int:
     storage = Storage()
     reports = audit(storage.offers, limit=args.limit)
 
-    if args.mark:
+    if args.mark or args.purge:
         today = date.today().isoformat()
-        marked = 0
         by_url = {r["url"]: r for r in reports}
+        marked = 0
         for offer in storage.offers:
             rep = by_url.get(offer.get("url", ""))
             if not rep:
@@ -118,8 +123,37 @@ def main() -> int:
             offer["link_status"] = rep["status"]
             offer["link_checked"] = today
             marked += 1
-        storage.save()
         logger.info("Oznaczono %s ofert w oferty.json", marked)
+
+    if args.purge:
+        today = date.today().isoformat()
+        dead = [o for o in storage.offers if o.get("link_status") == "dead"]
+        menu = [o for o in storage.offers if o.get("link_status") == "menu"]
+        print("\n=== DO USUNIĘCIA (dead) ===")
+        for offer in dead:
+            print(f"  - {(offer.get('podmiot') or '?')[:40]:<40} | "
+                  f"{offer.get('url', '')[:55]}")
+        print(f"\n=== DO OZNACZENIA (menu -> nieaktualna): {len(menu)} ===")
+        for offer in menu:
+            print(f"  ~ {(offer.get('podmiot') or '?')[:40]:<40} | "
+                  f"{offer.get('url', '')[:55]}")
+
+        if args.dry_run:
+            logger.info("Tryb --dry-run: nic nie zapisano")
+        else:
+            if dead:
+                dead_urls = {o.get("url", "") for o in dead}
+                storage.offers = [o for o in storage.offers
+                                  if o.get("url", "") not in dead_urls]
+            for offer in storage.offers:
+                if offer.get("link_status") == "menu":
+                    offer["nieaktualna"] = True
+                    offer["nieaktualna_powod"] = (
+                        "link prowadzi do strony-menu, nie do ogłoszenia")
+                    offer["nieaktualna_data"] = today
+            storage.save()
+            logger.info("Usunięto %s martwych ofert, oznaczono %s jako nieaktualne",
+                        len(dead), len(menu))
 
     if args.json:
         Path(args.json).write_text(
