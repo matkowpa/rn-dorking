@@ -76,3 +76,39 @@ class TestPruneEmpty:
         st = self._seed(tmp_path, offers)
         assert st.prune_empty(main.has_content) == 1
         assert [o["podmiot"] for o in st.offers] == ["Realne"]
+
+
+# --- Załączniki PDF: priorytet i wykrywanie stron-menu ---
+
+import content_fetcher as cf
+
+
+def test_pdf_maja_priorytet_nad_podstronami():
+    """Ogłoszenie siedzi w PDF - menu BIP nie może zjeść limitu."""
+    html = ('<a href="/aktualnosci">Aktualności naborowe</a>'
+            '<a href="/ogloszenie">Ogłoszenie o naborze</a>'
+            '<a href="/pliki/ogloszenie-nabor.pdf">PDF</a>')
+    links = cf._attachment_links(html, "https://bip.x.pl/strona")
+    assert links[0].endswith(".pdf")
+
+
+def test_limit_zalacznikow_podniesiony():
+    assert cf.MAX_ATTACHMENTS == 4
+
+
+def test_menu_bip_nie_ma_tresci_ogloszenia():
+    menu = ("Rejestr zgłoszeń budowy Oferta inwestycyjna Wzory pełnomocnictw "
+            "Stawki podatkowe Formularze podatkowe Mapa serwisu Statystyka")
+    assert cf._hints_offer_content(menu) is False
+
+
+def test_tresc_z_terminem_rozpoznana():
+    text = "Oferty należy składać do dnia 15 listopada 2026 r. do godz. 12:00."
+    assert cf._hints_offer_content(text) is True
+
+
+def test_brak_duplikatow_pdf():
+    html = ('<a href="/a.pdf">Ogłoszenie o naborze</a>'
+            '<a href="/a.pdf">Ogłoszenie o naborze 2</a>')
+    links = cf._attachment_links(html, "https://bip.x.pl/")
+    assert links == ["https://bip.x.pl/a.pdf"]
