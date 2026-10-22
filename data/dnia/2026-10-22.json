@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-22",
+  "stats": {
+    "search_requests": 12,
+    "raw_results": 33,
+    "direct_results": 0,
+    "direct_whitelist": 0,
+    "direct_jst": 0,
+    "jst_skipped_portal": 45,
+    "direct_jst_search": 0,
+    "after_dedup": 30,
+    "after_filter": 1,
+    "offers_added": 1,
+    "extract_errors": 0,
+    "offers_updated": 0,
+    "offers_with_termin": 0,
+    "content_empty": 0
+  },
+  "offers": [
+    {
+      "podmiot": "gmina-miasto Grudziądz",
+      "miejscowosc": "Grudziądz",
+      "termin_skladania_ofert": "",
+      "stanowisko": "członek rady nadzorczej",
+      "wymagania": "Wykształcenie wyższe (ekonomiczne, prawnicze lub branżowe), spełnienie wymogów art. 10a ust. 5 ustawy o gospodarce komunalnej i art. 19 ust. 1 ustawy o zasadach zarządzania mieniem państwowym, min. 5-letni staż zawodowy w działalności gospodarczej/finansowej, obsłudze prawnej, zarządzaniu lub nadzorze właścicielskim, brak zakazów zajmowania stanowiska.",
+      "podsumowanie": "Prezydent Grudziądza ogłasza nabór do bazy kandydatów do rad nadzorczych spółek, w których gmina-miasto Grudziądz posiada udziały/akcje oraz spółek zależnych. Ogłoszenie określa wymagania i dokumenty, ale nie podaje terminu składania ofert.",
+      "data_publikacji": "",
+      "url": "https://grudziadz.pl/artykul/69/20202/nabor-kandydatow-do-rad-nadzorczych",
+      "znaleziono_dnia": "2026-10-22",
+      "zrodlo": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+    }
+  ]
+}

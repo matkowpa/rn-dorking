@@ -1,0 +1,290 @@
+{
+  "date": "2026-10-22",
+  "count": 31,
+  "decisions": {
+    "no_url": 1,
+    "duplicate": 1,
+    "rejected": 29
+  },
+  "raw": [
+    {
+      "url": "",
+      "title": "",
+      "snippet": "",
+      "source": "\"nabór na członków rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "no_url",
+      "reason": "wynik bez adresu URL"
+    },
+    {
+      "url": "https://grudziadz.pl/artykul/69/20202/nabor-kandydatow-do-rad-nadzorczych",
+      "title": "Nabór kandydatów do Rad Nadzorczych - Grudziądz",
+      "snippet": "20 hours ago · Prezydent Grudziądza ogłasza nabór do bazy danych kandydatów do Rad Nadzorczych spółek, w których gmina-miasto Grudziądz posiada udziały/akcje, a także spółek od nich zależnych.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://www.pzdczestochowa.4bip.pl/index.php?idg=7&id=409&x=1",
+      "title": "Oferty Pracy | BIP - Powiatowy Zarząd Dróg w Częstochowie",
+      "snippet": "2 days ago · Powiatowy Zarząd Dróg w Częstochowie - responsywna strona BIP przygotowana wg standardu WCAG 2.1 - Oferty Pracy",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Strona ofert pracy, nie dotyczy naboru do rady nadzorczej."
+    },
+    {
+      "url": "https://24klodzko.pl/konkurs-na-prezesa-pks-nie-zostal-rozstrzygniety-ogloszony-zostal-nowy/",
+      "title": "Konkurs na prezesa PKS nie został rozstrzygnięty. Ogłoszony ...",
+      "snippet": "2 days ago · Decyzją Rady Nadzorczej konkurs pozostaje nierozstrzygnięty. Rozpisany został nowy konkurs, a chętni mają czas na złożenie swojego CCV do 30 października br. Rozmowa kwalifikacyjna odbędzie się 3 listopada. Szczegóły, wymagania i terminy znaleźć można na BIP spółki i Starostwa Powiatowego w Kłodzku.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Konkurs na prezesa zarządu PKS, nie na członka rady nadzorczej."
+    },
+    {
+      "url": "https://www.instagram.com/p/DeqksNECl90/",
+      "title": "Bolec.Info - portal i gazeta | Wolontariusz Roku 2026 Powiatu ...",
+      "snippet": "3 days ago · Bolec.Info - portal i gazeta | Wolontariusz Roku 2026 Powiatu Bolesławieckiego. Rusza nabór kandydatów Powiat Bolesławiecki przyjmuje zgłoszenia do konkursu... | Instagram bolec.info_boleslawiec • Follow More options Like Comment Share Save 2 likes bolec.info_boleslawiec",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Ogłoszenie dotyczy konkursu na Wolontariusza Roku, a nie rady nadzorczej."
+    },
+    {
+      "url": "https://bip.trzemeszno.pl/zarzadzenie-nr-5002026-burmistrza-trzemeszna-z-dnia-05102026-r-w-sprawie-zmiany-zarzadzenia-nr-2542016-burmistrza-trzemeszna-z-dnia-31-sierpnia-2016-r-w-sprawie-powolania-gminnego-komitetu-ochrony-pamieci-walk-i-meczenstwa-w-trzemesznie.html",
+      "title": "ZARZĄDZENIE NR 500.2026 BURMISTRZA TRZEMESZNA z dnia 05.10. ...",
+      "snippet": "2 days ago · Zarządzenie Nr 417.2026 Burmistrza Trzemeszna z dnia 20 kwietnia 2026 roku w sprawie: ogłoszenia otwartego konkursu ofert na realizację zadań publicznych w zakresie edukacyjnej opieki wychowawczej – „Organizacja wypoczynku letniego dla dzieci i młodzieży z terenu miasta i gminy Trzemeszno w okresie ferii letnich w 2026 roku”.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Zarządzenie dotyczy konkursu ofert i komitetu ochrony pamięci, nie naboru do rady nadzorczej."
+    },
+    {
+      "url": "https://bip.ujazd.com.pl/groups/details/4091/zarzadzenie-nr-1712026-burmistrza-ujazdu-z-dnia-14-pazdziernika-2026-r-w-sprawie-powolania-komisji-przetargowej",
+      "title": "| ZARZĄDZENIE NR 171/2026 BURMISTRZA UJAZDU z dnia 14 ...",
+      "snippet": "1 day ago · ZARZĄDZENIE NR 171/2026 BURMISTRZA UJAZDU z dnia 14 października 2026 r. w sprawie powołania Komisji Przetargowej",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Zarządzenie o powołaniu komisji przetargowej, nie dotyczy naboru do rady nadzorczej."
+    },
+    {
+      "url": "https://nabory.kprm.gov.pl/lodzkie/lodz/starszy-referentstarsza-referentka,169327,v8",
+      "title": "Starszy referent/starsza referentka | Izba Administracji ...",
+      "snippet": "20 hours ago · starszy referent/starsza referentka w Dziale Egzekucji Administracyjnej w Izbie Administracji Skarbowej w Łodzi",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Nabór na stanowisko urzędnicze (referent), nie na członka rady nadzorczej."
+    },
+    {
+      "url": "https://mzk.zagan.pl/ogloszenia/oferty-pracy",
+      "title": "Ogloszenia | MZK Żagań",
+      "snippet": "1 day ago · Zakończenie konkursu Na podstawie uchwały nr 7/2025 Rady Nadzorczej Miejskiego Zakładu Komunikacyjnego Sp. z o.o. w Żaganiu z dnia 26 marca 2025 r. – Rada Nadzorcza postanowiła bez podania przyczyn zakończyć Konkurs na stanowisko Prezesa Zarządu Miejskiego Zakładu Komunikacyjnego Spółki z o.o. w Żaganiu bez wyłonienia kandydata.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Konkurs na Prezesa Zarządu zakończony bez wyłonienia kandydata – stanowisko zarządu."
+    },
+    {
+      "url": "https://www.wnp.pl/energia/zakonczono-poszukiwania-uranu-w-swietokrzyskim-w-planach-budowa-modulowych-reaktorow-jadrowych,1111942.html",
+      "title": "Zakończono poszukiwania uranu w świętokrzyskim. W planach ...",
+      "snippet": "20 hours ago · Przewodniczący rady nadzorczej Grzegorz Kaleta w rozmowie z \"Gazetą Wyborczą\" wyjaśnił jedynie, że dotychczasowa formuła trzyosobowego zarządu się wyczerpała, zapewniając jednocześnie o pełnym zaufaniu do obecnego prezesa Tadeusza Bałchanowskiego.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "frazy dyskwalifikujące: zakończono"
+    },
+    {
+      "url": "https://mamstartup.pl/koniec-ery-piotra-sankowskiego-w-ideas-ncbr-eksperci-obawiaja-sie-o-przyszlosc-ai-w-polsce/",
+      "title": "Koniec ery Piotra Sankowskiego w IDEAS NCBR. Eksperci ...",
+      "snippet": "20 hours ago · W lipcu tego roku rada nadzorcza IDEAS NCBR ogłosiła postępowanie kwalifikacyjne na stanowisko prezesa. Wśród kandydatów znalazł się również prof. Piotr Sankowski, który był pomysłodawcą i pierwszym szefem ośrodka. Sankowski nie został wybrany na kolejną kadencję.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Ogłoszenie dotyczy zakończenia kadencji i procesu wyboru prezesa, a nie otwartego naboru do rady nadzorczej."
+    },
+    {
+      "url": "https://stooq.pl/n/?f=1832107",
+      "title": "Świętokrzyskie - ŚGP Industria zakończyła poszukiwania uranu ...",
+      "snippet": "20 hours ago · 22.10.2026, Kielce (PAP) - Świętokrzyska Grupa Przemysłowa Industria zakończyła poszukiwania uranu w gminie Łagów po badaniach, które nie wykazały stężeń uzasadniających dalszą eksploatację. Spółka deklaruje jednak kontynuację prac nad rozwojem małych reaktorów jądrowych SMR. Prace rozpoznawcze dotyczące złóż polimetalicznych ŚGP Industria rozpoczęła w 2024 r. na ...",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Artykuł o poszukiwaniach uranu, brak treści o naborze do rady nadzorczej."
+    },
+    {
+      "url": "https://biuroprasowe.lot.com/",
+      "title": "Biuro Prasowe PLL LOT",
+      "snippet": "Oct 14, 2026 · Biuro Prasowe PLL LOT Polskie Linie Lotnicze LOT to nowoczesny przewoźnik łączący Europę Środkową i Wschodnią ze światem. W ofercie LOT-u są bezpośrednie rejsy dalekodystansowe do portów w Stanach Zjednoczonych, Kanadzie, Chinach, Japonii i Korei Południowej. Polski przewoźnik konsekwentnie zwiększa częstotliwość i poprawia ofertę na tych kierunkach, wzmacniając tym samym ...",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Strona biura prasowego PLL LOT, brak treści o naborze kandydatów."
+    },
+    {
+      "url": "https://kghm.com/pl",
+      "title": "KGHM Polska Miedź S.A. Strona korporacyjna",
+      "snippet": "20 hours ago · Oficjalna strona Grupy Kapitałowej KGHM. Czołowy producent miedzi i srebra rafinowanego, światowy lider w branży górniczo-hutniczej.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Strona główna korporacyjna KGHM, brak treści dotyczących naboru kandydatów."
+    },
+    {
+      "url": "https://bydgoszcz.wyborcza.pl/bydgoszcz/7,48722,33088784,nowy-prezes-strategicznej-spolki-zbrojeniowej-fachowca-zastapil.html",
+      "title": "Nowy prezes strategicznej spółki zbrojeniowej. \"Ofiarą został ...",
+      "snippet": "1 day ago · 'Świeżym spojrzeniem' uzasadniał Adam Leszkiewicz, szef Polskiej Grupy Zbrojeniowej, dymisję prezesa bydgoskiej Belmy Jarosława Zakrzewskiego. Niespełna miesiąc później rada nadzorcza powołała na to stanowisko Damiana Skałeckiego, dotychczas członka zarządu.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Artykuł o powołaniu prezesa zarządu, nie dotyczy naboru do rady nadzorczej."
+    },
+    {
+      "url": "https://www.facebook.com/lumpiaco/",
+      "title": "ManilaBoy&Co. - FacebookToya SA - akcje i notowania. Cena akcji - Business InsiderKomunikaty - APLISENS (APLISENS) - Giełda - Bankier.plWelcome to Des Moines - FacebookDes Moines Events 2026-2027 | Full Event CalendarAktualności – kzrs.plDes Moines, IA Police Scanner Live Feed | Police, Fire & EMS",
+      "snippet": "5 days ago · ManilaBoy&Co. 34,272 followers · 7,352 talking about this · 13 were here. Filipino style Pop Up Des Moines, IOWA 1 day ago · Prezentujemy aktualne notowania giełdowe Toya SA. Najnowsze ceny akcji oraz historyczne wykresy znajdziesz w serwisie Business Insider. 20 hours ago · APLISENS (APLISENS) - najnowsze wiadomości, aktualne notowania, forum dyskusyjne, komunikaty espi, wyniki finansowe, rekomendacje 4 hours ago · Good morning everyone! We are looking for any small businesses or i",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Ogłoszenie dotyczy wydarzenia, a nie otwartego naboru na radę nadzorczą."
+    },
+    {
+      "url": "https://businessinsider.com.pl/gielda/akcje/profil?id=PLTOYA000011",
+      "title": "Toya SA - akcje i notowania. Cena akcji - Business InsiderKomunikaty - APLISENS (APLISENS) - Giełda - Bankier.plWelcome to Des Moines - FacebookDes Moines Events 2026-2027 | Full Event CalendarAktualności – kzrs.plDes Moines, IA Police Scanner Live Feed | Police, Fire & EMS",
+      "snippet": "1 day ago · Prezentujemy aktualne notowania giełdowe Toya SA. Najnowsze ceny akcji oraz historyczne wykresy znajdziesz w serwisie Business Insider. 20 hours ago · APLISENS (APLISENS) - najnowsze wiadomości, aktualne notowania, forum dyskusyjne, komunikaty espi, wyniki finansowe, rekomendacje 4 hours ago · Good morning everyone! We are looking for any small businesses or individuals who want to participate in our trunk or treat night 10/28/2026 from 5:30pm- 7:30pm. We have a giant parking lot and",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Ogłoszenie dotyczy notowań giełdowych akcji Toya SA, a nie naboru do rady nadzorczej."
+    },
+    {
+      "url": "https://www.facebook.com/mirzakudicphotography/",
+      "title": "Welcome to Des Moines - FacebookDes Moines Events 2026-2027 | Full Event CalendarAktualności – kzrs.plDes Moines, IA Police Scanner Live Feed | Police, Fire & EMS",
+      "snippet": "4 hours ago · Good morning everyone! We are looking for any small businesses or individuals who want to participate in our trunk or treat night 10/28/2026 from 5:30pm- 7:30pm. We have a giant parking lot and would like to get as many people here so we can make the night special for trick or treaters! Please contact Lilea Flower Via Facebook messenger or comment on this post to reserve your spot! 20 hours ago · Browse events in Des Moines, including concerts, shows, sports, comedy, and festivals.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Ogłoszenie dotyczy udziału w wydarzeniu, a nie naboru do rady nadzorczej."
+    },
+    {
+      "url": "https://kzrs.pl/aktualnosci/",
+      "title": "Aktualności – kzrs.pl",
+      "snippet": "1 day ago · Krajowy Związek Rewizyjny Spółdzielni „Samopomoc Chłopska” zgodnie z postanowieniami § 10 statutu oraz uchwałą nr 6/2024 Rady Nadzorczej z dnia 09.04.2024 r. informuje o zwołanych na przełomie kwietnia-maja 2024 r. zebraniach członków. Rejonizacja oraz terminy ujęte zostały w pliku do pobrania.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)"
+    },
+    {
+      "url": "https://www.bankier.pl/gielda/notowania/akcje/APLISENS/komunikaty",
+      "title": "Komunikaty - APLISENS (APLISENS) - Giełda - Bankier.pl",
+      "snippet": "20 hours ago · APLISENS (APLISENS) - najnowsze wiadomości, aktualne notowania, forum dyskusyjne, komunikaty espi, wyniki finansowe, rekomendacje",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Ogólna strona komunikatów giełdowych spółki, nie ogłoszenie naboru."
+    },
+    {
+      "url": "https://americanarenas.com/city/des-moines-events/",
+      "title": "Des Moines Events 2026-2027 | Full Event Calendar",
+      "snippet": "20 hours ago · Browse events in Des Moines, including concerts, shows, sports, comedy, and festivals. Find what’s happening by date, venue, and category.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Kalendarz wydarzeń w Des Moines, brak związku z naborem do rady nadzorczej."
+    },
+    {
+      "url": "https://policescannerfinder.com/iowa/polk/des-moines/",
+      "title": "Des Moines, IA Police Scanner Live Feed | Police, Fire & EMS",
+      "snippet": "20 hours ago · Stream live police, fire, and EMS scanner audio from Des Moines, Iowa. Monitor local police dispatch, fire department operations, emergency medical services, and county emergency communications in real time.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Strona z transmisją radiową policji, nie dotyczy naboru do rady nadzorczej."
+    },
+    {
+      "url": "https://lexlege.pb.pl/traktat-o-funkcjonowaniu-unii-europejskiej/art-235/",
+      "title": "Art. 235. funkcjonow. UE - Głosowanie członków rady ...",
+      "snippet": "Art. 235. Głosowanie członków rady europejskiej 1. W przypadku głosowania każdy członek Rady Europejskiej może otrzymać pełnomocnictwo tylko od jednego z pozostałych członków. Artykuł 16 ustęp 4 Traktatu o Unii Europejskiej i artykuł 238 niniejszego Traktatu mają zastosowanie do Rady Europejskiej, gdy stanowi ona większością kwalifikowaną. Gdy Rada Europejska wypowiada się ...",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Fragment traktatu UE, nie ogłoszenie naboru kandydatów."
+    },
+    {
+      "url": "https://www.gpw.pl/komunikat?geru_id=499134",
+      "title": "Główny Rynek GPW - Raporty Spółek ESPI/EBI",
+      "snippet": "2 days ago · ZGŁOSZENIE KANDYDATA NA CZŁONKA RADY NADZORCZEJ VIGO PHOTONICS SPÓŁKA AKCYJNA (PLVIGOS00015) 20-10-2026 16:04:21 | Bieżący | ESPI | 48/2026",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Raport ESPI o zgłoszeniu kandydata, nie ogłoszenie otwartego naboru."
+    },
+    {
+      "url": "https://lexlege.pb.pl/regulamin-urzedowania-sadow-powszechnych/paragraf-168/",
+      "title": "§ 168. Reg. urzęd.sądów pow - Wskazanie kandydata na kuratora ...",
+      "snippet": "1 day ago · Sprawdź aktualną treść Regulamin urzędowania sądów powszechnych § 168. Wskazanie kandydata na kuratora. Stan prawny 2026, historia zmian i orzecznictwo w SIP LexLege.PB.pl",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "frazy dyskwalifikujące: stan prawny"
+    },
+    {
+      "url": "https://arslege.pl/dokumenty/kategoria/rada-nadzorcza/80/",
+      "title": "Wyszukiwarka aktów prawnych, orzeczeń sądów, wzorów ...",
+      "snippet": "1 day ago · Intuicyjna, prosta i szybka wyszukiwarka umożliwiajaca odnalezienie aktów prawnych, orzeczeń sądów, wzorów dokumentów, kodeksów oraz artykułów",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Strona zawiera wyszukiwarkę aktów prawnych, a nie ogłoszenie o naborze."
+    },
+    {
+      "url": "https://infoplocktv.pl/2025/09/17/prawie-50-osob-chetnych-na-trzy-stanowiska-w-zarzadzie-orlen-s-a/",
+      "title": "Prawie 50 osób chętnych na trzy stanowiska w zarządzie ORLEN ...",
+      "snippet": "2 days ago · Prawie 50 osób zainteresowanych stanowiskiem w zarządzie ORLENU. Do obsadzenie trzy stanowiska. Kto je obejmie zdecyduje Rada Nadzorcza spółki w najbliższym czasie. Są trzy stanowiska w zarządzie spółki - chętnych 46. Zdecydowana większość, bo 37 osób to mężczyźni, jest też 9 kandydatek. Kom",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Dotyczy naboru na stanowiska zarządu, nie rady nadzorczej."
+    },
+    {
+      "url": "https://www.bankier.pl/gielda/notowania/akcje/11BIT/komunikaty",
+      "title": "Komunikaty - 11 BIT STUDIOS (11BIT) - Giełda - Bankier.pl",
+      "snippet": "20 hours ago · 11 BIT STUDIOS (11BIT) - najnowsze wiadomości, aktualne notowania, forum dyskusyjne, komunikaty espi, wyniki finansowe, rekomendacje",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Strona z komunikatami i aktualnościami spółki, nie ogłoszenie naboru do rady nadzorczej."
+    },
+    {
+      "url": "https://www.facebook.com/radiocentrumkalisz/",
+      "title": "radio CENTRUM 106.4 | Kalisz - FacebookCzeladzka Spółdzielnia Mieszkaniowa - FacebookAktualności - krs",
+      "snippet": "16 hours ago · radio CENTRUM 106.4, Kalisz. 30,261 followers · 2,336 talking about this · 232 were here. reklama@rc.fm / 62 503 11 92 dla kierowców: 62 503 10 64 konkurs: 884 00 1064 interwencja@rc.fm / 62 503 11... 3 days ago · Prawo Spółdzielcze zawiadamia, że w dniu 03 września br. podczas posiedzenia Rady Nadzorczej podjęto Uchwałę nr 50/IX/2026 w sprawie powołania w skład Zarządu i wyboru na funkcję Prezesa Zarządu Pana Jacka Kowalczyka. 3 days ago · Nowelizacja wprowadza też skomplikowane ",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "frazy dyskwalifikujące: nowelizacja"
+    },
+    {
+      "url": "https://www.facebook.com/CzeladzkaSM/",
+      "title": "Czeladzka Spółdzielnia Mieszkaniowa - FacebookAktualności - krs",
+      "snippet": "3 days ago · Prawo Spółdzielcze zawiadamia, że w dniu 03 września br. podczas posiedzenia Rady Nadzorczej podjęto Uchwałę nr 50/IX/2026 w sprawie powołania w skład Zarządu i wyboru na funkcję Prezesa Zarządu Pana Jacka Kowalczyka. 3 days ago · Nowelizacja wprowadza też skomplikowane i nadmiarowe mechanizmy w zakresie kadencyjności członków zarządów czy wygaszania mandatów członków rady nadzorczej– w sposób nieznany w polskim porządku prawnym.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "frazy dyskwalifikujące: nowelizacja"
+    },
+    {
+      "url": "https://www.krs.org.pl/aktualnosci",
+      "title": "Aktualności - krs",
+      "snippet": "3 days ago · Nowelizacja wprowadza też skomplikowane i nadmiarowe mechanizmy w zakresie kadencyjności członków zarządów czy wygaszania mandatów członków rady nadzorczej– w sposób nieznany w polskim porządku prawnym.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "frazy dyskwalifikujące: nowelizacja"
+    }
+  ]
+}
