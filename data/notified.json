@@ -22,6 +22,7 @@
     "https://bip.umkrosno.pl/article/nabor-do-bazy-danych-kandydatow-do-rad-nadzorczych-spolek-w-ktorych-gmina-miasto-krosno-posiada-udzialyakcje-10?m=587",
     "https://bipum.konin.eu/api/download/file?id=4541",
     "https://brzeszcze.pl/nabor-do-bazy-kandydatow-na-czlonkow-rad-nadzorczych-spolek-prawa-handlowego,7083",
+    "https://brzeszcze.pl/nabor-do-bazy-kandydatow-na-czlonkow-rad-nadzorczych-spolek-z-udzialem-gminy-brzeszcze-2023-07-17-16-04-34,11943",
     "https://brzeszcze.pl/wpliki/informacja-o-stalym-naborze-do-bazy-kandydatow-na-czlonkow-rad-nadzorczych-spolek-z-udzialem-gminy-brzeszcze_9740_2982.pdf",
     "https://grodzisk.pl/2020/06/nabor-na-czlonkow-rady-nadzorczej/",
     "https://grudziadz.pl/artykul/69/20202/nabor-kandydatow-do-rad-nadzorczych",
@@ -31,6 +32,7 @@
     "https://mazovia.pl/pl/bip/komunikaty/nabor-kandydatow-do-rady-nadzorczej-spolki-mazowiecki-szpital-wojewodzki-im-sw-jana-pawla-ii-w-siedlcach.html",
     "https://mazovia.pl/pl/bip/komunikaty/nabor-kandydatow-do-rady-nadzorczej-spolki-warszawska-kolej-dojazdowa.html",
     "https://mazovia.pl/pl/bip/komunikaty/nabor-kandydatow-do-rady-nadzorczej-spolki-warszawska-kolej-dojazdowa.html?format=pdf&pagespeed=noscript&PageSpeed=noscript",
+    "https://mazovia.pl/pl/bip/komunikaty/ogloszenie-o-naborze-do-rady-nadzorczej-mazowieckiego-szpitala-specjalistycznego-sp-z-oo-z-siedziba-w-radomiu.html",
     "https://miastoryn.pl/ogloszenie-o-naborze-kandydatow-na-czlonkow-rady-nadzorczej-przedsiebiorstwa-gospodarki/",
     "https://niepelnosprawni.gov.pl/aktualnosci/",
     "https://niepelnosprawni.gov.pl/ogloszenie-uzupelniajace-o-naborze-kandydata-do-rady-nadzorczej-panstwowego-funduszu-rehabilitacji-osob-niepelnosprawnych/",
@@ -38,6 +40,7 @@
     "https://pwkczarne.mojbip.pl/75.html?file=300",
     "https://slavuta-mvk.gov.ua/archives/68605",
     "https://sss-ua.org/tenders/vidkrytyy-vidbir-do-nahliadovoi-rady-bo-sss/",
+    "https://www.bankier.pl/gielda/notowania/akcje/ALIOR/komunikaty",
     "https://www.barciany.pl/asp/nabor-na-czlonka-rady-nadzorczej,84,artykul,1,3425",
     "https://www.cire.pl/artykuly/serwis-informacyjny-cire-24/49102-konkurs-na-czlonka-rady-nadzorczej-pke",
     "https://www.facebook.com/narodowyinstytutwolnosci/photos/-nab%C3%B3r-kandydat%C3%B3w-do-rady-nadzorczej-nfo%C5%9Bigwrada-dzia%C5%82alno%C5%9Bci-po%C5%BCytku-publiczneg/991306079858458/",
@@ -56,7 +59,8 @@
     "https://www.tarnow.pl/Miasto/Samorzad/Nabor-do-bazy-kandydatow-na-czlonkow-rad-nadzorczych"
   ],
   "reminders": {
-    "https://www.pion.pl/aktualnosci/czlonek-rady-nadzorczej-pfron-nabor-uzupelniajacy-potrwa-do-11-wrzesnia/": "2026-09-08"
+    "https://www.pion.pl/aktualnosci/czlonek-rady-nadzorczej-pfron-nabor-uzupelniajacy-potrwa-do-11-wrzesnia/": "2026-09-08",
+    "https://mazovia.pl/pl/bip/komunikaty/ogloszenie-o-naborze-do-rady-nadzorczej-mazowieckiego-szpitala-specjalistycznego-sp-z-oo-z-siedziba-w-radomiu.html": "2026-10-24"
   },
   "notified_urls": []
 }

@@ -1,0 +1,113 @@
+{
+  "date": "2026-10-24",
+  "rejected": [
+    {
+      "url": "https://www.tram-silesia.pl/",
+      "title": "Tramwaje Śląskie S.A. – transport publiczny w Górnośląsko ...",
+      "reason": "Ogłoszenie dotyczy działalności spółki, a nie naboru na radę nadzorczą.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+    },
+    {
+      "url": "https://fs.siteor.com/zuromin/files/Downloads/20260109090132/Zarządzenie_nr_268.2026_z_21.10.2026r..pdf?1792572585",
+      "title": "BURMISTRZ GMINY I MIASTA ŻUROMIN Ogłasza konkurs na kandydata ...",
+      "reason": "Ogłoszenie dotyczy naboru na stanowisko Dyrektora Biblioteki, a nie członka rady nadzorczej.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+    },
+    {
+      "url": "https://sokolka.pl/",
+      "title": "Portal informacyjny Gminy Sokółka - Gmina Sokółka",
+      "reason": "Strona główna portalu informacyjnego gminy, nie dotyczy naboru na radę nadzorczą.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+    },
+    {
+      "url": "https://bip.mazovia.pl/pl/bip/zarzad/z-posiedzen-zarzadu/211-posiedzenie-zarzadu-2026-10-19.html",
+      "title": "211. posiedzenie zarządu, 2026-10-19 - Witryna Mazovia.pl",
+      "reason": "Dotyczy protokołu z posiedzenia zarządu, a nie naboru na radę nadzorczą.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+    },
+    {
+      "url": "https://uzdrowisko-swieradow.pl/ogloszenia",
+      "title": "Ogłoszenia - Uzdrowisko Świeradów-Czerniawa",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://echodnia.eu/swietokrzyskie/swietokrzyska-grupa-przemyslowa-industria-zakonczyla-poszukiwania-uranu-na-terenie-gminy-lagow/ar/c3p2-29464003",
+      "title": "Świętokrzyska Grupa Przemysłowa Industria zakończyła ...",
+      "reason": "Artykuł dotyczy zakończenia poszukiwań uranu, a nie naboru na radę nadzorczą.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.wnp.pl/energia/energetyka/sgp-industria-zakonczyla-poszukiwania-uranu-nadal-deklaruje-gotowosc-do-prac-przy-projekcie-smr,1112028.html",
+      "title": "ŚGP Industria zakończyła poszukiwania uranu; nadal deklaruje ...",
+      "reason": "Artykuł dotyczy zakończenia poszukiwań uranu, a nie naboru na radę nadzorczą.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.bankier.pl/gielda/notowania/akcje/IMMOBILE/komunikaty",
+      "title": "Komunikaty - GK IMMOBILE (IMMOBILE) - Giełda - Bankier.pl",
+      "reason": "ESPI - zawiadomienie o nabyciu akcji przez członka RN, nie nabór.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.facebook.com/EvaMendes/",
+      "title": "Eva Mendes - Facebook",
+      "reason": "Ogłoszenie dotyczy osoby publicznej i jej działalności biznesowej, nie naboru do rady nadzorczej.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://phoenix-az.events/comedy/",
+      "title": "Comedy Shows in Phoenix | Tickets & Schedule 2026–2027",
+      "reason": "Ogłoszenie dotyczy sprzedaży biletów na pokazy komediowe, a nie naboru do rady nadzorczej.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.timebie.com/timezone/easternphoenix.php?q=140000",
+      "title": "2:00 PM EST to Phoenix Time Conversion -- TimeBie",
+      "reason": "Wynik dotyczy konwersji stref czasowych, a nie naboru na radę nadzorczą.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://seatgeek.com/cities/phoenix/concerts",
+      "title": "Phoenix Concert Calendar & Tickets 2026-2027 | SeatGeek",
+      "reason": "Ogłoszenie dotyczy sprzedaży biletów na koncerty, a nie naboru do rady nadzorczej.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://concertful.com/area/united-states/az/",
+      "title": "Upcoming Concerts in Arizona 2026 - 2027 - Concertful",
+      "reason": "Ogłoszenie dotyczy koncertów w Arizonie, a nie naboru do rady nadzorczej.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.facebook.com/MCSOaz/",
+      "title": "Maricopa County Sheriff's Office | Phoenix AZ - Facebook",
+      "reason": "Strona Facebookowa departamentu policji, nie zawiera informacji o naborze.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.pb.pl/gielda/vigo-photonics-s-a-zgloszenie-kandydata-na-czlonka-rady-nadzorczej-9215564",
+      "title": "VIGO PHOTONICS S.A.: ZGŁOSZENIE KANDYDATA NA CZŁONKA RADY ...",
+      "reason": "Jest to zgłoszenie konkretnego kandydata, a nie ogłoszenie otwartego naboru.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\""
+    },
+    {
+      "url": "https://kurier-kolejowy.pl/aktualnosci/52068/pkp-cargo-service-szuka-prezesa-i-czlonka-zarzadu--zgloszenia-do-26-pazdziernika.html",
+      "title": "PKP CARGO SERVICE szuka prezesa i członka zarządu. Zgłoszenia ...",
+      "reason": "Dotyczy naboru na stanowiska zarządu (prezesa i członka zarządu), a nie rady nadzorczej.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\""
+    },
+    {
+      "url": "https://www.money.pl/gielda/komunikaty/7342087497851457.html",
+      "title": "Komunikat spółki - ALR Powołanie Członka Rady Nadzorczej ...",
+      "reason": "Ogłoszenie dotyczy powołania już wybranej osoby, a nie otwartego naboru.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\""
+    },
+    {
+      "url": "https://biznes.pap.pl/wiadomosci/przemysl/vigo-photonics-sa-482026-zgloszenie-kandydata-na-czlonka-rady-nadzorczej",
+      "title": "VIGO PHOTONICS SA (48/2026) ZGŁOSZENIE KANDYDATA NA CZŁONKA ...",
+      "reason": "Jest to zgłoszenie kandydata, a nie ogłoszenie o otwartym naborze.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\""
+    }
+  ]
+}

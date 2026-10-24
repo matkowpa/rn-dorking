@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-24",
+  "stats": {
+    "search_requests": 12,
+    "raw_results": 35,
+    "direct_results": 0,
+    "direct_whitelist": 0,
+    "direct_jst": 0,
+    "jst_skipped_portal": 47,
+    "direct_jst_search": 0,
+    "after_dedup": 21,
+    "after_filter": 3,
+    "offers_added": 3,
+    "extract_errors": 0,
+    "offers_updated": 0,
+    "offers_with_termin": 2,
+    "content_empty": 0,
+    "termin_from_parser": 2
+  },
+  "offers": [
+    {
+      "podmiot": "Mazowiecki Szpital Specjalistyczny Sp. z o.o. z siedzibą w Radomiu",
+      "miejscowosc": "Radom",
+      "termin_skladania_ofert": "2026-10-27",
+      "stanowisko": "Członek Rady Nadzorczej",
+      "wymagania": "Kandydat musi posiadać wykształcenie wyższe i co najmniej 5-letni staż pracy. Należy spełnić co najmniej jeden z kryteriów merytorycznych (np. stopień doktora, tytuł prawnika/audytora, MBA, CFA). Wykluczone są osoby zatrudnione w spółce lub pełniące funkcje polityczne.",
+      "podsumowanie": "Mazowiecki Szpital Specjalistyczny w Radomiu ogłasza nabór kandydatów na członków Rady Nadzorczej. Osoby zainteresowane muszą spełnić określone kryteria merytoryczne i złożyć zgłoszenie w terminie siedmiu dni od publikacji ogłoszenia.",
+      "data_publikacji": "",
+      "url": "https://mazovia.pl/pl/bip/komunikaty/ogloszenie-o-naborze-do-rady-nadzorczej-mazowieckiego-szpitala-specjalistycznego-sp-z-oo-z-siedziba-w-radomiu.html",
+      "znaleziono_dnia": "2026-10-24",
+      "zrodlo": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+    },
+    {
+      "podmiot": "Alior Bank S.A.",
+      "miejscowosc": "",
+      "termin_skladania_ofert": "2026-10-15",
+      "stanowisko": "Członek Rady Nadzorczej",
+      "wymagania": "",
+      "podsumowanie": "Ogłoszenie dotyczy zgłoszenia kandydatów na stanowisko członka Rady Nadzorczej Alior Bank S.A.",
+      "data_publikacji": "",
+      "url": "https://www.bankier.pl/gielda/notowania/akcje/ALIOR/komunikaty",
+      "znaleziono_dnia": "2026-10-24",
+      "termin_zrodlo": "parser",
+      "zrodlo": "\"kandydatów do rady nadzorczej\""
+    },
+    {
+      "podmiot": "Gmina Brzeszcze",
+      "miejscowosc": "Brzeszcze",
+      "termin_skladania_ofert": "",
+      "stanowisko": "członek rady nadzorczej (kandydat do bazy kandydatów na członków rad nadzorczych spółek z udziałem Gminy Brzeszcze)",
+      "wymagania": "Wyższe wykształcenie; min. 5 lat zatrudnienia (umowa o pracę, powołanie, wybór, mianowanie, inna umowa lub działalność gospodarcza); spełnianie jednego z wymogów art. 19 ust. 1 lit. a–k ustawy o zarządzaniu mieniem państwowym; brak zakazów pełnienia funkcji we władzach spółek.",
+      "podsumowanie": "Gmina Brzeszcze prowadzi stały nabór do bazy kandydatów na członków rad nadzorczych spółek, w których wspólnikiem jest gmina. Termin składania kwestionariuszy jest nieograniczony.",
+      "data_publikacji": "",
+      "url": "https://brzeszcze.pl/nabor-do-bazy-kandydatow-na-czlonkow-rad-nadzorczych-spolek-z-udzialem-gminy-brzeszcze-2023-07-17-16-04-34,11943",
+      "znaleziono_dnia": "2026-10-24",
+      "termin_zrodlo": "parser",
+      "zrodlo": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\""
+    }
+  ]
+}
