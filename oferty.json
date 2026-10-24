@@ -103,6 +103,19 @@
     "nieaktualna_data": "2026-10-21"
   },
   {
+    "podmiot": "Gmina Brzeszcze",
+    "miejscowosc": "Brzeszcze",
+    "termin_skladania_ofert": "2023-07-17",
+    "stanowisko": "członek rady nadzorczej",
+    "wymagania": "wykształcenie wyższe; min. 5-letni okres zatrudnienia (umowa o pracę, powołanie, wybór, mianowanie, spółdzielcza umowa o pracę, usługi lub działalność gospodarcza); spełnianie jednego z wymogów z art. 19 ust. 1 lit. a-k ustawy o zasadach zarządzania mieniem państwowym; brak ograniczeń i zakazów pełnienia funkcji we władzach spółek.",
+    "podsumowanie": "Gmina Brzeszcze prowadzi stały nabór do bazy kandydatów na członków rad nadzorczych spółek z udziałem Gminy. Termin składania kwestionariuszy jest nieograniczony, a zgłoszenia należy dostarczyć do Urzędu Gminy w Brzeszczach.",
+    "data_publikacji": "",
+    "url": "https://brzeszcze.pl/nabor-do-bazy-kandydatow-na-czlonkow-rad-nadzorczych-spolek-z-udzialem-gminy-brzeszcze-2023-07-17-16-04-34,11943",
+    "znaleziono_dnia": "2026-10-24",
+    "termin_zrodlo": "parser",
+    "zrodlo": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\""
+  },
+  {
     "podmiot": "Gmina-Miasto Grudziądz (spółki z udziałem gminy oraz ich spółki zależne)",
     "miejscowosc": "Grudziądz",
     "termin_skladania_ofert": "",
@@ -371,18 +384,5 @@
     "url": "https://grudziadz.pl/artykul/69/20202/nabor-kandydatow-do-rad-nadzorczych",
     "znaleziono_dnia": "2026-10-22",
     "zrodlo": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
-  },
-  {
-    "podmiot": "Gmina Brzeszcze",
-    "miejscowosc": "Brzeszcze",
-    "termin_skladania_ofert": "",
-    "stanowisko": "członek rady nadzorczej (kandydat do bazy kandydatów na członków rad nadzorczych spółek z udziałem Gminy Brzeszcze)",
-    "wymagania": "Wyższe wykształcenie; min. 5 lat zatrudnienia (umowa o pracę, powołanie, wybór, mianowanie, inna umowa lub działalność gospodarcza); spełnianie jednego z wymogów art. 19 ust. 1 lit. a–k ustawy o zarządzaniu mieniem państwowym; brak zakazów pełnienia funkcji we władzach spółek.",
-    "podsumowanie": "Gmina Brzeszcze prowadzi stały nabór do bazy kandydatów na członków rad nadzorczych spółek, w których wspólnikiem jest gmina. Termin składania kwestionariuszy jest nieograniczony.",
-    "data_publikacji": "",
-    "url": "https://brzeszcze.pl/nabor-do-bazy-kandydatow-na-czlonkow-rad-nadzorczych-spolek-z-udzialem-gminy-brzeszcze-2023-07-17-16-04-34,11943",
-    "znaleziono_dnia": "2026-10-24",
-    "termin_zrodlo": "parser",
-    "zrodlo": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\""
   }
 ]

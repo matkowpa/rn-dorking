@@ -1,17 +1,17 @@
 {
   "date": "2026-10-24",
-  "count": 31,
+  "count": 40,
   "decisions": {
-    "duplicate": 2,
-    "accepted": 2,
-    "rejected": 17,
-    "cached": 10
+    "duplicate": 4,
+    "cached": 22,
+    "rejected": 13,
+    "no_url": 1
   },
   "raw": [
     {
       "url": "https://grudziadz.pl/artykul/69/20202/nabor-kandydatow-do-rad-nadzorczych",
       "title": "Nabór kandydatów do Rad Nadzorczych - Grudziądz",
-      "snippet": "9 hours ago · Prezydent Grudziądza ogłasza nabór do bazy danych kandydatów do Rad Nadzorczych spółek, w których gmina-miasto Grudziądz posiada udziały/akcje, a także spółek od nich zależnych.",
+      "snippet": "19 hours ago · Prezydent Grudziądza ogłasza nabór do bazy danych kandydatów do Rad Nadzorczych spółek, w których gmina-miasto Grudziądz posiada udziały/akcje, a także spółek od nich zależnych. Przedstawiamy informacje dla kandydatów: Wymagania niezbędne: - wykształcenie wyższe: ekonomiczne, prawnicze lub specjalistyczne branżowe,",
       "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
       "direct": false,
       "decision": "duplicate",
@@ -23,20 +23,8 @@
       "snippet": "3 days ago · Ogłoszenie nr 2/2026 o naborze kandydata na członków do Rady Nadzorczej spółki Mazowiecki Szpital Specjalistyczny Sp. z o.o. z siedzibą w Radomiu z dnia 20 października 2026 r.",
       "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
       "direct": false,
-      "decision": "accepted",
-      "reason": "dodano do bazy",
-      "offer": {
-        "podmiot": "Mazowiecki Szpital Specjalistyczny Sp. z o.o. z siedzibą w Radomiu",
-        "miejscowosc": "Radom",
-        "termin_skladania_ofert": "2026-10-27",
-        "stanowisko": "Członek Rady Nadzorczej",
-        "wymagania": "Kandydat musi posiadać wykształcenie wyższe i co najmniej 5-letni staż pracy. Należy spełnić co najmniej jeden z kryteriów merytorycznych (np. stopień doktora, tytuł prawnika/audytora, MBA, CFA). Wykluczone są osoby zatrudnione w spółce lub pełniące funkcje polityczne.",
-        "podsumowanie": "Mazowiecki Szpital Specjalistyczny w Radomiu ogłasza nabór kandydatów na członków Rady Nadzorczej. Osoby zainteresowane muszą spełnić określone kryteria merytoryczne i złożyć zgłoszenie w terminie siedmiu dni od publikacji ogłoszenia.",
-        "data_publikacji": "",
-        "url": "https://mazovia.pl/pl/bip/komunikaty/ogloszenie-o-naborze-do-rady-nadzorczej-mazowieckiego-szpitala-specjalistycznego-sp-z-oo-z-siedziba-w-radomiu.html",
-        "znaleziono_dnia": "2026-10-24",
-        "zrodlo": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
-      }
+      "decision": "duplicate",
+      "reason": "URL już widziany"
     },
     {
       "url": "https://www.tram-silesia.pl/",
@@ -44,8 +32,8 @@
       "snippet": "1 day ago · Tramwaje Śląskie S.A. to operator transportu publicznego działający w 13 gminach Górnośląsko-Zagłębiowskiej Metropolii. Zapewniamy bezpieczny przewóz pasażerów i modernizację infrastruktury tramwajowej.",
       "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Ogłoszenie dotyczy działalności spółki, a nie naboru na radę nadzorczą."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://fs.siteor.com/zuromin/files/Downloads/20260109090132/Zarządzenie_nr_268.2026_z_21.10.2026r..pdf?1792572585",
@@ -53,8 +41,8 @@
       "snippet": "3 days ago · Wymagane dokumenty aplikacyjne należy składać w zamkniętej kopercie ze wskazaniem danych: imię i nazwisko osoby ubiegającej się o zatrudnienie wraz z dopiskiem: „Dotyczy naboru na stanowisko Dyrektora/Dyrektorki Powiatowo - Miejskiej Biblioteki Publicznej w Żurominie” w terminie do dnia 10 listopada 2026 r. do godz. 14.00 osobiście w siedzibie Urzędu Gminy i Miasta w Żurominie ...",
       "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Ogłoszenie dotyczy naboru na stanowisko Dyrektora Biblioteki, a nie członka rady nadzorczej."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://bip.trzemeszno.pl/zarzadzenie-nr-5002026-burmistrza-trzemeszna-z-dnia-05102026-r-w-sprawie-zmiany-zarzadzenia-nr-2542016-burmistrza-trzemeszna-z-dnia-31-sierpnia-2016-r-w-sprawie-powolania-gminnego-komitetu-ochrony-pamieci-walk-i-meczenstwa-w-trzemesznie.html",
@@ -71,8 +59,8 @@
       "snippet": "1 day ago · Oficjalny serwis internetowy Gminy Sokółka - aktualne wydarzenia, wiadomości, informacje praktyczne, turystyka, biznes i wiele innych.",
       "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Strona główna portalu informacyjnego gminy, nie dotyczy naboru na radę nadzorczą."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://bip.mazovia.pl/pl/bip/zarzad/z-posiedzen-zarzadu/211-posiedzenie-zarzadu-2026-10-19.html",
@@ -80,8 +68,8 @@
       "snippet": "5 days ago · W poniedziałek, 19 października 2026 r., odbyło się 211. posiedzenie Zarządu Województwa Mazowieckiego.",
       "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Dotyczy protokołu z posiedzenia zarządu, a nie naboru na radę nadzorczą."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://mamstartup.pl/koniec-ery-piotra-sankowskiego-w-ideas-ncbr-eksperci-obawiaja-sie-o-przyszlosc-ai-w-polsce/",
@@ -94,12 +82,12 @@
     },
     {
       "url": "https://uzdrowisko-swieradow.pl/ogloszenia",
-      "title": "Ogłoszenia - Uzdrowisko Świeradów-Czerniawa",
-      "snippet": "3 days ago · 09.05.2023r. Załącznik nr 1 do Uchwały 10/IX/2023 Rady Nadzorczej Uzdrowisko Świeradów-Czerniawa Sp. z o.o. – Grupa PGU z dnia 09.05.2023 r. Rada Nadzorcza Spółki Uzdrowisko Świeradów-Czerniawa Sp. z o.o. – Grupa PGU ogłasza wszczęcie postępowania kwalifikacyjnego na stanowisko: Wicepezesa Zarządu",
+      "title": "Ogłoszenia - Uzdrowisko Świeradów-CzerniawaKoniec ery Piotra Sankowskiego w IDEAS NCBR. Eksperci ...Biznes - Rynek KolejowyŚwiętokrzyska Grupa Przemysłowa Industria zakończyła ...KGHM Polska Miedź S.A. Strona korporacyjnaNowy prezes strategicznej spółki zbrojeniowej. \"Ofiarą został ...",
+      "snippet": "3 days ago · 09.05.2023r. Załącznik nr 1 do Uchwały 10/IX/2023 Rady Nadzorczej Uzdrowisko Świeradów-Czerniawa Sp. z o.o. – Grupa PGU z dnia 09.05.2023 r. Rada Nadzorcza Spółki Uzdrowisko Świeradów-Czerniawa Sp. z o.o. – Grupa PGU ogłasza wszczęcie postępowania kwalifikacyjnego na stanowisko: Wicepezesa Zarządu 2 days ago · W lipcu tego roku rada nadzorcza IDEAS NCBR ogłosiła postępowanie kwalifikacyjne na stanowisko prezesa. Wśród kandydatów znalazł się również prof. Piotr Sankowski, który był p",
       "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)"
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://echodnia.eu/swietokrzyskie/swietokrzyska-grupa-przemyslowa-industria-zakonczyla-poszukiwania-uranu-na-terenie-gminy-lagow/ar/c3p2-29464003",
@@ -107,8 +95,8 @@
       "snippet": "1 day ago · Świętokrzyska Grupa Przemysłowa Industria zakończyła poszukiwania uranu w gminie Łagów po badaniach, które nie wykazały stężeń uzasadniających dalszą eksploatację. Spółka deklaruje jednak kontynuację prac nad rozwojem małych reaktorów jądrowych SMR.",
       "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Artykuł dotyczy zakończenia poszukiwań uranu, a nie naboru na radę nadzorczą."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://biuroprasowe.lot.com/",
@@ -149,20 +137,20 @@
     {
       "url": "https://www.bankier.pl/gielda/notowania/akcje/IMMOBILE/komunikaty",
       "title": "Komunikaty - GK IMMOBILE (IMMOBILE) - Giełda - Bankier.pl",
-      "snippet": "1 day ago · Ważny espi 07.07.2026 15:20 Zawiadomienie Członka Rady Nadzorczej i osoby blisko związanej o nabyciu akcji Emitenta espi",
+      "snippet": "1 day ago · GK IMMOBILE (IMMOBILE) - najnowsze wiadomości, aktualne notowania, forum dyskusyjne, komunikaty espi, wyniki finansowe, rekomendacje",
       "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "ESPI - zawiadomienie o nabyciu akcji przez członka RN, nie nabór."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://www.facebook.com/EvaMendes/",
-      "title": "Eva Mendes - Facebook",
-      "snippet": "1 day ago · Eva Mendes. 5,450,085 followers · 140,439 talking about this. Co-owner of this innovative female owned business that created the “smart” sponge. @skurastyle",
+      "title": "Eva Mendes - Facebook2:00 PM EST to Phoenix Time Conversion -- TimeBieAktualności – kzrs.plCalendar - PHOENIX magazineEvents & Activities To Do In Phoenix Tomorrow | AllEvents",
+      "snippet": "2 days ago · Eva Mendes. 5,450,085 followers · 140,439 talking about this. Co-owner of this innovative female owned business that created the “smart” sponge. @skurastyle 2 days ago · Conversion Between 2:00 PM (14:00) EST and Phoenix Time, 2:00 PM (14:00) Phoenix Time to Eastern Standard Time Conversion 3 days ago · Na członka rady nadzorczej została powołana osoba, która jest zatrudniona w innym podmiocie na podstawie umowy o pracę. Czy okoliczność ta zwalnia ją z ubezpieczeń w ZUS jako członka",
       "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Ogłoszenie dotyczy osoby publicznej i jej działalności biznesowej, nie naboru do rady nadzorczej."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://phoenix-az.events/comedy/",
@@ -179,8 +167,8 @@
       "snippet": "2 days ago · Conversion Between 2:00 PM (14:00) EST and Phoenix Time, 2:00 PM (14:00) Phoenix Time to Eastern Standard Time Conversion",
       "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Wynik dotyczy konwersji stref czasowych, a nie naboru na radę nadzorczą."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://seatgeek.com/cities/phoenix/concerts",
@@ -212,11 +200,11 @@
     {
       "url": "https://www.pb.pl/gielda/vigo-photonics-s-a-zgloszenie-kandydata-na-czlonka-rady-nadzorczej-9215564",
       "title": "VIGO PHOTONICS S.A.: ZGŁOSZENIE KANDYDATA NA CZŁONKA RADY ...",
-      "snippet": "4 days ago · opublikowano: 2026-10-20 16:04 Spis treści: 1. RAPORT BIEŻĄCY 2. METADANE ESAP 3. MESSAGE (ENGLISH VERSION) 4. INFORMACJE O PODMIOCIE 5. PODPISY OSÓB REPREZENTUJĄCYCH SPÓŁKĘ Spis załączników: Zgłoszenie kandydatury.pdf Życiorys.pdf Zgoda na kandydowanie.pdf Oświadczenia kandydata na członka Rady Nadzorczej.pdf",
+      "snippet": "4 days ago · Raport bieżący numer 48 z dnia 20 października 2026 roku. Zarząd emitenta VIGO Photonics S.A. z siedzibą w Ożarowie Mazowieckim (dalej jako: „Emitent”) informuje, że w dniu 20 października 2026 roku wpłynęło do Emitenta od funduszy będących akcjonariuszami Emitenta, zarządzanych ...",
       "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Jest to zgłoszenie konkretnego kandydata, a nie ogłoszenie otwartego naboru."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://brzeszcze.pl/nabor-do-bazy-kandydatow-na-czlonkow-rad-nadzorczych-spolek-z-udzialem-gminy-brzeszcze-2023-07-17-16-04-34,11943",
@@ -248,11 +236,11 @@
     {
       "url": "https://biznes.pap.pl/wiadomosci/przemysl/vigo-photonics-sa-482026-zgloszenie-kandydata-na-czlonka-rady-nadzorczej",
       "title": "VIGO PHOTONICS SA (48/2026) ZGŁOSZENIE KANDYDATA NA CZŁONKA ...",
-      "snippet": "4 days ago · Zarząd emitenta VIGO Photonics S.A. z siedzibą w Ożarowie Mazowieckim (dalej jako: \"Emitent\") informuje, że w dniu 20 października 2026 roku wpłynęło do Emitenta od funduszy będących...",
+      "snippet": "4 days ago · Podstawa prawna: Art. 56 ust. 1 pkt 2 Ustawy o ofercie - informacje bieżące i okresowe ZGŁOSZENIE KANDYDATA NA CZŁONKA RADY NADZORCZEJ Raport bieżący numer 48 z dnia 20 października 2026 roku.",
       "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Jest to zgłoszenie kandydata, a nie ogłoszenie o otwartym naborze."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://www.gpw.pl/komunikat?geru_id=499134",
@@ -265,8 +253,8 @@
     },
     {
       "url": "https://www.facebook.com/CzeladzkaSM/",
-      "title": "Czeladzka Spółdzielnia Mieszkaniowa - Facebookradio CENTRUM 106.4 | Kalisz - FacebookAktualności - krs",
-      "snippet": "5 days ago · Prawo Spółdzielcze zawiadamia, że w dniu 03 września br. podczas posiedzenia Rady Nadzorczej podjęto Uchwałę nr 50/IX/2026 w sprawie powołania w skład Zarządu i wyboru na funkcję Prezesa Zarządu Pana Jacka Kowalczyka. 1 day ago · 📻 radioCENTRUM_106.4 ogłasza nabór kandydatów do pracy w redakcji radiowej w Kaliszu. 5 days ago · Nowelizacja wprowadza też skomplikowane i nadmiarowe mechanizmy w zakresie kadencyjności członków zarządów czy wygaszania mandatów członków rady nadzorczej– w",
+      "title": "Czeladzka Spółdzielnia Mieszkaniowa - FacebookAktualności - krsradio CENTRUM 106.4 | Kalisz - FacebookStrona główna - ngo.pl",
+      "snippet": "5 days ago · W imieniu Rady Nadzorczej Czeladzkiej Spółdzielni Mieszkaniowej Zofia Malczewska Czeladzka Spółdzielnia Mieszkaniowa w Czeladzi informuje o zakończeniu postępowania konkursowego na stanowisko Członka/Członkini Zarządu Prezesa/Prezeski. 5 days ago · 23 wrzesień 2026 Krajowa Rada Spółdzielcza ogłasza nabór na: Stanowisko Osoby wykonującej obowiązki dyrektorskie biura Zarządu Miejsce pracy: ul. Jasna 1 (centrum Warszawy) Praca w wymiarze pełnego etatu. Twój zakres obowiązków: Kierowani",
       "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
       "direct": false,
       "decision": "cached",
@@ -274,8 +262,8 @@
     },
     {
       "url": "https://www.facebook.com/radiocentrumkalisz/",
-      "title": "radio CENTRUM 106.4 | Kalisz - FacebookAktualności - krs",
-      "snippet": "1 day ago · 📻 radioCENTRUM_106.4 ogłasza nabór kandydatów do pracy w redakcji radiowej w Kaliszu. 5 days ago · Nowelizacja wprowadza też skomplikowane i nadmiarowe mechanizmy w zakresie kadencyjności członków zarządów czy wygaszania mandatów członków rady nadzorczej– w sposób nieznany w polskim porządku prawnym.",
+      "title": "radio CENTRUM 106.4 | Kalisz - FacebookStrona główna - ngo.pl",
+      "snippet": "1 day ago · radio CENTRUM 106.4, Kalisz. 30,271 followers · 2,134 talking about this · 232 were here. reklama@rc.fm / 62 503 11 92 dla kierowców: 62 503 10 64 konkurs: 884 00 1064 interwencja@rc.fm / 62 503 11... 19 hours ago · Portal ngo.pl dla organizacji pozarządowych: stowarzyszeń, fundacji i innych inicjatyw obywatelskich. Porady, ogłoszenia, opinie, kalendarz wydarzeń, sylwetki ...",
       "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
       "direct": false,
       "decision": "cached",
@@ -284,7 +272,7 @@
     {
       "url": "https://www.krs.org.pl/aktualnosci",
       "title": "Aktualności - krs",
-      "snippet": "5 days ago · Nowelizacja wprowadza też skomplikowane i nadmiarowe mechanizmy w zakresie kadencyjności członków zarządów czy wygaszania mandatów członków rady nadzorczej– w sposób nieznany w polskim porządku prawnym.",
+      "snippet": "5 days ago · 23 wrzesień 2026 Krajowa Rada Spółdzielcza ogłasza nabór na: Stanowisko Osoby wykonującej obowiązki dyrektorskie biura Zarządu Miejsce pracy: ul. Jasna 1 (centrum Warszawy) Praca w wymiarze pełnego etatu. Twój zakres obowiązków: Kierowanie, organizowanie i nadzorowanie pracy Zespołu Samorządu i Promocji.",
       "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
       "direct": false,
       "decision": "cached",
@@ -293,24 +281,92 @@
     {
       "url": "https://www.bankier.pl/gielda/notowania/akcje/ALIOR/komunikaty",
       "title": "Komunikaty - ALIOR BANK (ALIOR) - Giełda - Bankier.pl",
-      "snippet": "1 day ago · espi 15.10.2026 15:59 Zgłoszenie kandydatów do Rady Nadzorczej Alior Bank S.A. espi 15.10.2026 11:08 Informacja o rezygnacji Członka Rady Nadzorczej Alior Banku S.A. espi",
+      "snippet": "1 day ago · ALIOR BANK (ALIOR) - najnowsze wiadomości, aktualne notowania, forum dyskusyjne, komunikaty espi, wyniki finansowe, rekomendacje",
       "source": "\"kandydatów do rady nadzorczej\"",
       "direct": false,
-      "decision": "accepted",
-      "reason": "dodano do bazy",
-      "offer": {
-        "podmiot": "Alior Bank S.A.",
-        "miejscowosc": "",
-        "termin_skladania_ofert": "2026-10-15",
-        "stanowisko": "Członek Rady Nadzorczej",
-        "wymagania": "",
-        "podsumowanie": "Ogłoszenie dotyczy zgłoszenia kandydatów na stanowisko członka Rady Nadzorczej Alior Bank S.A.",
-        "data_publikacji": "",
-        "url": "https://www.bankier.pl/gielda/notowania/akcje/ALIOR/komunikaty",
-        "znaleziono_dnia": "2026-10-24",
-        "termin_zrodlo": "parser",
-        "zrodlo": "\"kandydatów do rady nadzorczej\""
-      }
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "",
+      "title": "",
+      "snippet": "",
+      "source": "\"nabór na członków rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "no_url",
+      "reason": "wynik bez adresu URL"
+    },
+    {
+      "url": "https://wskz.pl/aktualnosci/chcesz-pracowac-jako-czlonek-rady-nadzorczej-sprawdz-wymogi-na-to-stanowisko/",
+      "title": "Chcesz pracować jako członek rady nadzorczej? Sprawdź wymogi ...",
+      "snippet": "2 days ago · Aspirujący członkowie rady nadzorczej muszą zdobyć wykształcenie wyższe oraz minimum 5-letnie doświadczenie zawodowe – może to być zatrudnienie na umowę o pracę, świadczenie usług na podstawie innej umowy lub prowadzenie własnej działalności gospodarczej.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Artykuł informacyjny o wymogach dla kandydatów, nie ogłoszenie naboru."
+    },
+    {
+      "url": "https://www.rynek-kolejowy.pl/biznes.html",
+      "title": "Biznes - Rynek Kolejowy",
+      "snippet": "2 days ago · O tym, jakie spółka ma plany na najbliższe lata, w tym o roli zakładów w Polsce, konkurencji z Chin oraz segmencie dużych prędkości, mówił na ostatnich targach InnoTrans Peter Spuhler – przewodniczący rady nadzorczej Stadlera.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Artykuł prasowy z wypowiedzią przewodniczącego rady nadzorczej, nie ogłoszenie naboru."
+    },
+    {
+      "url": "https://kzrs.pl/aktualnosci/",
+      "title": "Aktualności – kzrs.pl",
+      "snippet": "3 days ago · Na członka rady nadzorczej została powołana osoba, która jest zatrudniona w innym podmiocie na podstawie umowy o pracę. Czy okoliczność ta zwalnia ją z ubezpieczeń w ZUS jako członka rady nadzorczej?",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://phoenix-az.events/sports/rodeo/",
+      "title": "Phoenix Rodeo 2026–2027| Tickets & Schedule",
+      "snippet": "19 hours ago · Find rodeo events in Phoenix. Browse bull riding, barrel racing, rodeos, western shows, venues, tickets, and schedules.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Strona o wydarzeniach rodeo w Phoenix, biletach i harmonogramie. Brak związku z naborem."
+    },
+    {
+      "url": "https://www.phoenixmag.com/category/things-to-do-2/",
+      "title": "Calendar - PHOENIX magazine",
+      "snippet": "5 days ago · For more than 50 years, PHOENIX magazine's experienced writers, editors, and designers have captured all sides of the Valley with award-winning and insightful writing, and groundbreaking reporting and design.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Artykuł kalendarza wydarzeń magazynu Phoenix, brak treści o naborze."
+    },
+    {
+      "url": "https://allevents.in/phoenix/tomorrow",
+      "title": "Events & Activities To Do In Phoenix Tomorrow | AllEvents",
+      "snippet": "Oct 25, 2026 · Explore the list of Phoenix Events happening Tomorrow, Exhibitions, Workshops, Festivals, Sports, Conferences & Things to do in Phoenix Tomorrow.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Wynik dotyczy wydarzeń w Phoenix, całkowicie nieistotny dla naboru kandydatów."
+    },
+    {
+      "url": "https://biznes.pap.pl/wiadomosci/firmy/alior-bank-sa-252026-powolanie-czlonka-rady-nadzorczej-alior-bank-sa",
+      "title": "ALIOR BANK SA (25/2026) Powołanie Członka Rady Nadzorczej ...",
+      "snippet": "4 days ago · Podstawa prawna: Art. 56 ust. 1 pkt 2 Ustawy o ofercie - informacje bieżące i okresowe Zarząd Alior Bank S.A. (\"Bank\") informuje, że Nadzwyczajne Walne Zgromadzenie Banku w dniu 20 października 2026 r., uwzględniając ocenę spełnienia wymogów odpowiedniości, powołało w skład Rady Nadzorczej Banku Pana Marka Głuchowskiego. Uchwała weszła w życie z chwilą podjęcia.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Informacja o powołaniu już wybranej osoby przez NWZ, nie ogłoszenie naboru."
+    },
+    {
+      "url": "https://www.ngo.pl/",
+      "title": "Strona główna - ngo.pl",
+      "snippet": "19 hours ago · Portal ngo.pl dla organizacji pozarządowych: stowarzyszeń, fundacji i innych inicjatyw obywatelskich. Porady, ogłoszenia, opinie, kalendarz wydarzeń, sylwetki ...",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Strona główna portalu NGO, nie ogłoszenie o naborze."
     }
   ]
 }
