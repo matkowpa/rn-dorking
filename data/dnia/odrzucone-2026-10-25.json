@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-25",
+  "rejected": [
+    {
+      "url": "https://rydultowy.pl/aktualnosc-4830-zaproszenie_ruszyly_konkursy.html",
+      "title": "ZAPROSZENIE: Ruszyły konkursy: Wolontariusz Roku oraz ...",
+      "reason": "Konkursy wolontariatu, nie nabór do rady nadzorczej.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+    },
+    {
+      "url": "https://businessinsider.com.pl/gielda/akcje/profil?id=PLERTEL00011",
+      "title": "Eurotel SA - akcje i notowania. Cena akcji - Business InsiderKomunikaty - GK IMMOBILE (IMMOBILE) - Giełda - Bankier.plBoydton audit lapses spark council debate - SoVaNOW: Home of ...Jobs • Mecklenburg County, VA • CivicEngageAktualności – kzrs.plKomunikaty - APLISENS (APLISENS) - Giełda - Bankier.plData Center Inventory & Asset Technician - Boydton job ...",
+      "reason": "Wynik dotyczy notowań giełdowych, a nie otwartego naboru na członka rady nadzorczej.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.sovanow.com/articles/boydton-audit-lapses-spark-council-debate/",
+      "title": "Boydton audit lapses spark council debate - SoVaNOW: Home of ...",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.mecklenburgva.com/Jobs.aspx",
+      "title": "Jobs • Mecklenburg County, VA • CivicEngage",
+      "reason": "Amerykański portal rekrutacyjny hrabstwa, nie dotyczy naboru do rad nadzorczych.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.experis.com/en/job/405836/data-center-inventory-asset-technician-boydton",
+      "title": "Data Center Inventory & Asset Technician - Boydton job ...",
+      "reason": "Ogłoszenie o pracę technika inwentaryzacji, nie nabór do rady nadzorczej.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.biznesradar.pl/a/162796,vigo-photonics-sa-48-2026-zgloszenie-kandydata-na-czlonka-rady-nadzorczej",
+      "title": "VIGO PHOTONICS SA (48/2026) ZGŁOSZENIE KANDYDATA NA CZŁONKA ...",
+      "reason": "Ogłoszenie dotyczy zgłoszenia konkretnego kandydata, a nie otwartego naboru.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\""
+    }
+  ]
+}
