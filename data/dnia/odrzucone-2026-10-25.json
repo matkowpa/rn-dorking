@@ -36,6 +36,24 @@
       "title": "VIGO PHOTONICS SA (48/2026) ZGŁOSZENIE KANDYDATA NA CZŁONKA ...",
       "reason": "Ogłoszenie dotyczy zgłoszenia konkretnego kandydata, a nie otwartego naboru.",
       "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\""
+    },
+    {
+      "url": "https://chodow.biuletyn.net/?bip=1&cid=397",
+      "title": "Opiniowanie i uzgadnianie projektu planu ogólnego - Plan ...",
+      "reason": "Dotyczy opiniowania planu ogólnego gminy, a nie naboru na radę nadzorczą.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+    },
+    {
+      "url": "https://www.facebook.com/groups/469820494480580/",
+      "title": "NC Contractors - Facebook",
+      "reason": "Grupa na Facebooku dla wykonawców i osób szukających usług, nie jest naborami do rady nadzorczej.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.facebook.com/PetersburgTrading/",
+      "title": "Petersburg Trading",
+      "reason": "Ogłoszenie dotyczy sklepu handlowego, a nie naboru na radę nadzorczą.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
     }
   ]
 }

@@ -1,10 +1,10 @@
 {
   "date": "2026-10-25",
-  "count": 31,
+  "count": 35,
   "decisions": {
     "no_url": 1,
     "duplicate": 4,
-    "cached": 20,
+    "cached": 24,
     "rejected": 6
   },
   "raw": [
@@ -12,7 +12,7 @@
       "url": "",
       "title": "",
       "snippet": "",
-      "source": "\"nabór na członków rady nadzorczej\" BIP",
+      "source": "\"konkurs na członka rady nadzorczej\"",
       "direct": false,
       "decision": "no_url",
       "reason": "wynik bez adresu URL"
@@ -20,7 +20,7 @@
     {
       "url": "https://mazovia.pl/pl/bip/komunikaty/ogloszenie-o-naborze-do-rady-nadzorczej-mazowieckiego-szpitala-specjalistycznego-sp-z-oo-z-siedziba-w-radomiu.html",
       "title": "Ogłoszenie o naborze do Rady Nadzorczej Mazowieckiego ...",
-      "snippet": "4 days ago · Pliki do pobrania: Ogłoszenie o naborze kandydata na członka Rady Nadzorczej.pdf Rozmiar: 162.5 KB, PDF Załącznik do ogłoszenia o naborze.docx Rozmiar: 26.24 KB, DOCX Podmiot udostępniający: Urząd Marszałkowski Województwa Mazowieckiego w Warszawie Wytworzył: Paweł Ofat (NW) Data wytworzenia: 20.10.2026 Opublikował w BIP: Maciej Sitarz",
+      "snippet": "4 days ago · Ogłoszenie nr 2/2026 o naborze kandydata na członków do Rady Nadzorczej spółki Mazowiecki Szpital Specjalistyczny Sp. z o.o. z siedzibą w Radomiu z dnia 20 października 2026 r.",
       "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
       "direct": false,
       "decision": "duplicate",
@@ -91,8 +91,8 @@
     },
     {
       "url": "https://uzdrowisko-swieradow.pl/ogloszenia",
-      "title": "Ogłoszenia - Uzdrowisko Świeradów-CzerniawaOgloszenia | MZK ŻagańNowy prezes strategicznej spółki zbrojeniowej. \"Ofiarą został ...Koniec ery Piotra Sankowskiego w IDEAS NCBR. Eksperci ...KGHM Polska Miedź S.A. Strona korporacyjna",
-      "snippet": "4 days ago · 09.05.2023r. Załącznik nr 1 do Uchwały 10/IX/2023 Rady Nadzorczej Uzdrowisko Świeradów-Czerniawa Sp. z o.o. – Grupa PGU z dnia 09.05.2023 r. Rada Nadzorcza Spółki Uzdrowisko Świeradów-Czerniawa Sp. z o.o. – Grupa PGU ogłasza wszczęcie postępowania kwalifikacyjnego na stanowisko: Wicepezesa Zarządu 4 days ago · Zakończenie konkursu Na podstawie uchwały nr 7/2025 Rady Nadzorczej Miejskiego Zakładu Komunikacyjnego Sp. z o.o. w Żaganiu z dnia 26 marca 2025 r. – Rada Nadzorcza postanowił",
+      "title": "Ogłoszenia - Uzdrowisko Świeradów-CzerniawaKGHM Polska Miedź S.A. Strona korporacyjnaNowy prezes strategicznej spółki zbrojeniowej. \"Ofiarą został ...Ogloszenia | MZK ŻagańKoniec ery Piotra Sankowskiego w IDEAS NCBR. Eksperci ...",
+      "snippet": "4 days ago · 09.05.2023r. Załącznik nr 1 do Uchwały 10/IX/2023 Rady Nadzorczej Uzdrowisko Świeradów-Czerniawa Sp. z o.o. – Grupa PGU z dnia 09.05.2023 r. Rada Nadzorcza Spółki Uzdrowisko Świeradów-Czerniawa Sp. z o.o. – Grupa PGU ogłasza wszczęcie postępowania kwalifikacyjnego na stanowisko: Wicepezesa Zarządu 2 days ago · Oficjalna strona Grupy Kapitałowej KGHM. Czołowy producent miedzi i srebra rafinowanego, światowy lider w branży górniczo-hutniczej. 4 days ago · 'Świeżym spojrzeniem' uzasadn",
       "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
       "direct": false,
       "decision": "cached",
@@ -145,12 +145,12 @@
     },
     {
       "url": "https://businessinsider.com.pl/gielda/akcje/profil?id=PLERTEL00011",
-      "title": "Eurotel SA - akcje i notowania. Cena akcji - Business InsiderKomunikaty - GK IMMOBILE (IMMOBILE) - Giełda - Bankier.plBoydton audit lapses spark council debate - SoVaNOW: Home of ...Jobs • Mecklenburg County, VA • CivicEngageAktualności – kzrs.plKomunikaty - APLISENS (APLISENS) - Giełda - Bankier.plData Center Inventory & Asset Technician - Boydton job ...",
-      "snippet": "2 days ago · Prezentujemy aktualne notowania giełdowe Eurotel SA. Najnowsze ceny akcji oraz historyczne wykresy znajdziesz w serwisie Business Insider. 2 days ago · Ważny espi 07.07.2026 15:20 Zawiadomienie Członka Rady Nadzorczej i osoby blisko związanej o nabyciu akcji Emitenta espi 5 days ago · Boydton Town Council grappled with years of incomplete financial audits at its Oct. 13 monthly meeting as members acknowledged the town has not completed an audit since fiscal year 2022. No explanation",
+      "title": "Eurotel SA - akcje i notowania. Cena akcji - Business InsiderKomunikaty - GK IMMOBILE (IMMOBILE) - Giełda - Bankier.plAktualności – kzrs.plKomunikaty - APLISENS (APLISENS) - Giełda - Bankier.plNC Contractors - FacebookJobs • Mecklenburg County, VA • CivicEngagePetersburg Trading",
+      "snippet": "2 days ago · Prezentujemy aktualne notowania giełdowe Eurotel SA. Najnowsze ceny akcji oraz historyczne wykresy znajdziesz w serwisie Business Insider. 2 days ago · Ważny espi 07.07.2026 15:20 Zawiadomienie Członka Rady Nadzorczej i osoby blisko związanej o nabyciu akcji Emitenta espi 4 days ago · Krajowy Związek Rewizyjny Spółdzielni „Samopomoc Chłopska” zgodnie z postanowieniami § 10 statutu oraz uchwałą nr 6/2024 Rady Nadzorczej z dnia 09.04.2024 r. informuje o zwołanych na przełomie kwietnia",
       "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Wynik dotyczy notowań giełdowych, a nie otwartego naboru na członka rady nadzorczej."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://www.bankier.pl/gielda/notowania/akcje/IMMOBILE/komunikaty",
@@ -185,8 +185,8 @@
       "snippet": "2 days ago · Use the jobs module to search employment opportunities. You may also subscribe to job posting notifications.",
       "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Amerykański portal rekrutacyjny hrabstwa, nie dotyczy naboru do rad nadzorczych."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://www.bankier.pl/gielda/notowania/akcje/APLISENS/komunikaty",
@@ -221,8 +221,8 @@
       "snippet": "5 days ago · Zarząd emitenta VIGO Photonics S.A. z siedzibą w Ożarowie Mazowieckim (dalej jako: \"Emitent\") informuje, że w dniu 20 października 2026 roku wpłynęło do Emitenta od funduszy będących akcjonariuszami Emitenta, zarządzanych przez Towarzystwo Funduszy Inwestycyjnych PZU S.A. z siedzibą w Warszawie, zgłoszenie kandydatury na Członka Rady Nadzorczej Emitenta Pana Mateusza Komorowskiego.",
       "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Ogłoszenie dotyczy zgłoszenia konkretnego kandydata, a nie otwartego naboru."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://brzeszcze.pl/nabor-do-bazy-kandydatow-na-czlonkow-rad-nadzorczych-spolek-z-udzialem-gminy-brzeszcze-2023-07-17-16-04-34,11943",
@@ -254,7 +254,7 @@
     {
       "url": "https://www.ngo.pl/",
       "title": "Strona główna - ngo.pl",
-      "snippet": "11 hours ago · Dyrektor Narodowego Instytutu Wolności – Centrum Rozwoju Społeczeństwa Obywatelskiego ogłasza nabór na stanowisko:",
+      "snippet": "19 hours ago · Dyrektor Narodowego Instytutu Wolności – Centrum Rozwoju Społeczeństwa Obywatelskiego ogłasza nabór na stanowisko:",
       "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
       "direct": false,
       "decision": "cached",
@@ -280,12 +280,48 @@
     },
     {
       "url": "https://www.bankier.pl/gielda/notowania/akcje/ALIOR/komunikaty",
-      "title": "Komunikaty - ALIOR BANK (ALIOR) - Giełda - Bankier.pl",
-      "snippet": "2 days ago · espi 15.10.2026 15:59 Zgłoszenie kandydatów do Rady Nadzorczej Alior Bank S.A. espi 15.10.2026 11:08 Informacja o rezygnacji Członka Rady Nadzorczej Alior Banku S.A. espi",
+      "title": "Komunikaty - Alior Bank SA (ALIOR) - Giełda - Bankier.pl",
+      "snippet": "2 days ago · Alior Bank SA (ALIOR) - najnowsze wiadomości, aktualne notowania, forum dyskusyjne, komunikaty espi, wyniki finansowe, rekomendacje",
       "source": "\"kandydatów do rady nadzorczej\"",
       "direct": false,
       "decision": "duplicate",
       "reason": "URL już widziany"
+    },
+    {
+      "url": "https://chodow.biuletyn.net/?bip=1&cid=397",
+      "title": "Opiniowanie i uzgadnianie projektu planu ogólnego - Plan ...",
+      "snippet": "2 days ago · Opiniowanie i uzgadnianie projektu planu ogólnego - Plan Ogólny Gminy Chodów - Sprawy urzędowe - BIP - Gmina Chodów",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Dotyczy opiniowania planu ogólnego gminy, a nie naboru na radę nadzorczą."
+    },
+    {
+      "url": "https://sokolka.pl/",
+      "title": "Portal informacyjny Gminy Sokółka - Gmina Sokółka",
+      "snippet": "2 days ago · Oficjalny serwis internetowy Gminy Sokółka - aktualne wydarzenia, wiadomości, informacje praktyczne, turystyka, biznes i wiele innych.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.facebook.com/groups/469820494480580/",
+      "title": "NC Contractors - Facebook",
+      "snippet": "2 days ago · This group is for contractors & people looking to have work done. only rule is be respectful of everyone, no hate speech, harassment, or bulling will be...",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Grupa na Facebooku dla wykonawców i osób szukających usług, nie jest naborami do rady nadzorczej."
+    },
+    {
+      "url": "https://www.facebook.com/PetersburgTrading/",
+      "title": "Petersburg Trading",
+      "snippet": "3 days ago · Petersburg Trading, Petersburg. 17,109 followers · 175 talking about this · 1,081 were here. From everyday needs to a great selection of seasonal items, Petersburg Trading is a Retail/Wholesale store...",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Ogłoszenie dotyczy sklepu handlowego, a nie naboru na radę nadzorczą."
     }
   ]
 }
