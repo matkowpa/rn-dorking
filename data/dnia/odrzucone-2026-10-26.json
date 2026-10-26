@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-26",
+  "rejected": [
+    {
+      "url": "https://bip.miedzyzdroje.pl/artykul/zarzadzenie-nr-227-kdr-2026-burmistrza-miedzyzdrojow-z-dnia-20-pazdziernika-2026-r-w-sprawie-po",
+      "title": "ZARZĄDZENIE NR 227/KDR/2026 BURMISTRZA MIĘDZYZDROJÓW z dnia ...",
+      "reason": "Dotyczy powołania komisji do naboru na stanowisko urzędnicze, a nie bezpośrednio naboru na radę nadzorczą.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+    },
+    {
+      "url": "https://www.employmentalert.com/l-boydton_va-q-advogado_e_dinheiro_do_crime_um_debate_necessário_de_julio_cesar_cardoso_jobs.php",
+      "title": "EmploymentAlert | Advogado E Dinheiro Do Crime Um Debate ...",
+      "reason": "Wynik wyszukiwania ofert pracy, nie dotyczy naboru do rady nadzorczej.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.parp.gov.pl/",
+      "title": "Strona główna - PARP - Centrum Rozwoju MŚP",
+      "reason": "Strona główna PARP, ogłoszenie dotyczy grantów, nie naboru do rady nadzorczej.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.gov.pl/web/nfosigw/",
+      "title": "Narodowy Fundusz Ochrony Środowiska i Gospodarki Wodnej",
+      "reason": "Strona główna NFOŚiGW, brak informacji o naborze kandydatów.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\""
+    }
+  ]
+}

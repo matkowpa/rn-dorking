@@ -1,0 +1,309 @@
+{
+  "date": "2026-10-26",
+  "count": 33,
+  "decisions": {
+    "no_url": 1,
+    "duplicate": 4,
+    "rejected": 4,
+    "cached": 24
+  },
+  "raw": [
+    {
+      "url": "",
+      "title": "",
+      "snippet": "",
+      "source": "\"nabór na członków rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "no_url",
+      "reason": "wynik bez adresu URL"
+    },
+    {
+      "url": "https://mazovia.pl/pl/bip/komunikaty/ogloszenie-o-naborze-do-rady-nadzorczej-mazowieckiego-szpitala-specjalistycznego-sp-z-oo-z-siedziba-w-radomiu.html",
+      "title": "Ogłoszenie o naborze do Rady Nadzorczej Mazowieckiego ...",
+      "snippet": "5 days ago · Ogłoszenie nr 2/2026 o naborze kandydata na członków do Rady Nadzorczej spółki Mazowiecki Szpital Specjalistyczny Sp. z o.o. z siedzibą w Radomiu z dnia 20 października 2026 r.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://grudziadz.pl/artykul/69/20202/nabor-kandydatow-do-rad-nadzorczych",
+      "title": "Nabór kandydatów do Rad Nadzorczych - Grudziądz",
+      "snippet": "2 days ago · Prezydent Grudziądza ogłasza nabór do bazy danych kandydatów do Rad Nadzorczych spółek, w których gmina-miasto Grudziądz posiada udziały/akcje, a także spółek od nich zależnych.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://bip.miedzyzdroje.pl/artykul/zarzadzenie-nr-227-kdr-2026-burmistrza-miedzyzdrojow-z-dnia-20-pazdziernika-2026-r-w-sprawie-po",
+      "title": "ZARZĄDZENIE NR 227/KDR/2026 BURMISTRZA MIĘDZYZDROJÓW z dnia ...",
+      "snippet": "5 days ago · Biuletyn Informacji Publicznej Urzędu Miejskiego w Międzyzdrojach ZARZĄDZENIE NR 227/KDR/2026 BURMISTRZA MIĘDZYZDROJÓW z dnia 20 października 2026 r. w sprawie powołania komisji przeprowadzającej nabór kandydatów na wolne stanowisko urzędnicze Podinspektora ds. finansowych w Referacie Budżetu i Finansów w Urzędzie Miejskim w Międzyzdrojach",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Dotyczy powołania komisji do naboru na stanowisko urzędnicze, a nie bezpośrednio naboru na radę nadzorczą."
+    },
+    {
+      "url": "https://chodow.biuletyn.net/?bip=1&cid=397",
+      "title": "Opiniowanie i uzgadnianie projektu planu ogólnego - Plan ...",
+      "snippet": "3 days ago · Opiniowanie i uzgadnianie projektu planu ogólnego - Plan Ogólny Gminy Chodów - Sprawy urzędowe - BIP - Gmina Chodów",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://nabory.kprm.gov.pl/lodzkie/lodz/starszy-referentstarsza-referentka,169327,v8",
+      "title": "Starszy referent/starsza referentka | Izba Administracji ...",
+      "snippet": "4 days ago · starszy referent/starsza referentka w Dziale Egzekucji Administracyjnej w Izbie Administracji Skarbowej w Łodzi",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://sokolka.pl/",
+      "title": "Portal informacyjny Gminy Sokółka - Gmina Sokółka",
+      "snippet": "3 days ago · Oficjalny serwis internetowy Gminy Sokółka - aktualne wydarzenia, wiadomości, informacje praktyczne, turystyka, biznes i wiele innych.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.tram-silesia.pl/",
+      "title": "Tramwaje Śląskie S.A. – transport publiczny w Górnośląsko ...",
+      "snippet": "3 days ago · Tramwaje Śląskie S.A. to operator transportu publicznego działający w 13 gminach Górnośląsko-Zagłębiowskiej Metropolii. Zapewniamy bezpieczny przewóz pasażerów i modernizację infrastruktury tramwajowej.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://wskz.pl/aktualnosci/chcesz-pracowac-jako-czlonek-rady-nadzorczej-sprawdz-wymogi-na-to-stanowisko/",
+      "title": "Chcesz pracować jako członek rady nadzorczej? Sprawdź wymogi ...",
+      "snippet": "4 days ago · Aspirujący członkowie rady nadzorczej muszą zdobyć wykształcenie wyższe oraz minimum 5-letnie doświadczenie zawodowe – może to być zatrudnienie na umowę o pracę, świadczenie usług na podstawie innej umowy lub prowadzenie własnej działalności gospodarczej.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://mzk.zagan.pl/ogloszenia/oferty-pracy",
+      "title": "Ogloszenia | MZK Żagań",
+      "snippet": "5 days ago · Zakończenie konkursu Na podstawie uchwały nr 7/2025 Rady Nadzorczej Miejskiego Zakładu Komunikacyjnego Sp. z o.o. w Żaganiu z dnia 26 marca 2025 r. – Rada Nadzorcza postanowiła bez podania przyczyn zakończyć Konkurs na stanowisko Prezesa Zarządu Miejskiego Zakładu Komunikacyjnego Spółki z o.o. w Żaganiu bez wyłonienia kandydata.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://uzdrowisko-swieradow.pl/ogloszenia",
+      "title": "Ogłoszenia - Uzdrowisko Świeradów-CzerniawaKGHM Polska Miedź S.A. Strona korporacyjnaKoniec ery Piotra Sankowskiego w IDEAS NCBR. Eksperci ...Nowy prezes strategicznej spółki zbrojeniowej. \"Ofiarą został ...",
+      "snippet": "5 days ago · 09.05.2023r. Załącznik nr 1 do Uchwały 10/IX/2023 Rady Nadzorczej Uzdrowisko Świeradów-Czerniawa Sp. z o.o. – Grupa PGU z dnia 09.05.2023 r. Rada Nadzorcza Spółki Uzdrowisko Świeradów-Czerniawa Sp. z o.o. – Grupa PGU ogłasza wszczęcie postępowania kwalifikacyjnego na stanowisko: Wicepezesa Zarządu 3 days ago · Oficjalna strona Grupy Kapitałowej KGHM. Czołowy producent miedzi i srebra rafinowanego, światowy lider w branży górniczo-hutniczej. 4 days ago · W lipcu tego roku rada nadzor",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://mamstartup.pl/koniec-ery-piotra-sankowskiego-w-ideas-ncbr-eksperci-obawiaja-sie-o-przyszlosc-ai-w-polsce/",
+      "title": "Koniec ery Piotra Sankowskiego w IDEAS NCBR. Eksperci ...",
+      "snippet": "4 days ago · W lipcu tego roku rada nadzorcza IDEAS NCBR ogłosiła postępowanie kwalifikacyjne na stanowisko prezesa. Wśród kandydatów znalazł się również prof. Piotr Sankowski, który był pomysłodawcą i pierwszym szefem ośrodka. Sankowski nie został wybrany na kolejną kadencję.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://echodnia.eu/swietokrzyskie/swietokrzyska-grupa-przemyslowa-industria-zakonczyla-poszukiwania-uranu-na-terenie-gminy-lagow/ar/c3p2-29464003",
+      "title": "Świętokrzyska Grupa Przemysłowa Industria zakończyła ...",
+      "snippet": "3 days ago · Świętokrzyska Grupa Przemysłowa Industria zakończyła poszukiwania uranu w gminie Łagów po badaniach, które nie wykazały stężeń uzasadniających dalszą eksploatację. Spółka deklaruje jednak kontynuację prac nad rozwojem małych reaktorów jądrowych SMR.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://kghm.com/pl",
+      "title": "KGHM Polska Miedź S.A. Strona korporacyjna",
+      "snippet": "3 days ago · Oficjalna strona Grupy Kapitałowej KGHM. Czołowy producent miedzi i srebra rafinowanego, światowy lider w branży górniczo-hutniczej.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://bydgoszcz.wyborcza.pl/bydgoszcz/7,48722,33088784,nowy-prezes-strategicznej-spolki-zbrojeniowej-fachowca-zastapil.html",
+      "title": "Nowy prezes strategicznej spółki zbrojeniowej. \"Ofiarą został ...",
+      "snippet": "5 days ago · 'Świeżym spojrzeniem' uzasadniał Adam Leszkiewicz, szef Polskiej Grupy Zbrojeniowej, dymisję prezesa bydgoskiej Belmy Jarosława Zakrzewskiego. Niespełna miesiąc później rada nadzorcza powołała na to stanowisko Damiana Skałeckiego, dotychczas członka zarządu.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.bankier.pl/gielda/notowania/akcje/IMMOBILE/komunikaty",
+      "title": "Komunikaty - GK Immobile SA (IMMOBILE) - Giełda - Bankier.pl",
+      "snippet": "3 days ago · Ważny espi 07.07.2026 15:20 Zawiadomienie Członka Rady Nadzorczej i osoby blisko związanej o nabyciu akcji Emitenta espi",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://businessinsider.com.pl/gielda/akcje/profil?id=PLERTEL00011",
+      "title": "Eurotel SA - akcje i notowania. Cena akcji - Business InsiderKomunikaty - APLISENS (APLISENS) - Giełda - Bankier.plEmploymentAlert | Advogado E Dinheiro Do Crime Um Debate ...Aktualności – kzrs.plNC Contractors - FacebookJobs • Mecklenburg County, VA • CivicEngage",
+      "snippet": "3 days ago · Prezentujemy aktualne notowania giełdowe Eurotel SA. Najnowsze ceny akcji oraz historyczne wykresy znajdziesz w serwisie Business Insider. 4 days ago · APLISENS (APLISENS) - najnowsze wiadomości, aktualne notowania, forum dyskusyjne, komunikaty espi, wyniki finansowe, rekomendacje 4 days ago · EmploymentAlert.com job search engine helps you find advogado e dinheiro do crime um debate necessário de julio cesar cardoso jobs boydton VA 5 days ago · Krajowy Związek Rewizyjny Spółdzielni",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://kzrs.pl/aktualnosci/",
+      "title": "Aktualności – kzrs.pl",
+      "snippet": "5 days ago · Krajowy Związek Rewizyjny Spółdzielni „Samopomoc Chłopska” zgodnie z postanowieniami § 10 statutu oraz uchwałą nr 6/2024 Rady Nadzorczej z dnia 09.04.2024 r. informuje o zwołanych na przełomie kwietnia-maja 2024 r. zebraniach członków. Rejonizacja oraz terminy ujęte zostały w pliku do pobrania.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.bankier.pl/gielda/notowania/akcje/APLISENS/komunikaty",
+      "title": "Komunikaty - APLISENS (APLISENS) - Giełda - Bankier.pl",
+      "snippet": "4 days ago · APLISENS (APLISENS) - najnowsze wiadomości, aktualne notowania, forum dyskusyjne, komunikaty espi, wyniki finansowe, rekomendacje",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.employmentalert.com/l-boydton_va-q-advogado_e_dinheiro_do_crime_um_debate_necessário_de_julio_cesar_cardoso_jobs.php",
+      "title": "EmploymentAlert | Advogado E Dinheiro Do Crime Um Debate ...",
+      "snippet": "4 days ago · EmploymentAlert.com job search engine helps you find advogado e dinheiro do crime um debate necessário de julio cesar cardoso jobs boydton VA",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Wynik wyszukiwania ofert pracy, nie dotyczy naboru do rady nadzorczej."
+    },
+    {
+      "url": "https://www.facebook.com/groups/469820494480580/",
+      "title": "NC Contractors - Facebook",
+      "snippet": "3 days ago · This group is for contractors & people looking to have work done. only rule is be respectful of everyone, no hate speech, harassment, or bulling will be...",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.mecklenburgva.com/Jobs.aspx",
+      "title": "Jobs • Mecklenburg County, VA • CivicEngage",
+      "snippet": "3 days ago · Use the jobs module to search employment opportunities. You may also subscribe to job posting notifications.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.biznesradar.pl/a/162796,vigo-photonics-sa-48-2026-zgloszenie-kandydata-na-czlonka-rady-nadzorczej",
+      "title": "VIGO PHOTONICS SA (48/2026) ZGŁOSZENIE KANDYDATA NA CZŁONKA ...",
+      "snippet": "6 days ago · Zarząd emitenta VIGO Photonics S.A. z siedzibą w Ożarowie Mazowieckim (dalej jako: \"Emitent\") informuje, że w dniu 20 października 2026 roku wpłynęło do Emitenta od funduszy będących akcjonariuszami Emitenta, zarządzanych przez Towarzystwo Funduszy Inwestycyjnych PZU S.A. z siedzibą w Warszawie, zgłoszenie kandydatury na Członka Rady Nadzorczej Emitenta Pana Mateusza Komorowskiego.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.pb.pl/gielda/vigo-photonics-s-a-zgloszenie-kandydata-na-czlonka-rady-nadzorczej-9215564",
+      "title": "VIGO PHOTONICS S.A.: ZGŁOSZENIE KANDYDATA NA CZŁONKA RADY ...",
+      "snippet": "6 days ago · opublikowano: 2026-10-20 16:04 Spis treści: 1. RAPORT BIEŻĄCY 2. METADANE ESAP 3. MESSAGE (ENGLISH VERSION) 4. INFORMACJE O PODMIOCIE 5. PODPISY OSÓB REPREZENTUJĄCYCH SPÓŁKĘ Spis załączników: Zgłoszenie kandydatury.pdf Życiorys.pdf Zgoda na kandydowanie.pdf Oświadczenia kandydata na członka Rady Nadzorczej.pdf",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.money.pl/gielda/komunikaty/7342087497851457.html",
+      "title": "Komunikat spółki - ALR Powołanie Członka Rady Nadzorczej ...",
+      "snippet": "6 days ago · ALR Powołanie Członka Rady Nadzorczej Alior Bank S.A. - Giełda - Komunkaty ze spółek",
+      "source": "\"kandydatów do rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://biznes.pap.pl/wiadomosci/firmy/alior-bank-sa-252026-powolanie-czlonka-rady-nadzorczej-alior-bank-sa",
+      "title": "ALIOR BANK SA (25/2026) Powołanie Członka Rady Nadzorczej ...",
+      "snippet": "6 days ago · Życiorys powołanego Członka Rady Nadzorczej stanowi załącznik do niniejszego raportu bieżącego. Podstawa prawna: § 5 pkt 6 Rozporządzenia Ministra Finansów z dnia 6 czerwca 2025 r. w sprawie...",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://biznes.pap.pl/wiadomosci/przemysl/vigo-photonics-sa-482026-zgloszenie-kandydata-na-czlonka-rady-nadzorczej",
+      "title": "VIGO PHOTONICS SA (48/2026) ZGŁOSZENIE KANDYDATA NA CZŁONKA ...",
+      "snippet": "6 days ago · Zarząd emitenta VIGO Photonics S.A. z siedzibą w Ożarowie Mazowieckim (dalej jako: \"Emitent\") informuje, że w dniu 20 października 2026 roku wpłynęło do Emitenta od funduszy będących...",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.ngo.pl/",
+      "title": "Strona główna - ngo.pl",
+      "snippet": "11 hours ago · Dyrektor Narodowego Instytutu Wolności – Centrum Rozwoju Społeczeństwa Obywatelskiego ogłasza nabór na stanowisko:",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.parp.gov.pl/",
+      "title": "Strona główna - PARP - Centrum Rozwoju MŚP",
+      "snippet": "5 days ago · 1 2 3 4 23 października 2026 15 mln zł na przygotowanie projektów europejskich. PARP ogłasza nabór „Granty na Eurogranty”",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Strona główna PARP, ogłoszenie dotyczy grantów, nie naboru do rady nadzorczej."
+    },
+    {
+      "url": "https://www.facebook.com/radiocentrumkalisz/",
+      "title": "radio CENTRUM 106.4 | Kalisz - Facebook",
+      "snippet": "3 days ago · 📻 radioCENTRUM_106.4 ogłasza nabór kandydatów do pracy w redakcji radiowej w Kaliszu.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.gov.pl/web/nfosigw/",
+      "title": "Narodowy Fundusz Ochrony Środowiska i Gospodarki Wodnej",
+      "snippet": "5 days ago · Napędzamy zieloną transformację poprzez wsparcie efektywnych inicjatyw, które wpływają na rozwój gospodarki i są ukierunkowane na realizację interesu publicznego i środowiskowego.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Strona główna NFOŚiGW, brak informacji o naborze kandydatów."
+    },
+    {
+      "url": "https://brzeszcze.pl/nabor-do-bazy-kandydatow-na-czlonkow-rad-nadzorczych-spolek-z-udzialem-gminy-brzeszcze-2023-07-17-16-04-34,11943",
+      "title": "Nabór do bazy kandydatów na członków rad nadzorczych spółek z ...",
+      "snippet": "5 days ago · Informujemy o stałym naborze do bazy kandydatów na członków rad nadzorczych spółek z udziałem Gminy Brzeszcze. Kandydat na członka rady nadzorczej musi: posiadać wykształcenie wyższe, posiadać co najmniej 5-letni okres zatrudnienia na podstawie umowy o pracę, powołania, wyboru, mianowania, spółdzielczej umowy o pracę, lub świadczenia usług na podstawie innej umowy, lub ...",
+      "source": "\"kandydatów do rady nadzorczej\"",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://www.bankier.pl/gielda/notowania/akcje/ALIOR/komunikaty",
+      "title": "Komunikaty - Alior Bank SA (ALIOR) - Giełda - Bankier.pl",
+      "snippet": "3 days ago · espi 15.10.2026 15:59 Zgłoszenie kandydatów do Rady Nadzorczej Alior Bank S.A. espi 15.10.2026 11:08 Informacja o rezygnacji Członka Rady Nadzorczej Alior Banku S.A. espi",
+      "source": "\"kandydatów do rady nadzorczej\"",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    }
+  ]
+}
