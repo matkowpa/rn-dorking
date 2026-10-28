@@ -45,14 +45,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           # Pełna historia - krok "Decide mode" datuje ostatni commit wyników
           # (git log -- <paths>), co na shallow clone zwracałoby pusto
           fetch-depth: 0
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
@@ -88,9 +88,15 @@ jobs:
             07|08|09|19|20|21) MODE=run ;;
             *) MODE=skip ;;
           esac
-          # Uruchomienie ręczne i push zawsze odpalają potok od razu
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] \
-             || [ "${{ github.event_name }}" = "push" ]; then MODE=run; fi
+          # Push na gałąź roboczą = tylko testy: bez potoku, commitów i powiadomień.
+          # Wcześniej każdy push na branch odpalał pełny potok (main.py + notify.py)
+          # i commitował wyniki na tej gałęzi.
+          # Ręczne uruchomienie i push na master odpalają potok od razu.
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            MODE=run
+          elif [ "${{ github.event_name }}" = "push" ]; then
+            if [ "${{ github.ref }}" = "refs/heads/master" ]; then MODE=run; else MODE=test; fi
+          fi
           # Wiek ostatniego commita wyników - liczony dla KAŻDEGO runu
           # schedule (także poza oknem): GitHub potrafi opóźnić cron o kilka
           # godzin; taki run ląduje poza oknem i byłby cicho pominięty mimo
@@ -118,7 +124,7 @@ jobs:
           echo "age_h=$AGE_H" >> "$GITHUB_OUTPUT"
 
       - name: Run tests
-        if: steps.mode.outputs.mode == 'run'
+        if: steps.mode.outputs.mode == 'run' || steps.mode.outputs.mode == 'test'
         run: python -m pytest tests/ -q
 
       - name: Run pipeline
@@ -167,10 +173,11 @@ jobs:
             echo "Brak sekretów Telegram - pomijam alert"
             exit 0
           fi
+          TEXT="⚠️ <b>rn-dorking</b>: poprzednie okno uruchomienia nie wykonało się (dane sprzed ${{ steps.mode.outputs.age_h }} h). Potok właśnie uzupełnił dane."
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
-            -d chat_id="${TELEGRAM_CHAT_ID}" \
-            -d parse_mode="HTML" \
-            -d text="⚠️ <b>rn-dorking</b>: poprzednie okno uruchomienia nie wykonało się (dane sprzed ${{ steps.mode.outputs.age_h }} h). Potok właśnie uzupełnił dane."
+            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "parse_mode=HTML" \
+            --data-urlencode "text=${TEXT}"
 
       - name: Alert on failure (Telegram)
         if: failure()
@@ -182,7 +189,8 @@ jobs:
             echo "Brak sekretów Telegram - pomijam alert"
             exit 0
           fi
+          TEXT="❌ <b>rn-dorking</b>: nieudany run pipeline (<a href=\"https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}\">log</a>)"
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
-            -d chat_id="${TELEGRAM_CHAT_ID}" \
-            -d parse_mode="HTML" \
-            -d text="❌ &lt;b&gt;rn-dorking&lt;/b&gt;: nieudany run pipeline (&lt;a href=\"https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}\"&gt;log&lt;/a&gt;)"
+            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "parse_mode=HTML" \
+            --data-urlencode "text=${TEXT}"
