@@ -240,7 +240,14 @@ def jst_daily_slice(registry: list, window: int = JST_WINDOW_DEFAULT,
     n_windows = -(-len(registry) // window)          # ceil - liczba okien
     idx = (day - 1) % n_windows
     start = idx * window
-    return registry[start:start + window]
+    end = start + window
+    # Ostatnie okno przy niedzielnej długości rejestru wychodzi za koniec listy
+    # (10 wpisów / okno 3 -> start 9 daje 1 wpis). Zawijamy je na początek, żeby
+    # KAŻDE okno miało dokładnie `window` wpisów; inaczej w co n-ty dzień skan
+    # po cichu obejmuje kilka podmiotów zamiast pełnego okna.
+    if end <= len(registry):
+        return registry[start:end]
+    return registry[start:] + registry[:end - len(registry)]
 
 
 def looks_like_notice_url(url: str) -> bool:

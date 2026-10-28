@@ -49,13 +49,50 @@ def test_candidate_links_caps_max():
 
 def test_jst_daily_slice_basic():
     reg = list(range(10))
-    out = jst_daily_slice(reg, window=3)
+    # Dzień ustalony jawnie: test nie może zależeć od daty uruchomienia.
+    out = jst_daily_slice(reg, window=3, day_of_year=1)
     assert len(out) == 3
     # Deterministyczne: dwa wywołania w tym samym dniu dają ten sam wynik
-    assert out == jst_daily_slice(reg, window=3)
+    assert out == jst_daily_slice(reg, window=3, day_of_year=1)
     # Wszystkie elementy pochodzą z rejestru i są unikalne
     assert len(set(out)) == 3
     assert set(out) <= set(reg)
+
+
+def test_jst_daily_slice_regresja_ostatnie_okno():
+    """Regresja 27.10.2026: ostatnie okno ucinało się do 1 wpisu z 3."""
+    reg = list(range(10))
+    out = jst_daily_slice(reg, window=3, day_of_year=300)   # idx = 3 -> start 9
+    assert len(out) == 3
+    assert out == [9, 0, 1]
+    # Ten sam dzień na realnym rejestrze: 6 wpisów zamiast 100
+    big = list(range(1106))
+    out_big = jst_daily_slice(big, window=100, day_of_year=300)
+    assert len(out_big) == 100
+    assert out_big[:6] == [1100, 1101, 1102, 1103, 1104, 1105]
+
+
+def test_jst_daily_slice_pelne_okno_w_calym_cyklu():
+    """Przy niedzielnej długości rejestru każde okno ma dokładnie `window` wpisów."""
+    for n, w in ((10, 3), (1106, 100), (7, 2), (10, 7)):
+        reg = list(range(n))
+        n_windows = -(-n // w)
+        for day in range(1, n_windows + 1):
+            out = jst_daily_slice(reg, window=w, day_of_year=day)
+            assert len(out) == w, (n, w, day, out)
+            assert len(set(out)) == w, (n, w, day, out)
+            assert set(out) <= set(reg)
+
+
+def test_jst_daily_slice_pokrywa_caly_rejestr_niedzielny():
+    """Suma okien w cyklu pokrywa rejestr także wtedy, gdy okno nie dzieli go bez reszty."""
+    for n, w in ((10, 3), (1106, 100), (7, 2)):
+        reg = list(range(n))
+        n_windows = -(-n // w)
+        seen = set()
+        for day in range(1, n_windows + 1):
+            seen.update(jst_daily_slice(reg, window=w, day_of_year=day))
+        assert seen == set(reg), (n, w, sorted(set(reg) - seen))
 
 
 def test_jst_daily_slice_wrap_around():
