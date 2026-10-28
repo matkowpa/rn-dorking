@@ -1,0 +1,336 @@
+{
+  "date": "2026-10-28",
+  "count": 36,
+  "decisions": {
+    "rejected": 21,
+    "no_url": 1,
+    "duplicate": 2,
+    "cached": 12
+  },
+  "raw": [
+    {
+      "url": "https://gasawa.bip.net.pl/?a=11018",
+      "title": "Ogłoszenie Nr OOD.2110.3.2026 Burmistrza Miasta i Gminy Gąsawa z dnia 31 lipca 2026 r. o naborze na wolne stanowisko urzędnicze ds. zamówień publicznych",
+      "snippet": "Ogłoszenie Nr OOD.2110.3.2026 Burmistrza Miasta i Gminy Gąsawa z dnia 31 lipca 2026 r. o naborze na wolne stanowisko urzędnicze ds. zamówień publicznych",
+      "source": "szukaj:dział-ogłoszeń",
+      "direct": true,
+      "decision": "rejected",
+      "reason": "Nabór na stanowisko urzędnicze ds. zamówień publicznych, nie rada nadzorcza."
+    },
+    {
+      "url": "https://gasawa.bip.net.pl/?a=11002",
+      "title": "Ogłoszenie o konkursie na stanowisko Dyrektora Przedszkola Samorządowego w Gąsawie (ul. Żnińska 17, 88-410 Gąsawa), dla którego organem prowadzącym jest Gmina Gąsawa",
+      "snippet": "Ogłoszenie o konkursie na stanowisko Dyrektora Przedszkola Samorządowego w Gąsawie (ul. Żnińska 17, 88-410 Gąsawa), dla którego organem prowadzącym jest Gmina Gąsawa",
+      "source": "szukaj:dział-ogłoszeń",
+      "direct": true,
+      "decision": "rejected",
+      "reason": "Konkurs na dyrektora przedszkola, nie na członka rady nadzorczej."
+    },
+    {
+      "url": "https://gasawa.bip.net.pl/?a=10960",
+      "title": "Ogłoszenie Nr OOD.2110.2.2026 Burmistrza Miasta i Gminy Gąsawa z dnia 25 czerwca 2026 r. o naborze na wolne stanowisko urzędnicze ds. zamówień publicznych",
+      "snippet": "Ogłoszenie Nr OOD.2110.2.2026 Burmistrza Miasta i Gminy Gąsawa z dnia 25 czerwca 2026 r. o naborze na wolne stanowisko urzędnicze ds. zamówień publicznych",
+      "source": "szukaj:dział-ogłoszeń",
+      "direct": true,
+      "decision": "rejected",
+      "reason": "Nabór na stanowisko urzędnicze ds. zamówień publicznych, nie na radę nadzorczą."
+    },
+    {
+      "url": "https://gasawa.bip.net.pl/?a=10959",
+      "title": "Ogłoszenie o konkursie na stanowisko Dyrektora Przedszkola Samorządowego w Gąsawie (ul. Żnińska 17, 88-410 Gąsawa), dla którego organem prowadzącym jest Gmina Gąsawa",
+      "snippet": "Ogłoszenie o konkursie na stanowisko Dyrektora Przedszkola Samorządowego w Gąsawie (ul. Żnińska 17, 88-410 Gąsawa), dla którego organem prowadzącym jest Gmina Gąsawa",
+      "source": "szukaj:dział-ogłoszeń",
+      "direct": true,
+      "decision": "rejected",
+      "reason": "Konkurs na dyrektora przedszkola, nie na członka rady nadzorczej."
+    },
+    {
+      "url": "https://gasawa.bip.net.pl/?a=10781",
+      "title": "Ogłoszenie Nr OOD.2110.1.2026 Burmistrza Miasta i Gminy Gąsawa z dnia 8 stycznia 2026 r. o naborze na wolne stanowisko kierownicze urzędnicze Kierownika/Kierowniczkę Zakładu Robót Publicznych w Gąsawie",
+      "snippet": "Ogłoszenie Nr OOD.2110.1.2026 Burmistrza Miasta i Gminy Gąsawa z dnia 8 stycznia 2026 r. o naborze na wolne stanowisko kierownicze urzędnicze Kierownika/Kierowniczkę Zakładu Robót Publicznych w Gąsawie",
+      "source": "szukaj:dział-ogłoszeń",
+      "direct": true,
+      "decision": "rejected",
+      "reason": "Nabór na kierownika zakładu robót publicznych, nie na członka rady nadzorczej."
+    },
+    {
+      "url": "",
+      "title": "",
+      "snippet": "",
+      "source": "\"nabór na członków rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "no_url",
+      "reason": "wynik bez adresu URL"
+    },
+    {
+      "url": "https://grudziadz.pl/artykul/69/20202/nabor-kandydatow-do-rad-nadzorczych",
+      "title": "Nabór kandydatów do Rad Nadzorczych - Grudziądz",
+      "snippet": "1 day ago · Prezydent Grudziądza ogłasza nabór do bazy danych kandydatów do Rad Nadzorczych spółek, w których gmina-miasto Grudziądz posiada udziały/akcje, a także spółek od nich zależnych.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://bip.mikolow.eu/kategorie/564-zakonczone/artykuly/4974-burmistrz-mikolowa-oglasza-nabor-kandydatow-na-wolne-stanowisko-urzednicze-inspektora-km-w-wydziale-inwestycji-utrzymania-infrastruktury-i-uslug-komunalnych-w-referacie-inwestycji",
+      "title": "BIP Urząd Miasta Mikołów",
+      "snippet": "1 day ago · Burmistrz Mikołowa ogłasza nabór kandydatów na wolne stanowisko urzędnicze inspektora (K/M) w Wydziale Inwestycji, Utrzymania Infrastruktury i Usług Komunalnych – w Referacie Inwestycji",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Nabór na stanowisko urzędnicze inspektora, nie na członka rady nadzorczej."
+    },
+    {
+      "url": "https://limanowa.in/aktualnosci/rodzina-na-miejskim/84545",
+      "title": "Mąż i żona na stanowiskach dyrektorskich. Kulisy zatrudnienia ...",
+      "snippet": "3 days ago · Po doprecyzowaniu wniosku i ograniczeniu go do zapisów dotyczących planowanego zatrudnienia nowej osoby na stanowisku kierowniczym, spółka przekazała nam jedynie wyciąg z protokołu posiedzenia rady nadzorczej z 15 maja 2026 roku. O okoliczności utworzenia stanowiska dyrektora operacyjnego zapytaliśmy również Polski Fundusz Rozwoju.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Artykuł dziennikarski o zatrudnieniu dyrektorów, nie ogłoszenie naboru do rady nadzorczej."
+    },
+    {
+      "url": "https://nabory.kprm.gov.pl/lubuskie/gorzow-wielkopolski/inspektorinspektorka,169384,v8",
+      "title": "Inspektor/inspektorka | Lubuski Urząd Wojewódzki w Gorzowie ...",
+      "snippet": "5 days ago · Do spraw: organizacyjnych w Wojewódzkim Zespole do Spraw Orzekania o Niepełnosprawności #administracja publiczna Liczba stanowisk 1 Wymiar etatu 1 Status nabór w toku Miejsce pracy Jagiellończyka 4 66-400 Gorzów Wielkopolski Ważne do",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Nabór na stanowisko inspektora, nie na członka rady nadzorczej."
+    },
+    {
+      "url": "https://sokolka.pl/",
+      "title": "Portal informacyjny Gminy Sokółka - Gmina Sokółka",
+      "snippet": "1 day ago · Oficjalny serwis internetowy Gminy Sokółka - aktualne wydarzenia, wiadomości, informacje praktyczne, turystyka, biznes i wiele innych.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://legislacja.rcl.gov.pl/lista?pSize=100&progress=1",
+      "title": "Projekty - legislacja.rcl.gov.pl",
+      "snippet": "2 days ago · Projekt opracowany na podstawie założeń projektu ustaw Projekt opracowany w trybie odrębnym",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Baza projektów ustaw, brak treści o naborze kandydatów."
+    },
+    {
+      "url": "https://www.tram-silesia.pl/",
+      "title": "Tramwaje Śląskie S.A. – transport publiczny w Górnośląsko ...",
+      "snippet": "5 days ago · Tramwaje Śląskie S.A. to operator transportu publicznego działający w 13 gminach Górnośląsko-Zagłębiowskiej Metropolii. Zapewniamy bezpieczny przewóz pasażerów i modernizację infrastruktury tramwajowej.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.sektorkolejowy.pl/wiecej-mozliwosci-ten-sam-kierunek-jerzy-ernst-dolacza-do-zarzadu-fps/",
+      "title": "„Więcej możliwości, ten sam kierunek”. Jerzy Ernst dołącza ...",
+      "snippet": "2 days ago · Decyzją Rady Nadzorczej H. Cegielski – Fabryka Pojazdów Szynowych, z dniem 26 października Jerzy Ernst objął funkcję członka zarządu. Dołączenie doświadczonego menedżera ma przygotować FPS do realizacji nowych projektów. W gremium wesprze prezesa Piotra Wasilewskiego oraz członka ...",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Aktualność o powołaniu członka zarządu, nie otwarty nabór."
+    },
+    {
+      "url": "https://www.rynek-kolejowy.pl/biznes.html",
+      "title": "Biznes - Rynek Kolejowy",
+      "snippet": "2 days ago · O tym, jakie spółka ma plany na najbliższe lata, w tym o roli zakładów w Polsce, konkurencji z Chin oraz segmencie dużych prędkości, mówił na ostatnich targach InnoTrans Peter Spuhler – przewodniczący rady nadzorczej Stadlera.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://echodnia.eu/swietokrzyskie/swietokrzyska-grupa-przemyslowa-industria-zakonczyla-poszukiwania-uranu-na-terenie-gminy-lagow/ar/c3p2-29464003",
+      "title": "Świętokrzyska Grupa Przemysłowa Industria zakończyła ...",
+      "snippet": "5 days ago · Świętokrzyska Grupa Przemysłowa Industria zakończyła poszukiwania uranu w gminie Łagów po badaniach, które nie wykazały stężeń uzasadniających dalszą eksploatację. Spółka deklaruje jednak kontynuację prac nad rozwojem małych reaktorów jądrowych SMR.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://ekrs.ms.gov.pl/",
+      "title": "Krajowy Rejestr Sądowy - Portal Rejestrów Sądowych",
+      "snippet": "2 days ago · Tu możesz złożyć do sądu rejestrowego elektroniczny wniosek o wpis do KRS (wniosek o rejestrację podmiotu, zmianę danych, wykreślenie), płatne sprawozdania finansowe oraz skierować dowolne pismo do sądu rejestrowego drogą elektroniczną. Aby wysłać wniosek lub pismo musisz posiadać konto w Portalu Rejestrów Sądowych. Uwaga! Funkcjonalności składania wniosków i pism do KRS ...",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Portal do składania wniosków do KRS, nie ogłoszenie naboru."
+    },
+    {
+      "url": "https://bydgoszcz.wyborcza.pl/bydgoszcz/7,48722,33101982,polska-grupa-zbrojeniowa-odpowiedziala-na-nasze-pytania-w-sprawie.html",
+      "title": "Polska Grupa Zbrojeniowa odpowiedziała na nasze pytania w ...",
+      "snippet": "1 day ago · Zmiany personalne w Belmie służą poprawie efektywności, zwiększeniu tempa działania oraz przygotowaniu spółki do realizacji stojących przed nią zadań - przekonuje Polska Grupa Zbrojeniowa. Nie wyjaśnia, czym zawinił zdymisjonowany prezes, który zostawia bydgoską firmę w świetnej kondycji.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Artykuł dotyczy zmian personalnych i wypowiedzi zarządu, nie jest to ogłoszenie o naborze do rady nadzorczej."
+    },
+    {
+      "url": "https://kghm.com/pl",
+      "title": "KGHM Polska Miedź S.A. Strona korporacyjna",
+      "snippet": "5 days ago · Oficjalna strona Grupy Kapitałowej KGHM. Czołowy producent miedzi i srebra rafinowanego, światowy lider w branży górniczo-hutniczej.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.pepcogroup.eu/investors/regulatory-filings/",
+      "title": "Regulatory filings - Pepco Group",
+      "snippet": "2 days ago · Odwołanie pierwotnego skupu akcji oraz ponowne ogłoszenie skupu akcji po wyższej cenie skupu",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Wynik dotyczy skupu akcji Pepco Group, nie naboru na członka rady nadzorczej."
+    },
+    {
+      "url": "https://www.money.pl/gielda/komunikaty/7344579884934209.html",
+      "title": "Komunikat spółki - GKI Szacunkowa wysokość skonsolidowanych ...",
+      "snippet": "1 day ago · GKI Szacunkowa wysokość skonsolidowanych przychodów ze sprzedaży za okres 01.01-30.09.2026 r. - Giełda - Komunkaty ze spółek",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Komunikat giełdowy spółki o przychodach, nie dotyczy naboru."
+    },
+    {
+      "url": "https://businessinsider.com.pl/gielda/akcje/profil?id=PLTOYA000011",
+      "title": "Toya SA - akcje i notowania. Cena akcji - Business InsiderAction S.A.Events & Things To Do in Chantilly, VA in October 2026 ...4229 Lafayette Center Dr, Chantilly, VA 20151 - The Ponds at ...Komunikaty - GK Immobile SA (IMMOBILE) - Giełda - Bankier.pl",
+      "snippet": "1 day ago · Prezentujemy aktualne notowania giełdowe Toya SA. Najnowsze ceny akcji oraz historyczne wykresy znajdziesz w serwisie Business Insider. 2 days ago · Największy polski dystrybutor sprzętu komputerowego. 11 hours ago · Find events and things to do in October 2026 in Chantilly, Virginia. Discover parties, concerts, meets, shows, sports, club, reunion, Performance happening in October 2026 in Chantilly, Virginia. 5 days ago · 4229 Lafayette Center Dr, Chantilly, VA 20151. This Office pro",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.action.pl/pl/inwestor/raporty",
+      "title": "Action S.A.",
+      "snippet": "2 days ago · Największy polski dystrybutor sprzętu komputerowego.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Strona raportów inwestorskich spółki Action S.A., brak ogłoszenia o naborze."
+    },
+    {
+      "url": "https://allevents.in/chantilly-va/october",
+      "title": "Events & Things To Do in Chantilly, VA in October 2026 ...",
+      "snippet": "11 hours ago · Find events and things to do in October 2026 in Chantilly, Virginia. Discover parties, concerts, meets, shows, sports, club, reunion, Performance happening in October 2026 in Chantilly, Virginia.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Wydarzenia i imprezy w Chantilly, brak związku z naborem."
+    },
+    {
+      "url": "https://www.loopnet.com/Listing/4229-Lafayette-Center-Dr-Chantilly-VA/39269411/",
+      "title": "4229 Lafayette Center Dr, Chantilly, VA 20151 - The Ponds at ...",
+      "snippet": "5 days ago · 4229 Lafayette Center Dr, Chantilly, VA 20151. This Office property is available for sale. Depending on timing, Seller may request short-term lease-bac 12 offices + 8-person conference room Seller may require 3-6",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Ogłoszenie sprzedaży nieruchomości biurowej, nie dotyczy naboru kandydatów."
+    },
+    {
+      "url": "https://www.bankier.pl/gielda/notowania/akcje/IMMOBILE/komunikaty",
+      "title": "Komunikaty - GK Immobile SA (IMMOBILE) - Giełda - Bankier.pl",
+      "snippet": "5 days ago · GK Immobile SA (IMMOBILE) - najnowsze wiadomości, aktualne notowania, forum dyskusyjne, komunikaty espi, wyniki finansowe, rekomendacje",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://smartapki.pl/tools/uchwala-powolanie-rn-zw",
+      "title": "Uchwała o powołaniu członka rady nadzorczej",
+      "snippet": "4 days ago · Generator uchwały ZW w sprawie powołania członka Rady Nadzorczej sp. z o.o. — art. 215 § 1 KSH. Minimum 3 członków, kadencja, zgłoszenie do KRS 7 dni.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Generator wzoru uchwały o powołaniu członka RN, nie ogłoszenie naboru."
+    },
+    {
+      "url": "https://www.bankier.pl/wiadomosc/LW-BOGDANKA-S-A-Zgloszenie-kandydata-na-czlonka-Rady-Nadzorczej-9219183.html",
+      "title": "BOGDANKA: Zgłoszenie kandydata na członka Rady Nadzorczej",
+      "snippet": "1 day ago · 4. INFORMACJE O PODMIOCIE 5. PODPISY OSÓB REPREZENTUJĄCYCH SPÓŁKĘ Spis załączników: Wniosek Akcjonariusza - zgłoszenie kandydata na Członka Rady Nadzorczej.pdf Stanisław Tokarski ...",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Zgłoszenie kandydata przez akcjonariusza, nie otwarty nabór"
+    },
+    {
+      "url": "https://kurier-kolejowy.pl/aktualnosci/52068/pkp-cargo-service-szuka-prezesa-i-czlonka-zarzadu--zgloszenia-do-26-pazdziernika.html",
+      "title": "PKP CARGO SERVICE szuka prezesa i członka zarządu. Zgłoszenia ...",
+      "snippet": "1 day ago · Rada nadzorcza PKP CARGO SERVICE rozpoczęła postępowanie kwalifikacyjne na stanowiska prezesa zarządu oraz członka zarządu. Nabór ogłoszono 12 października 2026 roku. Kandydaci mają czas na",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://lexlege.pb.pl/rozporzadzenie-ministra-pracy-i-polityki-socjalnej-w-sprawie-sposobu-usprawiedliwiania-nieobecnosci-w-pracy-oraz-udzielania-pracownikom-zwolnien-od-pracy/paragraf-14/",
+      "title": "§ 14. uspr. zw. - Zwolnienie od pracy pracownika będącego ...",
+      "snippet": "2 days ago · § 14. Zwolnienie od pracy pracownika będącego członkiem rady nadzorczej, działającej u pracodawcy Pracodawca jest obowiązany zwolnić od pracy pracownika będącego członkiem rady nadzorczej, działającej u zatrudniającego go pracodawcy, na czas niezbędny do uczestniczenia w posiedzeniach tej rady.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Przepis prawny o zwolnieniach od pracy, nie ogłoszenie naboru."
+    },
+    {
+      "url": "https://arslege.pl/dokumenty/kategoria/rada-nadzorcza/80/",
+      "title": "Wyszukiwarka aktów prawnych, orzeczeń sądów, wzorów ...",
+      "snippet": "1 day ago · Intuicyjna, prosta i szybka wyszukiwarka umożliwiajaca odnalezienie aktów prawnych, orzeczeń sądów, wzorów dokumentów, kodeksów oraz artykułów",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://infoplocktv.pl/2025/09/17/prawie-50-osob-chetnych-na-trzy-stanowiska-w-zarzadzie-orlen-s-a/",
+      "title": "Prawie 50 osób chętnych na trzy stanowiska w zarządzie ORLEN ...",
+      "snippet": "1 day ago · Prawie 50 osób zainteresowanych stanowiskiem w zarządzie ORLENU. Do obsadzenie trzy stanowiska. Kto je obejmie zdecyduje Rada Nadzorcza spółki w najbliższym czasie. Są trzy stanowiska w zarządzie spółki - chętnych 46. Zdecydowana większość, bo 37 osób to mężczyźni, jest też 9 kandydatek. Kom",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.ngo.pl/",
+      "title": "Strona główna - ngo.pl",
+      "snippet": "11 hours ago · Dyrektor Narodowego Instytutu Wolności – Centrum Rozwoju Społeczeństwa Obywatelskiego ogłasza nabór na stanowisko:",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.facebook.com/radiocentrumkalisz/",
+      "title": "radio CENTRUM 106.4 | Kalisz - Facebook",
+      "snippet": "5 days ago · 📻 radioCENTRUM_106.4 ogłasza nabór kandydatów do pracy w redakcji radiowej w Kaliszu.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.bankier.pl/gielda/notowania/akcje/ALIOR/komunikaty",
+      "title": "Komunikaty - ALIOR BANK (ALIOR) - Giełda - Bankier.pl",
+      "snippet": "1 day ago · espi 15.10.2026 15:59 Zgłoszenie kandydatów do Rady Nadzorczej Alior Bank S.A. espi 15.10.2026 11:08 Informacja o rezygnacji Członka Rady Nadzorczej Alior Banku S.A. espi",
+      "source": "\"kandydatów do rady nadzorczej\"",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://www.facebook.com/groups/2067796563464139/",
+      "title": "Czynsz w SM Bródno | Facebook",
+      "snippet": "Kandydatów do Rady Nadzorczej, a także osoby ubiegające się o miejsca w Radzie Osiedla, ponownie zachęcam do przedstawienia swoich pomysłów i konkretnych planów.",
+      "source": "\"kandydatów do rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Post na Facebooku zachęcający kandydatów, nie oficjalne ogłoszenie naboru."
+    }
+  ]
+}

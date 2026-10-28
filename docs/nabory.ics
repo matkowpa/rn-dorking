@@ -3,12 +3,4 @@ VERSION:2.0
 PRODID:-//rn-dorking//nabory rad nadzorczych//PL
 CALSCALE:GREGORIAN
 X-WR-CALNAME:Nabory - rady nadzorcze
-BEGIN:VEVENT
-UID:f06a75598a4746aa3207e112f1cb5047ea5ed092@rn-dorking
-DTSTAMP:20261026T000000Z
-DTSTART;VALUE=DATE:20261027
-DTEND;VALUE=DATE:20261028
-SUMMARY:Mazowiecki Szpital Specjalistyczny Sp. z o.o. z siedzibą w Radomiu
-DESCRIPTION:Mazowiecki Szpital Specjalistyczny w Radomiu ogłasza nabór kandydatów na członków Rady Nadzorczej. Osoby zainteresowane muszą spełnić określone kryteria merytoryczne i złożyć zgłoszenie w terminie siedmiu dni od publikacji ogłoszenia.\nhttps://mazovia.pl/pl/bip/komunikaty/ogloszenie-o-naborze-do-rady-nadzorczej-mazowieckiego-szpitala-specjalistycznego-sp-z-oo-z-siedziba-w-radomiu.html
-END:VEVENT
 END:VCALENDAR

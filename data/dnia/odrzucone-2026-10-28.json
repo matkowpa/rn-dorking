@@ -1,0 +1,131 @@
+{
+  "date": "2026-10-28",
+  "rejected": [
+    {
+      "url": "https://gasawa.bip.net.pl/?a=11018",
+      "title": "Ogłoszenie Nr OOD.2110.3.2026 Burmistrza Miasta i Gminy Gąsawa z dnia 31 lipca 2026 r. o naborze na wolne stanowisko urzędnicze ds. zamówień publicznych",
+      "reason": "Nabór na stanowisko urzędnicze ds. zamówień publicznych, nie rada nadzorcza.",
+      "source": "szukaj:dział-ogłoszeń"
+    },
+    {
+      "url": "https://gasawa.bip.net.pl/?a=11002",
+      "title": "Ogłoszenie o konkursie na stanowisko Dyrektora Przedszkola Samorządowego w Gąsawie (ul. Żnińska 17, 88-410 Gąsawa), dla którego organem prowadzącym jest Gmina Gąsawa",
+      "reason": "Konkurs na dyrektora przedszkola, nie na członka rady nadzorczej.",
+      "source": "szukaj:dział-ogłoszeń"
+    },
+    {
+      "url": "https://gasawa.bip.net.pl/?a=10960",
+      "title": "Ogłoszenie Nr OOD.2110.2.2026 Burmistrza Miasta i Gminy Gąsawa z dnia 25 czerwca 2026 r. o naborze na wolne stanowisko urzędnicze ds. zamówień publicznych",
+      "reason": "Nabór na stanowisko urzędnicze ds. zamówień publicznych, nie na radę nadzorczą.",
+      "source": "szukaj:dział-ogłoszeń"
+    },
+    {
+      "url": "https://gasawa.bip.net.pl/?a=10959",
+      "title": "Ogłoszenie o konkursie na stanowisko Dyrektora Przedszkola Samorządowego w Gąsawie (ul. Żnińska 17, 88-410 Gąsawa), dla którego organem prowadzącym jest Gmina Gąsawa",
+      "reason": "Konkurs na dyrektora przedszkola, nie na członka rady nadzorczej.",
+      "source": "szukaj:dział-ogłoszeń"
+    },
+    {
+      "url": "https://gasawa.bip.net.pl/?a=10781",
+      "title": "Ogłoszenie Nr OOD.2110.1.2026 Burmistrza Miasta i Gminy Gąsawa z dnia 8 stycznia 2026 r. o naborze na wolne stanowisko kierownicze urzędnicze Kierownika/Kierowniczkę Zakładu Robót Publicznych w Gąsawie",
+      "reason": "Nabór na kierownika zakładu robót publicznych, nie na członka rady nadzorczej.",
+      "source": "szukaj:dział-ogłoszeń"
+    },
+    {
+      "url": "https://bip.mikolow.eu/kategorie/564-zakonczone/artykuly/4974-burmistrz-mikolowa-oglasza-nabor-kandydatow-na-wolne-stanowisko-urzednicze-inspektora-km-w-wydziale-inwestycji-utrzymania-infrastruktury-i-uslug-komunalnych-w-referacie-inwestycji",
+      "title": "BIP Urząd Miasta Mikołów",
+      "reason": "Nabór na stanowisko urzędnicze inspektora, nie na członka rady nadzorczej.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+    },
+    {
+      "url": "https://limanowa.in/aktualnosci/rodzina-na-miejskim/84545",
+      "title": "Mąż i żona na stanowiskach dyrektorskich. Kulisy zatrudnienia ...",
+      "reason": "Artykuł dziennikarski o zatrudnieniu dyrektorów, nie ogłoszenie naboru do rady nadzorczej.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+    },
+    {
+      "url": "https://nabory.kprm.gov.pl/lubuskie/gorzow-wielkopolski/inspektorinspektorka,169384,v8",
+      "title": "Inspektor/inspektorka | Lubuski Urząd Wojewódzki w Gorzowie ...",
+      "reason": "Nabór na stanowisko inspektora, nie na członka rady nadzorczej.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+    },
+    {
+      "url": "https://legislacja.rcl.gov.pl/lista?pSize=100&progress=1",
+      "title": "Projekty - legislacja.rcl.gov.pl",
+      "reason": "Baza projektów ustaw, brak treści o naborze kandydatów.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+    },
+    {
+      "url": "https://www.sektorkolejowy.pl/wiecej-mozliwosci-ten-sam-kierunek-jerzy-ernst-dolacza-do-zarzadu-fps/",
+      "title": "„Więcej możliwości, ten sam kierunek”. Jerzy Ernst dołącza ...",
+      "reason": "Aktualność o powołaniu członka zarządu, nie otwarty nabór.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://ekrs.ms.gov.pl/",
+      "title": "Krajowy Rejestr Sądowy - Portal Rejestrów Sądowych",
+      "reason": "Portal do składania wniosków do KRS, nie ogłoszenie naboru.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://bydgoszcz.wyborcza.pl/bydgoszcz/7,48722,33101982,polska-grupa-zbrojeniowa-odpowiedziala-na-nasze-pytania-w-sprawie.html",
+      "title": "Polska Grupa Zbrojeniowa odpowiedziała na nasze pytania w ...",
+      "reason": "Artykuł dotyczy zmian personalnych i wypowiedzi zarządu, nie jest to ogłoszenie o naborze do rady nadzorczej.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.pepcogroup.eu/investors/regulatory-filings/",
+      "title": "Regulatory filings - Pepco Group",
+      "reason": "Wynik dotyczy skupu akcji Pepco Group, nie naboru na członka rady nadzorczej.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.money.pl/gielda/komunikaty/7344579884934209.html",
+      "title": "Komunikat spółki - GKI Szacunkowa wysokość skonsolidowanych ...",
+      "reason": "Komunikat giełdowy spółki o przychodach, nie dotyczy naboru.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.action.pl/pl/inwestor/raporty",
+      "title": "Action S.A.",
+      "reason": "Strona raportów inwestorskich spółki Action S.A., brak ogłoszenia o naborze.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://allevents.in/chantilly-va/october",
+      "title": "Events & Things To Do in Chantilly, VA in October 2026 ...",
+      "reason": "Wydarzenia i imprezy w Chantilly, brak związku z naborem.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.loopnet.com/Listing/4229-Lafayette-Center-Dr-Chantilly-VA/39269411/",
+      "title": "4229 Lafayette Center Dr, Chantilly, VA 20151 - The Ponds at ...",
+      "reason": "Ogłoszenie sprzedaży nieruchomości biurowej, nie dotyczy naboru kandydatów.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://smartapki.pl/tools/uchwala-powolanie-rn-zw",
+      "title": "Uchwała o powołaniu członka rady nadzorczej",
+      "reason": "Generator wzoru uchwały o powołaniu członka RN, nie ogłoszenie naboru.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\""
+    },
+    {
+      "url": "https://www.bankier.pl/wiadomosc/LW-BOGDANKA-S-A-Zgloszenie-kandydata-na-czlonka-Rady-Nadzorczej-9219183.html",
+      "title": "BOGDANKA: Zgłoszenie kandydata na członka Rady Nadzorczej",
+      "reason": "Zgłoszenie kandydata przez akcjonariusza, nie otwarty nabór",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\""
+    },
+    {
+      "url": "https://lexlege.pb.pl/rozporzadzenie-ministra-pracy-i-polityki-socjalnej-w-sprawie-sposobu-usprawiedliwiania-nieobecnosci-w-pracy-oraz-udzielania-pracownikom-zwolnien-od-pracy/paragraf-14/",
+      "title": "§ 14. uspr. zw. - Zwolnienie od pracy pracownika będącego ...",
+      "reason": "Przepis prawny o zwolnieniach od pracy, nie ogłoszenie naboru.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\""
+    },
+    {
+      "url": "https://www.facebook.com/groups/2067796563464139/",
+      "title": "Czynsz w SM Bródno | Facebook",
+      "reason": "Post na Facebooku zachęcający kandydatów, nie oficjalne ogłoszenie naboru.",
+      "source": "\"kandydatów do rady nadzorczej\""
+    }
+  ]
+}
