@@ -2,19 +2,32 @@
   "date": "2026-10-28",
   "stats": {
     "search_requests": 12,
-    "raw_results": 38,
+    "raw_results": 36,
     "direct_results": 5,
     "direct_whitelist": 0,
     "direct_jst": 0,
     "jst_skipped_portal": 47,
     "direct_jst_search": 5,
-    "after_dedup": 21,
-    "after_filter": 0,
-    "offers_added": 0,
+    "after_dedup": 5,
+    "after_filter": 1,
+    "offers_added": 1,
     "extract_errors": 0,
     "offers_updated": 0,
     "offers_with_termin": 0,
     "content_empty": 0
   },
-  "offers": []
+  "offers": [
+    {
+      "podmiot": "Urząd Miejski w Grudziądzu",
+      "miejscowosc": "Grudziądz",
+      "termin_skladania_ofert": "",
+      "stanowisko": "Członek Grudziądzkiej Rady Seniorów",
+      "wymagania": "Kandydaci muszą spełnić wymogi formalne (oświadczenia o zgodzie, niekaralności, prawach publicznych) oraz, w przypadku zgłoszeń indywidualnych, zebrać 15 podpisów poparcia osób zameldowanych w Grudziądzu, ukończyłych 60 lat.",
+      "podsumowanie": "Urząd Miejski w Grudziądzu ogłosił nabór kandydatów na członków Grudziądzkiej Rady Seniorów. Kandydaci mogą zgłosić swoją kandydaturę indywidualnie lub poprzez uprawnione organy statutowe.",
+      "data_publikacji": "",
+      "url": "https://grudziadz.pl/artykul/69/21261/nabor-kandydatow-do-grudziadzkiej-rady-seniorow",
+      "znaleziono_dnia": "2026-10-28",
+      "zrodlo": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+    }
+  ]
 }

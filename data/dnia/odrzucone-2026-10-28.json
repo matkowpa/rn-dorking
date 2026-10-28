@@ -126,6 +126,30 @@
       "title": "Czynsz w SM Bródno | Facebook",
       "reason": "Post na Facebooku zachęcający kandydatów, nie oficjalne ogłoszenie naboru.",
       "source": "\"kandydatów do rady nadzorczej\""
+    },
+    {
+      "url": "https://gazetapowiatowa.pl/artykul/legionowo-trwa-nabor-n2545350",
+      "title": "Legionowo. Trwa nabór do Miejskiej Rady Działalności Pożytku ...",
+      "reason": "Nabór do rady konsultacyjnej NGO, nie rady nadzorczej spółki.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+    },
+    {
+      "url": "https://phoenix-az.events/concerts/december/",
+      "title": "Phoenix Concerts in December 2026",
+      "reason": "Ogłoszenie dotyczy koncertów i wydarzeń muzycznych, a nie naboru do rady nadzorczej.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://businessyab.com/explore/united_states/arizona/maricopa_county/phoenix/estrella_village/south_51st_avenue/3410/fedex-ground-800-463-3339.html",
+      "title": "FedEx Ground - 3410 S 51st Ave, Phoenix, AZ 85043 - Hours ...",
+      "reason": "Informacje o lokalizacji firmy FedEx, brak naboru do rady nadzorczej.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://kghm.com/pl/inwestorzy/lad-korporacyjny/wladze-spolki",
+      "title": "Władze spółki | KGHM Polska Miedź S.A. Strona korporacyjna",
+      "reason": "Strona informacyjna o władzach spółki, nie ogłoszenie naboru kandydatów.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\""
     }
   ]
 }
