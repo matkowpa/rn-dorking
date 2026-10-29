@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-29",
+  "rejected": [
+    {
+      "url": "https://egzaminatorzy.oke.poznan.pl/cms,777,egzaminatorzy_zgloszenie_kandydata_na_egzaminatora.htm",
+      "title": "Okręgowa Komisja Egzaminacyjna - Egzaminatorzy / Zgłoszenie ...",
+      "reason": "Dotyczy naboru kandydatów na egzaminatorów, a nie członków rady nadzorczej.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+    },
+    {
+      "url": "https://xyz.pl/tag/alior-bank/",
+      "title": "Alior Bank - Tag - XYZ",
+      "reason": "Nabór na prezesa i członków zarządu, nie na członka rady nadzorczej.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.facebook.com/cheyenne.carter.9461/videos/ever-do-unhinged-shit-just-to-avoid-cleaning-your-room-maybe-im-just-eternally-i/2062304994442982/",
+      "title": "Ever do unhinged shit just to avoid cleaning your room? Maybe ...",
+      "reason": "Post na Facebooku o sprzątaniu pokoju i farbowaniu włosów.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.facebook.com/cheyenne.blake.836192/videos/are-you-doing-anything-special-for-this-sacred-time-of-year-what-cultural-elemen/1617634486508738/",
+      "title": "Are you doing anything special for this sacred time of year ...",
+      "reason": "Post na Facebooku o obrzędach sezonowych, brak związku z naborem do rad nadzorczych.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.drikpanchang.com/panchang/month-panchang.html?geoname-id=5821086",
+      "title": "Panchang, Panchangam for Cheyenne, Wyoming, United States",
+      "reason": "Kalendarz hinduski Panchang dla Cheyenne, brak związku z naborem do rady nadzorczej.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://silesia.org.pl/zgloszenia-udzialu-w-wydarzeniach/",
+      "title": "Zgłoszenia udziału w wydarzeniach – Śląski Związek Gmin i ...",
+      "reason": "Dotyczy formularza zgłoszenia udziału w posiedzeniu komisji, a nie otwartego naboru na radę nadzorczą.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\""
+    }
+  ]
+}

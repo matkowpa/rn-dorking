@@ -1,0 +1,246 @@
+{
+  "date": "2026-10-29",
+  "count": 26,
+  "decisions": {
+    "no_url": 1,
+    "duplicate": 2,
+    "cached": 17,
+    "rejected": 6
+  },
+  "raw": [
+    {
+      "url": "",
+      "title": "",
+      "snippet": "",
+      "source": "\"nabór na członków rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "no_url",
+      "reason": "wynik bez adresu URL"
+    },
+    {
+      "url": "https://grudziadz.pl/artykul/69/20202/nabor-kandydatow-do-rad-nadzorczych",
+      "title": "Nabór kandydatów do Rad Nadzorczych - Grudziądz",
+      "snippet": "11 hours ago · - kwestionariusz osobowy kandydata na członka Rady Nadzorczej spółki, w której gmina-miasto Grudziądz posiada udziały/akcje, - oświadczenie o wyrażeniu zgody na przetwarzanie danych oraz ujawnienie danych poprzez przesłanie lub inne udostępnienie.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://gazetapowiatowa.pl/artykul/legionowo-trwa-nabor-n2545350",
+      "title": "Legionowo. Trwa nabór do Miejskiej Rady Działalności Pożytku ...",
+      "snippet": "4 days ago · Prezydent Miasta Legionowo ogłosił nabór kandydatów do Miejskiej Rady Działalności Pożytku Publicznego na kolejną kadencję. Rada pełni funkcję konsultacyjną i o",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://grudziadz.pl/artykul/69/21261/nabor-kandydatow-do-grudziadzkiej-rady-seniorow",
+      "title": "Nabór kandydatów do Grudziądzkiej Rady Seniorów - Grudziądz",
+      "snippet": "3 days ago · Ogłoszony został nabór kandydatów na członków Grudziądzkiej Rady Seniorów. Zgłoszenia należy składać w terminie 30 dni od daty zamieszczenia ogłoszenia o naborze w Urzędzie Miejskim, czyli w okresie od 15 marca do 17 kwietnia br.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://limanowa.in/aktualnosci/rodzina-na-miejskim/84545",
+      "title": "Mąż i żona na stanowiskach dyrektorskich. Kulisy zatrudnienia ...",
+      "snippet": "4 days ago · Po doprecyzowaniu wniosku i ograniczeniu go do zapisów dotyczących planowanego zatrudnienia nowej osoby na stanowisku kierowniczym, spółka przekazała nam jedynie wyciąg z protokołu posiedzenia rady nadzorczej z 15 maja 2026 roku. O okoliczności utworzenia stanowiska dyrektora operacyjnego zapytaliśmy również Polski Fundusz Rozwoju.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://egzaminatorzy.oke.poznan.pl/cms,777,egzaminatorzy_zgloszenie_kandydata_na_egzaminatora.htm",
+      "title": "Okręgowa Komisja Egzaminacyjna - Egzaminatorzy / Zgłoszenie ...",
+      "snippet": "2 days ago · Nabór kandydatów na egzaminatorów i przyjmowanie wniosków OKE w Poznaniu prowadzi w trybie ciągłym, niezależnie od harmonogramu szkoleń. drukuj stronę Ostatnia aktualizacja: 2026-01-02 08:15",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Dotyczy naboru kandydatów na egzaminatorów, a nie członków rady nadzorczej."
+    },
+    {
+      "url": "https://sokolka.pl/",
+      "title": "Portal informacyjny Gminy Sokółka - Gmina Sokółka",
+      "snippet": "2 days ago · Oficjalny serwis internetowy Gminy Sokółka - aktualne wydarzenia, wiadomości, informacje praktyczne, turystyka, biznes i wiele innych.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://legislacja.rcl.gov.pl/lista?pSize=100&progress=1",
+      "title": "Projekty - legislacja.rcl.gov.pl",
+      "snippet": "3 days ago · Projekt opracowany na podstawie założeń projektu ustaw Projekt opracowany w trybie odrębnym",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.sektorkolejowy.pl/wiecej-mozliwosci-ten-sam-kierunek-jerzy-ernst-dolacza-do-zarzadu-fps/",
+      "title": "„Więcej możliwości, ten sam kierunek”. Jerzy Ernst dołącza ...",
+      "snippet": "3 days ago · Decyzją Rady Nadzorczej H. Cegielski – Fabryka Pojazdów Szynowych, z dniem 26 października Jerzy Ernst objął funkcję członka zarządu. Dołączenie doświadczonego menedżera ma przygotować FPS do realizacji nowych projektów. W gremium wesprze prezesa Piotra Wasilewskiego oraz członka ...",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.rynek-kolejowy.pl/biznes.html",
+      "title": "Biznes - Rynek Kolejowy",
+      "snippet": "3 days ago · O tym, jakie spółka ma plany na najbliższe lata, w tym o roli zakładów w Polsce, konkurencji z Chin oraz segmencie dużych prędkości, mówił na ostatnich targach InnoTrans Peter Spuhler – przewodniczący rady nadzorczej Stadlera.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://xyz.pl/tag/alior-bank/",
+      "title": "Alior Bank - Tag - XYZ",
+      "snippet": "2 days ago · Alior Bank szuka nowych ludzi do zarządu Rada nadzorcza Alior Banku ogłosiła postępowanie kwalifikacyjne na nowego prezesa i pięciu członków zarządu. Zgłoszenia można składać do 16 września.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Nabór na prezesa i członków zarządu, nie na członka rady nadzorczej."
+    },
+    {
+      "url": "https://ekrs.ms.gov.pl/",
+      "title": "Krajowy Rejestr Sądowy - Portal Rejestrów Sądowych",
+      "snippet": "Aug 18, 2026 · Tu możesz złożyć do sądu rejestrowego elektroniczny wniosek o wpis do KRS (wniosek o rejestrację podmiotu, zmianę danych, wykreślenie), płatne sprawozdania finansowe oraz skierować dowolne pismo do sądu rejestrowego drogą elektroniczną. Aby wysłać wniosek lub pismo musisz posiadać konto w Portalu Rejestrów Sądowych. Uwaga! Funkcjonalności składania wniosków i pism do KRS ...",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://kghm.com/pl",
+      "title": "KGHM Polska Miedź S.A. Strona korporacyjna",
+      "snippet": "1 day ago · Oficjalna strona Grupy Kapitałowej KGHM. Czołowy producent miedzi i srebra rafinowanego, światowy lider w branży górniczo-hutniczej.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://bydgoszcz.wyborcza.pl/bydgoszcz/7,48722,33101982,polska-grupa-zbrojeniowa-odpowiedziala-na-nasze-pytania-w-sprawie.html",
+      "title": "Polska Grupa Zbrojeniowa odpowiedziała na nasze pytania w ...",
+      "snippet": "2 days ago · Zmiany personalne w Belmie służą poprawie efektywności, zwiększeniu tempa działania oraz przygotowaniu spółki do realizacji stojących przed nią zadań - przekonuje Polska Grupa Zbrojeniowa. Nie wyjaśnia, czym zawinił zdymisjonowany prezes, który zostawia bydgoską firmę w świetnej kondycji.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.pepcogroup.eu/investors/regulatory-filings/",
+      "title": "Regulatory filings - Pepco Group",
+      "snippet": "3 days ago · Odwołanie pierwotnego skupu akcji oraz ponowne ogłoszenie skupu akcji po wyższej cenie skupu",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://businessinsider.com.pl/gielda/akcje/profil?id=PLTOYA000011",
+      "title": "Toya SA - akcje i notowania. Cena akcji - Business InsiderEver do unhinged shit just to avoid cleaning your room? Maybe ...Are you doing anything special for this sacred time of year ...Komunikat spółki - GKI Szacunkowa wysokość skonsolidowanych ...Action S.A.Panchang, Panchangam for Cheyenne, Wyoming, United States",
+      "snippet": "1 day ago · Prezentujemy aktualne notowania giełdowe Toya SA. Najnowsze ceny akcji oraz historyczne wykresy znajdziesz w serwisie Business Insider. 5 days ago · Ever do unhinged shit just to avoid cleaning your room? Maybe i'm just eternally immature 😭 #millennial #peterpan #WhyNot #HairDye 5 days ago · Are you doing anything special for this sacred time of year? What cultural elements do you celebrate for this significant season? Do you have unique or intense experiences when the veil is so thi",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.facebook.com/cheyenne.carter.9461/videos/ever-do-unhinged-shit-just-to-avoid-cleaning-your-room-maybe-im-just-eternally-i/2062304994442982/",
+      "title": "Ever do unhinged shit just to avoid cleaning your room? Maybe ...",
+      "snippet": "5 days ago · Ever do unhinged shit just to avoid cleaning your room? Maybe i'm just eternally immature 😭 #millennial #peterpan #WhyNot #HairDye",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Post na Facebooku o sprzątaniu pokoju i farbowaniu włosów."
+    },
+    {
+      "url": "https://www.facebook.com/cheyenne.blake.836192/videos/are-you-doing-anything-special-for-this-sacred-time-of-year-what-cultural-elemen/1617634486508738/",
+      "title": "Are you doing anything special for this sacred time of year ...",
+      "snippet": "5 days ago · Are you doing anything special for this sacred time of year? What cultural elements do you celebrate for this significant season? Do you have unique or intense experiences when the veil is so thin?...",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Post na Facebooku o obrzędach sezonowych, brak związku z naborem do rad nadzorczych."
+    },
+    {
+      "url": "https://www.money.pl/gielda/komunikaty/7344579884934209.html",
+      "title": "Komunikat spółki - GKI Szacunkowa wysokość skonsolidowanych ...",
+      "snippet": "2 days ago · GKI Szacunkowa wysokość skonsolidowanych przychodów ze sprzedaży za okres 01.01-30.09.2026 r. - Giełda - Komunkaty ze spółek",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.action.pl/pl/inwestor/raporty",
+      "title": "Action S.A.",
+      "snippet": "3 days ago · Największy polski dystrybutor sprzętu komputerowego.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.drikpanchang.com/panchang/month-panchang.html?geoname-id=5821086",
+      "title": "Panchang, Panchangam for Cheyenne, Wyoming, United States",
+      "snippet": "11 hours ago · This page provides October 29, 2026 daily panchang (also called as panchangam) for Cheyenne, Wyoming, United States. It lists most Hindu festivals and vrats for each day. It also lists daily timing and position of Sunrise, Sunset, Moonrise, Moonset, Nakshatra, Yoga, Karna, Sunsign, Moonsign, Rahu Kalam, Gulikai Kalam, Yamaganda, Abhijit, Dur Muhurtha, Amrit Kalam and Varjyam.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Kalendarz hinduski Panchang dla Cheyenne, brak związku z naborem do rady nadzorczej."
+    },
+    {
+      "url": "https://smartapki.pl/tools/uchwala-powolanie-rn-zw",
+      "title": "Uchwała o powołaniu członka rady nadzorczej",
+      "snippet": "5 days ago · Generator uchwały ZW w sprawie powołania członka Rady Nadzorczej sp. z o.o. — art. 215 § 1 KSH. Minimum 3 członków, kadencja, zgłoszenie do KRS 7 dni.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://kurier-kolejowy.pl/aktualnosci/52068/pkp-cargo-service-szuka-prezesa-i-czlonka-zarzadu--zgloszenia-do-26-pazdziernika.html",
+      "title": "PKP CARGO SERVICE szuka prezesa i członka zarządu. Zgłoszenia ...",
+      "snippet": "1 day ago · Rada nadzorcza PKP CARGO SERVICE rozpoczęła postępowanie kwalifikacyjne na stanowiska prezesa zarządu oraz członka zarządu. Nabór ogłoszono 12 października 2026 roku. Kandydaci mają czas na",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://silesia.org.pl/zgloszenia-udzialu-w-wydarzeniach/",
+      "title": "Zgłoszenia udziału w wydarzeniach – Śląski Związek Gmin i ...",
+      "snippet": "Formularz zgłoszenia udziału w posiedzeniu Komisji ds. Ochrony Danych Osobowych, 17 listopada 2026 r., Częstochowa",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Dotyczy formularza zgłoszenia udziału w posiedzeniu komisji, a nie otwartego naboru na radę nadzorczą."
+    },
+    {
+      "url": "https://kghm.com/pl/inwestorzy/lad-korporacyjny/wladze-spolki",
+      "title": "Władze spółki | KGHM Polska Miedź S.A. Strona korporacyjna",
+      "snippet": "6 days ago · Rada Nadzorcza Członkowie Rady Nadzorczej są powoływani przez Walne Zgromadzenie, a z kolei Rada Nadzorcza powołuje członków Zarządu i nadzoruje ich pracę. Rada Nadzorcza może liczyć do dziesięciu członków.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://lexlege.pb.pl/rozporzadzenie-ministra-pracy-i-polityki-socjalnej-w-sprawie-sposobu-usprawiedliwiania-nieobecnosci-w-pracy-oraz-udzielania-pracownikom-zwolnien-od-pracy/paragraf-14/",
+      "title": "§ 14. uspr. zw. - Zwolnienie od pracy pracownika będącego ...",
+      "snippet": "2 days ago · § 14. Zwolnienie od pracy pracownika będącego członkiem rady nadzorczej, działającej u pracodawcy Pracodawca jest obowiązany zwolnić od pracy pracownika będącego członkiem rady nadzorczej, działającej u zatrudniającego go pracodawcy, na czas niezbędny do uczestniczenia w posiedzeniach tej rady.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    }
+  ]
+}

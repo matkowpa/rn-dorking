@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-29",
+  "stats": {
+    "search_requests": 12,
+    "raw_results": 28,
+    "direct_results": 0,
+    "direct_whitelist": 0,
+    "direct_jst": 0,
+    "jst_skipped_portal": 68,
+    "direct_jst_search": 0,
+    "after_dedup": 6,
+    "after_filter": 0,
+    "offers_added": 0,
+    "extract_errors": 0,
+    "offers_updated": 1,
+    "offers_with_termin": 0,
+    "content_empty": 0
+  },
+  "offers": []
+}
