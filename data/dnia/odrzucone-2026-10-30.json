@@ -1,0 +1,101 @@
+{
+  "date": "2026-10-30",
+  "rejected": [
+    {
+      "url": "https://kepno.bip.net.pl/kategorie/83-nabor-na-wolne-stanowiska-pracy/artykuly/838-burmistrz-miasta-i-gminy-kepno-oglasza-nabor-kandydatow-na-stanowisko-mlodszy-referentmlodsza-referentka-w-wydziale-oswiaty-i-kultury-w-urzedzie-miasta-i-gminy-w-kepnie",
+      "title": "BIP Urząd Miasta i Gminy w Kępnie",
+      "reason": "Nabór na stanowisko urzędnicze (młodszy referent), nie na członka rady nadzorczej.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+    },
+    {
+      "url": "https://bip.radzionkow.pl/kategorie/391-nabory-na-wolne-stanowiska-urzednicze/artykuly/7501-burmistrz-miasta-radzionkow-oglasza-nabor-kandydatow-na-wolne-kierownicze-stanowisko-urzednicze-dyrektora-zakladu-placowek-oswiatowych-w-radzionkowie",
+      "title": "BIP Urząd Miasta Radzionków",
+      "reason": "Nabór na stanowisko dyrektora zakładu oświatowego, nie na członka rady nadzorczej.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+    },
+    {
+      "url": "https://bip.kgssa.pl/2652,ogloszenia-rady-nadzorczej",
+      "title": "Ogłoszenia Rady Nadzorczej | Biuletyn Informacji Publicznej ...",
+      "reason": "Ogłoszenie o zaproszeniu firm audytorskich do składania ofert, nie naboru kandydatów.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://ceo.com.pl/piotr-borys-nowym-prezesem-cpk-pokieruje-88583",
+      "title": "Piotr Borys nowym prezesem CPK. Zmiany w Port Polska",
+      "reason": "Informacja o powołaniu prezesa zarządu, nie naboru na radę nadzorczą.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://portpolska.pl/pl/aktualnosci-2/port-polska-nowy-prezes-zarzadu-wybrany",
+      "title": "Port Polska – nowy Prezes Zarządu wybrany",
+      "reason": "Powołanie Prezesa Zarządu – stanowisko zarządu, nie otwarty nabór do rady nadzorczej.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://biznes.interia.pl/gospodarka/news-wybrano-nowego-prezesa-cpk-znamy-nazwisko,nId,23566372",
+      "title": "Wybrano prezesa CPK. Podano jego nazwisko - Biznes w INTERIA.PL",
+      "reason": "Artykuł informacyjny o wyborze prezesa zarządu, nie dotyczy naboru do rady nadzorczej.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://ir.immobile.com.pl/raporty-biezace/2026",
+      "title": "2026 - Raporty bieżące - Immobile",
+      "reason": "Raport bieżący o nabyciu akcji przez członka rady, nie nabór.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://biznes.pap.pl/wiadomosci/firma/396",
+      "title": "| Biznes PAP",
+      "reason": "Strona serwisu informacyjnego PAP Biznes, nie ogłoszenie naboru na radę nadzorczą.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://hoodmaps.com/san-jose-neighborhood-map",
+      "title": "San José Neighborhood Map",
+      "reason": "Mapa dzielnic San José, brak związku z naborem do rady nadzorczej.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://sanjose.events/october/",
+      "title": "San Jose Events in October 2026 | Event Calendar",
+      "reason": "Kalendarz wydarzeń rozrywkowych w San Jose, brak związku z naborem.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://lexlege.pb.pl/ustawa-o-krajowej-radzie-sadownictwa/art-11b",
+      "title": "Art. 11b. KRS - Zgłoszenia kandydatów na członków rady ...",
+      "reason": "Tekst ustawy o KRS, nie ogłoszenie otwartego naboru.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\""
+    },
+    {
+      "url": "https://www.money.pl/gielda/komunikaty/7344491615540289.html",
+      "title": "VGO ZGŁOSZENIE KANDYDATA NA CZŁONKA RADY NADZORCZEJ",
+      "reason": "Komunikat giełdowy o zgłoszeniu kandydata, nie ogłoszenie otwartego naboru",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\""
+    },
+    {
+      "url": "https://www.money.pl/gielda/komunikaty/7344579700466753.html",
+      "title": "Komunikat spółki - ENI Powołanie członków Rady Nadzorczej",
+      "reason": "Komunikat o powołaniu członków, nie dotyczy otwartego naboru.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\""
+    },
+    {
+      "url": "https://www.bankier.pl/wiadomosc/ENERGOINSTAL-S-A-Powolanie-czlonkow-Rady-Nadzorczej-9219035.html",
+      "title": "ENERGOINSTAL S.A.: Powołanie członków Rady Nadzorczej",
+      "reason": "Ogłoszenie dotyczy powołania już wybranych członków Rady Nadzorczej, a nie otwartego naboru.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\""
+    },
+    {
+      "url": "https://www.klaksonsm.pl/",
+      "title": "S.M. Klakson - Aktualności",
+      "reason": "Nabór na członka zarządu, nie rady nadzorczej.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://bip.golub-dobrzyn.pl/612,oferty-pracy",
+      "title": "Oferty Pracy | Biuletyn Informacji Publicznej Urzędu Miasta ...",
+      "reason": "Dotyczy naboru na stanowisko Prezesa, a nie członka rady nadzorczej.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\""
+    }
+  ]
+}
