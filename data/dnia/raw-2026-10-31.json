@@ -1,0 +1,309 @@
+{
+  "date": "2026-10-31",
+  "count": 33,
+  "decisions": {
+    "no_url": 1,
+    "duplicate": 2,
+    "cached": 20,
+    "rejected": 10
+  },
+  "raw": [
+    {
+      "url": "",
+      "title": "",
+      "snippet": "",
+      "source": "\"nabór na członków rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "no_url",
+      "reason": "wynik bez adresu URL"
+    },
+    {
+      "url": "https://grudziadz.pl/artykul/69/20202/nabor-kandydatow-do-rad-nadzorczych",
+      "title": "Nabór kandydatów do Rad Nadzorczych - Grudziądz",
+      "snippet": "11 hours ago · Prezydent Grudziądza ogłasza nabór do bazy danych kandydatów do Rad Nadzorczych spółek, w których gmina-miasto Grudziądz posiada udziały/akcje, a także spółek od nich zależnych. Przedstawiamy informacje dla kandydatów: Wymagania niezbędne: - wykształcenie wyższe: ekonomiczne, prawnicze lub specjalistyczne branżowe,",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://bip.radzionkow.pl/kategorie/391-nabory-na-wolne-stanowiska-urzednicze/artykuly/7501-burmistrz-miasta-radzionkow-oglasza-nabor-kandydatow-na-wolne-kierownicze-stanowisko-urzednicze-dyrektora-zakladu-placowek-oswiatowych-w-radzionkowie",
+      "title": "BIP Urząd Miasta Radzionków",
+      "snippet": "2 days ago · Burmistrz Miasta Radzionków ogłasza nabór kandydatów na wolne kierownicze stanowisko urzędnicze - Dyrektora Zakładu Placówek Oświatowych w Radzionkowie 2026-10-29 13:10 Załączniki Ogłoszenie naboru.pdf Ogłoszenie naboru.pdf 340.58 KB Drukuj Drukuj Drukuj Zapisz do pdf Metryczka Metryczka Biuletyn Informacji Publicznej Urząd Miasta Radzionków Redakcja Redaktor Paweł Krawczyk ...",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://kepno.bip.net.pl/kategorie/83-nabor-na-wolne-stanowiska-pracy/artykuly/838-burmistrz-miasta-i-gminy-kepno-oglasza-nabor-kandydatow-na-stanowisko-mlodszy-referentmlodsza-referentka-w-wydziale-oswiaty-i-kultury-w-urzedzie-miasta-i-gminy-w-kepnie",
+      "title": "BIP Urząd Miasta i Gminy w Kępnie",
+      "snippet": "2 days ago · Burmistrz Miasta i Gminy Kępno ogłasza nabór kandydatów na stanowisko: młodszy referent/młodsza referentka w Wydziale Oświaty i Kultury w Urzędzie Miasta i Gminy w Kępnie",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://grudziadz.pl/artykul/69/21261/nabor-kandydatow-do-grudziadzkiej-rady-seniorow",
+      "title": "Nabór kandydatów do Grudziądzkiej Rady Seniorów - Grudziądz",
+      "snippet": "5 days ago · Ogłoszony został nabór kandydatów na członków Grudziądzkiej Rady Seniorów. Zgłoszenia należy składać w terminie 30 dni od daty zamieszczenia ogłoszenia o naborze w Urzędzie Miejskim, czyli w okresie od 15 marca do 17 kwietnia br.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://www.facebook.com/GminaBarlinek/",
+      "title": "Gmina Barlinek | Barlinek gmina - Facebook",
+      "snippet": "4 days ago · Gmina Barlinek, Barlinek gmina. 8,026 followers · 4,181 talking about this · 8 were here. Oficjalny profil Gminy Barlinek, znajdziesz tu aktualne informacje o działaniach urzędu, ważnych...",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Jest to oficjalny profil gminy, a nie ogłoszenie naboru na radę nadzorczą."
+    },
+    {
+      "url": "https://sokolka.pl/",
+      "title": "Portal informacyjny Gminy Sokółka - Gmina Sokółka",
+      "snippet": "2 days ago · Oficjalny serwis internetowy Gminy Sokółka - aktualne wydarzenia, wiadomości, informacje praktyczne, turystyka, biznes i wiele innych.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.tram-silesia.pl/",
+      "title": "Tramwaje Śląskie S.A. – transport publiczny w Górnośląsko ...",
+      "snippet": "2 days ago · Tramwaje Śląskie S.A. to operator transportu publicznego działający w 13 gminach Górnośląsko-Zagłębiowskiej Metropolii. Zapewniamy bezpieczny przewóz pasażerów i modernizację infrastruktury tramwajowej.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://bip.kgssa.pl/2652,ogloszenia-rady-nadzorczej",
+      "title": "Ogłoszenia Rady Nadzorczej | Biuletyn Informacji Publicznej ...",
+      "snippet": "4 days ago · Ogłoszenie Rady Nadzorczej Krajowej Grupy Spożywczej S.A. o zaproszeniu firm audytorskich do składania ofert na przeprowadzenie badania sprawozdań finansowych Rada Nadzorcza Krajowej Grupy Spożywczej S.A. z siedzibą w Toruniu (87-100), przy ul. Kraszewskiego 40, wpisanej do Krajowego Rejestru Sądowego - Rejestru Przedsiębiorców prowadzonego przez Sąd Rejonowy w Toruniu VII Wydział ...",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.all-inclusive.com.pl/port-polska-nowy-prezes-zarzadu-wybrany/",
+      "title": "Port Polska - nowy Prezes Zarządu wybrany - ALL Inclusive",
+      "snippet": "1 day ago · Rada Nadzorcza Centralnego Portu Komunikacyjnego zakończyła postępowanie kwalifikacyjne i powołała Piotra Borysa na stanowisko Prezesa Zarządu. Nowy prezes jest inżynierem budownictwa z wieloletnim doświadczeniem w realizacji wielobranżowych projektów infrastrukturalnych, w tym współfinansowanych ze środków Unii Europejskiej. Przez kilkanaście lat pełnił funkcje zarządcze w ...",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Ogłoszenie dotyczy powołania Prezesa Zarządu, a nie otwartego naboru na radę nadzorczą."
+    },
+    {
+      "url": "https://ceo.com.pl/piotr-borys-nowym-prezesem-cpk-pokieruje-88583",
+      "title": "Piotr Borys nowym prezesem CPK. Zmiany w Port Polska",
+      "snippet": "1 day ago · Decyzja Rady Nadzorczej kończy postępowanie kwalifikacyjne rozpoczęte w sierpniu 2026 roku. Nowy prezes ma doświadczenie zarówno w zarządzaniu inwestycjami po stronie zamawiającego, jak i w pracy przy projektach realizowanych przez wykonawców.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.nakolei.pl/piotr-borys-pokieruje-cpk/",
+      "title": "Piotr Borys pokieruje CPK - Portal Kolejowy NaKolei.pl",
+      "snippet": "1 day ago · Postępowanie kwalifikacyjne Wybór nowego prezesa CPK przez radę nadzorczą jest częścią procesu formowania składu zarządu spółki, którego głównym zadaniem jest obecnie sprawne rozpoczęcie budowy obiektów infrastruktury w ramach programu Portu Polska.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Dotyczy wyboru nowego prezesa (zarządu), a nie naboru na radę nadzorczą."
+    },
+    {
+      "url": "https://transinfo.pl/infoair/port-polska-ma-nowego-prezesa-piotr-borys-pokieruje-budowa-lotniska/",
+      "title": "Port Polska ma nowego prezesa. Piotr Borys pokieruje budową ...",
+      "snippet": "1 day ago · 13 kandydatur i czterech finalistów. Piotr Borys wybrany na prezesa CPK Rada Nadzorcza Centralnego Portu Komunikacyjnego sp. z o.o. zakończyła postępowanie kwalifikacyjne dotyczące wyboru prezesa zarządu spółki realizującej program inwestycyjny Port Polska. Informację o powołaniu Piotra Borysa przekazano 30 października 2026 roku.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Informacja o powołaniu prezesa zarządu, nie nabór na członka rady nadzorczej."
+    },
+    {
+      "url": "https://portpolska.pl/pl/aktualnosci-2/port-polska-nowy-prezes-zarzadu-wybrany",
+      "title": "Port Polska – nowy Prezes Zarządu wybrany",
+      "snippet": "1 day ago · Rada Nadzorcza Centralnego Portu Komunikacyjnego powołała Piotra Borysa na stanowisko Prezesa Zarządu. Nowy prezes ma wieloletnie doświadczenie w przygotowaniu i realizacji złożonych projektów infrastrukturalnych, zdobywane zarówno po stronie inwestora, jak i wykonawców. W ostatnim okresie kierował Podprogramem Kolejowym w spółce.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://biznes.interia.pl/gospodarka/news-wybrano-nowego-prezesa-cpk-znamy-nazwisko,nId,23566372",
+      "title": "Wybrano prezesa CPK. Podano jego nazwisko - Biznes w INTERIA.PL",
+      "snippet": "1 day ago · Wybrano prezesa CPK. Podano jego nazwisko Przez kilkanaście lat zajmował stanowiska zarządcze i menedżerskie w strukturach inwestycyjnych PKP Polskich Linii Kolejowych S.A. \"Brał udział we ...",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://ir.immobile.com.pl/raporty-biezace/2026",
+      "title": "2026 - Raporty bieżące - Immobile",
+      "snippet": "4 days ago · Raport 19/2026 Pokaż załączniki Zawiadomienie Członka Rady Nadzorczej i osoby blisko związanej o nabyciu akcji Emitenta.pdf Rb 19 GKI - załącznik 1.pdf Rb 19 GKI - załącznik 2.pdf 01/07/2026",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://bip.kgssa.pl/1377,ogloszenia",
+      "title": "Ogłoszenia | Biuletyn Informacji Publicznej Krajowa Grupa ...",
+      "snippet": "4 days ago · Zaproszenie do składania ofert w trybie negocjacji nieograniczonych na realizację zadania - świadczenie usługi wywozu i zagospodarowanie osadów (ziemi) z oczyszczania buraków tymczasowo gromadzonych na placu fabrycznym Oddziału Krajowej Grupy Spożywczej S.A. „Cukrownia Krasnystaw” w Siennicy Nadolnej w kampanii 2026/2027.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Ogłoszenie dotyczy przetargu na świadczenie usług wywozu osadów, a nie naboru na radę nadzorczą."
+    },
+    {
+      "url": "https://www.pepcogroup.eu/investors/regulatory-filings/",
+      "title": "Regulatory filings - Pepco Group",
+      "snippet": "5 days ago · Odwołanie pierwotnego skupu akcji oraz ponowne ogłoszenie skupu akcji po wyższej cenie skupu",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://hyroxcalendar.com/events/phoenix-2027",
+      "title": "HYROX Phoenix 2027 — Tickets & Dates | HYROX Calendar",
+      "snippet": "1 day ago · HYROX Phoenix 2027 — race day February 25, 2027 in United States. Check live ticket availability, prices and dates, and get alerted when tickets drop.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Ogłoszenie dotyczy sprzedaży biletów na wydarzenie sportowe, a nie naboru do rady nadzorczej."
+    },
+    {
+      "url": "https://phoenix-az.events/sports/rodeo/",
+      "title": "Phoenix Rodeo 2026–2027| Tickets & Schedule",
+      "snippet": "1 day ago · Find rodeo events in Phoenix. Browse bull riding, barrel racing, rodeos, western shows, venues, tickets, and schedules.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.action.pl/pl/inwestor/raporty",
+      "title": "Action S.A.",
+      "snippet": "5 days ago · Największy polski dystrybutor sprzętu komputerowego.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.money.pl/gielda/komunikaty/7344579884934209.html",
+      "title": "Komunikat spółki - GKI Szacunkowa wysokość skonsolidowanych ...",
+      "snippet": "4 days ago · GKI Szacunkowa wysokość skonsolidowanych przychodów ze sprzedaży za okres 01.01-30.09.2026 r. - Giełda - Komunkaty ze spółek",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.money.pl/gielda/komunikaty/7344491615540289.html",
+      "title": "VGO ZGŁOSZENIE KANDYDATA NA CZŁONKA RADY NADZORCZEJ",
+      "snippet": "4 days ago · VGO ZGŁOSZENIE KANDYDATA NA CZŁONKA RADY NADZORCZEJ - Giełda - Komunkaty ze spółek",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://biznes.pap.pl/wiadomosci/firmy/lw-bogdanka-sa-212026-zgloszenie-kandydata-na-czlonka-rady-nadzorczej",
+      "title": "LW BOGDANKA SA (21/2026) Zgłoszenie kandydata na członka Rady ...",
+      "snippet": "4 days ago · LW BOGDANKA SA (21/2026) Zgłoszenie kandydata na członka Rady Nadzorczej Raport bieżący z plikiem 21/2026 Podstawa prawna: Art. 56 ust. 1 pkt 2 Ustawy o ofercie - informacje bieżące i okresowe Zarząd Lubelskiego Węgla Bogdanka S.A. z siedzibą w Bogdance (\"Spółka\") w związku ze zwołanym na dzień 29 października 2026 r.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Jest to zgłoszenie kandydata na członka Rady Nadzorczej, a nie otwarty nabór."
+    },
+    {
+      "url": "https://lexlege.pb.pl/ustawa-o-krajowej-radzie-sadownictwa/art-11b",
+      "title": "Art. 11b. KRS - Zgłoszenia kandydatów na członków rady ...",
+      "snippet": "3 days ago · Art. 11b. Zgłoszenia kandydatów na członków rady 1. Zgłoszenia kandydata dokonuje na piśmie pełnomocnik. Pełnomocnikiem jest osoba wskazana w pisemnym oświadczeniu pierwszych piętnastu osób z wykazu. 2. Do zgłoszenia kandydata przez podmiot, o którym mowa w art. 11a ust. 2 pkt 1, załącza się wykaz obywateli popierających zgłoszenie, zawierający ich imiona, nazwiska, adresy ...",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.bankier.pl/wiadomosc/LW-BOGDANKA-S-A-Zgloszenie-kandydata-na-czlonka-Rady-Nadzorczej-9219183.html",
+      "title": "LW BOGDANKA S.A.: Zgłoszenie kandydata na członka Rady Nadzorczej",
+      "snippet": "4 days ago · Zarząd Lubelskiego Węgla Bogdanka S.A. z siedzibą w Bogdance („Spółka”) w związku ze zwołanym na dzień 29 października 2026 r. Nadzwyczajnym Walnym Zgromadzeniem (o czym Spółka ...",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.biznesradar.pl/a/164101,vigo-photonics-sa-50-2026-zgloszenie-kandydata-na-czlonka-rady-nadzorczej",
+      "title": "VIGO PHOTONICS SA (50/2026) ZGŁOSZENIE KANDYDATA NA CZŁONKA ...",
+      "snippet": "4 days ago · Podstawa prawna: Art. 56 ust. 1 pkt 2 Ustawy o ofercie - informacje bieżące i okresowe Raport bieżący numer 50 z dnia 27 października 2026 roku. Zarząd emitenta VIGO Photonics S.A. z siedzibą w Ożarowie Mazowieckim (dalej jako: \"Emitent\") informuje, że w dniu 26 października 2026 roku wpłynęło do Emitenta od Allianz Polska Otwarty Fundusz Emerytalny z siedzibą w Warszawie ...",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Wynik dotyczy zgłoszenia konkretnego kandydata, a nie ogłoszenia otwartego naboru."
+    },
+    {
+      "url": "https://www.bankier.pl/wiadomosc/ENERGOINSTAL-S-A-Powolanie-czlonkow-Rady-Nadzorczej-9219035.html",
+      "title": "ENERGOINSTAL S.A.: Powołanie członków Rady Nadzorczej",
+      "snippet": "4 days ago · Zarząd ENERGOINSTAL S.A. z siedzibą w Katowicach („Emitent”) informuje, że w dniu 27.10.2026 r. Nadzwyczajne Walne Zgromadzenie Akcjonariuszy Emitenta podjęło uchwały o powołaniu nowych ...",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.klaksonsm.pl/",
+      "title": "S.M. Klakson - Aktualności",
+      "snippet": "3 days ago · Ogłoszenie o naborze na nieetatowego członka Zarządu Rada Nadzorcza Spółdzielni Mieszkaniowej \"Klakson\" w Lublinie ogłasza nabór na nieetatowego członka Zarządu. Szczegóły w załączeniu.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://bip.golub-dobrzyn.pl/612,oferty-pracy",
+      "title": "Oferty Pracy | Biuletyn Informacji Publicznej Urzędu Miasta ...",
+      "snippet": "2 days ago · Ogłoszenie o naborze nr 2/2026 z dnia 29 stycznia 2026 r. osoba zastępująca Kierownika Wydziału Komunalnego Ogłoszenie o naborze nr 2_2026 z dnia 29 stycznia 2026 r. Burmistrz Miasta ogłasza nabór kandydatek_kandydatów na wolne stanowisko urzędnicze.pdf (PDF) 1.829MB",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.facebook.com/gminaploty/",
+      "title": "Gmina Płoty | Płoty gmina - Facebook",
+      "snippet": "1 day ago · Szczególne podziękowania składamy: 👏 Panu Lucjanowi Łukomskiemu – Przewodniczącemu Rady Nadzorczej 👏 Panu Jarosławowi Jędryczko – Członkowi Zarządu ds.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Ogłoszenie składa podziękowania istniejącym członkom organów, nie jest to nabor."
+    },
+    {
+      "url": "https://www.facebook.com/zmieniamyzawidow/",
+      "title": "Zmieniamy Zawidów | Zawidów - Facebook",
+      "snippet": "4 days ago · 🏡 24 NOWE MIESZKANIA W ZAWIDOWIE – RUSZA NABÓR WNIOSKÓW! Burmistrz Miasta Zawidów ogłasza nabór wniosków o najem mieszkań, które powstaną przy ul. Marii Skłodowskiej-Curie w ramach inwestycji SIM KZN Łużyce. 🏘️ Co warto wiedzieć o inwestycji? 24 mieszkania 3-pokojowe w czterech budynkach, lokale wykończone w standardzie „pod klucz”, komórki lokatorskie i miejsca ...",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Ogłoszenie dotyczy naboru wniosków o najem mieszkań, a nie rekrutacji do rady nadzorczej."
+    },
+    {
+      "url": "https://www.gov.pl/web/nfosigw/",
+      "title": "Narodowy Fundusz Ochrony Środowiska i Gospodarki Wodnej",
+      "snippet": "5 days ago · Napędzamy zieloną transformację poprzez wsparcie efektywnych inicjatyw, które wpływają na rozwój gospodarki i są ukierunkowane na realizację interesu publicznego i środowiskowego.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    }
+  ]
+}

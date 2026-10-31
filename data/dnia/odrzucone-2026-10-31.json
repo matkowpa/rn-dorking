@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-31",
+  "rejected": [
+    {
+      "url": "https://www.facebook.com/GminaBarlinek/",
+      "title": "Gmina Barlinek | Barlinek gmina - Facebook",
+      "reason": "Jest to oficjalny profil gminy, a nie ogłoszenie naboru na radę nadzorczą.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+    },
+    {
+      "url": "https://www.all-inclusive.com.pl/port-polska-nowy-prezes-zarzadu-wybrany/",
+      "title": "Port Polska - nowy Prezes Zarządu wybrany - ALL Inclusive",
+      "reason": "Ogłoszenie dotyczy powołania Prezesa Zarządu, a nie otwartego naboru na radę nadzorczą.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.nakolei.pl/piotr-borys-pokieruje-cpk/",
+      "title": "Piotr Borys pokieruje CPK - Portal Kolejowy NaKolei.pl",
+      "reason": "Dotyczy wyboru nowego prezesa (zarządu), a nie naboru na radę nadzorczą.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://transinfo.pl/infoair/port-polska-ma-nowego-prezesa-piotr-borys-pokieruje-budowa-lotniska/",
+      "title": "Port Polska ma nowego prezesa. Piotr Borys pokieruje budową ...",
+      "reason": "Informacja o powołaniu prezesa zarządu, nie nabór na członka rady nadzorczej.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://bip.kgssa.pl/1377,ogloszenia",
+      "title": "Ogłoszenia | Biuletyn Informacji Publicznej Krajowa Grupa ...",
+      "reason": "Ogłoszenie dotyczy przetargu na świadczenie usług wywozu osadów, a nie naboru na radę nadzorczą.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://hyroxcalendar.com/events/phoenix-2027",
+      "title": "HYROX Phoenix 2027 — Tickets & Dates | HYROX Calendar",
+      "reason": "Ogłoszenie dotyczy sprzedaży biletów na wydarzenie sportowe, a nie naboru do rady nadzorczej.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://biznes.pap.pl/wiadomosci/firmy/lw-bogdanka-sa-212026-zgloszenie-kandydata-na-czlonka-rady-nadzorczej",
+      "title": "LW BOGDANKA SA (21/2026) Zgłoszenie kandydata na członka Rady ...",
+      "reason": "Jest to zgłoszenie kandydata na członka Rady Nadzorczej, a nie otwarty nabór.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\""
+    },
+    {
+      "url": "https://www.biznesradar.pl/a/164101,vigo-photonics-sa-50-2026-zgloszenie-kandydata-na-czlonka-rady-nadzorczej",
+      "title": "VIGO PHOTONICS SA (50/2026) ZGŁOSZENIE KANDYDATA NA CZŁONKA ...",
+      "reason": "Wynik dotyczy zgłoszenia konkretnego kandydata, a nie ogłoszenia otwartego naboru.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\""
+    },
+    {
+      "url": "https://www.facebook.com/gminaploty/",
+      "title": "Gmina Płoty | Płoty gmina - Facebook",
+      "reason": "Ogłoszenie składa podziękowania istniejącym członkom organów, nie jest to nabor.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.facebook.com/zmieniamyzawidow/",
+      "title": "Zmieniamy Zawidów | Zawidów - Facebook",
+      "reason": "Ogłoszenie dotyczy naboru wniosków o najem mieszkań, a nie rekrutacji do rady nadzorczej.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\""
+    }
+  ]
+}
