@@ -1,11 +1,11 @@
 {
   "date": "2026-10-31",
-  "count": 33,
+  "count": 39,
   "decisions": {
     "no_url": 1,
-    "duplicate": 2,
-    "cached": 20,
-    "rejected": 10
+    "duplicate": 3,
+    "cached": 30,
+    "rejected": 5
   },
   "raw": [
     {
@@ -20,7 +20,7 @@
     {
       "url": "https://grudziadz.pl/artykul/69/20202/nabor-kandydatow-do-rad-nadzorczych",
       "title": "Nabór kandydatów do Rad Nadzorczych - Grudziądz",
-      "snippet": "11 hours ago · Prezydent Grudziądza ogłasza nabór do bazy danych kandydatów do Rad Nadzorczych spółek, w których gmina-miasto Grudziądz posiada udziały/akcje, a także spółek od nich zależnych. Przedstawiamy informacje dla kandydatów: Wymagania niezbędne: - wykształcenie wyższe: ekonomiczne, prawnicze lub specjalistyczne branżowe,",
+      "snippet": "20 hours ago · Prezydent Grudziądza ogłasza nabór do bazy danych kandydatów do Rad Nadzorczych spółek, w których gmina-miasto Grudziądz posiada udziały/akcje, a także spółek od nich zależnych. Przedstawiamy informacje dla kandydatów: Wymagania niezbędne: - wykształcenie wyższe: ekonomiczne, prawnicze lub specjalistyczne branżowe,",
       "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
       "direct": false,
       "decision": "duplicate",
@@ -59,13 +59,13 @@
       "snippet": "4 days ago · Gmina Barlinek, Barlinek gmina. 8,026 followers · 4,181 talking about this · 8 were here. Oficjalny profil Gminy Barlinek, znajdziesz tu aktualne informacje o działaniach urzędu, ważnych...",
       "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Jest to oficjalny profil gminy, a nie ogłoszenie naboru na radę nadzorczą."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://sokolka.pl/",
       "title": "Portal informacyjny Gminy Sokółka - Gmina Sokółka",
-      "snippet": "2 days ago · Oficjalny serwis internetowy Gminy Sokółka - aktualne wydarzenia, wiadomości, informacje praktyczne, turystyka, biznes i wiele innych.",
+      "snippet": "1 day ago · Oficjalny serwis internetowy Gminy Sokółka - aktualne wydarzenia, wiadomości, informacje praktyczne, turystyka, biznes i wiele innych.",
       "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
       "direct": false,
       "decision": "cached",
@@ -95,8 +95,8 @@
       "snippet": "1 day ago · Rada Nadzorcza Centralnego Portu Komunikacyjnego zakończyła postępowanie kwalifikacyjne i powołała Piotra Borysa na stanowisko Prezesa Zarządu. Nowy prezes jest inżynierem budownictwa z wieloletnim doświadczeniem w realizacji wielobranżowych projektów infrastrukturalnych, w tym współfinansowanych ze środków Unii Europejskiej. Przez kilkanaście lat pełnił funkcje zarządcze w ...",
       "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Ogłoszenie dotyczy powołania Prezesa Zarządu, a nie otwartego naboru na radę nadzorczą."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://ceo.com.pl/piotr-borys-nowym-prezesem-cpk-pokieruje-88583",
@@ -113,8 +113,8 @@
       "snippet": "1 day ago · Postępowanie kwalifikacyjne Wybór nowego prezesa CPK przez radę nadzorczą jest częścią procesu formowania składu zarządu spółki, którego głównym zadaniem jest obecnie sprawne rozpoczęcie budowy obiektów infrastruktury w ramach programu Portu Polska.",
       "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Dotyczy wyboru nowego prezesa (zarządu), a nie naboru na radę nadzorczą."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://transinfo.pl/infoair/port-polska-ma-nowego-prezesa-piotr-borys-pokieruje-budowa-lotniska/",
@@ -122,8 +122,8 @@
       "snippet": "1 day ago · 13 kandydatur i czterech finalistów. Piotr Borys wybrany na prezesa CPK Rada Nadzorcza Centralnego Portu Komunikacyjnego sp. z o.o. zakończyła postępowanie kwalifikacyjne dotyczące wyboru prezesa zarządu spółki realizującej program inwestycyjny Port Polska. Informację o powołaniu Piotra Borysa przekazano 30 października 2026 roku.",
       "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Informacja o powołaniu prezesa zarządu, nie nabór na członka rady nadzorczej."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://portpolska.pl/pl/aktualnosci-2/port-polska-nowy-prezes-zarzadu-wybrany",
@@ -176,8 +176,8 @@
       "snippet": "1 day ago · HYROX Phoenix 2027 — race day February 25, 2027 in United States. Check live ticket availability, prices and dates, and get alerted when tickets drop.",
       "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Ogłoszenie dotyczy sprzedaży biletów na wydarzenie sportowe, a nie naboru do rady nadzorczej."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://phoenix-az.events/sports/rodeo/",
@@ -221,8 +221,8 @@
       "snippet": "4 days ago · LW BOGDANKA SA (21/2026) Zgłoszenie kandydata na członka Rady Nadzorczej Raport bieżący z plikiem 21/2026 Podstawa prawna: Art. 56 ust. 1 pkt 2 Ustawy o ofercie - informacje bieżące i okresowe Zarząd Lubelskiego Węgla Bogdanka S.A. z siedzibą w Bogdance (\"Spółka\") w związku ze zwołanym na dzień 29 października 2026 r.",
       "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Jest to zgłoszenie kandydata na członka Rady Nadzorczej, a nie otwarty nabór."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://lexlege.pb.pl/ustawa-o-krajowej-radzie-sadownictwa/art-11b",
@@ -248,8 +248,8 @@
       "snippet": "4 days ago · Podstawa prawna: Art. 56 ust. 1 pkt 2 Ustawy o ofercie - informacje bieżące i okresowe Raport bieżący numer 50 z dnia 27 października 2026 roku. Zarząd emitenta VIGO Photonics S.A. z siedzibą w Ożarowie Mazowieckim (dalej jako: \"Emitent\") informuje, że w dniu 26 października 2026 roku wpłynęło do Emitenta od Allianz Polska Otwarty Fundusz Emerytalny z siedzibą w Warszawie ...",
       "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Wynik dotyczy zgłoszenia konkretnego kandydata, a nie ogłoszenia otwartego naboru."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://www.bankier.pl/wiadomosc/ENERGOINSTAL-S-A-Powolanie-czlonkow-Rady-Nadzorczej-9219035.html",
@@ -280,12 +280,12 @@
     },
     {
       "url": "https://www.facebook.com/gminaploty/",
-      "title": "Gmina Płoty | Płoty gmina - Facebook",
-      "snippet": "1 day ago · Szczególne podziękowania składamy: 👏 Panu Lucjanowi Łukomskiemu – Przewodniczącemu Rady Nadzorczej 👏 Panu Jarosławowi Jędryczko – Członkowi Zarządu ds.",
+      "title": "Gmina Płoty | Płoty gmina - FacebookOferty Pracy | Biuletyn Informacji Publicznej Urzędu Miasta ...Zmieniamy Zawidów | Zawidów - Facebook",
+      "snippet": "2 days ago · Szczególne podziękowania składamy: 👏 Panu Lucjanowi Łukomskiemu – Przewodniczącemu Rady Nadzorczej 👏 Panu Jarosławowi Jędryczko – Członkowi Zarządu ds. 2 days ago · Ogłoszenie o naborze nr 2/2026 z dnia 29 stycznia 2026 r. osoba zastępująca Kierownika Wydziału Komunalnego Ogłoszenie o naborze nr 2_2026 z dnia 29 stycznia 2026 r. Burmistrz Miasta ogłasza nabór kandydatek_kandydatów na wolne stanowisko urzędnicze.pdf (PDF) 1.829MB 4 days ago · 🏡 24 NOWE MIESZKANIA W ZAWIDOWIE – RUSZA ",
       "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Ogłoszenie składa podziękowania istniejącym członkom organów, nie jest to nabor."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://www.facebook.com/zmieniamyzawidow/",
@@ -293,8 +293,8 @@
       "snippet": "4 days ago · 🏡 24 NOWE MIESZKANIA W ZAWIDOWIE – RUSZA NABÓR WNIOSKÓW! Burmistrz Miasta Zawidów ogłasza nabór wniosków o najem mieszkań, które powstaną przy ul. Marii Skłodowskiej-Curie w ramach inwestycji SIM KZN Łużyce. 🏘️ Co warto wiedzieć o inwestycji? 24 mieszkania 3-pokojowe w czterech budynkach, lokale wykończone w standardzie „pod klucz”, komórki lokatorskie i miejsca ...",
       "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Ogłoszenie dotyczy naboru wniosków o najem mieszkań, a nie rekrutacji do rady nadzorczej."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://www.gov.pl/web/nfosigw/",
@@ -304,6 +304,60 @@
       "direct": false,
       "decision": "cached",
       "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://bip.wierzbinek.pl/kategorie/73-nabor-na-wolne-stanowiska-pracy/artykuly/1199-wojt-gminy-wierzbinek-oglasza-otwarty-nabor-kandydatowkandydatek-na-wolne-stanowisko-urzednicze-referent-ds-podatkowych",
+      "title": "BIP Urząd Gminy w Wierzbinku",
+      "snippet": "3 days ago · WÓJT GMINY WIERZBINEK ogłasza otwarty nabór kandydatów/kandydatek na wolne stanowisko urzędnicze Referent ds. podatkowych",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Nabór na stanowisko urzędnicze (referent ds. podatkowych), nie na członka rady nadzorczej."
+    },
+    {
+      "url": "http://pawlowice.pl/",
+      "title": "pawlowice.pl - Urząd Gminy Pawłowice - Urząd Gminy Pawłowice",
+      "snippet": "1 day ago · Zakończył się nabór kandydatów na radnych. Ponieważ liczba zgłoszonych kandydatów odpowiada liczbie dostępnych mandatów, wybory zaplanowane na 30 października nie zostaną przeprowadzone.Do 27 października uczniowie mogli zgłaszać swoje kandydatury do Młodzieżowej Rady Gminy Pawłowice.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "frazy dyskwalifikujące: zakończył się"
+    },
+    {
+      "url": "https://www.wnp.pl/logistyka/cpk-ma-nowego-prezesa-to-czlowiek-od-wielkich-inwestycji-kolejowych,1114444.html",
+      "title": "Nowy prezes CPK. Piotr Borys pokieruje budową Portu Polska",
+      "snippet": "1 day ago · Piotr Borys został nowym prezesem Centralnego Portu Komunikacyjnego. To menedżer z wieloletnim doświadczeniem w PKP Polskich Liniach Kolejowych, który ostatnio kierował kolejową częścią programu Port Polska. Tym samym potwierdziły się wczor",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Artykuł o powołaniu prezesa zarządu CPK, nie nabór na członka rady nadzorczej."
+    },
+    {
+      "url": "https://www.predictwind.com/tracking/SY_Phoenix",
+      "title": "Phoenix Do Mar GPS Tracking · PredictWind",
+      "snippet": "4 hours ago · See your boat's position and route in real-time with PredictWind Tracker.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Wynik dotyczy śledzenia łodzi GPS, nie naboru kandydatów."
+    },
+    {
+      "url": "https://www.money.pl/gielda/komunikaty/7344579700466753.html",
+      "title": "Komunikat spółki - ENI Powołanie członków Rady Nadzorczej",
+      "snippet": "4 days ago · ENI Powołanie członków Rady Nadzorczej - Giełda - Komunkaty ze spółek",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.bankier.pl/gielda/notowania/akcje/ALIOR/komunikaty",
+      "title": "Komunikaty - ALIOR BANK (ALIOR) - Giełda - Bankier.pl",
+      "snippet": "ALIOR BANK (ALIOR) - najnowsze wiadomości, aktualne notowania, forum dyskusyjne, komunikaty espi, wyniki finansowe, rekomendacje",
+      "source": "\"kandydatów do rady nadzorczej\"",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
     }
   ]
 }

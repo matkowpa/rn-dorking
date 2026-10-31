@@ -60,6 +60,30 @@
       "title": "Zmieniamy Zawidów | Zawidów - Facebook",
       "reason": "Ogłoszenie dotyczy naboru wniosków o najem mieszkań, a nie rekrutacji do rady nadzorczej.",
       "source": "\"ogłasza nabór\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://bip.wierzbinek.pl/kategorie/73-nabor-na-wolne-stanowiska-pracy/artykuly/1199-wojt-gminy-wierzbinek-oglasza-otwarty-nabor-kandydatowkandydatek-na-wolne-stanowisko-urzednicze-referent-ds-podatkowych",
+      "title": "BIP Urząd Gminy w Wierzbinku",
+      "reason": "Nabór na stanowisko urzędnicze (referent ds. podatkowych), nie na członka rady nadzorczej.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+    },
+    {
+      "url": "http://pawlowice.pl/",
+      "title": "pawlowice.pl - Urząd Gminy Pawłowice - Urząd Gminy Pawłowice",
+      "reason": "frazy dyskwalifikujące: zakończył się",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+    },
+    {
+      "url": "https://www.wnp.pl/logistyka/cpk-ma-nowego-prezesa-to-czlowiek-od-wielkich-inwestycji-kolejowych,1114444.html",
+      "title": "Nowy prezes CPK. Piotr Borys pokieruje budową Portu Polska",
+      "reason": "Artykuł o powołaniu prezesa zarządu CPK, nie nabór na członka rady nadzorczej.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.predictwind.com/tracking/SY_Phoenix",
+      "title": "Phoenix Do Mar GPS Tracking · PredictWind",
+      "reason": "Wynik dotyczy śledzenia łodzi GPS, nie naboru kandydatów.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
     }
   ]
 }
