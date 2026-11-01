@@ -140,6 +140,39 @@ SOURCES: list = [
     Source("portgy",   "Zarząd Portów Gdynia", "https://www.port.gdynia.pl", "spolka", False),
     Source("portszcz", "Szczecińskie i Świnoujskie Porty",
            "https://port.szczecin.pl", "spolka", False),
+    # Duże spółki SP, których wcześniej brakowało na liście
+    Source("azoty",    "Grupa Azoty", "https://grupaazoty.com", "spolka", False),
+    Source("jsw",      "JSW S.A.", "https://www.jsw.pl", "spolka", False),
+    Source("pgg",      "Polska Grupa Górnicza", "https://www.pgg.pl", "spolka", False),
+    Source("lot",      "PLL LOT", "https://www.lot.com/pl/pl", "spolka", False),
+    Source("ppl",      "Polskie Porty Lotnicze",
+           "https://www.polish-airports.com", "spolka", False),
+    Source("totalizator", "Totalizator Sportowy",
+           "https://www.totalizator.pl", "spolka", False),
+    Source("phn",      "Polski Holding Nieruchomości", "https://phn.com.pl", "spolka", False),
+    Source("pekao",    "Bank Pekao", "https://www.pekao.com.pl", "spolka", False),
+    Source("alior",    "Alior Bank", "https://www.aliorbank.pl", "spolka", False),
+    Source("pwpw",     "PWPW", "https://www.pwpw.pl", "spolka", False),
+    Source("pzm",      "Polska Żegluga Morska", "https://www.pzm.pl", "spolka", False),
+    # Ministerstwa, pod którymi też wiszą spółki z radami nadzorczymi
+    Source("mrit",     "Ministerstwo Rozwoju i Technologii",
+           "https://www.gov.pl/web/rozwoj-technologia/wiadomosci", "ministerstwo", False),
+    Source("mrirw",    "Ministerstwo Rolnictwa i Rozwoju Wsi",
+           "https://www.gov.pl/web/rolnictwo/wiadomosci", "ministerstwo", False),
+    Source("mz",       "Ministerstwo Zdrowia",
+           "https://www.gov.pl/web/zdrowie/aktualnosci", "ministerstwo", False),
+    Source("ms",       "Ministerstwo Sprawiedliwości",
+           "https://www.gov.pl/web/sprawiedliwosc/aktualnosci-wydarzenia", "ministerstwo", False),
+    Source("mswia",    "Ministerstwo Spraw Wewnętrznych i Administracji",
+           "https://www.gov.pl/web/mswia/aktualnosci", "ministerstwo", False),
+    Source("mkidn",    "Ministerstwo Kultury i Dziedzictwa Narodowego",
+           "https://www.gov.pl/web/kultura/aktualnosci", "ministerstwo", False),
+    Source("mn",       "Ministerstwo Nauki i Szkolnictwa Wyższego",
+           "https://www.gov.pl/web/nauka/wiadomosci", "ministerstwo", False),
+    Source("men",      "Ministerstwo Edukacji Narodowej",
+           "https://www.gov.pl/web/edukacja/wiadomosci", "ministerstwo", False),
+    Source("mrpis",    "Ministerstwo Rodziny, Pracy i Polityki Społecznej",
+           "https://www.gov.pl/web/rodzina/aktualnosci-wiadomosci", "ministerstwo", False),
 ]
 
 
@@ -192,18 +225,90 @@ def _candidate_links(soup, base_url: str, max_links: int) -> list[tuple[str, str
 
 def _load_jst_registry() -> list:
     """Rejestr BIP-ów samorządów z data/bip_jst.json (generator:
-    tools/fetch_bip_registry.py). [] gdy brak/uszkodzony plik."""
+    tools/fetch_bip_registry.py) + pełna lista gmin z TERYT
+    (data/gminy_teryt.json). [] gdy brak/uszkodzony plik.
+
+    Rejestr gov.pl nie zawiera wszystkich gmin (tylko podmioty z BIP na
+    gov.pl), więc dokładamy brakujące gminy z TERYT jako wpisy bez URL.
+    Dzięki temu lista jest kompletna, a skaner i tak pomija wpisy bez
+    realnego adresu BIP.
+    """
     try:
         with open("data/bip_jst.json", encoding="utf-8") as f:
             reg = json.load(f)
-        if isinstance(reg, list) and reg:
-            return reg
+        if not isinstance(reg, list):
+            reg = []
     except FileNotFoundError:
         logger.warning("Brak data/bip_jst.json - faza JST pominięta "
                        "(uruchom tools/fetch_bip_registry.py)")
+        reg = []
     except Exception as exc:
         logger.warning("Rejestr JST uszkodzony: %s", exc)
-    return []
+        reg = []
+
+    # Pełna lista gmin (TERYT) - uzupełnia rejestr gov.pl o brakujące podmioty.
+    try:
+        with open("data/gminy_teryt.json", encoding="utf-8") as f:
+            teryt = json.load(f)
+    except Exception as exc:
+        logger.warning("Brak/uszkodzona lista TERYT: %s", exc)
+        teryt = []
+
+    def _key(name: str) -> str:
+        import unicodedata
+        s = name.strip().lower().translate(str.maketrans({"ł": "l", "Ł": "L"}))
+        s = "".join(c for c in unicodedata.normalize("NFKD", s)
+                    if not unicodedata.combining(c))
+        s = re.sub(
+            r"^(urząd miasta i gminy|urząd gminy i miasta|urząd miasta "
+            r"stołecznego|urząd miasta|urząd gminy|urząd miejski|gmina|miasto)"
+            r"\s+", "", s)
+        s = re.sub(r"^w\s+", "", s)
+        return s.rstrip("aeiouy")
+
+    have_teryt = {e.get("teryt") for e in reg if e.get("teryt")}
+    by_key: dict = {}
+    for e in reg:
+        if e.get("kind") == "gmina":
+            by_key.setdefault(_key(e.get("name", "")), []).append(e)
+    keyed = [(k, e) for k, es in by_key.items() for e in es]
+    added = 0
+    for g in teryt:
+        if g.get("teryt") in have_teryt:
+            continue
+        gkey = _key(g["name"])
+        # Dopasuj istniejący wpis (np. "Urząd Miasta Krakowa" -> "Kraków"),
+        # ale nie przypisuj jednego wpisu do dwóch gmin (miasto + gmina wiejska).
+        cands = by_key.get(gkey, [])
+        if not cands:
+            cands = [e for k, e in keyed
+                     if k and (k.startswith(gkey) or gkey.startswith(k))]
+        match = next((e for e in cands if not e.get("teryt")), None)
+        if match is not None:
+            match["teryt"] = g["teryt"]
+            match["voivodeship"] = g.get("voivodeship", "")
+            match["powiat"] = g.get("powiat", "")
+            match["type"] = g.get("type", "")
+            have_teryt.add(g["teryt"])
+            continue
+        reg.append({
+            "kind": "gmina",
+            "name": (("Miasto " if g.get("gmina_type") == "1" else "Gmina ")
+                     + g["name"]),
+            "slug": f"teryt-{g['teryt']}",
+            "url": "",
+            "teryt": g["teryt"],
+            "voivodeship": g.get("voivodeship", ""),
+            "powiat": g.get("powiat", ""),
+            "type": g.get("type", ""),
+            "source": "teryt",
+        })
+        have_teryt.add(g["teryt"])
+        added += 1
+    if added:
+        logger.info("Rejestr JST: +%s gmin z TERYT (łącznie %s wpisów)",
+                    added, len(reg))
+    return reg
 
 
 def _load_jst_urls() -> dict:
@@ -222,15 +327,14 @@ def _load_jst_urls() -> dict:
 
 
 def jst_daily_slice(registry: list, window: int = JST_WINDOW_DEFAULT,
-                    day_of_year: int | None = None) -> list:
+                    day_of_year: int | None = None,
+                    slot: int | None = None) -> list:
     """Deterministyczne okno próbkowania rejestru JST.
 
-    Każdy przebieg bierze inne, ciągłe okno wpisów. Okno przesuwa się o swoją
-    długość, ale start liczymy modulo LICZBA OKIEN, nie modulo długość listy
-    (poprzednia wersja: `(day * window) % len(registry)` - gdy okno nie dzieli
-    listy bez reszty, część wpisów była pomijana w cyklu, a inne odwiedzane
-    dwa razy). Teraz kolejne dni przechodzą przez wszystkie okna po kolei,
-    a po wyczerpaniu cyklu wracamy na początek.
+    Każdy przebieg bierze inne, ciągłe okno wpisów. Dwa przebiegi dziennie
+    (07:17 i 19:23) używają różnych slotów (0/1), więc dziennie pokrywamy
+    dwa okna, a nie to samo dwa razy. Gdy `slot` jest None, zachowanie jest
+    zgodne z poprzednią wersją (jedno okno na dzień).
     """
     if not registry or window <= 0:
         return []
@@ -238,7 +342,10 @@ def jst_daily_slice(registry: list, window: int = JST_WINDOW_DEFAULT,
         return list(registry)
     day = day_of_year if day_of_year is not None else datetime.now().timetuple().tm_yday
     n_windows = -(-len(registry) // window)          # ceil - liczba okien
-    idx = (day - 1) % n_windows
+    if slot is None:
+        idx = (day - 1) % n_windows
+    else:
+        idx = ((day - 1) * 2 + int(slot)) % n_windows
     start = idx * window
     end = start + window
     # Ostatnie okno przy niedzielnej długości rejestru wychodzi za koniec listy
@@ -464,23 +571,28 @@ def collect(max_links_per_source: int = 3, delay: float = 0.5,
             real = urls_map.get(e.get("slug", ""))
             if real:
                 e["url"] = real
-        window = jst_daily_slice(registry, window=jst_window)
-        usable = [e for e in window
-                  if e.get("url") and e["url"].rstrip("/") not in BAD_URLS
-                  and not is_portal_url(e["url"])]
-        skipped = len(window) - len(usable)
-        portal = sum(1 for e in window if e.get("url") and is_portal_url(e["url"]))
+        # Rotujemy tylko po wpisach z realnym BIP-em. Wpisy bez URL (np. gminy
+        # z TERYT, dla których nie znamy jeszcze adresu) nie mogą zjadać okna.
+        pool = [e for e in registry
+                if e.get("url") and e["url"].rstrip("/") not in BAD_URLS
+                and not is_portal_url(e["url"])]
+        skipped = len(registry) - len(pool)
+        portal = sum(1 for e in registry
+                     if e.get("url") and is_portal_url(e["url"]))
         if stats is not None:
             stats["jst_skipped_portal"] = portal
         if skipped:
             logger.warning(
-                "Faza 0b: pominięto %s/%s wpisów JST (%s to linki do portalu "
-                "gov.pl, nie BIP) - uruchom tools/resolve_bip_urls.py.",
-                skipped, len(window), portal)
-        logger.info("Faza 0b: JST - okno dzienne %s/%s podmiotów (%s do skanu)",
-                    len(window), len(registry), len(usable))
+                "Faza 0b: %s/%s wpisów JST bez skanowalnego BIP-u (%s to "
+                "linki do portalu gov.pl) - uruchom tools/resolve_bip_urls.py.",
+                skipped, len(registry), portal)
+        # Dwa runy dziennie -> dwa różne okna (slot 0 rano, 1 wieczorem).
+        slot = 0 if datetime.now().hour < 12 else 1
+        window = jst_daily_slice(pool, window=jst_window, slot=slot)
+        logger.info("Faza 0b: JST - rejestr %s, skanowalne %s, okno %s/%s",
+                    len(registry), len(pool), len(window), len(pool))
         before = len(results)
-        _scan_entries(usable, "BIP JST", max_links_per_source=JST_MAX_LINKS,
+        _scan_entries(window, "BIP JST", max_links_per_source=JST_MAX_LINKS,
                       delay=delay, seen=seen, results=results,
                       deep=JST_DEEP_SCAN, max_subpages=MAX_SUBPAGES_PER_SOURCE)
         if stats is not None:
