@@ -75,15 +75,16 @@ def dopisz(dnia: str, tresc: str) -> tuple[bool, str]:
             return True, "uzupełniono sekcję dnia"
         return False, "sekcja dnia już zawiera tę treść"
 
-    # nowa sekcja: wstaw pod nagłówkiem i meta-blokiem (pierwsze 4 linie)
-    lines = content.split("\n")
-    insert_at = 4
-    # znajdź koniec bloku nagłówka (linie nie-zaczynające się od # ani >)
-    while insert_at < len(lines) and (lines[insert_at].startswith(("#", ">", "!")) or not lines[insert_at].strip()):
-        insert_at += 1
-    lines.insert(insert_at, sekcja + "\n")
+    # Nowa sekcja: zawsze na górze, przed pierwszą istniejącą sekcją dnia.
+    # Poprzednia wersja wstawiała wiersz po stałym indeksie, co przy drugim
+    # dniu rozrywało poprzednią sekcję (jej treść lądowała pod nowym nagłówkiem).
+    marker = content.find("\n## ")
+    if marker == -1:
+        content = content.rstrip("\n") + "\n\n" + sekcja
+    else:
+        content = content[: marker + 1] + sekcja + "\n" + content[marker + 1 :]
     with open(path, "w", encoding="utf-8") as f:
-        f.write("\n".join(lines))
+        f.write(content)
     return True, "dodano sekcję dnia"
 
 
