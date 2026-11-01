@@ -222,6 +222,16 @@ def run() -> int:
     ok_tg = send_telegram(text)
     ok_mail = send_email(text, html, subject)
 
+    # Kanał 3: Obsidian vault (Etap 3) — plik, nie sieć; awaria tu nie blokuje
+    # stanu (ok_tg/ok_mail decydują o idempotentności).
+    try:
+        from notify_obsidian import dopisz
+        ok_obsidian, _obs_msg = dopisz(today, text)
+        if ok_obsidian:
+            logger.info("Notify: Obsidian vault — %s", _obs_msg)
+    except Exception:
+        logger.warning("Notify: kanał Obsidian nieudany (nieblokujące)", exc_info=True)
+
     # Zapisz stan tylko, jeśli któraś wiadomość dotarła (idempotentność)
     if ok_tg or ok_mail:
         sent_urls |= {o.get("url", "") for o in new_offers}
