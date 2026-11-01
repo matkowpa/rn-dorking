@@ -1,0 +1,173 @@
+{
+  "date": "2026-11-01",
+  "rejected": [
+    {
+      "url": "https://www.money.pl/mobility/szukaja-nowego-prezesa-cpk-wiemy-ile-ofert-wplynelo-7337748797667808a.html",
+      "title": "Karuzela ruszyła. 11 nazwisk na liście chętnych na fotel prezesa CPK",
+      "reason": "Nabór dotyczy stanowiska prezesa zarządu CPK, nie rady nadzorczej.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+    },
+    {
+      "url": "https://www.sektorkolejowy.pl/piotr-borys-nowym-prezesem-zarzadu-cpk/",
+      "title": "Piotr Borys nowym prezesem zarządu CPK - Sektorkolejowy.pl",
+      "reason": "Powołanie prezesa zarządu CPK – stanowisko zarządu, nie nabór do rady nadzorczej.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://polskiprzemysl.com.pl/nowy-prezes-cpk-wybrany/",
+      "title": "Nowy prezes CPK wybrany. Kim jest Piotr Borys?",
+      "reason": "Aktualność o powołaniu prezesa zarządu, nie nabór na członka rady nadzorczej.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://tzfpolfa.pl/aktualnosci/ogloszenia/zaproszenie-do-skladania-ofert-na-przeprowadzenie-badania-rocznego-sprawozdania-finansowego-spolki/",
+      "title": "Zaproszenie do składania ofert na przeprowadzenie badania rocznego sprawozdania finansowego Spółki - TZF Polfa",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://pkpleszew.pl/zaproszenie-do-skladania-ofert-3/",
+      "title": "ZAPROSZENIE DO SKŁADANIA OFERT – Przedsiębiorstwo Komunalne w Pleszewie",
+      "reason": "Zaproszenie do składania ofert na audyt finansowy, nie nabór na członka rady nadzorczej.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://pitcertification.pl/zaproszenie-do-skladania-ofert-na-badanie-sprawozdania-finansowego-za-lata-obrotowe-2025-i-2026/",
+      "title": "Zaproszenie do składania ofert na badanie sprawozdania finansowego za lata obrotowe 2025 i 2026 - PIT Certification",
+      "reason": "Zaproszenie do ofert na badanie sprawozdań finansowych, nie nabór do rady nadzorczej.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://bip.czestochowa.pl/attachments/download/33753",
+      "title": "Załącznik nr III WSKAZÓWKI PREZYDENTA MIASTA CZĘSTOCHOWY",
+      "reason": "Wzór dokumentu o pozyskiwaniu ofert audytorskich, nie ogłoszenie naboru.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.pumnowe.pl/2024/11/08/zaproszenie-do-skladania-ofert-na-badanie-sprawozdania-finansowego-spolki-za-2024/",
+      "title": "ZAPROSZENIE DO SKŁADANIA OFERT NA BADANIE SPRAWOZDANIA FINANSOWEGO SPÓŁKI ZA 2024 – PUM",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.pwik.suwalki.pl/pobierz/zaproszenie-do-skladania-oferty-na-przeprowadzenie-badania-finansowego.pdf",
+      "title": "Zaproszenie do składania ofert na przeprowadzenie badania",
+      "reason": "Zaproszenie do składania ofert na badanie sprawozdania finansowego, nie dotyczy naboru kandydatów.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.sanokrubber.com/wp-content/uploads/RB_W_1_2024.pdf",
+      "title": "RB-W 1 2024 SANOK RC SA KOMISJA NADZORU FINANSOWEGO Raport bieżący nr 1 / 2024",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.tbskrasnystaw.pl/bip/index.php/ogloszenia/nabor-pracownikow/inne",
+      "title": "Inne",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://czestochowawiolinowa.pl/zaproszenie-do-skladania-ofert-wspolpracy-na-swiadczenie-uslug-prawnych-2/",
+      "title": "Zaproszenie do składania ofert współpracy na świadczenie usług prawnych - Częstochowa Wiolinowa",
+      "reason": "Zaproszenie do składania ofert na usługi prawne, nie nabór kandydatów do rady nadzorczej.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://amwkwatera.pl/?dzial=prasa_o_nas&i=27",
+      "title": "AMW Kwatera - Twoja Nieruchomość Nasza pasja",
+      "reason": "Zaproszenie do składania ofert na badanie sprawozdania finansowego, nie nabór na radę nadzorczą.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://pitcertification.pl/",
+      "title": "Empowering excellence - PIT Certification",
+      "reason": "Brak treści naboru; fragment nie wskazuje ogłoszenia o rekrutacji.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://mazovia.pl/pl/bip/komunikaty/ogloszenie-nr-12024-o-naborze-kandydatow-na-czlonkow-do-rady-nadzorczej-spolki.html",
+      "title": "Ogłoszenie nr 1/2024 o naborze kandydatów na członków do Rady Nadzorczej spółki - Witryna Mazovia.pl",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\""
+    },
+    {
+      "url": "https://trybunal.gov.pl/postepowanie-i-orzeczenia/komunikaty-prasowe/komunikaty-przed/art/6797-zasady-i-tryb-wyboru-kandydatow-na-czlonkow-rad-nadzorczych-spolek-skarbu-panstwa",
+      "title": "Trybunał Konstytucyjny: Zasady i tryb wyboru kandydatów na członków rad nadzorczych spółek Skarbu Państwa.",
+      "reason": "Komunikat Trybunału Konstytucyjnego o zasadach naboru, nie ogłoszenie naboru.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\""
+    },
+    {
+      "url": "https://www.propertynews.pl/sylwetki/panstwowy-deweloper-z-nowym-wiceprezesem,202762.html",
+      "title": "Państwowy deweloper z nowym wiceprezesem",
+      "reason": "frazy dyskwalifikujące: egzamin",
+      "source": "\"kandydatów na członków rad nadzorczych\""
+    },
+    {
+      "url": "https://www.propertynews.pl/sylwetki/phn-z-nowym-wiceprezesem,202762.html",
+      "title": "PHN z nowym wiceprezesem",
+      "reason": "frazy dyskwalifikujące: egzamin",
+      "source": "\"kandydatów na członków rad nadzorczych\""
+    },
+    {
+      "url": "https://tarnow.pl/Dla-mieszkancow/Aktualnosci/Miasto/Budzet-Obywatelski-Tarnowa-2027-WYNIKI",
+      "title": "Budżet Obywatelski Tarnowa 2027 WYNIKI - TARNÓW - Polski Biegun Ciepła",
+      "reason": "Strona dotyczy wyników Budżetu Obywatelskiego, nie naboru kandydatów.",
+      "source": "\"kandydatów na członków rad nadzorczych\""
+    },
+    {
+      "url": "https://tarnow.pl/Dla-mieszkancow/Aktualnosci/Miasto/Zmieniona-organizacja-ruchu-w-okresie-Wszystkich-Swietych",
+      "title": "Zmieniona organizacja ruchu w okresie Wszystkich Świętych - TARNÓW - Polski Biegun Ciepła",
+      "reason": "Aktualność o organizacji ruchu; wzmianka o bazie kandydatów to tylko link menu.",
+      "source": "\"kandydatów na członków rad nadzorczych\""
+    },
+    {
+      "url": "https://wfos.szczecin.pl/aktualnosci/342",
+      "title": "Konkurs Zachodniopomorski Ekolider – kapituła konkursowa zakończyła ocenę zgłoszeń. | WFOŚiGW w Szczecinie",
+      "reason": "Aktualność o konkursie ekologicznym, wzmianka o członku rady nadzorczej, nie nabór.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.bankier.pl/wiadomosc/SKARBIEC-HOLDING-S-A-Zgloszenie-kandydatow-do-Rady-Nadzorczej-9154663.html",
+      "title": "SKARBIEC HOLDING S.A.: Zgłoszenie kandydatów do Rady Nadzorczej - Bankier.pl",
+      "reason": "Informacja o zgłoszeniu kandydatów przez akcjonariusza, nie otwarty nabór.",
+      "source": "\"kandydatów do rady nadzorczej\""
+    },
+    {
+      "url": "https://prawodlasamorzadu.pl/2024-02-02-kto-moze-byc-czlonkiem-rady-nadzorczej-w-spolce-gminnej-cz-1/",
+      "title": "Kto może być członkiem rady nadzorczej w spółce gminnej? (cz. 1) - Prawo Dla Samorządu",
+      "reason": "Artykuł edukacyjny o wymaganiach dla członków rady nadzorczej, nie ogłoszenie naboru.",
+      "source": "\"kandydatów do rady nadzorczej\""
+    },
+    {
+      "url": "https://www.bankier.pl/wiadomosc/POLICE-Zgloszenie-przez-akcjonariusza-kandydatow-na-czlonkow-Rady-Nadzorczej-9156477.html",
+      "title": "POLICE: Zgłoszenie przez akcjonariusza kandydatów na członków Rady Nadzorczej. - Bankier.pl",
+      "reason": "Zgłoszenie kandydatów przez akcjonariusza, informacja giełdowa, nie otwarty nabór.",
+      "source": "\"kandydatów do rady nadzorczej\""
+    },
+    {
+      "url": "https://www.efcongress.com/wp-content/uploads/2025/02/Modele-nominacji-i-wyboru-czlonkow-rad-nadzorczych_fine-z-logo.pdf",
+      "title": "rekrutacja, selekcja i nominacja do rad nadzorczych w ...",
+      "reason": "Artykuł naukowy o modelach nominacji, nie ogłoszenie naboru kandydatów.",
+      "source": "\"kandydatów do rady nadzorczej\""
+    },
+    {
+      "url": "https://kolejowyportal.pl/pracownicy-pkp-plk-wybrali-swoich-przedstawicieli-do-rady-nadzorczej/",
+      "title": "Pracownicy PKP PLK wybrali swoich przedstawicieli do Rady Nadzorczej - Kolejowy Portal",
+      "reason": "Informacja o wyborze przedstawicieli pracowników — odnotowanie faktów, nie otwarty nabór.",
+      "source": "\"kandydatów do rady nadzorczej\""
+    },
+    {
+      "url": "https://www.smnadodrze.pl/wp-content/uploads/zasady-wyboru-czlonkow-rn-smnadodrze.pdf",
+      "title": "ZASADY WYBORU CZŁONKÓW RADY NADZORCZEJ ...",
+      "reason": "Dokument opisuje zasady wyboru, nie jest ogłoszeniem otwartego naboru.",
+      "source": "\"kandydatów do rady nadzorczej\""
+    },
+    {
+      "url": "https://www.gazetaprawna.pl/wiadomosci/artykuly/1035453,kandydat-do-rady-nadzorczej-spolki-z-udzialem-sp-musi-miec-pozytywna-opinie-rady-ds-spolek-wywiad.html",
+      "title": "Kandydat do rady nadzorczej spółki z udziałem SP musi mieć pozytywną opinię Rady ds. spółek (wywiad) - GazetaPrawna.pl",
+      "reason": "Artykuł informacyjny-wywiad o wymogach wobec kandydatów, nie ogłoszenie naboru.",
+      "source": "\"kandydatów do rady nadzorczej\""
+    }
+  ]
+}
