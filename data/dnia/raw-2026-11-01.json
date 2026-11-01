@@ -1,14 +1,14 @@
 {
   "date": "2026-11-01",
-  "count": 62,
+  "count": 63,
   "decisions": {
-    "duplicate": 15,
-    "limit": 5,
-    "rejected": 28,
-    "cached": 11,
+    "duplicate": 18,
+    "cached": 39,
     "no_url": 1,
+    "rejected": 2,
     "empty": 1,
-    "archival": 1
+    "archival": 1,
+    "accepted": 1
   },
   "raw": [
     {
@@ -134,8 +134,8 @@
       "snippet": "Narodowy Instytut Wolności - Centrum Rozwoju Społeczeństwa Obywatelskiego, Warszawa. 22,165 likes · 638 talking about this · 268 were here. NIW-CRSO to agencja wykonawcza, która wspiera rozwój...",
       "source": "\"kandydatów do rady nadzorczej\"",
       "direct": false,
-      "decision": "limit",
-      "reason": "limit --limit=30 wyczerpany"
+      "decision": "duplicate",
+      "reason": "URL już widziany"
     },
     {
       "url": "https://www.facebook.com/narodowyinstytutwolnosci/photos/-nab%C3%B3r-kandydat%C3%B3w-do-rady-nadzorczej-nfo%C5%9Bigwrada-dzia%C5%82alno%C5%9Bci-po%C5%BCytku-publiczneg/991306079858458/",
@@ -143,8 +143,8 @@
       "snippet": "Narodowy Instytut Wolności - Centrum Rozwoju Społeczeństwa Obywatelskiego, Warszawa. 24,715 likes · 778 talking about this · 268 were here. NIW-CRSO to agencja wykonawcza, która wspiera rozwój...",
       "source": "\"kandydatów do rady nadzorczej\"",
       "direct": false,
-      "decision": "limit",
-      "reason": "limit --limit=30 wyczerpany"
+      "decision": "duplicate",
+      "reason": "URL już widziany"
     },
     {
       "url": "https://www.money.pl/mobility/szukaja-nowego-prezesa-cpk-wiemy-ile-ofert-wplynelo-7337748797667808a.html",
@@ -152,8 +152,8 @@
       "snippet": "Wcześniej, <strong>23 września spółka ogłosiła, że przedłuża nabór kandydatów na stanowisko prezesa, o kolejne dwa tygodnie – do 7 października</strong>. Później ujawniono, że w pierwotnym terminie wpłynęło sześć ofert.",
       "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Nabór dotyczy stanowiska prezesa zarządu CPK, nie rady nadzorczej."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://portpolska.pl/pl/aktualnosci-2/port-polska-nowy-prezes-zarzadu-wybrany",
@@ -170,8 +170,8 @@
       "snippet": "Kandydaci bowiem byli oceniani nie tylko przez Radę Nadzorczą na podstawie przedłożonych dokumentów i rozmów kwalifikacyjnych. Niezależnej oceny kandydatów dokonał również zaangażowany doradca. Kandydaci zostali też poddani testom psychologicznym, pozwalającym określić ich profil osobowościowy. W określonym terminie wpłynęło 13 kandydatur. Do etapu rozmów indywidualnych zakwalifikowano cztery osoby. Niezależny doradca uczestniczył we wszystkich etapach postępowania, przygotowując dla Rady Nadzor",
       "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Powołanie prezesa zarządu CPK – stanowisko zarządu, nie nabór do rady nadzorczej."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://polskiprzemysl.com.pl/nowy-prezes-cpk-wybrany/",
@@ -179,8 +179,8 @@
       "snippet": "<strong>Rada Nadzorcza zakończyła postępowanie kwalifikacyjne</strong> i powierzyła kierowanie spółką Piotrowi Borysowi, menedżerowi z wieloletnim doświadczeniem w inwestycjach kolejowych i infrastrukturalnych.",
       "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Aktualność o powołaniu prezesa zarządu, nie nabór na członka rady nadzorczej."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://www.nakolei.pl/piotr-borys-pokieruje-cpk/",
@@ -242,8 +242,8 @@
       "snippet": "A. Fleminga 2, 03-176 Warszawa działając na podstawie ustawy z dnia 11 maja 2017 roku o biegłych rewidentach, firmach audytorskich oraz nadzorze publicznym: zaprasza do <strong>składania ofert</strong> na przeprowadzenie badania rocznego sprawozdania finansowego ...",
       "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)"
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://pkpleszew.pl/zaproszenie-do-skladania-ofert-3/",
@@ -251,8 +251,8 @@
       "snippet": "Rada Nadzorcza Przedsiębiorstwa ... uprawnione podmioty do <strong>składania ofert na badanie sprawozdania finansowego za rok obrotowy 2025 oraz za rok obrotowy 2026 Przedsiębiorstwa Komunalnego Spółka z ograniczoną odpowiedzialnością w Pleszewie</strong>....",
       "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Zaproszenie do składania ofert na audyt finansowy, nie nabór na członka rady nadzorczej."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://www.wzso.pl/zaproszenie-do-skladania-ofert-na-przeprowadzenie-badania-sprawozdania-finansowego-warszawskich-zakladow-sprzetu-ortopedycznego-s-a/",
@@ -278,8 +278,8 @@
       "snippet": "Wykonując zobowiązanie Rady ... 2025 r. <strong>zapraszamy uprawnione podmioty do złożenia oferty na przeprowadzenie badania rocznych sprawozdań finansowych Spółki oraz sporządzenie pisemnego sprawozdania z przeprowadzonego badania</strong>...",
       "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Zaproszenie do ofert na badanie sprawozdań finansowych, nie nabór do rady nadzorczej."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://bip.czestochowa.pl/attachments/download/33753",
@@ -287,8 +287,8 @@
       "snippet": "Spółka obowiązana jest umożliwić ... Oferty rada nadzorcza pozyskuje przykładowo zamieszczając ogłoszenie w prasie lub <strong>rozsyłając do firm audytorskich zaproszenie do składania ofert</strong>....",
       "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Wzór dokumentu o pozyskiwaniu ofert audytorskich, nie ogłoszenie naboru."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://www.pumnowe.pl/2024/11/08/zaproszenie-do-skladania-ofert-na-badanie-sprawozdania-finansowego-spolki-za-2024/",
@@ -296,8 +296,8 @@
       "snippet": "Biegły rewident zobowiązany będzie do obecności, na co najmniej jednym posiedzeniu Rady Nadzorczej po przedłożeniu Opinii i Raportu z badania. Dopuszcza się możliwość konieczności uczestnictwa (nie więcej niż jednokrotnie) biegłego rewidenta w innym posiedzeniu Rady Nadzorczej.",
       "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)"
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://kape.gov.pl/blog/aktualnosci-kape-1/zaproszenie-do-skadania-ofert-na-przeprowadzenie-badania-sprawozdania-finansowego-spoki-za-rok-obrotowy-2023-i-2024-724",
@@ -314,8 +314,8 @@
       "snippet": "Zaproszenie do składania ofert na przeprowadzenie badania · sprawozdania finansowego Przedsiębiorstwa Wodociągów · i Kanalizacji w Suwałkach Spółki z ograniczoną · odpowiedzialnością · Rada Nadzorcza Przedsiębiorstwa Wodociągów i Kanalizacji w Suwałkach Spółki ·",
       "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Zaproszenie do składania ofert na badanie sprawozdania finansowego, nie dotyczy naboru kandydatów."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://www.sanokrubber.com/wp-content/uploads/RB_W_1_2024.pdf",
@@ -323,8 +323,8 @@
       "snippet": "akcji spółki publicznej, sposobu i trybu składania i przyjmowania zapisów w wezwaniu oraz · dopuszczalnych rodzajów zabezpieczenia („Rozporządzenie w Sprawie Wezwań”). Niniejsze · Zaproszenie nie stanowi oferty w rozumieniu art. 66 ustawy z dnia 23 kwietnia 1964 r.",
       "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)"
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://www.tbskrasnystaw.pl/bip/index.php/ogloszenia/nabor-pracownikow/inne",
@@ -332,8 +332,8 @@
       "snippet": "„Oferta na badanie sprawozdania finansowego za rok 2019, 2020” · w siedzibie Zarządu TBS Sp. z o.o. w Krasnymstawie ul. Okrzei 15, pokój Nr 1 (sekretariat), ... Bliższe informacje – tel. (82) 576 31 40 wew. 25. Rada Nadzorcza Towarzystwa Budownictwa Społecznego Spółka z o.o. w Krasnymstawie zaprasza uprawione podmioty, do składania pisemnych ofert na przeprowadzenie badania sprawozdania finansowego Towarzystwa Budownictwa Społecznego Spółka z o.o.",
       "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)"
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://czestochowawiolinowa.pl/zaproszenie-do-skladania-ofert-wspolpracy-na-swiadczenie-uslug-prawnych-2/",
@@ -341,8 +341,8 @@
       "snippet": "– uczestnictwa w posiedzeniach rady nadzorczej, – prowadzenia rad budowy oraz rad technicznych, – współpracy z inżynierem kontraktu, – analizy dokumentacji dotyczącej realizacji inwestycji we wszystkich obszarach, – intensywnej obecności w spółce według potrzeb (nawet kilka dni w tygodniu) Zwracamy się z prośbą o udzielenie informacji: 1.",
       "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Zaproszenie do składania ofert na usługi prawne, nie nabór kandydatów do rady nadzorczej."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://amwkwatera.pl/?dzial=prasa_o_nas&i=27",
@@ -350,8 +350,8 @@
       "snippet": "Rada Nadzorcza AMW TBS „KWATERA” ... – Prezes ... Rada Nadzorcza Spółki AMW TBS „KWATERA” Sp. z o.o. <strong>zaprasza do składania ofert</strong> na przeprowadzenie badania sprawozdania finansowego za rok obrotowy 2025 i 2026 ...",
       "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Zaproszenie do składania ofert na badanie sprawozdania finansowego, nie nabór na radę nadzorczą."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://pitcertification.pl/",
@@ -359,8 +359,8 @@
       "snippet": "Wykonując zobowiązanie Rady Nadzorczej PIT CERTIFICATION Sp. z o.o. zgodnie z §3.",
       "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Brak treści naboru; fragment nie wskazuje ogłoszenia o rekrutacji."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://mazovia.pl/pl/bip/komunikaty/ogloszenie-nr-12024-o-naborze-kandydatow-na-czlonkow-do-rady-nadzorczej-spolki.html",
@@ -368,8 +368,8 @@
       "snippet": "4. ZGŁOSZENIE I OŚWIADCZENIA KANDYDATA NA CZŁONKA RADY NADZORCZEJ.docx",
       "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)"
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://trybunal.gov.pl/postepowanie-i-orzeczenia/komunikaty-prasowe/komunikaty-przed/art/6797-zasady-i-tryb-wyboru-kandydatow-na-czlonkow-rad-nadzorczych-spolek-skarbu-panstwa",
@@ -377,8 +377,8 @@
       "snippet": "Wskazanie przez Ministra Skarbu ... kwalifikacyjne, odbywające się w trybie publicznym, poprzez <strong>ogłoszenie o naborze zamieszczane na stronach internetowych Ministerstwa Skarbu Państwa (MSP).</strong>...",
       "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Komunikat Trybunału Konstytucyjnego o zasadach naboru, nie ogłoszenie naboru."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://mazovia.pl/pl/bip/komunikaty/nabor-kandydatow-do-rady-nadzorczej-mazowieckiej-agencji-energetycznej.html",
@@ -404,8 +404,8 @@
       "snippet": "Adama Mickiewicza w Poznaniu, gdzie ukończył studia magisterskie na kierunku gospodarka przestrzenna. Odbył również studia na Uniwersytecie im. J.A. Komeńskiego w Bratysławie. Zdał egzamin państwowy dla <strong>kandydatów na członków rad nadzorczych</strong> spółek Skarbu Państwa.",
       "source": "\"kandydatów na członków rad nadzorczych\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "frazy dyskwalifikujące: egzamin"
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://www.propertynews.pl/sylwetki/phn-z-nowym-wiceprezesem,202762.html",
@@ -413,8 +413,8 @@
       "snippet": "Adama Mickiewicza w Poznaniu, gdzie ukończył studia magisterskie na kierunku gospodarka przestrzenna. Odbył również studia na Uniwersytecie im. J.A. Komeńskiego w Bratysławie. Zdał egzamin państwowy dla <strong>kandydatów na członków rad nadzorczych</strong> spółek Skarbu Państwa.",
       "source": "\"kandydatów na członków rad nadzorczych\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "frazy dyskwalifikujące: egzamin"
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://tarnow.pl/Dla-mieszkancow/Aktualnosci/Miasto/Budzet-Obywatelski-Tarnowa-2027-WYNIKI",
@@ -422,8 +422,8 @@
       "snippet": "Nabór do bazy <strong>kandydatów na członków rad nadzorczych</strong> · Strategia Rozwoju Miasta Tarnów 2030 · Raport o stanie miasta · Rewitalizacja miasta · Program &quot;Rozwój Lokalny&quot; Projekty dofinansowane ze środków zewnętrznych · Miasta partnerskie · Projekty tarnowskich szkół ·",
       "source": "\"kandydatów na członków rad nadzorczych\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Strona dotyczy wyników Budżetu Obywatelskiego, nie naboru kandydatów."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://tarnow.pl/Dla-mieszkancow/Aktualnosci/Miasto/Zmieniona-organizacja-ruchu-w-okresie-Wszystkich-Swietych",
@@ -431,8 +431,8 @@
       "snippet": "Nabór do bazy <strong>kandydatów na członków rad nadzorczych</strong> · Strategia Rozwoju Miasta Tarnów 2030 · Raport o stanie miasta · Rewitalizacja miasta · Program &quot;Rozwój Lokalny&quot; Projekty dofinansowane ze środków zewnętrznych · Miasta partnerskie · Projekty tarnowskich szkół ·",
       "source": "\"kandydatów na członków rad nadzorczych\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Aktualność o organizacji ruchu; wzmianka o bazie kandydatów to tylko link menu."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://wfos.szczecin.pl/aktualnosci/342",
@@ -440,8 +440,8 @@
       "snippet": "Informujemy, że kapituła konkursowa w składzie: - Karolina Błażków - Składanek - p.o. Dyrektora Wydziału Ochrony Środowiska -Urząd Marszałkowski Województwa Zachodniopomorskiego - Przewodnicząca Komisji - dr Arkadiusz Malkowski – Członek Rady Nadzorczej WFOŚiGW w Szczecinie; - dr Sylwia Jurzyk-Nordlöw - Regionalny Dyrektor Ochrony Środowiska w Szczecinie - Regionalny Konserwator Przyrody w Szczecinie - Regionalna Dyrekcja Ochrony Środowiska w Szczecinie - Michał Durka - Dyrektor Regionalnego Zar",
       "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Aktualność o konkursie ekologicznym, wzmianka o członku rady nadzorczej, nie nabór."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://www.bankier.pl/wiadomosc/ALIOR-BANK-S-A-Zgloszenie-kandydatow-do-Rady-Nadzorczej-Alior-Bank-S-A-9213324.html",
@@ -458,8 +458,8 @@
       "snippet": "GiełdaSKARBIEC HOLDING S.A.: Zgłoszenie kandydatów do Rady Nadzorczej",
       "source": "\"kandydatów do rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Informacja o zgłoszeniu kandydatów przez akcjonariusza, nie otwarty nabór."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://prawodlasamorzadu.pl/2024-02-02-kto-moze-byc-czlonkiem-rady-nadzorczej-w-spolce-gminnej-cz-1/",
@@ -467,8 +467,8 @@
       "snippet": "Ustawodawca nie uzależnia tego ... jest obowiązkowe[4]. Kandydatów do rady nadzorczej <strong>w jednoosobowej spółce gminnej wskazuje wójt (burmistrz, prezydent miasta).</strong>...",
       "source": "\"kandydatów do rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Artykuł edukacyjny o wymaganiach dla członków rady nadzorczej, nie ogłoszenie naboru."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://www.parkiet.com/komunikaty-espi/art45341501-alior-bank-spolka-akcyjna-zgloszenie-kandydatow-do-rady-nadzorczej-alior-bank-s-a",
@@ -485,8 +485,8 @@
       "snippet": "GiełdaPOLICE: Zgłoszenie przez akcjonariusza kandydatów na członków Rady Nadzorczej. ... Tysiące złotych i dodatkowe tygodnie wolnego.",
       "source": "\"kandydatów do rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Zgłoszenie kandydatów przez akcjonariusza, informacja giełdowa, nie otwarty nabór."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://www.efcongress.com/wp-content/uploads/2025/02/Modele-nominacji-i-wyboru-czlonkow-rad-nadzorczych_fine-z-logo.pdf",
@@ -494,8 +494,8 @@
       "snippet": "Dzięki opracowaniu zbioru kompetencji potrzebnych do wykonywania zadań i obowiązków specyficznych dla gremium danej rady nadzorczej a · następnie porównania tego zbioru z cechami kompetencyjnymi jej członków lub kandydatów do nominacji uzyskuje się graficzny obraz",
       "source": "\"kandydatów do rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Artykuł naukowy o modelach nominacji, nie ogłoszenie naboru kandydatów."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://kolejowyportal.pl/pracownicy-pkp-plk-wybrali-swoich-przedstawicieli-do-rady-nadzorczej/",
@@ -512,8 +512,8 @@
       "snippet": "Nadzorczej. 7. Kandydaci, którzy nie uzyskali poparcia o którym mowa w ust.2 bądź nie zostaną · zgłoszeni na Zebraniu Wyodrębnionej Nieruchomości nie będą umieszczani na listach ... <strong>Walnego Zgromadzenia dokonują wskazania 3 kandydatów do Rady Nadzorczej</strong>.",
       "source": "\"kandydatów do rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Dokument opisuje zasady wyboru, nie jest ogłoszeniem otwartego naboru."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://bip.czarne.pl/dokumenty/7872",
@@ -529,7 +529,7 @@
         "termin_skladania_ofert": "",
         "stanowisko": "członek rady nadzorczej",
         "wymagania": "",
-        "podsumowanie": "Ogłoszenie o naborze kandydatów do rady nadzorczej Przedsiębiorstwa Wodno-Kanalizacyjnego Sp. z o.o. w Czarnem, opublikowane na BIP Urzędu Miasta i Gminy Czarne. Treść ogłoszenia (wymagania i termin składania ofert) znajduje się w załączonym pliku PDF, którego zawartość nie jest czytelna w podanym tekście.",
+        "podsumowanie": "Ogłoszenie o naborze kandydatów do rady nadzorczej Przedsiębiorstwa Wodno-Kanalizacyjnego Sp. z o.o. w Czarnem, opublikowane na BIP Urzędu Miasta i Gminy Czarne. Treść ogłoszenia dostępna wyłącznie w załączonym pliku PDF, którego zawartość jest nieczytelna - brak danych o terminie składania ofert i wymaganiach.",
         "data_publikacji": "",
         "url": "https://bip.czarne.pl/dokumenty/7872",
         "znaleziono_dnia": "2026-11-01",
@@ -549,8 +549,8 @@
         "miejscowosc": "Poznań",
         "termin_skladania_ofert": "2026-02-28",
         "stanowisko": "członek rady nadzorczej",
-        "wymagania": "Kandydat musi być członkiem Spółdzielni; nie mogą kandydować pracownicy Spółdzielni, członkowie Zarządu, ich pełnomocnicy oraz osoby spokrewnione lub w związku małżeńskim z członkami Zarządu; max dwie kolejne kadencje; kandydatura zgłaszana przez grupę min. 50 członków, Radę Nadzorczą lub Rady Osiedli; pisemna zgoda kandydata; kandydowanie w obrębie jednej części Walnego Zgromadzenia.",
-        "podsumowanie": "Spółdzielnia Mieszkaniowa „Osiedle Młodych” w Poznaniu ogłasza wybory 19 członków Rady Nadzorczej na kadencję 2026-2029. Zgłoszenia kandydatów przyjmowane są w biurze Zarządu przy os. Piastowskim 16 do 28 lutego 2026 r.",
+        "wymagania": "Kandydatem może być członek Spółdzielni; nie mogą kandydować pracownicy Spółdzielni, członkowie Zarządu, ich pełnomocnicy oraz osoby spokrewnione lub w związku małżeńskim z członkami Zarządu. Zakaz pełnienia funkcji dłużej niż przez dwie kolejne kadencje. Zgłoszenie: grupa min. 50 członków, Rada Nadzorcza lub Rada Osiedli, z pisemną zgodą kandydata.",
+        "podsumowanie": "Spółdzielnia Mieszkaniowa „Osiedle Młodych” w Poznaniu ogłasza wybory 19 członków Rady Nadzorczej na kadencję 2026-2029 podczas Walnego Zgromadzenia. Zgłoszenia kandydatów przyjmowane są w biurze Zarządu Spółdzielni na os. Piastowskim 16 do 28 lutego 2026 roku.",
         "data_publikacji": "2026-02-02",
         "url": "https://osiedlemlodych.pl/wybory-do-rady-nadzorczej-zglaszanie-kandydatow-2026/",
         "znaleziono_dnia": "2026-11-01",
@@ -563,8 +563,8 @@
       "snippet": "Kandydat do rady nadzorczej spółki z udziałem Skarbu Państwa <strong>musi uzyskać pozytywną opinię Rady do spraw spółek, ale w przypadku chętnych do zarządów nie jest to obligatoryjne</strong> - mówi PAP w imieniu Rady jej przewodniczący Łukasz Popławski.",
       "source": "\"kandydatów do rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Artykuł informacyjny-wywiad o wymogach wobec kandydatów, nie ogłoszenie naboru."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://pwkczarne.mojbip.pl/75.html?file=300",
@@ -572,8 +572,8 @@
       "snippet": "Witamy na stronie Biuletynu Informacji Publicznej Przedsiębiorstwa Wodno-Kanalizacyjnego Sp. z o.o. w Czarnem · PWK Spółka z o.o. w Czarnem ul. Aleja Zwycięzców 1C 77-330 Czarne biuro tel./fax (59) 83-33-672",
       "source": "\"kandydatów do rady nadzorczej\"",
       "direct": false,
-      "decision": "limit",
-      "reason": "limit --limit=30 wyczerpany"
+      "decision": "duplicate",
+      "reason": "URL już widziany"
     },
     {
       "url": "http://stara-kamienica.bipgmina.pl/wiadomosci/479/wiadomosc/135479/konkurs_na_czlonkow_rady_nadzorczej",
@@ -581,8 +581,20 @@
       "snippet": "Każdy kandydat zobowiązany jest do złożenia: zgłoszenia, CV, oświadczeń dot. informacji zawartych w pkt. 8, zaświadczenia (kopia) o uprawnieniach <strong>członka rady nadzorczej</strong>, oświadczenie o niekaralności. 3. Zgłoszenia i oświadczenia należy złożyć w formie pisemnej, w zamkniętej ...",
       "source": "\"konkurs na członków rady nadzorczej\"",
       "direct": false,
-      "decision": "limit",
-      "reason": "limit --limit=30 wyczerpany"
+      "decision": "accepted",
+      "reason": "dodano do bazy",
+      "offer": {
+        "podmiot": "Komunalna Spółka Prawa Handlowego pn. Gminny System Wodociągów i Kanalizacji „Kamienica”",
+        "miejscowosc": "Stara Kamienica",
+        "termin_skladania_ofert": "",
+        "stanowisko": "członek rady nadzorczej",
+        "wymagania": "Konieczne: złożony egzamin dla kandydatów na członków rad nadzorczych (rozporządzenie RM z 7.09.2004) lub posiadanie uprawnień z § 5 pkt 2-3; brak ograniczeń/zakazów zajmowania stanowiska. Pożądane: doświadczenie w zarządzaniu działalnością gospodarczą w branży komunalnej, budowlanej, drogowej itp.",
+        "podsumowanie": "Zgromadzenie Wspólników spółki komunalnej z udziałem Gminy Stara Kamienica ogłasza konkurs na 3 członków Rady Nadzorczej spółki wodociągowo-kanalizacyjnej. Zgłoszenia (pisemnie, w zamkniętej kopercie) należy składać do 10 maja 2011 r. do Urzędu Gminy w Starej Kamienicy.",
+        "data_publikacji": "",
+        "url": "http://stara-kamienica.bipgmina.pl/wiadomosci/479/wiadomosc/135479/konkurs_na_czlonkow_rady_nadzorczej",
+        "znaleziono_dnia": "2026-11-01",
+        "zrodlo": "\"konkurs na członków rady nadzorczej\""
+      }
     },
     {
       "url": "https://bip.miastko.pl/dokumenty/2014",
@@ -590,8 +602,17 @@
       "snippet": "Każdy kandydat zobowiązany jest do złożenia: 1.zgłoszenia do udziału w konkursie 2.CV, 3. oświadczeń dot. informacji zawartych w pkt. 8, 4.zaświadczenia (kopia) o uprawnieniach członka rady nadzorczej, oświadczenie o niekaralności. 3. Zgłoszenia i oświadczenia należy złożyć w formie pisemnej, w zamkniętej kopercie w terminie do dnia 30 stycznia 2014 r.",
       "source": "\"konkurs na członków rady nadzorczej\"",
       "direct": false,
-      "decision": "limit",
-      "reason": "limit --limit=30 wyczerpany"
+      "decision": "rejected",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)"
+    },
+    {
+      "url": "https://www.pwpw.pl/Aktualnosci/2026/06/postepowanie-kwalifikacyjne-na-stanowisko-wiceprezesa-zarzadu-ds-finansowych.html",
+      "title": "24.06.2026 Postępowanie kwalifikacyjne na stanowisko Wiceprezesa Zarządu PWPW S.A. ds. finansowych OGŁOSZENIE Rady Nadzorczej Spółki Polska Wytwórnia Papierów Wartościowych S.A. o wszczęciu postępowania kwalifikacyjnego na stanowisko Wiceprezesa Zarządu PWPW S.A. ds. finansowych.",
+      "snippet": "24.06.2026 Postępowanie kwalifikacyjne na stanowisko Wiceprezesa Zarządu PWPW S.A. ds. finansowych OGŁOSZENIE Rady Nadzorczej Spółki Polska Wytwórnia Papierów Wartościowych S.A. o wszczęciu postępowania kwalifikacyjnego na stanowisko Wiceprezesa Zarządu PWPW S.A. ds. finansowych.",
+      "source": "źródło bezpośrednie",
+      "direct": true,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     }
   ]
 }
