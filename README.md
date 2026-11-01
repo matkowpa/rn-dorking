@@ -10,8 +10,11 @@ GitHub Pages.
    Actions uruchamia potok:
    - **Faza 0** — bezpośredni skan źródeł (port z rn-scrapper): whitelist
      ministerstw, spółek SP, portów i dużych miast (`direct_sources.py`)
-     oraz **rotacyjne okno BIP-ów samorządowych** (rejestr `data/bip_jst.json`,
-     rozmiar okna `JST_WINDOW`, domyślnie 100 podmiotów/run). Dla whitelisty
+     oraz **rotacyjne okno BIP-ów samorządowych** (rejestr `data/bip_jst.json`
+     + pełna lista 2479 gmin z TERYT `data/gminy_teryt.json`, rozmiar okna
+     `JST_WINDOW`, domyślnie 100 podmiotów/run). Dwa runy dziennie biorą
+     różne okna (slot 0/1), więc dziennie skanowanych jest do 200 podmiotów.
+     Wpisy bez realnego adresu BIP są pomijane w rotacji. Dla whitelisty
      skan jest **pogłębiony** (dodatkowo do 2 podstron-sekcji: aktualności,
      konkursy, relacje). Kandydaci są wykrywani po tekście kotwicy linku;
      dla domen `*.gov.pl` filtr LLM jest pomijany (sam link „ogłoszenie
@@ -36,6 +39,8 @@ GitHub Pages.
 - `tools/fetch_bip_registry.py` — pobiera pełny rejestr podmiotów BIP
   z API gov.pl do `data/bip_jst.json` (GitHub Actions: Run workflow →
   *regenerate_registry*).
+- `tools/build_gminy_teryt.py` — generuje pełną listę 2479 gmin z TERC GUS
+  do `data/gminy_teryt.json` (uzupełnienie rejestru gov.pl o brakujące gminy).
 - `tools/resolve_bip_urls.py` — mapuje slugi podmiotów na realne adresy BIP
   (`data/bip_jst_urls.json`; GitHub Actions: Run workflow → *resolve_urls*).
 

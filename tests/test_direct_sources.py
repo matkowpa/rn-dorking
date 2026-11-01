@@ -251,3 +251,26 @@ def test_slug_cms_bez_numeru():
 def test_nieznana_domena_bez_id_odrzucona():
     assert not ds.looks_like_notice_url(
         "https://jakaslosowa-strona.pl/ogloszenie-o-naborze-do-rady")
+
+
+def test_rejestr_jst_pokrywa_pelny_teryt():
+    """Rejestr BIP + lista TERYT daje wszystkie 2479 gmin (unikalne kody)."""
+    reg = ds._load_jst_registry()
+    kody = {e.get("teryt") for e in reg if e.get("kind") == "gmina" and e.get("teryt")}
+    assert len(kody) == 2479
+
+
+def test_rejestr_ma_brakujace_spolki():
+    nazwy = {s.name for s in ds.SOURCES}
+    for nazwa in ("Grupa Azoty", "JSW S.A.", "Polska Grupa Górnicza", "PLL LOT",
+                  "Polskie Porty Lotnicze", "Totalizator Sportowy",
+                  "Polski Holding Nieruchomości", "Bank Pekao", "Alior Bank",
+                  "PWPW", "Polska Żegluga Morska"):
+        assert nazwa in nazwy
+
+
+def test_jst_slice_dwa_sloty_daja_rozne_okna():
+    reg = list(range(10))
+    a = ds.jst_daily_slice(reg, window=3, day_of_year=1, slot=0)
+    b = ds.jst_daily_slice(reg, window=3, day_of_year=1, slot=1)
+    assert a != b
