@@ -1,5 +1,23 @@
 [
   {
+    "date": "2026-11-02",
+    "count": 0,
+    "stats": {
+      "raw_results": 65,
+      "after_filter": 2,
+      "offers_added": 0
+    }
+  },
+  {
+    "date": "2026-11-02",
+    "count": 0,
+    "stats": {
+      "raw_results": 0,
+      "after_filter": 0,
+      "offers_added": 0
+    }
+  },
+  {
     "date": "2026-11-01",
     "count": 1,
     "stats": {

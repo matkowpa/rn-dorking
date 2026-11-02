@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-02",
+  "rejected": [
+    {
+      "url": "https://www.money.pl/mobility/cpk-moze-zepsuc-cv-oto-dlaczego-jest-problem-ze-znalezieniem-prezesa-spolki-7332814023125216a.html",
+      "title": "\"Ewidentnie coś się zacięło\". Mówią o polskim gigalotnisku",
+      "reason": "frazy dyskwalifikujące: upłynął termin",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+    },
+    {
+      "url": "https://executivemagazine.pl/transfery-i-zmiany/port-polska-nowy-prezes-zarzadu-wybrany/",
+      "title": "Port Polska – nowy Prezes Zarządu wybrany - Executive Magazine - magazyn i portal biznesowy dla przedsiębiorców",
+      "reason": "Artykuł o powołaniu prezesa zarządu, nie nabór do rady nadzorczej.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://amwkwatera.pl/?dzial=prasa_o_nas&i=25",
+      "title": "AMW Kwatera - Twoja Nieruchomość Nasza pasja",
+      "reason": "Zaproszenie do składania ofert na audyt sprawozdania finansowego, nie nabór kandydatów.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    }
+  ]
+}
