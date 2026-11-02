@@ -62,6 +62,9 @@ LLM_API_KEY = os.getenv("LLM_API_KEY", "")
 LLM_BASE_URL = os.getenv("LLM_BASE_URL", "")
 LLM_MODEL = os.getenv("LLM_MODEL", "")
 LLM_MODEL_EXTRACT = os.getenv("LLM_MODEL_EXTRACT", "")
+# Oba modele pochodza ze zmiennych srodowiskowych; w CI ustawia je sekret
+# GitHub Actions LLM_MODEL (workflow .github/workflows/daily.yml). Standard
+# projektu: deepseek/deepseek-v4.1-flash-1017.
 SEARCH_DAYS_BACK = _parse_int("SEARCH_DAYS_BACK", 5)
 RESULTS_PER_DORK = _parse_int("RESULTS_PER_DORK", 20, allowed=[10, 20, 30, 40])
 # Dodatkowe dorki z .env, oddzielone znakiem | (pusta wartość = brak)
