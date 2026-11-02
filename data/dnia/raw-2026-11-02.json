@@ -1,10 +1,10 @@
 {
   "date": "2026-11-02",
-  "count": 61,
+  "count": 63,
   "decisions": {
-    "cached": 36,
+    "cached": 40,
     "duplicate": 19,
-    "rejected": 3,
+    "rejected": 1,
     "no_url": 1,
     "empty": 1,
     "archival": 1
@@ -160,8 +160,8 @@
       "snippet": "23 września upłynął termin składania ofert na to stanowisko. Spółka poinformowała, że <strong>rada nadzorcza przedłuża nabór do 7 października</strong>. Ilu kandydatów się zgłosiło?",
       "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
       "direct": false,
-      "decision": "rejected",
-      "reason": "frazy dyskwalifikujące: upłynął termin"
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://www.money.pl/mobility/szukaja-nowego-prezesa-cpk-wiemy-ile-ofert-wplynelo-7337748797667808a.html",
@@ -241,8 +241,8 @@
       "snippet": "Zapoczątkowaniem tego procesu było wybranie w postępowaniu kwalifikacyjnym Adama Ferensa, doświadczonego inżyniera budownictwa i menedżera, i powołanie go w czerwcu br. do składu Zarządu. Przeczytaj także: Stanisław Tokarski członkiem Rady Nadzorczej Lubelskiego Węgla Bogdanka S.A.",
       "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Artykuł o powołaniu prezesa zarządu, nie nabór do rady nadzorczej."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://biznes.interia.pl/gospodarka/news-wybrano-nowego-prezesa-cpk-znamy-nazwisko,nId,23566372",
@@ -519,7 +519,7 @@
         "termin_skladania_ofert": "",
         "stanowisko": "członek rady nadzorczej",
         "wymagania": "",
-        "podsumowanie": "Ogłoszenie o naborze kandydatów do rady nadzorczej Przedsiębiorstwa Wodno-Kanalizacyjnego Sp. z o.o. w Czarnem opublikowane w BIP Urzędu Miasta i Gminy Czarne. Szczegóły naboru (w tym termin składania ofert i wymagania) znajdują się wyłącznie w załączonym pliku PDF, którego treść nie jest dostępna w tekście strony.",
+        "podsumowanie": "Ogłoszenie o naborze kandydatów do rady nadzorczej Przedsiębiorstwa Wodno-Kanalizacyjnego Sp. z o.o. w Czarnem opublikowane na BIP Urzędu Miasta i Gminy Czarne. Szczegóły naboru (w tym termin składania ofert i wymagania) znajdują się wyłącznie w załączonym pliku PDF, którego treść nie jest dostępna w tekście strony.",
         "data_publikacji": "",
         "url": "https://bip.czarne.pl/dokumenty/7872",
         "znaleziono_dnia": "2026-11-02",
@@ -539,8 +539,8 @@
         "miejscowosc": "Poznań",
         "termin_skladania_ofert": "2026-02-28",
         "stanowisko": "członek rady nadzorczej",
-        "wymagania": "Musi być członkiem Spółdzielni; nie mogą kandytować pracownicy Spółdzielni, członkowie Zarządu, ich pełnomocnicy oraz osoby spokrewnione lub w związku małżeńskim z członkami Zarządu; maks. dwie kolejne kadencje; zgłoszeń dokonują grupy min. 50 członków, Rada Nadzorcza lub Rady Osiedli; wymagana pisemna zgoda kandydata.",
-        "podsumowanie": "Spółdzielnia Mieszkaniowa „Osiedle Młodych” w Poznaniu ogłasza wybory 19 członków Rady Nadzorczej na kadencję 2026-2029 podczas najbliższego Walnego Zgromadzenia. Zgłoszenia kandydatów przyjmowane są w biurze Zarządu przy os. Piastowskim 16 do 28 lutego 2026 r.",
+        "wymagania": "Kandydat musi być członkiem Spółdzielni. Nie mogą kandydować pracownicy Spółdzielni, członkowie Zarządu, ich pełnomocnicy, osoby spokrewnione lub związane małżeństwem z członkami Zarządu. Maks. 2 kolejne kadencje. Zgłaszać mogą: grupy min. 50 członków, Rada Nadzorcza, Rady Osiedli. Wymagana pisemna zgoda kandydata.",
+        "podsumowanie": "Spółdzielnia Mieszkaniowa „Osiedle Młodych” w Poznaniu ogłasza wybory 19 członków Rady Nadzorczej na kadencję 2026-2029 podczas Walnego Zgromadzenia. Zgłoszenia kandydatów przyjmowane są do 28 lutego 2026 r. w biurze Zarządu Spółdzielni na os. Piastowskim 16.",
         "data_publikacji": "2026-02-02",
         "url": "https://osiedlemlodych.pl/wybory-do-rady-nadzorczej-zglaszanie-kandydatow-2026/",
         "znaleziono_dnia": "2026-11-02",
@@ -579,6 +579,24 @@
       "title": "Konkurs na członków Rady Nadzorczej Szpital Miejski w Miastku Spółka z o.o. - BIP Gmina Miastko",
       "snippet": "Każdy kandydat zobowiązany jest do złożenia: 1.zgłoszenia do udziału w konkursie 2.CV, 3. oświadczeń dot. informacji zawartych w pkt. 8, 4.zaświadczenia (kopia) o uprawnieniach członka rady nadzorczej, oświadczenie o niekaralności. 3. Zgłoszenia i oświadczenia należy złożyć w formie pisemnej, w zamkniętej kopercie w terminie do dnia 30 stycznia 2014 r.",
       "source": "\"konkurs na członków rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.pumnowe.pl/2024/11/08/zaproszenie-do-skladania-ofert-na-badanie-sprawozdania-finansowego-spolki-za-2024/",
+      "title": "ZAPROSZENIE DO SKŁADANIA OFERT NA BADANIE SPRAWOZDANIA FINANSOWEGO SPÓŁKI ZA 2024 – PUM",
+      "snippet": "Biegły rewident zobowiązany będzie do obecności, na co najmniej jednym posiedzeniu Rady Nadzorczej po przedłożeniu Opinii i Raportu z badania. Dopuszcza się możliwość konieczności uczestnictwa (nie więcej niż jednokrotnie) biegłego rewidenta w innym posiedzeniu Rady Nadzorczej.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://amwkwatera.pl/?dzial=prasa_o_nas&i=27",
+      "title": "AMW Kwatera - Twoja Nieruchomość Nasza pasja",
+      "snippet": "Rada Nadzorcza AMW TBS „KWATERA” ... – Prezes ... Rada Nadzorcza Spółki AMW TBS „KWATERA” Sp. z o.o. <strong>zaprasza do składania ofert</strong> na przeprowadzenie badania sprawozdania finansowego za rok obrotowy 2025 i 2026 ...",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
       "direct": false,
       "decision": "cached",
       "reason": "odrzucony w poprzednim runie (TTL)"
