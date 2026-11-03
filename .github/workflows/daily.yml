@@ -23,6 +23,11 @@ on:
         type: boolean
         default: false
         required: false
+      resolve_teryt:
+        description: "Uzupełnij adresy BIP dla gmin z TERYT - partia 400 podmiotów (zużywa quota Brave)"
+        type: boolean
+        default: false
+        required: false
   push:
     paths-ignore:           # nie odpalaj przy commitach wyników bota i docs
       - "docs/**"
@@ -69,9 +74,18 @@ jobs:
           git diff --staged --exit-code --quiet || { git commit -m "Rejestr BIP samorzadow — odswiezenie $(date +'%Y-%m-%d')"; git push; }
 
       - name: Resolve real BIP URLs (optional)
-        if: inputs.resolve_urls == true
+        if: inputs.resolve_urls == true || inputs.resolve_teryt == true
+        env:
+          # Brave jest jedynym działającym backendem w CI: DuckDuckGo z runnerów
+          # GitHub Actions zwraca "No results found", więc bez klucza resolver
+          # przepala czas i nic nie znajduje.
+          BRAVE_API_KEY: ${{ secrets.BRAVE_API_KEY }}
         run: |
-          python tools/resolve_bip_urls.py
+          ARGS=""
+          if [ "${{ inputs.resolve_teryt }}" = "true" ]; then
+            ARGS="--teryt-only --limit 400"
+          fi
+          python tools/resolve_bip_urls.py $ARGS
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/bip_jst_urls.json

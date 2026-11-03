@@ -43,6 +43,9 @@ GitHub Pages.
   do `data/gminy_teryt.json` (uzupełnienie rejestru gov.pl o brakujące gminy).
 - `tools/resolve_bip_urls.py` — mapuje slugi podmiotów na realne adresy BIP
   (`data/bip_jst_urls.json`; GitHub Actions: Run workflow → *resolve_urls*).
+  Z `--teryt-only --limit 400` uzupełnia adresy dla gmin z TERYT partiami
+  (resolver waliduje kandydata: kod 200 + nazwa podmiotu w treści strony, więc
+  zła gmina o tej samej nazwie nie trafi do rejestru).
 
 ## 🌐 Strona z ogłoszeniami (live)
 
