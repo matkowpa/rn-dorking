@@ -180,10 +180,21 @@ def test_reextract_candidates_sorted_oldest_first(storage):
          "znaleziono_dnia": "2026-08-29"},
         {**OFFER, "url": "https://a.pl/2", "termin_skladania_ofert": "",
          "znaleziono_dnia": "2026-08-28"},
-        {**OFFER, "url": "https://a.pl/3", "termin_skladania_ofert": "2026-09-01"},
+        {**OFFER, "url": "https://a.pl/3", "termin_skladania_ofert": "2026-09-01",
+         "data_publikacji": "2026-08-30"},
     ])
     cands = storage.get_reextract_candidates(5)
     assert [c["url"] for c in cands] == ["https://a.pl/2", "https://a.pl/1"]
+
+
+def test_reextract_obejmuje_brak_daty_publikacji(storage):
+    """Oferta z terminem, ale bez daty publikacji, też jest kandydatem."""
+    storage.merge_offers([
+        {**OFFER, "url": "https://a.pl/4", "termin_skladania_ofert": "2026-09-01",
+         "data_publikacji": "", "znaleziono_dnia": "2026-09-01"},
+    ])
+    cands = storage.get_reextract_candidates(5)
+    assert [c["url"] for c in cands] == ["https://a.pl/4"]
 
 
 def test_reextract_respects_max_attempts(storage):

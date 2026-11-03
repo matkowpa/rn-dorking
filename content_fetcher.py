@@ -141,6 +141,29 @@ def _extract_publication_date(page_html: str) -> str:
     return ""
 
 
+def extract_publication_from_text(text: str, limit: int = 3000) -> str:
+    """Data publikacji z samego TEKSTU strony (fallback, gdy HTML nie dał daty).
+
+    Regex po etykiecie (\"Data publikacji\", \"Opublikowano\", \"Dodano\"...), a nie
+    dowolna data w treści - inaczej termin składania ofert wygrałby z datą
+    publikacji. Etykiety siedzą w nagłówku strony, więc szukamy tylko na
+    początku tekstu (limit znaków).
+
+    Data z przyszłości nie jest datą publikacji - odrzucamy ją.
+    """
+    if not text:
+        return ""
+    head = text[:limit]
+    m = _LABEL_DATE_RE.search(head)
+    if not m:
+        return ""
+    window = head[m.start():m.start() + 60]
+    cleaned = _extract_date(window)
+    if cleaned and cleaned > date.today().isoformat():
+        return ""
+    return cleaned
+
+
 def _fetch(url: str) -> requests.Response | None:
     """Pojedynczy GET z User-Agentem; None przy błędzie lub status != 200."""
     try:
