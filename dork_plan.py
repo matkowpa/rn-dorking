@@ -20,11 +20,18 @@ BASE_DORKS = [
     '"nabór kandydatów" "rady nadzorczej" BIP',
     '"postępowanie kwalifikacyjne" "rady nadzorczej"',
     '"konkurs na członka rady nadzorczej"',
-    '"zaproszenie do składania ofert" "rady nadzorczej"',
+    # Wymienione 2026-11-03 po pomiarze tools/dork_stats.py:
+    #  - "zaproszenie do składania ofert" "rady nadzorczej": 110 wyników,
+    #    0 świeżych adresów, 0 ofert (fraza łapie przetargi, nie nabory RN),
+    #  - "nabór do bazy danych kandydatów" "rada nadzorcza": 7 wyników,
+    #    wszystkie odrzucone (bazy kandydatów na stanowiska, nie RN).
+    # Zamiast nich frazy celujące w spółki komunalne - tam RN są najczęściej,
+    # a tytuły nie zawierają "BIP".
+    '"rada nadzorcza" "spółka z o.o." nabór ogłoszenie',
+    '"nabór kandydatów na członków rady nadzorczej" spółka',
     '"zgłoszenia kandydatów" "członka rady nadzorczej"',
     '"ogłoszenie o naborze kandydatów" "rada nadzorcza"',
     '"kandydatów na członków rad nadzorczych"',
-    '"nabór do bazy danych kandydatów" "rada nadzorcza"',
     '"ogłasza nabór" "rady nadzorczej"',
     '"kandydatów do rady nadzorczej"',
     '"konkurs na członków rady nadzorczej"',

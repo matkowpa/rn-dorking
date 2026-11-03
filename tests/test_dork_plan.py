@@ -41,6 +41,13 @@ class TestCompanyDorks:
 
 
 class TestBuildPlan:
+    def test_wyczerpane_dorki_wymienione(self):
+        """Decyzja z 2026-11-03: te dwie frazy nie dawały żadnych ofert."""
+        plan = dp.build_plan(50)
+        assert not any("zaproszenie do składania ofert" in d for d in plan)
+        assert not any("nabór do bazy danych kandydatów" in d for d in plan)
+        assert any("spółka z o.o." in d for d in plan)
+
     def test_plan_zawiera_baze_i_dodatki(self):
         plan = dp.build_plan(50, base=["bazowy dork"])
         assert plan[0] == "bazowy dork"
