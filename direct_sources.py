@@ -326,6 +326,30 @@ def _load_jst_urls() -> dict:
     return {}
 
 
+def _load_jst_sections() -> dict:
+    """Mapowanie slug -> sekcja ogłoszeń (tools/discover_sections.py).
+
+    Wpis to {"url", "items", "label"} albo goły string (starszy format).
+    """
+    try:
+        with open("data/bip_sections.json", encoding="utf-8") as f:
+            m = json.load(f)
+    except FileNotFoundError:
+        return {}
+    except Exception as exc:
+        logger.warning("Rejestr sekcji BIP uszkodzony: %s", exc)
+        return {}
+    if not isinstance(m, dict):
+        return {}
+    out = {}
+    for slug, val in m.items():
+        if isinstance(val, str):
+            out[slug] = val
+        elif isinstance(val, dict) and val.get("url"):
+            out[slug] = val["url"]
+    return out
+
+
 def jst_daily_slice(registry: list, window: int = JST_WINDOW_DEFAULT,
                     day_of_year: int | None = None,
                     slot: int | None = None) -> list:
@@ -497,46 +521,68 @@ def _section_links(soup, base_url: str, max_subpages: int) -> list[str]:
     return out
 
 
+def _scan_page(url: str, max_links: int, dork_label: str, seen: set,
+               results: list, deep: bool, max_subpages: int, delay: float) -> int:
+    """Pobiera stronę i zbiera kandydatów; przy deep schodzi do jej sekcji."""
+    html = _fetch_html(url)
+    if not html:
+        return 0
+    try:
+        soup = BeautifulSoup(html, "html.parser")
+    except Exception as exc:
+        logger.warning("[Faza 0:%s] błąd parsowania: %s", dork_label, exc)
+        return 0
+    added = _collect_from_page(soup, url, max_links, dork_label, seen, results)
+    if deep:
+        for sub_url in _section_links(soup, url, max_subpages):
+            if sub_url.rstrip("/") == url.rstrip("/"):
+                continue
+            time.sleep(delay)
+            sub_html = _fetch_html(sub_url)
+            if not sub_html:
+                continue
+            try:
+                sub_soup = BeautifulSoup(sub_html, "html.parser")
+            except Exception:
+                continue
+            added += _collect_from_page(sub_soup, sub_url, max_links,
+                                        dork_label, seen, results)
+    return added
+
+
 def _scan_entries(entries: list, dork_label: str, max_links_per_source: int,
                   delay: float, seen: set, results: list,
-                  deep: bool = False, max_subpages: int = 0) -> None:
+                  deep: bool = False, max_subpages: int = 0,
+                  stats: dict | None = None) -> None:
     """Skanuje listę źródeł (whitelist lub JST) i dopisuje kandydatów
-    do results (format zgodny z wyszukiwarkami). Gdy deep=True, skanuje
-    dodatkowo podstrony-sekcje źródła (max_subpages, domyślnie
-    MAX_SUBPAGES_PER_SOURCE).
+    do results (format zgodny z wyszukiwarem).
 
-    Dla JST deep=True jest kluczowe: strona główna BIP to "Dane podstawowe"
-    z menu podmiotowym, a ogłoszenia leżą w sekcjach - bez tego skan dawał
-    zero kandydatów (analiza 2026-10-21).
+    Gdy wpis ma `section` (rejestr data/bip_sections.json), skanujemy od razu
+    dział ogłoszeń zamiast zgadywać podstrony po wzorcu URL - na BIP-ach
+    ogłoszenia o naborach leżą właśnie tam, a nie na stronie głównej.
+    Dopiero gdy sekcja nie da kandydatów, wracamy do strony głównej, więc
+    nieaktualny rejestr nie odcina podmiotu.
     """
     if max_subpages <= 0:
         max_subpages = MAX_SUBPAGES_PER_SOURCE
     for src in entries:
-        logger.info("[Faza 0:%s] %s → %s", dork_label, src["name"], src["url"])
-        html = _fetch_html(src["url"])
-        if not html:
-            continue
-        try:
-            soup = BeautifulSoup(html, "html.parser")
-        except Exception as exc:
-            logger.warning("[Faza 0:%s] błąd parsowania: %s", dork_label, exc)
-            continue
-        added = _collect_from_page(soup, src["url"], max_links_per_source,
-                                   dork_label, seen, results)
-        if deep:
-            subpages = _section_links(soup, src["url"], max_subpages)
-            for sub_url in subpages:
-                time.sleep(delay)
-                sub_html = _fetch_html(sub_url)
-                if not sub_html:
-                    continue
-                try:
-                    sub_soup = BeautifulSoup(sub_html, "html.parser")
-                except Exception:
-                    continue
-                added += _collect_from_page(sub_soup, sub_url,
-                                            max_links_per_source,
-                                            dork_label, seen, results)
+        section = src.get("section")
+        start_url = section or src["url"]
+        logger.info("[Faza 0:%s] %s → %s%s", dork_label, src["name"], start_url,
+                    " (sekcja)" if section else "")
+        added = _scan_page(start_url, max_links_per_source, dork_label, seen,
+                           results, deep, max_subpages, delay)
+        if stats is not None:
+            key = "jst_section_scan" if section else "jst_home_scan"
+            stats[key] = stats.get(key, 0) + 1
+        if section and added == 0:
+            logger.info("[Faza 0:%s] %s: sekcja bez kandydatów, skan strony głównej",
+                        dork_label, src["name"])
+            if stats is not None:
+                stats["jst_section_fallback"] = stats.get("jst_section_fallback", 0) + 1
+            time.sleep(delay)
+            added = _scan_page(src["url"], max_links_per_source, dork_label, seen,
+                               results, deep, max_subpages, delay)
         logger.info("[Faza 0:%s] %s → %s kandydatów", dork_label, src["name"], added)
         time.sleep(delay)
 
@@ -571,6 +617,11 @@ def collect(max_links_per_source: int = 3, delay: float = 0.5,
             real = urls_map.get(e.get("slug", ""))
             if real:
                 e["url"] = real
+        sections_map = _load_jst_sections()
+        for e in registry:
+            sec = sections_map.get(e.get("slug", ""))
+            if sec:
+                e["section"] = sec
         # Rotujemy tylko po wpisach z realnym BIP-em. Wpisy bez URL (np. gminy
         # z TERYT, dla których nie znamy jeszcze adresu) nie mogą zjadać okna.
         pool = [e for e in registry
@@ -594,7 +645,8 @@ def collect(max_links_per_source: int = 3, delay: float = 0.5,
         before = len(results)
         _scan_entries(window, "BIP JST", max_links_per_source=JST_MAX_LINKS,
                       delay=delay, seen=seen, results=results,
-                      deep=JST_DEEP_SCAN, max_subpages=MAX_SUBPAGES_PER_SOURCE)
+                      deep=JST_DEEP_SCAN, max_subpages=MAX_SUBPAGES_PER_SOURCE,
+                      stats=stats)
         if stats is not None:
             stats["direct_jst"] = len(results) - before
         logger.info("Faza 0b (JST): %s kandydatów", len(results) - before)

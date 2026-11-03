@@ -123,3 +123,12 @@ class TestValidate:
         ok, detail = rb.validate("https://bip.barcin.pl", "Gmina Barcin")
         assert ok is False
         assert "404" in detail
+
+    def test_odrzuca_strone_pokontrolna_rio(self, monkeypatch):
+        """Współdzielony portal RIO wymienia gminy w treści - to nie ich BIP."""
+        html = ("<html><head><title>31- Lelów- wystąpienie pokontrolne</title></head>"
+                "<body>Gmina Kornowac, Gmina Lelów, Gmina Krzanowice</body></html>")
+        monkeypatch.setattr(rb.requests, "get", lambda *a, **k: self.Resp(200, html))
+        ok, detail = rb.validate("https://riokatowice.bip.net.pl/?c=246", "Gmina Kornowac")
+        assert ok is False
+        assert "kontroli" in detail

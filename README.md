@@ -46,6 +46,11 @@ GitHub Pages.
   Z `--teryt-only --limit 400` uzupełnia adresy dla gmin z TERYT partiami
   (resolver waliduje kandydata: kod 200 + nazwa podmiotu w treści strony, więc
   zła gmina o tej samej nazwie nie trafi do rejestru).
+- `tools/discover_sections.py` — buduje `data/bip_sections.json`: dla każdego
+  BIP-u znajduje dział ogłoszeń („Nabory", „Ogłoszenia o naborze") po tekście
+  kotwicy, a nie po wzorcu URL. Faza 0b skanuje wtedy od razu ten dział
+  (1 zapytanie zamiast 3) i wraca do strony głównej, gdy dział nie da
+  kandydatów. GitHub Actions: Run workflow → *discover_sections*.
 
 ## 🌐 Strona z ogłoszeniami (live)
 

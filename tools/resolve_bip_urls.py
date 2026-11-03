@@ -59,6 +59,11 @@ BAD_URL = {"https://www.gov.pl", "http://www.gov.pl", "https://gov.pl"}
 SECTION_RE = re.compile(
     r"nab[oó]r|ogłoszen|ogloszen|konkurs|kandydat", re.I)
 
+# Strony pokontrolne RIO i podobne wymieniają wiele podmiotów w treści.
+CONTROL_PAGE_RE = re.compile(
+    r"wystąpienie pokontrolne|wystapienie pokontrolne|protok[oó]ł kontroli|"
+    r"regionalna izba obrachunkowa", re.I)
+
 
 def normalize(url: str) -> str:
     url = (url or "").strip()
@@ -117,8 +122,16 @@ def validate(url: str, name: str, timeout: int = 12) -> tuple[bool, str]:
     text = resp.text or ""
     # Nazwa musi być w TREŚCI strony - sam URL nie wystarcza: dwie gminy o tej
     # samej nazwie (miasto i gmina wiejska) mają domeny z tym samym rdzeniem.
-    if key not in name_key(text[:8000]):
+    if key not in name_key(text[:1500]):
         return False, "nazwa podmiotu nie występuje na stronie"
+    # Współdzielone portale (np. riokatowice.bip.net.pl) wymieniają w treści
+    # wiele gmin - ich strony kontrolne nie są BIP-em podmiotu.
+    title = ""
+    match = re.search(r"<title[^>]*>(.*?)</title>", text, re.I | re.S)
+    if match:
+        title = re.sub(r"\s+", " ", match.group(1))
+    if CONTROL_PAGE_RE.search(title) and "izba obrachunkowa" not in name_key(name):
+        return False, f"strona kontroli, nie BIP podmiotu ({title[:60]})"
     section = "sekcja ogłoszeń: tak" if SECTION_RE.search(text) else "sekcja ogłoszeń: nie"
     return True, f"200, {section}"
 
