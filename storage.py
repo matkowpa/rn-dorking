@@ -116,6 +116,42 @@ class Storage:
         self.offers = [o for o in self.offers if has_content_fn(o)]
         return before - len(self.offers)
 
+    def mark_menu_links(self, is_notice_url_fn, today: str | None = None) -> int:
+        """Oznacza jako nieaktualne oferty, których link nie prowadzi do ogłoszenia.
+
+        Dwa dowody, bo sam kształt URL-a nie wystarcza:
+        - `link_status` z audytu (tools/audit_links.py): "menu" / "dead" to
+          werdykt z realnego pobrania strony, mocniejszy niż regex;
+        - `is_notice_url_fn(url)` - wpisy bez audytu, których adres nie ma
+          identyfikatora wpisu (dział, menu, porównanie wersji).
+
+        Filtru nie da się cofnąć w czasie: wpisy zapisane przed wprowadzeniem
+        walidacji zostają w bazie na zawsze i strona pokazywałaby je jako
+        realne ogłoszenia. Zamiast je usuwać (utrata historii), oznaczamy je
+        flagą `nieaktualna` - frontend odsiewa je z licznika aktywnych naborów.
+
+        Zwraca liczbę nowo oznaczonych wpisów.
+        """
+        stamp = today or date.today().isoformat()
+        marked = 0
+        for offer in self.offers:
+            if offer.get("nieaktualna"):
+                continue
+            status = (offer.get("link_status") or "").strip().lower()
+            if is_notice_url_fn(offer.get("url", "")) and status not in ("menu", "dead"):
+                continue
+            if status == "menu":
+                reason = "audyt linków: adres prowadzi do strony-menu"
+            elif status == "dead":
+                reason = "audyt linków: adres nie odpowiada (404/timeout)"
+            else:
+                reason = "link prowadzi do strony-menu, nie do ogłoszenia"
+            offer["nieaktualna"] = True
+            offer["nieaktualna_powod"] = reason
+            offer["nieaktualna_data"] = stamp
+            marked += 1
+        return marked
+
     def _prune_rejected(self) -> None:
         """Usuwa wpisy odrzuconych URL-i starsze niż REJECT_TTL_DAYS."""
         cutoff = date.today().toordinal() - REJECT_TTL_DAYS
@@ -142,14 +178,14 @@ class Storage:
         self.rejected[_url_hash(url)] = date.today().isoformat()
 
     def get_reextract_candidates(self, max_n: int) -> list[dict]:
-        """Oferty bez terminu, które warto spróbować zekstrahować ponownie.
+        """Oferty z brakami (termin albo data publikacji) do ponownej ekstrakcji.
 
         Kolejność: najstarsze znaleziono_dnia najpierw; pomija oferty, które
         wyczerpały MAX_EXTRACT_ATTEMPTS prób.
         """
         candidates = []
         for offer in self.offers:
-            if offer.get("termin_skladania_ofert"):
+            if offer.get("termin_skladania_ofert") and offer.get("data_publikacji"):
                 continue
             entry = self.reextract.get(_url_hash(offer.get("url", "")), {})
             if entry.get("attempts", 0) >= MAX_EXTRACT_ATTEMPTS:

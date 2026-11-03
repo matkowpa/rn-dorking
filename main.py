@@ -16,7 +16,7 @@ import deadline_parser
 import config
 import direct_sources
 import heuristics
-from content_fetcher import fetch_content
+from content_fetcher import fetch_content, extract_publication_from_text
 from llm_parser import extract_fields, filter_is_announcement, rejects_zarzad
 from storage import Storage
 
@@ -103,6 +103,40 @@ def has_content(offer: dict) -> bool:
                                        "zaprasza do składania", "wszczyna",
                                        "postępowanie kwalifikacyjne"))
     return len(pod) >= 60 and (has_number or has_edu or has_verbs)
+
+
+def has_notice_url(offer: dict) -> bool:
+    """Czy URL oferty prowadzi do KONKRETNEGO ogłoszenia, a nie do działu/menu.
+
+    Walidacja przy zapisie, nie tylko przy zbieraniu: oferty z Brave/DDG nie
+    przechodzą przez `looks_like_notice_url`, więc do bazy wpadały linki do
+    stron-menu ("Nabory - Zarząd/Rada Nadzorcza") i do porównań wersji
+    dokumentu. Audyt bazy z 2026-11 pokazał 6 takich wpisów na 11.
+    """
+    return direct_sources.looks_like_notice_url((offer.get("url") or "").strip())
+
+
+def merge_publication_date(offer: dict, html_pub: str, text: str) -> dict:
+    """Ustala `data_publikacji` z trzema źródłami pewności.
+
+    Kolejność: metatagi/etykiety z HTML (fetch_content) -> pole z LLM ->
+    parser etykiet na samym tekście. Poprzednia wersja nadpisywała pole
+    wynikiem z HTML bezwarunkowo, więc gdy strona nie miała metatagów,
+    data wyciągnięta przez LLM była kasowana (5 z 11 ofert bez daty).
+    """
+    pub = (html_pub or "").strip()
+    if pub:
+        offer["data_publikacji_zrodlo"] = "html"
+    else:
+        pub = (offer.get("data_publikacji") or "").strip()
+        if pub:
+            offer["data_publikacji_zrodlo"] = "llm"
+        else:
+            pub = extract_publication_from_text(text or "")
+            if pub:
+                offer["data_publikacji_zrodlo"] = "parser"
+    offer["data_publikacji"] = pub
+    return offer
 
 
 def sanitize_termin(offer: dict, today: date | None = None) -> bool:
@@ -221,6 +255,15 @@ def main(argv: list[str] | None = None) -> int:
     if removed_empty:
         logger.info("Porządki: usunięto %s ofert bez treści z bazy", removed_empty)
 
+    # Porządki dla linków do stron-menu: nowe oferty są już odrzucane przy
+    # zapisie (has_notice_url), ale wpisy sprzed tej zmiany zostają w bazie.
+    # Nie usuwamy ich (to historia) - oznaczamy `nieaktualna`, więc frontend
+    # przestaje liczyć je jako aktywne nabory.
+    marked_menu = storage.mark_menu_links(
+        direct_sources.looks_like_notice_url)
+    if marked_menu:
+        logger.info("Porządki: %s ofert oznaczono jako stronę-menu", marked_menu)
+
     # Statystyki
     stats = {
         "search_requests": 0,
@@ -237,6 +280,7 @@ def main(argv: list[str] | None = None) -> int:
         "offers_updated": 0,
         "offers_with_termin": 0,
         "content_empty": 0,
+        "menu_url_skipped": 0,
     }
 
     # Re-ekstrakcja: oferty bez terminu z poprzednich dni - spróbuj ponownie
@@ -248,23 +292,33 @@ def main(argv: list[str] | None = None) -> int:
             logger.info("Re-ekstrakcja: %s ofert bez terminu", len(candidates))
         for cand in candidates:
             url = cand.get("url", "")
-            text, _ = fetch_content(url)
+            text, html_pub = fetch_content(url)
             offer = extract_fields(text, url) if text else None
             storage.mark_extract_attempt(url)
-            if offer is not None and not (offer.get("termin_skladania_ofert") or "").strip() and text:
-                # Ten sam fallback co przy nowych ofertach - LLM bywa tu
-                # bezradny, a termin często jest w treści.
-                found = deadline_parser.extract_deadline(text) \
-                    or deadline_parser.deadline_from_filename(url)
-                if found:
-                    offer["termin_skladania_ofert"] = found
-                    offer["termin_zrodlo"] = "parser"
-            if offer and offer.get("termin_skladania_ofert"):
+            if offer is not None and text:
+                if not (offer.get("termin_skladania_ofert") or "").strip():
+                    # Ten sam fallback co przy nowych ofertach - LLM bywa tu
+                    # bezradny, a termin często jest w treści.
+                    found = deadline_parser.extract_deadline(text) \
+                        or deadline_parser.deadline_from_filename(url)
+                    if found:
+                        offer["termin_skladania_ofert"] = found
+                        offer["termin_zrodlo"] = "parser"
+                # Ten sam fallback dla daty publikacji - tylko gdy wpis jej
+                # nie ma (update_offer scala pola, więc "" nadpisałoby wartość).
+                if not (cand.get("data_publikacji") or "").strip():
+                    offer["data_publikacji"] = ""
+                    merge_publication_date(offer, html_pub, text)
+                    if not offer.get("data_publikacji"):
+                        offer.pop("data_publikacji", None)
+                        offer.pop("data_publikacji_zrodlo", None)
+            if offer and (offer.get("termin_skladania_ofert")
+                          or offer.get("data_publikacji")):
                 if storage.update_offer(url, offer):
                     stats["offers_updated"] += 1
-                    logger.info("Re-ekstrakcja: uzupełniono termin %s: %s",
-                                offer.get("termin_skladania_ofert"),
-                                offer.get("podmiot", ""))
+                    logger.info("Re-ekstrakcja: uzupełniono %s: termin=%s publ=%s",
+                                url, offer.get("termin_skladania_ofert", "") or "-",
+                                offer.get("data_publikacji", "") or "-")
             time.sleep(0.5)
 
     # ETAP A: wyszukiwanie dla wszystkich dorków (Brave / DuckDuckGo)
@@ -441,7 +495,10 @@ def main(argv: list[str] | None = None) -> int:
                             stats.get("termin_from_parser", 0) + 1
                         logger.info("Termin z parsera: %s (%s)",
                                     found, offer.get("podmiot", "")[:40])
-                offer["data_publikacji"] = pub_date
+                # Data publikacji: HTML -> LLM -> parser etykiet. Samo
+                # `= pub_date` kasowało datę z LLM, gdy strona nie miała
+                # metatagów (5 z 11 ofert bez daty publikacji).
+                merge_publication_date(offer, pub_date, text)
                 # Pochodzenie oferty (Faza 0 / dork Brave lub DDG) - do widoku
                 offer["zrodlo"] = result.get("dork", "")
                 # Sanity check: LLM potrafi "wyliczyć" termin z innego roku.
@@ -473,6 +530,18 @@ def main(argv: list[str] | None = None) -> int:
                         "Pomijam stronę bez treści ogłoszenia (brak terminu i wymagań): %s",
                         offer.get("url", ""))
                     _log_raw(result, "empty", "strona bez treści ogłoszenia", offer)
+                    continue
+                # Walidacja URL-a przy zapisie: menu/dział/porównanie wersji to
+                # nie ogłoszenie, choć treść potrafi wyglądać sensownie.
+                if not has_notice_url(offer):
+                    logger.info(
+                        "Pomijam ofertę z linkiem do strony-menu: %s",
+                        offer.get("url", ""))
+                    _log_raw(result, "menu_url",
+                             "link prowadzi do strony-menu, nie do ogłoszenia",
+                             offer)
+                    stats["menu_url_skipped"] += 1
+                    storage.add_rejected(link)
                     continue
                 storage.add_offer(offer)
                 stats["offers_added"] += 1
