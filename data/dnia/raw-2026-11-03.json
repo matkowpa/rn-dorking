@@ -1,11 +1,11 @@
 {
   "date": "2026-11-03",
-  "count": 68,
+  "count": 69,
   "decisions": {
-    "cached": 35,
+    "cached": 38,
     "duplicate": 20,
-    "rejected": 10,
     "no_url": 1,
+    "rejected": 8,
     "archival": 1,
     "empty": 1
   },
@@ -187,8 +187,8 @@
       "snippet": "Kandydaci bowiem byli oceniani nie tylko przez Radę Nadzorczą na podstawie przedłożonych dokumentów i rozmów kwalifikacyjnych. Niezależnej oceny kandydatów dokonał również zaangażowany doradca. Kandydaci zostali też poddani testom psychologicznym, pozwalającym określić ich profil osobowościowy. W określonym terminie wpłynęło 13 kandydatur. Do etapu rozmów indywidualnych zakwalifikowano cztery osoby. Niezależny doradca uczestniczył we wszystkich etapach postępowania, przygotowując dla Rady Nadzor",
       "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Dotyczy wyboru prezesa zarządu, a nie naboru na członka rady nadzorczej."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://www.all-inclusive.com.pl/port-polska-nowy-prezes-zarzadu-wybrany/",
@@ -304,8 +304,8 @@
       "snippet": "<strong>2 września 2026 r</strong>. Zaproszenie do składania ofert na badanie sprawozdania finansowego przez firmę audytorską Rada Nadzorcza Przedsiębiorstwa Gospodarki Komunalnej i Mieszkaniowej Sp. z o.o. w Krotoszynie 63-700 Krotoszyn, ul.",
       "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Zaproszenie dotyczy wyboru firmy audytorskiej, nie naboru na członka rady nadzorczej."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://bip.czestochowa.pl/attachments/download/33753",
@@ -394,8 +394,8 @@
       "snippet": "Wskazanie przez Ministra Skarbu ... kwalifikacyjne, odbywające się w trybie publicznym, poprzez <strong>ogłoszenie o naborze zamieszczane na stronach internetowych Ministerstwa Skarbu Państwa (MSP).</strong>...",
       "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
       "direct": false,
-      "decision": "rejected",
-      "reason": "To omówienie orzeczenia TK, nie aktualne ogłoszenie o naborze."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://mazovia.pl/pl/bip/komunikaty/nabor-kandydatow-do-rady-nadzorczej-mazowieckiej-agencji-energetycznej.html",
@@ -577,15 +577,16 @@
       "decision": "archival",
       "reason": "oferta archiwalna",
       "offer": {
-        "podmiot": "Spółdzielnia Mieszkaniowa „Osiedle Młodych”",
+        "podmiot": "Spółdzielnia Mieszkaniowa „Osiedle Młodych” w Poznaniu",
         "miejscowosc": "Poznań",
         "termin_skladania_ofert": "2026-02-28",
         "stanowisko": "członek Rady Nadzorczej",
-        "wymagania": "Członek Spółdzielni; pisemna zgoda; kandydowanie w obrębie jednej części WZ; zgłoszenie przez min. 50 członków, RN lub Radę Osiedla; wykluczeni pracownicy, Zarząd, pełnomocnicy, osoby spokrewnione/małżonkowie członków Zarządu; max dwie kolejne kadencje.",
-        "podsumowanie": "Spółdzielnia Mieszkaniowa „Osiedle Młodych” w Poznaniu ogłasza wybory 19 członków Rady Nadzorczej na kadencję 2026–2029. Zgłoszenia kandydatów przyjmowane są do 28 lutego 2026 r.",
+        "wymagania": "Kandydat musi być członkiem Spółdzielni; nie mogą kandydować pracownicy Spółdzielni, członkowie Zarządu, ich pełnomocnicy oraz osoby spokrewnione lub w związku małżeńskim z członkami Zarządu. Obowiązuje kadencyjność: max dwie kolejne kadencje. Wymagana pisemna zgoda na kandydowanie; zgłoszenia mogą składać grupy min. 50 członków, Rada Nadzorcza i Rady Osiedli. Kandydować można w obrębie jednej części Walnego Zgromadzenia.",
+        "podsumowanie": "Spółdzielnia Mieszkaniowa „Osiedle Młodych” w Poznaniu ogłasza wybory członków Rady Nadzorczej na kadencję 2026–2029. Zgłoszenia kandydatów należy składać do 28 lutego 2026 r. w biurze Zarządu Spółdzielni.",
         "data_publikacji": "2026-02-02",
         "url": "https://osiedlemlodych.pl/wybory-do-rady-nadzorczej-zglaszanie-kandydatow-2026/",
         "znaleziono_dnia": "2026-11-03",
+        "data_publikacji_zrodlo": "html",
         "zrodlo": "\"kandydatów do rady nadzorczej\""
       }
     },
@@ -603,7 +604,7 @@
         "termin_skladania_ofert": "",
         "stanowisko": "członek rady nadzorczej",
         "wymagania": "",
-        "podsumowanie": "Urząd Miasta i Gminy Czarne opublikował ogłoszenie o naborze kandydatów do Rady Nadzorczej Przedsiębiorstwa Wodno-Kanalizacyjnego Sp. z o.o. w Czarnem. Szczegóły naboru, w tym wymagania i termin składania ofert, zawarto w załączonym pliku PDF do pobrania; w treści strony nie podano tych informacji.",
+        "podsumowanie": "Ogłoszenie dotyczy naboru kandydatów do rady nadzorczej Przedsiębiorstwa Wodno-Kanalizacyjnego Sp. z o.o. w Czarnem. Szczegóły znajdują się w załączniku PDF, a w dostępnym tekście nie podano terminu składania ofert.",
         "data_publikacji": "",
         "url": "https://bip.czarne.pl/dokumenty/7872",
         "znaleziono_dnia": "2026-11-03",
@@ -645,6 +646,15 @@
       "direct": false,
       "decision": "cached",
       "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://tarnow.pl/Dla-mieszkancow/Aktualnosci/Miasto/Zakonczyla-sie-33.-Kwesta-na-rzecz-ratowania-zabytkow",
+      "title": "Zakończyła się 33. Kwesta na rzecz ratowania zabytków - TARNÓW - Polski Biegun Ciepła",
+      "snippet": "Nabór do bazy <strong>kandydatów na członków rad nadzorczych</strong> · Strategia Rozwoju Miasta Tarnów 2030 · Raport o stanie miasta · Rewitalizacja miasta · Program &quot;Rozwój Lokalny&quot; Projekty dofinansowane ze środków zewnętrznych · Miasta partnerskie · Projekty tarnowskich szkół ·",
+      "source": "\"kandydatów na członków rad nadzorczych\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "To aktualność o kweście; wzmianka o naborze to element nawigacji, nie treść ogłoszenia."
     }
   ]
 }

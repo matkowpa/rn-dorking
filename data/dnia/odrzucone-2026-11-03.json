@@ -60,6 +60,12 @@
       "title": "JTI Jumpstart Dashboard",
       "reason": "To strona logowania do dashboardu, nie ogłoszenie o naborze na radę nadzorczą.",
       "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://tarnow.pl/Dla-mieszkancow/Aktualnosci/Miasto/Zakonczyla-sie-33.-Kwesta-na-rzecz-ratowania-zabytkow",
+      "title": "Zakończyła się 33. Kwesta na rzecz ratowania zabytków - TARNÓW - Polski Biegun Ciepła",
+      "reason": "To aktualność o kweście; wzmianka o naborze to element nawigacji, nie treść ogłoszenia.",
+      "source": "\"kandydatów na członków rad nadzorczych\""
     }
   ]
 }
