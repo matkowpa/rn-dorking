@@ -28,6 +28,11 @@ on:
         type: boolean
         default: false
         required: false
+      discover_sections:
+        description: "Zbuduj rejestr sekcji ogłoszeń BIP - partia 150 podmiotów (tylko HTTP, bez quota)"
+        type: boolean
+        default: false
+        required: false
   push:
     paths-ignore:           # nie odpalaj przy commitach wyników bota i docs
       - "docs/**"
@@ -90,6 +95,15 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/bip_jst_urls.json
           git diff --staged --exit-code --quiet || { git commit -m "Mapowanie slug->realny BIP $(date +'%Y-%m-%d')"; git push; }
+
+      - name: Discover BIP sections (optional)
+        if: inputs.discover_sections == true
+        run: |
+          python tools/discover_sections.py --limit 150
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/bip_sections.json
+          git diff --staged --exit-code --quiet || { git commit -m "Rejestr sekcji BIP $(date +'%Y-%m-%d')"; git push; }
 
       - name: Decide mode (DST-safe, czas PL)
         id: mode

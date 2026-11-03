@@ -41,7 +41,7 @@ class TestJstDeepScan:
         calls = []
 
         def fake_scan(entries, label, max_links_per_source, delay, seen, results,
-                      deep=False, max_subpages=0):
+                      deep=False, max_subpages=0, stats=None):
             calls.append({"label": label, "deep": deep,
                           "max_links": max_links_per_source,
                           "max_subpages": max_subpages})
