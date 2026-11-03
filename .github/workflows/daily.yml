@@ -125,6 +125,17 @@ jobs:
           elif [ "${{ github.event_name }}" = "push" ]; then
             if [ "${{ github.ref }}" = "refs/heads/master" ]; then MODE=run; else MODE=test; fi
           fi
+          # Dispatch serwisowy (uzupełnienie adresów BIP / rejestru sekcji) nie
+          # ma skanować ogłoszeń: 6 partii resolvera po 400 podmiotów ciągnęło
+          # za sobą 6 pełnych potoków po ~12 min każdy. Tryb "maint" kończy run
+          # na krokach serwisowych, a ich wyniki i tak commitują się osobno.
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && \
+             { [ "${{ inputs.resolve_urls }}" = "true" ] || \
+               [ "${{ inputs.resolve_teryt }}" = "true" ] || \
+               [ "${{ inputs.discover_sections }}" = "true" ]; }; then
+            echo "Dispatch serwisowy - pomijam potok"
+            MODE=maint
+          fi
           # Wiek ostatniego commita wyników - liczony dla KAŻDEGO runu
           # schedule (także poza oknem): GitHub potrafi opóźnić cron o kilka
           # godzin; taki run ląduje poza oknem i byłby cicho pominięty mimo
