@@ -21,9 +21,15 @@ GitHub Pages.
      o naborze" na BIP jest wiarygodny).
    - **ETAP A** — Brave Search (dorki frazowe + opcjonalne `EXTRA_DORKS`);
      przy błędzie/pustym wyniku automatyczny fallback na DuckDuckGo.
+     Plan zapytań (`dork_plan.py`) to 12 dorków bazowych + 4 regionalne
+     (16 województw w rotacji, każdy co 4 dni) + 2 spółkowe — bez rotacji
+     ten sam zestaw zwracał codziennie te same adresy (81% wsadu to powtórki).
    - **Pre-filtr heurystyczny** (`heuristics.py`, port z rn-scrapper) — bez
-     wywołania LLM odrzuca agregatory (jooble, indeed…), artykuły/poradniki,
-     treści edukacyjne, zakończone nabory i archiwalne roczniki.
+     wywołania LLM odrzuca agregatory (jooble, indeed…), media (facebook,
+     bankier, money.pl, PAP, mazovia…), artykuły/poradniki, treści
+     edukacyjne, zakończone nabory i archiwalne roczniki. Media i agregatory
+     odsiewane są **przed** liczeniem limitu runu — wcześniej zjadały sloty
+     przeznaczone na realne ogłoszenia. Subdomeny `bip.*` nie są blokowane.
    - **ETAP B** — deduplikacja + filtr LLM → **ETAP C** — pobranie treści
      (HTML/PDF, poziom 2: załączniki) + ekstrakcja pól przez LLM
      (podmiot, termin, miejscowość… oraz **data publikacji** z metatagów/

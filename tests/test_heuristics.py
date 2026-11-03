@@ -18,6 +18,33 @@ def test_blocked_domain():
     assert not is_blocked_domain("https://bip.poznan.pl/ogloszenie")
 
 
+def test_media_i_agregatory_z_audytu_sa_blokowane():
+    """Top hosty z data/dnia/raw-*.json bez ani jednej przyjętej oferty."""
+    for url in ("https://www.facebook.com/gmina/posts/1",
+                "https://www.bankier.pl/wiadomosc/nabor-123.html",
+                "https://www.money.pl/gospodarka/nabor",
+                "https://www.mazovia.pl/aktualnosci/nabor",
+                "https://biznes.pap.pl/wiadomosci/nabor",
+                "https://bydgoszcz.wyborcza.pl/bydgoszcz/7,1,nabor.html",
+                "https://biznes.interia.pl/nabor",
+                "https://www.propertynews.pl/nabor",
+                "https://www.ceo.com.pl/nabor",
+                "https://www.sektorkolejowy.pl/nabor",
+                "https://www.portpolska.pl/nabor",
+                "https://www.lexlege.pb.pl/nabor"):
+        assert is_blocked_domain(url), url
+
+
+def test_spolki_i_bip_y_nie_sa_blokowane():
+    """Strony firm i BIP-ów mogą publikować prawdziwe ogłoszenia."""
+    for url in ("https://kghm.com/pl/kariera/nabor",
+                "https://www.pwpw.pl/nabor",
+                "https://bip.grudziadz.pl/nabor",
+                "https://sokolka.pl/nabor",
+                "https://bip.mazovia.pl/nabor"):
+        assert not is_blocked_domain(url), url
+
+
 def test_trusted_domain():
     assert is_trusted_domain("https://umj.bip.gov.pl/ogloszenie-o-naborze")
     assert is_trusted_domain("https://www.gov.pl/web/finanse/aktualnosci")

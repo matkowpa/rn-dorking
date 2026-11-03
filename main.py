@@ -330,11 +330,13 @@ def main(argv: list[str] | None = None) -> int:
         )
     # Brave potrzebuje własnych dorków (bez inurl:/filetype:/site:)
     if backend == "Brave":
-        from brave_search import BRAVE_DORKS
-        dorks = BRAVE_DORKS
+        from dork_plan import build_plan
+        dorks = build_plan()
     else:
         from ddg_search import DORKS
-        dorks = DORKS
+        from dork_plan import build_plan
+        dorks = build_plan(base=DORKS)
+    logger.info("Plan zapytań: %s (baza + rotacja regionalna/spółkowa)", len(dorks))
     # Dodatkowe dorki z .env (EXTRA_DORKS, oddzielone |) - np. per konkretny BIP:
     # EXTRA_DORKS=site:bip.grudziadz.pl "rady nadzorczej"|site:bip.skoczow.pl nabór
     if config.EXTRA_DORKS:
@@ -432,6 +434,14 @@ def main(argv: list[str] | None = None) -> int:
         link = result.get("link", "")
         if not link:
             _log_raw(result, "no_url", "wynik bez adresu URL")
+            continue
+        # Agregatory i media odsiewamy PRZED liczeniem limitu i sprawdzaniem
+        # cache: w analizie 66 dni facebook/bankier/money.pl/mazovia/PAP to
+        # 105 z 528 surowych wyników i ani jednej oferty - zjadały slots
+        # limitu, które powinny iść na realne ogłoszenia.
+        if heuristics.is_blocked_domain(link):
+            stats["blocked_domain"] = stats.get("blocked_domain", 0) + 1
+            _log_raw(result, "blocked", "agregator/medium, nie publikuje ogłoszeń")
             continue
         if storage.is_rejected(link):
             # Odrzucony wcześniej (w oknie TTL) - nie liczy się do limitu

@@ -29,6 +29,12 @@ BLOCKED_DOMAINS = (
     "youtube",       # filmy o karierze, nie ogłoszenia
     "lex.pl",        # bazy aktów prawnych - nigdy nie zawierają ogłoszeń naboru
     "cire.pl",       # serwis branżowy z artykułami, nie ogłoszeniami
+    # Media i portale społecznościowe (audyt data/dnia/raw-*.json: 105 z 528
+    # surowych wyników, ZERO przyjętych ofert - same artykuły i przedruki).
+    "facebook", "bankier.", "money.pl", "mazovia", "pap.pl",
+    "wyborcza", "interia", "propertynews", "ceo.com.pl",
+    "sektorkolejowy", "portpolska", "startupbootcamp", "pitcertification",
+    "lexlege",
 )
 
 # Frazy wskazujące, że mamy do czynienia z ARTYKUŁEM / poradnikiem / analizą
@@ -92,8 +98,14 @@ OFFER_TITLE_HINTS = (
 
 
 def is_blocked_domain(url: str) -> bool:
-    """True, gdy host URL-a pasuje do listy domen-agregatorów/reklam."""
+    """True, gdy host URL-a pasuje do listy domen-agregatorów/reklam.
+
+    Wyjątek: subdomeny BIP (bip.mazovia.pl, bip.region.pl itd.) nie są
+    blokowane mimo domeny-matki, bo to urzędowe biuletyny podmiotów.
+    """
     host = urlsplit(url).netloc.lower()
+    if host.startswith("bip.") or host.startswith("www.bip."):
+        return False
     return any(b in host for b in BLOCKED_DOMAINS)
 
 
