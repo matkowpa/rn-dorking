@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-03",
+  "rejected": [
+    {
+      "url": "https://intermodalnews.pl/2026/11/02/piotr-borys-prezesem-zarzadu-cpk/",
+      "title": "Piotr Borys prezesem zarządu CPK - IntermodalNews",
+      "reason": "Dotyczy wyboru prezesa zarządu, a nie naboru na członka rady nadzorczej.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://pgkimkrotoszyn.pl/aktualnosci/zaproszenie-do-skladania-ofert-pisemnych-na-przeprowadzenie-badania-sprawozdania-finansowego-spolki.html",
+      "title": "Zaproszenie do składania ofert pisemnych na \"przeprowadzenie badania sprawozdania finansowego Spółki\" - PGKiM Krotoszyn",
+      "reason": "Zaproszenie dotyczy wyboru firmy audytorskiej, nie naboru na członka rady nadzorczej.",
+      "source": "\"zaproszenie do składania ofert\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://trybunal.gov.pl/postepowanie-i-orzeczenia/wokanda/art/6797-zasady-i-tryb-wyboru-kandydatow-na-czlonkow-rad-nadzorczych-spolek-skarbu-panstwa",
+      "title": "Trybunał Konstytucyjny: Zasady i tryb wyboru kandydatów na członków rad nadzorczych spółek Skarbu Państwa.",
+      "reason": "To omówienie orzeczenia TK, nie aktualne ogłoszenie o naborze.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\""
+    },
+    {
+      "url": "https://startupbootcamp.org/",
+      "title": "Startupbootcamp",
+      "reason": "To opis akceleratora startupów, nie nabór na członka rady nadzorczej.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://startupbootcamp.org/articles/top-20-startups-advance-to-final-selection-days-for-the-asip-program-powered-by-sbc-afritech",
+      "title": "SBC global website - Startupbootcamp",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://startupbootcamp.org/articles/startupbootcamp-launches-deeptech-robotics-accelerator-to-propel-the-next-wave-of-technological-innovation",
+      "title": "SBC global website",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://startupbootcamp.org/ai-web-3-iii-2025",
+      "title": "AI & Web 3 III (2025) - startupbootcamp.org",
+      "reason": "To ogłoszenie programu akceleracyjnego dla startupów, nie nabór na członka rady nadzorczej.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://startupbootcamp.org/accelerator/inclusive-fintech-defi",
+      "title": "Inclusive FinTech & DeFi - Startupbootcamp",
+      "reason": "To ogłoszenie akceleratora startupów, nie nabór na członka rady nadzorczej.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://startupbootcamp.org/startup/tucco",
+      "title": "SBC global website",
+      "reason": "Opis startupu, nie ogłoszenie o naborze do rady nadzorczej",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    },
+    {
+      "url": "https://jumpstart-dashboard.startupbootcamp.org/",
+      "title": "JTI Jumpstart Dashboard",
+      "reason": "To strona logowania do dashboardu, nie ogłoszenie o naborze na radę nadzorczą.",
+      "source": "\"nabór do bazy danych kandydatów\" \"rada nadzorcza\""
+    }
+  ]
+}
