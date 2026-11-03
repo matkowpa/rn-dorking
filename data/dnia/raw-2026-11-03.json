@@ -1,15 +1,14 @@
 {
   "date": "2026-11-03",
-  "count": 80,
+  "count": 95,
   "decisions": {
-    "cached": 27,
+    "cached": 31,
     "duplicate": 17,
     "blocked": 21,
     "no_url": 1,
-    "rejected": 9,
+    "rejected": 22,
     "archival": 2,
-    "empty": 1,
-    "menu_url": 2
+    "empty": 1
   },
   "raw": [
     {
@@ -583,8 +582,8 @@
         "miejscowosc": "Poznań",
         "termin_skladania_ofert": "2026-02-28",
         "stanowisko": "członek Rady Nadzorczej",
-        "wymagania": "Członek Spółdzielni; pisemna zgoda; kandydowanie w jednej części WZ; wykluczeni pracownicy, Zarząd, pełnomocnicy, osoby spokrewnione/małżeństwo z Zarządem; max dwie kolejne kadencje po max 3 lata.",
-        "podsumowanie": "Spółdzielnia Mieszkaniowa „Osiedle Młodych” w Poznaniu ogłasza wybory 19 członków Rady Nadzorczej na kadencję 2026–2029. Zgłoszenia kandydatów przyjmowane są do 28 lutego 2026 r.",
+        "wymagania": "Członek Spółdzielni; wykluczeni pracownicy, Zarząd, pełnomocnicy, osoby spokrewnione/małżeństwa z Zarządem; max dwie kolejne kadencje; kandydowanie w jednej części Walnego Zgromadzenia; pisemna zgoda; zgłoszenie przez min. 50 członków, RN lub Radę Osiedla.",
+        "podsumowanie": "Spółdzielnia Mieszkaniowa „Osiedle Młodych” w Poznaniu ogłasza wybory 19 członków Rady Nadzorczej na kadencję 2026–2029. Kandydatury można zgłaszać do 28 lutego 2026 r. w biurze Zarządu.",
         "data_publikacji": "2026-02-02",
         "url": "https://osiedlemlodych.pl/wybory-do-rady-nadzorczej-zglaszanie-kandydatow-2026/",
         "znaleziono_dnia": "2026-11-03",
@@ -606,7 +605,7 @@
         "termin_skladania_ofert": "",
         "stanowisko": "członek rady nadzorczej",
         "wymagania": "",
-        "podsumowanie": "Urząd Miasta i Gminy Czarne opublikował ogłoszenie o naborze kandydatów do Rady Nadzorczej Przedsiębiorstwa Wodno-Kanalizacyjnego Sp. z o.o. w Czarnem. Szczegóły ogłoszenia, w tym wymagania i termin składania ofert, zawarte są w załączonym pliku PDF, którego treści nie udało się odczytać z podanego tekstu.",
+        "podsumowanie": "Ogłoszenie o naborze kandydatów do rady nadzorczej Przedsiębiorstwa Wodno-Kanalizacyjnego Sp. z o.o. w Czarnem, opublikowane na BIP Urzędu Miasta i Gminy Czarne. Treść ogłoszenia wraz z wymaganiami i terminem składania ofert znajduje się w załączonym pliku PDF, którego treści nie podano.",
         "data_publikacji": "",
         "url": "https://bip.czarne.pl/dokumenty/7872",
         "znaleziono_dnia": "2026-11-03",
@@ -673,8 +672,8 @@
       "snippet": "Osoba urodzona przed 1 sierpnia ... do <strong>rady nadzorczej</strong>, jest zobowiązana do złożenia oświadczenia lustracyjnego lub informacji o jego uprzednim złożeniu (zgodnie z ustawą z 18.10.2006 r. o ujawnieniu informacji o dokumentach organów ...",
       "source": "\"nabór kandydatów\" \"rady nadzorczej\" świętokrzyskie",
       "direct": false,
-      "decision": "rejected",
-      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)"
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://archiwumbip.prudnik.pl/bip-prudnik.skycms.com.pl/2433/ogloszenie-o-naborze-kandydatow-na-czlonkow-rad-nadzorczych-spolek-handlowych.html",
@@ -682,8 +681,8 @@
       "snippet": "2. Kandydaci na członka Rady Nadzorczej zobowiązani są do przedłożenia następujących dokumentów:",
       "source": "\"nabór kandydatów\" \"rady nadzorczej\" świętokrzyskie",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Ogłoszenie archiwalne w Archiwum BIP; nie dotyczy otwartego naboru."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://grudziadz.pl/artykul/69/14515/nabor-kandydatow-do-rad-nadzorczych",
@@ -740,20 +739,8 @@
       "snippet": "Liczba członków Rady Nadzorczej przewidywanych do powołania: 3,",
       "source": "\"nabór kandydatów\" \"rady nadzorczej\" wielkopolskie",
       "direct": false,
-      "decision": "menu_url",
-      "reason": "link prowadzi do strony-menu, nie do ogłoszenia",
-      "offer": {
-        "podmiot": "Mareckie Inwestycje Miejskie Spółka z ograniczona odpowiedzialnością w organizacji w Markach",
-        "miejscowosc": "Marki",
-        "termin_skladania_ofert": "",
-        "stanowisko": "członek rady nadzorczej",
-        "wymagania": "Egzamin na kandydata do rad nadzorczych spółek ze Skarbem Państwa lub zwolnienie; studia wyższe prawnicze/ekonomiczne/organizacja i zarządzanie lub związane z działalnością Spółki; min. 3 lata stażu; brak zakazów; znajomość spółek handlowych, branży i nadzoru.",
-        "podsumowanie": "Ogłoszenie dotyczy naboru kandydatów do Rady Nadzorczej Spółki Mareckie Inwestycje Miejskie sp. z o.o. w organizacji w Markach. Zgłoszenia należy składać do 18.04.2012 r. godz. 12:00.",
-        "data_publikacji": "",
-        "url": "https://marki.net.pl/wpis-37822-nabor_kandydatow_do_rady_nadzorczej",
-        "znaleziono_dnia": "2026-11-03",
-        "zrodlo": "\"nabór kandydatów\" \"rady nadzorczej\" wielkopolskie"
-      }
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://fs.siteor.com/zrfpk/files/Downloads/20151210144930/20151210_ZRFPK_-_Og%C5%82oszenie_o_naborze_kandydat%C3%B3w_do_RN_PZ.pdf",
@@ -761,20 +748,8 @@
       "snippet": "Ogłoszenie o naborze kandydatów · na członków Rady Nadzorczej spółki Pożyczki Zachodniopomorskie Sp. z o.o. z siedzibą w Szczecinie · 1. Kandydaci do składu Rady Nadzorczej spółki Pożyczki Zachodniopomorskie Sp. z o.o. z siedzibą w ·",
       "source": "\"nabór kandydatów\" \"rady nadzorczej\" zachodniopomorskie",
       "direct": false,
-      "decision": "menu_url",
-      "reason": "link prowadzi do strony-menu, nie do ogłoszenia",
-      "offer": {
-        "podmiot": "Pożyczki Zachodniopomorskie Sp. z o.o.",
-        "miejscowosc": "Szczecin",
-        "termin_skladania_ofert": "",
-        "stanowisko": "członek Rady Nadzorczej",
-        "wymagania": "zdolność do czynności prawnych; wyższe wykształcenie; brak pracy/usług w Spółce; brak miejsca w RN innej spółce z większością SP/JST; brak zakazów; egzamin (art. 12 ustawy o komercjalizacji) lub zwolnienie; niekaralność; preferowane: prawo/ekonomia/zarządzanie/finanse, znajomość spółek handlowych i branży, doświadczenie.",
-        "podsumowanie": "Ogłoszenie dotyczy naboru kandydatów na członków Rady Nadzorczej spółki Pożyczki Zachodniopomorskie Sp. z o.o. z siedzibą w Szczecinie. Zgłoszenia należy składać do 28 grudnia 2015 r. do godz. 15.00.",
-        "data_publikacji": "",
-        "url": "https://fs.siteor.com/zrfpk/files/Downloads/20151210144930/20151210_ZRFPK_-_Og%C5%82oszenie_o_naborze_kandydat%C3%B3w_do_RN_PZ.pdf",
-        "znaleziono_dnia": "2026-11-03",
-        "zrodlo": "\"nabór kandydatów\" \"rady nadzorczej\" zachodniopomorskie"
-      }
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://niepelnosprawni.gov.pl/ogloszenie-uzupelniajace-o-naborze-kandydata-do-rady-nadzorczej-panstwowego-funduszu-rehabilitacji-osob-niepelnosprawnych/",
@@ -793,6 +768,141 @@
       "direct": false,
       "decision": "duplicate",
       "reason": "URL już widziany"
+    },
+    {
+      "url": "https://wprawieni.pl/blog/rada-nadzorcza-w-spolce-z-o-o-kto-ja-powoluje-i-kiedy-trzeba-ja-powolac/",
+      "title": "Rada nadzorcza w spółce z o.o. - kto ją powołuje i kiedy trzeba ją powołać? - Wprawieni – kancelaria prawna | biuro rachunkowe",
+      "snippet": "Rada nadzorcza w spółce z o.o. <strong>powoływana jest przez zgromadzenie wspólników, chyba że umowa spółki stanowi inaczej</strong>. W praktyce oznacza to, że to wspólnicy mają decydujący głos w tej sprawie i mogą określić zasady powoływania ...",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "frazy dyskwalifikujące: kancelaria"
+    },
+    {
+      "url": "https://www.igwp.org.pl/rada-nadzorcza-spolki-komunalnej-zukowo-sp-z-o-o-oglasza-nabor-na-stanowisko-prezesa-zarzadu/",
+      "title": "Rada Nadzorcza „Spółki Komunalnej Żukowo” Sp. z o.o. ogłasza nabór na stanowisko Prezesa Zarządu. - Izba Gospodarcza \"Wodociągi Polskie\"",
+      "snippet": "... <strong>Rada Nadzorcza Spółki Komunalnej Żukowo informuje o podjęciu uchwały Nr 5/2025 w sprawie ogłoszenia o naborze na stanowisko Prezes Zarządu Spółki Komunalnej Żukowo Sp</strong>.",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Dotczy naboru na Prezesa Zarządu, a nie członka rady nadzorczej."
+    },
+    {
+      "url": "https://www.oleskalaguna.pl/2026/05/13/ogloszenie-4/",
+      "title": "Ogłoszenie - Oleska Laguna",
+      "snippet": "Wachowska 10A, 46-300 Olesno, <strong>na podstawie Uchwały Rady Nadzorczej Nr 1/5/2025 z dnia 9.05.2026 r., ogłasza postępowanie kwalifikacyjne i nabór na Prezesa Spółki pod firmą Miejskie Centrum Sportu i Rekreacji w Oleśnie sp</strong>. z o.o. Ilekroć ...",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Ogłoszenie dotyczy naboru na Prezesa Spółki, czyli stanowiska zarządu, nie rady nadzorczej."
+    },
+    {
+      "url": "https://www.ifirma.pl/blog/organy-nadzoru-w-spolce-z-o-o-jakie-pelnia-funkcje/",
+      "title": "Organy nadzoru w spółce z o.o. – jakie pełnią funkcje? | ifirma.pl",
+      "snippet": "Nadzór w spółce z ograniczoną odpowiedzialnością mogą sprawować różne organy i podmioty. Jednakże praktyka pokazuje, że w większości spółek z o.o. nadzór sprawowany jest przez jej wspólników, a rada nadzorcza lub komisja rewizyjna są powoływane wyłącznie w dużych spółkach.",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "frazy dyskwalifikujące: praktyka"
+    },
+    {
+      "url": "https://www.infakt.pl/blog/rada-nadzorcza-w-spolce-z-o-o/",
+      "title": "Rada nadzorcza w spółce z o.o. – czym jest, ile liczy osób, kto wchodzi w jej skład?",
+      "snippet": "Jeśli w spółce kapitał przewyższa bowiem 500 tys. zł, a wspólników jest więcej niż 25, najczęściej będzie to po prostu spółka akcyjna, w której powołanie rady nadzorczej jest obowiązkowe w każdym przypadku. Tak, umowa spółki z o.o. może ustanowić radę nadzorczą lub komisję rewizyjną albo oba te organy. W takim przypadku ustanowienie rady nadzorczej jest niezależne od tego, jak wysoki jest kapitał zakładowy oraz ile osób jest wspólnikami spółki. Co ciekawe, jeśli w spółce z o.o. funkcjonuje rada ",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Artykuł informacyjny o radzie nadzorczej, nie ogłoszenie o naborze."
+    },
+    {
+      "url": "https://www.prawo.pl/biznes/rada-nadzorcza-w-spolce-z-oo-ustanowienie,521517.html",
+      "title": "Fakultatywna rada nadzorcza w spółce z o.o. problematyczna w praktyce",
+      "snippet": "Przepisy wskazują, że rada nadzorcza lub komisja rewizyjna powinny być ustanowione, jeżeli kapitał zakładowy spółki przewyższa 500 tys. zł, albo jeśli wspólników jest więcej niż dwudziestu pięciu. We wszystkich innych przypadkach ustanowienie tych organów jest fakultatywne. Jeśli jednak rada lub komisja zostaną już powołane w danej spółce, indywidualna kontrola wspólników może zostać ograniczona lub całkowicie wyłączona – o ile umowa spółki dopuszcza taką możliwość.",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Artykuł prawniczy o radzie nadzorczej, nie ogłoszenie o naborze kandydatów."
+    },
+    {
+      "url": "https://spolkazoo.net/rada-nadzorcza-w-spolce-z-o-o",
+      "title": "Rada nadzorcza w spółce z o.o. - kto ustanawia, kiedy trzeba ją ustanowić i jakie ma obowiązki? | Spolkazoo",
+      "snippet": "Jednak w trakcie jej funkcjonowania może wystąpić sytuacja, w której spółka będzie chciała zawrzeć umowę z członkiem zarządu bądź dojdzie do sporu pomiędzy tymi dwoma podmiotami. W takim przypadku Kodeks spółek handlowych wskazuje, że uprawniona do reprezentowania spółki z o.o. jest rada nadzorcza (w przypadku jej braku powołany w szczególnym trybie przez zgromadzenie wspólników pełnomocnik).",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Artykuł informacyjny o radzie nadzorczej, nie ogłoszenie o naborze kandydatów."
+    },
+    {
+      "url": "http://spolkazoo.org.pl/rada-nadzorcza-w-spolce-z-ograniczona-odpowiedzialnoscia/",
+      "title": "Rada nadzorcza w spółce z ograniczoną odpowiedzialnością",
+      "snippet": "Rada nadzorcza spółki z ograniczoną odpowiedzialnością pełni rolę kontrolną w spółce. Pełni nadzór na działalnością spółki i to we wszystkich dziedzinach jej działalności. Rada nadzorcza spółki z o.o.",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Artykuł informacyjny o roli rady nadzorczej, nie ogłoszenie o naborze."
+    },
+    {
+      "url": "https://adwokat-wroclaw.biz.pl/rada-nadzorcza-w-sp-z-o-o/",
+      "title": "Rada nadzorcza w sp. z o.o. – organ kontroli czy „zło konieczne”?",
+      "snippet": "Rada nadzorcza podejmuje decyzje kolegialnie, w formie uchwał. Aby uchwały były ważne, na posiedzenie muszą być zaproszeni wszyscy członkowie rady (chyba że umowa spółki pozwala na głosowanie pisemne lub zdalne).",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Artykuł ogólny o radzie nadzorczej, nie ogłoszenie o naborze kandydatów."
+    },
+    {
+      "url": "https://mojafirma.infor.pl/spolki/spolki/spolka-zoo/252320,Jakie-sa-obowiazki-rady-nadzorczej-w-sp-z-oo.html",
+      "title": "Jakie są obowiązki rady nadzorczej w sp. z o.o.? - Infor.pl",
+      "snippet": "Rada Nadzorcza <strong>powoływana jest przez Zgromadzenie Wspólników na takich zasadach jak zarząd, o ile umowa spółki nie stanowi inaczej</strong>. Kadencja zgodnie z kodeksem spółek handlowych trwa jeden rok, a w skład Rady Nadzorczej wchodzi minimum ...",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Wynik jest artykułem informacyjnym opisującym obowiązki i zasady powoływania rady nadzorczej, a nie ogłoszeniem o naborze."
+    },
+    {
+      "url": "https://kolbaskowo.pl/aktualnosci/rada-nadzorcza-centrum-uslug-komunalnych-w-kolbaskowie-sp-z-oo-z-siedziba-w-rosowku-16-72-001-kolbaskowo-oglasza-konkurs-na-stanowisko-czlonka-zarzadu-spolki-.html",
+      "title": "Rada Nadzorcza Centrum Usług Komunalnych w Kołbaskowie Sp. z o.o. z siedzibą w Rosówku 16, 72-001 Kołbaskowo ogłasza konkurs na stanowisko Członka Zarządu Spółki - Gmina Kołbaskowo",
+      "snippet": "3) zgłoszenia, które wpłynęły do Spółki po terminie do składania zgłoszeń zostaną odesłane do kandydata; 4) Rada Nadzorcza zastrzega sobie prawo do żądania od kandydatów dodatkowych informacji i dokumentów, określając termin ich dostarczenia; 5) ocena formalna konkursu odbywa się bez udziału kandydatów i polega na weryfikacji spełniania przez kandydatów wymagań formalnych zakreślonych niniejszym ogłoszeniu; 6) do rozmów kwalifikacyjnych (ocena merytoryczna) zostaną zakwalifikowani kandydaci, spe",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Konkurs dotyczy stanowiska członka zarządu, nie członka rady nadzorczej."
+    },
+    {
+      "url": "https://legalis.pl/rada-nadzorcza-po-nowelizacji-ksh/",
+      "title": "Rada nadzorcza - po nowelizacji KSH - Legalis",
+      "snippet": "Nowelizacja KSH doprecyzowuje katalog obowiązków członków rady nadzorczej kapitałowej spółki prawa handlowego.",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "frazy dyskwalifikujące: nowelizacja"
+    },
+    {
+      "url": "http://zarzadwspolcezoo.pl/czy-podaje-sie-adres-do-doreczen-czlonkow-rady-nadzorczej/",
+      "title": "Czy podaje się adres do doręczeń członków rady nadzorczej? Czy podaje się adres do doręczeń członków rady nadzorczej, rada nadzorcza, krs, projekt spółka z o.o.",
+      "snippet": "W spółkach z o.o., w których kapitał zakładowy przekracza kwotę pół miliona złotych, a wspólników jest więcej niż 25, powinna być ustanowiona rada nadzorcza. Zamiast rady nadzorczej może być komisja rewizyjna, ale to jest w ogóle bardzo rzadko spotykane.",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "To artykuł informacyjny o adresach i radzie nadzorczej, nie ogłoszenie o naborze."
+    },
+    {
+      "url": "https://biurorachunkowe-vega.pl/spolka-z-o-o/",
+      "title": "Spółka z o.o. - biurorachunkowe-vega",
+      "snippet": "W większości mniejszych spółek z o.o. rada nadzorcza nie jest obowiązkowa. Co do zasady jej ustanowienie lub powołanie komisji rewizyjnej staje się obowiązkowe, jeżeli łącznie: ... Kwestia ZUS jest jednym z częstszych powodów zainteresowania spółkami z ograniczoną odpowiedzialnością, ale wokół tego tematu powstało również wiele uproszczeń.",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Artykuł informacyjny o spółce z o.o., nie ogłoszenie o naborze do rady nadzorczej."
+    },
+    {
+      "url": "https://poradnikprzedsiebiorcy.pl/-wynagrodzenie-czlonka-zarzadu-na-podstawie-uchwaly-warto-wiedziec",
+      "title": "Wynagrodzenie członka zarządu na podstawie uchwały w praktyce",
+      "snippet": "Spółka z o.o. ma trzech wspólników, dwaj z nich są równocześnie członkami zarządu w spółce. Podczas zgromadzenia wspólników uchwalona została ustawa o dwukrotnym zwiększeniu wynagrodzeń dla członków zarządu. Nie został natomiast zwiększony zakres ich obowiązków.",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "nabór na zarząd, nie na radę nadzorczą"
     }
   ]
 }
