@@ -57,6 +57,9 @@ GitHub Pages.
   kotwicy, a nie po wzorcu URL. Faza 0b skanuje wtedy od razu ten dział
   (1 zapytanie zamiast 3) i wraca do strony głównej, gdy dział nie da
   kandydatów. GitHub Actions: Run workflow → *discover_sections*.
+- `tools/dork_stats.py` — raport wydajności zapytań z archiwum pre-filtra:
+  ile każdy dork daje wyników, ile z nich to NOWE adresy, a ile ofert.
+  Podstawa do wymiany dorków o zerowej wydajności (te same strony co dnia).
 
 ## 🌐 Strona z ogłoszeniami (live)
 
