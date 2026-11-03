@@ -8,14 +8,15 @@
     "direct_jst": 0,
     "jst_skipped_portal": 528,
     "direct_jst_search": 0,
-    "after_dedup": 3,
+    "after_dedup": 2,
     "after_filter": 2,
     "offers_added": 0,
     "extract_errors": 0,
     "offers_updated": 2,
     "offers_with_termin": 0,
     "content_empty": 0,
-    "menu_url_skipped": 0
+    "menu_url_skipped": 0,
+    "jst_home_scan": 100
   },
   "offers": []
 }
