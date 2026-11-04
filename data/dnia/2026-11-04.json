@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-04",
+  "stats": {
+    "search_requests": 18,
+    "raw_results": 168,
+    "direct_results": 1,
+    "direct_whitelist": 1,
+    "direct_jst": 0,
+    "jst_skipped_portal": 528,
+    "direct_jst_search": 0,
+    "after_dedup": 31,
+    "after_filter": 20,
+    "offers_added": 1,
+    "extract_errors": 0,
+    "offers_updated": 0,
+    "offers_with_termin": 0,
+    "content_empty": 1,
+    "menu_url_skipped": 1,
+    "jst_section_scan": 18,
+    "jst_section_fallback": 18,
+    "jst_home_scan": 82,
+    "blocked_domain": 22
+  },
+  "offers": [
+    {
+      "podmiot": "BURMISTRZ GOGOLINA URZĄD MIEJSKI W GOGOLINIE",
+      "miejscowosc": "Gogolin",
+      "termin_skladania_ofert": "",
+      "stanowisko": "członek rady nadzorczej",
+      "wymagania": "wyższe ekonomiczne/prawnicze/branżowe; art. 19 ustawy o zasadach zarządzania mieniem państwowym; min. 3 lata stażu w działalności gospodarczej/finansowej, obsłudze prawnej, zarządzaniu lub nadzorze właścicielskim; brak ograniczeń/zakazów do RN; znajomość KSH; doświadczenie w organach spółek",
+      "podsumowanie": "Ogłoszenie dotyczy naboru do rejestru kandydatów na członków rad nadzorczych spółek prawa handlowego z udziałem Gminy Gogolin. Dokumenty należy składać do 13 lipca 2018 r. w Urzędzie Miejskim w Gogolinie.",
+      "data_publikacji": "",
+      "url": "https://bip.gogolin.pl/10823/ogloszenie-o-naborze-do-rejestru-kandydatow-na-czlonkow-rad-nadzorczych-spolek-prawa-handlowego-z-udzialem-gminy-gogolin.html",
+      "znaleziono_dnia": "2026-11-04",
+      "zrodlo": "\"ogłoszenie o naborze\" \"rady nadzorczej\" dolnośląskie"
+    }
+  ]
+}

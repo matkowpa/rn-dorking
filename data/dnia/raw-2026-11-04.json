@@ -1,0 +1,1040 @@
+{
+  "date": "2026-11-04",
+  "count": 111,
+  "decisions": {
+    "rejected": 6,
+    "duplicate": 15,
+    "limit": 45,
+    "cached": 29,
+    "blocked": 13,
+    "archival": 2,
+    "no_url": 1
+  },
+  "raw": [
+    {
+      "url": "https://www.pwpw.pl/Aktualnosci/2026/06/postepowanie-kwalifikacyjne-na-stanowisko-wiceprezesa-zarzadu-ds-finansowych.html",
+      "title": "24.06.2026 Postępowanie kwalifikacyjne na stanowisko Wiceprezesa Zarządu PWPW S.A. ds. finansowych OGŁOSZENIE Rady Nadzorczej Spółki Polska Wytwórnia Papierów Wartościowych S.A. o wszczęciu postępowania kwalifikacyjnego na stanowisko Wiceprezesa Zarządu PWPW S.A. ds. finansowych.",
+      "snippet": "24.06.2026 Postępowanie kwalifikacyjne na stanowisko Wiceprezesa Zarządu PWPW S.A. ds. finansowych OGŁOSZENIE Rady Nadzorczej Spółki Polska Wytwórnia Papierów Wartościowych S.A. o wszczęciu postępowania kwalifikacyjnego na stanowisko Wiceprezesa Zarządu PWPW S.A. ds. finansowych.",
+      "source": "źródło bezpośrednie",
+      "direct": true,
+      "decision": "rejected",
+      "reason": "Dotczy naboru na stanowisko wiceprezesa zarządu, a nie członka rady nadzorczej."
+    },
+    {
+      "url": "https://bip.barcin.pl/artykul/burmistrz-barcina-oglasza-nabor-na-czlonkow-rady-nadzorczej-barcinskiego-osrodka-sportu-i-rekre",
+      "title": "Burmistrz Barcina ogłasza nabór na członków Rady Nadzorczej Barcińskiego Ośrodka Sportu i Rekreacji Sp. z o.o. z siedzibą w Barcinie. | BIP - Gmina Barcin",
+      "snippet": "Powiązany dokument oraz szczegółowe informacje Zarządzenie Nr 215/2018 Burmistrza Barcina z dnia 21 grudnia 2018 r. w sprawie: naboru na <strong>członków Rady Nadzorczej</strong> Barcińskiego Ośrodka Sportu i Rekreacji Sp.",
+      "source": "\"nabór na członków rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)"
+    },
+    {
+      "url": "https://bip.piastow.pl/nabor-na-czlonkow-rady-nadzorczej-ppuk-sp-z-o-o-w-piastowie/porownaj/3/2",
+      "title": "Urząd Miejski w Piastowie - BIP » Porównanie dokumentu: Nabór na członków Rady Nadzorczej PPUK Sp. z o.o. w Piastowie (wersja 3 z 2)",
+      "snippet": "11 Listopada 2 w terminie do dnia 25 października 2022 roku do godziny 15.00 w zamkniętej kopercie z dopiskiem „Postępowanie kwalifikacyjne na stanowisko Członka <strong>Rady Nadzorczej</strong> Piastowskiego Przedsiębiorstwa Usług Komunalnych spółka z ograniczoną odpowiedzialnością w Piastowie”.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://bip.grudziadz.pl/artykul/ogloszenie-o-naborze-do-bazy-danych-kandydatow-do-rad-nadzorczych-spolek-w-ktorych-gmina-miasto-2",
+      "title": "Ogłoszenie o naborze do bazy danych kandydatów do Rad Nadzorczych spółek, w których gmina-miasto Grudziądz posiada udziały/akcje, a także ich spółek zależnych | BIP - Urząd Miejski w Grudziądzu",
+      "snippet": "II nabór wniosków (nabór uzupełniający) o najem lokali w zasobie SIM &quot;KZN-Toruński&quot; Sp. z o.o. Nabór wniosków o najem lokali w zasobie SIM &quot;KZN-Toruński&quot; Sp. z o.o. ... Archiwum BIP do 2007 r. (uchwały i zarządzenia) ... Wybory Prezydenta RP 2020 - 10 maja 2020 r. Wybory Prezydenta RP 2020 - 28 czerwca 2020 r. Wybory Prezydenta RP 2020 - 12 lipca 2020 r. - II tura ... Prezydent Grudziądza ogłasza nabór do bazy danych kandydatów do Rad Nadzorczych spółek, w których gmina-miast",
+      "source": "\"nabór uzupełniający\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.gov.pl/web/rodzina/ogloszenie-o-naborze-kandydatow-do-rady-nadzorczej-panstwowego-funduszu-rehabilitacji-osob-niepelnosprawnych",
+      "title": "Ogłoszenie o naborze kandydatów do Rady Nadzorczej Państwowego Funduszu Rehabilitacji Osób Niepełnosprawnych - Ministerstwo Rodziny, Pracy i Polityki Społecznej - Portal Gov.pl",
+      "snippet": "U. z 2023 r. poz. 525), ogłasza nabór kandydatów na członków <strong>Rady Nadzorczej</strong> Państwowego Funduszu Rehabilitacji Osób Niepełnosprawnych.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" lubelskie",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://bip.skoczow.pl/ogloszenie-o-naborze-kandydata-na-czlonka-rady-nadzorczej-spolki-gminy-skoczow/porownaj/1/4",
+      "title": "BIP - Urząd Miejski w Skoczowie » Porównanie dokumentu: Ogłoszenie o naborze kandydata na członka rady nadzorczej spółki Gminy Skoczów (wersja 1 z 4)",
+      "snippet": "Burmistrz Skoczowa informuje, że <strong>do dnia 30.04.20015r</strong> . prowadzony jest nabór kandydatów na członka rady nadzorczej spółki dla której Gmina Skoczów jest współwłaścicielem tj.: Fundusz pożyczkowy „Samorządowa Polska” z siedzibą w Skoczowie przy Rynek 1.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://bip.mazovia.pl/pl/bip/komunikaty/nabor-kandydatow-do-rady-nadzorczej-mazowieckiej-agencji-energetycznej.html",
+      "title": "Nabór kandydatów do Rady Nadzorczej Mazowieckiej Agencji Energetycznej - Witryna Mazovia.pl",
+      "snippet": "Liczba członków Rady Nadzorczej przewidywanych do powołania: 1",
+      "source": "\"kandydatów do rady nadzorczej\"",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://bip.grodzisk.pl/m,525,nabor-kandydatow-na-czlonkow-rady-nadzorczej-komunalnej-wodno-kanalizacyjnej-spolki-z-oo.html",
+      "title": "Nabór kandydatów na członków rady nadzorczej ...",
+      "snippet": "Urząd Miejski w Grodzisku Mazowieckim ul. T. Kościuszki 12a 05-825 Grodzisk Mazowiecki · 22 755 55 34, 22 755 20 16",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://bip.skoczow.pl/ogloszenie-o-naborze-kandydata-na-czlonka-rady-nadzorczej-spolki-gminy-skoczow",
+      "title": "BIP - Urząd Miejski w Skoczowie » Ogłoszenie o naborze kandydata na członka rady nadzorczej spółki Gminy Skoczów",
+      "snippet": "Burmistrz Skoczowa informuje, że <strong>do dnia 30.05.20015r</strong> . prowadzony jest nabór kandydatów na członka rady nadzorczej spółki dla której Gmina Skoczów jest współwłaścicielem tj.: Fundusz pożyczkowy „Samorządowa Polska” z siedzibą w Skoczowie przy Rynek 1.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://bip.gogolin.pl/18229/ogloszenie-o-naborze-do-rejestru-kandydatow-na-czlonkow-rad-nadzorczych-spolek-prawa-handlowego-z-udzialem-gminy-gogolin.html",
+      "title": "Ogłoszenie o naborze do rejestru kandydatów na członków rad nadzorczych spółek prawa handlowego z udziałem Gminy Gogolin - Urząd Miejski w Gogolinie",
+      "snippet": "7. Bez rozpoznania pozostawia się zgłoszenia kandydatów, które nie spełniają wymogów formalnych. 8. Termin składania dokumentów, umożliwiających wpis do rejestru nie jest ograniczony. ... Kandydat na członka Rady Nadzorczej spółki nie może pozostawać w stosunku pracy ze spółką, ani świadczyć pracy lub usług na jej rzecz na podstawie innego tytułu prawnego;",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://bip.prudnik.pl/urzad-miejski/nabor-pracownikow/nabor-kandydatow-na-czlonkow-rad-nadzorczych-spolek-gminnych",
+      "title": "Biuletyn Informacji Publicznej Urząd Miejski w Prudniku - Nabór kandydatów na członków rad nadzorczych spółek gminnych",
+      "snippet": "Burmistrz Prudnika informuje, że w wyniku ogłoszonego naboru na członka Rady Nadzorczej Prudnickie Towarzystwo Budownictwa Społecznego wpłynęła 1 oferta.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://bip.gmina-sepolno.pl/8418/nabor-kandydatow-na-czlonkow-rady-nadzorczej-zakladu-transportu-i-uslug-sp-z-oo-w-sepolnie-krajenskim.html",
+      "title": "Nabór kandydatów na członków Rady Nadzorczej Zakładu Transportu i Usług Sp. z o.o. w Sępólnie Krajeńskim - Urząd Miejski w Sępólnie Krajeńskim",
+      "snippet": "Osoby zainteresowane kandydowaniem na członków Rady Nadzorczej Zakładu Transportu i Usług Sp. z o.o. w Sępólnie Krajeńskim, spełniające warunki określone w treści ogłoszenia, proszone są o składanie wymaganych dokumentów na adres: Urząd Miejski w Sępólnie Krajeńskim, ul. Tadeusza Kościuszki 11, 89-400 Sępólno Krajeńskie w zamkniętych kopertach z dopiskiem „Nabór kandydatów ...",
+      "source": "\"kandydatów na członków rady nadzorczej\" spółka",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://bip.powiatbytowski.pl/strony/11712.dhtml",
+      "title": "Zarząd Powiatu Bytowskiego ogłasza nabór kandydatów na członków Rady Nadzorczej Szpitala Powiatu Bytowskiego Sp. z o.o. - BIP Starostwo Powiatowe w Bytowie",
+      "snippet": "Biuletyn Informacji Publicznej Starostwo Powiatowe w Bytowie",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://mazovia.pl/pl/bip/komunikaty/nabor-kandydatow-do-rady-nadzorczej-spolki-warszawska-kolej-dojazdowa.html",
+      "title": "Nabór kandydatów do Rady Nadzorczej spółki Warszawska Kolej Dojazdowa - Witryna Mazovia.pl",
+      "snippet": "Ogłoszenie o naborze do Radny Nadzorczej WKD · Rozmiar: 19.71 KB, DOCX · Zgłoszenie kandydata · Rozmiar: 24.08 KB, DOCX · Podmiot udostępniający: Urząd Marszałkowski Województwa Mazowieckiego w Warszawie · Wytworzył: Teodor Sikora · Data wytworzenia: 01.12.2022 ·",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" kujawsko-pomorskie",
+      "direct": false,
+      "decision": "blocked",
+      "reason": "agregator/medium, nie publikuje ogłoszeń"
+    },
+    {
+      "url": "https://mazovia.pl/pl/bip/komunikaty/nabor-kandydatow-do-rady-nadzorczej-spolki-mazowiecki-szpital-wojewodzki-im-sw-jana-pawla-ii-w-siedlcach.html",
+      "title": "Nabór kandydatów do Rady Nadzorczej spółki Mazowiecki Szpital Wojewódzki im. św. Jana Pawła II w Siedlcach - Witryna Mazovia.pl",
+      "snippet": "Jana Pawła II w Siedlcach Sp. z o.o. ogłasza nabór do Rady Nadzorczej. Ogłoszenie o naborze do Rady Nadzorczej.doc.pdf · Rozmiar: 73.56 KB, PDF · Zgłoszenie · Rozmiar: 23.96 KB, DOCX · Podmiot udostępniający: Urząd Marszałkowski Województwa Mazowieckiego w Warszawie ·",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" lubuskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.powiatraciborski.pl/main/aktualnosci_powiat/Wybor-kandydatow-do-Rady-Nadzorczej-PKS-sp.-z-o.-o.-w-Raciborzu/idn:5250.html",
+      "title": "Wybór kandydatów do Rady Nadzorczej PKS sp. z o. o. w Raciborzu! - Starostwo Powiatowe w Raciborzu - powiat raciborski",
+      "snippet": "Zarząd Powiatu Raciborskiego ogłasza ... w Raciborzu sp. z o. o. <strong>Szczegółowe informacje dotyczące naboru są dostępne w Biuletynie Informacji Publicznej Powiatu Raciborskiego https://bip.powi...</strong>...",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "http://bippksbytow.infocity.pl/?mid=23",
+      "title": "Nabór kandydatów do Rady Nadzorczej 2019",
+      "snippet": "Zarząd Powiatu Bytowskiego ogłasza nabór kandydatów · na członków Rady Nadzorczej",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://bip.chelmno.pl/oferta-pracy/8115/czlonek-rady-nadzorczej-planowanej-do-utworzenia-spolki-chelminska-spoleczna-inicjatywa-mieszkaniowa",
+      "title": "Członek Rady Nadzorczej planowanej do utworzenia Spółki Chełmińska Społeczna Inicjatywa Mieszkaniowa - Oferty pracy - Biuletyn Informacji Publicznej Urząd Miasta Chełmna",
+      "snippet": "Burmistrz Miasta Chełmna ogłasza nabór kandydatów na członków Rady Nadzorczej planowanej do utworzenia Spółki Chełmińska...",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "archival",
+      "reason": "oferta archiwalna",
+      "offer": {
+        "podmiot": "Spółka Chełmińska Społeczna Inicjatywa Mieszkaniowa",
+        "miejscowosc": "Chełmno",
+        "termin_skladania_ofert": "",
+        "stanowisko": "Członek Rady Nadzorczej",
+        "wymagania": "Wyższe wykształcenie, min. 5 lat zatrudnienia/usług/działalności gospodarczej oraz m.in. doktorat, radca prawny/adwokat/biegły rewident/doradca podatkowy/inwestycyjny/restrukturyzacyjny, MBA, CFA, CIIA, ACCA, CFF lub egzamin; brak konfliktu interesów i zatrudnienia w spółce.",
+        "podsumowanie": "Burmistrz Miasta Chełmna ogłasza nabór na członka Rady Nadzorczej planowanej do utworzenia Spółki Chełmińska Społeczna Inicjatywa Mieszkaniowa. Oferty należy składać do 22 kwietnia 2021 r. do godz. 15:30.",
+        "data_publikacji": "2021-04-22",
+        "url": "https://bip.chelmno.pl/oferta-pracy/8115/czlonek-rady-nadzorczej-planowanej-do-utworzenia-spolki-chelminska-spoleczna-inicjatywa-mieszkaniowa",
+        "znaleziono_dnia": "2026-11-04",
+        "data_publikacji_zrodlo": "html",
+        "zrodlo": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+      }
+    },
+    {
+      "url": "https://grudziadz.pl/artykul/69/14515/nabor-kandydatow-do-rad-nadzorczych",
+      "title": "Nabór kandydatów do Rad Nadzorczych - Grudziądz",
+      "snippet": "Prezydent Grudziądza ogłosił nabór kandydatów na członków Rad Nadzorczych spółek, w których gmina-miasto Grudziądz posiada udziały/akcje, a także ich spółek „córek”.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://orka2.sejm.gov.pl/IZ6.nsf/main/77B6F884",
+      "title": "Interpelacja w sprawie naboru do rad nadzorczych spółek handlowych z udziałem Skarbu Państwa",
+      "snippet": "Zgodnie z zarządzeniem ministra ... kandydatów do rad nadzorczych spółek z udziałem Skarbu Państwa <strong>odbywa się poprzez opublikowanie na stronie internetowej Ministerstwa Skarbu Państwa ogłoszenia</strong>....",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "To interpelacja o procedurze naboru, nie ogłoszenie otwartego naboru kandydatów."
+    },
+    {
+      "url": "https://portpolska.pl/pl/aktualnosci-2/port-polska-nowy-prezes-zarzadu-wybrany",
+      "title": "Port Polska - nowy Prezes Zarządu wybrany - Port Polska",
+      "snippet": "Rada Nadzorcza Centralnego Portu Komunikacyjnego zakończyła postępowanie kwalifikacyjne i powołała Piotra Borysa na stanowisko Prezesa Zarządu.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "blocked",
+      "reason": "agregator/medium, nie publikuje ogłoszeń"
+    },
+    {
+      "url": "https://www.sektorkolejowy.pl/piotr-borys-nowym-prezesem-zarzadu-cpk/",
+      "title": "Piotr Borys nowym prezesem zarządu CPK - Sektorkolejowy.pl",
+      "snippet": "Kandydaci bowiem byli oceniani nie tylko przez Radę Nadzorczą na podstawie przedłożonych dokumentów i rozmów kwalifikacyjnych. Niezależnej oceny kandydatów dokonał również zaangażowany doradca. Kandydaci zostali też poddani testom psychologicznym, pozwalającym określić ich profil osobowościowy. W określonym terminie wpłynęło 13 kandydatur. Do etapu rozmów indywidualnych zakwalifikowano cztery osoby. Niezależny doradca uczestniczył we wszystkich etapach postępowania, przygotowując dla Rady Nadzor",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "blocked",
+      "reason": "agregator/medium, nie publikuje ogłoszeń"
+    },
+    {
+      "url": "https://intermodalnews.pl/2026/11/02/piotr-borys-prezesem-zarzadu-cpk/",
+      "title": "Piotr Borys prezesem zarządu CPK - IntermodalNews",
+      "snippet": "Kandydaci bowiem byli oceniani nie tylko przez Radę Nadzorczą na podstawie przedłożonych dokumentów i rozmów kwalifikacyjnych. Niezależnej oceny kandydatów dokonał również zaangażowany doradca. Kandydaci zostali też poddani testom psychologicznym, pozwalającym określić ich profil osobowościowy. W określonym terminie wpłynęło 13 kandydatur. Do etapu rozmów indywidualnych zakwalifikowano cztery osoby. Niezależny doradca uczestniczył we wszystkich etapach postępowania, przygotowując dla Rady Nadzor",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.all-inclusive.com.pl/port-polska-nowy-prezes-zarzadu-wybrany/",
+      "title": "Port Polska - nowy Prezes Zarządu wybrany - ALL Inclusive",
+      "snippet": "Rada Nadzorcza Centralnego Portu Komunikacyjnego zakończyła postępowanie kwalifikacyjne i powołała Piotra Borysa na stanowisko Prezesa Zarządu.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://polskiprzemysl.com.pl/nowy-prezes-cpk-wybrany/",
+      "title": "Nowy prezes CPK wybrany. Kim jest Piotr Borys?",
+      "snippet": "<strong>Rada Nadzorcza zakończyła postępowanie kwalifikacyjne</strong> i powierzyła kierowanie spółką Piotrowi Borysowi, menedżerowi z wieloletnim doświadczeniem w inwestycjach kolejowych i infrastrukturalnych.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.wnp.pl/logistyka/cpk-ma-nowego-prezesa-to-czlowiek-od-wielkich-inwestycji-kolejowych,1114444.html",
+      "title": "Nowy prezes CPK. Piotr Borys pokieruje budową Portu Polska",
+      "snippet": "Rada nadzorcza Centralnego Portu Komunikacyjnego zakończyła postępowanie kwalifikacyjne i powołała Piotra Borysa na stanowisko prezesa zarządu.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.nakolei.pl/piotr-borys-pokieruje-cpk/",
+      "title": "Piotr Borys pokieruje CPK - Portal Kolejowy NaKolei.pl",
+      "snippet": "W określonym terminie wpłynęło 13 kandydatur. Do etapu rozmów indywidualnych zakwalifikowano cztery osoby. Niezależny doradca uczestniczył we wszystkich etapach postępowania, przygotowując swoje rekomendacje dla rady nadzorczej.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://ceo.com.pl/piotr-borys-nowym-prezesem-cpk-pokieruje-88583",
+      "title": "Piotr Borys nowym prezesem CPK. Zmiany w Port Polska",
+      "snippet": "Piotr Borys został wybrany na prezesa spółki Centralny Port Komunikacyjny, odpowiedzialnej za realizację programu inwestycyjnego Port Polska. Decyzja Rady Nadzorczej kończy <strong>postępowanie kwalifikacyjne rozpoczęte w sierpniu 2026 roku</strong>.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "blocked",
+      "reason": "agregator/medium, nie publikuje ogłoszeń"
+    },
+    {
+      "url": "https://executivemagazine.pl/transfery-i-zmiany/port-polska-nowy-prezes-zarzadu-wybrany/",
+      "title": "Port Polska – nowy Prezes Zarządu wybrany - Executive Magazine - magazyn i portal biznesowy dla przedsiębiorców",
+      "snippet": "Zapoczątkowaniem tego procesu było wybranie w postępowaniu kwalifikacyjnym Adama Ferensa, doświadczonego inżyniera budownictwa i menedżera, i powołanie go w czerwcu br. do składu Zarządu. Przeczytaj także: Stanisław Tokarski członkiem Rady Nadzorczej Lubelskiego Węgla Bogdanka S.A.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://biznes.interia.pl/gospodarka/news-wybrano-nowego-prezesa-cpk-znamy-nazwisko,nId,23566372",
+      "title": "Jest nowy prezes Centralnego Portu Komunikacyjnego. Znamy nazwisko",
+      "snippet": "&quot;<strong>Rada Nadzorcza Centralnego Portu Komunikacyjnego zakończyła postępowanie kwalifikacyjne</strong> i powołała Piotra Borysa na stanowisko prezesa zarządu&quot; - informuje w piątkowym oświadczeniu Port Polska.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "blocked",
+      "reason": "agregator/medium, nie publikuje ogłoszeń"
+    },
+    {
+      "url": "https://www.cire.pl/artykuly/serwis-informacyjny-cire-24/49102-konkurs-na-czlonka-rady-nadzorczej-pke",
+      "title": "Konkurs na członka Rady Nadzorczej PKE - SERWIS INFORMACYJNY CIRE 24",
+      "snippet": "Konkurs na członka Rady Nadzorczej PKE",
+      "source": "\"konkurs na członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "blocked",
+      "reason": "agregator/medium, nie publikuje ogłoszeń"
+    },
+    {
+      "url": "https://www.oleskalaguna.pl/2026/05/13/ogloszenie-4/",
+      "title": "Ogłoszenie - Oleska Laguna",
+      "snippet": "Wachowska 10A, 46-300 Olesno, <strong>na podstawie Uchwały Rady Nadzorczej Nr 1/5/2025 z dnia 9.05.2026 r., ogłasza postępowanie kwalifikacyjne i nabór na Prezesa Spółki pod firmą Miejskie Centrum Sportu i Rekreacji w Oleśnie sp</strong>. z o.o. Ilekroć ...",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.igwp.org.pl/rada-nadzorcza-spolki-komunalnej-zukowo-sp-z-o-o-oglasza-nabor-na-stanowisko-prezesa-zarzadu/",
+      "title": "Rada Nadzorcza „Spółki Komunalnej Żukowo” Sp. z o.o. ogłasza nabór na stanowisko Prezesa Zarządu. - Izba Gospodarcza \"Wodociągi Polskie\"",
+      "snippet": "... <strong>Rada Nadzorcza Spółki Komunalnej Żukowo informuje o podjęciu uchwały Nr 5/2025 w sprawie ogłoszenia o naborze na stanowisko Prezes Zarządu Spółki Komunalnej Żukowo Sp</strong>.",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://wprawieni.pl/blog/rada-nadzorcza-w-spolce-z-o-o-kto-ja-powoluje-i-kiedy-trzeba-ja-powolac/",
+      "title": "Rada nadzorcza w spółce z o.o. - kto ją powołuje i kiedy trzeba ją powołać? - Wprawieni – kancelaria prawna | biuro rachunkowe",
+      "snippet": "Rada nadzorcza w spółce z o.o. <strong>powoływana jest przez zgromadzenie wspólników, chyba że umowa spółki stanowi inaczej</strong>. W praktyce oznacza to, że to wspólnicy mają decydujący głos w tej sprawie i mogą określić zasady powoływania ...",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.ifirma.pl/blog/organy-nadzoru-w-spolce-z-o-o-jakie-pelnia-funkcje/",
+      "title": "Organy nadzoru w spółce z o.o. – jakie pełnią funkcje? | ifirma.pl",
+      "snippet": "Nadzór w spółce z ograniczoną odpowiedzialnością mogą sprawować różne organy i podmioty. Jednakże praktyka pokazuje, że w większości spółek z o.o. nadzór sprawowany jest przez jej wspólników, a rada nadzorcza lub komisja rewizyjna są powoływane wyłącznie w dużych spółkach.",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.infakt.pl/blog/rada-nadzorcza-w-spolce-z-o-o/",
+      "title": "Rada nadzorcza w spółce z o.o. – czym jest, ile liczy osób, kto wchodzi w jej skład?",
+      "snippet": "Jeśli w spółce kapitał przewyższa bowiem 500 tys. zł, a wspólników jest więcej niż 25, najczęściej będzie to po prostu spółka akcyjna, w której powołanie rady nadzorczej jest obowiązkowe w każdym przypadku. Tak, umowa spółki z o.o. może ustanowić radę nadzorczą lub komisję rewizyjną albo oba te organy. W takim przypadku ustanowienie rady nadzorczej jest niezależne od tego, jak wysoki jest kapitał zakładowy oraz ile osób jest wspólnikami spółki. Co ciekawe, jeśli w spółce z o.o. funkcjonuje rada ",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.prawo.pl/biznes/rada-nadzorcza-w-spolce-z-oo-ustanowienie,521517.html",
+      "title": "Fakultatywna rada nadzorcza w spółce z o.o. problematyczna w praktyce",
+      "snippet": "Przepisy wskazują, że rada nadzorcza lub komisja rewizyjna powinny być ustanowione, jeżeli kapitał zakładowy spółki przewyższa 500 tys. zł, albo jeśli wspólników jest więcej niż dwudziestu pięciu. We wszystkich innych przypadkach ustanowienie tych organów jest fakultatywne. Jeśli jednak rada lub komisja zostaną już powołane w danej spółce, indywidualna kontrola wspólników może zostać ograniczona lub całkowicie wyłączona – o ile umowa spółki dopuszcza taką możliwość.",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://spolkazoo.net/rada-nadzorcza-w-spolce-z-o-o",
+      "title": "Rada nadzorcza w spółce z o.o. - kto ustanawia, kiedy trzeba ją ustanowić i jakie ma obowiązki? | Spolkazoo",
+      "snippet": "Jednak w trakcie jej funkcjonowania może wystąpić sytuacja, w której spółka będzie chciała zawrzeć umowę z członkiem zarządu bądź dojdzie do sporu pomiędzy tymi dwoma podmiotami. W takim przypadku Kodeks spółek handlowych wskazuje, że uprawniona do reprezentowania spółki z o.o. jest rada nadzorcza (w przypadku jej braku powołany w szczególnym trybie przez zgromadzenie wspólników pełnomocnik).",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "http://spolkazoo.org.pl/rada-nadzorcza-w-spolce-z-ograniczona-odpowiedzialnoscia/",
+      "title": "Rada nadzorcza w spółce z ograniczoną odpowiedzialnością",
+      "snippet": "Rada nadzorcza spółki z ograniczoną odpowiedzialnością pełni rolę kontrolną w spółce. Pełni nadzór na działalnością spółki i to we wszystkich dziedzinach jej działalności. Rada nadzorcza spółki z o.o.",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://mojafirma.infor.pl/spolki/spolki/spolka-zoo/252320,Jakie-sa-obowiazki-rady-nadzorczej-w-sp-z-oo.html",
+      "title": "Jakie są obowiązki rady nadzorczej w sp. z o.o.? - Infor.pl",
+      "snippet": "Rada Nadzorcza <strong>powoływana jest przez Zgromadzenie Wspólników na takich zasadach jak zarząd, o ile umowa spółki nie stanowi inaczej</strong>. Kadencja zgodnie z kodeksem spółek handlowych trwa jeden rok, a w skład Rady Nadzorczej wchodzi minimum ...",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://adwokat-wroclaw.biz.pl/rada-nadzorcza-w-sp-z-o-o/",
+      "title": "Rada nadzorcza w sp. z o.o. – organ kontroli czy „zło konieczne”?",
+      "snippet": "Rada nadzorcza podejmuje decyzje kolegialnie, w formie uchwał. Aby uchwały były ważne, na posiedzenie muszą być zaproszeni wszyscy członkowie rady (chyba że umowa spółki pozwala na głosowanie pisemne lub zdalne).",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://kolbaskowo.pl/aktualnosci/rada-nadzorcza-centrum-uslug-komunalnych-w-kolbaskowie-sp-z-oo-z-siedziba-w-rosowku-16-72-001-kolbaskowo-oglasza-konkurs-na-stanowisko-czlonka-zarzadu-spolki-.html",
+      "title": "Rada Nadzorcza Centrum Usług Komunalnych w Kołbaskowie Sp. z o.o. z siedzibą w Rosówku 16, 72-001 Kołbaskowo ogłasza konkurs na stanowisko Członka Zarządu Spółki - Gmina Kołbaskowo",
+      "snippet": "3) zgłoszenia, które wpłynęły do Spółki po terminie do składania zgłoszeń zostaną odesłane do kandydata; 4) Rada Nadzorcza zastrzega sobie prawo do żądania od kandydatów dodatkowych informacji i dokumentów, określając termin ich dostarczenia; 5) ocena formalna konkursu odbywa się bez udziału kandydatów i polega na weryfikacji spełniania przez kandydatów wymagań formalnych zakreślonych niniejszym ogłoszeniu; 6) do rozmów kwalifikacyjnych (ocena merytoryczna) zostaną zakwalifikowani kandydaci, spe",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://poradnikprzedsiebiorcy.pl/-wynagrodzenie-czlonka-zarzadu-na-podstawie-uchwaly-warto-wiedziec",
+      "title": "Wynagrodzenie członka zarządu na podstawie uchwały w praktyce",
+      "snippet": "Spółka z o.o. ma trzech wspólników, dwaj z nich są równocześnie członkami zarządu w spółce. Podczas zgromadzenia wspólników uchwalona została ustawa o dwukrotnym zwiększeniu wynagrodzeń dla członków zarządu. Nie został natomiast zwiększony zakres ich obowiązków.",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://mazovia.pl/pl/bip/komunikaty/ogloszenie-nr-12024-o-naborze-kandydatow-na-czlonkow-do-rady-nadzorczej-spolki.html",
+      "title": "Ogłoszenie nr 1/2024 o naborze kandydatów na członków do Rady Nadzorczej spółki - Witryna Mazovia.pl",
+      "snippet": "4. ZGŁOSZENIE I OŚWIADCZENIA KANDYDATA NA CZŁONKA RADY NADZORCZEJ.docx",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "blocked",
+      "reason": "agregator/medium, nie publikuje ogłoszeń"
+    },
+    {
+      "url": "https://trybunal.gov.pl/postepowanie-i-orzeczenia/wokanda/art/6797-zasady-i-tryb-wyboru-kandydatow-na-czlonkow-rad-nadzorczych-spolek-skarbu-panstwa",
+      "title": "Trybunał Konstytucyjny: Zasady i tryb wyboru kandydatów na członków rad nadzorczych spółek Skarbu Państwa.",
+      "snippet": "Wskazanie przez Ministra Skarbu ... kwalifikacyjne, odbywające się w trybie publicznym, poprzez <strong>ogłoszenie o naborze zamieszczane na stronach internetowych Ministerstwa Skarbu Państwa (MSP).</strong>...",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://mazovia.pl/pl/bip/komunikaty/nabor-kandydatow-do-rady-nadzorczej-mazowieckiej-agencji-energetycznej.html",
+      "title": "Nabór kandydatów do Rady Nadzorczej Mazowieckiej Agencji Energetycznej - Witryna Mazovia.pl",
+      "snippet": "Zgłoszenia kandydatów, odrzucone lub pozostawione bez rozpoznania, zostaną komisyjnie zniszczone po upływie trzech miesięcy od dnia zakończenia postępowania kwalifikacyjnego.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "blocked",
+      "reason": "agregator/medium, nie publikuje ogłoszeń"
+    },
+    {
+      "url": "",
+      "title": "",
+      "snippet": "",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\"",
+      "direct": false,
+      "decision": "no_url",
+      "reason": "wynik bez adresu URL"
+    },
+    {
+      "url": "https://www.propertynews.pl/sylwetki/panstwowy-deweloper-z-nowym-wiceprezesem,202762.html",
+      "title": "Państwowy deweloper z nowym wiceprezesem",
+      "snippet": "Adama Mickiewicza w Poznaniu, gdzie ukończył studia magisterskie na kierunku gospodarka przestrzenna. Odbył również studia na Uniwersytecie im. J.A. Komeńskiego w Bratysławie. Zdał egzamin państwowy dla <strong>kandydatów na członków rad nadzorczych</strong> spółek Skarbu Państwa.",
+      "source": "\"kandydatów na członków rad nadzorczych\"",
+      "direct": false,
+      "decision": "blocked",
+      "reason": "agregator/medium, nie publikuje ogłoszeń"
+    },
+    {
+      "url": "https://www.propertynews.pl/sylwetki/phn-z-nowym-wiceprezesem,202762.html",
+      "title": "PHN z nowym wiceprezesem",
+      "snippet": "Adama Mickiewicza w Poznaniu, gdzie ukończył studia magisterskie na kierunku gospodarka przestrzenna. Odbył również studia na Uniwersytecie im. J.A. Komeńskiego w Bratysławie. Zdał egzamin państwowy dla <strong>kandydatów na członków rad nadzorczych</strong> spółek Skarbu Państwa.",
+      "source": "\"kandydatów na członków rad nadzorczych\"",
+      "direct": false,
+      "decision": "blocked",
+      "reason": "agregator/medium, nie publikuje ogłoszeń"
+    },
+    {
+      "url": "https://tarnow.pl/Dla-mieszkancow/Aktualnosci/Miasto/Zakonczyla-sie-33.-Kwesta-na-rzecz-ratowania-zabytkow",
+      "title": "Zakończyła się 33. Kwesta na rzecz ratowania zabytków - TARNÓW - Polski Biegun Ciepła",
+      "snippet": "Nabór do bazy <strong>kandydatów na członków rad nadzorczych</strong> · Strategia Rozwoju Miasta Tarnów 2030 · Raport o stanie miasta · Rewitalizacja miasta · Program &quot;Rozwój Lokalny&quot; Projekty dofinansowane ze środków zewnętrznych · Miasta partnerskie · Projekty tarnowskich szkół ·",
+      "source": "\"kandydatów na członków rad nadzorczych\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://wfos.szczecin.pl/aktualnosci/342",
+      "title": "Konkurs Zachodniopomorski Ekolider – kapituła konkursowa zakończyła ocenę zgłoszeń. | WFOŚiGW w Szczecinie",
+      "snippet": "Informujemy, że kapituła konkursowa w składzie: - Karolina Błażków - Składanek - p.o. Dyrektora Wydziału Ochrony Środowiska -Urząd Marszałkowski Województwa Zachodniopomorskiego - Przewodnicząca Komisji - dr Arkadiusz Malkowski – Członek Rady Nadzorczej WFOŚiGW w Szczecinie; - dr Sylwia Jurzyk-Nordlöw - Regionalny Dyrektor Ochrony Środowiska w Szczecinie - Regionalny Konserwator Przyrody w Szczecinie - Regionalna Dyrekcja Ochrony Środowiska w Szczecinie - Michał Durka - Dyrektor Regionalnego Zar",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.bankier.pl/wiadomosc/ALIOR-BANK-S-A-Zgloszenie-kandydatow-do-Rady-Nadzorczej-Alior-Bank-S-A-9213324.html",
+      "title": "ALIOR BANK S.A.: Zgłoszenie kandydatów do Rady Nadzorczej Alior Bank S.A. - Bankier.pl",
+      "snippet": "GiełdaALIOR BANK S.A.: Zgłoszenie kandydatów do Rady Nadzorczej Alior Bank S.A. ... Upadłości konsumenckie mocno w górę. Drugi wynik w historii · Rusza bon senioralny. 2500 zł na osobę.",
+      "source": "\"kandydatów na członków rady nadzorczej\" spółka",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://prawodlasamorzadu.pl/2024-02-02-kto-moze-byc-czlonkiem-rady-nadzorczej-w-spolce-gminnej-cz-1/",
+      "title": "Kto może być członkiem rady nadzorczej w spółce gminnej? (cz. 1) - Prawo Dla Samorządu",
+      "snippet": "Ustawodawca nie uzależnia tego ... jest obowiązkowe[4]. Kandydatów do rady nadzorczej <strong>w jednoosobowej spółce gminnej wskazuje wójt (burmistrz, prezydent miasta).</strong>...",
+      "source": "\"kandydatów do rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.bankier.pl/wiadomosc/SKARBIEC-HOLDING-S-A-Zgloszenie-kandydatow-do-Rady-Nadzorczej-9154663.html",
+      "title": "SKARBIEC HOLDING S.A.: Zgłoszenie kandydatów do Rady Nadzorczej - Bankier.pl",
+      "snippet": "GiełdaSKARBIEC HOLDING S.A.: Zgłoszenie kandydatów do Rady Nadzorczej",
+      "source": "\"kandydatów do rady nadzorczej\"",
+      "direct": false,
+      "decision": "blocked",
+      "reason": "agregator/medium, nie publikuje ogłoszeń"
+    },
+    {
+      "url": "https://www.parkiet.com/komunikaty-espi/art45341501-alior-bank-spolka-akcyjna-zgloszenie-kandydatow-do-rady-nadzorczej-alior-bank-s-a",
+      "title": "ALIOR BANK SPÓŁKA AKCYJNA - Zgłoszenie kandydatów do Rady Nadzorczej Alior Bank S.A. - parkiet.com",
+      "snippet": "Aktualizacja: 15.10.2026 17:59 Publikacja: 15.10.2026 17:59 · Submission of candidates to the Supervisory Board of Alior Bank S.A",
+      "source": "\"kandydatów do rady nadzorczej\"",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://www.efcongress.com/wp-content/uploads/2025/02/Modele-nominacji-i-wyboru-czlonkow-rad-nadzorczych_fine-z-logo.pdf",
+      "title": "rekrutacja, selekcja i nominacja do rad nadzorczych w ...",
+      "snippet": "Dzięki opracowaniu zbioru kompetencji potrzebnych do wykonywania zadań i obowiązków specyficznych dla gremium danej rady nadzorczej a · następnie porównania tego zbioru z cechami kompetencyjnymi jej członków lub kandydatów do nominacji uzyskuje się graficzny obraz",
+      "source": "\"kandydatów do rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.smnadodrze.pl/wp-content/uploads/zasady-wyboru-czlonkow-rn-smnadodrze.pdf",
+      "title": "ZASADY WYBORU CZŁONKÓW RADY NADZORCZEJ ...",
+      "snippet": "Nadzorczej. 7. Kandydaci, którzy nie uzyskali poparcia o którym mowa w ust.2 bądź nie zostaną · zgłoszeni na Zebraniu Wyodrębnionej Nieruchomości nie będą umieszczani na listach ... <strong>Walnego Zgromadzenia dokonują wskazania 3 kandydatów do Rady Nadzorczej</strong>.",
+      "source": "\"kandydatów do rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://bip.czarne.pl/dokumenty/7872",
+      "title": "OGŁOSZENIE O NABORZE KANDYDATÓW DO RADY NADZORCZEJ Przedsiębiorstwa Wodno-Kanalizacyjnego Sp. z o.o. w Czarnem - BIP Urząd Miasta i Gminy Czarne",
+      "snippet": "System Rada Profile Radnych, komisje, interpelacje, kalendarz posiedzeń.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" lubuskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://osiedlemlodych.pl/wybory-do-rady-nadzorczej-zglaszanie-kandydatow-2026/",
+      "title": "Wybory do Rady Nadzorczej – zgłaszanie kandydatów – Spółdzielnia Mieszkaniowa Osiedle Młodych",
+      "snippet": "Druki zgłoszenia kandydata/tki do <strong>Rady Nadzorczej</strong> oraz oświadczenia kandydata/tki wyrażające zgodę na kandydowanie są do odbioru w siedzibach Kierownictw Osiedli i Zarządu Spółdzielni (os. Piastowskie 16, pokój 117) oraz na stronie internetowej Spółdzielni od 2 lutego 2026 roku ...",
+      "source": "\"kandydatów do rady nadzorczej\"",
+      "direct": false,
+      "decision": "archival",
+      "reason": "oferta archiwalna",
+      "offer": {
+        "podmiot": "Spółdzielnia Mieszkaniowa „Osiedle Młodych” w Poznaniu",
+        "miejscowosc": "Poznań",
+        "termin_skladania_ofert": "2026-02-28",
+        "stanowisko": "członek Rady Nadzorczej",
+        "wymagania": "Członek Spółdzielni; pisemna zgoda na kandydowanie; kandydowanie tylko w obrębie jednej części Walnego Zgromadzenia; nie mogą kandydować pracownicy Spółdzielni, członkowie Zarządu, ich pełnomocnicy oraz osoby spokrewnione lub w związku małżeńskim z członkami Zarządu; ograniczenie kadencyjności.",
+        "podsumowanie": "Spółdzielnia Mieszkaniowa „Osiedle Młodych” w Poznaniu ogłasza wybory dziewiętnastu członków Rady Nadzorczej na kadencję 2026–2029. Zgłoszenia kandydatów należy składać do 28 lutego 2026 r.",
+        "data_publikacji": "2026-02-02",
+        "url": "https://osiedlemlodych.pl/wybory-do-rady-nadzorczej-zglaszanie-kandydatow-2026/",
+        "znaleziono_dnia": "2026-11-04",
+        "data_publikacji_zrodlo": "html",
+        "zrodlo": "\"kandydatów do rady nadzorczej\""
+      }
+    },
+    {
+      "url": "https://www.gazetaprawna.pl/wiadomosci/artykuly/1035453,kandydat-do-rady-nadzorczej-spolki-z-udzialem-sp-musi-miec-pozytywna-opinie-rady-ds-spolek-wywiad.html",
+      "title": "Kandydat do rady nadzorczej spółki z udziałem SP musi mieć pozytywną opinię Rady ds. spółek (wywiad) - GazetaPrawna.pl",
+      "snippet": "Kandydat do rady nadzorczej spółki z udziałem Skarbu Państwa <strong>musi uzyskać pozytywną opinię Rady do spraw spółek, ale w przypadku chętnych do zarządów nie jest to obligatoryjne</strong> - mówi PAP w imieniu Rady jej przewodniczący Łukasz Popławski.",
+      "source": "\"kandydatów do rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://pwkczarne.mojbip.pl/75.html?file=300",
+      "title": "ogłoszenie o naborze kandydatów do rady nadzorczej",
+      "snippet": "Witamy na stronie Biuletynu Informacji Publicznej Przedsiębiorstwa Wodno-Kanalizacyjnego Sp. z o.o. w Czarnem · PWK Spółka z o.o. w Czarnem ul. Aleja Zwycięzców 1C 77-330 Czarne biuro tel./fax (59) 83-33-672",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" dolnośląskie",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://orka2.sejm.gov.pl/IZ6.nsf/main/17539AF9",
+      "title": "Odpowiedź na interpelację w sprawie naboru do rady nadzorczej spółek handlowych z udziałem Skarbu Państwa",
+      "snippet": "Zasady i tryb doboru kandydatów do składu rad nadzorczych spółek handlowych z udziałem Skarbu Państwa oraz rad nadzorczych innych podmiotów prawnych nadzorowanych przez ministra skarbu państwa reguluje zarządzenie nr 45 ministra skarbu państwa z dnia 6 grudnia 2007 r.",
+      "source": "\"kandydatów do rady nadzorczej\"",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://www.facebook.com/narodowyinstytutwolnosci/posts/-nab%C3%B3r-kandydat%C3%B3w-do-rady-nadzorczej-nfo%C5%9Bigwrada-dzia%C5%82alno%C5%9Bci-po%C5%BCytku-publiczneg/991306109858455/",
+      "title": "🔊 Nabór kandydatów do Rady Nadzorczej NFOŚiGW ...",
+      "snippet": "Narodowy Instytut Wolności - Centrum Rozwoju Społeczeństwa Obywatelskiego, Warszawa. 22,165 likes · 638 talking about this · 268 were here. NIW-CRSO to agencja wykonawcza, która wspiera rozwój...",
+      "source": "\"kandydatów do rady nadzorczej\"",
+      "direct": false,
+      "decision": "blocked",
+      "reason": "agregator/medium, nie publikuje ogłoszeń"
+    },
+    {
+      "url": "https://www.facebook.com/narodowyinstytutwolnosci/photos/-nab%C3%B3r-kandydat%C3%B3w-do-rady-nadzorczej-nfo%C5%9Bigwrada-dzia%C5%82alno%C5%9Bci-po%C5%BCytku-publiczneg/991306079858458/",
+      "title": "Narodowy - 🔊 Nabór kandydatów do Rady Nadzorczej ...",
+      "snippet": "Narodowy Instytut Wolności - Centrum Rozwoju Społeczeństwa Obywatelskiego, Warszawa. 24,715 likes · 778 talking about this · 268 were here. NIW-CRSO to agencja wykonawcza, która wspiera rozwój...",
+      "source": "\"kandydatów do rady nadzorczej\"",
+      "direct": false,
+      "decision": "blocked",
+      "reason": "agregator/medium, nie publikuje ogłoszeń"
+    },
+    {
+      "url": "http://stara-kamienica.bipgmina.pl/wiadomosci/479/wiadomosc/135479/konkurs_na_czlonkow_rady_nadzorczej",
+      "title": "Biuletyn Informacji Publicznej - Urząd Gminy Stara Kamienica - Praca - Konkursy na stanowisko - Konkurs na członków Rady Nadzorczej",
+      "snippet": "5.Kandydatom, którzy odpowiedzieli na ogłoszenia, a nie zostali wybrani nie przysługuje możliwość odwołania się. 6. Osoba wskazana przez Wójta Gminy Stara Kamienica na członka Rady Nadzorczej spółki handlowej z udziałem jednostki samorządu terytorialnego, urodzona przed 1 sierpnia 1972 r., przed powołaniem do rady nadzorczej, zobowiązana jest do złożenia Wojewodzie Dolnośląskiemu ...",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" dolnośląskie",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://bip.miastko.pl/dokumenty/2014",
+      "title": "Konkurs na członków Rady Nadzorczej Szpital Miejski w Miastku Spółka z o.o. - BIP Gmina Miastko",
+      "snippet": "Każdy kandydat zobowiązany jest do złożenia: 1.zgłoszenia do udziału w konkursie 2.CV, 3. oświadczeń dot. informacji zawartych w pkt. 8, 4.zaświadczenia (kopia) o uprawnieniach członka rady nadzorczej, oświadczenie o niekaralności. 3. Zgłoszenia i oświadczenia należy złożyć w formie pisemnej, w zamkniętej kopercie w terminie do dnia 30 stycznia 2014 r.",
+      "source": "\"konkurs na członków rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://bip.miastko.pl/dokumenty/1253",
+      "title": "Ogłoszenie o naborze na członków Rady Nadzorczej powstającej spółki Zakładu Wodociągów i Kanalizacji Sp. z o.o. w Miastku | BIP - Gmina Miastko",
+      "snippet": "• oświadczenie o niepodleganiu określonym w przepisach prawa ograniczeniom i zakazom zajmowania stanowiska członka <strong>rady nadzorczej</strong> w spółkach handlowych,",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" lubuskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://niepelnosprawni.gov.pl/ogloszenie-o-naborze-kandydatow-do-rady-nadzorczej-panstwowego-funduszu-rehabilitacji-osob-niepelnosprawnych/",
+      "title": "Ogłoszenie o naborze kandydatów do Rady Nadzorczej Państwowego Funduszu Rehabilitacji Osób Niepełnosprawnych - Biuro Pełnomocnika Rządu do Spraw Osób Niepełnosprawnych",
+      "snippet": "ogłasza nabór kandydatów na członków Rady Nadzorczej Państwowego Funduszu Rehabilitacji Osób Niepełnosprawnych.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" lubuskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.kunice.pl/2021/11/26/ogloszenie-o-naborze-kandydatow-do-rady-nadzorczej-zakladu-uslug-komunalnych-w-kunicach-spolka-z-ograniczona%CC%A8-odpowiedzialnoscia%CC%A8/",
+      "title": "Ogłoszenie o naborze kandydatów do Rady Nadzorczej Zakładu Usług Komunalnych w Kunicach Sp. z o.o. – Gmina Kunice",
+      "snippet": "Ogłoszenie o naborze kandydatów do Rady Nadzorczej Zakładu Usług Komunalnych w Kunicach Sp.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" lubuskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://bip.gogolin.pl/10823/ogloszenie-o-naborze-do-rejestru-kandydatow-na-czlonkow-rad-nadzorczych-spolek-prawa-handlowego-z-udzialem-gminy-gogolin.html",
+      "title": "Ogłoszenie o naborze do rejestru kandydatów na członków rad nadzorczych spółek prawa handlowego z udziałem Gminy Gogolin - Urząd Miejski w Gogolinie",
+      "snippet": "Kandydat na członka Rady Nadzorczej nie może wykonywać zajęć, które pozostawałyby w sprzeczności z ich obowiązkami albo mogłyby wywołać podejrzenie o stronniczość lub interesowność. Kandydaci, którzy złożyli dokumenty w niniejszym naborze zostaną powiadomieni o wpisie do ...",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" lubuskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://olszyna.pl/wiadomosci/kategoria/4/strona/1/ogloszenia",
+      "title": "Lista wiadomości - Ogłoszenia | Gmina Olszyna",
+      "snippet": "Ogłoszenia Ogłoszenie Rady Nadzorczej Spółki Przedsiębiorstwo Usług...",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" dolnośląskie",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "To lista ogłoszeń, nie konkretne ogłoszenie o otwartym naborze na członka rady nadzorczej."
+    },
+    {
+      "url": "https://bip.skarzysko.pl/artykul/21/283/ogloszenie-o-naborze-kandydata-na-czlonka-rady-nadzorczej",
+      "title": "Ogłoszenie o naborze kandydata na członka Rady Nadzorczej - Tablica ogłoszeń - Biuletyn Informacji Publicznej Miasto Skarżysko-Kamienna",
+      "snippet": "Używamy plików cookies, aby ułatwić Ci korzystanie z naszego serwisu oraz do celów statystycznych. Jeśli nie blokujesz tych plików, to zgadzasz się na ich użycie oraz zapisanie w pamięci urządzenia. Pamiętaj, że możesz samodzielnie zarządzać cookies, zmieniając ustawienia ...",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" lubuskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://wydminy.pl/ogloszenie-o-naborze-kandydatow-na-czlonkow-rady-nadzorczej-w-spolce-zaklad-unieszkodliwiania-odpadow-komunalnych-spytkowo-sp-z-o-o/",
+      "title": "Ogłoszenie o naborze kandydatów na członków Rady Nadzorczej w Spółce Zakład Unieszkodliwiania Odpadów Komunalnych Spytkowo Sp. z o.o. - Wydminy",
+      "snippet": "ogłoszenie o naborze do Rady Nadzorczej ZUOK Spytkowo · Załącznik nr 1 · Załącznik nr 2 · Załącznik nr 3 · Przewijanie do góry ·",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" lubuskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://um_jaslo.bip.gov.pl/ogloszenia/ogloszenie-o-naborze-uzupelniajacym-kandydatow-na-czlonkow-rady-nadzorczej.html",
+      "title": "Ogłoszenie o naborze uzupełniającym kandydatów na członków rady nadzorczej",
+      "snippet": "Strona główna &gt; Ogłoszenia &gt; Ogłoszenie o naborze uzupeł... ... Burmistrz Miasta Jasła zaprasza do składania zgłoszeń przez kandydatów na członków Rady Nadzorczej jednoosobowej Spółki Miasta Jasła, tworzonej w wyniku likwidacji zakładu budżetowego ZMKS w Jaśle",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" lubelskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://fs.siteor.com/zrfpk/files/Downloads/20151210144930/20151210_ZRFPK_-_Og%C5%82oszenie_o_naborze_kandydat%C3%B3w_do_RN_PZ.pdf",
+      "title": "Ogłoszenie o naborze kandydatów",
+      "snippet": "4) motywację kandydata do ubiegania się o funkcję członka rady nadzorczej.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" kujawsko-pomorskie",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://bip.pfron.org.pl/komunikaty/szczegoly-komunikatu/news/trwa-nabor-do-rady-nadzorczej-pfron/",
+      "title": "Trwa nabór do Rady Nadzorczej PFRON - Państwowy Fundusz Rehabilitacji Osób Niepełnosprawnych",
+      "snippet": "Szczegółowe informacje dotyczące ... Funduszu Rehabilitacji Osób Niepełnosprawnych - <strong>Biuro Pełnomocnika Rządu do Spraw Osób Niepełnosprawnych (niepelnosprawni.gov.pl)</strong>...",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" lubelskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://mazovia.pl/pl/bip/komunikaty/ogloszenie-o-naborze-do-rady-nadzorczej-agencji-rozwoju-mazowsza.html",
+      "title": "Ogłoszenie o naborze do Rady Nadzorczej Agencji Rozwoju Mazowsza - Witryna Mazovia.pl",
+      "snippet": "<strong>Ogłoszenie nr 2/2022 z 27 maja 2022 roku</strong> o naborze kandydatów do Rady Nadzorczej Agencji Rozwoju Mazowsza Spółki Akcyjnej.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" lubelskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.e-bip.org.pl/simslask/41944",
+      "title": "Ogłoszenia - SIM Śląsk Sp. z o.o. - e-bip.org.pl",
+      "snippet": "<strong>Ogłoszenie o podjęciu Uchwały Rady Nadzorczej Nr 7/VI/RN/2025</strong>",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" lubuskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://pwkczarne.mojbip.pl/BIP/BIP/75.html?file=300",
+      "title": "ogłoszenie o naborze kandydatów do rady nadzorczej",
+      "snippet": "Ogłoszenie o naborze na wolne stanowisko - kierownik d.s.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" lubelskie",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://wfosigwtorun.pl/",
+      "title": "Wojewódzki Fundusz Ochrony Środowiska i Gospodarki Wodnej w Toruniu,WFOSIGW Toruń, finansowanie ochrona środowiska, dotacje, pożyczki, Doradcy Energetyczni, Fundusze Europejskie",
+      "snippet": "Wojewódzki Fundusz Ochrony Środowiska i Gospodarki Wodnej w Toruniu,WFOSIGW, Toruń, Ochrona środowiska",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" kujawsko-pomorskie",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Strona główna funduszu, brak informacji o naborze na członka rady nadzorczej."
+    },
+    {
+      "url": "http://bip.miastko.pl/dokumenty/1253",
+      "title": "Ogłoszenie o naborze na członków Rady Nadzorczej powstającej spółki Zakładu Wodociągów i Kanalizacji Sp. z o.o. w Miastku | BIP - Gmina Miastko",
+      "snippet": "• dokument potwierdzający posiadanie uprawnień do pełnienia funkcji członka rady nadzorczej, zgodnie z wymogami ustawy z dnia 30 sierpnia 1996 r. o komercjalizacji i prywatyzacji (j.t. Dz.U. z 2002, Nr 171, poz.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" kujawsko-pomorskie",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)"
+    },
+    {
+      "url": "https://orka2.sejm.gov.pl/IZ6.nsf/main/32371923",
+      "title": "Odpowiedź na zapytanie w sprawie udziału w radach nadzorczych spółek Skarbu Państwa marszałka, wicemarszałków oraz członków Zarządu Województwa Małopolskiego",
+      "snippet": "Obecnie, zgodnie z postanowieniami ... członka rady nadzorczej spółki z udziałem Skarbu Państwa poprzedzone jest postępowaniem kwalifikacyjnym, chyba że odrębne przepisy stanowią inaczej. Postępowanie kwalifikacyjne odbywa się w trybie publicznym, poprzez ogłoszenie o naborze zamieszczane ...",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" lubuskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://bip.powiatbytowski.pl/artykul/ogloszenie-o-naborze-na-czlonkow-rady-nadzorczej-przedsieborstwa-komunikacji-samochodowej-w-byt",
+      "title": "Ogłoszenie o naborze na członków Rady Nadzorczej Przedsięborstwa Komunikacji Samochodowej w Bytowie S.A. | BIP - Starostwo Powiatowe w Bytowie",
+      "snippet": "Biuletyn Informacji Publicznej Starostwa Powiatowego w Bytowie",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" lubuskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://um_jaslo.bip.gov.pl/ogloszenia/445802_ogloszenie-o-naborze-uzupelniajacym-kandydatow-na-czlonkow-rady-nadzorczej.html",
+      "title": "Ogłoszenie o naborze uzupełniającym kandydatów na członków rady nadzorczej",
+      "snippet": "Strona główna &gt; Ogłoszenia &gt; Ogłoszenie o naborze uzupeł... ... Burmistrz Miasta Jasła działający jako Zgromadzenie Wspólników spółki TBS-ABK spółka z o.o. w Jaśle zaprasza do składania zgłoszeń kandydatów na członka Rady Nadzorczej TBS-ABK sp.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" lubuskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://zgmchojnice.pl/p/nabor-pracownikow",
+      "title": "Zakład Gospodarki Mieszkaniowej Sp. z o.o.",
+      "snippet": "Rada Nadzorcza może w każdym czasie, bez podania przyczyn, zakończyć postępowanie kwalifikacyjne bez wyłaniania kandydatów, o czym powiadamia ma piśmie kandydatów na dane stanowisko.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" lubuskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://mazovia.pl/pl/bip/komunikaty/ogloszenie-o-naborze-do-rady-nadzorczej-spolki-szpital-mazowiecki-w-garwolinie-sp-z-oo.html?format=csv",
+      "title": "https://mazovia.pl/pl/bip/komunikaty/ogloszenie-o-...",
+      "snippet": "<strong>z o.o. z 25 czerwca 2021 roku</strong>.;Ogłoszenie o naborze do rady nadzorczej spółki Szpital Mazowiecki w Garwolinie Sp. z o.o.;Ogłoszenie nr 2/2021 o naborze kandydata do Rady Nadzorczej spółki Szpital Mazowiecki w Garwolinie Sp.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" lubuskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://bip.blazowa.com.pl/index.php?grp=10&page=bip.php&under=55",
+      "title": "Nabór na wolne stanowiska pracy",
+      "snippet": "Przejdź do menu · Przejdź do treści głównej · Biuletyn Informacji Publicznej Urząd Miejski w Błażowej · Facebook · Twitter · Strona główna · Redakcja · Mapa strony · Archiwum · Szukaj",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" lubuskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.pfron.org.pl/aktualnosci/szczegoly-aktualnosci/news/ogloszenie-o-naborze-kandydatow-do-komisji-konkursowej-opiniujacej-wnioski-w-konkursie-nr-12026/",
+      "title": "Ogłoszenie o naborze kandydatów do komisji konkursowej opiniującej wnioski w konkursie nr 1/2026 pn. „Stażysta Plus” - Państwowy Fundusz Rehabilitacji Osób Niepełnosprawnych",
+      "snippet": "Ogłoszenie konkursu nastąpiło na podstawie art. 51 ust. 3 pkt 3 w związku z art. 47 ust. 1 pkt 4 ustawy z dnia 27 sierpnia 1997 roku o rehabilitacji zawodowej i społecznej oraz zatrudnianiu osób niepełnosprawnych oraz uchwały nr 11/2016 Rady Nadzorczej PFRON z dnia 8 grudnia 2016 r.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" lubelskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://lpwik.pl/ogloszenie-o-naborze-na-wolne-stanowisko-pracy/",
+      "title": "Ogłoszenie o naborze na wolne stanowisko pracy. Aktualizacja – nabór zakończony – LPWiK Lubań Sp.z o.o.",
+      "snippet": "prowadzenie całokształtu spraw związanych z funkcjonowaniem sekretariatu, obsługą spotkań Rady Nadzorczej oraz Zgromadzenia Wspólników,",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" lubuskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://bip.gmina-tczew.pl/m,315,gtkom-spolka-z-ograniczona-odpowiedzialnoscia.html",
+      "title": "GTKOM Spółka z ograniczoną odpowiedzialnością | Urząd Gminy Tczew",
+      "snippet": "GTKOM Spółka z ograniczoną odpowiedzialnością | Urząd Gminy Tczew",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" lubelskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "http://bip.mosina.pl/um/praca/nabory-ogloszone-w-2025-r/nabor-na-stanowisko-prezesa-zarzadu-zuk-sp.-z-o.o.-w-mosinie/ogloszenie-o-naborze.html",
+      "title": "BIP UM Mosina - Ogłoszenie o naborze",
+      "snippet": "W Uchwale nr 7/2025 <strong>Rady Nadzorczej z dnia 25 lutego 2025 r</strong>.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" lubelskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://lpwik.pl/ogloszenie-o-naborze-na-wolne-stanowisko-pracy-pracownik-dzialu-finansow-i-ksiegowosci-obsluga-sekretariatu/",
+      "title": "Ogłoszenie o naborze na wolne stanowisko pracy Pracownik Działu Finansów i Księgowości / Obsługa sekretariatu – LPWiK Lubań Sp.z o.o.",
+      "snippet": "prowadzenie całokształtu spraw związanych z funkcjonowaniem sekretariatu, obsługą spotkań Rady Nadzorczej oraz Zgromadzenia Wspólników,",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" lubuskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://mazovia.pl/pl/bip/komunikaty",
+      "title": "Komunikaty - Witryna Mazovia.pl",
+      "snippet": "<strong>Ogłoszenie nr 2/2026</strong> o naborze kandydata na członków do Rady Nadzorczej spółki Mazowiecki Szpital Specjalistyczny Sp.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" lubuskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://mazovia.pl/pl/bip/komunikaty/ogloszenie-o-naborze-do-rady-nadzorczej-spolki-szpital-mazowiecki-w-garwolinie-sp-z-oo.html",
+      "title": "Ogłoszenie o naborze do rady nadzorczej spółki Szpital Mazowiecki w Garwolinie Sp. z o.o. - Witryna Mazovia.pl",
+      "snippet": "Każdy kandydat jest zobowiązany do złożenia zgłoszenia wraz z wymaganymi oświadczeniami, którego wzór stanowi załącznik do <strong>ogłoszenia, zwanego dalej „zgłoszeniem”, oraz podpisanego życiorysu</strong>.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" lubuskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://niepelnosprawni.gov.pl/ogloszenie-uzupelniajace-o-naborze-kandydata-do-rady-nadzorczej-panstwowego-funduszu-rehabilitacji-osob-niepelnosprawnych/",
+      "title": "Ogłoszenie uzupełniające o naborze kandydata do Rady Nadzorczej PFRON - Biuro Pełnomocnika Rządu do Spraw Osób Niepełnosprawnych",
+      "snippet": "1 rozporządzenia Ministra Pracy ... wynagrodzenia za udział w posiedzeniach Rady (Dz. U. z 2023 r. poz. 525), ogłasza <strong>nabór uzupełniający</strong> kandydata na członka Rady Nadzorczej Państwowego Funduszu Rehabilitacji Osób ...",
+      "source": "\"nabór uzupełniający\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.pion.pl/aktualnosci/czlonek-rady-nadzorczej-pfron-nabor-uzupelniajacy-potrwa-do-11-wrzesnia/",
+      "title": "Członek Rady Nadzorczej PFRON – nabór uzupełniający potrwa do 11 września – Wielkopolski Portal Informacyjny Osób Niepełnosprawnych",
+      "snippet": "Pełnomocnik Rządu do Spraw Osób Niepełnosprawnych ogłasza nabór uzupełniający na członka Rady Nadzorczej Państwowego Funduszu Rehabilitacji Osób Niepełnosprawnych.",
+      "source": "\"nabór uzupełniający\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.pion.pl/aktualnosci/przychodnia-dostepna-dla-wszystkich/",
+      "title": "Przychodnia dostępna dla wszystkich – Wielkopolski Portal Informacyjny Osób Niepełnosprawnych",
+      "snippet": "DalejCzłonek Rady Nadzorczej PFRON – nabór uzupełniający <strong>potrwa do 11 września</strong>",
+      "source": "\"nabór uzupełniający\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.pion.pl/aktualnosci/kultura/poznanianki-zgloszenia-kandydatek-juz-tylko-do-15-wrzesnia/",
+      "title": "„Poznanianki” – zgłoszenia kandydatek już tylko do 15 września – Wielkopolski Portal Informacyjny Osób Niepełnosprawnych",
+      "snippet": "poprzednieCzłonek Rady Nadzorczej PFRON – nabór uzupełniający <strong>potrwa do 11 września</strong>",
+      "source": "\"nabór uzupełniający\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.oirpwarszawa.pl/aktualnosci/relacja-z-konferencji-o-implementacji-dyrektywy-women-on-boards-i-nie-tylko-kobiety-na-stanowiskach-a-szklany-sufit/",
+      "title": "Relacja z konferencji „O implementacji Dyrektywy Women on Boards i nie tylko – kobiety na stanowiskach a szklany sufit” – OIRP w Warszawie",
+      "snippet": "OIRP w Warszawie ogłasza <strong>nabór uzupełniający</strong> radców prawnych do świadczenia Nieodpłatnej Pomocy Prawnej na terenie powiatu sierpeckiego zlokalizowanym w budynku Starostwa Powiatowego w Sierpcu przy ul.",
+      "source": "\"nabór uzupełniający\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.dga.pl/aktualnosci/2",
+      "title": "Aktualności",
+      "snippet": "Uprzejmie informujemy, iż <strong>w dniu 04.01.2021 r. rozpoczął się nabór uzupełniający do projektu „Asystent studenta z ASD”</strong> (dotyczy wszystkich uczelni państwowych jak i prywatnych mających swoją siedzibę na terenie RP).",
+      "source": "\"nabór uzupełniający\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.money.pl/gielda/komunikaty/7292217975607873.html",
+      "title": "Komunikat spółki - CRJ Zgłoszenie kandydatów na Członków Rady Nadzorczej Spółki - Money.pl",
+      "snippet": "Pana Michała Paziewskiego (obecny Przewodniczący Rady Nadzorczej Spółki); 2. Pana Tomasza Likowskiego (obecny Członek Rady Nadzorczej Spółki); 3. Pana Piotra Piskorza (obecny Członek Rady Nadzorczej Spółki); 4. Panią Arletę Olejniczak (obecny Członek Rady Nadzorczej Spółki); 5. Pana Pawła Sawczuka (były Członek Rady Nadzorczej Spółki); Wszyscy ww. kandydaci wyrazili zgodę na kandydowanie do Rady Nadzorczej Spółki oraz złożyli oświadczenia o spełnianiu wymaganych prawem kryteriów stawianych kandy",
+      "source": "\"kandydatów na członków rady nadzorczej\" spółka",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.bankier.pl/wiadomosc/SYGNITY-Zgloszenie-kandydatow-na-czlonkow-Rady-Nadzorczej-Sygnity-S-A-9150521.html",
+      "title": "SYGNITY: Zgłoszenie kandydatów na członków Rady Nadzorczej Sygnity S.A. - Bankier.pl",
+      "snippet": "GiełdaSYGNITY: Zgłoszenie kandydatów na członków Rady Nadzorczej Sygnity S.A.",
+      "source": "\"kandydatów na członków rady nadzorczej\" spółka",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.bankier.pl/wiadomosc/YARRL-S-A-Zgloszenie-kandydatow-na-czlonkow-Rady-Nadzorczej-9145893.html",
+      "title": "YARRL S.A.: Zgłoszenie kandydatów na członków Rady Nadzorczej - Bankier.pl",
+      "snippet": "Przemysław Baszak zrezygnował z zasiadania w radzie nadzorczej Orlenu",
+      "source": "\"kandydatów na członków rady nadzorczej\" spółka",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.pb.pl/gielda/inpro-s-a-zyciorysy-kandydatow-na-czlonkow-rady-nadzorczej-9202686",
+      "title": "Życiorysy kandydatów na członków Rady Nadzorczej.",
+      "snippet": "KOMISJA NADZORU FINANSOWEGO · Skrócona nazwa emitenta",
+      "source": "\"kandydatów na członków rady nadzorczej\" spółka",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.bankier.pl/wiadomosc/POLICE-Zgloszenie-przez-akcjonariusza-kandydatow-na-czlonkow-Rady-Nadzorczej-9156477.html",
+      "title": "POLICE: Zgłoszenie przez akcjonariusza kandydatów na członków Rady Nadzorczej. - Bankier.pl",
+      "snippet": "GiełdaPOLICE: Zgłoszenie przez akcjonariusza kandydatów na członków Rady Nadzorczej.",
+      "source": "\"kandydatów na członków rady nadzorczej\" spółka",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.money.pl/gielda/komunikaty/7292926253093441.html",
+      "title": "Komunikat spółki - YRL Zgłoszenie kandydatów na członków Rady Nadzorczej - Money.pl",
+      "snippet": "8 ust. h) porządku obrad Walnego Zgromadzenia Akcjonariuszy, zwołanego na dzień 10 czerwca 2026 r., w którym przewidziano powołanie Członków Rady Nadzorczej kolejnej kadencji. Kandydaci wyrazili zgodę na kandydowanie oraz złożyli stosowne oświadczenia. W załączeniu do raportu znajdują się zgody oraz życiorysy złożone przez kandydatów.",
+      "source": "\"kandydatów na członków rady nadzorczej\" spółka",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://nadzorcze.edu.pl/f-a-q-html/",
+      "title": "Wszystko o egzaminie dla kandydatów na członków rad nadzorczych - nadzorcze.edu.pl",
+      "snippet": "Głównym zadaniem rady nadzorczej jest prowadzenie stałego nadzoru nad działalnością spółki we wszystkich dziedzinach jej działalności. Nadzór obejmuje całą działalność spółki, czyli nie tylko tę, która realizowana jest przez zarząd.",
+      "source": "\"kandydatów na członków rady nadzorczej\" spółka",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.comp.com.pl/raporty_biezace/zgloszenie-kandydatow-na-czlonkow-rady-nadzorczej-spolki-uzupelnienie-raport-21-2025/",
+      "title": "Zgłoszenie kandydatów na członków Rady Nadzorczej spółki - uzupełnienie (Raport 21/2025) - Comp S.A. to jeden z największych integratorów usług informatycznych w Polsce",
+      "snippet": "Warszawy XII Wydział Gospodarczy Krajowego Rejestru Sądowego pod numerem KRS 8579, kapitał zakładowy 78.000,000 zł, wpłacony w całości, NIP 521-29-71-343, działając w imieniu Generali Otwartego Funduszu Emerytalnego (OFE) wpisanego do Rejestru Funduszy Emerytalnych prowadzonego przez Sąd Okręgowy w Warszawie, VII Wydział, będącego akcjonariuszem COMP Spółka Akcyjna (dalej: Spółka) posiadających co najmniej 1/20 kapitału zakładowego, w nawiązaniu do punktu porządku obrad ZWZA Spółki, które odbędz",
+      "source": "\"kandydatów na członków rady nadzorczej\" spółka",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.money.pl/gielda/komunikaty/7028537178376321.html",
+      "title": "Komunikat spółki - GOB GOBARTO S.A. – zgłoszenie kandydatów na członków Rady Nadzorczej - Money.pl",
+      "snippet": "Ponadto <strong>Pan Robert Bednarski, Pan Zbigniew Natkański, Pan Ryszard Ceranowicz oraz Pan Jan Franciszek Gajewski</strong> oświadczyli, że spełniają kryteria niezależności określone w ustawie z dnia 11 maja 2017 r. o biegłych rewidentach, firmach ...",
+      "source": "\"kandydatów na członków rady nadzorczej\" spółka",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://miastoryn.pl/ogloszenie-o-naborze-kandydatow-na-czlonkow-rady-nadzorczej-przedsiebiorstwa-gospodarki/",
+      "title": "Ogłoszenie o naborze kandydatów na członków Rady Nadzorczej Przedsiębiorstwa Gospodarki Komunalnej i Mieszkaniowej w Rynie – Miasto i Gmina Ryn",
+      "snippet": "Ogłoszenie o naborze kandydatów na członków Rady Nadzorczej Przedsiębiorstwa Gospodarki Komunalnej i Mieszkaniowej w Rynie sp.",
+      "source": "\"kandydatów na członków rady nadzorczej\" spółka",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://zukkunice.pl/ogloszenie-o-naborze-kandydatow-do-rady-nadzorczej-zuk-w-kunicach-sp-z-o-o/",
+      "title": "Ogłoszenie o naborze kandydatów do Rady Nadzorczej ZUK w Kunicach Sp. z o.o. – Zakład Usług Komunalnych Sp. z o.o. w Kunicach",
+      "snippet": "Wójt Gminy Kunice poszukuje kandydatów na członków Rady Nadzorczej Spółki – Zakład Usług Komunalnych w Kunicach Spółka z ograniczoną odpowiedzialnością",
+      "source": "\"kandydatów na członków rady nadzorczej\" spółka",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    }
+  ]
+}
