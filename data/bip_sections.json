@@ -101,6 +101,126 @@
 "label": "Nabór na wolne stanowiska urzędnicze",
 "url": "https://ugwierzbica.bip.lubelskie.pl/index.php?id=69"
 },
+"/powiat-polkowicki-dolnoslaskie-polkowicki-polkowice": {
+"checked": "2026-11-03",
+"items": 7,
+"label": "Nabory",
+"url": "http://www.bip.powiatpolkowicki.pl/index.php?type=4&name=bt232&func=selectsite&value%5B0%5D=mnu22&value%5B1%5D=6"
+},
+"/starostwo-powiatowe-w-bialej-podlaskiej-lubelskie-biala-podlaska-biala-podlaska": {
+"checked": "2026-11-03",
+"items": 4,
+"label": "Konkursy",
+"url": "https://spbialapodlaska.bip.lubelskie.pl#mobileSubmenu-322"
+},
+"/starostwo-powiatowe-w-bydgoszczy-kujawsko-pomorskie-bydgoszcz-bydgoszcz": {
+"checked": "2026-11-03",
+"items": 4,
+"label": "Konkursy",
+"url": "https://powiatbydgoski.archiwum.bip.net.pl/c505.html"
+},
+"/starostwo-powiatowe-w-bytowie-pomorskie-bytowski-bytow": {
+"checked": "2026-11-03",
+"items": 6,
+"label": "Nabór pracowników",
+"url": "https://powiatbytowski.bip.alfatv.pl/strony/menu/54.dhtml"
+},
+"/starostwo-powiatowe-w-chelmnie-kujawsko-pomorskie-chelminski-chelmno": {
+"checked": "2026-11-03",
+"items": 4,
+"label": "Nabór pracowników",
+"url": "https://www.bip.powiat-chelmno.pl/index.php?cid=148"
+},
+"/starostwo-powiatowe-w-dzialdowie-warminsko-mazurskie-dzialdowski-dzialdowo": {
+"checked": "2026-11-03",
+"items": 5,
+"label": "Nabór na wolne stanowisko urzędnicze",
+"url": "https://dzialdowostarostwo.archiwum.bip.net.pl/c486.html"
+},
+"/starostwo-powiatowe-w-gostyniu-wielkopolskie-gostynski-gostyn": {
+"checked": "2026-11-03",
+"items": 6,
+"label": "Nabór pracowników",
+"url": "https://gostyn.bip.net.pl?c=223"
+},
+"/starostwo-powiatowe-w-inowroclawiu-kujawsko-pomorskie-inowroclawski-inowroclaw": {
+"checked": "2026-11-03",
+"items": 23,
+"label": "Informacja o zgłoszonych kandydatach na członka komisji konkursowej",
+"url": "https://www.bip.inowroclaw.powiat.pl/zaatwianiespraw,28_1644"
+},
+"/starostwo-powiatowe-w-lubartowie-lubelskie-lubartowski-lubartow": {
+"checked": "2026-11-03",
+"items": 14,
+"label": "Ogłoszenia o naborze",
+"url": "https://splubartow.bip.lubelskie.pl/index.php?id=194"
+},
+"/starostwo-powiatowe-w-mlawie-mazowieckie-mlawski-mlawa": {
+"checked": "2026-11-03",
+"items": 36,
+"label": "Nabór 2024",
+"url": "https://www.bip.powiatmlawski.pl/3802,nabor-2024"
+},
+"/starostwo-powiatowe-w-nowym-dworze-gdanskim-pomorskie-nowodworski-nowy-dwor-gdanski": {
+"checked": "2026-11-03",
+"items": 1,
+"label": "2026-10-29 NABÓR KANDYDATÓW NA CZŁONKÓW KOMISJI KONKURSOWEJ",
+"url": "https://www.bip.nowydworgdanski.pl/redir,index?tresc=29221"
+},
+"/starostwo-powiatowe-w-olecku-warminsko-mazurskie-olecki-olecko": {
+"checked": "2026-11-03",
+"items": 12,
+"label": "Nabór pracowników",
+"url": "https://www.spolecko.bip.doc.pl/index.php?dz=4&id=28525"
+},
+"/starostwo-powiatowe-w-parczewie-lubelskie-parczewski-parczew": {
+"checked": "2026-11-03",
+"items": 11,
+"label": "Nabory i konkursy na stanowiska kierowników jednostek organizacyjnych powiatu",
+"url": "https://spparczew.bip.lubelskie.pl/index.php?id=377"
+},
+"/starostwo-powiatowe-w-sepolnie-krajenskim-kujawsko-pomorskie-sepolenski-sepolno-krajenskie": {
+"checked": "2026-11-03",
+"items": 9,
+"label": "Ogłoszenia o naborze na wolne stanowiska urzędnicze 2026",
+"url": "https://www.bip.powiat-sepolno.pl/1552,ogloszenia-o-naborze-na-wolne-stanowiska-urzednicze-2026"
+},
+"/starostwo-powiatowe-w-szydlowcu-mazowieckie-szydlowiecki-szydlowiec": {
+"checked": "2026-11-03",
+"items": 1,
+"label": "Ogłoszenia o naborze na wolne stanowiska pracy",
+"url": "https://www.bip.szydlowiecpowiat.akcessnet.net/index.php?idg=1&id=683&x=22"
+},
+"/starostwo-powiatowe-w-tomaszowie-mazowieckim-lodzkie-tomaszowski-tomaszow-mazowiecki": {
+"checked": "2026-11-03",
+"items": 5,
+"label": "Informacja o wynikach naboru",
+"url": "http://www.bip-powiat-tomaszowski-new.mserwer.pl/content.php?cms_id=2141||m=25"
+},
+"/starostwo-powiatowe-w-wabrzeznie-kujawsko-pomorskie-wabrzeski-wabrzezno": {
+"checked": "2026-11-03",
+"items": 6,
+"label": "Ogłoszenia o naborze",
+"url": "https://www.bip.wabrzezno.pl/6393,ogloszenia-o-naborze"
+},
+"/starostwo-powiatowe-w-zamosciu": {
+"checked": "2026-11-03",
+"items": 14,
+"label": "Klauzula informacyjna nabór zgoda do pobrania",
+"url": "https://spzamosc.bip.lubelskie.pl/index.php?id=922"
+},
+"/starostwo-powiatowe-we-wroclawiu-dolnoslaskie-wroclaw-wroclaw": {
+"checked": "2026-11-03",
+"items": 12,
+"label": "Procedury naboru",
+"url": "https://powiatwroclawski.bip.net.pl?c=298"
+},
+"/starostwo-powiatowe-zywiec-slaskie-zywiecki-zywiec": {
+"checked": "2026-11-03",
+"items": 12,
+"label": "Nabór na wolne stanowiska urzędnicze",
+"url": "https://www.bip.zywiec.pl/category/nabor-na-wolne-stanowiska-urzednicze"
+},
 "/urzad-gminy-adamow-lubelskie-zamojski-adamow": {
 "checked": "2026-11-03",
 "items": 6,
@@ -136,5 +256,551 @@
 "items": 62,
 "label": "Nabór pracowników",
 "url": "https://www.bip.borowie.pl/161,nabor-pracownikow"
+},
+"/urzad-gminy-debowiec-podkarpackie-jasielski-debowiec": {
+"checked": "2026-11-03",
+"items": 5,
+"label": "Nabór na wolne stanowiska pracy",
+"url": "https://debowiec.bip.info.pl/index.php?idmp=113&r=r"
+},
+"/urzad-gminy-gorzyca": {
+"checked": "2026-11-03",
+"items": 79,
+"label": "Ogłoszenia o naborze",
+"url": "https://gorzyca.bip.net.pl?c=371"
+},
+"/urzad-gminy-gostynin-mazowieckie-gostyninski-gostynin": {
+"checked": "2026-11-03",
+"items": 98,
+"label": "NABÓR NA WOLNE STANOWISKO URZĘDNICZE...",
+"url": "https://umgostynin.bip.org.pl/id/4905"
+},
+"/urzad-gminy-grybow": {
+"checked": "2026-11-03",
+"items": 29,
+"label": "OPS informuje: Informacja o nierozstrzygnięciu naboru",
+"url": "https://grybow.pl/2024/10/ops-informuje-informacja-o-nierozstrzygnieciu-naboru/"
+},
+"/urzad-gminy-i-miasta-w-grojcu-mazowieckie-grojecki-grojec": {
+"checked": "2026-11-03",
+"items": 10,
+"label": "Konkursy - Nabory",
+"url": "https://grojecmiasto.bip.info.pl/index.php?idmp=132&r=o"
+},
+"/urzad-gminy-karnice-zachodniopomorskie-gryficki-karnice": {
+"checked": "2026-11-03",
+"items": 8,
+"label": "Nabór pracowników",
+"url": "https://karnice.bip.alfatv.pl/strony/menu/14.dhtml"
+},
+"/urzad-gminy-ketrzyn-warminsko-mazurskie-ketrzynski-ketrzyn": {
+"checked": "2026-11-03",
+"items": 41,
+"label": "Informacje o naborze",
+"url": "https://www.bip.gminaketrzyn.pl/wakaty/111/status/"
+},
+"/urzad-gminy-klomnice-slaskie-czestochowski-klomnice": {
+"checked": "2026-11-03",
+"items": 4,
+"label": "Nabór",
+"url": "https://www.bip.klomnice.pl/index.php?idg=4&id=381&x=105"
+},
+"/urzad-gminy-kodrab": {
+"checked": "2026-11-03",
+"items": 2,
+"label": "Ogłoszenia o naborze",
+"url": "https://www.bip.gminakodrab.pl/index.php?idg=1&id=556&x=24"
+},
+"/urzad-gminy-kowiesy-lodzkie-skierniewicki-kowiesy": {
+"checked": "2026-11-03",
+"items": 5,
+"label": "Nabory pracowników",
+"url": "https://www.bip.kowiesy.pl/1000,nabory-pracownikow"
+},
+"/urzad-gminy-kurow-lubelskie-pulawski-kurow": {
+"checked": "2026-11-03",
+"items": 6,
+"label": "Procedury naboru pracowników na wolne stanowiska urzędnicze",
+"url": "https://ugkurow.bip.e-zeto.eu/index.php?type=4&name=bt47&func=selectsite&value%5B0%5D=mnu26&value%5B1%5D=20"
+},
+"/urzad-gminy-lacko": {
+"checked": "2026-11-03",
+"items": 17,
+"label": "Asystent rodziny- drugi nabór",
+"url": "https://uglack.bip.org.pl/id/759"
+},
+"/urzad-gminy-lekawica-slaskie-zywiecki-lekawica": {
+"checked": "2026-11-03",
+"items": 37,
+"label": "Nabory na stanowiska urzędnicze",
+"url": "https://www.bip.lekawica.com.pl/category/konkursy-na-stanowiska-urzednicze"
+},
+"/urzad-gminy-lipie-slaskie-klobucki-lipie": {
+"checked": "2026-11-03",
+"items": 7,
+"label": "Nabór na wolne stanowiska",
+"url": "http://www.bip.lipie.akcessnet.net/index.php?idg=3&id=1193&x=89"
+},
+"/urzad-gminy-lubomia-slaskie-wodzislawski-lubomia": {
+"checked": "2026-11-03",
+"items": 1,
+"label": "Nabór na wolne stanowiska pracy",
+"url": "http://www.old.bip.lubomia.pl/lubomia.bip.info.pl/index753d.html?idmp=214&r=r"
+},
+"/urzad-gminy-lukow": {
+"checked": "2026-11-03",
+"items": 18,
+"label": "Ogłoszenia o naborze",
+"url": "http://uglukow.bip.lubelskie.pl/index.php?id=458"
+},
+"/urzad-gminy-marianowo-zachodniopomorskie-stargardzki-marianowo": {
+"checked": "2026-11-03",
+"items": 30,
+"label": "Nabór na wolne stanowiska urzędnicze",
+"url": "https://marianowo.bip.alfatv.pl/strony/menu/38.dhtml"
+},
+"/urzad-gminy-mierzecice": {
+"checked": "2026-11-03",
+"items": 12,
+"label": "ogłoszenia o naborze",
+"url": "https://riokatowice.bip.net.pl/?c=246"
+},
+"/urzad-gminy-mokrsko-lodzkie-wielunski-mokrsko": {
+"checked": "2026-11-03",
+"items": 2,
+"label": "Nabór pracowników",
+"url": "https://www.bip.mokrsko.akcessnet.net/index.php?idg=4&id=438&x=122"
+},
+"/urzad-gminy-niedzwiedz-malopolskie-limanowski-niedzwiedz": {
+"checked": "2026-11-03",
+"items": 7,
+"label": "Nabory na wolne stanowiska",
+"url": "https://ugniedzwiada.bip.lubelskie.pl/index.php?id=600"
+},
+"/urzad-gminy-ojrzen-mazowieckie-ciechanowski-ojrzen": {
+"checked": "2026-11-03",
+"items": 31,
+"label": "Wyniki naborów na stanowiska",
+"url": "https://ugojrzen.bip.org.pl/id/176"
+},
+"/urzad-gminy-opatow-slaskie-klobucki-opatow": {
+"checked": "2026-11-03",
+"items": 5,
+"label": "Nabór na wolne stanowiska",
+"url": "https://www.bip.umopatow.pl/index.php?idg=1&id=284&x=25"
+},
+"/urzad-gminy-rabino-zachodniopomorskie-swidwinski-rabino": {
+"checked": "2026-11-03",
+"items": 17,
+"label": "Ogłoszenia o naborze",
+"url": "https://bip.rabino.pl/bip/nabor-pracownikow/ogloszenia-o-naborze"
+},
+"/urzad-gminy-radziejow-kujawsko-pomorskie-radziejowski-radziejow": {
+"checked": "2026-11-03",
+"items": 2,
+"label": "Nabór wniosków o dofinansowanie usuwania azbestu",
+"url": "https://www.bip.ugradziejow.pl/zalatwianiespraw,31_176"
+},
+"/urzad-gminy-rokietnica-podkarpackie-jaroslawski-rokietnica": {
+"checked": "2026-11-03",
+"items": 3,
+"label": "Nabory na stanowiska urzędnicze",
+"url": "https://www.bip.powiat.poznan.pl/5991,nabory-na-stanowiska-urzednicze"
+},
+"/urzad-gminy-rokietnica-wielkopolskie-poznanski-rokietnica": {
+"checked": "2026-11-03",
+"items": 3,
+"label": "Nabory na stanowiska urzędnicze",
+"url": "https://www.bip.powiat.poznan.pl/5991,nabory-na-stanowiska-urzednicze"
+},
+"/urzad-gminy-rybno-warminsko-mazurskie-dzialdowski-rybno": {
+"checked": "2026-11-03",
+"items": 16,
+"label": "Nabór na wolne stanowisko urzędnicze w Referacie Finansowym",
+"url": "https://gminarybno.com/bip/nabory-na-stanowiska-urzednicze/nabor-na-wolne-stanowisko-urzednicze-w-referacie-finansowym"
+},
+"/urzad-gminy-serokomla-lubelskie-lukowski-serokomla": {
+"checked": "2026-11-03",
+"items": 7,
+"label": "Nabór na wolne stanowisko pracy",
+"url": "http://ugserokomla.bip.lubelskie.pl/index.php?id=216"
+},
+"/urzad-gminy-siedlec-wielkopolskie-wolsztynski-siedlec": {
+"checked": "2026-11-03",
+"items": 4,
+"label": "Nabory",
+"url": "https://siedlec.bip.net.pl/kategorie/66-nabory?lang=PL"
+},
+"/urzad-gminy-skarzysko-koscielne-swietokrzyskie-skarzyski-skarzysko-koscielne": {
+"checked": "2026-11-03",
+"items": 8,
+"label": "Nabór na wolne stanowiska",
+"url": "https://skarzyskokoscielne.biuletyn.net/archiwum/www.ugskarzysko.bip.doc.pl/indexd224.html?dz=4&id=28620"
+},
+"/urzad-gminy-skomlin-lodzkie-wielunski-skomlin": {
+"checked": "2026-11-03",
+"items": 10,
+"label": "Ogłoszenia o naborze pracowników",
+"url": "http://www.bip.skomlin.akcessnet.net/index.php?idg=1&id=437&x=9"
+},
+"/urzad-gminy-solec-zdroj-swietokrzyskie-buski-solec-zdroj": {
+"checked": "2026-11-03",
+"items": 37,
+"label": "Ogłoszenia o naborze",
+"url": "https://www.bip.solec-zdroj.pl/page.php?kat_id=25&id=1946&parent_id=1946"
+},
+"/urzad-gminy-stanin-lubelskie-lukowski-stanin": {
+"checked": "2026-11-03",
+"items": 8,
+"label": "Zasady naboru pracowników (akty prawne)",
+"url": "https://ugstanin.bip.lubelskie.pl/index.php?id=63"
+},
+"/urzad-gminy-stezyca": {
+"checked": "2026-11-03",
+"items": 3,
+"label": "Nabór na wolne stanowiska w urzędzie",
+"url": "https://ugstezyca.bip.lubelskie.pl/index.php?id=52"
+},
+"/urzad-gminy-stolno-kujawsko-pomorskie-chelminski-stolno": {
+"checked": "2026-11-03",
+"items": 10,
+"label": "Informacja o terminach naboru wniosków",
+"url": "http://archiwum.bip.stolno.com.pl/?cid=344"
+},
+"/urzad-gminy-stryszawa-malopolskie-suski-stryszawa": {
+"checked": "2026-11-03",
+"items": 1,
+"label": "Link do strony Nabór uzupełniający kandydatów na rachmistrzów spisowych",
+"url": "https://samorzad.gov.pl/web/gmina-stryszow/nabor-uzupelniajacy-kandydatow-na-rachmistrzow-spisowych"
+},
+"/urzad-gminy-strzyzewice-lubelskie-lubelski-strzyzewice": {
+"checked": "2026-11-03",
+"items": 3,
+"label": "Regulamin naboru na wolne stanowiska urzędnicze",
+"url": "http://ugstrzyzewice.bip.lubelskie.pl/index.php?id=534"
+},
+"/urzad-gminy-swidnica-dolnoslaskie-swidnicki-swidnica": {
+"checked": "2026-11-03",
+"items": 33,
+"label": "Nabór na wolne stanowiska pracy",
+"url": "https://www.bip.swidnica.zgora.pl/wakaty/161/status/"
+},
+"/urzad-gminy-swiedziebnia-kujawsko-pomorskie-brodnicki-swiedziebnia": {
+"checked": "2026-11-03",
+"items": 9,
+"label": "Nabór na wolne stanowiska urzędnicze i kierownicze stanowiska urzędnicze",
+"url": "https://www.bip.swiedziebnia.pl/index.php?idg=4&id=101&x=20"
+},
+"/urzad-gminy-tarnowo-podgorne-wielkopolskie-poznanski-tarnowo-podgorne": {
+"checked": "2026-11-03",
+"items": 3,
+"label": "Nabory na stanowiska urzędnicze",
+"url": "https://www.bip.powiat.poznan.pl/5991,nabory-na-stanowiska-urzednicze"
+},
+"/urzad-gminy-trawniki-lubelskie-swidnicki-trawniki": {
+"checked": "2026-11-03",
+"items": 5,
+"label": "Ogłoszenie o naborze na wolne stanowisko",
+"url": "http://ugtrawniki.bip.lubelskie.pl/index.php?id=291"
+},
+"/urzad-gminy-trzcinica-wielkopolskie-kepinski-trzcinica": {
+"checked": "2026-11-03",
+"items": 12,
+"label": "Nabór na wolne stanowiska w jednostkach organizacyjnych",
+"url": "https://ugtrzcinica.bip.e-zeto.eu/index.php?type=4&name=bt164&func=selectsite&value%5B0%5D=mnu12&value%5B1%5D=2"
+},
+"/urzad-gminy-w-imielnie-swietokrzyskie-jedrzejowski-imielno": {
+"checked": "2026-11-03",
+"items": 10,
+"label": "Nabór pracowników 2026 rok",
+"url": "https://www.bip.imielno.akcessnet.net/index.php?idg=1&id=1110&x=33"
+},
+"/urzad-gminy-w-szczawinie-koscielnym-mazowieckie-gostyninski-szczawin-koscielny": {
+"checked": "2026-11-03",
+"items": 55,
+"label": "Nabór pracowników",
+"url": "https://www.bip.szczawin.pl/kat/id/109"
+},
+"/urzad-gminy-w-wielgomlynach-lodzkie-radomszczanski-wielgomlyny": {
+"checked": "2026-11-03",
+"items": 15,
+"label": "Nabór na wolne stanowiska pracy",
+"url": "https://wielgomlyny.pl/archiwumbip/wielgomlyny.bip.net.pl/index65d1.html?c=246"
+},
+"/urzad-gminy-w-zlejwsi-wielkiej": {
+"checked": "2026-11-03",
+"items": 95,
+"label": "Nabory i konkursy na wolne stanowiska",
+"url": "https://www.bip.zlawies.pl/1734/nabory-i-konkursy-na-wolne-stanowiska.html"
+},
+"/urzad-gminy-wagrowiec-wielkopolskie-wagrowiecki-wagrowiec": {
+"checked": "2026-11-03",
+"items": 64,
+"label": "Ogłoszenie wyniku naboru",
+"url": "http://www.bip2.wokiss.pl/wagrowiecm/bip/jednostki-organizacyjne-gminy-miejskiej-wagrowiec/przedszkola-miejskie/przedszkole-nr-7/ogloszenie-wyniku-naboru.html"
+},
+"/urzad-gminy-warta-boleslawiecka-dolnoslaskie-boleslawiecki-warta-boleslawiecka": {
+"checked": "2026-11-03",
+"items": 26,
+"label": "Nabór pracowników",
+"url": "https://wartaboleslawiecka.pl/urzad-gminy-bip/nabor-pracownikow"
+},
+"/urzad-gminy-werbkowice": {
+"checked": "2026-11-03",
+"items": 10,
+"label": "Nabór pracowników",
+"url": "https://ugwerbkowice.bip.lubelskie.pl/index.php?id=85"
+},
+"/urzad-gminy-wierzbica-lubelskie-chelmski-wierzbica": {
+"checked": "2026-11-03",
+"items": 3,
+"label": "Nabór na wolne stanowiska urzędnicze",
+"url": "https://ugwierzbica.bip.lubelskie.pl/index.php?id=69"
+},
+"/urzad-gminy-wola-krzysztoporska-lodzkie-piotrkowski-wola-krzysztoporska": {
+"checked": "2026-11-03",
+"items": 1,
+"label": "Konkursy",
+"url": "https://www.bip.wola-krzysztoporska.pl/index.php?id=58,0,0"
+},
+"/urzad-gminy-wolanow": {
+"checked": "2026-11-03",
+"items": 29,
+"label": "Nabór pracowników",
+"url": "https://www.bip.wolanow.pl/99,nabor-pracownikow"
+},
+"/urzad-gminy-zabia-wola": {
+"checked": "2026-11-03",
+"items": 2,
+"label": "Ogłoszenia o naborze pracowników",
+"url": "https://www.bip.zabiawola.akcessnet.net/index.php?idg=9&id=566&x=15"
+},
+"/urzad-miasta-bartoszyce": {
+"checked": "2026-11-03",
+"items": 38,
+"label": "Informacje o naborze",
+"url": "https://www.bip.gmina-bartoszyce.pl/wakaty/87/status/"
+},
+"/urzad-miasta-bilgoraja-lubelskie-bilgorajski-bilgoraj": {
+"checked": "2026-11-03",
+"items": 3,
+"label": "Regulamin naboru",
+"url": "https://umbilgoraj.bip.e-zeto.eu/index.php?type=4&name=bt364&func=selectsite&value%5B0%5D=mnu12&value%5B1%5D=5"
+},
+"/urzad-miasta-gostyn-wielkopolskie-gostynski-gostyn": {
+"checked": "2026-11-03",
+"items": 98,
+"label": "NABÓR NA WOLNE STANOWISKO URZĘDNICZE...",
+"url": "https://umgostynin.bip.org.pl/id/4905"
+},
+"/urzad-miasta-gostynina-mazowieckie-gostyninski-gostynin": {
+"checked": "2026-11-03",
+"items": 98,
+"label": "NABÓR NA WOLNE STANOWISKO URZĘDNICZE...",
+"url": "https://umgostynin.bip.org.pl/id/4905"
+},
+"/urzad-miasta-i-gminy-kikol-kujawsko-pomorskie-lipnowski-kikol": {
+"checked": "2026-11-03",
+"items": 5,
+"label": "Ogłoszenia o naborze na wolne stanowiska pracy",
+"url": "https://kikol.archiwum.bip.net.pl/c367.html"
+},
+"/urzad-miasta-i-gminy-lutomiersk-lodzkie-pabianicki-lutomiersk": {
+"checked": "2026-11-03",
+"items": 3,
+"label": "Nabór na stanowisko urzędnicze",
+"url": "https://www.bip.lutomiersk.info/p,35,nabor-na-stanowisko-urzednicze"
+},
+"/urzad-miasta-i-gminy-mrozy-mazowieckie-minski-mrozy": {
+"checked": "2026-11-03",
+"items": 6,
+"label": "Konkurs dla organizacji pozarządowych",
+"url": "https://mrozy.bip.net.pl/kategorie/47-konkurs-dla-organizacji-pozarzadowych?lang=PL"
+},
+"/urzad-miasta-i-gminy-pierzchnica-swietokrzyskie-kielecki-pierzchnica": {
+"checked": "2026-11-03",
+"items": 9,
+"label": "Nabór na wolne stanowisko urzędnicze",
+"url": "https://www.pierzchnica.bip.jur.pl/kategorie/nabor_na_wolne_stanowisko_urzednicze_112"
+},
+"/urzad-miasta-i-gminy-szydlow-swietokrzyskie-staszowski-szydlow": {
+"checked": "2026-11-03",
+"items": 12,
+"label": "Nabory na stanowiska",
+"url": "https://www.szydlow.bip.jur.pl/kategorie/nabory_na_stanowiska"
+},
+"/urzad-miasta-i-gminy-w-nowej-slupi": {
+"checked": "2026-11-03",
+"items": 6,
+"label": "Nabory",
+"url": "https://www.nowaslupia.bip.jur.pl/kategorie/nabory"
+},
+"/urzad-miasta-i-gminy-w-opatowie-swietokrzyskie-opatowski-opatow": {
+"checked": "2026-11-03",
+"items": 5,
+"label": "Nabór na wolne stanowiska",
+"url": "https://www.bip.umopatow.pl/index.php?idg=1&id=284&x=25"
+},
+"/urzad-miasta-i-gminy-w-serocku": {
+"checked": "2026-11-03",
+"items": 10,
+"label": "Nabór kandydatów na członków Rady Seniorów Miasta i Gminy Serock",
+"url": "https://www.bip.serock.pl/5279,nabor-kandydatow-na-czlonkow-rady-seniorow-miasta-i-gminy-serock"
+},
+"/urzad-miasta-legnicy": {
+"checked": "2026-11-03",
+"items": 5,
+"label": "Konkursy urbanistyczno-architektoniczne",
+"url": "https://um.bip.legnica.eu/uml/architektura-i-budownictwo/konkursy-urbanistyczno-archite"
+},
+"/urzad-miasta-lukow-lubelskie-lukowski-lukow": {
+"checked": "2026-11-03",
+"items": 18,
+"label": "Zasady naboru",
+"url": "https://umlukow.bip.lubelskie.pl/index.php?id=283"
+},
+"/urzad-miasta-minsk-mazowiecki-mazowieckie-minski-minsk-mazowiecki": {
+"checked": "2026-11-03",
+"items": 5,
+"label": "Nabory - Zarząd/ Rada Nadzorcza",
+"url": "https://www.bip.minsk-maz.pl/index.php?type=4&name=bt80&func=selectsite&value%5B0%5D=mnu21&value%5B1%5D=29"
+},
+"/urzad-miasta-orzesze-slaskie-mikolowski-orzesze": {
+"checked": "2026-11-03",
+"items": 8,
+"label": "Ogłoszenie o naborze kandydatów",
+"url": "https://bip.orzesze.pl/bip/ogloszenie-o-naborze-kandydatow"
+},
+"/urzad-miasta-piotrkowa-trybunalskiego-lodzkie-piotrkow-trybunalski-piotrkow-trybunalski": {
+"checked": "2026-11-03",
+"items": 1,
+"label": "Ogłoszenia o naborze na stanowiska urzędnicze",
+"url": "https://www.bip.piotrkow.pl/index.php?idg=7&id=894&x=150"
+},
+"/urzad-miasta-pulawy-lubelskie-pulawski-pulawy": {
+"checked": "2026-11-03",
+"items": 97,
+"label": "Regulaminy dot. naboru",
+"url": "http://umpulawy.bip.lubelskie.pl/index.php?id=2225"
+},
+"/urzad-miasta-w-skarzysku-kamiennej-swietokrzyskie-skarzyski-skarzysko-kamienna": {
+"checked": "2026-11-03",
+"items": 7,
+"label": "Ogłoszenia o konkursach",
+"url": "https://umskarzysko.bip.doc.pl/index.php?dz=4&id=32057"
+},
+"/urzad-miejski-lubliniec-slaskie-lubliniecki-lubliniec": {
+"checked": "2026-11-03",
+"items": 37,
+"label": "Ogłoszenia, konkursy",
+"url": "https://lubliniec.bip.info.pl/index.php?idmp=63&r=o"
+},
+"/urzad-miejski-w-bedzinie-slaskie-bedzinski-bedzin": {
+"checked": "2026-11-03",
+"items": 3,
+"label": "Nabór na ławników sądowych - uzupełniający 2020/2023",
+"url": "https://bedzin.bip.info.pl/index.php?idmp=663&r=r"
+},
+"/urzad-miejski-w-czemiernikach-lubelskie-radzynski-czemierniki": {
+"checked": "2026-11-03",
+"items": 9,
+"label": "Ogłoszenia konkursowe",
+"url": "https://ugczemierniki.bip.lubelskie.pl/index.php?id=254"
+},
+"/urzad-miejski-w-drzewicy-lodzkie-opoczynski-drzewica": {
+"checked": "2026-11-03",
+"items": 79,
+"label": "Nabór na wolne stanowiska",
+"url": "https://www.bip.drzewica.pl/content/nab%C3%B3r-na-wolne-stanowiska-urz%C4%99dnicze-0"
+},
+"/urzad-miejski-w-grybowie-malopolskie-nowosadecki-grybow": {
+"checked": "2026-11-03",
+"items": 29,
+"label": "OPS informuje: Informacja o nierozstrzygnięciu naboru",
+"url": "https://grybow.pl/2024/10/ops-informuje-informacja-o-nierozstrzygnieciu-naboru/"
+},
+"/urzad-miejski-w-kcyni": {
+"checked": "2026-11-03",
+"items": 85,
+"label": "Nabory i konkursy na wolne stanowiska",
+"url": "https://www.bip.kcynia.pl/957/nabory-i-konkursy-na-wolne-stanowiska.html"
+},
+"/urzad-miejski-w-kocku-lubelskie-lubartowski-kock": {
+"checked": "2026-11-03",
+"items": 3,
+"label": "Konkursy na wolne stanowiska urzędnicze",
+"url": "http://umigkock.bip.lubelskie.pl/index.php?id=253"
+},
+"/urzad-miejski-w-konstantynowie-lodzkim": {
+"checked": "2026-11-03",
+"items": 16,
+"label": "Nabory rozstrzygnięte",
+"url": "http://www.bip.konstantynow.pl/index5499.html?bip=1&cid=237&bsc=N"
+},
+"/urzad-miejski-w-koszalinie-zachodniopomorskie-koszalin-koszalin": {
+"checked": "2026-11-03",
+"items": 11,
+"label": "Nabór pracowników",
+"url": "https://bip.koszalin.pl/archiwum/koszalin.bip.net.pl/c491.htm"
+},
+"/urzad-miejski-w-mogilnie-kujawsko-pomorskie-mogilenski-mogilno": {
+"checked": "2026-11-03",
+"items": 4,
+"label": "tryb pozakonkursowy",
+"url": "https://mogilno.archiwum.bip.net.pl/c745.html"
+},
+"/urzad-miejski-w-nasielsku-mazowieckie-nowodworski-nasielsk": {
+"checked": "2026-11-03",
+"items": 52,
+"label": "OgŇāoszenie o naborze kandydat√≥w na...",
+"url": "https://umnasielsk.bip.org.pl/id/3490"
+},
+"/urzad-miejski-w-pultusku-mazowieckie-pultuski-pultusk": {
+"checked": "2026-11-03",
+"items": 12,
+"label": "Konkursy",
+"url": "https://pultusk.archiwum.bip.net.pl/c266.html"
+},
+"/urzad-miejski-w-pyzdrach-wielkopolskie-wrzesinski-pyzdry": {
+"checked": "2026-11-03",
+"items": 38,
+"label": "Konkursy dla organizacji pozarządowych",
+"url": "https://www.bip.pyzdry.pl/141,konkursy-dla-organizacji-pozarzadowych"
+},
+"/urzad-miejski-w-sepolnie-krajenskim-kujawsko-pomorskie-sepolenski-sepolno-krajenskie": {
+"checked": "2026-11-03",
+"items": 203,
+"label": "Tryb pozakonkursowy 19a",
+"url": "https://www.bip.gmina-sepolno.pl/903/tryb-pozakonkursowy-19a.html"
+},
+"/urzad-miejski-w-walbrzychu-dolnoslaskie-walbrzych-walbrzych": {
+"checked": "2026-11-03",
+"items": 3,
+"label": "Nabór pracowników",
+"url": "https://www.bip.mzbwalbrzych.pl/nabor-pracownikow/274"
+},
+"/urzad-miejski-w-zlotowie-wielkopolskie-zlotowski-zlotow": {
+"checked": "2026-11-03",
+"items": 207,
+"label": "Komisje konkursowe",
+"url": "https://zlotow.archiwum.bip.net.pl/c575.html"
+},
+"/urzad-miejski-wagrowiec-wielkopolskie-wagrowiecki-wagrowiec": {
+"checked": "2026-11-03",
+"items": 64,
+"label": "Ogłoszenie wyniku naboru",
+"url": "http://www.bip2.wokiss.pl/wagrowiecm/bip/jednostki-organizacyjne-gminy-miejskiej-wagrowiec/przedszkola-miejskie/przedszkole-nr-7/ogloszenie-wyniku-naboru.html"
+},
+"/zespol-szkolno-przedszkolny-nr-2-w-legionowie-mazowieckie-legionowski-legionowo": {
+"checked": "2026-11-03",
+"items": 20,
+"label": "Ogłoszenia o naborze - Archiwum",
+"url": "https://www.bip.zsp2.legionowo.pl/index.php?cmd=zawartosc&opt=pokaz&id=24"
+},
+"/zlobek-nr-2-w-klodzku-dolnoslaskie-klodzki-klodzko": {
+"checked": "2026-11-03",
+"items": 2,
+"label": "Nabór na stanowiska urzędnicze",
+"url": "https://zlobek2.bip.klodzko.pl/index.php?n=i&menu=301#tresc_main"
 }
 }
