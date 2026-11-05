@@ -1,0 +1,47 @@
+{
+  "date": "2026-11-05",
+  "rejected": [
+    {
+      "url": "https://krs.pl/pl/",
+      "title": "Krajowa Rada Sądownictwa",
+      "reason": "Dotczy wolnych stanowisk sędziowskich, nie naboru na członka rady nadzorczej.",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie"
+    },
+    {
+      "url": "https://rejestr.io/krs/27151/polski-holding-obronny",
+      "title": "POLSKI HOLDING OBRONNY - Rejestr.io",
+      "reason": "nabór na zarząd, nie na radę nadzorczą",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie"
+    },
+    {
+      "url": "https://programsk.stawil.pl/",
+      "title": "Program SK Podkarpacie – Wsparcie kwalifikacji i kompetencji",
+      "reason": "To informacja o programie wsparcia kwalifikacji, nie nabór na członka rady nadzorczej.",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie"
+    },
+    {
+      "url": "https://grupagpec.pl/",
+      "title": "GPEC: Gdańskie Przedsiębiorstwo Energetyki Cieplnej",
+      "reason": "Strona główna spółki, brak informacji o otwartym naborze do rady nadzorczej.",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie"
+    },
+    {
+      "url": "https://www.solidarnosc.gorzow.enea.pl/wiadomosc/4269/zmiany_w_skladzie_rady_nadzorczej_enea_s_a.html",
+      "title": "8.12.2025 Zmiany w składzie Rady Nadzorczej Enea S.A. - NSZZ ...",
+      "reason": "Informacja o powołaniu i odwołaniu członka rady, nie otwarty nabór.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\""
+    },
+    {
+      "url": "http://piw.goleniow.ibip.pl/public/?id=163655",
+      "title": "Pliki do pobrania - Inspekcja Weterynaryjna Powiatowy ...",
+      "reason": "Strona z plikami do pobrania formularzy weterynaryjnych, brak ogłoszenia o naborze na radę nadzorczą.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\""
+    },
+    {
+      "url": "https://biuro-rachunkowe-prima.warszawa.pl/wynagrodzenie-zarzadu-spolki-zoo.php",
+      "title": "WYNAGRODZENIE CZŁONKÓW ZARZĄDU SPÓŁKI Z O.O.",
+      "reason": "nabór na zarząd, nie na radę nadzorczą",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\""
+    }
+  ]
+}

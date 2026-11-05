@@ -1,0 +1,170 @@
+{
+  "date": "2026-11-05",
+  "count": 16,
+  "decisions": {
+    "cached": 3,
+    "no_url": 1,
+    "rejected": 7,
+    "empty": 1,
+    "blocked": 3,
+    "duplicate": 1
+  },
+  "raw": [
+    {
+      "url": "https://www.pwpw.pl/Aktualnosci/2026/06/postepowanie-kwalifikacyjne-na-stanowisko-wiceprezesa-zarzadu-ds-finansowych.html",
+      "title": "24.06.2026 Postępowanie kwalifikacyjne na stanowisko Wiceprezesa Zarządu PWPW S.A. ds. finansowych OGŁOSZENIE Rady Nadzorczej Spółki Polska Wytwórnia Papierów Wartościowych S.A. o wszczęciu postępowania kwalifikacyjnego na stanowisko Wiceprezesa Zarządu PWPW S.A. ds. finansowych.",
+      "snippet": "24.06.2026 Postępowanie kwalifikacyjne na stanowisko Wiceprezesa Zarządu PWPW S.A. ds. finansowych OGŁOSZENIE Rady Nadzorczej Spółki Polska Wytwórnia Papierów Wartościowych S.A. o wszczęciu postępowania kwalifikacyjnego na stanowisko Wiceprezesa Zarządu PWPW S.A. ds. finansowych.",
+      "source": "źródło bezpośrednie",
+      "direct": true,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "",
+      "title": "",
+      "snippet": "",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "no_url",
+      "reason": "wynik bez adresu URL"
+    },
+    {
+      "url": "https://krs.pl/pl/",
+      "title": "Krajowa Rada Sądownictwa",
+      "snippet": "1 day ago · Krajowa Rada Sądownictwa informuje, że w dniu 3 listopada 2026 r. w Monitorze Polskim z 2026 r., poz. 1079 ukazało się Obwieszczenie Ministra Sprawiedliwości o wolnych stanowiskach sędziowskich: Wol…",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Dotczy wolnych stanowisk sędziowskich, nie naboru na członka rady nadzorczej."
+    },
+    {
+      "url": "https://kghm.com/pl/inwestorzy/lad-korporacyjny/wladze-spolki",
+      "title": "Władze spółki | KGHM Polska Miedź S.A. Strona korporacyjna",
+      "snippet": "2 days ago · Władze spółki Rada Nadzorcza Członkowie Rady Nadzorczej są powoływani przez Walne Zgromadzenie, a z kolei Rada Nadzorcza powołuje członków Zarządu i nadzoruje ich pracę. Rada Nadzorcza może liczyć do dziesięciu członków.",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.bip.lysomice.pl/442,jednostki-podlegle",
+      "title": "Jednostki podległe | BIULETYN INFORMACJI PUBLICZNEJ Urzędu ...",
+      "snippet": "1 day ago · Nabór na stanowiska członków Rad Nadzorczych Spółek Kapitałowych, udziały w których posiada Gmina Łysomice Ogłoszenie o naborze na stanowiska członków Rad Nadzorczych Spółek Kapitałowych, udziały których posiada Gmina Łysomice.",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "empty",
+      "reason": "strona bez treści ogłoszenia",
+      "offer": {
+        "podmiot": "",
+        "miejscowosc": "",
+        "termin_skladania_ofert": "",
+        "stanowisko": "",
+        "wymagania": "",
+        "podsumowanie": "Przedstawiony tekst nie zawiera ogłoszenia o naborze na członka rady nadzorczej. Dotyczy on jednostek podległych oraz naborów na inne stanowiska, m.in. głównego księgowego i kierowników jednostek organizacyjnych.",
+        "data_publikacji": "",
+        "url": "https://www.bip.lysomice.pl/442,jednostki-podlegle",
+        "znaleziono_dnia": "2026-11-05",
+        "zrodlo": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie"
+      }
+    },
+    {
+      "url": "https://lexlege.pb.pl/ustawa-o-systemie-ubezpieczen-spolecznych/rozdzial-7-zaklad-ubezpieczen-spolecznych/1669/",
+      "title": "Rozdział 7. Zakład Ubezpieczeń Społecznych - Ustawa o ...",
+      "snippet": "1 day ago · 2. Ogłoszenie o naborze zamieszcza się w Biuletynie Informacji Publicznej, o którym mowa w ustawie z dnia 6 września 2001 r. o dostępie do informacji publicznej, oraz w miejscu powszechnie dostępnym w jednostce organizacyjnej, w której jest prowadzony nabór.",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "blocked",
+      "reason": "agregator/medium, nie publikuje ogłoszeń"
+    },
+    {
+      "url": "https://rejestr.io/krs/27151/polski-holding-obronny",
+      "title": "POLSKI HOLDING OBRONNY - Rejestr.io",
+      "snippet": "Spółka z ograniczoną odpowiedzialnością - Prezes Zarządu: Grzegorz Kiejnich - KRS: 0000027151 - Kapitał zakładowy: 1.6 mld zł",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "nabór na zarząd, nie na radę nadzorczą"
+    },
+    {
+      "url": "https://programsk.stawil.pl/",
+      "title": "Program SK Podkarpacie – Wsparcie kwalifikacji i kompetencji",
+      "snippet": "3 days ago · Program SK realizowany przez Stawil wspiera pracowników i pracodawców z Podkarpacia w zdobywaniu kwalifikacji, kompetencji i dofinansowań.",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "To informacja o programie wsparcia kwalifikacji, nie nabór na członka rady nadzorczej."
+    },
+    {
+      "url": "https://grupagpec.pl/",
+      "title": "GPEC: Gdańskie Przedsiębiorstwo Energetyki Cieplnej",
+      "snippet": "2 days ago · Dbamy o komfort oraz bezpieczeństwo mieszkańców Pomorza i okolic.",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Strona główna spółki, brak informacji o otwartym naborze do rady nadzorczej."
+    },
+    {
+      "url": "https://grudziadz.pl/artykul/69/20202/nabor-kandydatow-do-rad-nadzorczych",
+      "title": "Nabór kandydatów do Rad Nadzorczych - Grudziądz",
+      "snippet": "1 day ago · Nabór kandydatów do Rad Nadzorczych Prezydent Grudziądza ogłasza nabór do bazy danych kandydatów do Rad Nadzorczych spółek, w których gmina-miasto Grudziądz posiada udziały/akcje, a także spółek od nich zależnych. Przedstawiamy informacje dla kandydatów: Wymagania niezbędne: - wykształcenie wyższe: ekonomiczne, prawnicze lub specjalistyczne branżowe, - spełnienie wymogów ...",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://www.solidarnosc.gorzow.enea.pl/wiadomosc/4269/zmiany_w_skladzie_rady_nadzorczej_enea_s_a.html",
+      "title": "8.12.2025 Zmiany w składzie Rady Nadzorczej Enea S.A. - NSZZ ...",
+      "snippet": "4 days ago · Zarząd Enea S.A. („Spółka”) informuje o wpłynięciu do Spółki 8 grudnia 2025 roku oświadczeń Ministra Aktywów Państwowych, o skorzystaniu z uprawnienia do powoływania i odwoływania członka Rady Nadzorczej Enea S.A. na podstawie § 24 ust. 1 Statutu Spółki. Zgodnie z otrzymanymi oświadczeniami, Minister Aktywów Państwowych korzystając z ww. uprawnienia z dniem dzisiejszym ...",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Informacja o powołaniu i odwołaniu członka rady, nie otwarty nabór."
+    },
+    {
+      "url": "https://lexlege.pb.pl/rozporzadzenie-ministra-pracy-i-polityki-socjalnej-w-sprawie-sposobu-usprawiedliwiania-nieobecnosci-w-pracy-oraz-udzielania-pracownikom-zwolnien-od-pracy/paragraf-14/",
+      "title": "§ 14. uspr. zw. - Zwolnienie od pracy pracownika będącego ...",
+      "snippet": "2 days ago · § 14. Zwolnienie od pracy pracownika będącego członkiem rady nadzorczej, działającej u pracodawcy Pracodawca jest obowiązany zwolnić od pracy pracownika będącego członkiem rady nadzorczej, działającej u zatrudniającego go pracodawcy, na czas niezbędny do uczestniczenia w posiedzeniach tej rady.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "blocked",
+      "reason": "agregator/medium, nie publikuje ogłoszeń"
+    },
+    {
+      "url": "http://piw.goleniow.ibip.pl/public/?id=163655",
+      "title": "Pliki do pobrania - Inspekcja Weterynaryjna Powiatowy ...",
+      "snippet": "13 hours ago · Wniosek o świadectwo eksportowe Wniosek o wydanie świadectwa eksportowego dla drobiu Łańcuch żywieniowy - druk. Zgłoszenie działalności nadzorowanej. Zgłoszenie lub zaprzestanie działalności. P rotokół pobrania prób w kierunku pał. Salmonella Skierowanie zwierząt do uboju Wniosek zgłoszenia działalności nadzorowanej przez IW. Wniosek o wpis podmiotu nadzorowanego - stada ...",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Strona z plikami do pobrania formularzy weterynaryjnych, brak ogłoszenia o naborze na radę nadzorczą."
+    },
+    {
+      "url": "https://lexlege.pb.pl/regulamin-urzedowania-sadow-powszechnych/paragraf-168/",
+      "title": "§ 168. Reg. urzęd.sądów pow - Wskazanie kandydata na kuratora ...",
+      "snippet": "13 hours ago · Sprawdź aktualną treść Regulamin urzędowania sądów powszechnych § 168. Wskazanie kandydata na kuratora. Stan prawny 2026, historia zmian i orzecznictwo w SIP LexLege.PB.pl",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "blocked",
+      "reason": "agregator/medium, nie publikuje ogłoszeń"
+    },
+    {
+      "url": "https://arslege.pl/dokumenty/kategoria/rada-nadzorcza/80/",
+      "title": "Wyszukiwarka aktów prawnych, orzeczeń sądów, wzorów ...",
+      "snippet": "1 day ago · Intuicyjna, prosta i szybka wyszukiwarka umożliwiajaca odnalezienie aktów prawnych, orzeczeń sądów, wzorów dokumentów, kodeksów oraz artykułów",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://biuro-rachunkowe-prima.warszawa.pl/wynagrodzenie-zarzadu-spolki-zoo.php",
+      "title": "WYNAGRODZENIE CZŁONKÓW ZARZĄDU SPÓŁKI Z O.O.",
+      "snippet": "2 days ago · Udziałowiec jednoosobowej spółki z o.o. nie może zawierać umowy o pracę z własną spółką z o.o. Pamiętać należy, że z punktu widzenia podlegania ubezpieczeniom społecznym wspólnik jednoosobowej spółki z o.o. jest traktowany jak osoba prowadząca działalność gospodarczą na podstawie wpisu do ewidencji działalności gospodarczej. Oznacza to, że podlega obowiązkowo ...",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "nabór na zarząd, nie na radę nadzorczą"
+    }
+  ]
+}
