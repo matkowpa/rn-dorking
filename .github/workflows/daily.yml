@@ -170,6 +170,9 @@ jobs:
         if: steps.mode.outputs.mode == 'run'
         env:
           BRAVE_API_KEY:     ${{ secrets.BRAVE_API_KEY }}
+          # CLINE_API_KEY wygrywa w config._resolve_llm() z historycznymi
+          # LLM_* (OpenRouter); LLM_* zostają jako fallback.
+          CLINE_API_KEY:     ${{ secrets.CLINE_API_KEY }}
           LLM_API_KEY:       ${{ secrets.LLM_API_KEY }}
           LLM_BASE_URL:      ${{ secrets.LLM_BASE_URL }}
           LLM_MODEL:         ${{ secrets.LLM_MODEL }}

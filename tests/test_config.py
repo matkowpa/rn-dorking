@@ -64,6 +64,8 @@ def test_validate_missing_vars_raises(monkeypatch):
     # Atrapa zmiennych - nie ruszamy prawdziwego środowiska (.env), bo
     # load_dotenv() przy imporcie config i tak by je odtworzyło
     monkeypatch.setattr(config, "REQUIRED_VARS", ["FAKE_VAR_1", "FAKE_VAR_2"])
+    # Sam CLINE_API_KEY wystarcza walidacji - tu sprawdzamy ścieżkę braku kluczy.
+    monkeypatch.delenv("CLINE_API_KEY", raising=False)
     with pytest.raises(ValueError) as exc:
         config.validate()
     assert "FAKE_VAR_1" in str(exc.value)
@@ -72,8 +74,15 @@ def test_validate_missing_vars_raises(monkeypatch):
 
 def test_validate_passes_when_all_present(monkeypatch):
     monkeypatch.setattr(config, "REQUIRED_VARS", ["FAKE_VAR_1"])
+    monkeypatch.delenv("CLINE_API_KEY", raising=False)
     monkeypatch.setenv("FAKE_VAR_1", "x")
     config.validate()  # brak wyjątku = sukces
+
+
+def test_validate_passes_with_cline_key_alone(monkeypatch):
+    monkeypatch.setattr(config, "REQUIRED_VARS", ["FAKE_VAR_1", "FAKE_VAR_2"])
+    monkeypatch.setenv("CLINE_API_KEY", "ck")
+    config.validate()  # ClinePass nie wymaga kompletu LLM_*
 
 
 def teardown_module(module):

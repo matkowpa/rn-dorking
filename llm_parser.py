@@ -23,6 +23,7 @@ def get_client() -> openai.OpenAI:
     """Zwraca klienta OpenAI skonfigurowanego z .env (tworzony przy 1. użyciu)."""
     global _client
     if _client is None:
+        logger.info("LLM: base_url=%s model=%s", config.LLM_BASE_URL, config.LLM_MODEL)
         _client = openai.OpenAI(api_key=config.LLM_API_KEY, base_url=config.LLM_BASE_URL)
     return _client
 
