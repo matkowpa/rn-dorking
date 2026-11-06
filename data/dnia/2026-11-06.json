@@ -2,14 +2,14 @@
   "date": "2026-11-06",
   "stats": {
     "search_requests": 18,
-    "raw_results": 53,
+    "raw_results": 57,
     "direct_results": 1,
     "direct_whitelist": 1,
     "direct_jst": 0,
     "jst_skipped_portal": 528,
     "direct_jst_search": 0,
-    "after_dedup": 9,
-    "after_filter": 1,
+    "after_dedup": 6,
+    "after_filter": 2,
     "offers_added": 0,
     "extract_errors": 0,
     "offers_updated": 0,
@@ -19,7 +19,7 @@
     "jst_home_scan": 79,
     "jst_section_scan": 21,
     "jst_section_fallback": 21,
-    "blocked_domain": 4
+    "blocked_domain": 5
   },
   "offers": []
 }

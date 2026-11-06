@@ -108,6 +108,30 @@
       "title": "Polskie kopalnie węgla kamiennego - Dziennik Zachodni",
       "reason": "Artykuł informacyjny o kopalniach, brak ogłoszenia naboru na radę nadzorczą.",
       "source": "\"nabór kandydatów\" \"rady nadzorczej\" śląskie"
+    },
+    {
+      "url": "https://www.nat.pl/",
+      "title": "Hotele nad morzem i w górach w Polsce | NAT - nasze obiekty",
+      "reason": "Wynik dotyczy hoteli, nie naboru na członka rady nadzorczej.",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie"
+    },
+    {
+      "url": "https://www.biznesradar.pl/a/166551,polenergia-sa-32-2026-powolanie-czlonka-rady-nadzorczej",
+      "title": "POLENERGIA SA (32/2026) POWOŁANIE CZŁONKA RADY NADZORCZEJ",
+      "reason": "To raport o powołaniu już wybranego członka rady nadzorczej, nie otwarty nabór.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\""
+    },
+    {
+      "url": "https://somonino.pl/asp/nabor-kandydatow-do-rady-seniorow-powiatu-kartuskiego-ii-kadencji,2,artykul,1,5003",
+      "title": "Nabór kandydatów do Rady Seniorów Powiatu Kartuskiego II ...",
+      "reason": "Dotyczy Rady Seniorów, nie rady nadzorczej.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" podlaskie"
+    },
+    {
+      "url": "https://www.aplikuj.pl/oferta/3377947/osoba-zarzadzajaca-firma-produkcyjna-prezes-prezeska-zarzadu-umowa-o-prace-spoldzielnia-bielsin",
+      "title": "Oferta pracy Osoba Zarządzająca Firmą Produkcyjną (Prezes ...",
+      "reason": "nabór na zarząd, nie na radę nadzorczą",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" śląskie"
     }
   ]
 }

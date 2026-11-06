@@ -1,12 +1,12 @@
 {
   "date": "2026-11-06",
-  "count": 43,
+  "count": 48,
   "decisions": {
-    "cached": 26,
+    "cached": 29,
     "no_url": 1,
     "duplicate": 1,
-    "blocked": 6,
-    "rejected": 8,
+    "blocked": 7,
+    "rejected": 9,
     "empty": 1
   },
   "raw": [
@@ -23,7 +23,7 @@
       "url": "",
       "title": "",
       "snippet": "",
-      "source": "\"konkurs na członka rady nadzorczej\"",
+      "source": "\"nabór na członków rady nadzorczej\" BIP",
       "direct": false,
       "decision": "no_url",
       "reason": "wynik bez adresu URL"
@@ -58,7 +58,7 @@
     {
       "url": "https://sokolka.pl/",
       "title": "Portal informacyjny Gminy Sokółka - Gmina Sokółka",
-      "snippet": "18 hours ago · Oficjalny serwis internetowy Gminy Sokółka - aktualne wydarzenia, wiadomości, informacje praktyczne, turystyka, biznes i wiele innych.",
+      "snippet": "21 hours ago · Oficjalny serwis internetowy Gminy Sokółka - aktualne wydarzenia, wiadomości, informacje praktyczne, turystyka, biznes i wiele innych.",
       "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
       "direct": false,
       "decision": "cached",
@@ -68,7 +68,7 @@
       "url": "https://swidnica24.pl/s24_komunikaty/konkurs-na-stanowisko-prezesa-zarzadu-uslug-komunalnych-w-jaworzynie-slaskiej/",
       "title": "Konkurs na stanowisko Prezesa Zarządu Usług Komunalnych w ...",
       "snippet": "2 days ago · Organ ogłaszający: Rada Nadzorcza Zakładu Usług Komunalnych w Jaworzynie Śląskiej Sp. z o. o. Miejscowość: Jaworzyna Śląska Kod pocztowy: 58-140 Ulica: ul. Świdnicka 9 Data publikacji: 04.11.2026 Rada Nadzorcza Zakładu Usług Komunalnych w Jaworzynie Śląskiej Sp. z o. o. z siedzibą w Jaworzynie Śląskiej ogłasza publiczny konkurs na stanowisko Prezesa Zarządu Przedmiotem ...",
-      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" śląskie",
       "direct": false,
       "decision": "cached",
       "reason": "odrzucony w poprzednim runie (TTL)"
@@ -157,8 +157,8 @@
     {
       "url": "https://kghm.com/pl/inwestorzy/lad-korporacyjny/wladze-spolki",
       "title": "Władze spółki | KGHM Polska Miedź S.A. Strona korporacyjna",
-      "snippet": "3 days ago · Władze spółki Rada Nadzorcza Członkowie Rady Nadzorczej są powoływani przez Walne Zgromadzenie, a z kolei Rada Nadzorcza powołuje członków Zarządu i nadzoruje ich pracę. Rada Nadzorcza może liczyć do dziesięciu członków.",
-      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "snippet": "3 days ago · Rada Nadzorcza Członkowie Rady Nadzorczej są powoływani przez Walne Zgromadzenie, a z kolei Rada Nadzorcza powołuje członków Zarządu i nadzoruje ich pracę. Rada Nadzorcza może liczyć do dziesięciu członków.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
       "direct": false,
       "decision": "cached",
       "reason": "odrzucony w poprzednim runie (TTL)"
@@ -166,7 +166,7 @@
     {
       "url": "https://arslege.pl/dokumenty/kategoria/rada-nadzorcza/80/",
       "title": "Wyszukiwarka aktów prawnych, orzeczeń sądów, wzorów ...",
-      "snippet": "18 hours ago · Intuicyjna, prosta i szybka wyszukiwarka umożliwiajaca odnalezienie aktów prawnych, orzeczeń sądów, wzorów dokumentów, kodeksów oraz artykułów",
+      "snippet": "21 hours ago · Intuicyjna, prosta i szybka wyszukiwarka umożliwiajaca odnalezienie aktów prawnych, orzeczeń sądów, wzorów dokumentów, kodeksów oraz artykułów",
       "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
       "direct": false,
       "decision": "cached",
@@ -202,7 +202,7 @@
     {
       "url": "https://www.bankier.pl/gielda/notowania/akcje/ALIOR/komunikaty",
       "title": "Komunikaty - ALIOR BANK (ALIOR) - Giełda - Bankier.pl",
-      "snippet": "13 hours ago · espi 15.10.2026 15:59 Zgłoszenie kandydatów do Rady Nadzorczej Alior Bank S.A. espi 15.10.2026 11:08 Informacja o rezygnacji Członka Rady Nadzorczej Alior Banku S.A. espi",
+      "snippet": "espi 15.10.2026 15:59 Zgłoszenie kandydatów do Rady Nadzorczej Alior Bank S.A. espi 15.10.2026 11:08 Informacja o rezygnacji Członka Rady Nadzorczej Alior Banku S.A. espi",
       "source": "\"kandydatów do rady nadzorczej\"",
       "direct": false,
       "decision": "blocked",
@@ -265,11 +265,11 @@
     {
       "url": "https://legislacja.rcl.gov.pl/projekt/12415705",
       "title": "Projekt - legislacja.rcl.gov.pl",
-      "snippet": "18 hours ago · Projekt rozporządzenia Ministra Finansów i Gospodarki w sprawie informacji i dokumentów dotyczących założycieli, zarządu i rady nadzorczej banku oraz osób pełniących kluczowe funkcje w banku przekazywanych Komisji Nadzoru Finansowego Wyślij komentarz do projektu (rejestr zmian) Wnioskodawca:",
-      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "snippet": "21 hours ago · Projekt rozporządzenia Ministra Finansów i Gospodarki w sprawie informacji i dokumentów dotyczących założycieli, zarządu i rady nadzorczej banku oraz osób pełniących kluczowe funkcje w banku przekazywanych Komisji Nadzoru Finansowego",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" śląskie",
       "direct": false,
-      "decision": "rejected",
-      "reason": "frazy dyskwalifikujące: komentarz"
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://www.bip.lysomice.pl/442,jednostki-podlegle",
@@ -285,7 +285,7 @@
         "termin_skladania_ofert": "",
         "stanowisko": "",
         "wymagania": "",
-        "podsumowanie": "Tekst nie zawiera ogłoszenia o naborze na członków rady nadzorczej. Dotyczy strony jednostek podległych oraz innych naborów i konkursów.",
+        "podsumowanie": "Przekazany tekst to strona podmiotowa BIP Urzędu Gminy w Łysomicach z listą jednostek podległych oraz ogłoszeń o nabór na stanowiska kierownicze (m.in. główny księgowy, dyrektor żłobka, kierownik SPZOZ). Nie zawiera ogłoszenia o naborze kandydatów na członków rady nadzorczej.",
         "data_publikacji": "",
         "url": "https://www.bip.lysomice.pl/442,jednostki-podlegle",
         "znaleziono_dnia": "2026-11-06",
@@ -359,7 +359,7 @@
       "url": "https://architektura.muratorplus.pl/krytyka/polska/44-rodziny-bez-dachu-nad-glowa-prokurator-i-wielki-chaos-co-dalej-z-pekajacym-blokiem-w-warszawie-aa-HAQ7-JjG2-n34e.html",
       "title": "44 rodziny bez domu, prokurator i chaos. Co dalej z pękającym ...",
       "snippet": "4 days ago · 44 rodziny bez dachu nad głową, prokurator i wielki chaos. Co dalej z pękającym blokiem w Warszawie?",
-      "source": "\"nabór kandydatów\" \"rady nadzorczej\" śląskie",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" podkarpackie",
       "direct": false,
       "decision": "cached",
       "reason": "odrzucony w poprzednim runie (TTL)"
@@ -379,8 +379,8 @@
       "snippet": "4 days ago · Prezydent Zabrza zaprasza organizacje i instytucje współpracujące z wolontariuszami do zgłaszania kandydatów do konkursu „Wolontariusz Roku 2026″. Nabór trwa do 23 listopada 2026 roku. Inicjatywa ma na celu docenienie osób, które nieodpłatnie angażują się w działania na rzecz ...",
       "source": "\"nabór kandydatów\" \"rady nadzorczej\" śląskie",
       "direct": false,
-      "decision": "rejected",
-      "reason": "Konkurs na wolontariusza roku, nie nabór na członka rady nadzorczej."
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
     },
     {
       "url": "https://libiaz.naszemiasto.pl/prasowka-z-pazdziernika-2026-zestawienie-najwazniejszych-wydarzen-miesiaca-zobacz-czy-jestes-na-biezaco/ar/c1p1-29489543",
@@ -408,6 +408,51 @@
       "direct": false,
       "decision": "rejected",
       "reason": "Artykuł informacyjny o kopalniach, brak ogłoszenia naboru na radę nadzorczą."
+    },
+    {
+      "url": "https://portpolska.pl/",
+      "title": "strona główna - Port Polska",
+      "snippet": "3 days ago · Port Polska – nowy Prezes Zarządu wybrany Rada Nadzorcza Centralnego Portu Komunikacyjnego powołała Piotra Borysa na stanowisko Prezesa Zarządu.",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "blocked",
+      "reason": "agregator/medium, nie publikuje ogłoszeń"
+    },
+    {
+      "url": "https://www.nat.pl/",
+      "title": "Hotele nad morzem i w górach w Polsce | NAT - nasze obiekty",
+      "snippet": "1 day ago · Wybierz spośród hoteli NAT nad morzem, w górach i nad jeziorem. Komfortowe obiekty w Kołobrzegu, Krynicy-Zdroju, Ustroniu, Sarbinowie, Kalborni i wielu innych",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Wynik dotyczy hoteli, nie naboru na członka rady nadzorczej."
+    },
+    {
+      "url": "https://www.biznesradar.pl/a/166551,polenergia-sa-32-2026-powolanie-czlonka-rady-nadzorczej",
+      "title": "POLENERGIA SA (32/2026) POWOŁANIE CZŁONKA RADY NADZORCZEJ",
+      "snippet": "2 days ago · Informacje o wykształceniu, kwalifikacjach i przebiegu pracy zawodowej Członka Rady Nadzorczej zostały przedstawione w załączniku do niniejszego raportu bieżącego.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "To raport o powołaniu już wybranego członka rady nadzorczej, nie otwarty nabór."
+    },
+    {
+      "url": "https://somonino.pl/asp/nabor-kandydatow-do-rady-seniorow-powiatu-kartuskiego-ii-kadencji,2,artykul,1,5003",
+      "title": "Nabór kandydatów do Rady Seniorów Powiatu Kartuskiego II ...",
+      "snippet": "4 days ago · Starosta Kartuski ogłosił nabór kandydatów na członków Rady Seniorów Powiatu Kartuskiego II kadencji. To ważna możliwość zaangażowania się w sprawy osób starszych oraz reprezentowania potrzeb i interesów środowiska senioralnego na szczeblu powiatowym.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" śląskie",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.aplikuj.pl/oferta/3377947/osoba-zarzadzajaca-firma-produkcyjna-prezes-prezeska-zarzadu-umowa-o-prace-spoldzielnia-bielsin",
+      "title": "Oferta pracy Osoba Zarządzająca Firmą Produkcyjną (Prezes ...",
+      "snippet": "21 hours ago · Zapoznaj się z ofertą pracy Osoba Zarządzająca Firmą Produkcyjną (Prezes/Prezeska Zarządu) w Bielsku-Białej. Pracownika poszukuje firma Spółdzielnia \"BIELSIN\". Aplikuj już dzisiaj!",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" śląskie",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "nabór na zarząd, nie na radę nadzorczą"
     }
   ]
 }
