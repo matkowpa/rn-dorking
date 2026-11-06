@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-06",
+  "stats": {
+    "search_requests": 18,
+    "raw_results": 39,
+    "direct_results": 1,
+    "direct_whitelist": 1,
+    "direct_jst": 0,
+    "jst_skipped_portal": 528,
+    "direct_jst_search": 0,
+    "after_dedup": 10,
+    "after_filter": 0,
+    "offers_added": 0,
+    "extract_errors": 0,
+    "offers_updated": 0,
+    "offers_with_termin": 0,
+    "content_empty": 0,
+    "menu_url_skipped": 0,
+    "jst_home_scan": 79,
+    "jst_section_scan": 21,
+    "jst_section_fallback": 21,
+    "blocked_domain": 3
+  },
+  "offers": []
+}

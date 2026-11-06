@@ -1,0 +1,265 @@
+{
+  "date": "2026-11-06",
+  "count": 28,
+  "decisions": {
+    "cached": 13,
+    "no_url": 1,
+    "duplicate": 1,
+    "rejected": 10,
+    "blocked": 3
+  },
+  "raw": [
+    {
+      "url": "https://www.pwpw.pl/Aktualnosci/2026/06/postepowanie-kwalifikacyjne-na-stanowisko-wiceprezesa-zarzadu-ds-finansowych.html",
+      "title": "24.06.2026 Postępowanie kwalifikacyjne na stanowisko Wiceprezesa Zarządu PWPW S.A. ds. finansowych OGŁOSZENIE Rady Nadzorczej Spółki Polska Wytwórnia Papierów Wartościowych S.A. o wszczęciu postępowania kwalifikacyjnego na stanowisko Wiceprezesa Zarządu PWPW S.A. ds. finansowych.",
+      "snippet": "24.06.2026 Postępowanie kwalifikacyjne na stanowisko Wiceprezesa Zarządu PWPW S.A. ds. finansowych OGŁOSZENIE Rady Nadzorczej Spółki Polska Wytwórnia Papierów Wartościowych S.A. o wszczęciu postępowania kwalifikacyjnego na stanowisko Wiceprezesa Zarządu PWPW S.A. ds. finansowych.",
+      "source": "źródło bezpośrednie",
+      "direct": true,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "",
+      "title": "",
+      "snippet": "",
+      "source": "\"nabór na członków rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "no_url",
+      "reason": "wynik bez adresu URL"
+    },
+    {
+      "url": "https://grudziadz.pl/artykul/69/20202/nabor-kandydatow-do-rad-nadzorczych",
+      "title": "Nabór kandydatów do Rad Nadzorczych - Grudziądz",
+      "snippet": "2 days ago · Ratuszowa 1, 86-300 Grudziądz w zamkniętych kopertach z dopiskiem „Nabór kandydatów na członków Rad Nadzorczych spółek, w których gmina-miasto Grudziądz posiada udziały/akcje ”, w sekretariacie Urzędu Miejskiego w Grudziądzu, w godzinach jego pracy.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" pomorskie",
+      "direct": false,
+      "decision": "duplicate",
+      "reason": "URL już widziany"
+    },
+    {
+      "url": "https://klonowa.pl/aktualnosci/nabor-kandydatow-na-wolne-stanowisko-urzednicze.html",
+      "title": "NABÓR KANDYDATÓW NA WOLNE STANOWISKO URZĘDNICZE",
+      "snippet": "2 days ago · Wójt Gminy Klonowa ogłosił NABÓR KANDYDATÓW NA WOLNE STANOWISKO URZĘDNICZE DS. PLANOWANIA PRZESTRZENNEGO I DROGOWNICTWA. Zapraszamy do składania ofert. Szczegóły na stronie BIP Urzędu Gminy Klonowa w zakładce „Ogłoszenia o naborze pracowników” . Wójt Gminy Klonowa Marcin Golanowski",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Nabór na stanowisko urzędnicze, nie na członka rady nadzorczej."
+    },
+    {
+      "url": "https://bip.powiat-leszczynski.pl/kategorie/78-2026/artykuly/638-kierownik-zarzadu-drog-powiatowych-w-lesznie-oglasza-z-dniem-3-listopada-2026-roku-otwarty-i-konkurencyjny-nabor-kandydatow-na-wolne-stanowisko-urzednicze-specjalista-ds-drog-i-mostow-w-zarzadzie-drog-powiatowych-w-lesznie-plac-kosciuszki-4c-64100-leszno",
+      "title": "BIP Starostwo Powiatowe w Lesznie",
+      "snippet": "3 days ago · Kierownik Zarządu Dróg Powiatowych w Lesznie ogłasza z dniem 3 listopada 2026 roku otwarty i konkurencyjny nabór kandydatów na wolne stanowisko urzędnicze",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Nabór na stanowisko urzędnicze, nie na członka rady nadzorczej."
+    },
+    {
+      "url": "https://sokolka.pl/",
+      "title": "Portal informacyjny Gminy Sokółka - Gmina Sokółka",
+      "snippet": "13 hours ago · Oficjalny serwis internetowy Gminy Sokółka - aktualne wydarzenia, wiadomości, informacje praktyczne, turystyka, biznes i wiele innych.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" podlaskie",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://swidnica24.pl/s24_komunikaty/konkurs-na-stanowisko-prezesa-zarzadu-uslug-komunalnych-w-jaworzynie-slaskiej/",
+      "title": "Konkurs na stanowisko Prezesa Zarządu Usług Komunalnych w ...",
+      "snippet": "2 days ago · Organ ogłaszający: Rada Nadzorcza Zakładu Usług Komunalnych w Jaworzynie Śląskiej Sp. z o. o. Miejscowość: Jaworzyna Śląska Kod pocztowy: 58-140 Ulica: ul. Świdnicka 9 Data publikacji: 04.11.2026 Rada Nadzorcza Zakładu Usług Komunalnych w Jaworzynie Śląskiej Sp. z o. o. z siedzibą w Jaworzynie Śląskiej ogłasza publiczny konkurs na stanowisko Prezesa Zarządu Przedmiotem ...",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Konkurs na stanowisko Prezesa Zarządu, nie członka rady nadzorczej."
+    },
+    {
+      "url": "https://www.tram-silesia.pl/",
+      "title": "Tramwaje Śląskie S.A. – transport publiczny w Górnośląsko ...",
+      "snippet": "2 days ago · Tramwaje Śląskie S.A. to operator transportu publicznego działający w 13 gminach Górnośląsko-Zagłębiowskiej Metropolii. Zapewniamy bezpieczny przewóz pasażerów i modernizację infrastruktury tramwajowej.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" pomorskie",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://legislacja.rcl.gov.pl/lista?pSize=100&progress=1",
+      "title": "Projekty - legislacja.rcl.gov.pl",
+      "snippet": "2 days ago · Projekt opracowany na podstawie założeń projektu ustaw Projekt opracowany w trybie odrębnym",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://bip.kgssa.pl/2652,ogloszenia-rady-nadzorczej",
+      "title": "Ogłoszenia Rady Nadzorczej | Biuletyn Informacji Publicznej ...",
+      "snippet": "1 day ago · Postępowanie kwalifikacyjne na stanowisko Członka Zarządu Krajowej Grupy Spożywczej S.A. więcej »",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://executivemagazine.pl/transfery-i-zmiany/port-polska-nowy-prezes-zarzadu-wybrany/",
+      "title": "Port Polska – nowy Prezes Zarządu wybrany - Executive ...",
+      "snippet": "4 days ago · Postępowanie kwalifikacyjne Program Port Polska przechodzi obecnie z fazy przygotowania i projektowania do rozpoczęcia realizacji dużych i skomplikowanych inwestycji infrastrukturalnych, obejmujących budowę nowego lotniska oraz sieci Kolei Dużych Prędkości.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://mamstartup.pl/koniec-ery-piotra-sankowskiego-w-ideas-ncbr-eksperci-obawiaja-sie-o-przyszlosc-ai-w-polsce/",
+      "title": "Koniec ery Piotra Sankowskiego w IDEAS NCBR. Eksperci ...",
+      "snippet": "1 day ago · W lipcu tego roku rada nadzorcza IDEAS NCBR ogłosiła postępowanie kwalifikacyjne na stanowisko prezesa. Wśród kandydatów znalazł się również prof. Piotr Sankowski, który był pomysłodawcą i pierwszym szefem ośrodka. Sankowski nie został wybrany na kolejną kadencję.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://kghm.com/pl",
+      "title": "KGHM Polska Miedź S.A. Strona korporacyjna",
+      "snippet": "1 day ago · Oficjalna strona Grupy Kapitałowej KGHM. Czołowy producent miedzi i srebra rafinowanego, światowy lider w branży górniczo-hutniczej.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.solidarnosc.gorzow.enea.pl/wiadomosc/4269/zmiany_w_skladzie_rady_nadzorczej_enea_s_a.html",
+      "title": "8.12.2025 Zmiany w składzie Rady Nadzorczej Enea S.A. - NSZZ ...",
+      "snippet": "5 days ago · Zarząd Enea S.A. („Spółka”) informuje o wpłynięciu do Spółki 8 grudnia 2025 roku oświadczeń Ministra Aktywów Państwowych, o skorzystaniu z uprawnienia do powoływania i odwoływania członka Rady Nadzorczej Enea S.A. na podstawie § 24 ust. 1 Statutu Spółki.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://lexlege.pb.pl/rozporzadzenie-ministra-pracy-i-polityki-socjalnej-w-sprawie-sposobu-usprawiedliwiania-nieobecnosci-w-pracy-oraz-udzielania-pracownikom-zwolnien-od-pracy/paragraf-14/",
+      "title": "§ 14. uspr. zw. - Zwolnienie od pracy pracownika będącego ...",
+      "snippet": "3 days ago · § 14. Zwolnienie od pracy pracownika będącego członkiem rady nadzorczej, działającej u pracodawcy Pracodawca jest obowiązany zwolnić od pracy pracownika będącego członkiem rady nadzorczej, działającej u zatrudniającego go pracodawcy, na czas niezbędny do uczestniczenia w posiedzeniach tej rady.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "blocked",
+      "reason": "agregator/medium, nie publikuje ogłoszeń"
+    },
+    {
+      "url": "https://bip.krs.pl/?c=article&id=213",
+      "title": "Pozostałe sprawy indywidualne - krs",
+      "snippet": "4 days ago · Krajowa Rada Sądownictwa uprzejmie informuje, że w dniach 3 - 6 listopada 2026 r. będą rozpatrywane następujące zgłoszenia kandydatów - uzupełnienie 02 listopad 2026, 10:05",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Dotczy zgłoszeń kandydatów KRS, nie naboru na członka rady nadzorczej."
+    },
+    {
+      "url": "https://kghm.com/pl/inwestorzy/lad-korporacyjny/wladze-spolki",
+      "title": "Władze spółki | KGHM Polska Miedź S.A. Strona korporacyjna",
+      "snippet": "3 days ago · Rada Nadzorcza Członkowie Rady Nadzorczej są powoływani przez Walne Zgromadzenie, a z kolei Rada Nadzorcza powołuje członków Zarządu i nadzoruje ich pracę. Rada Nadzorcza może liczyć do dziesięciu członków.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://arslege.pl/dokumenty/kategoria/rada-nadzorcza/80/",
+      "title": "Wyszukiwarka aktów prawnych, orzeczeń sądów, wzorów ...",
+      "snippet": "1 day ago · Intuicyjna, prosta i szybka wyszukiwarka umożliwiajaca odnalezienie aktów prawnych, orzeczeń sądów, wzorów dokumentów, kodeksów oraz artykułów",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://lexlege.pb.pl/ustawa-o-fundacji-rodzinnej/oddzial-3-rada-nadzorcza/15946/",
+      "title": "Oddział 3 Rada nadzorcza - Ustawa o fundacji rodzinnej ...",
+      "snippet": "2 days ago · Sprawdź aktualne przepisy - Ustawa o fundacji rodzinnej - Oddział 3 Rada nadzorcza. Zawsze aktualny tekst jednolity i historia zmian w bazie SIP LexLege.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "blocked",
+      "reason": "agregator/medium, nie publikuje ogłoszeń"
+    },
+    {
+      "url": "https://stbs.pl/index.php/aktualnosci/3931-dom-dla-absolwenta-nabor-2026-11-20.html",
+      "title": "Dom dla absolwenta nabór 2026 - Szczecińskie TBS",
+      "snippet": "1 day ago · Szczecińskie Towarzystwo Budownictwa Społecznego Sp. z o.o. ogłasza nabór osób chętnych do partycypowania w kosztach budowy mieszkań przeznaczonych na wynajem w ramach programu mieszkaniowego „Dom dla absolwenta”.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Nabór dotyczy partycypacji w kosztach budowy mieszkań, nie członka rady nadzorczej."
+    },
+    {
+      "url": "https://bip.golub-dobrzyn.pl/612,oferty-pracy",
+      "title": "Oferty Pracy | Biuletyn Informacji Publicznej Urzędu Miasta ...",
+      "snippet": "3 days ago · Ogłoszenie o naborze na stanowisko Prezesa Przedsiębiorstwa Energetyki Cieplnej Sp. z o.o. w Golubiu-Dobrzyniu z dnia 5.09.2025 r. Uchwała nr 11_2025 Rady Nadzorczej PEC Sp. z o.o. w Golubiu-Dobrzyniu.pdf (PDF) 5.467MB",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.bankier.pl/gielda/notowania/akcje/ALIOR/komunikaty",
+      "title": "Komunikaty - ALIOR BANK (ALIOR) - Giełda - Bankier.pl",
+      "snippet": "13 hours ago · espi 15.10.2026 15:59 Zgłoszenie kandydatów do Rady Nadzorczej Alior Bank S.A. espi 15.10.2026 11:08 Informacja o rezygnacji Członka Rady Nadzorczej Alior Banku S.A. espi",
+      "source": "\"kandydatów do rady nadzorczej\"",
+      "direct": false,
+      "decision": "blocked",
+      "reason": "agregator/medium, nie publikuje ogłoszeń"
+    },
+    {
+      "url": "https://egzaminatorzy.oke.poznan.pl/cms,777,egzaminatorzy_zgloszenie_kandydata_na_egzaminatora.htm",
+      "title": "Okręgowa Komisja Egzaminacyjna - Egzaminatorzy / Zgłoszenie ...",
+      "snippet": "2 days ago · Nabór kandydatów na egzaminatorów i przyjmowanie wniosków OKE w Poznaniu prowadzi w trybie ciągłym, niezależnie od harmonogramu szkoleń. drukuj stronę Ostatnia aktualizacja: 2026-01-02 08:15",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" pomorskie",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.bgk.pl/",
+      "title": "Bank Gospodarstwa Krajowego",
+      "snippet": "1 day ago · Bank Gospodarstwa Krajowego to państwowy bank rozwoju – jedyna taka instytucja w Polsce. Bank aktywnie wspiera rozwój społeczno-gospodarczy kraju.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" podkarpackie",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Ogólny opis banku, brak ogłoszenia o naborze do rady nadzorczej."
+    },
+    {
+      "url": "https://pszczolki.pl/aktualnosci/nabor-kandydatow-do-rady-seniorow-powiatu-gdanskiego-i-kadencji.html",
+      "title": "Nabór kandydatów do Rady Seniorów Powiatu Gdańskiego I ...",
+      "snippet": "3 days ago · Do Rady Seniorów mogą zgłaszać się: - Przedstawiciele osób starszych – kandydaci, którzy uzyskają poparcie co najmniej 10 mieszkańców powiatu gdańskiego w wieku 60 lat i więcej. - Przedstawiciele podmiotów działających na rzecz seniorów – w szczególności organizacji pozarządowych oraz uniwersytetów trzeciego wieku działających na terenie powiatu.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" pomorskie",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Rada Seniorów to nie rada nadzorcza; dotyczy ciała doradczego, nie nadzoru."
+    },
+    {
+      "url": "https://www.nowydworgdanski.pl/",
+      "title": "Powiat Nowodworski",
+      "snippet": "2 days ago · Pomorscy Partnerzy w e-Rozwoju Pomorskie Trasy Rowerowe – Rowerem przez Żuławy – partnerstwo Gminy Nowy Dwór Gdański Budowa węzła integracyjnego Nowy Dwór Gdański wraz z trasami dojazdowymi Pętla Żuławska – Poprawa dostępności Nowego Dworu Gdańskiego drogą wodną",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" pomorskie",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "To strona powiatu i aktualności projektowe, nie ogłoszenie o naborze do rady nadzorczej."
+    },
+    {
+      "url": "https://nabory.kprm.gov.pl/pomorskie/gdansk/inspektor-wojewodzkiinspektorka-wojewodzka,169856,v8",
+      "title": "Inspektor wojewódzki/inspektorka wojewódzka | Pomorski Urząd ...",
+      "snippet": "1 day ago · Wykształcenie: wyższe Znajomość ustaw: o wojewodzie i administracji rządowej w województwie, o pomocy społecznej, o osobach starszych i koordynacji opieki długoterminowej, Kodeksu postępowania administracyjnego. Kompetencje w zakresie: rzetelności, skutecznej komunikacji ustnej, skutecznej komunikacji pisemnej, myślenia analitycznego W służbie cywilnej nie może być zatrudniona ...",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" pomorskie",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Ogłoszenie dotyczy stanowiska inspektora wojewódzkiego, nie naboru na członka rady nadzorczej."
+    },
+    {
+      "url": "https://pomorska.pl/dzialacze-pis-przeciw-laczeniu-szpitali-chca-analiz-i-konsultacji/ar/c14p2-29495177",
+      "title": "Działacze PiS przeciw łączeniu szpitali. Chcą analiz i ...",
+      "snippet": "3 days ago · Kto spłaci długi trzech szpitali, co stanie się z pracownikami i jakie leczenie będzie dostępne dla pacjentów? Kujawsko-pomorscy działacze PiS domagają się analiz i wstrzymania ...",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" pomorskie",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Artykuł o sprzeciwie wobec łączenia szpitali, nie ogłoszenie naboru na radę nadzorczą."
+    }
+  ]
+}

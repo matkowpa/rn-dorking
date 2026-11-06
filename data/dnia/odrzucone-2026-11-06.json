@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-06",
+  "rejected": [
+    {
+      "url": "https://klonowa.pl/aktualnosci/nabor-kandydatow-na-wolne-stanowisko-urzednicze.html",
+      "title": "NABÓR KANDYDATÓW NA WOLNE STANOWISKO URZĘDNICZE",
+      "reason": "Nabór na stanowisko urzędnicze, nie na członka rady nadzorczej.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+    },
+    {
+      "url": "https://bip.powiat-leszczynski.pl/kategorie/78-2026/artykuly/638-kierownik-zarzadu-drog-powiatowych-w-lesznie-oglasza-z-dniem-3-listopada-2026-roku-otwarty-i-konkurencyjny-nabor-kandydatow-na-wolne-stanowisko-urzednicze-specjalista-ds-drog-i-mostow-w-zarzadzie-drog-powiatowych-w-lesznie-plac-kosciuszki-4c-64100-leszno",
+      "title": "BIP Starostwo Powiatowe w Lesznie",
+      "reason": "Nabór na stanowisko urzędnicze, nie na członka rady nadzorczej.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+    },
+    {
+      "url": "https://swidnica24.pl/s24_komunikaty/konkurs-na-stanowisko-prezesa-zarzadu-uslug-komunalnych-w-jaworzynie-slaskiej/",
+      "title": "Konkurs na stanowisko Prezesa Zarządu Usług Komunalnych w ...",
+      "reason": "Konkurs na stanowisko Prezesa Zarządu, nie członka rady nadzorczej.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP"
+    },
+    {
+      "url": "https://bip.krs.pl/?c=article&id=213",
+      "title": "Pozostałe sprawy indywidualne - krs",
+      "reason": "Dotczy zgłoszeń kandydatów KRS, nie naboru na członka rady nadzorczej.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\""
+    },
+    {
+      "url": "https://stbs.pl/index.php/aktualnosci/3931-dom-dla-absolwenta-nabor-2026-11-20.html",
+      "title": "Dom dla absolwenta nabór 2026 - Szczecińskie TBS",
+      "reason": "Nabór dotyczy partycypacji w kosztach budowy mieszkań, nie członka rady nadzorczej.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\""
+    },
+    {
+      "url": "https://www.bgk.pl/",
+      "title": "Bank Gospodarstwa Krajowego",
+      "reason": "Ogólny opis banku, brak ogłoszenia o naborze do rady nadzorczej.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" podkarpackie"
+    },
+    {
+      "url": "https://pszczolki.pl/aktualnosci/nabor-kandydatow-do-rady-seniorow-powiatu-gdanskiego-i-kadencji.html",
+      "title": "Nabór kandydatów do Rady Seniorów Powiatu Gdańskiego I ...",
+      "reason": "Rada Seniorów to nie rada nadzorcza; dotyczy ciała doradczego, nie nadzoru.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" pomorskie"
+    },
+    {
+      "url": "https://www.nowydworgdanski.pl/",
+      "title": "Powiat Nowodworski",
+      "reason": "To strona powiatu i aktualności projektowe, nie ogłoszenie o naborze do rady nadzorczej.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" pomorskie"
+    },
+    {
+      "url": "https://nabory.kprm.gov.pl/pomorskie/gdansk/inspektor-wojewodzkiinspektorka-wojewodzka,169856,v8",
+      "title": "Inspektor wojewódzki/inspektorka wojewódzka | Pomorski Urząd ...",
+      "reason": "Ogłoszenie dotyczy stanowiska inspektora wojewódzkiego, nie naboru na członka rady nadzorczej.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" pomorskie"
+    },
+    {
+      "url": "https://pomorska.pl/dzialacze-pis-przeciw-laczeniu-szpitali-chca-analiz-i-konsultacji/ar/c14p2-29495177",
+      "title": "Działacze PiS przeciw łączeniu szpitali. Chcą analiz i ...",
+      "reason": "Artykuł o sprzeciwie wobec łączenia szpitali, nie ogłoszenie naboru na radę nadzorczą.",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" pomorskie"
+    }
+  ]
+}
