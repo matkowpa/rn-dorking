@@ -41,12 +41,26 @@ def _strip_json(raw: str) -> str:
     return text.strip()
 
 
-def _create_call(messages: list[dict], model: str, with_response_format: bool):
-    """Pojedyncze wywołanie chat.completions.create."""
-    kwargs = {"model": model, "temperature": 0.1, "messages": messages}
+def _create_call(messages: list[dict], model: str, with_response_format: bool) -> str:
+    """Pojedyncze wywołanie chat.completions.create; zwraca treść odpowiedzi.
+
+    Zawsze streamuje. Gateway ClinePass (api.cline.bot) zwraca w trybie
+    non-stream kopertę {"success": true, "data": {"choices": [...]}}, której
+    SDK OpenAI nie rozpakowuje - widzi puste `choices` i treść przepada.
+    Strumień SSE jest standardowy, więc SDK czyta go bez zmian.
+    """
+    kwargs = {"model": model, "temperature": 0.1, "messages": messages,
+              "stream": True}
     if with_response_format:
         kwargs["response_format"] = {"type": "json_object"}
-    return get_client().chat.completions.create(**kwargs)
+    parts: list[str] = []
+    for chunk in get_client().chat.completions.create(**kwargs):
+        if not chunk.choices:
+            continue
+        delta = chunk.choices[0].delta
+        if delta and delta.content:
+            parts.append(delta.content)
+    return "".join(parts)
 
 
 def _call_llm(model: str, system_prompt: str, user_content: str) -> str:
@@ -58,16 +72,16 @@ def _call_llm(model: str, system_prompt: str, user_content: str) -> str:
     delays = [3, 6, 12]
     try:
         # KROK 1: wywołanie z response_format
-        response = _create_call(messages, model, True)
-    except RateLimitError as e:
+        content = _create_call(messages, model, True)
+    except openai.RateLimitError as e:
         # KROK 2a: retry na błąd 429 - do 3 dodatkowych prób z response_format
         for delay in delays:
             logger.warning("LLM rate limit (429), ponawiam za %s s", delay)
             time.sleep(delay)
             try:
-                response = _create_call(messages, model, True)
+                content = _create_call(messages, model, True)
                 break
-            except RateLimitError:
+            except openai.RateLimitError:
                 continue
         else:
             logger.error("LLM limit zapytań wyczerpany po retry (model=%s): %s", model, e)
@@ -81,16 +95,16 @@ def _call_llm(model: str, system_prompt: str, user_content: str) -> str:
              "content": user_content + "\nZwróć WYŁĄCZNIE surowy JSON bez bloków markdown"},
         ]
         try:
-            response = _create_call(messages_retry, model, False)
-        except RateLimitError as e2:
+            content = _create_call(messages_retry, model, False)
+        except openai.RateLimitError as e2:
             # retry z punktu (a) na wersji bez response_format
             for delay in delays:
                 logger.warning("LLM rate limit (429) bez response_format, ponawiam za %s s", delay)
                 time.sleep(delay)
                 try:
-                    response = _create_call(messages_retry, model, False)
+                    content = _create_call(messages_retry, model, False)
                     break
-                except RateLimitError:
+                except openai.RateLimitError:
                     continue
             else:
                 logger.error("LLM limit zapytań wyczerpany po retry (model=%s): %s", model, e2)
@@ -100,7 +114,6 @@ def _call_llm(model: str, system_prompt: str, user_content: str) -> str:
             raise
 
     # KROK 3: oczyszczenie odpowiedzi
-    content = response.choices[0].message.content or ""
     return _strip_json(content)
 
 
