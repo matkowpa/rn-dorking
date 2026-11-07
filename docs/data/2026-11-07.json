@@ -1,0 +1,1313 @@
+{
+  "date": "2026-11-07",
+  "count": 143,
+  "decisions": {
+    "cached": 8,
+    "rejected": 29,
+    "no_url": 1,
+    "blocked": 3,
+    "limit": 101,
+    "empty": 1
+  },
+  "raw": [
+    {
+      "url": "https://www.pwpw.pl/Aktualnosci/2026/06/postepowanie-kwalifikacyjne-na-stanowisko-wiceprezesa-zarzadu-ds-finansowych.html",
+      "title": "24.06.2026 Postępowanie kwalifikacyjne na stanowisko Wiceprezesa Zarządu PWPW S.A. ds. finansowych OGŁOSZENIE Rady Nadzorczej Spółki Polska Wytwórnia Papierów Wartościowych S.A. o wszczęciu postępowania kwalifikacyjnego na stanowisko Wiceprezesa Zarządu PWPW S.A. ds. finansowych.",
+      "snippet": "24.06.2026 Postępowanie kwalifikacyjne na stanowisko Wiceprezesa Zarządu PWPW S.A. ds. finansowych OGŁOSZENIE Rady Nadzorczej Spółki Polska Wytwórnia Papierów Wartościowych S.A. o wszczęciu postępowania kwalifikacyjnego na stanowisko Wiceprezesa Zarządu PWPW S.A. ds. finansowych.",
+      "source": "źródło bezpośrednie",
+      "direct": true,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.merriam-webster.com/thesaurus/hate!",
+      "title": "HATE! Synonyms: 121 Similar and Opposite Words - Merriam-Webster",
+      "snippet": "5 days ago · Synonyms for HATE: despise, loathe, detest, abhor, abominate, disdain, disapprove (of), have it in for; Antonyms of HATE: love, like, prefer, desire, enjoy, favor, fancy, relish",
+      "source": "\"nabór na członków rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "To słownik synonimów, nie ogłoszenie o naborze na członka rady nadzorczej."
+    },
+    {
+      "url": "https://www.powerthesaurus.org/hate/antonyms",
+      "title": "HATE Antonyms: 3 646 Opposite Words & Phrases - Power Thesaurus",
+      "snippet": "Discover 3 646 antonyms of Hate to express ideas with clarity and contrast.",
+      "source": "\"nabór na członków rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "To słownik antonimów, nie ogłoszenie o naborze do rady nadzorczej."
+    },
+    {
+      "url": "https://www.thesaurus.com/browse/hate?q=HATE",
+      "title": "HATE Synonyms & Antonyms - 131 words | Thesaurus.com",
+      "snippet": "Find 131 different ways to say HATE, along with antonyms, related words, and example sentences at Thesaurus.com.",
+      "source": "\"nabór na członków rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Wynik dotyczy synonimów słowa hate, nie naboru do rady nadzorczej"
+    },
+    {
+      "url": "https://www.merriam-webster.com/thesaurus/hates",
+      "title": "HATES Synonyms: 69 Similar and Opposite Words - Merriam-Webster",
+      "snippet": "Oct 30, 2026 · Synonyms for HATES: despises, loathes, detests, abhors, disdains, abominates, disapproves (of), has it in for; Antonyms of HATES: loves, prefers, likes, desires, enjoys, favors, fancies, relishes",
+      "source": "\"nabór na członków rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Słownik synonimów, nie ogłoszenie o naborze do rady nadzorczej."
+    },
+    {
+      "url": "https://www.synonyms.com/antonyms/hate+",
+      "title": "Antonym of hate - Synonyms.com",
+      "snippet": "Antonyms for hate at Synonyms.com with free online thesaurus, synonyms, definitions and translations.",
+      "source": "\"nabór na członków rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "To słownik antonimów, nie ogłoszenie o naborze na członka rady nadzorczej."
+    },
+    {
+      "url": "https://antonym.wordhippo.com/",
+      "title": "Antonym Finder",
+      "snippet": "Find opposite words and phrases with our powerful antonym search engine.",
+      "source": "\"nabór na członków rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Wynik dotyczy wyszukiwarki antonimów, nie naboru na radę nadzorczą."
+    },
+    {
+      "url": "https://www.wordhippo.com/what-is/the-opposite-of/hatred.html",
+      "title": "What is the opposite of hatred? - WordHippo",
+      "snippet": "Find 280 opposite words and antonyms for hatred based on 5 separate contexts from our thesaurus.",
+      "source": "\"nabór na członków rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Wynik dotyczy antonimów słowa nienawiść, nie naboru na radę nadzorczą."
+    },
+    {
+      "url": "https://promova.com/antonyms-of/hate",
+      "title": "What is the opposite of hate? | Antonyms hate | Promova",
+      "snippet": "A direct antonym of 'hate' is 'love.' While 'hate' expresses a strong dislike or aversion towards someone or something, 'love' signifies a deep affection or fondness.",
+      "source": "\"nabór na członków rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Wynik dotyczy antonimów słowa hate, nie naboru na radę nadzorczą."
+    },
+    {
+      "url": "https://englishgrammarhere.com/opposite-words/opposite-of-hate-antonyms-of-hate-meaning-and-example-sentences/",
+      "title": "Opposite Of Hate, Antonyms of Hate, Meaning and Example Sentences...",
+      "snippet": "Jan 14, 2020 · Here are 400 Important Opposite Words List.",
+      "source": "\"nabór na członków rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)"
+    },
+    {
+      "url": "https://www.wordthesauri.com/thesaurus/hate/",
+      "title": "Hate - Synonyms, Antonyms, Rhyming words - WordThesauri",
+      "snippet": "It helps us to learn more words with opposite meaning of Hate. Also, you can get the synonyms, antonyms and rhyming words of every Antonyms of Hate by clicking on them.",
+      "source": "\"nabór na członków rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Wynik dotyczy słownika synonimów, nie naboru na radę nadzorczą."
+    },
+    {
+      "url": "",
+      "title": "",
+      "snippet": "",
+      "source": "\"nabór kandydatów\" \"rady nadzorczej\" BIP",
+      "direct": false,
+      "decision": "no_url",
+      "reason": "wynik bez adresu URL"
+    },
+    {
+      "url": "https://bip.kgssa.pl/2652,ogloszenia-rady-nadzorczej",
+      "title": "Ogłoszenia Rady Nadzorczej | Biuletyn Informacji Publicznej ...",
+      "snippet": "2 days ago · Postępowanie kwalifikacyjne na stanowisko Członka Zarządu Krajowej Grupy Spożywczej S.A. więcej »",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://executivemagazine.pl/transfery-i-zmiany/port-polska-nowy-prezes-zarzadu-wybrany/",
+      "title": "Port Polska – nowy Prezes Zarządu wybrany - Executive ...",
+      "snippet": "5 days ago · Postępowanie kwalifikacyjne Program Port Polska przechodzi obecnie z fazy przygotowania i projektowania do rozpoczęcia realizacji dużych i skomplikowanych inwestycji infrastrukturalnych, obejmujących budowę nowego lotniska oraz sieci Kolei Dużych Prędkości.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://mamstartup.pl/koniec-ery-piotra-sankowskiego-w-ideas-ncbr-eksperci-obawiaja-sie-o-przyszlosc-ai-w-polsce/",
+      "title": "Koniec ery Piotra Sankowskiego w IDEAS NCBR. Eksperci ...",
+      "snippet": "2 days ago · W lipcu tego roku rada nadzorcza IDEAS NCBR ogłosiła postępowanie kwalifikacyjne na stanowisko prezesa. Wśród kandydatów znalazł się również prof. Piotr Sankowski, który był pomysłodawcą i pierwszym szefem ośrodka. Sankowski nie został wybrany na kolejną kadencję.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://kghm.com/pl",
+      "title": "KGHM Polska Miedź S.A. Strona korporacyjna",
+      "snippet": "2 days ago · Oficjalna strona Grupy Kapitałowej KGHM. Czołowy producent miedzi i srebra rafinowanego, światowy lider w branży górniczo-hutniczej.",
+      "source": "\"postępowanie kwalifikacyjne\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.facebook.com/",
+      "title": "Facebook - Log In or Sign Up",
+      "snippet": "Create an account or log into Facebook. Connect with friends, family and other people you know. Share photos and videos, send messages and get updates.",
+      "source": "\"konkurs na członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "blocked",
+      "reason": "agregator/medium, nie publikuje ogłoszeń"
+    },
+    {
+      "url": "https://stackoverflow.com/questions/5023602/facebook-share-link-can-you-customize-the-message-body-text",
+      "title": "Facebook share link - can you customize the message body text?",
+      "snippet": "Feb 17, 2011 · Facebook will not allow developers pre-fill messages. Developers may customize the story by providing OG meta tags, but it's up to the user to fill the message. This is only possible if you are posting on the user's behalf, which requires the user authorizing your application with the publish_actions permission. AND even then:",
+      "source": "\"konkurs na członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)"
+    },
+    {
+      "url": "https://stackoverflow.com/questions/22077743/facebook-showing-page-not-found-when-sharing-link",
+      "title": "Facebook showing page not found when sharing link",
+      "snippet": "I'm sharing content from a website and every time I paste the link into Facebook it says 'page not found'. Sometimes it works when I manually add the 'www.' in front of the URL in the address bar.",
+      "source": "\"konkurs na członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Wynik dotyczy problemu z Facebookiem, nie naboru na radę nadzorczą."
+    },
+    {
+      "url": "https://stackoverflow.com/questions/68932742/jssdk-unknown-host-domain",
+      "title": "facebook - JSSDK Unknown Host domain - Stack Overflow",
+      "snippet": "Aug 26, 2021 · JSSDK Unknown Host domain: The Domain you are hosting the Facebook Javascript SDK is not in your app's Javascript SDK host domain list. Please specify your host domain in App dashboard login settings.",
+      "source": "\"konkurs na członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)"
+    },
+    {
+      "url": "https://stackoverflow.com/questions/29429296/responsive-width-facebook-page-plugin",
+      "title": "Responsive width Facebook Page Plugin - Stack Overflow",
+      "snippet": "Apr 3, 2015 · This will make the Facebook Page Plugin responsive, but only on the initial page render, with a minimum width of 180px. I'm still trying to figure out how to make it truly dynamically responsive, in spite of Facebook's caveat (I'll post an update if I ever find the answer).",
+      "source": "\"konkurs na członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)"
+    },
+    {
+      "url": "https://stackoverflow.com/questions/12547088/how-do-i-customize-facebooks-sharer-php",
+      "title": "How do I customize Facebook's sharer.php - Stack Overflow",
+      "snippet": "Sep 22, 2012 · Facebook has changed how the sharer.php works, as Ibrahim Faour replies to the bug filed with Facebook. The sharer will no longer accept custom parameters and facebook will pull the information that is being displayed in the preview the same way that it would appear on facebook as a post, from the url OG meta tags.",
+      "source": "\"konkurs na członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)"
+    },
+    {
+      "url": "https://stackoverflow.com/questions/37001004/facebook-login-message-url-blocked-this-redirect-failed-because-the-redirect",
+      "title": "Facebook login message: \"URL Blocked: This redirect failed...",
+      "snippet": "May 3, 2016 · Important notice: If you register for testing, go to your profile settings and to your interests add delete profile. Trying to login with Facebook to my website: I get the following error: URL",
+      "source": "\"konkurs na członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)"
+    },
+    {
+      "url": "https://stackoverflow.com/questions/8231877/facebook-access-token-for-pages",
+      "title": "Facebook Access Token for Pages - Stack Overflow",
+      "snippet": "Nov 22, 2011 · Go to the Graph API Explorer Choose your app from the dropdown menu Click \"Get Access Token\" Choose the manage_pages permission (you may need the user_events permission too, not sure) Now access the me/accounts connection and copy your page's access_token Click on your page's id Add the page's access_token to the GET fields Call the connection you want (e.g.: PAGE_ID/events)",
+      "source": "\"konkurs na członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)"
+    },
+    {
+      "url": "https://stackoverflow.com/questions/4810803/open-facebook-page-from-android-app",
+      "title": "Open Facebook page from Android app? - Stack Overflow",
+      "snippet": "Jan 27, 2011 · from my Android app, I would like to open a link to a Facebook profile in the official Facebook app (if the app is installed, of course). For iPhone, there exists the fb:// URL scheme, but trying the",
+      "source": "\"konkurs na członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)"
+    },
+    {
+      "url": "https://stackoverflow.com/questions/17197970/facebook-permanent-page-access-token",
+      "title": "Facebook: Permanent Page Access Token? - Stack Overflow",
+      "snippet": "Jun 20, 2013 · Following the instructions laid out in Facebook's extending page tokens documentation I was able to get a page access token that does not expire. I suggest using the Graph API Explorer for all of these steps except where otherwise stated. 0. Create Facebook App If you already have an app, skip to step 1. Go to My Apps. Click \"+ Add a New App\". Setup a website app. You don't need to change its ...",
+      "source": "\"konkurs na członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "przeterminowane ogłoszenie (tylko stare roczniki)"
+    },
+    {
+      "url": "https://kghm.com/pl/inwestorzy/lad-korporacyjny/wladze-spolki",
+      "title": "Władze spółki | KGHM Polska Miedź S.A. Strona korporacyjna",
+      "snippet": "4 days ago · Rada Nadzorcza Członkowie Rady Nadzorczej są powoływani przez Walne Zgromadzenie, a z kolei Rada Nadzorcza powołuje członków Zarządu i nadzoruje ich pracę. Rada Nadzorcza może liczyć do dziesięciu członków.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.bip.lysomice.pl/442,jednostki-podlegle",
+      "title": "Jednostki podległe | BIULETYN INFORMACJI PUBLICZNEJ Urzędu ...",
+      "snippet": "3 days ago · Nabór na stanowiska członków Rad Nadzorczych Spółek Kapitałowych, udziały w których posiada Gmina Łysomice Ogłoszenie o naborze na stanowiska członków Rad Nadzorczych Spółek Kapitałowych, udziały których posiada Gmina Łysomice.",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "empty",
+      "reason": "strona bez treści ogłoszenia",
+      "offer": {
+        "podmiot": "",
+        "miejscowosc": "",
+        "termin_skladania_ofert": "",
+        "stanowisko": "",
+        "wymagania": "",
+        "podsumowanie": "Przekazany tekst to strona podmiotowa BIP Urzędu Gminy w Łysomicach (zakładka „Jednostki podległe”) zawierająca wyłącznie menu nawigacyjne oraz linki do ogłoszeń o nabór na stanowiska kierownicze i głównych księgowych. Nie zawiera ogłoszenia o naborze kandydatów na członków rady nadzorczej, więc nie można wyodrębnić danych strukturalnych.",
+        "data_publikacji": "",
+        "url": "https://www.bip.lysomice.pl/442,jednostki-podlegle",
+        "znaleziono_dnia": "2026-11-07",
+        "zrodlo": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie"
+      }
+    },
+    {
+      "url": "https://portpolska.pl/",
+      "title": "strona główna - Port Polska",
+      "snippet": "4 days ago · Port Polska – nowy Prezes Zarządu wybrany Rada Nadzorcza Centralnego Portu Komunikacyjnego powołała Piotra Borysa na stanowisko Prezesa Zarządu.",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "blocked",
+      "reason": "agregator/medium, nie publikuje ogłoszeń"
+    },
+    {
+      "url": "https://rejestr.io/krs/27151/polski-holding-obronny",
+      "title": "POLSKI HOLDING OBRONNY - Rejestr.io",
+      "snippet": "Spółka z ograniczoną odpowiedzialnością - Prezes Zarządu: Grzegorz Kiejnich - KRS: 0000027151 - Kapitał zakładowy: 1.6 mld zł",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://programsk.stawil.pl/",
+      "title": "Program SK Podkarpacie – Wsparcie kwalifikacji i kompetencji",
+      "snippet": "5 days ago · Program SK realizowany przez Stawil wspiera pracowników i pracodawców z Podkarpacia w zdobywaniu kwalifikacji, kompetencji i dofinansowań.",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.nat.pl/",
+      "title": "Hotele nad morzem i w górach w Polsce | NAT - nasze obiekty",
+      "snippet": "2 days ago · Wybierz spośród hoteli NAT nad morzem, w górach i nad jeziorem. Komfortowe obiekty w Kołobrzegu, Krynicy-Zdroju, Ustroniu, Sarbinowie, Kalborni i wielu innych",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "cached",
+      "reason": "odrzucony w poprzednim runie (TTL)"
+    },
+    {
+      "url": "https://www.olx.pl/praca/zielonagora/",
+      "title": "Praca Zielona Góra - najnowsze oferty - OLX",
+      "snippet": "Praca – Zielona Góra. Szukasz nowego zatrudnienia? Sprawdź najnowsze oferty pracy na OLX Praca. Przeglądaj aktualne ogłoszenia i zaaplikuj już teraz!",
+      "source": "\"rada nadzorcza\" \"spółka z o.o.\" nabór ogłoszenie",
+      "direct": false,
+      "decision": "blocked",
+      "reason": "agregator/medium, nie publikuje ogłoszeń"
+    },
+    {
+      "url": "https://www.bicycling.com/bikes-gear/a22540377/commuter-bike/",
+      "title": "12 Best Commuter Bikes for Work, Errands, and College Campus",
+      "snippet": "Aug 17, 2026 · Find the best commuter bikes for 2026 with 12 tested picks for daily transportation, from affordable hybrids to compact folders and cargo e-bikes.",
+      "source": "\"nabór kandydatów na członków rady nadzorczej\" spółka",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Artykuł o rowerach komuterowych, niezwiązany z naborem na radę nadzorczą"
+    },
+    {
+      "url": "https://plusbikes.com/best-bikes-for-commuting-to-work/",
+      "title": "12 Best Bikes for Commuting to Work (October 2026) Top Reviews",
+      "snippet": "Sep 8, 2026 · We tested 12 bikes across hybrid, e-bike, folding, cruiser, and road categories to match every type of commute. This guide breaks down what we learned, who each bike suits, and how to pick the right one for your daily ride.",
+      "source": "\"nabór kandydatów na członków rady nadzorczej\" spółka",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Artykuł o rowerach do dojazdów, nie dotyczy naboru na radę nadzorczą."
+    },
+    {
+      "url": "https://betterbike.org/best-bikes-for-commuting-to-work/",
+      "title": "10 Best Bikes for Commuting to Work (October 2026) Tested Picks",
+      "snippet": "Sep 18, 2026 · Looking for the best bikes for commuting to work in 2026? Our team tested 10 hybrid, e-bike, and folding picks for daily rides, hills, and sweat-free arrivals.",
+      "source": "\"nabór kandydatów na członków rady nadzorczej\" spółka",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Artykuł o rowerach do dojazdów, nie dotyczy naboru na radę nadzorczą."
+    },
+    {
+      "url": "https://www.bikeradar.com/advice/buyers-guides/whats-the-best-bike-for-commuting",
+      "title": "Best commuter bike: What's the best bike for commuting?",
+      "snippet": "May 14, 2025 · If your commute is short and you're not in a rush, your best bike for commuting could be a flat-bar bike with a comfortable position, such as a hybrid or mountain bike.",
+      "source": "\"nabór kandydatów na członków rady nadzorczej\" spółka",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Artykuł o rowerach do dojazdów, nie dotyczy naboru na radę nadzorczą."
+    },
+    {
+      "url": "https://betterbike.org/best-commuter-bikes/",
+      "title": "10 Best Commuter Bikes (November 2026) Tested & Reviewed",
+      "snippet": "Sep 11, 2026 · Whether you need a budget cruiser for short flat trips or an electric commuter for long hilly routes, the best commuter bikes share a few things: reliable brakes, a comfortable upright position, fenders that keep road spray off your work clothes, and enough gears (or a motor) to handle your terrain.",
+      "source": "\"nabór kandydatów na członków rady nadzorczej\" spółka",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Artykuł o rowerach komuterowych, nie dotyczy naboru na radę nadzorczą."
+    },
+    {
+      "url": "https://www.cyclingweekly.com/group-tests/best-bike-commuting-345561",
+      "title": "Best commuter bikes 2026: practical bikes for daily cycling |...",
+      "snippet": "Sep 2, 2026 · We've compiled this guide for just that reason, selecting six of the top-rated commuter bikes from the huge range that our experts have tested.",
+      "source": "\"nabór kandydatów na członków rady nadzorczej\" spółka",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Artykuł o rowerach komuterowych, nie dotyczy naboru do rady nadzorczej"
+    },
+    {
+      "url": "https://bikecommuters.com/best-bikes-for-commuting/",
+      "title": "Best Bikes for Commuting (2026 Reviews) | BikeCommuters.com",
+      "snippet": "Feb 22, 2026 · Discover the best bikes for commuting with expert reviews of top hybrid and road bikes. Reliable, comfortable rides for daily urban cycling.",
+      "source": "\"nabór kandydatów na członków rady nadzorczej\" spółka",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "To artykuł o rowerach, nie ogłoszenie o naborze do rady nadzorczej."
+    },
+    {
+      "url": "https://electricbikereport.com/best-commuter-electric-bikes/",
+      "title": "Best Commuter Electric Bikes | 17 Tried & Tested Daily Rides",
+      "snippet": "Aug 10, 2026 · We’ve compiled our favorites to help you pick the bike that fits your needs. The commuter e-bikes included on this list will not just get you to your destination without sweating through your clothes; they’ll get you there quickly and have the battery capacity to cover long distances with ease.",
+      "source": "\"nabór kandydatów na członków rady nadzorczej\" spółka",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Artykuł o rowerach elektrycznych, nie dotyczy naboru do rady nadzorczej."
+    },
+    {
+      "url": "https://www.cyclist.co.uk/reviews/best-commuter-bikes",
+      "title": "The best commuter bikes 2026 for cycling to work | Cyclist",
+      "snippet": "Jul 13, 2026 · Here are some of the best commuter bikes to get you rolling to work along with what to look for before you buy. Transporting people about their everyday lives, the best commuter bikes are...",
+      "source": "\"nabór kandydatów na członków rady nadzorczej\" spółka",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Artykuł o rowerach do dojazdów, nie dotyczy naboru na radę nadzorczą."
+    },
+    {
+      "url": "https://bikexchange.com/best-commuter-bikes/",
+      "title": "12 Best Commuter Bikes to Finally Ditch the Car in 2026",
+      "snippet": "Mar 16, 2026 · These bikes form the backbone of urban travel, helping people run errands, get to and from work, haul cargo, or drop a kid off at school. What is a commuter bike? A commuter bike is one of the most basic, widely used bicycle to get around. A-to-B bicycle. Here are some of the main components and features that make commuter bikes so useful:",
+      "source": "\"nabór kandydatów na członków rady nadzorczej\" spółka",
+      "direct": false,
+      "decision": "rejected",
+      "reason": "Artykuł o rowerach miejskich, nie dotyczy naboru na radę nadzorczą."
+    },
+    {
+      "url": "https://grudziadz.pl/artykul/69/20202/nabor-kandydatow-do-rad-nadzorczych",
+      "title": "Nabór kandydatów do Rad Nadzorczych - Grudziądz",
+      "snippet": "3 days ago · - kwestionariusz osobowy kandydata na członka Rady Nadzorczej spółki, w której gmina-miasto Grudziądz posiada udziały/akcje, - oświadczenie o wyrażeniu zgody na przetwarzanie danych oraz ujawnienie danych poprzez przesłanie lub inne udostępnienie.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.solidarnosc.gorzow.enea.pl/wiadomosc/4269/zmiany_w_skladzie_rady_nadzorczej_enea_s_a.html",
+      "title": "8.12.2025 Zmiany w składzie Rady Nadzorczej Enea S.A. - NSZZ ...",
+      "snippet": "6 days ago · Zarząd Enea S.A. („Spółka”) informuje o wpłynięciu do Spółki 8 grudnia 2025 roku oświadczeń Ministra Aktywów Państwowych, o skorzystaniu z uprawnienia do powoływania i odwoływania członka Rady Nadzorczej Enea S.A. na podstawie § 24 ust. 1 Statutu Spółki.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.biznesradar.pl/a/166551,polenergia-sa-32-2026-powolanie-czlonka-rady-nadzorczej",
+      "title": "POLENERGIA SA (32/2026) POWOŁANIE CZŁONKA RADY NADZORCZEJ",
+      "snippet": "3 days ago · Informacje o wykształceniu, kwalifikacjach i przebiegu pracy zawodowej Członka Rady Nadzorczej zostały przedstawione w załączniku do niniejszego raportu bieżącego.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://lexlege.pb.pl/rozporzadzenie-ministra-pracy-i-polityki-socjalnej-w-sprawie-sposobu-usprawiedliwiania-nieobecnosci-w-pracy-oraz-udzielania-pracownikom-zwolnien-od-pracy/paragraf-14/",
+      "title": "§ 14. uspr. zw. - Zwolnienie od pracy pracownika będącego ...",
+      "snippet": "4 days ago · § 14. Zwolnienie od pracy pracownika będącego członkiem rady nadzorczej, działającej u pracodawcy Pracodawca jest obowiązany zwolnić od pracy pracownika będącego członkiem rady nadzorczej, działającej u zatrudniającego go pracodawcy, na czas niezbędny do uczestniczenia w posiedzeniach tej rady.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://bip.krs.pl/?c=article&id=213",
+      "title": "Pozostałe sprawy indywidualne - krs",
+      "snippet": "5 days ago · Krajowa Rada Sądownictwa uprzejmie informuje, że w dniach 3 - 6 listopada 2026 r. będą rozpatrywane następujące zgłoszenia kandydatów - uzupełnienie 02 listopad 2026, 10:05",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://krs.pl/pl/",
+      "title": "Krajowa Rada Sądownictwa",
+      "snippet": "2 days ago · Prezydium Rady nie przyjmuje za swoje treści publikowane na stronie www.krs.pl oraz stanowiska i oceny projektów aktów prawnych wyrażone przez Radę w składzie ukształtowanym uchwałami Sejmu RP z 6 marca 2018 r. (M.P. poz. 276), z 20 maja 2021 r. (M.P. poz. 497) i z 12 maja 2022 r. (M.P. poz. 485) w sprawie wyboru członków Krajowej Rady Sądownictwa.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://arslege.pl/dokumenty/kategoria/rada-nadzorcza/80/",
+      "title": "Wyszukiwarka aktów prawnych, orzeczeń sądów, wzorów ...",
+      "snippet": "1 day ago · Intuicyjna, prosta i szybka wyszukiwarka umożliwiajaca odnalezienie aktów prawnych, orzeczeń sądów, wzorów dokumentów, kodeksów oraz artykułów",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://lexlege.pb.pl/ustawa-o-fundacji-rodzinnej/oddzial-3-rada-nadzorcza/15946/",
+      "title": "Oddział 3 Rada nadzorcza - Ustawa o fundacji rodzinnej ...",
+      "snippet": "3 days ago · Sprawdź aktualne przepisy - Ustawa o fundacji rodzinnej - Oddział 3 Rada nadzorcza. Zawsze aktualny tekst jednolity i historia zmian w bazie SIP LexLege.",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.bydgoszcz.wsa.gov.pl/56,formularze",
+      "title": "BIULETYN INFORMACJI PUBLICZNEJ Wojewódzkiego Sądu ...",
+      "snippet": "4 days ago · Biuletyn Informacji Publicznej Wojewódzkiego Sądu Administracyjnego w Bydgoszczy Pliki do pobrania z serwera WSA Bydgoszcz są w trzech formatach: plik w formacie XLS - dokument Microsoft Excel, plik w formacie DOC - dokument Microsoft Word, plik w formacie PDF - dokument Acrobat Reader. Aby zachować prawidłowy format dokumentów proponujemy w przypadku pobierania dokumentu w formacie ...",
+      "source": "\"zgłoszenia kandydatów\" \"członka rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://jp.linkedin.com/company/martco-mfg",
+      "title": "Martco MFG | LinkedIn",
+      "snippet": "Martco MFG | LinkedInのフォロワー数50人。 When it comes to steel and aluminum, MartCo has a tremendous track record. We have the staff and resources to manufacture your product. We allocate the time...",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.linkedin.com/company/mtr-martco-llc",
+      "title": "MTR Martco LLC - LinkedIn",
+      "snippet": "MTR Martco LLC | 138 followers on LinkedIn. MTR Martco LLC is dedicated to Providing quality products and services at competative prices.",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.linkedin.com/company/martco-inc",
+      "title": "Pavion-Louisville office | LinkedIn",
+      "snippet": "Martco is now part of Pavion one of the nation’s most experienced and largest providers of security and surveillance equipment.",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.linkedin.com/company/royomartin",
+      "title": "RoyOMartin - LinkedIn",
+      "snippet": "Martco L.L.C., known by its trade name RoyOMartin, is one of a group of vertically integrated companies owned by the Martin family focused on land, timber, and mineral resources, with special ...",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.linkedin.com/company/martco-associates",
+      "title": "Martco Associates - LinkedIn",
+      "snippet": "Martco Associates | 31 followers on LinkedIn. Coaching and consulting for small business We provide practical advice for individuals seeking to start their own business along with small...",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.linkedin.com/company/barco-mfg",
+      "title": "BARCO Mfg - LinkedIn",
+      "snippet": "BARCO Manufacturing LLC (BARCO Mfg) was established in 1999 in response to the growing need for quick-response manufacturing of Stainless Steel products for the Construction Industry.",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.linkedin.com/company/franco-manufacturing-co.-inc.",
+      "title": "Franco Manufacturing Co., Inc. - LinkedIn",
+      "snippet": "Franco Manufacturing, founded in 1952 and now in its third generation, is a leading force in licensed home products, bringing beloved brands and characters into homes across the U.S. and Canada.",
+      "source": "\"ogłoszenie o naborze kandydatów\" \"rada nadzorcza\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Microsoft",
+      "title": "Microsoft - Wikipedia",
+      "snippet": "Microsoft Corporation is an American multinational technology conglomerate headquartered in Redmond, Washington. The company became influential in the rise of personal computers through software like Windows and has since expanded into areas such as Internet services, cloud computing, artificial intelligence and video gaming among others.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us",
+      "title": "Microsoft – AI, Cloud, Productivity, Computing, Gaming & Apps",
+      "snippet": "Explore Microsoft products and services and support for your home or business. Shop Microsoft 365, Copilot, Teams, Xbox, Windows, Azure, Surface and more.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://account.microsoft.com/account",
+      "title": "Microsoft account | Sign In or Create Your Account Today – ...",
+      "snippet": "Get access to free online versions of Outlook, Word, Excel, and PowerPoint.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://myaccount.microsoft.com/login",
+      "title": "Sign in to your account - myaccount.microsoft.com",
+      "snippet": "Sign in to manage your Microsoft account and access free online services like Outlook, Word, Excel, and PowerPoint securely from any device.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://myaccount.microsoft.com/",
+      "title": "Sign in to your account",
+      "snippet": "Access and manage your Microsoft account, subscriptions, and settings all in one place.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/windows/",
+      "title": "FOLLOW - microsoft.com",
+      "snippet": "Power your possibilities with Windows PCs for work, creativity, gaming, and AI. Explore powerful features, built-in security, and more ways to do what you love.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://account.microsoft.com/account-checkup",
+      "title": "Sign in - account.microsoft.com",
+      "snippet": "Sign in to check and manage your Microsoft account settings with the Account Checkup Wizard.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://m365.cloud.microsoft/?origindomain=Office",
+      "title": "Microsoft 365 - Sign into Copilot",
+      "snippet": "Microsoft 365 includes Word, Excel, PowerPoint, Outlook, Teams, and OneDrive, with Microsoft Copilot built in to help you create, communicate, and summarize information. Formerly Office 365.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://mysignins.microsoft.com/",
+      "title": "Sign in to your account",
+      "snippet": "Access and manage your Microsoft account sign-ins securely.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://apps.microsoft.com/",
+      "title": "Microsoft Store - Download apps, games & more for your Windows PC",
+      "snippet": "Explore the Microsoft Store for apps and games on Windows. Enjoy exclusive deals, new releases, and your favorite content all in one place.",
+      "source": "\"ogłasza nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.letras.mus.br/",
+      "title": "LETRAS.MUS.BR - Letras de músicas",
+      "snippet": "O site de música mais acessado pelos brasileiros oferece letras, traduções, cifras e o melhor player para ouvir músicas e assistir clipes com legenda.",
+      "source": "\"kandydatów do rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.letras.mus.br/padre-marcelo-rossi/88612/",
+      "title": "Pai Nosso - Padre Marcelo Rossi - LETRAS.MUS.BR",
+      "snippet": "Padre Marcelo Rossi - Pai Nosso (Letra e música para ouvir) - Pai, meu Pai do céu, meu Pai do céu / Eu quase me esqueci, me esqueci / Que o Teu amor vela por mim, vela por mim / Que seja feito assim",
+      "source": "\"kandydatów do rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.letras.mus.br/playlists/410090/",
+      "title": "55 músicas brasileiras que são poesia pura - LETRAS.MUS.BR",
+      "snippet": "O site de música mais acessado pelos brasileiros oferece letras, traduções, cifras e o melhor player para ouvir músicas e assistir clipes com legenda.",
+      "source": "\"kandydatów do rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.letras.mus.br/linkin-park/",
+      "title": "Linkin Park - Letras.mus.br",
+      "snippet": "Veja as letras de Linkin Park e ouça \"Somewhere I Belong\", \"In The End\", \"Numb\", \"The Emptiness Machine\", \"One More Light\" e muito mais músicas!",
+      "source": "\"kandydatów do rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.letras.mus.br/estilos/rock/",
+      "title": "Rock - LETRAS.MUS.BR",
+      "snippet": "O site de música mais acessado pelos brasileiros oferece letras, traduções, cifras e o melhor player para ouvir músicas e assistir clipes com legenda.",
+      "source": "\"kandydatów do rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.letras.mus.br/estilos/gospelreligioso/",
+      "title": "Gospel/Religioso - LETRAS.MUS.BR",
+      "snippet": "O site de música mais acessado pelos brasileiros oferece letras, traduções, cifras e o melhor player para ouvir músicas e assistir clipes com legenda.",
+      "source": "\"kandydatów do rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.letras.mus.br/novidades.html",
+      "title": "Novas letras de músicas incluídas no LETRAS.MUS.BR",
+      "snippet": "O site de música mais acessado pelos brasileiros oferece letras, traduções, cifras e o melhor player para ouvir músicas e assistir clipes com legenda.",
+      "source": "\"kandydatów do rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.letras.mus.br/adele/",
+      "title": "Adele - Letras.mus.br",
+      "snippet": "Veja as letras de Adele e ouça \"Someone Like You\", \"Set Fire To The Rain\", \"Rolling In The Deep\", \"Lovesong\", \"Love In The Dark\" e muito mais músicas!",
+      "source": "\"kandydatów do rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.letras.mus.br/kemilly-santos/se-o-mar-nao-se-abrir-part-damares/",
+      "title": "Se O Mar Não Se Abrir (part. Damares) - LETRAS.MUS.BR",
+      "snippet": "Kemilly Santos - Se O Mar Não Se Abrir (part. Damares) (Letra e música para ouvir) - Se o mar não se abrir / Deus vai me fazer andar por sobre as águas / Não vou me afligir / Eu sei que esse problema para Deus é nada / Chorando vou seguir, eu não vou desistir / Eu sei que o céu me guarda",
+      "source": "\"kandydatów do rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.letras.mus.br/playlists/",
+      "title": "Playlists - LETRAS.MUS.BR",
+      "snippet": "O site de música mais acessado pelos brasileiros oferece letras, traduções, cifras e o melhor player para ouvir músicas e assistir clipes com legenda.",
+      "source": "\"kandydatów do rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.espn.com/mens-college-basketball/team/_/id/127/michigan-state-spartans",
+      "title": "Michigan State Spartans Scores, Stats and Highlights - ESPN",
+      "snippet": "Visit ESPN for Michigan State Spartans live scores, video highlights, and latest news. Find standings and the full 2026-27 season schedule.",
+      "source": "\"konkurs na członków rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://msuspartans.com/sports/mens-basketball",
+      "title": "Men's Basketball - Michigan State University Athletics",
+      "snippet": "1 day ago · The official Men's Basketball page for the Michigan State University Spartans",
+      "source": "\"konkurs na członków rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.sports-reference.com/cbb/schools/michigan-state/men/2026-schedule.html",
+      "title": "2025-26 Michigan State Spartans Men's Schedule and Results |...",
+      "snippet": "Check out the detailed 2025-26 Michigan State Spartans Schedule and Results for College Basketball at Sports-Reference.com",
+      "source": "\"konkurs na członków rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.cbssports.com/college-basketball/teams/michst/michigan-st-spartans/",
+      "title": "Michigan St. Spartans News, Scores and Stats 2026-27",
+      "snippet": "5 days ago · CBS Sports has the latest Michigan St. Spartans news and information, including team scores, stats, highlights and more for the 2026 College Basketball season.",
+      "source": "\"konkurs na członków rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.covers.com/sport/basketball/ncaab/teams/main/michigan-state-spartans",
+      "title": "Michigan State Spartans - Covers.com",
+      "snippet": "1 day ago · Stay Up-To-Date With The Latest Michigan State Spartans Schedule, Live Scores, And Results For The 2026-2027 NCAAB Season!",
+      "source": "\"konkurs na członków rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.flashscoreusa.com/team/michigan-state-spartans/GOC3ZXTo/",
+      "title": "Michigan State Spartans live scores, results, fixtures, Duke Blue...",
+      "snippet": "Michigan State Spartans page on Flashscore offers livescore, results, standings and match details.",
+      "source": "\"konkurs na członków rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.flashscore.com/team/michigan-state/GOC3ZXTo/",
+      "title": "Michigan State live scores, results, fixtures, Duke Blue Devils v...",
+      "snippet": "Michigan State page on Flashscore.com offers livescore, results, standings and match details.",
+      "source": "\"konkurs na członków rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.nytimes.com/athletic/college-basketball/team/michigan-state-spartans-college-basketball/",
+      "title": "Michigan State Spartans - News, Schedule, Scores, Roster, and...",
+      "snippet": "5 days ago · Breaking Michigan State Spartans news and in-depth analysis from the best newsroom in sports. Follow your favorite clubs. Get the latest injury updates, player news and more from around the...",
+      "source": "\"konkurs na członków rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://thesideline.co/community/michigan-state",
+      "title": "Michigan State — Scores, Schedule & NIL | The Sideline",
+      "snippet": "Michigan State Spartans 2026: live football, basketball, and baseball scores, full schedule, per-player NIL valuations, transfer portal moves, and team news. Big Ten program coverage on The Sideline.",
+      "source": "\"konkurs na członków rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://spartanswire.usatoday.com/basketball/",
+      "title": "Michigan St Spartans Men's Basketball - News, Scores & Highlights",
+      "snippet": "Follow Michigan St Spartans Men's Basketball for the latest news, game scores, and player highlights. Dive into expert analysis and exclusive coverage.",
+      "source": "\"konkurs na członków rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401921896/michigan-st-nebraska",
+      "title": "Michigan State vs. Nebraska (Jan 2, 2027) Live Score - ESPN",
+      "snippet": "Live coverage of the Michigan State Spartans vs. Nebraska Cornhuskers NCAAM game on ESPN, including live score, highlights and updated stats.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" świętokrzyskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.espn.com/college-football/game/_/gameId/401858464/nebraska-michigan-st",
+      "title": "Nebraska 31-13 Michigan State (Sep 26, 2026) Final Score - ESPN",
+      "snippet": "Sep 26, 2026 · Game summary of the Nebraska Cornhuskers vs. Michigan State Spartans NCAAF game, final score 31-13, from September 26, 2026 on ESPN.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" świętokrzyskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.ncaa.com/game/6459595",
+      "title": "Michigan St. vs Nebraska Football Game Summary - NCAA.com",
+      "snippet": "Live scores from the Michigan St. and Nebraska FBS Football game, including box scores, individual and team statistics and play-by-play.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" świętokrzyskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://msuspartans.com/sports/football/stats/2026/nebraska/boxscore/20505",
+      "title": "Football vs Nebraska on 09/26/2026 - Box Score - Michigan State...",
+      "snippet": "Michigan State University Athletics Nebraska vs Michigan St. View PDF , Opens in new window Box Score Play-by-play Drive Chart Team Stats Individual Participation 09/26/2026",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" świętokrzyskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.huskermax.com/game/2026-michigan-state-football/",
+      "title": "2026 Nebraska @ Michigan State football - HuskerMax game page",
+      "snippet": "Sep 26, 2026 · Embed from Getty Images see more EAST LANSING, MI - SEPTEMBER 26: Nebraska Cornhuskers defensive end Williams Nwaneri (96) sacks Michigan State Spartans quarterback Cam Fancher (2) during a college football game between the Michigan State Spartans and Nebraska Cornhuskers on September 26, 2026 at Spartan Stadium in East Lansing, MI.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" świętokrzyskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.usatoday.com/story/sports/college/michigan-state/spartans/2026/09/26/michigan-state-football-nebraska-game-score-recap/91960750007/",
+      "title": "Michigan State football game score in frustrating loss to ...",
+      "snippet": "Sep 26, 2026 · Michigan State football made too many mistakes and suffered too many injuries in a Week 4 loss to Nebraska at Spartan Stadium on Saturday, Sept. 26.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" świętokrzyskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=wZPeT9FAkE0",
+      "title": "Nebraska Cornhuskers vs Michigan State Spartans Highlights FOX...",
+      "snippet": "Sep 26, 2026 · Check out the best moments from this Week 4 matchup between the Nebraska Cornhuskers and the Michigan State Spartans!",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" świętokrzyskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.foxsports.com/watch/fmc-lj0593k2ibjib2m7",
+      "title": "Nebraska Cornhuskers vs Michigan State Spartans Highlights FOX...",
+      "snippet": "Sep 26, 2026 · Check out the best moments from the Week 4 matchup between the Nebraska Cornhuskers and the Michigan State Spartans!",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" świętokrzyskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=_Y1XUBXcSx0",
+      "title": "Nebraska at Michigan State | Highlights | Big Ten Football |...",
+      "snippet": "Sep 26, 2026 · Nebraska at Michigan State | Highlights | Big Ten Football | 09/26/2026 Big Ten Football 67.7K subscribers 219",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" świętokrzyskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://hotlinesports.com/ncaa-womens-volleyball/nebraska-cornhuskers-volleyball-vs-michigan-state-spartans-volleyball-2026-10-31",
+      "title": "Final: Nebraska Cornhuskers vs Michigan State Spartans | Oct 31,...",
+      "snippet": "6 days ago · Final: NEB 3, MSU 1. Nebraska Cornhuskers vs Michigan State Spartans was played Oct 31, 2026 at 4:30 PM EDT.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" świętokrzyskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.nfl.com/schedules",
+      "title": "NFL Schedules: Games, Times, Matchups & Tickets",
+      "snippet": "Oct 19, 2010 · View the full current NFL schedule for the season. Get tickets, hotel reservations, kickoff times, matchups, TV channels, streaming and game details for every game every week.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" warmińsko-mazurskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.espn.com/nfl/schedule/_/seasontype/1",
+      "title": "NFL Schedule - espn.com",
+      "snippet": "2 days ago · View the full NFL schedule for the current and previous seasons on ESPN.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" warmińsko-mazurskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.espn.com/nfl/schedule/_/seasontype/2",
+      "title": "NFL Schedule - espn.com",
+      "snippet": "2 days ago · Monday, November 9, 2026 Bye Tennessee Pittsburgh",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" warmińsko-mazurskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.nfl.com/",
+      "title": "NFL.com | Official Site of the National Football League",
+      "snippet": "The official source for NFL news, video highlights, game-day coverage, schedules, stats, scores and more.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" warmińsko-mazurskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://usagametime.com/nfl-schedule-this-week/",
+      "title": "NFL Schedule This Week: Kickoff Times & TV - usagametime.com",
+      "snippet": "Nov 8, 2026 · NFL games this week and next: Eastern kickoff times, TV channels and byes, from the Madrid game to Thursday night and the Munich game.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" warmińsko-mazurskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://nflschedules.com/nfl-games-today/",
+      "title": "NFL Games Today: TV Schedule, Times and Scores",
+      "snippet": "1 day ago · See whether NFL games are on today, plus the next scheduled matchup, local kickoff times, TV channels, streaming information and recent scores.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" warmińsko-mazurskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.cbssports.com/nfl/schedule/",
+      "title": "NFL Schedule 2026-27 - National Football League Week 9",
+      "snippet": "2 days ago · Get the full schedule for the 2026 NFL season, including matchups, dates, times and TV and ticket information.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" warmińsko-mazurskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/",
+      "title": "Microsoft - Official Home Page",
+      "snippet": "At Microsoft our mission and values are to help people and businesses throughout the world realize their full potential.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" wielkopolskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://support.microsoft.com/en-us/sharepoint/platform/what-is-sharepoint",
+      "title": "What is SharePoint? | Microsoft Support",
+      "snippet": "All you need is a web browser, such as Microsoft Edge, Chrome, or Firefox. Want to learn more? Get started with SharePoint. Take a look at the latest version of SharePoint. When you create a new team site, this is what you'll see for SharePoint and SharePoint Server 2019. What is SharePoint? SharePoint products and downloads",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" wielkopolskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://techcommunity.microsoft.com/blog/exchange/everything-you-need-to-know-about-exchange-backups---part-1/600223",
+      "title": "Everything You Need to Know About Exchange Backups* - Part 1 ...",
+      "snippet": "Jun 4, 2012 · Microsoft Exchange Writer So we know that any disk that stores Exchange data gets a snapshot created of it by VSS. How exactly, though, does a backup application find out which disks those are? Oftentimes an administrator selects databases for backup without specifying anything about what disks their data files are stored in.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" wielkopolskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://support.microsoft.com/en-gb/contactus",
+      "title": "Contact Us - Microsoft Support",
+      "snippet": "Contact Microsoft Support. Find solutions to common problems, or get help from a support agent.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" wielkopolskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://techcommunity.microsoft.com/category/microsoft365/discussions/word",
+      "title": "Word | Microsoft Community Hub",
+      "snippet": "Welcome to the Word group! This is the place to discuss best practices, news, and the latest trends and topics related...",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" wielkopolskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://techcommunity.microsoft.com/blog/skills-hub-blog/the-ai-job-boom-continues-build-the-skills-that-move-business-forward/4494139",
+      "title": "The AI job boom continues: Build the skills that move business...",
+      "snippet": "Mar 31, 2026 · The Microsoft Certified: AI Agent Builder Associate Certification is designed for tech pros, including developers, AI engineers, and architects, who are pushing AI agents beyond out‑of‑the‑box scenarios to implement production‑ready Microsoft Copilot Studio agents and multi‑agent solutions capable of sophisticated processes, workflow ...",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" wielkopolskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://techcommunity.microsoft.com/Events",
+      "title": "Microsoft Tech Community Events Directory",
+      "snippet": "Microsoft Tech Community Events Directory Join one of the events below, ask questions, learn and connect with experts.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" wielkopolskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://techcommunity.microsoft.com/blog/skills-hub-blog/new-microsoft-certified-azure-ai-apps-and-agents-developer-associate/4494126",
+      "title": "New Microsoft Certified: Azure AI Apps and Agents Developer...",
+      "snippet": "Apr 16, 2026 · This new Microsoft Certification focuses on modern AI development, including generative AI, multimodal scenarios, agentic workflows, and responsible AI, by using Azure services and Microsoft Foundry to deliver scalable, real-world solutions.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" wielkopolskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://support.microsoft.com/de-de/accounts-billing/manage/how-to-sign-in-to-hotmail",
+      "title": "Anmelden bei Hotmail | Microsoft Support",
+      "snippet": "Microsoft hält immer ein Auge auf ungewöhnliche Anmeldeaktivitäten, nur für den Fall, dass jemand anderes versucht, auf Ihr Konto zuzugreifen. Wenn Sie an einen neuen Ort reisen oder ein neues Gerät verwenden, bitten wir Sie möglicherweise, zu bestätigen, dass Sie es wirklich sind.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" wielkopolskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://techcommunity.microsoft.com/category/microsoft-security",
+      "title": "Microsoft Security | Microsoft Community Hub",
+      "snippet": "Microsoft Security Welcome to the Microsoft Security Community! Check out our all-up Microsoft Security Community Blog and all-up Security Events Space.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" wielkopolskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Microsoft_campus",
+      "title": "Microsoft campus - Wikipedia",
+      "snippet": "The Microsoft campus is the corporate headquarters of Microsoft Corporation, located in Redmond, Washington, United States, a part of the Seattle metropolitan area.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" zachodniopomorskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/about/office-locations",
+      "title": "Microsoft Office Locations | About Microsoft",
+      "snippet": "Microsoft’s global headquarters are located on 500 acres in Redmond, Washington that includes public spaces, sports fields, green space, and more than 125 buildings.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" zachodniopomorskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.bing.com/maps/search?q=1+Microsoft+Way,+RedmondHelloWORLD.&cp=47.672099~-122.099815&lvl=12&style=r",
+      "title": "1 Microsoft Way, RedmondHelloWORLD. - Bing Maps",
+      "snippet": "1 Microsoft Way, Redmond hello world. Map multiple locations, get transit/walking/driving directions, view live traffic conditions, plan trips, view satellite, aerial and 3d imagery. Do more with Bing Maps.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" zachodniopomorskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.mapquest.com/us/washington/microsoft-corporation-12544878",
+      "title": "Microsoft Corporation, 1 Microsoft Way, Redmond, WA 98052-8300,...",
+      "snippet": "Get more information for Microsoft Corporation in Redmond, WA. See reviews, map, get the address, and find directions.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" zachodniopomorskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://news.microsoft.com/redmond-campus/",
+      "title": "From Redmond to the world - news.microsoft.com",
+      "snippet": "In 2017, Microsoft embarked on a transformative modernization of our Redmond campus encompassing 3 million square feet of new workspace and amenities.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" zachodniopomorskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/research/lab/microsoft-research-redmond/",
+      "title": "Microsoft Research Redmond",
+      "snippet": "Oct 28, 2026 · Computer science research supporting the future of the connected world with secure computing that enriches lives and empowers everyone.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" zachodniopomorskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://businessyab.com/explore/united_states/washington/king_county/redmond/overlake/microsoft_way/1/microsoft-corporate-headquarters-425-882-8080.html",
+      "title": "Microsoft Corporate Headquarters - 1 Microsoft Way, Redmond, WA...",
+      "snippet": "1 day ago · Microsoft Corporate Headquarters at 1 Microsoft Way, Redmond, WA 98052, USA - hours, address, map, directions, phone number, customer ratings and reviews.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" zachodniopomorskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://microsoft.fandom.com/wiki/Microsoft_Redmond_campus",
+      "title": "Microsoft Redmond campus | Microsoft Wiki | Fandom",
+      "snippet": "The Microsoft campus is the corporate headquarters of Microsoft, located in Redmond, Washington, United States, a part of the Seattle metropolitan area. Microsoft initially moved onto the grounds of the campus on February 26, 1986, shortly before going public on March 13.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" zachodniopomorskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://maps.apple.com/place?place-id=IA108CFF6BBA2E5A6",
+      "title": "Microsoft - Headquarters in Redmond, WA United States - Apple...",
+      "snippet": "View details about Microsoft - Headquarters in Redmond, WA United States on Apple Maps. Address, driving directions, images, nearby attractions and more.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" zachodniopomorskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://camcatbooks.com/inside-1-microsoft-way-redmond-the-hidden-architecture-of-microsofts-global-headquarters",
+      "title": "Inside 1 Microsoft Way Redmond: The Hidden Architecture of ...",
+      "snippet": "1 day ago · Nestled in the heart of Redmond, Washington, 1 Microsoft Way serves as the physical and operational nucleus of one of the world’s most influential technology companies.",
+      "source": "\"ogłoszenie o naborze\" \"rady nadzorczej\" zachodniopomorskie",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.fandango.com/seattle_wa_movietimes?chainID=AMC",
+      "title": "AMC Showtimes and Theaters near Seattle, WA | Fandango",
+      "snippet": "2 days ago · Discover AMC showtimes and movie theaters near you with Fandango! Find showtimes, tickets, and more for your favorite cinema experience in Seattle, WA.",
+      "source": "\"spółka komunalna\" \"nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.atomtickets.com/theaters/amc-pacific-place-11/5235",
+      "title": "AMC Pacific Place 11 Showtimes & Movie Tickets",
+      "snippet": "Nov 21, 2016 · Find movie showtimes and buy movie tickets for AMC Pacific Place 11 on Atom Tickets! Get tickets, skip lines plus pre-order concessions online with a few clicks.",
+      "source": "\"spółka komunalna\" \"nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.fandango.com/seattle_washington_movietimes",
+      "title": "Movie Showtimes and Theaters near Seattle, WASHINGTON",
+      "snippet": "1 day ago · Find showtimes, tickets, and more for your favorite cinema experience in Seattle, WASHINGTON.",
+      "source": "\"spółka komunalna\" \"nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.flicks.us/cinema/amc-pacific-place-11-seattle/",
+      "title": "AMC Pacific Place 11 Seattle | Movie Session Times & Tickets,...",
+      "snippet": "Find session times and book tickets for AMC Pacific Place 11 Seattle, Seattle.",
+      "source": "\"spółka komunalna\" \"nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.bigscreen.com/Marquee.php?theater=5235&view=sched",
+      "title": "AMC Pacific Place 11 Showtimes Schedule - Seattle, Washington",
+      "snippet": "What's playing and when? View showtimes for movies playing at AMC Pacific Place 11 in Seattle, Washington (WA 98101) with links to movie information (plot summary, reviews, actors, actresses, etc.) and more information about the theater.",
+      "source": "\"spółka komunalna\" \"nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.moviefone.com/showtimes/theaters/amcpacificplace11seattle/NNXeXGLtjrOA8pmy9RJZw3/",
+      "title": "AMC Pacific Place 11 Showtimes & Tickets: Seattle, WA | Moviefone",
+      "snippet": "Now playing at AMC Pacific Place 11 in Seattle, WA: The Cat in the Hat, Godzilla Minus Zero and Clayface. Today's showtimes, this week's times and tickets.",
+      "source": "\"spółka komunalna\" \"nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.bigscreen.com/Marquee.php?theater=843&view=sched",
+      "title": "AMC Oak Tree 6 Showtimes Schedule - Seattle, Washington",
+      "snippet": "1 day ago · What's playing and when? View showtimes for movies playing at AMC Oak Tree 6 in Seattle, Washington (WA 98133) with links to movie information (plot summary, reviews, actors, actresses, etc.) and more information about the theater.",
+      "source": "\"spółka komunalna\" \"nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.showtimes.com/movie-theaters/amc-pacific-place-11-9348/",
+      "title": "AMC Pacific Place 11 - Seattle, WA Showtimes and Movie Tickets |...",
+      "snippet": "1 day ago · AMC Pacific Place 11, Seattle, WA movie times and showtimes. Movie theater information and online movie tickets.",
+      "source": "\"spółka komunalna\" \"nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.amctheatres.com/movie-theatres/seattle-tacoma/amc-pacific-place-11",
+      "title": "AMC Theatres",
+      "snippet": "We would like to show you a description here but the site won’t allow us.",
+      "source": "\"spółka komunalna\" \"nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.showtimes.com/movie-times/seattle-wa",
+      "title": "Seattle movies and movie times | Seattle, WA cinemas and movie...",
+      "snippet": "Seattle movies and movie times. Seattle, WA cinemas and movie theaters.",
+      "source": "\"spółka komunalna\" \"nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.perplexity.ai/hub/pricing",
+      "title": "Perplexity Pricing: Plans for Individuals and Enterprise",
+      "snippet": "Compare Perplexity plans for individuals and teams. Accurate answers and agentic workflows from top AI models.",
+      "source": "\"zgromadzenie wspólników\" \"nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.thegeeksclub.com/platforms/perplexity/pricing/",
+      "title": "Perplexity Pricing in 2026: Plans and Costs | The Geeks Club",
+      "snippet": "Every Perplexity plan and price, as Perplexity's own pricing page lists them, free plan included.",
+      "source": "\"zgromadzenie wspólników\" \"nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.aipricing.guru/perplexity-subscription-pricing/",
+      "title": "Perplexity Subscription Pricing: 6 Plans | AI Pricing Guru",
+      "snippet": "4 days ago · Compare six Perplexity plans: Free, Pro, Max, SheerID-verified Education Pro and per-seat Enterprise tiers. Separate price and app-access evidence; API separate.",
+      "source": "\"zgromadzenie wspólników\" \"nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.perplexity.ai/help-center/en/articles/11187416-which-perplexity-subscription-plan-is-right-for-you",
+      "title": "Which Perplexity Subscription Plan is right for you?",
+      "snippet": "1 day ago · Compare Perplexity subscription plans: the free Standard tier, Perplexity Pro, Max, and Education Pro, plus Enterprise and API Platform options.",
+      "source": "\"zgromadzenie wspólników\" \"nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://freeacademy.ai/blog/perplexity-free-vs-pro-2026",
+      "title": "Perplexity Free vs Pro vs Max (2026): Prices and Limits Compared",
+      "snippet": "Sep 26, 2026 · Perplexity Free vs Pro vs Max compared for 2026: prices, usage limits, models, Computer credits, and who should upgrade or stay on the free plan.",
+      "source": "\"zgromadzenie wspólników\" \"nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.opslyft.com/blog/perplexity-pricing",
+      "title": "Perplexity Pricing 2026: Plans, Sonar API & Real Costs",
+      "snippet": "Jun 16, 2026 · Perplexity pricing in 2026: Free, Pro at $20, Max at $200, Enterprise tiers, and Sonar API token plus request fees. See every plan and what it costs.",
+      "source": "\"zgromadzenie wspólników\" \"nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    },
+    {
+      "url": "https://www.globaltechstack.com/blog/perplexity-pricing",
+      "title": "Perplexity Pricing 2026: Free vs Pro vs Max Plans",
+      "snippet": "Oct 25, 2026 · Perplexity pricing for 2026: what Perplexity Pro and Max cost on annual billing, what the credits and Computer access include, and who should pay for each plan.",
+      "source": "\"zgromadzenie wspólników\" \"nabór\" \"rady nadzorczej\"",
+      "direct": false,
+      "decision": "limit",
+      "reason": "limit --limit=30 wyczerpany"
+    }
+  ]
+}
